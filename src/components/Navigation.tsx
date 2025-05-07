@@ -97,7 +97,7 @@ export default function Navigation() {
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: 'auto', overflow: 'hidden' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
             className="md:hidden bg-white fixed top-16 left-0 right-0 shadow-lg"
