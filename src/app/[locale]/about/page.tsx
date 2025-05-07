@@ -42,7 +42,7 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold mb-6">{t('overview.title')}</h2>
               <p className="text-gray-600 mb-6">{t('overview.description')}</p>
               <div className="grid grid-cols-2 gap-6">
-                {['mission', 'vision', 'values'].map((item, index) => (
+                {['mission', 'vision', 'values'].map((item) => (
                   <div key={item} className="bg-gray-50 p-6 rounded-lg">
                     <h3 className="text-xl font-semibold mb-3">{t(`overview.${item}.title`)}</h3>
                     <p className="text-gray-600">{t(`overview.${item}.description`)}</p>

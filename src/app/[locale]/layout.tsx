@@ -1,11 +1,9 @@
-import { Inter } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
 import Navigation from '@/components/Navigation';
 import '../globals.css';
 import Footer from '@/components/Footer';
 
-const inter = Inter({ subsets: ['latin'] });
 
 export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'zh' }, { locale: 'ja' }];
@@ -21,7 +19,7 @@ export default async function RootLayout({
   let messages;
   try {
     messages = (await import(`../../messages/${locale}.json`)).default;
-  } catch (error) {
+  } catch {
     notFound();
   }
 
