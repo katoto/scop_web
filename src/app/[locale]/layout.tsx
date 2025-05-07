@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
 import Navigation from '@/components/Navigation';
 import '../globals.css';
+import Footer from '@/components/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -37,6 +38,7 @@ export default async function RootLayout({
         <main className="flex-grow pt-16">
           {children}
         </main>
+        <Footer />
       </div>
     </NextIntlClientProvider>
   );

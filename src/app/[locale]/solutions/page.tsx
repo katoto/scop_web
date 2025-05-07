@@ -35,9 +35,9 @@ export default function SolutionsPage() {
   const t = useTranslations('solutions');
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white flex flex-col">
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center bg-gradient-to-r from-blue-600 to-blue-800 w-full">
+      <section className="relative h-[60vh] flex items-center justify-center bg-gradient-to-r from-amber-600 to-amber-800 w-full">
         <div className="w-full px-4 text-center text-white">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
@@ -59,7 +59,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* Solutions Grid */}
-      <section className="py-20">
+      <section className="py-20 flex-grow">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {solutions.map((solution, index) => (
@@ -91,6 +91,7 @@ export default function SolutionsPage() {
           </div>
         </div>
       </section>
+
     </div>
   );
 } 
