@@ -7,8 +7,6 @@ let { t } = useI18n()
 const navigation = {
     main: [
         { name: t('footer.quickLinks.home'), href: '/' },
-        { name: t('footer.quickLinks.solutions'), href: '/solutions' },
-        { name: t('footer.quickLinks.research'), href: '/research' },
         { name: t('footer.quickLinks.about'), href: '/about' },
     ],
     social: [
