@@ -1,4 +1,42 @@
 {
-  "age": "age",
-  "welcome": "welcome"
+  "navigation": {
+    "home": "Home",
+    "solutions": "Solutions",
+    "research": "Research",
+    "news": "News",
+    "brand": "Brand",
+    "about": "About Us",
+    "contact": "Contact"
+  },
+  "solutions": {
+    "title": "Commercial Applications",
+    "subtitle": "Win with Every Degree",
+    "advantages": {
+      "title": "Five Major Advantages",
+      "value": "Let Time Witness Value",
+      "reliability": "Reliability Brings Peace of Mind",
+      "adaptability": "Adaptability for All Seasons",
+      "service": "Service Beyond Expectations",
+      "intelligence": "Intelligence for Precision"
+    },
+    "passenger": {
+      "title": "Passenger Vehicle Solutions",
+      "description": "Providing high-performance, high-safety power battery solutions for passenger vehicles, supporting the development of new energy vehicles."
+    },
+    "commercial": {
+      "title": "Commercial Vehicle Solutions",
+      "description": "Offering reliable and durable power battery systems for commercial vehicles, meeting operational needs in various scenarios."
+    },
+    "energy": {
+      "title": "Energy Storage Solutions",
+      "description": "Providing comprehensive energy storage system solutions, supporting energy transition and sustainable development."
+    },
+    "recycling": {
+      "title": "Recycling Solutions",
+      "description": "Establishing a complete battery recycling system to achieve resource circular utilization and environmental protection."
+    }
+  },
+  "common": {
+    "learnMore": "Learn More"
+  }
 }
