@@ -1,3 +1,8 @@
 <template>
-  <nuxt />
+  <div>
+    <ComHeader />
+    <!-- <nuxt /> -->
+    <slot></slot>
+    <ComFooter />
+  </div>
 </template>
