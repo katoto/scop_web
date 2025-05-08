@@ -1,42 +1,183 @@
 {
-  "navigation": {
-    "home": "Home",
+  "nav": {
     "solutions": "Solutions",
-    "research": "Research",
+    "passenger": "Passenger",
+    "commercialEV": "Commercial EV",
+    "energyStorage": "Energy Storage",
+    "recycling": "Recycling",
+    "rd": "R&D",
     "news": "News",
     "brand": "Brand",
     "about": "About Us",
-    "contact": "Contact"
+    "contact": "Contact Us"
   },
-  "solutions": {
-    "title": "Commercial Applications",
-    "subtitle": "Win with Every Degree",
-    "advantages": {
-      "title": "Five Major Advantages",
-      "value": "Let Time Witness Value",
-      "reliability": "Reliability Brings Peace of Mind",
-      "adaptability": "Adaptability for All Seasons",
-      "service": "Service Beyond Expectations",
-      "intelligence": "Intelligence for Precision"
+  "footer": {
+    "solutions": "Solutions",
+    "rd": "R&D",
+    "innovation": "Innovation",
+    "technology": "Technology",
+    "brand": "Brand",
+    "techBrand": "Tech Brand",
+    "serviceBrand": "Service Brand",
+    "about": "About Us",
+    "culture": "Culture",
+    "strategy": "Strategy",
+    "profile": "Profile",
+    "sustainability": "Sustainability",
+    "careers": "Careers",
+    "copyright": "Contemporary Amperex Technology Co., Limited. All Rights Reserved.",
+    "privacy": "Privacy Policy",
+    "legal": "Legal Notice"
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Global Leading Battery Manufacturer",
+    "overview": {
+      "title": "Company Overview",
+      "description": "Contemporary Amperex Technology Co., Limited (CATL) is a global leader in new energy innovation technology, dedicated to providing first-class solutions and services for global new energy applications.",
+      "mission": {
+        "title": "Mission",
+        "description": "To provide innovative battery solutions for global customers"
+      },
+      "vision": {
+        "title": "Vision",
+        "description": "To become the world's leading battery manufacturer"
+      }
     },
-    "passenger": {
-      "title": "Passenger Vehicle Solutions",
-      "description": "Providing high-performance, high-safety power battery solutions for passenger vehicles, supporting the development of new energy vehicles."
+    "global": {
+      "title": "Global Presence",
+      "description": "CATL has established a complete global network of R&D, manufacturing, sales, and service.",
+      "manufacturing": {
+        "title": "Global Manufacturing",
+        "description": "Production bases established in China, Germany, Hungary, and other locations, achieving global layout."
+      },
+      "rd": {
+        "title": "R&D Centers",
+        "description": "Multiple R&D centers established globally, gathering top talents to drive technological innovation."
+      },
+      "sales": {
+        "title": "Sales Network",
+        "description": "Products sold worldwide, providing power battery solutions for numerous renowned automotive manufacturers."
+      }
     },
-    "commercial": {
-      "title": "Commercial Vehicle Solutions",
-      "description": "Offering reliable and durable power battery systems for commercial vehicles, meeting operational needs in various scenarios."
-    },
-    "energy": {
-      "title": "Energy Storage Solutions",
-      "description": "Providing comprehensive energy storage system solutions, supporting energy transition and sustainable development."
-    },
-    "recycling": {
-      "title": "Recycling Solutions",
-      "description": "Establishing a complete battery recycling system to achieve resource circular utilization and environmental protection."
+    "culture": {
+      "title": "Corporate Culture",
+      "innovation": {
+        "title": "Innovation Driven",
+        "description": "Continuous innovation, leading industry development"
+      },
+      "quality": {
+        "title": "Quality First",
+        "description": "Pursuing excellence, creating premium projects"
+      },
+      "sustainability": {
+        "title": "Sustainable Development",
+        "description": "Practicing green development, building a better future together"
+      }
     }
   },
-  "common": {
-    "learnMore": "Learn More"
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Looking Forward to Your Communication",
+    "headquarters": {
+      "title": "Headquarters",
+      "address": {
+        "title": "Address",
+        "content": "No. 2, Xingang Road, Zhangwan Town, Jiaocheng District, Ningde City, Fujian Province"
+      },
+      "phone": {
+        "title": "Phone",
+        "content": "+86-593-2888888"
+      },
+      "email": {
+        "title": "Email",
+        "content": "contact_catl.com"
+      }
+    },
+    "global": {
+      "title": "Global Contact",
+      "asia": {
+        "title": "Asia",
+        "content": "China, Japan, Korea, India and other regions"
+      },
+      "europe": {
+        "title": "Europe",
+        "content": "Germany, Hungary, France and other regions"
+      },
+      "america": {
+        "title": "Americas",
+        "content": "United States, Canada and other regions"
+      }
+    },
+    "form": {
+      "title": "Online Inquiry",
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Submit"
+    }
+  },
+  "hero": {
+    "title": "Commercial Applications",
+    "subtitle": "Win Every Degree"
+  },
+  "advantages": {
+    "title": "Five Advantages",
+    "value": {
+      "title": "Let Time Witness Value",
+      "desc": "Through black technology innovation combining hardware and software, and material mechanisms of internal maintenance and external protection, CATL achieves longer battery life, better long-term performance, and higher economic benefits."
+    },
+    "reliability": {
+      "title": "Reliability Brings Peace of Mind",
+      "desc": "Five layers of reliability protection from design, testing, materials to production processes and manufacturing procedures ensure each battery is safe, reliable, and durable."
+    },
+    "adaptability": {
+      "title": "All-weather Performance",
+      "desc": "Whether in high temperature, extreme cold, or heavy rain, CATL provides comprehensive protection."
+    },
+    "service": {
+      "title": "Service Beyond Expectations",
+      "desc": "Providing high-quality after-sales service with rapid response standards and a global service network."
+    },
+    "intelligence": {
+      "title": "Intelligence Reveals Details",
+      "desc": "The interconnected intelligent Battery Management System (BMS) makes batteries safer, systems more efficient, and travel more secure."
+    }
+  },
+  "solutions": {
+    "title": "Solutions",
+    "roadPassenger": {
+      "title": "Road Passenger Solutions",
+      "desc": "CATL provides safe, reliable, and durable scenario-based solutions for road passenger transportation, addressing high-frequency usage and high stability requirements."
+    },
+    "cityDelivery": {
+      "title": "City Delivery Solutions",
+      "desc": "CATL power batteries are adapted for light trucks, light buses, mini trucks, and mini vans, widely used in express delivery, supermarket distribution, fresh food, and other scenarios."
+    },
+    "heavyDuty": {
+      "title": "Heavy-duty Transport Solutions",
+      "desc": "CATL provides powerful clean power for heavy-duty transport vehicles, meeting the requirements of mining areas, ports, urban short-haul, and construction projects."
+    },
+    "roadCleaning": {
+      "title": "Road Cleaning Solutions",
+      "desc": "CATL provides customized solutions for different road cleaning vehicle requirements. Battery products feature high safety, long life, and strong environmental adaptability."
+    },
+    "construction": {
+      "title": "Construction Machinery Solutions",
+      "desc": "CATL provides safe, reliable, and durable battery product solutions for construction machinery based on complex working conditions in mining areas and ports."
+    },
+    "twoWheeler": {
+      "title": "Two-wheeler Solutions",
+      "desc": "CATL provides green, intelligent, and safe solutions for two-wheelers, applied in commuting, food delivery, express delivery, and other scenarios."
+    },
+    "marine": {
+      "title": "Marine Solutions",
+      "desc": "CATL provides safe, reliable, and environmentally friendly solutions for ship electrification, contributing to water ecological civilization construction."
+    },
+    "special": {
+      "title": "Special Application Solutions",
+      "desc": "CATL provides green, clean, safe, and reliable product solutions for the electrification development of airport parks and port terminals."
+    }
   }
-}
+} 

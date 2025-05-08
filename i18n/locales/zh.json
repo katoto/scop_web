@@ -1,58 +1,33 @@
 {
-  "navigation": {
-    "home": "首页",
+  "nav": {
     "solutions": "解决方案",
-    "research": "研发创新",
+    "passenger": "乘用车",
+    "commercialEV": "商业应用",
+    "energyStorage": "储能系统",
+    "recycling": "循环回收",
+    "rd": "研发",
     "news": "新闻",
     "brand": "品牌",
     "about": "关于我们",
     "contact": "联系我们"
   },
-  "solutions": {
-    "title": "解决方案",
-    "subtitle": "为全球客户提供创新的电池解决方案",
-    "advantages": {
-      "title": "五大优势",
-      "value": "让时间见证价值",
-      "reliability": "凭可靠传递安心",
-      "adaptability": "因全能畅行寒暑",
-      "service": "用服务超越期待",
-      "intelligence": "以智能洞悉纤毫"
-    },
-    "passenger": {
-      "title": "乘用车解决方案",
-      "description": "为电动汽车提供高性能、高安全性的动力电池系统"
-    },
-    "commercial": {
-      "title": "商用车解决方案",
-      "description": "为商用车提供可靠、耐用的动力电池解决方案"
-    },
-    "energy": {
-      "title": "储能系统解决方案",
-      "description": "为可再生能源存储提供高效、经济的储能系统"
-    },
-    "recycling": {
-      "title": "回收解决方案",
-      "description": "提供完整的电池回收和资源再利用解决方案"
-    }
-  },
-  "research": {
-    "title": "研发创新",
-    "subtitle": "引领电池技术创新",
-    "areas": {
-      "innovation": {
-        "title": "创新研发",
-        "description": "持续投入研发，推动电池技术进步"
-      },
-      "technology": {
-        "title": "技术突破",
-        "description": "突破电池性能瓶颈，提升产品竞争力"
-      },
-      "sustainability": {
-        "title": "可持续发展",
-        "description": "致力于环保和可持续发展"
-      }
-    }
+  "footer": {
+    "solutions": "解决方案",
+    "rd": "研发",
+    "innovation": "创新理念",
+    "technology": "前沿技术",
+    "brand": "品牌",
+    "techBrand": "技术品牌",
+    "serviceBrand": "服务品牌",
+    "about": "关于我们",
+    "culture": "企业文化",
+    "strategy": "企业战略",
+    "profile": "企业简介",
+    "sustainability": "可持续发展",
+    "careers": "加入我们",
+    "copyright": "宁德时代新能源科技股份有限公司 版权所有",
+    "privacy": "隐私政策",
+    "legal": "法律声明"
   },
   "about": {
     "title": "关于我们",
@@ -67,10 +42,6 @@
       "vision": {
         "title": "愿景",
         "description": "成为全球领先的电池制造商"
-      },
-      "values": {
-        "title": "价值观",
-        "description": "创新、品质、可持续发展"
       }
     },
     "global": {
@@ -88,34 +59,125 @@
         "title": "销售网络",
         "description": "产品远销全球，为众多知名汽车制造商提供动力电池解决方案。"
       }
+    },
+    "culture": {
+      "title": "企业文化",
+      "innovation": {
+        "title": "创新驱动",
+        "description": "持续创新，引领行业发展"
+      },
+      "quality": {
+        "title": "品质至上",
+        "description": "追求卓越品质，打造精品工程"
+      },
+      "sustainability": {
+        "title": "可持续发展",
+        "description": "践行绿色发展，共建美好未来"
+      }
     }
   },
-  "footer": {
-    "description": "宁德时代新能源科技股份有限公司是全球领先的新能源创新科技公司，致力于为全球新能源应用提供一流解决方案和服务。",
-    "quickLinks": {
-      "home": "首页",
-      "solutions": "解决方案",
-      "research": "研发创新",
-      "about": "关于我们"
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "期待与您沟通交流",
+    "headquarters": {
+      "title": "总部",
+      "address": {
+        "title": "地址",
+        "content": "福建省宁德市蕉城区漳湾镇新港路2号"
+      },
+      "phone": {
+        "title": "电话",
+        "content": "+86-593-2888888"
+      },
+      "email": {
+        "title": "邮箱",
+        "content": "contact_catl.com"
+      }
     },
-    "contact": "联系我们",
-    "address": "地址：福建省宁德市蕉城区漳湾镇新港路2号",
-    "phone": "电话：+86-593-2888888",
-    "email": "邮箱：contact{'@'}catl.com",
-    "copyright": "宁德时代新能源科技股份有限公司 版权所有",
-    "social": {
-      "wechat": "微信",
-      "weibo": "微博",
-      "linkedin": "领英"
+    "global": {
+      "title": "全球联系方式",
+      "asia": {
+        "title": "亚洲",
+        "content": "中国、日本、韩国、印度等地区"
+      },
+      "europe": {
+        "title": "欧洲",
+        "content": "德国、匈牙利、法国等地区"
+      },
+      "america": {
+        "title": "美洲",
+        "content": "美国、加拿大等地区"
+      }
     },
-    "nav": {
-      "home": "首页",
-      "solutions": "解决方案",
-      "research": "研发创新",
-      "about": "关于我们"
+    "form": {
+      "title": "在线咨询",
+      "name": "姓名",
+      "email": "邮箱",
+      "subject": "主题",
+      "message": "留言内容",
+      "submit": "提交"
     }
   },
-  "common": {
-    "learnMore": "了解更多"
+  "hero": {
+    "title": "商业应用",
+    "subtitle": "赢在每一度"
+  },
+  "advantages": {
+    "title": "五大优势",
+    "value": {
+      "title": "让时间见证价值",
+      "desc": "通过软硬件结合的黑科技创新，以及内养外护的材料机理，让宁德时代实现更长电池寿命，更优长期性能，带来更高的经济效益。"
+    },
+    "reliability": {
+      "title": "凭可靠传递安心",
+      "desc": "从设计、测试、材料到生产工艺和加工流程的五层可靠保障，让每一颗电池都安全可靠，经久耐用。"
+    },
+    "adaptability": {
+      "title": "因全能畅行寒暑",
+      "desc": "无论是高温、低寒还是雨水侵袭，宁德时代都能为您提供全面的保障。"
+    },
+    "service": {
+      "title": "用服务超越期待",
+      "desc": "以急速响应标准和全球化的售后网络，为用户提供高品质的售后服务。"
+    },
+    "intelligence": {
+      "title": "以智能洞悉纤毫",
+      "desc": "环环相扣的智能化电池管理系统（BMS），让电池更安全、让系统更高效、让出行更安心。"
+    }
+  },
+  "solutions": {
+    "title": "解决方案",
+    "roadPassenger": {
+      "title": "道路客运解决方案",
+      "desc": "宁德时代针对道路客运交通高频次使用、高稳定性要求等特点，提供安全、可靠、耐久的场景化解决方案。"
+    },
+    "cityDelivery": {
+      "title": "城市配送解决方案",
+      "desc": "宁德时代动力电池适配在轻型卡车、轻型客车、微型卡车、微型面包车上，广泛应用于快递、商超配送、生鲜等场景。"
+    },
+    "heavyDuty": {
+      "title": "重载运输解决方案",
+      "desc": "宁德时代为重载运输车辆提供澎湃的清洁动力，满足矿区、港口、城市倒短、工程建设等工况要求。"
+    },
+    "roadCleaning": {
+      "title": "城市道路清洁解决方案",
+      "desc": "宁德时代根据不同的道路清洁车辆需求，提供定制化解决方案。电池产品具备高安全、长寿命、强环境适应性等特点。"
+    },
+    "construction": {
+      "title": "工程机械解决方案",
+      "desc": "宁德时代根据矿区、港口等复杂工况特点，为工程机械提供了安全、可靠、耐久的电池产品解决方案。"
+    },
+    "twoWheeler": {
+      "title": "二轮车解决方案",
+      "desc": "宁德时代为两轮车提供绿色、智能、安全的解决方案，应用于通勤、外卖、快递等多个场景。"
+    },
+    "marine": {
+      "title": "船舶解决方案",
+      "desc": "宁德时代为船舶电动化提供安全可靠，绿色环保的解决方案，助力水域生态文明建设。"
+    },
+    "special": {
+      "title": "特种应用解决方案",
+      "desc": "宁德时代为机场园区、港口码头的电动化发展保驾护航，提供了绿色清洁、安全可靠的产品解决方案。"
+    }
   }
-}
+} 
