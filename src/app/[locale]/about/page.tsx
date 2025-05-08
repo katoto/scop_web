@@ -3,7 +3,11 @@
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 
-export default function AboutPage() {
+export default function AboutPage({
+  params: { locale }
+}: {
+  params: any
+}) {
   const t = useTranslations('about');
 
   return (
@@ -92,4 +96,4 @@ export default function AboutPage() {
       </section>
     </div>
   );
-} 
+}
