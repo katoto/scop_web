@@ -20,4 +20,10 @@ export default defineNuxtConfig({
       redirectOn: "root", // recommended
     },
   },
+  plugins: [
+    {
+      src: "@/plugins/useBootstrap.client.js",
+    },
+  ],
+  css: ["bootstrap/dist/css/bootstrap.min.css"],
 });
