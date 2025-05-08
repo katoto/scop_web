@@ -4,18 +4,18 @@ import Navigation from '@/components/Navigation';
 import '../globals.css';
 import Footer from '@/components/Footer';
 
-
 export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'zh' }, { locale: 'ja' }];
 }
 
 export default async function RootLayout({
   children,
-  params: { locale }
+  params
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
   let messages;
   try {
     messages = (await import(`../../messages/${locale}.json`)).default;
@@ -40,4 +40,4 @@ export default async function RootLayout({
       </div>
     </NextIntlClientProvider>
   );
-} 
+}

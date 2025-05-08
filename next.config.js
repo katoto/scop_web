@@ -5,6 +5,9 @@ const nextConfig = {
   images: {
     domains: ['localhost'],
   },
+  // experimental: {
+  //   turbopack: {},
+  // }
 };
 
 module.exports = withNextIntl(nextConfig); 
