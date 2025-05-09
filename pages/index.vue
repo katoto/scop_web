@@ -182,7 +182,7 @@ onMounted(() => {
   width: 100%;
   height: 100%;
   background-color: transparent;
-  background-image: url(https://shilai-workflow-files.oss-cn-shenzhen.aliyuncs.com/850857a3b900461d8152cb3f06de95cf_1.jpeg);
+  background-image: url('../assets/css/WechatIMG3.png');
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
@@ -194,15 +194,15 @@ onMounted(() => {
   position: absolute;
   top: 0;
   left: 50%;
-  width: 80%;
+  width: 20%;
   height: 100%;
   background: linear-gradient(90deg,
       rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.3) 50%,
+      rgba(255, 255, 255, 0.1) 50%,
       rgba(255, 255, 255, 0) 100%);
   transform: skewX(54deg);
   animation: sweep 2s linear infinite;
-  z-index: 1;
+  // z-index: 1;
 }
 
 @keyframes sweep {
