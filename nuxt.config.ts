@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   ],
   ssr: false,
   nitro: {
-    preset: 'netlify',
+    preset: 'netlify-static',
   },
   i18n: {
     locales: [
