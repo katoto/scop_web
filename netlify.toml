@@ -1,9 +1,9 @@
 [build]
   command = "npm run generate"
-  publish = ".output/public"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+  publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "18" 
+  NODE_VERSION = "22" 
+
+[functions]
+  directory = ""

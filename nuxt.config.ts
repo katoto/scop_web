@@ -4,6 +4,10 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/i18n'
   ],
+
+  nitro: {
+    preset: 'netlify-static',
+  },
   i18n: {
     locales: [
       { code: 'zh', iso: 'zh-CN', file: 'zh.json', name: '中文' },
