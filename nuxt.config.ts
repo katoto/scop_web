@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/i18n'
   ],
+  ssr: false,
   i18n: {
     locales: [
       { code: 'zh', iso: 'zh-CN', file: 'zh.json', name: '中文' },
