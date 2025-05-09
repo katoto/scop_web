@@ -5,6 +5,9 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n'
   ],
   ssr: false,
+  nitro: {
+    preset: 'netlify',
+  },
   i18n: {
     locales: [
       { code: 'zh', iso: 'zh-CN', file: 'zh.json', name: '中文' },
