@@ -1,10 +1,16 @@
 <template>
   <div class="contact-page">
     <!-- 页面标题 -->
-    <div class="page-header bg-light py-5">
+    <div class="page-header py-5" style="background-color: #000;">
       <div class="container">
-        <h1 class="display-4">{{ $t('contact.title') }}</h1>
-        <p class="lead">{{ $t('contact.subtitle') }}</p>
+        <div class="header-content">
+          <img src="/images/svg/back.svg" class="back-icon" alt="back" />
+          <img src="/images/svg/icon_gan.svg" class="title-icon" alt="title" />
+          <img src="/images/svg/icon_jingan.svg" class="title-icon" alt="title" />
+          <img src="/images/svg/icon_mogu.svg" class="back-icon" alt="back" />
+          <h1 class="display-4">{{ $t('contact.title') }}</h1>
+          <p class="lead">{{ $t('contact.subtitle') }}</p>
+        </div>
       </div>
     </div>
 
@@ -147,6 +153,26 @@ definePageMeta({
   .page-header {
     background-color: #f8f9fa;
     margin-bottom: 2rem;
+
+    .header-content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+
+      .back-icon,
+      .title-icon {
+        filter: brightness(0) invert(1);
+        width: 24px;
+        height: 24px;
+      }
+
+      .title-icon {
+        width: 32px;
+        height: 32px;
+      }
+    }
   }
 
   .content-product {
