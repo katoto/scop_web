@@ -1,23 +1,64 @@
+<script setup lang="ts">
+
+import { onMounted, onUnmounted, reactive, ref } from 'vue'
+
+let position = reactive({
+  offsetX: 0
+})
+
+let domSize = reactive({
+  width: 0
+})
+let domRef = ref < null | HTMLElement > (null)
+let contentDomref = ref < null | HTMLElement > (null)
+
+const handleMouseMove = (e: MouseEvent) => {
+  if (!contentDomref.value) return
+
+  const { clientX } = e
+  const { width } = domSize
+
+  // Calculate mouse position relative to center
+  const centerX = width / 2
+
+  // Calculate offset (normalized between -1 and 1)
+  position.offsetX = (clientX - centerX) / centerX
+}
+
+const updateDomSize = () => {
+  if (contentDomref.value) {
+    domSize.width = contentDomref.value.offsetWidth
+  }
+}
+
+onMounted(() => {
+  updateDomSize()
+  window.addEventListener('mousemove', handleMouseMove)
+  window.addEventListener('resize', updateDomSize)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('mousemove', handleMouseMove)
+  window.removeEventListener('resize', updateDomSize)
+})
+
+let log = () => {
+  console.log('jjhhh==')
+}
+
+</script>
+
 <template>
-  <div class="container py-5 mt-5">
-    <h1 class="mb-4">{{ $t('nav.news') }}</h1>
-    <div class="row">
-      <div class="col-12">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">{{ $t('nav.news') }}</h5>
-            <p class="card-text">Coming soon...</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <div class="contact-page">
 
     <!-- 背景图 -->
     <div class="content-product" ref="contentDomref">
-      <!-- <div class="content-product-light" ref="domRef"></div> -->
+      <div class="background-wrapper" :style="{
+        transform: `translateX(${position.offsetX * 12}px)`
+      }">
+        <div class="background-content"></div>
+      </div>
       <div class="pinzi-box-wrap">
         <StarCanvas />
         <div class="pinzi-box">
@@ -46,14 +87,9 @@
 
       </div>
     </div>
+
   </div>
 </template>
-
-<script setup>
-definePageMeta({
-  layout: 'default'
-})
-</script>
 <style lang="less" scoped>
 @keyframes sweep {
   0% {
@@ -75,32 +111,52 @@ definePageMeta({
     margin-bottom: 2rem;
   }
 
-
+  // .content-product:hover {
+  //   transform: translateX(-10%);
+  // }
 
   .content-product {
-    background-image: url('/images/bg-line-3.png');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+    position: relative;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 2s;
+    overflow: hidden;
+
+    .background-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.1s ease-out;
+      will-change: transform;
+      z-index: 1;
+
+      .background-content {
+        position: absolute;
+        top: 0;
+        left: -50px;
+        width: calc(100% + 100px);
+        height: 100%;
+        background-image: url('/images/bg-line-3.png');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+    }
 
     .pinzi-box-wrap {
       position: relative;
       width: 100%;
       height: 100vh;
-      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-
+      z-index: 2;
 
       .pinzi-box {
         position: relative;
-        z-index: 2;
         width: 100%;
         height: 100%;
         max-width: 1200px;
@@ -110,8 +166,6 @@ definePageMeta({
         align-items: flex-end;
         padding: 0 20px;
       }
-
-
 
       .card-wrap {
         flex: 1;
