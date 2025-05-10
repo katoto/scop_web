@@ -8,6 +8,20 @@
       </div>
     </div>
 
+    <!-- 背景图 -->
+    <div class="content-product">
+      <ParticlesCanvas>
+      </ParticlesCanvas>
+      <div class="pinzi-box-wrap">
+        <div class="pinzi-box">
+          <img src="/images/pro-3.png" class="pinzi" />
+          <img src="/images/pro-4.png" class="pinzi" />
+          <img src="/images/pro-2.png" class="pinzi" />
+          <img src="/images/pro-1.png" class="pinzi" />
+        </div>
+      </div>
+    </div>
+
     <!-- 公司概况 -->
     <section class="company-overview py-5">
       <div class="container">
@@ -119,7 +133,7 @@
 
   .card {
     transition: transform 0.3s ease;
-    
+
     &:hover {
       transform: translateY(-5px);
     }
@@ -129,4 +143,54 @@
     color: #007bff;
   }
 }
-</style> 
+
+.content-product {
+  background-image: url('/images/bg-line-2.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .pinzi-box-wrap {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .pinzi-box {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: flex-end;
+      padding: 0 20px;
+
+      .pinzi {
+        -webkit-box-reflect: below -6px linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5));
+        width: clamp(100px, 15vw, 180px);
+        height: auto;
+        object-fit: contain;
+        max-width: 100%;
+        transition: transform 0.3s ease;
+        margin: 0 10px;
+
+        @media (max-width: 768px) {
+          width: clamp(80px, 12vw, 140px);
+        }
+
+        @media (max-width: 576px) {
+          width: clamp(60px, 10vw, 100px);
+        }
+      }
+    }
+  }
+}
+</style>
