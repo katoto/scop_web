@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@types/bootstrap": "^5.2.10",
+    "@types/vue": "^1.0.31",
     "less": "^4.3.0"
   }
 }

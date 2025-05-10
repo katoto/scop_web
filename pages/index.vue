@@ -1,5 +1,55 @@
 <script setup lang="ts">
 
+import { onMounted, onUnmounted, reactive, ref } from 'vue'
+
+let position = reactive({
+  offsetX: 0,
+  offsetY: 0
+})
+
+let domSize = reactive({
+  width: 0,
+  height: 0
+})
+let domRef = ref<null | HTMLElement>(null)
+let contentDomref = ref<null | HTMLElement>(null)
+
+
+let handle = (evt: any) => {
+  if (domRef.value) {
+    domSize.width = domRef.value.offsetWidth
+    domSize.height = domRef.value.offsetHeight
+    position.offsetX = domSize.width - evt.x + domSize.width / 2;
+    position.offsetY = domSize.height - evt.y + domSize.height / 2;
+  }
+
+
+}
+
+let handleEnter = (evt: any) => {
+  if (domRef.value && contentDomref.value) {
+    domRef.value.style.width = contentDomref.value.offsetWidth / 2 + 'px'
+    domRef.value.style.height = contentDomref.value.offsetHeight / 2 + 'px'
+  }
+
+}
+
+let handleLeave = (evt: any) => {
+  if (domRef.value && contentDomref.value) {
+    domRef.value.style.width = contentDomref.value.offsetWidth + 'px'
+    domRef.value.style.height = contentDomref.value.offsetHeight + 'px'
+    domRef.value.style.bottom = '0px'
+    domRef.value.style.right = '0px'
+  }
+
+}
+
+
+
+
+
+
+
 </script>
 
 <template>
@@ -7,7 +57,13 @@
   <div class="contact-page">
 
     <!-- 背景图 -->
-    <div class="content-product">
+    <div class="content-product" @mousemove="handle" @mouseenter="handleEnter" @mouseover="handle"
+      @mouseleave="handleLeave" ref="contentDomref">
+      <div class="content-product-light" ref="domRef" :style="{
+        bottom: position.offsetY + 'px',
+        right: position.offsetX + 'px',
+
+      }"></div>
       <div class="pinzi-box-wrap">
         <StarCanvas />
         <div class="pinzi-box">
@@ -43,7 +99,7 @@
   }
 
   .content-product {
-    background-image: url('/images/bg-line-2.png');
+    background-image: url('/images/bg-line-3.png');
     background-size: cover;
     background-position: center;
     min-height: 100vh;
@@ -96,17 +152,17 @@
     }
   }
 
-  .content-product::after {
+  .content-product-light {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, yellow, orange);
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(45deg, orange, rgba(255, 255, 0, 0.508));
     border-radius: 100%;
-    animation: breathe 3s ease-in-out infinite;
+    animation: breathe 2s ease-in-out infinite;
     filter: blur(40px);
+    border: 2px solid red;
   }
 
   @keyframes breathe {
@@ -118,7 +174,7 @@
     }
 
     50% {
-      opacity: 0.7;
+      opacity: 0.4;
       transform: scale(1.2);
     }
   }
