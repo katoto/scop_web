@@ -162,13 +162,13 @@ onMounted(() => {
     <div id="particles-js">
       <div class="pinzi-box-wrap">
         <div class="pinzi-box">
-          <img src="https://shilai-workflow-files.oss-cn-shenzhen.aliyuncs.com/d311402b6ce04e0faf3fae7d5e859aee_pz.png"
+          <img src="/images/pro-3.png"
             class="pinzi" />
-          <img src="https://shilai-workflow-files.oss-cn-shenzhen.aliyuncs.com/d311402b6ce04e0faf3fae7d5e859aee_pz.png"
+          <img src="/images/pro-4.png"
             class="pinzi" />
-          <img src="https://shilai-workflow-files.oss-cn-shenzhen.aliyuncs.com/d311402b6ce04e0faf3fae7d5e859aee_pz.png"
+          <img src="/images/pro-2.png"
             class="pinzi" />
-          <img src="https://shilai-workflow-files.oss-cn-shenzhen.aliyuncs.com/d311402b6ce04e0faf3fae7d5e859aee_pz.png"
+          <img src="/images/pro-1.png"
             class="pinzi" />
         </div>
       </div>
@@ -215,25 +215,33 @@ onMounted(() => {
   }
 }
 
-
 .pinzi-box-wrap {
   height: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 20%;
 }
 
 .pinzi-box {
-  width: 100%;
+  width: 80%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: flex-end;
 }
 
-
-
 .pinzi {
-  -webkit-box-reflect: below -10px linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
-  width: 100px;
+  -webkit-box-reflect: below -6px linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5));
+  width: 140px;
+  height: auto;
+  object-fit: contain;
+  max-width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.pinzi:hover {
+  transform: scale(1.05);
 }
 
 /*Golddust*/
