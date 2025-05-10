@@ -15,38 +15,14 @@ let domRef = ref<null | HTMLElement>(null)
 let contentDomref = ref<null | HTMLElement>(null)
 
 
-let handle = (evt: any) => {
-  if (domRef.value) {
-    domSize.width = domRef.value.offsetWidth
-    domSize.height = domRef.value.offsetHeight
-    position.offsetX = domSize.width - evt.x + domSize.width / 2;
-    position.offsetY = domSize.height - evt.y + domSize.height / 2;
-  }
 
 
+
+
+
+let log = () => {
+  console.log('jjhhh==')
 }
-
-let handleEnter = (evt: any) => {
-  if (domRef.value && contentDomref.value) {
-    domRef.value.style.width = contentDomref.value.offsetWidth / 2 + 'px'
-    domRef.value.style.height = contentDomref.value.offsetHeight / 2 + 'px'
-  }
-
-}
-
-let handleLeave = (evt: any) => {
-  if (domRef.value && contentDomref.value) {
-    domRef.value.style.width = contentDomref.value.offsetWidth + 'px'
-    domRef.value.style.height = contentDomref.value.offsetHeight + 'px'
-    domRef.value.style.bottom = '0px'
-    domRef.value.style.right = '0px'
-  }
-
-}
-
-
-
-
 
 
 
@@ -57,21 +33,40 @@ let handleLeave = (evt: any) => {
   <div class="contact-page">
 
     <!-- 背景图 -->
-    <div class="content-product" @mousemove="handle" @mouseenter="handleEnter" @mouseover="handle"
-      @mouseleave="handleLeave" ref="contentDomref">
-      <div class="content-product-light" ref="domRef" :style="{
-        bottom: position.offsetY + 'px',
-        right: position.offsetX + 'px',
-
-      }"></div>
+    <div class="content-product" ref="contentDomref">
+      <!-- <div class="content-product-light" ref="domRef"></div> -->
       <div class="pinzi-box-wrap">
         <StarCanvas />
-        <div class="pinzi-box">
-          <img src="/images/pro-3.png" class="pinzi" />
+        <!-- <div class="pinzi-box">
+          <img src="/images/pro-3.png" class="pinzi" @click="log" />
           <img src="/images/pro-4.png" class="pinzi" />
           <img src="/images/pro-2.png" class="pinzi" />
           <img src="/images/pro-1.png" class="pinzi" />
+        </div> -->
+        <div class="pinzi-box">
+          <div class="card-wrap">
+            <BreatheCard background="linear-gradient(45deg, yellow, rgba(255, 255, 255, 0.508))" animationDelay="0">
+              <img src="/images/pro-3.png" class="pinzi" />
+            </BreatheCard>
+          </div>
+          <div class="card-wrap">
+            <BreatheCard background="linear-gradient(45deg, green, rgba(255, 255, 255, 0.508))" animationDelay="0.2s">
+              <img src="/images/pro-4.png" class="pinzi" />
+            </BreatheCard>
+          </div>
+          <div class="card-wrap">
+            <BreatheCard background="linear-gradient(45deg, red, rgba(255, 255, 255, 0.508))" animationDelay="0.3s">
+              <img src="/images/pro-2.png" class="pinzi" />
+            </BreatheCard>
+          </div>
+          <div class="card-wrap">
+            <BreatheCard background="linear-gradient(45deg, orange, rgba(255, 255, 255, 0.508))" animationDelay="0.4s">
+              <img src="/images/pro-1.png" class="pinzi" />
+            </BreatheCard>
+          </div>
+
         </div>
+
       </div>
     </div>
 
@@ -98,14 +93,20 @@ let handleLeave = (evt: any) => {
     margin-bottom: 2rem;
   }
 
+  .content-product:hover {
+    transform: translateX(-10%);
+  }
+
   .content-product {
     background-image: url('/images/bg-line-3.png');
     background-size: cover;
-    background-position: center;
+    background-position: center center;
+    background-repeat: no-repeat;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 2s;
 
     .pinzi-box-wrap {
       position: relative;
@@ -116,38 +117,51 @@ let handleLeave = (evt: any) => {
       align-items: center;
       justify-content: center;
 
+
       .pinzi-box {
         position: relative;
         z-index: 2;
         width: 100%;
+        height: 100%;
         max-width: 1200px;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         align-items: flex-end;
         padding: 0 20px;
+      }
 
-        .pinzi {
-          -webkit-box-reflect: below -6px linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5));
-          width: clamp(100px, 15vw, 180px);
-          height: auto;
-          object-fit: contain;
-          max-width: 100%;
-          transition: transform 0.3s ease;
-          margin: 0 10px;
 
-          @media (max-width: 768px) {
-            width: clamp(80px, 12vw, 140px);
-          }
 
-          @media (max-width: 576px) {
-            width: clamp(60px, 10vw, 100px);
-          }
+      .card-wrap {
+        flex: 1;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+      }
+
+      .pinzi {
+        -webkit-box-reflect: below -6px linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5));
+        width: clamp(100px, 15vw, 180px);
+        height: auto;
+        object-fit: contain;
+        max-width: 100%;
+        transition: transform 0.3s ease;
+        margin: 0 10px;
+
+        @media (max-width: 768px) {
+          width: clamp(80px, 12vw, 140px);
         }
 
-        .pinzi:hover {
-          transform: scale(1.05);
+        @media (max-width: 576px) {
+          width: clamp(60px, 10vw, 100px);
         }
+      }
+
+      .pinzi:hover {
+        transform: scale(1.05);
       }
     }
   }
