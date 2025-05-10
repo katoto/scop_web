@@ -3,28 +3,48 @@
 import { onMounted, onUnmounted, reactive, ref } from 'vue'
 
 let position = reactive({
-  offsetX: 0,
-  offsetY: 0
+  offsetX: 0
 })
 
 let domSize = reactive({
-  width: 0,
-  height: 0
+  width: 0
 })
 let domRef = ref<null | HTMLElement>(null)
 let contentDomref = ref<null | HTMLElement>(null)
 
+const handleMouseMove = (e: MouseEvent) => {
+  if (!contentDomref.value) return
+  
+  const { clientX } = e
+  const { width } = domSize
+  
+  // Calculate mouse position relative to center
+  const centerX = width / 2
+  
+  // Calculate offset (normalized between -1 and 1)
+  position.offsetX = (clientX - centerX) / centerX
+}
 
+const updateDomSize = () => {
+  if (contentDomref.value) {
+    domSize.width = contentDomref.value.offsetWidth
+  }
+}
 
+onMounted(() => {
+  updateDomSize()
+  window.addEventListener('mousemove', handleMouseMove)
+  window.addEventListener('resize', updateDomSize)
+})
 
-
-
+onUnmounted(() => {
+  window.removeEventListener('mousemove', handleMouseMove)
+  window.removeEventListener('resize', updateDomSize)
+})
 
 let log = () => {
   console.log('jjhhh==')
 }
-
-
 
 </script>
 
@@ -34,15 +54,13 @@ let log = () => {
 
     <!-- 背景图 -->
     <div class="content-product" ref="contentDomref">
-      <!-- <div class="content-product-light" ref="domRef"></div> -->
+      <div class="background-wrapper" :style="{
+        transform: `translateX(${position.offsetX * 12}px)`
+      }">
+        <div class="background-content"></div>
+      </div>
       <div class="pinzi-box-wrap">
         <StarCanvas />
-        <!-- <div class="pinzi-box">
-          <img src="/images/pro-3.png" class="pinzi" @click="log" />
-          <img src="/images/pro-4.png" class="pinzi" />
-          <img src="/images/pro-2.png" class="pinzi" />
-          <img src="/images/pro-1.png" class="pinzi" />
-        </div> -->
         <div class="pinzi-box">
           <div class="card-wrap">
             <BreatheCard background="linear-gradient(45deg, yellow, rgba(255, 255, 255, 0.508))" animationDelay="0">
@@ -93,34 +111,52 @@ let log = () => {
     margin-bottom: 2rem;
   }
 
-  .content-product:hover {
-    transform: translateX(-10%);
-  }
+  // .content-product:hover {
+  //   transform: translateX(-10%);
+  // }
 
   .content-product {
-    background-image: url('/images/bg-line-3.png');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+    position: relative;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 2s;
+    overflow: hidden;
+
+    .background-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.1s ease-out;
+      will-change: transform;
+      z-index: 1;
+
+      .background-content {
+        position: absolute;
+        top: 0;
+        left: -50px;
+        width: calc(100% + 100px);
+        height: 100%;
+        background-image: url('/images/bg-line-3.png');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+    }
 
     .pinzi-box-wrap {
       position: relative;
       width: 100%;
       height: 100vh;
-      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-
+      z-index: 2;
 
       .pinzi-box {
         position: relative;
-        z-index: 2;
         width: 100%;
         height: 100%;
         max-width: 1200px;
@@ -130,8 +166,6 @@ let log = () => {
         align-items: flex-end;
         padding: 0 20px;
       }
-
-
 
       .card-wrap {
         flex: 1;
