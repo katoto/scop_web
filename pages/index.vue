@@ -96,6 +96,33 @@
     }
   }
 
+  .content-product::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, yellow, orange);
+    border-radius: 100%;
+    animation: breathe 3s ease-in-out infinite;
+    filter: blur(40px);
+  }
+
+  @keyframes breathe {
+
+    0%,
+    100% {
+      opacity: 0.3;
+      transform: scale(0.9);
+    }
+
+    50% {
+      opacity: 0.7;
+      transform: scale(1.2);
+    }
+  }
+
   .content-product::before {
     content: '';
     position: absolute;
