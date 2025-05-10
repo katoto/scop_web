@@ -8,6 +8,19 @@
       </div>
     </div>
 
+    <!-- 背景图 -->
+    <div class="content-product">
+      <div class="pinzi-box-wrap">
+        <StarCanvas />
+        <div class="pinzi-box">
+          <img src="/images/pro-3.png" class="pinzi" />
+          <img src="/images/pro-4.png" class="pinzi" />
+          <img src="/images/pro-2.png" class="pinzi" />
+          <img src="/images/pro-1.png" class="pinzi" />
+        </div>
+      </div>
+    </div>
+
     <!-- 联系信息 -->
     <section class="contact-info py-5">
       <div class="container">
@@ -95,6 +108,8 @@
 </template>
 
 <script setup>
+import StarCanvas from '~/components/StarCanvas.vue'
+
 const form = ref({
   name: '',
   email: '',
@@ -107,18 +122,55 @@ const submitForm = () => {
   console.log('Form submitted:', form.value)
   // 这里可以添加表单提交逻辑
 }
+
+definePageMeta({
+  layout: 'default'
+})
 </script>
 
 <style lang="less" scoped>
 .contact-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+
   .page-header {
     background-color: #f8f9fa;
     margin-bottom: 2rem;
   }
 
+  .content-product {
+    background-image: url('/images/bg-line-2.png');
+
+    .pinzi-box-wrap {
+      position: relative;
+      height: 800px;
+      overflow: hidden;
+
+      .pinzi-box {
+        position: relative;
+        z-index: 2;
+        height: 400px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-end;
+
+        .pinzi {
+          -webkit-box-reflect: below -6px linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5));
+          width: 140px;
+          height: auto;
+          object-fit: contain;
+          max-width: 100%;
+          transition: transform 0.3s ease;
+        }
+      }
+    }
+  }
+
   .card {
     transition: transform 0.3s ease;
-    
+
     &:hover {
       transform: translateY(-5px);
     }
@@ -135,4 +187,4 @@ const submitForm = () => {
     padding: 0.75rem 2rem;
   }
 }
-</style> 
+</style>
