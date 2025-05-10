@@ -129,6 +129,16 @@ definePageMeta({
 </script>
 
 <style lang="less" scoped>
+@keyframes sweep {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 200%;
+  }
+}
+
 .contact-page {
   position: relative;
   min-height: 100vh;
@@ -141,31 +151,70 @@ definePageMeta({
 
   .content-product {
     background-image: url('/images/bg-line-2.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     .pinzi-box-wrap {
       position: relative;
-      height: 800px;
+      width: 100%;
+      height: 100vh;
       overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       .pinzi-box {
         position: relative;
         z-index: 2;
-        height: 400px;
+        width: 100%;
+        max-width: 1200px;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         align-items: flex-end;
+        padding: 0 20px;
 
         .pinzi {
           -webkit-box-reflect: below -6px linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5));
-          width: 140px;
+          width: clamp(100px, 15vw, 180px);
           height: auto;
           object-fit: contain;
           max-width: 100%;
           transition: transform 0.3s ease;
+          margin: 0 10px;
+
+          @media (max-width: 768px) {
+            width: clamp(80px, 12vw, 140px);
+          }
+
+          @media (max-width: 576px) {
+            width: clamp(60px, 10vw, 100px);
+          }
         }
       }
     }
+
+
+  }
+
+  .content-product::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 20%;
+    height: 100%;
+    background: linear-gradient(90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%);
+    transform: skewX(54deg);
+    animation: sweep 4s linear infinite;
+    // z-index: 1;
   }
 
   .card {
