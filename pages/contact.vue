@@ -197,8 +197,6 @@ definePageMeta({
         }
       }
     }
-
-
   }
 
   .content-product::before {
