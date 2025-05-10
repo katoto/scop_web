@@ -195,6 +195,10 @@ definePageMeta({
             width: clamp(60px, 10vw, 100px);
           }
         }
+
+        .pinzi:hover {
+          transform: scale(1.05);
+        }
       }
     }
   }
