@@ -150,7 +150,7 @@ const updateDomSize = () => {
 const getAnimationDelay = (index: number) => {
   // 对于4个产品：index 1和2先出现（延迟0.5s），index 0和3后出现（延迟1.2s）
   const isMiddle = index === 1 || index === 2;
-  return isMiddle ? 0.5 : 1.2;
+  return isMiddle ? 0.1 : 0.5;
 };
 
 onMounted(() => {
@@ -166,7 +166,7 @@ onMounted(() => {
       setTimeout(() => {
         showBlockGold.value = true;
         showBlockOrange.value = true;
-      }, 700); // 700ms后再显示两侧色块，和产品动画延迟一致
+      }, 600); // 700ms后再显示两侧色块，和产品动画延迟一致
     }, 500);
   }, 1000);
 
@@ -301,8 +301,8 @@ let log = () => {
       .background-image {
         position: absolute;
         top: 0;
-        left: 0;
-        width: 100%;
+        left: -5%;
+        width: 110%;
         height: 100%;
         background-image: url("/images/bg-line-2.png");
         background-size: cover;
