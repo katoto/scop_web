@@ -210,7 +210,7 @@ let isShowColorBg = (num: number) => {
         <div v-if="showBlockRed && isShowColorBg(2)" :style="{
           width: selectedProduct === null ? 'calc(25vw + 20px)' : '100%',
           left: selectedProduct === null ? 'calc(50vw - 10px)' : '0'
-        }" class="bg-breath-block red"></div>
+        }" class="bg-breath-block-red  red"></div>
         <div v-if="showBlockGold && isShowColorBg(0)" :style="{
           width: selectedProduct === null ? 'calc(25vw + 20px)' : '100%',
           left: selectedProduct === null ? 'calc(25vw + 20px)' : '0'
@@ -352,6 +352,18 @@ let isShowColorBg = (num: number) => {
         transition: opacity 8s cubic-bezier(0.4, 0, 0.2, 1);
       }
 
+      .bg-breath-block-red {
+        position: absolute;
+        top: -10px;
+        height: calc(100vh + 20px);
+        border-radius: 48px;
+        filter: blur(110px);
+        animation: breathOpacityRed 1.6s ease-in-out infinite alternate;
+        will-change: opacity;
+        opacity: 0;
+        transition: opacity 8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
       .gold {
         background: rgba(230, 255, 0, 0.9);
         left: -10px;
@@ -361,7 +373,7 @@ let isShowColorBg = (num: number) => {
       }
 
       .green {
-        background: rgba(0, 220, 0, 0.9);
+        background: rgba(0, 220, 0, 0.6);
         left: calc(25vw - 10px);
         width: calc(25vw + 20px);
         // animation-delay: 0.8s;
@@ -369,7 +381,7 @@ let isShowColorBg = (num: number) => {
       }
 
       .red {
-        background: rgba(255, 0, 0, 0.9);
+        background: rgba(255, 0, 0, 1);
         left: calc(50vw - 10px);
         width: calc(25vw + 30px);
         // animation-delay: 1.6s;
@@ -914,6 +926,16 @@ let isShowColorBg = (num: number) => {
 
   100% {
     opacity: 0.5;
+  }
+}
+
+@keyframes breathOpacityRed {
+  0% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 0.7;
   }
 }
 </style>
