@@ -183,6 +183,12 @@ onUnmounted(() => {
 let log = () => {
   console.log("jjhhh==");
 };
+let isShowColorBg = (num: number) => {
+  if (selectedProduct.value === null) {
+    return true;
+  }
+  return selectedProduct.value === num;
+}
 </script>
 
 <template>
@@ -197,10 +203,22 @@ let log = () => {
     <div class="content-product" ref="contentDomref">
       <div class="background-wrapper" :style="{ transform: `translateX(${position.offsetX * 20}px)` }">
         <div class="background-image"></div>
-        <div v-if="showBlockGreen" class="bg-breath-block green"></div>
-        <div v-if="showBlockRed" class="bg-breath-block red"></div>
-        <div v-if="showBlockGold" class="bg-breath-block gold"></div>
-        <div v-if="showBlockOrange" class="bg-breath-block orange"></div>
+        <div v-if="showBlockGreen && isShowColorBg(1)" :style="{
+          width: selectedProduct === null ? 'calc(25vw + 20px)' : '100%',
+          left: selectedProduct === null ? 'calc(25vw - 10px)' : '0'
+        }" class="bg-breath-block green"></div>
+        <div v-if="showBlockRed && isShowColorBg(2)" :style="{
+          width: selectedProduct === null ? 'calc(25vw + 20px)' : '100%',
+          left: selectedProduct === null ? 'calc(50vw - 10px)' : '0'
+        }" class="bg-breath-block red"></div>
+        <div v-if="showBlockGold && isShowColorBg(0)" :style="{
+          width: selectedProduct === null ? 'calc(25vw + 20px)' : '100%',
+          left: selectedProduct === null ? 'calc(25vw + 20px)' : '0'
+        }" class="bg-breath-block gold"></div>
+        <div v-if="showBlockOrange && isShowColorBg(3)" :style="{
+          width: selectedProduct === null ? 'calc(25vw + 20px)' : '100%',
+          left: selectedProduct === null ? 'calc(75vw - 10px)' : '0'
+        }" class="bg-breath-block orange"></div>
       </div>
       <div class="pinzi-box-wrap" :class="{ 'detail-mode': selectedProduct !== null }">
         <StarCanvas />
@@ -335,7 +353,7 @@ let log = () => {
       }
 
       .gold {
-        background: rgba(230, 255, 0);
+        background: rgba(230, 255, 0, 0.9);
         left: -10px;
         width: calc(25vw + 20px);
         animation-delay: 0s;
@@ -343,7 +361,7 @@ let log = () => {
       }
 
       .green {
-        background: rgba(0, 220, 0);
+        background: rgba(0, 220, 0, 0.9);
         left: calc(25vw - 10px);
         width: calc(25vw + 20px);
         // animation-delay: 0.8s;
@@ -351,7 +369,7 @@ let log = () => {
       }
 
       .red {
-        background: rgba(255, 0, 0);
+        background: rgba(255, 0, 0, 0.9);
         left: calc(50vw - 10px);
         width: calc(25vw + 30px);
         // animation-delay: 1.6s;
@@ -359,7 +377,7 @@ let log = () => {
       }
 
       .orange {
-        background: rgba(255, 114, 0);
+        background: rgba(255, 114, 0, 0.9);
         left: calc(75vw - 10px);
         width: calc(25vw + 20px);
         // animation-delay: 2.2s;
