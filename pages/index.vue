@@ -605,6 +605,7 @@ let isShowColorBg = (num: number) => {
             0,
             0.15) 100%);
       transition: all 0.6s ease-in-out;
+      opacity: 1;
 
       &.animating {
         position: relative;
@@ -618,7 +619,7 @@ let isShowColorBg = (num: number) => {
       position: relative;
       top: 20px;
       left: 20px;
-
+      opacity: 0;
     }
   }
 
