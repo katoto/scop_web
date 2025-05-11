@@ -35,7 +35,7 @@ const products = [
     name: "产品一",
     description:
       "这是产品一的详细介绍。这是一个创新的解决方案，能够帮助用户更好地完成工作。",
-    image: "/images/pro-1.png",
+    image: "/images/pro-3.png",
     color: "linear-gradient(135deg, rgba(255, 107, 107, 0.7), rgba(255, 230, 109, 0.5))",
     animationType: "default"
   },
@@ -44,7 +44,7 @@ const products = [
     name: "产品二",
     description:
       "这是产品二的详细介绍。这是一个革命性的产品，能够改变用户的生活方式。",
-    image: "/images/pro-2.png",
+    image: "/images/pro-4.png",
     color: "linear-gradient(135deg, rgba(78, 205, 196, 0.7), rgba(85, 98, 112, 0.5))",
     animationType: "wave"
   },
@@ -53,7 +53,7 @@ const products = [
     name: "产品三",
     description:
       "这是产品三的详细介绍。这是一个突破性的技术，能够提升用户的工作效率。",
-    image: "/images/pro-3.png",
+    image: "/images/pro-2.png",
     color: "linear-gradient(135deg, rgba(168, 230, 207, 0.7), rgba(255, 211, 182, 0.5))",
     animationType: "pulse"
   },
@@ -62,7 +62,7 @@ const products = [
     name: "产品四",
     description:
       "这是产品四的详细介绍。这是一个创新的设计，能够满足用户的多样化需求。",
-    image: "/images/pro-4.png",
+    image: "/images/pro-1.png",
     color: "linear-gradient(135deg, rgba(184, 242, 230, 0.7), rgba(255, 166, 158, 0.5))",
     animationType: "float"
   },
