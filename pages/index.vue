@@ -23,6 +23,7 @@ let detailImgBlockRef = ref<HTMLElement | null>(null);
 let showIntro = ref(true);
 let showLogo = ref(true);
 let showProducts = ref(false);
+let isTransitioning = ref(false);
 
 const products = [
   {
@@ -60,18 +61,23 @@ const products = [
 ];
 
 const handleProductClick = async (index: number, e: MouseEvent) => {
-  // 获取被点击图片的DOM位置
+  if (isTransitioning.value) return;
+  isTransitioning.value = true;
+
   const img = (e.currentTarget as HTMLElement).querySelector(
     "img"
   ) as HTMLElement;
   if (!img) return;
   const startRect = img.getBoundingClientRect();
-  // 先显示详情页（但内容不显示），以便渲染出目标容器
+  showProducts.value = false;
   selectedProduct.value = index;
   await nextTick();
-  // 获取详情页图片容器的实际位置和尺寸
+
   const detailBlock = detailImgBlockRef.value;
-  if (!detailBlock) return;
+  if (!detailBlock) {
+    isTransitioning.value = false;
+    return;
+  }
   const endRect = detailBlock.getBoundingClientRect();
   animatingProduct.value = {
     image: products[index].image,
@@ -81,26 +87,37 @@ const handleProductClick = async (index: number, e: MouseEvent) => {
     animating: true,
   };
   await nextTick();
-  // 触发动画
-  setTimeout(() => {
-    if (animatingProduct.value) {
-      animatingProduct.value = {
-        ...animatingProduct.value,
-        startRect: animatingProduct.value.endRect,
-        endRect: animatingProduct.value.endRect,
-        animating: false,
-      };
-    }
-  }, 20);
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      if (animatingProduct.value) {
+        animatingProduct.value = {
+          ...animatingProduct.value,
+          startRect: animatingProduct.value.endRect,
+          endRect: animatingProduct.value.endRect,
+          animating: false,
+        };
+      }
+    });
+  });
 };
 
 const handleTransitionEnd = () => {
-  animatingProduct.value = null;
+  setTimeout(() => {
+    animatingProduct.value = null;
+    isTransitioning.value = false;
+  }, 50);
 };
 
 const handleCloseDetail = () => {
-  selectedProduct.value = null;
-  animatingProduct.value = null;
+  if (isTransitioning.value) return;
+  isTransitioning.value = true;
+  showProducts.value = true;
+  setTimeout(() => {
+    selectedProduct.value = null;
+    animatingProduct.value = null;
+    isTransitioning.value = false;
+  }, 400);
 };
 
 const handleMouseMove = (e: MouseEvent) => {
@@ -154,7 +171,7 @@ let log = () => {
 </script>
 
 <template>
-  <div v-if="showIntro" class="intro-layer">
+  <div v-if="showIntro" class="intro-layer" :class="{ 'fade-out': !showLogo }">
     <div class="logo-background"></div>
     <div class="company-logo" :class="{ 'fade-out': !showLogo }">
       <img src="/images/logo.png" alt="公司logo" />
@@ -187,7 +204,7 @@ let log = () => {
           </div>
         </div>
         <!-- 动画和详情共用同一个img -->
-        <div v-if="selectedProduct !== null" class="product-detail-full">
+        <div v-if="selectedProduct !== null" class="product-detail-full" :class="{ 'fade-out': showProducts }">
           <button class="back-btn" @click="handleCloseDetail">
             <svg width="48" height="48" viewBox="0 0 48 48">
               <circle cx="24" cy="24" r="23" stroke="#fff" stroke-width="2" fill="none" />
@@ -208,11 +225,9 @@ let log = () => {
                   transition: 'all 0.5s cubic-bezier(.4,1.6,.6,1)',
                 }
                 : {}
-                " @transitionend="
-                  !animatingProduct?.animating && handleTransitionEnd()
-                  " />
+                " @transitionend="!animatingProduct?.animating && handleTransitionEnd()" />
           </div>
-          <div class="detail-content-block" v-show="!animatingProduct">
+          <div class="detail-content-block" :class="{ 'hidden': animatingProduct }">
             <div class="icon-title">
               <span class="icon">🍄</span>
               <span class="title">{{ products[selectedProduct].name }}&nbsp;CP-101</span>
@@ -251,10 +266,6 @@ let log = () => {
     margin-bottom: 2rem;
   }
 
-  // .content-product:hover {
-  //   transform: translateX(-10%);
-  // }
-
   .content-product {
     position: relative;
     min-height: 100vh;
@@ -285,406 +296,437 @@ let log = () => {
         background-repeat: no-repeat;
       }
     }
+  }
+}
 
-    .pinzi-box-wrap {
-      position: relative;
-      width: 100%;
-      height: 120vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 2;
+.pinzi-box-wrap {
+  position: relative;
+  width: 100%;
+  height: 120vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  pointer-events: auto;
 
-      &.detail-mode {
-        .pinzi-box {
-          transform: translateX(-30%);
-        }
-      }
+  &.detail-mode {
+    pointer-events: none;
 
-      .pinzi-box {
-        position: relative;
-        width: 100%;
-        max-width: 1200px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        padding: 0 20px;
-        padding-bottom: 50px;
-      }
-
-      .card-wrap {
-        flex: 1;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        cursor: pointer;
-        opacity: 0;
-        transform: scale(0.9);
-        transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-
-        &.middle-product {
-          transition-duration: 1s;
-        }
-
-        &.side-product {
-          transition-duration: 1.2s;
-        }
-
-        &.show-product {
-          opacity: 1;
-          transform: scale(1);
-
-          .pinzi {
-            filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.2));
-          }
-        }
-
-        &.fade-out {
-          opacity: 0;
-          transform: scale(0.9);
-        }
-
-        .pinzi {
-          -webkit-box-reflect: below -14px linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0.4) 100%);
-          width: clamp(100px, 15vw, 180px);
-          height: auto;
-          object-fit: contain;
-          max-width: 100%;
-          transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-          margin: 0 10px;
-          filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
-        }
-      }
-
-      .pinzi:hover {
-        transform: scale(1.05);
-      }
+    .pinzi-box {
+      opacity: 0;
+      transform: scale(0.95);
+      pointer-events: none;
     }
   }
 
-  .content-product-light {
-    content: "";
-    position: absolute;
+  .pinzi-box {
+    position: relative;
     width: 100%;
-    height: 100%;
-
-    background: linear-gradient(45deg, orange, rgba(255, 255, 0, 0.508));
-    border-radius: 100%;
-    animation: breathe 2s ease-in-out infinite;
-    filter: blur(40px);
-    border: 2px solid red;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 20px;
+    padding-bottom: 50px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center center;
   }
 
-  @keyframes breathe {
-
-    0%,
-    100% {
-      opacity: 0.3;
-      transform: scale(0.9);
-    }
-
-    50% {
-      opacity: 0.4;
-      transform: scale(1.2);
-    }
-  }
-
-  .content-product::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 20%;
-    height: 100%;
-    background: linear-gradient(90deg,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 0.1) 50%,
-        rgba(255, 255, 255, 0) 100%);
-    transform: skewX(54deg);
-    animation: sweep 4s linear infinite;
-    // z-index: 1;
-  }
-
-  .card {
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: translateY(-5px);
-    }
-  }
-
-  .form-control {
-    &:focus {
-      box-shadow: none;
-      border-color: #007bff;
-    }
-  }
-
-  .btn-primary {
-    padding: 0.75rem 2rem;
-  }
-
-  .product-detail-full {
+  .card-wrap {
+    flex: 1;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    will-change: transform, opacity;
+    pointer-events: auto;
+
+    &.middle-product {
+      transition-duration: 0.6s;
+    }
+
+    &.side-product {
+      transition-duration: 0.8s;
+    }
+
+    &.show-product {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+
+      .pinzi {
+        filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.2));
+      }
+    }
+
+    &.fade-out {
+      opacity: 0;
+      transform: scale(0.9) translateY(20px);
+      pointer-events: none;
+    }
+
+    .pinzi {
+      -webkit-box-reflect: below -14px linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0.4) 100%);
+      width: clamp(100px, 15vw, 180px);
+      height: auto;
+      object-fit: contain;
+      max-width: 100%;
+      transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+      margin: 0 10px;
+      filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+      will-change: transform, filter;
+      pointer-events: auto;
+    }
+
+    &:hover .pinzi {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.product-detail-full {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  background: none;
+  animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+  pointer-events: auto;
+
+  &.fade-out {
+    opacity: 0;
+    transform: scale(0.98);
+    pointer-events: none;
+  }
+
+  .back-btn {
     position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 10;
+    top: 40px;
+    left: 40px;
     background: none;
-    animation: fadeIn 0.5s;
+    border: none;
+    cursor: pointer;
+    z-index: 20;
+    transition: all 0.3s ease;
+    pointer-events: auto;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    svg {
+      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
+    }
+  }
+
+  .detail-img-block {
+    width: 320px;
+    min-width: 220px;
+    max-width: 380px;
+    height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 80px;
+    margin-right: 60px;
+
+    .detail-img {
+      width: 260px;
+      height: 340px;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.18));
+      -webkit-box-reflect: below -10px linear-gradient(transparent 60%, rgba(0, 0, 0, 0.15) 100%);
+
+      &.animating {
+        transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+    }
+  }
+
+  .detail-content-block {
+    flex: 1;
+    max-width: 600px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-right: 80px;
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    will-change: transform, opacity;
+
+    &.hidden {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+
+    .icon-title {
+      display: flex;
+      align-items: center;
+      font-size: 2.6rem;
+      font-weight: bold;
+      letter-spacing: 0.2em;
+      margin-bottom: 32px;
+      transform: translateY(0);
+      transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+      .icon {
+        font-size: 2.2rem;
+        margin-right: 18px;
+      }
+
+      .title {
+        font-size: 2.2rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+      }
+    }
+
+    .desc-list {
+      font-size: 1.3rem;
+      line-height: 2.2rem;
+      margin-bottom: 36px;
+      letter-spacing: 0.18em;
+      transform: translateY(0);
+      transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s;
+
+      div {
+        margin-bottom: 8px;
+        opacity: 1;
+        transform: translateY(0);
+        transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+    }
+
+    .detail-btn {
+      background: #fff;
+      color: #1a2b0d;
+      border: 2px solid #fff;
+      border-radius: 4px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      padding: 8px 24px;
+      cursor: pointer;
+      letter-spacing: 0.18em;
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      opacity: 1;
+      transform: translateY(0);
+
+      &:hover {
+        background: #e6f5c9;
+        color: #1a2b0d;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .product-detail-full {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: auto;
+    min-height: 100vh;
+    padding-top: 60px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 
     .back-btn {
-      position: absolute;
-      top: 40px;
-      left: 40px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      z-index: 20;
+      top: 16px;
+      left: 16px;
+      width: 36px;
+      height: 36px;
 
       svg {
-        filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
+        width: 36px;
+        height: 36px;
       }
     }
 
     .detail-img-block {
-      width: 320px;
-      min-width: 220px;
-      max-width: 380px;
-      height: 420px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-left: 80px;
-      margin-right: 60px;
+      margin: 20px 0;
+      width: 90%;
+      max-width: 300px;
+      height: auto;
+      aspect-ratio: 3/4;
 
       .detail-img {
-        width: 260px;
-        height: 340px;
-        object-fit: contain;
-        filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.18));
-        -webkit-box-reflect: below -10px linear-gradient(transparent 60%, rgba(0,
-              0,
-              0,
-              0.15) 100%);
-        transition: all 0.5s cubic-bezier(0.4, 1.6, 0.6, 1);
+        width: 100%;
+        height: auto;
+        max-width: 260px;
+        max-height: 340px;
       }
     }
 
     .detail-content-block {
-      flex: 1;
-      max-width: 600px;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-      margin-right: 80px;
+      margin: 0;
+      padding: 0 20px 40px;
+      width: 100%;
+      align-items: center;
+      text-align: center;
 
       .icon-title {
-        display: flex;
-        align-items: center;
-        font-size: 2.6rem;
-        font-weight: bold;
-        letter-spacing: 0.2em;
-        margin-bottom: 32px;
+        font-size: 2rem;
+        margin-bottom: 24px;
+        flex-direction: column;
+        gap: 12px;
 
         .icon {
-          font-size: 2.2rem;
-          margin-right: 18px;
+          font-size: 2.4rem;
+          margin: 0;
         }
 
         .title {
-          font-size: 2.2rem;
-          font-weight: 700;
-          letter-spacing: 0.18em;
+          font-size: 1.8rem;
         }
       }
 
       .desc-list {
-        font-size: 1.3rem;
-        line-height: 2.2rem;
-        margin-bottom: 36px;
-        letter-spacing: 0.18em;
-
-        div {
-          margin-bottom: 8px;
-        }
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 32px;
+        width: 100%;
+        max-width: 400px;
       }
 
       .detail-btn {
-        background: #fff;
-        color: #1a2b0d;
-        border: 2px solid #fff;
-        border-radius: 4px;
-        font-size: 1.1rem;
-        font-weight: bold;
-        padding: 8px 24px;
-        cursor: pointer;
-        letter-spacing: 0.18em;
-        transition: background 0.2s, color 0.2s;
-
-        &:hover {
-          background: #e6f5c9;
-          color: #1a2b0d;
-        }
+        font-size: 1rem;
+        padding: 12px 32px;
+        width: 100%;
+        max-width: 280px;
       }
     }
   }
 
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
+  .pinzi-box-wrap {
+    height: auto;
+    min-height: 100vh;
+    padding: 20px 0;
+    width: 100%;
 
-    to {
-      opacity: 1;
-    }
-  }
-
-  .pinzi-box-wrap.detail-mode {
     .pinzi-box {
-      display: none;
-    }
-  }
-
-  .flying-img {
-    pointer-events: none;
-    border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
-    -webkit-box-reflect: below -10px linear-gradient(transparent 60%, rgba(0,
-          0,
-          0,
-          0.15) 100%);
-  }
-
-  .product-detail-full {
-    .detail-img-block {
-      width: 220px;
-      height: 260px;
-
-      .detail-img {
-        width: 180px;
-        height: 220px;
-        object-fit: contain;
-        filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.18));
-        -webkit-box-reflect: below -10px linear-gradient(transparent 60%, rgba(0,
-              0,
-              0,
-              0.15) 100%);
-      }
-    }
-  }
-
-  @media (max-width: 768px) {
-    .product-detail-full {
-      flex-direction: column;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
       align-items: center;
-      justify-content: flex-start;
-      height: auto;
-      min-height: 100vh;
-      padding-top: 60px;
+      width: 100%;
+      padding: 20px 15px;
+      gap: 8px;
 
-      .back-btn {
-        top: 16px;
-        left: 16px;
-
-        svg {
-          width: 36px;
-          height: 36px;
-        }
+      &::after {
+        content: none; // 移除可能的伪元素
       }
+    }
 
-      .detail-img-block {
-        margin: 0 0 24px 0;
-        width: 80vw;
+    .card-wrap {
+      flex: 1;
+      width: calc(25% - 6px);
+      min-width: auto;
+      max-width: none;
+      padding: 0;
+      margin: 0;
+      transform-origin: center center;
+
+      .pinzi {
+        width: 100%;
         height: auto;
-
-        .detail-img {
-          width: 60vw;
-          height: auto;
-          max-width: 260px;
-          max-height: 220px;
-        }
+        max-width: 120px;
+        margin: 0 auto;
+        object-fit: contain;
+        -webkit-box-reflect: below -10px linear-gradient(transparent 65%, rgba(0, 0, 0, 0.1) 100%);
       }
 
-      .detail-content-block {
-        margin: 0;
-        max-width: 95vw;
-        padding: 0 10px;
+      &:hover .pinzi {
+        transform: scale(1.08);
+      }
 
-        .icon-title {
-          font-size: 1.5rem;
-          margin-bottom: 18px;
-        }
-
-        .desc-list {
-          font-size: 1rem;
-          line-height: 1.7;
-          margin-bottom: 20px;
-        }
-
-        .detail-btn {
-          font-size: 1rem;
-          padding: 8px 18px;
-        }
+      &.show-product {
+        transform: scale(1) translateY(0);
       }
     }
+  }
 
+  // 添加横屏支持
+  @media (max-width: 768px) and (orientation: landscape) {
     .pinzi-box-wrap {
+      padding: 10px 0;
+
       .pinzi-box {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 40px;
+        padding: 10px 20px;
       }
 
-      .card-wrap {
-        opacity: 0;
-        transform: scale(0.9);
-
-        &.show-product {
-          opacity: 1;
-          transform: scale(1);
-        }
-
-        .pinzi {
-          width: clamp(80px, 20vw, 160px);
-        }
+      .card-wrap .pinzi {
+        max-width: 100px;
       }
+    }
+  }
+
+  .content-product {
+    .background-wrapper {
+      transform: none !important; // 移动端禁用背景移动效果
+
+      .background-content {
+        left: -20px;
+        width: calc(100% + 40px);
+        background-size: 200% auto;
+        background-position: center top;
+        transform: scale(1.1);
+        opacity: 0.8;
+      }
+    }
+  }
+
+  // 针对不同屏幕尺寸优化背景图显示
+  @media (max-width: 480px) {
+    .content-product .background-wrapper .background-content {
+      background-size: 250% auto;
+    }
+  }
+
+  @media (orientation: landscape) and (max-width: 768px) {
+    .content-product .background-wrapper .background-content {
+      background-size: 150% auto;
+      transform: scale(1.05);
     }
   }
 }
 
-.detail-img-block {
-  width: 220px;
-  height: 260px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
 
-  .detail-img {
-    width: 180px;
-    height: 220px;
-    object-fit: contain;
-    filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.18));
-    -webkit-box-reflect: below -10px linear-gradient(transparent 60%, rgba(0,
-          0,
-          0,
-          0.15) 100%);
-    transition: all 0.5s cubic-bezier(0.4, 1.6, 0.6, 1);
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
-.detail-img.animating {
-  /* 动画时用fixed定位，样式已在:style中 */
+@keyframes sweep {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 200%;
+  }
 }
 
 .intro-layer {
@@ -705,10 +747,15 @@ let log = () => {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
-    background-size: 400% 400%;
-    animation: gradientBG 4s ease infinite;
-    opacity: 0.9;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 1;
+
+    .fade-out & {
+      opacity: 0;
+    }
   }
 
   .company-logo {
@@ -720,6 +767,7 @@ let log = () => {
     justify-content: center;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     animation: logoAppear 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 1;
 
     &.fade-out {
       opacity: 0;
@@ -758,6 +806,30 @@ let log = () => {
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 </style>
