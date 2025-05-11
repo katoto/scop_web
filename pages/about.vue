@@ -41,7 +41,7 @@
             </div>
           </div>
           <div class="col-lg-6">
-            <img src="/images/logo.png" alt="Company" class="img-fluid rounded shadow">
+            <img src="/images/svg/logo.svg" alt="Company" class="img-fluid rounded shadow">
           </div>
         </div>
       </div>

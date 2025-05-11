@@ -178,7 +178,7 @@ let log = () => {
   <div v-if="showIntro" class="intro-layer" :class="{ 'fade-out': !showLogo }">
     <div class="logo-background"></div>
     <div class="company-logo" :class="{ 'fade-out': !showLogo }">
-      <img src="/images/logo.png" alt="公司logo" />
+      <img src="/images/svg/logo.svg" alt="公司logo" />
     </div>
   </div>
 

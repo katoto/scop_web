@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
     <div class="container">
       <NuxtLink class="navbar-brand" :to="localePath('/')">
-        <img src="/images/logo.png" alt="Logo" height="40">
+        <img src="/images/svg/logo.svg" alt="Logo" height="40">
       </NuxtLink>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
