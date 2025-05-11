@@ -285,11 +285,12 @@ const handleLearnMore = (productId: number) => {
         align-items: center;
         justify-content: center;
         animation: fadeIn 0.5s ease;
+        padding: 20px;
 
         .back-btn {
           position: absolute;
-          top: 40px;
-          left: 40px;
+          top: 20px;
+          left: 20px;
           background: none;
           border: none;
           cursor: pointer;
@@ -302,6 +303,13 @@ const handleLearnMore = (productId: number) => {
           display: flex;
           align-items: center;
           justify-content: center;
+
+          @media (max-width: 768px) {
+            top: 15px;
+            left: 15px;
+            width: 40px;
+            height: 40px;
+          }
 
           &:hover {
             transform: scale(1.1);
@@ -320,16 +328,42 @@ const handleLearnMore = (productId: number) => {
           gap: 60px;
           max-width: 1200px;
           padding: 0 40px;
+          width: 100%;
+
+          @media (max-width: 1024px) {
+            gap: 40px;
+            padding: 0 20px;
+          }
+
+          @media (max-width: 768px) {
+            flex-direction: column;
+            gap: 30px;
+            padding: 40px 20px;
+          }
         }
 
         .detail-image {
           flex: 0 0 280px;
+
+          @media (max-width: 1024px) {
+            flex: 0 0 240px;
+          }
+
+          @media (max-width: 768px) {
+            flex: none;
+            width: 200px;
+            margin: 0 auto;
+          }
 
           .detail-pinzi {
             width: 100%;
             height: auto;
             transform: scale(0.85);
             transform-origin: center center;
+
+            @media (max-width: 768px) {
+              transform: scale(0.9);
+            }
           }
         }
 
@@ -338,10 +372,24 @@ const handleLearnMore = (productId: number) => {
           color: white;
           padding-left: 20px;
 
+          @media (max-width: 768px) {
+            padding-left: 0;
+            text-align: center;
+          }
+
           h2 {
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
             font-weight: 600;
+
+            @media (max-width: 1024px) {
+              font-size: 2rem;
+            }
+
+            @media (max-width: 768px) {
+              font-size: 1.8rem;
+              margin-bottom: 1rem;
+            }
           }
 
           p {
@@ -349,6 +397,16 @@ const handleLearnMore = (productId: number) => {
             line-height: 1.8;
             opacity: 0.9;
             margin-bottom: 2rem;
+
+            @media (max-width: 1024px) {
+              font-size: 1rem;
+              line-height: 1.6;
+            }
+
+            @media (max-width: 768px) {
+              font-size: 0.95rem;
+              margin-bottom: 1.5rem;
+            }
           }
 
           .learn-more-btn {
@@ -363,6 +421,11 @@ const handleLearnMore = (productId: number) => {
             cursor: pointer;
             transition: all 0.3s ease;
             font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+
+            @media (max-width: 768px) {
+              padding: 10px 28px;
+              font-size: 0.95rem;
+            }
 
             &:hover {
               transform: translateY(-2px);
