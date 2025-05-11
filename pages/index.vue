@@ -326,7 +326,7 @@ let log = () => {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-end;
     padding: 0 20px;
     padding-bottom: 50px;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -337,7 +337,7 @@ let log = () => {
     flex: 1;
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     height: 100%;
     cursor: pointer;
@@ -346,6 +346,7 @@ let log = () => {
     transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
     will-change: transform, opacity;
     pointer-events: auto;
+    padding-bottom: 20px;
 
     &.middle-product {
       transition-duration: 0.6s;
@@ -381,6 +382,7 @@ let log = () => {
       filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
       will-change: transform, filter;
       pointer-events: auto;
+      display: block;
     }
 
     &:hover .pinzi {
@@ -537,6 +539,53 @@ let log = () => {
 }
 
 @media (max-width: 768px) {
+  .pinzi-box-wrap {
+    .pinzi-box {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      width: 100%;
+      padding: 20px 15px;
+      padding-bottom: 30px;
+      gap: 8px;
+
+      &::after {
+        content: none;
+      }
+    }
+
+    .card-wrap {
+      flex: 1;
+      width: calc(25% - 6px);
+      min-width: auto;
+      max-width: none;
+      padding: 0;
+      padding-bottom: 10px;
+      margin: 0;
+      transform-origin: center center;
+      align-items: flex-end;
+
+      .pinzi {
+        width: 100%;
+        height: auto;
+        max-width: 120px;
+        margin: 0 auto;
+        margin-bottom: 0;
+        object-fit: contain;
+        -webkit-box-reflect: below -10px linear-gradient(transparent 65%, rgba(0, 0, 0, 0.1) 100%);
+      }
+
+      &:hover .pinzi {
+        transform: scale(1.08);
+      }
+
+      &.show-product {
+        transform: scale(1) translateY(0);
+      }
+    }
+  }
+
   .product-detail-full {
     flex-direction: column;
     align-items: center;
@@ -610,69 +659,6 @@ let log = () => {
         padding: 12px 32px;
         width: 100%;
         max-width: 280px;
-      }
-    }
-  }
-
-  .pinzi-box-wrap {
-    height: auto;
-    min-height: 100vh;
-    padding: 20px 0;
-    width: 100%;
-
-    .pinzi-box {
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      padding: 20px 15px;
-      gap: 8px;
-
-      &::after {
-        content: none; // 移除可能的伪元素
-      }
-    }
-
-    .card-wrap {
-      flex: 1;
-      width: calc(25% - 6px);
-      min-width: auto;
-      max-width: none;
-      padding: 0;
-      margin: 0;
-      transform-origin: center center;
-
-      .pinzi {
-        width: 100%;
-        height: auto;
-        max-width: 120px;
-        margin: 0 auto;
-        object-fit: contain;
-        -webkit-box-reflect: below -10px linear-gradient(transparent 65%, rgba(0, 0, 0, 0.1) 100%);
-      }
-
-      &:hover .pinzi {
-        transform: scale(1.08);
-      }
-
-      &.show-product {
-        transform: scale(1) translateY(0);
-      }
-    }
-  }
-
-  // 添加横屏支持
-  @media (max-width: 768px) and (orientation: landscape) {
-    .pinzi-box-wrap {
-      padding: 10px 0;
-
-      .pinzi-box {
-        padding: 10px 20px;
-      }
-
-      .card-wrap .pinzi {
-        max-width: 100px;
       }
     }
   }
