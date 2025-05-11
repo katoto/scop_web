@@ -1,78 +1,86 @@
 <script setup lang="ts">
-
-import { onMounted, onUnmounted, reactive, ref, nextTick } from 'vue'
+import { onMounted, onUnmounted, reactive, ref, nextTick } from "vue";
 
 let position = reactive({
-  offsetX: 0
-})
+  offsetX: 0,
+});
 
 let domSize = reactive({
-  width: 0
-})
-let domRef = ref<null | HTMLElement>(null)
-let contentDomref = ref<null | HTMLElement>(null)
-let selectedProduct = ref<number | null>(null)
+  width: 0,
+});
+let domRef = ref<null | HTMLElement>(null);
+let contentDomref = ref<null | HTMLElement>(null);
+let selectedProduct = ref<number | null>(null);
 let animatingProduct = ref<null | {
-  image: string,
-  startRect: DOMRect,
-  endRect: DOMRect,
-  index: number,
-  animating: boolean
-}>(null)
-let showDetail = ref(false)
-let detailImgBlockRef = ref<HTMLElement | null>(null)
+  image: string;
+  startRect: DOMRect;
+  endRect: DOMRect;
+  index: number;
+  animating: boolean;
+}>(null);
+let showDetail = ref(false);
+let detailImgBlockRef = ref<HTMLElement | null>(null);
+let showIntro = ref(true);
+let showLogo = ref(true);
+let showProducts = ref(false);
 
 const products = [
   {
     id: 1,
-    name: '产品一',
-    description: '这是产品一的详细介绍。这是一个创新的解决方案，能够帮助用户更好地完成工作。',
-    image: '/images/pro-1.png',
-    color: 'orange'
+    name: "产品一",
+    description:
+      "这是产品一的详细介绍。这是一个创新的解决方案，能够帮助用户更好地完成工作。",
+    image: "/images/pro-1.png",
+    color: "orange",
   },
   {
     id: 2,
-    name: '产品二',
-    description: '这是产品二的详细介绍。这是一个革命性的产品，能够改变用户的生活方式。',
-    image: '/images/pro-2.png',
-    color: 'red'
+    name: "产品二",
+    description:
+      "这是产品二的详细介绍。这是一个革命性的产品，能够改变用户的生活方式。",
+    image: "/images/pro-2.png",
+    color: "red",
   },
   {
     id: 3,
-    name: '产品三',
-    description: '这是产品三的详细介绍。这是一个突破性的技术，能够提升用户的工作效率。',
-    image: '/images/pro-3.png',
-    color: 'yellow'
+    name: "产品三",
+    description:
+      "这是产品三的详细介绍。这是一个突破性的技术，能够提升用户的工作效率。",
+    image: "/images/pro-3.png",
+    color: "yellow",
   },
   {
     id: 4,
-    name: '产品四',
-    description: '这是产品四的详细介绍。这是一个创新的设计，能够满足用户的多样化需求。',
-    image: '/images/pro-4.png',
-    color: 'green'
-  }
-]
+    name: "产品四",
+    description:
+      "这是产品四的详细介绍。这是一个创新的设计，能够满足用户的多样化需求。",
+    image: "/images/pro-4.png",
+    color: "green",
+  },
+];
 
 const handleProductClick = async (index: number, e: MouseEvent) => {
   // 获取被点击图片的DOM位置
-  const img = (e.currentTarget as HTMLElement).querySelector('img') as HTMLElement
-  if (!img) return
-  const startRect = img.getBoundingClientRect()
+  const img = (e.currentTarget as HTMLElement).querySelector(
+    "img"
+  ) as HTMLElement;
+  if (!img) return;
+  const startRect = img.getBoundingClientRect();
   // 先显示详情页（但内容不显示），以便渲染出目标容器
-  selectedProduct.value = index
-  await nextTick()
+  selectedProduct.value = index;
+  await nextTick();
   // 获取详情页图片容器的实际位置和尺寸
-  const detailBlock = detailImgBlockRef.value
-  if (!detailBlock) return
-  const endRect = detailBlock.getBoundingClientRect()
+  const detailBlock = detailImgBlockRef.value;
+  if (!detailBlock) return;
+  const endRect = detailBlock.getBoundingClientRect();
   animatingProduct.value = {
     image: products[index].image,
     startRect,
     endRect,
     index,
-    animating: true
-  }
-  await nextTick()
+    animating: true,
+  };
+  await nextTick();
   // 触发动画
   setTimeout(() => {
     if (animatingProduct.value) {
@@ -80,71 +88,111 @@ const handleProductClick = async (index: number, e: MouseEvent) => {
         ...animatingProduct.value,
         startRect: animatingProduct.value.endRect,
         endRect: animatingProduct.value.endRect,
-        animating: false
-      }
+        animating: false,
+      };
     }
-  }, 20)
-}
+  }, 20);
+};
 
 const handleTransitionEnd = () => {
-  animatingProduct.value = null
-}
+  animatingProduct.value = null;
+};
 
 const handleCloseDetail = () => {
-  selectedProduct.value = null
-  animatingProduct.value = null
-}
+  selectedProduct.value = null;
+  animatingProduct.value = null;
+};
 
 const handleMouseMove = (e: MouseEvent) => {
-  if (!contentDomref.value) return
+  if (!contentDomref.value) return;
 
-  const { clientX } = e
-  const { width } = domSize
+  const { clientX } = e;
+  const { width } = domSize;
 
   // Calculate mouse position relative to center
-  const centerX = width / 2
+  const centerX = width / 2;
 
   // Calculate offset (normalized between -1 and 1)
-  position.offsetX = (clientX - centerX) / centerX
-}
+  position.offsetX = (clientX - centerX) / centerX;
+};
 
 const updateDomSize = () => {
   if (contentDomref.value) {
-    domSize.width = contentDomref.value.offsetWidth
+    domSize.width = contentDomref.value.offsetWidth;
   }
-}
+};
+
+const getAnimationDelay = (index: number) => {
+  // 对于4个产品：index 1和2先出现（延迟0.2s），index 0和3后出现（延迟0.6s）
+  const isMiddle = index === 1 || index === 2;
+  return isMiddle ? 0.2 : 0.6;
+};
+
+const getInitialTransform = (index: number) => {
+  // 中间两个产品从中间展开，两边的产品从更远的位置进入
+  const isMiddle = index === 1 || index === 2;
+  if (index < 2) {
+    return `translateX(${isMiddle ? 100 : 400}%)`; // 左侧产品
+  } else {
+    return `translateX(${isMiddle ? -100 : -400}%)`; // 右侧产品
+  }
+};
 
 onMounted(() => {
-  updateDomSize()
-  window.addEventListener('mousemove', handleMouseMove)
-  window.addEventListener('resize', updateDomSize)
-})
+  // 缩短 logo 显示时间
+  setTimeout(() => {
+    showLogo.value = false; // 1秒后淡出logo
+    setTimeout(() => {
+      showIntro.value = false; // logo淡出0.5秒后移除intro层
+      showProducts.value = true; // 同时显示产品
+    }, 500);
+  }, 1000); // 改为1秒
+
+  updateDomSize();
+  window.addEventListener("mousemove", handleMouseMove);
+  window.addEventListener("resize", updateDomSize);
+});
 
 onUnmounted(() => {
-  window.removeEventListener('mousemove', handleMouseMove)
-  window.removeEventListener('resize', updateDomSize)
-})
+  window.removeEventListener("mousemove", handleMouseMove);
+  window.removeEventListener("resize", updateDomSize);
+});
 
 let log = () => {
-  console.log('jjhhh==')
-}
-
+  console.log("jjhhh==");
+};
 </script>
 
 <template>
+  <div v-if="showIntro" class="intro-layer">
+    <div class="logo-background"></div>
+    <div class="company-logo" :class="{ 'fade-out': !showLogo }">
+      <img src="/images/logo.png" alt="公司logo" />
+    </div>
+  </div>
+
   <div class="contact-page">
     <div class="content-product" ref="contentDomref">
       <div class="background-wrapper" :style="{
-        transform: `translateX(${position.offsetX * 20}px)`
+        transform: `translateX(${position.offsetX * 20}px)`,
       }">
         <div class="background-content"></div>
       </div>
       <div class="pinzi-box-wrap" :class="{ 'detail-mode': selectedProduct !== null }">
         <StarCanvas />
         <div class="pinzi-box" v-if="selectedProduct === null && !animatingProduct">
-          <div v-for="(product, index) in products" :key="product.id" class="card-wrap"
-            :class="{ 'fade-out': selectedProduct !== null && selectedProduct !== index }"
-            @click="(e) => handleProductClick(index, e)">
+          <div v-for="(product, index) in products" :key="product.id" class="card-wrap" :class="{
+            'fade-out': selectedProduct !== null && selectedProduct !== index,
+            'show-product': showProducts,
+            'middle-product': index === 1 || index === 2,
+            'side-product': index === 0 || index === 3,
+          }" :style="{
+            transform: !showProducts
+              ? getInitialTransform(index)
+              : 'translateX(0)',
+            opacity: showProducts ? 1 : 0,
+            transitionDelay: `${getAnimationDelay(index)}s`,
+          }" @click="(e) => handleProductClick(index, e)">
             <BreatheCard :background="`linear-gradient(45deg, ${product.color}, rgba(255, 255, 255, 0.508))`"
               :animationDelay="`${index * 0.1}s`">
               <img :src="product.image" class="pinzi" />
@@ -162,15 +210,20 @@ let log = () => {
           </button>
           <div class="detail-img-block" ref="detailImgBlockRef">
             <img v-if="selectedProduct !== null" :src="products[selectedProduct].image" class="detail-img"
-              :class="{ 'animating': animatingProduct }" :style="animatingProduct ? {
-                position: 'fixed',
-                left: animatingProduct.startRect.left + 'px',
-                top: animatingProduct.startRect.top + 'px',
-                width: animatingProduct.startRect.width + 'px',
-                height: animatingProduct.startRect.height + 'px',
-                zIndex: 1000,
-                transition: 'all 0.5s cubic-bezier(.4,1.6,.6,1)'
-              } : {}" @transitionend="!animatingProduct?.animating && handleTransitionEnd()" />
+              :class="{ animating: animatingProduct }" :style="animatingProduct
+                ? {
+                  position: 'fixed',
+                  left: animatingProduct.startRect.left + 'px',
+                  top: animatingProduct.startRect.top + 'px',
+                  width: animatingProduct.startRect.width + 'px',
+                  height: animatingProduct.startRect.height + 'px',
+                  zIndex: 1000,
+                  transition: 'all 0.5s cubic-bezier(.4,1.6,.6,1)',
+                }
+                : {}
+                " @transitionend="
+                  !animatingProduct?.animating && handleTransitionEnd()
+                  " />
           </div>
           <div class="detail-content-block" v-show="!animatingProduct">
             <div class="icon-title">
@@ -239,7 +292,7 @@ let log = () => {
         left: -50px;
         width: calc(100% + 100px);
         height: 100%;
-        background-image: url('/images/bg-line-3.png');
+        background-image: url("/images/bg-line-3.png");
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
@@ -268,10 +321,10 @@ let log = () => {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        align-items: flex-end;
+        align-items: center;
         padding: 0 20px;
-        transition: transform 0.5s ease;
         padding-bottom: 50px;
+        min-height: 400px;
       }
 
       .card-wrap {
@@ -282,33 +335,35 @@ let log = () => {
         justify-content: center;
         height: 100%;
         cursor: pointer;
-        transition: all 0.5s ease;
+        transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+        will-change: transform, opacity;
 
-        &.selected {
-          transform: translateX(-50%);
+        &.middle-product {
+          transition-duration: 0.8s; // 中间产品动画稍快
+          z-index: 2; // 确保中间产品在上层
         }
 
-        &.fade-out {
-          opacity: 0;
-          transform: translateX(-100%);
-        }
-      }
-
-      .pinzi {
-        -webkit-box-reflect: below -14px linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0.4) 100%);
-        width: clamp(100px, 15vw, 180px);
-        height: auto;
-        object-fit: contain;
-        max-width: 100%;
-        transition: transform 0.3s ease;
-        margin: 0 10px;
-
-        @media (max-width: 768px) {
-          width: clamp(80px, 12vw, 140px);
+        &.side-product {
+          transition-duration: 1.2s; // 两边产品动画稍慢
+          z-index: 1;
         }
 
-        @media (max-width: 576px) {
-          width: clamp(60px, 10vw, 100px);
+        &.show-product {
+          opacity: 1;
+          transform: translateX(0) !important;
+        }
+
+        .pinzi {
+          -webkit-box-reflect: below -14px linear-gradient(to bottom, rgba(255,
+                255,
+                255,
+                0) 0%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0.4) 100%);
+          width: clamp(100px, 15vw, 180px);
+          height: auto;
+          object-fit: contain;
+          max-width: 100%;
+          transition: transform 0.3s ease;
+          margin: 0 10px;
         }
       }
 
@@ -319,7 +374,7 @@ let log = () => {
   }
 
   .content-product-light {
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     height: 100%;
@@ -346,7 +401,7 @@ let log = () => {
   }
 
   .content-product::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 50%;
@@ -423,8 +478,11 @@ let log = () => {
         height: 340px;
         object-fit: contain;
         filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.18));
-        -webkit-box-reflect: below -10px linear-gradient(transparent 60%, rgba(0, 0, 0, 0.15) 100%);
-        transition: all 0.5s cubic-bezier(.4, 1.6, .6, 1);
+        -webkit-box-reflect: below -10px linear-gradient(transparent 60%, rgba(0,
+              0,
+              0,
+              0.15) 100%);
+        transition: all 0.5s cubic-bezier(0.4, 1.6, 0.6, 1);
       }
     }
 
@@ -509,7 +567,10 @@ let log = () => {
     pointer-events: none;
     border-radius: 12px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
-    -webkit-box-reflect: below -10px linear-gradient(transparent 60%, rgba(0, 0, 0, 0.15) 100%);
+    -webkit-box-reflect: below -10px linear-gradient(transparent 60%, rgba(0,
+          0,
+          0,
+          0.15) 100%);
   }
 
   .product-detail-full {
@@ -522,7 +583,10 @@ let log = () => {
         height: 220px;
         object-fit: contain;
         filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.18));
-        -webkit-box-reflect: below -10px linear-gradient(transparent 60%, rgba(0, 0, 0, 0.15) 100%);
+        -webkit-box-reflect: below -10px linear-gradient(transparent 60%, rgba(0,
+              0,
+              0,
+              0.15) 100%);
       }
     }
   }
@@ -586,17 +650,33 @@ let log = () => {
       .pinzi-box {
         flex-direction: column;
         align-items: center;
-        padding: 0 4vw 30px 4vw;
+        justify-content: center;
+        gap: 30px;
+      }
 
-        .card-wrap {
-          margin-bottom: 18px;
+      .card-wrap {
+        transform: translateY(100vh) !important;
+
+        &.middle-product {
+          transform: translateY(50vh) !important;
+        }
+
+        &.side-product {
+          transform: translateY(80vh) !important;
+        }
+
+        &.show-product {
+          transform: translateY(0) !important;
         }
       }
 
       .pinzi {
         width: clamp(60px, 30vw, 100px);
         margin: 0 0 10px 0;
-        -webkit-box-reflect: below -8px linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0.4) 100%);
+        -webkit-box-reflect: below -8px linear-gradient(to bottom, rgba(255,
+              255,
+              255,
+              0) 0%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0.4) 100%);
       }
     }
   }
@@ -614,12 +694,89 @@ let log = () => {
     height: 220px;
     object-fit: contain;
     filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.18));
-    -webkit-box-reflect: below -10px linear-gradient(transparent 60%, rgba(0, 0, 0, 0.15) 100%);
-    transition: all 0.5s cubic-bezier(.4, 1.6, .6, 1);
+    -webkit-box-reflect: below -10px linear-gradient(transparent 60%, rgba(0,
+          0,
+          0,
+          0.15) 100%);
+    transition: all 0.5s cubic-bezier(0.4, 1.6, 0.6, 1);
   }
 }
 
 .detail-img.animating {
   /* 动画时用fixed定位，样式已在:style中 */
+}
+
+.intro-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  .logo-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    background-size: 400% 400%;
+    animation: gradientBG 4s ease infinite;
+    opacity: 0.9;
+  }
+
+  .company-logo {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: logoAppear 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &.fade-out {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+    }
+  }
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes logoAppear {
+  0% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 </style>
