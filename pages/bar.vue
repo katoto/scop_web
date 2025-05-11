@@ -187,11 +187,7 @@ let log = () => {
       <div class="background-wrapper" :style="{
         transform: `translateX(${position.offsetX * 20}px)`,
       }">
-        <div class="bg-breath-block gold"></div>
-        <div class="bg-breath-block green"></div>
-        <div class="bg-breath-block red"></div>
-        <div class="bg-breath-block orange"></div>
-        <div class="background-image"></div>
+        <div class="background-content"></div>
       </div>
       <div class="pinzi-box-wrap" :class="{ 'detail-mode': selectedProduct !== null }">
         <StarCanvas />
@@ -282,73 +278,26 @@ let log = () => {
     justify-content: center;
     overflow: hidden;
 
-
     .background-wrapper {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+      transition: transform 0.1s ease-out;
+      will-change: transform;
       z-index: 1;
-      pointer-events: none;
 
-      .bg-breath-block {
-        position: absolute;
-        top: -10px;
-        height: calc(100vh + 20px);
-        border-radius: 48px;
-        filter: blur(24px);
-        animation: breathOpacity 3.2s ease-in-out infinite alternate;
-        will-change: opacity;
-      }
-
-      .gold {
-        background: #e6ff00;
-        left: -10px;
-        width: calc(25vw + 30px);
-        opacity: 0.2;
-        animation-delay: 0s;
-        z-index: 1;
-      }
-
-      .green {
-        background: #00dc00;
-        left: calc(25vw - 10px);
-        width: calc(25vw + 30px);
-        opacity: 0.3;
-        animation-delay: 0.8s;
-        z-index: 2;
-      }
-
-      .red {
-        background: #ff0000;
-        left: calc(50vw - 10px);
-        width: calc(25vw + 30px);
-        opacity: 0.3;
-        animation-delay: 1.6s;
-        z-index: 3;
-      }
-
-      .orange {
-        background: #ff7200;
-        left: calc(75vw - 10px);
-        width: calc(25vw + 30px);
-        opacity: 0.4;
-        animation-delay: 2.2s;
-        z-index: 4;
-      }
-
-      .background-image {
+      .background-content {
         position: absolute;
         top: 0;
-        left: 0;
-        width: 100%;
+        left: -50px;
+        width: calc(100% + 100px);
         height: 100%;
         background-image: url("/images/bg-line-2.png");
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
-        z-index: 0;
       }
     }
   }
@@ -722,7 +671,7 @@ let log = () => {
     .background-wrapper {
       transform: none !important; // 移动端禁用背景移动效果
 
-      .background-image {
+      .background-content {
         left: -20px;
         width: calc(100% + 40px);
         background-size: 200% auto;
@@ -735,13 +684,13 @@ let log = () => {
 
   // 针对不同屏幕尺寸优化背景图显示
   @media (max-width: 480px) {
-    .content-product .background-wrapper .background-image {
+    .content-product .background-wrapper .background-content {
       background-size: 250% auto;
     }
   }
 
   @media (orientation: landscape) and (max-width: 768px) {
-    .content-product .background-wrapper .background-image {
+    .content-product .background-wrapper .background-content {
       background-size: 150% auto;
       transform: scale(1.05);
     }
@@ -871,16 +820,6 @@ let log = () => {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes breathOpacity {
-  0% {
-    opacity: 0.25;
-  }
-
-  100% {
-    opacity: 0.5;
   }
 }
 </style>
