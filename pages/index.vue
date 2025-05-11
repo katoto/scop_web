@@ -115,6 +115,7 @@ const handleProductClick = async (index: number, e: MouseEvent) => {
 };
 
 const handleTransitionEnd = () => {
+  console.log('动画介绍')
   setTimeout(() => {
     animatingProduct.value = null;
     isTransitioning.value = false;
@@ -122,6 +123,7 @@ const handleTransitionEnd = () => {
 };
 
 const handleCloseDetail = () => {
+  console.log('back ===')
   if (isTransitioning.value) return;
   isTransitioning.value = true;
   showProducts.value = true;
@@ -130,6 +132,8 @@ const handleCloseDetail = () => {
     animatingProduct.value = null;
     isTransitioning.value = false;
   }, 400);
+
+  console.log('back2222 ===')
 };
 
 const handleMouseMove = (e: MouseEvent) => {
@@ -250,17 +254,21 @@ let isShowColorBg = (num: number) => {
           </button>
           <div class="detail-img-block" ref="detailImgBlockRef">
             <img v-if="selectedProduct !== null" :src="products[selectedProduct].image" class="detail-img"
-              :class="{ animating: animatingProduct }" :style="animatingProduct
+              :class="{ animating: animatingProduct, 'detail-img-2': animatingProduct }" :style="animatingProduct
                 ? {
-                  position: 'fixed',
-                  left: animatingProduct.startRect.left + 'px',
-                  top: animatingProduct.startRect.top + 'px',
-                  width: animatingProduct.startRect.width + 'px',
-                  height: animatingProduct.startRect.height + 'px',
-                  zIndex: 1000,
-                  transition: 'all 0.5s cubic-bezier(.4,1.6,.6,1)',
+                  // position: 'fixed',
+                  // left: animatingProduct.startRect.left + 'px',
+                  // top: animatingProduct.startRect.top + 'px',
+                  // width: animatingProduct.startRect.width + 'px',
+                  // height: animatingProduct.startRect.height + 'px',
+                  // zIndex: 1000,
+                  color: 'red',
+                  transition: 'color 0.5s ease-in-out',
+
                 }
-                : {}
+                : {
+
+                }
                 " @transitionend="
                   !animatingProduct?.animating && handleTransitionEnd()
                   " />
@@ -585,6 +593,9 @@ let isShowColorBg = (num: number) => {
     margin-right: 60px;
 
     .detail-img {
+      position: relative;
+      top: 0;
+      left: 0;
       width: 260px;
       height: 340px;
       object-fit: contain;
@@ -593,10 +604,21 @@ let isShowColorBg = (num: number) => {
             0,
             0,
             0.15) 100%);
+      transition: all 0.6s ease-in-out;
 
       &.animating {
-        transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        position: relative;
+        // opacity: 0.8;
+        transition: all 0.6s ease-in-out;
       }
+
+    }
+
+    .detail-img-2 {
+      position: relative;
+      top: 20px;
+      left: 20px;
+
     }
   }
 
