@@ -36,8 +36,9 @@ const products = [
     description:
       "这是产品一的详细介绍。这是一个创新的解决方案，能够帮助用户更好地完成工作。",
     image: "/images/pro-3.png",
-    color: "linear-gradient(135deg, rgba(255, 107, 107, 0.7), rgba(255, 230, 109, 0.5))",
-    animationType: "default"
+    color:
+      "linear-gradient(135deg, rgba(255, 107, 107, 0.7), rgba(255, 230, 109, 0.5))",
+    animationType: "default",
   },
   {
     id: 2,
@@ -45,8 +46,9 @@ const products = [
     description:
       "这是产品二的详细介绍。这是一个革命性的产品，能够改变用户的生活方式。",
     image: "/images/pro-4.png",
-    color: "linear-gradient(135deg, rgba(78, 205, 196, 0.7), rgba(85, 98, 112, 0.5))",
-    animationType: "wave"
+    color:
+      "linear-gradient(135deg, rgba(78, 205, 196, 0.7), rgba(85, 98, 112, 0.5))",
+    animationType: "wave",
   },
   {
     id: 3,
@@ -54,8 +56,9 @@ const products = [
     description:
       "这是产品三的详细介绍。这是一个突破性的技术，能够提升用户的工作效率。",
     image: "/images/pro-2.png",
-    color: "linear-gradient(135deg, rgba(168, 230, 207, 0.7), rgba(255, 211, 182, 0.5))",
-    animationType: "pulse"
+    color:
+      "linear-gradient(135deg, rgba(168, 230, 207, 0.7), rgba(255, 211, 182, 0.5))",
+    animationType: "pulse",
   },
   {
     id: 4,
@@ -63,8 +66,9 @@ const products = [
     description:
       "这是产品四的详细介绍。这是一个创新的设计，能够满足用户的多样化需求。",
     image: "/images/pro-1.png",
-    color: "linear-gradient(135deg, rgba(184, 242, 230, 0.7), rgba(255, 166, 158, 0.5))",
-    animationType: "float"
+    color:
+      "linear-gradient(135deg, rgba(184, 242, 230, 0.7), rgba(255, 166, 158, 0.5))",
+    animationType: "float",
   },
 ];
 
@@ -188,7 +192,7 @@ let isShowColorBg = (num: number) => {
     return true;
   }
   return selectedProduct.value === num;
-}
+};
 </script>
 
 <template>
@@ -203,22 +207,22 @@ let isShowColorBg = (num: number) => {
     <div class="content-product" ref="contentDomref">
       <div class="background-wrapper" :style="{ transform: `translateX(${position.offsetX * 20}px)` }">
         <div class="background-image"></div>
-        <div v-if="showBlockGreen && isShowColorBg(1)" :style="{
-          width: selectedProduct === null ? 'calc(25vw + 20px)' : '100%',
-          left: selectedProduct === null ? 'calc(25vw - 10px)' : '0'
-        }" class="bg-breath-block-item bg-breath-block green"></div>
-        <div v-if="showBlockRed && isShowColorBg(2)" :style="{
-          width: selectedProduct === null ? 'calc(25vw + 20px)' : '100%',
-          left: selectedProduct === null ? 'calc(50vw - 10px)' : '0'
-        }" class="bg-breath-block-item bg-breath-block-red  red"></div>
-        <div v-if="showBlockGold && isShowColorBg(0)" :style="{
-          width: selectedProduct === null ? 'calc(25vw + 20px)' : '100%',
-          left: selectedProduct === null ? 'calc(25vw + 20px)' : '0'
-        }" class="bg-breath-block-item bg-breath-block gold"></div>
-        <div v-if="showBlockOrange && isShowColorBg(3)" :style="{
-          width: selectedProduct === null ? 'calc(25vw + 20px)' : '100%',
-          left: selectedProduct === null ? 'calc(75vw - 10px)' : '0'
-        }" class="bg-breath-block-item bg-breath-block orange"></div>
+        <div v-if="showBlockGreen && isShowColorBg(1)" :class="selectedProduct === null
+          ? `bg-breath-block-item bg-breath-block green bg-breath-width-green`
+          : `bg-breath-block-item bg-breath-block green bg-breath-width`
+          "></div>
+        <div v-if="showBlockRed && isShowColorBg(2)" :class="selectedProduct === null
+          ? `bg-breath-block-item bg-breath-block-red red bg-breath-width-red`
+          : `bg-breath-block-item bg-breath-block-red red bg-breath-width`
+          "></div>
+        <div v-if="showBlockGold && isShowColorBg(0)" :class="selectedProduct === null
+          ? `bg-breath-block-item bg-breath-block gold bg-breath-width-gold`
+          : `bg-breath-block-item bg-breath-block gold bg-breath-width`
+          "></div>
+        <div v-if="showBlockOrange && isShowColorBg(3)" :class="selectedProduct === null
+          ? `bg-breath-block-item bg-breath-block orange bg-breath-width-orange`
+          : `bg-breath-block-item bg-breath-block orange bg-breath-width`
+          "></div>
       </div>
       <div class="pinzi-box-wrap" :class="{ 'detail-mode': selectedProduct !== null }">
         <StarCanvas />
@@ -227,10 +231,10 @@ let isShowColorBg = (num: number) => {
             'fade-out': selectedProduct !== null && selectedProduct !== index,
             'show-product': showProducts,
             'middle-product': index === 1 || index === 2,
-            'side-product': index === 0 || index === 3
+            'side-product': index === 0 || index === 3,
           }" :style="{
             opacity: showProducts ? 1 : 0,
-            transitionDelay: `${getAnimationDelay(index)}s`
+            transitionDelay: `${getAnimationDelay(index)}s`,
           }" @click="(e) => handleProductClick(index, e)">
             <img :src="product.image" class="pinzi" />
           </div>
@@ -257,9 +261,11 @@ let isShowColorBg = (num: number) => {
                   transition: 'all 0.5s cubic-bezier(.4,1.6,.6,1)',
                 }
                 : {}
-                " @transitionend="!animatingProduct?.animating && handleTransitionEnd()" />
+                " @transitionend="
+                  !animatingProduct?.animating && handleTransitionEnd()
+                  " />
           </div>
-          <div class="detail-content-block" :class="{ 'hidden': animatingProduct }">
+          <div class="detail-content-block" :class="{ hidden: animatingProduct }">
             <div class="icon-title">
               <span class="icon">🍄</span>
               <span class="title">{{ products[selectedProduct].name }}&nbsp;CP-101</span>
@@ -305,7 +311,6 @@ let isShowColorBg = (num: number) => {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-
 
     .background-wrapper {
       position: absolute;
@@ -364,36 +369,68 @@ let isShowColorBg = (num: number) => {
         transition: opacity 8s cubic-bezier(0.4, 0, 0.2, 1);
       }
 
+
+
       .gold {
         background: rgba(230, 255, 0, 0.9);
-        left: -10px;
-        width: calc(25vw + 20px);
+        // left: -10px;
+        // width: calc(25vw + 20px);
         animation-delay: 0s;
         z-index: 1;
       }
 
       .green {
         background: rgba(0, 220, 0, 0.6);
-        left: calc(25vw - 10px);
-        width: calc(25vw + 20px);
+        // left: calc(25vw - 10px);
+        // width: calc(25vw + 20px);
         // animation-delay: 0.8s;
         z-index: 2;
       }
 
       .red {
         background: rgba(255, 0, 0, 1);
-        left: calc(50vw - 10px);
-        width: calc(25vw + 30px);
+        // left: calc(50vw - 10px);
+        // width: calc(25vw + 30px);
         // animation-delay: 1.6s;
         z-index: 3;
       }
 
       .orange {
         background: rgba(255, 114, 0, 0.9);
-        left: calc(75vw - 10px);
-        width: calc(25vw + 20px);
+        // left: calc(75vw - 10px);
+        // width: calc(25vw + 20px);
         // animation-delay: 2.2s;
         z-index: 4;
+      }
+
+      .bg-breath-block-item {
+        transition: all 0.3s ease-in-out;
+      }
+
+      .bg-breath-width {
+        width: 100%;
+        left: 0;
+        animation: breathOpacityEnd 1.6s ease-in-out infinite alternate;
+      }
+
+      .bg-breath-width-green {
+        width: calc(25vw + 20px);
+        left: calc(25vw - 10px);
+      }
+
+      .bg-breath-width-red {
+        width: 100%;
+        left: calc(50vw - 10px);
+      }
+
+      .bg-breath-width-gold {
+        width: 100%;
+        left: calc(75vw - 10px);
+      }
+
+      .bg-breath-width-orange {
+        width: 100%;
+        left: calc(75vw - 10px);
       }
     }
   }
@@ -472,7 +509,10 @@ let isShowColorBg = (num: number) => {
     }
 
     .pinzi {
-      -webkit-box-reflect: below -14px linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0.4) 100%);
+      -webkit-box-reflect: below -14px linear-gradient(to bottom, rgba(255,
+            255,
+            255,
+            0) 0%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0.4) 100%);
       width: clamp(100px, 15vw, 180px);
       height: auto;
       object-fit: contain;
@@ -549,7 +589,10 @@ let isShowColorBg = (num: number) => {
       height: 340px;
       object-fit: contain;
       filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.18));
-      -webkit-box-reflect: below -10px linear-gradient(transparent 60%, rgba(0, 0, 0, 0.15) 100%);
+      -webkit-box-reflect: below -10px linear-gradient(transparent 60%, rgba(0,
+            0,
+            0,
+            0.15) 100%);
 
       &.animating {
         transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -673,7 +716,10 @@ let isShowColorBg = (num: number) => {
         margin: 0 auto;
         margin-bottom: 0;
         object-fit: contain;
-        -webkit-box-reflect: below -10px linear-gradient(transparent 65%, rgba(0, 0, 0, 0.1) 100%);
+        -webkit-box-reflect: below -10px linear-gradient(transparent 65%, rgba(0,
+              0,
+              0,
+              0.1) 100%);
       }
 
       &:hover .pinzi {
@@ -936,6 +982,16 @@ let isShowColorBg = (num: number) => {
 
   100% {
     opacity: 0.7;
+  }
+}
+
+@keyframes breathOpacityEnd {
+  0% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 0.4;
   }
 }
 </style>
