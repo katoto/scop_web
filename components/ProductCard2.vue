@@ -26,6 +26,8 @@
     filter: blur(30px);
     transform: scale(1.2); // 稍微放大以避免模糊边缘
     animation: opacityPulse 3s ease-in-out infinite;
+    animation-delay: 0.2s;
+    opacity: 0.3;
 
     &::after {
         content: '';

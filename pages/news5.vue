@@ -307,7 +307,7 @@ let log = () => {
         left: -50px;
         width: calc(100% + 100px);
         height: 100%;
-        background-image: url("/images/bg-line-2.png");
+        // background-image: url("/images/bg-line-2.png");
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
