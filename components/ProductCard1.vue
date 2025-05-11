@@ -3,7 +3,9 @@
 
 <template>
     <div class="product-card-container">
-        <div class="card-bg"></div>
+        <div class="card-bg">
+
+        </div>
     </div>
 </template>
 
