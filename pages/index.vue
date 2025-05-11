@@ -346,7 +346,7 @@ let log = () => {
         background: rgba(0, 220, 0);
         left: calc(25vw - 10px);
         width: calc(25vw + 20px);
-        animation-delay: 0.8s;
+        // animation-delay: 0.8s;
         z-index: 2;
       }
 
@@ -354,7 +354,7 @@ let log = () => {
         background: rgba(255, 0, 0);
         left: calc(50vw - 10px);
         width: calc(25vw + 30px);
-        animation-delay: 1.6s;
+        // animation-delay: 1.6s;
         z-index: 3;
       }
 
@@ -362,7 +362,7 @@ let log = () => {
         background: rgba(255, 114, 0);
         left: calc(75vw - 10px);
         width: calc(25vw + 20px);
-        animation-delay: 2.2s;
+        // animation-delay: 2.2s;
         z-index: 4;
       }
     }
