@@ -32,7 +32,8 @@ const products = [
     description:
       "这是产品一的详细介绍。这是一个创新的解决方案，能够帮助用户更好地完成工作。",
     image: "/images/pro-1.png",
-    color: "orange",
+    color: "linear-gradient(135deg, rgba(255, 107, 107, 0.7), rgba(255, 230, 109, 0.5))",
+    animationType: "default"
   },
   {
     id: 2,
@@ -40,7 +41,8 @@ const products = [
     description:
       "这是产品二的详细介绍。这是一个革命性的产品，能够改变用户的生活方式。",
     image: "/images/pro-2.png",
-    color: "red",
+    color: "linear-gradient(135deg, rgba(78, 205, 196, 0.7), rgba(85, 98, 112, 0.5))",
+    animationType: "wave"
   },
   {
     id: 3,
@@ -48,7 +50,8 @@ const products = [
     description:
       "这是产品三的详细介绍。这是一个突破性的技术，能够提升用户的工作效率。",
     image: "/images/pro-3.png",
-    color: "yellow",
+    color: "linear-gradient(135deg, rgba(168, 230, 207, 0.7), rgba(255, 211, 182, 0.5))",
+    animationType: "pulse"
   },
   {
     id: 4,
@@ -56,7 +59,8 @@ const products = [
     description:
       "这是产品四的详细介绍。这是一个创新的设计，能够满足用户的多样化需求。",
     image: "/images/pro-4.png",
-    color: "green",
+    color: "linear-gradient(135deg, rgba(184, 242, 230, 0.7), rgba(255, 166, 158, 0.5))",
+    animationType: "float"
   },
 ];
 
@@ -197,8 +201,8 @@ let log = () => {
             opacity: showProducts ? 1 : 0,
             transitionDelay: `${getAnimationDelay(index)}s`
           }" @click="(e) => handleProductClick(index, e)">
-            <BreatheCard :background="`linear-gradient(45deg, ${product.color}, rgba(255, 255, 255, 0.508))`"
-              :animationDelay="`${index * 0.1}s`">
+            <BreatheCard :background="product.color" :animationDelay="`${index * 0.3}s`"
+              :animationType="product.animationType">
               <img :src="product.image" class="pinzi" />
             </BreatheCard>
           </div>
