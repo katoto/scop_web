@@ -24,6 +24,10 @@ let showIntro = ref(true);
 let showLogo = ref(true);
 let showProducts = ref(false);
 let isTransitioning = ref(false);
+let showBlockGreen = ref(false);
+let showBlockRed = ref(false);
+let showBlockGold = ref(false);
+let showBlockOrange = ref(false);
 
 const products = [
   {
@@ -150,14 +154,21 @@ const getAnimationDelay = (index: number) => {
 };
 
 onMounted(() => {
-  // 缩短 logo 显示时间
   setTimeout(() => {
-    showLogo.value = false; // 1秒后淡出logo
+    showLogo.value = false;
     setTimeout(() => {
-      showIntro.value = false; // logo淡出0.5秒后移除intro层
-      showProducts.value = true; // 同时显示产品
+      showIntro.value = false;
+      // 先显示中间两个色块和产品
+      showBlockGreen.value = true;
+      showBlockRed.value = true;
+      showProducts.value = true;
+      // 再显示两侧色块和产品
+      setTimeout(() => {
+        showBlockGold.value = true;
+        showBlockOrange.value = true;
+      }, 700); // 700ms后再显示两侧色块，和产品动画延迟一致
     }, 500);
-  }, 1000); // 改为1秒
+  }, 1000);
 
   updateDomSize();
   window.addEventListener("mousemove", handleMouseMove);
@@ -184,14 +195,12 @@ let log = () => {
 
   <div class="contact-page">
     <div class="content-product" ref="contentDomref">
-      <div class="background-wrapper" :style="{
-        transform: `translateX(${position.offsetX * 20}px)`,
-      }">
-        <div class="bg-breath-block gold"></div>
-        <div class="bg-breath-block green"></div>
-        <div class="bg-breath-block red"></div>
-        <div class="bg-breath-block orange"></div>
+      <div class="background-wrapper" :style="{ transform: `translateX(${position.offsetX * 20}px)` }">
         <div class="background-image"></div>
+        <div v-if="showBlockGreen" class="bg-breath-block green"></div>
+        <div v-if="showBlockRed" class="bg-breath-block red"></div>
+        <div v-if="showBlockGold" class="bg-breath-block gold"></div>
+        <div v-if="showBlockOrange" class="bg-breath-block orange"></div>
       </div>
       <div class="pinzi-box-wrap" :class="{ 'detail-mode': selectedProduct !== null }">
         <StarCanvas />
@@ -205,10 +214,7 @@ let log = () => {
             opacity: showProducts ? 1 : 0,
             transitionDelay: `${getAnimationDelay(index)}s`
           }" @click="(e) => handleProductClick(index, e)">
-            <BreatheCard :background="product.color" :animationDelay="`${index * 0.3}s`"
-              :animationType="product.animationType">
-              <img :src="product.image" class="pinzi" />
-            </BreatheCard>
+            <img :src="product.image" class="pinzi" />
           </div>
         </div>
         <!-- 动画和详情共用同一个img -->
@@ -292,52 +298,6 @@ let log = () => {
       z-index: 1;
       pointer-events: none;
 
-      .bg-breath-block {
-        position: absolute;
-        top: -10px;
-        height: calc(100vh + 20px);
-        border-radius: 48px;
-        filter: blur(24px);
-        animation: breathOpacity 3.2s ease-in-out infinite alternate;
-        will-change: opacity;
-      }
-
-      .gold {
-        background: #e6ff00;
-        left: -10px;
-        width: calc(25vw + 30px);
-        opacity: 0.2;
-        animation-delay: 0s;
-        z-index: 1;
-      }
-
-      .green {
-        background: #00dc00;
-        left: calc(25vw - 10px);
-        width: calc(25vw + 30px);
-        opacity: 0.3;
-        animation-delay: 0.8s;
-        z-index: 2;
-      }
-
-      .red {
-        background: #ff0000;
-        left: calc(50vw - 10px);
-        width: calc(25vw + 30px);
-        opacity: 0.3;
-        animation-delay: 1.6s;
-        z-index: 3;
-      }
-
-      .orange {
-        background: #ff7200;
-        left: calc(75vw - 10px);
-        width: calc(25vw + 30px);
-        opacity: 0.4;
-        animation-delay: 2.2s;
-        z-index: 4;
-      }
-
       .background-image {
         position: absolute;
         top: 0;
@@ -349,6 +309,61 @@ let log = () => {
         background-position: center center;
         background-repeat: no-repeat;
         z-index: 0;
+      }
+
+      .breath-blocks {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        opacity: 1;
+        transition: opacity 0.6s;
+      }
+
+      .bg-breath-block {
+        position: absolute;
+        top: -10px;
+        height: calc(100vh + 20px);
+        border-radius: 48px;
+        filter: blur(110px);
+        animation: breathOpacity 1.6s ease-in-out infinite alternate;
+        will-change: opacity;
+        opacity: 0;
+        transition: opacity 8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .gold {
+        background: rgba(230, 255, 0);
+        left: -10px;
+        width: calc(25vw + 20px);
+        animation-delay: 0s;
+        z-index: 1;
+      }
+
+      .green {
+        background: rgba(0, 220, 0);
+        left: calc(25vw - 10px);
+        width: calc(25vw + 20px);
+        animation-delay: 0.8s;
+        z-index: 2;
+      }
+
+      .red {
+        background: rgba(255, 0, 0);
+        left: calc(50vw - 10px);
+        width: calc(25vw + 30px);
+        animation-delay: 1.6s;
+        z-index: 3;
+      }
+
+      .orange {
+        background: rgba(255, 114, 0);
+        left: calc(75vw - 10px);
+        width: calc(25vw + 20px);
+        animation-delay: 2.2s;
+        z-index: 4;
       }
     }
   }
@@ -876,7 +891,7 @@ let log = () => {
 
 @keyframes breathOpacity {
   0% {
-    opacity: 0.25;
+    opacity: 0.3;
   }
 
   100% {

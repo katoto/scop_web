@@ -52,7 +52,7 @@ function initCanvas() {
     // 创建星星
     const createStars = () => {
         stars = []
-        const starCount = Math.floor((canvas.value.width * canvas.value.height) / 1100)
+        const starCount = Math.floor((canvas.value.width * canvas.value.height) / 900)
 
         for (let i = 0; i < starCount; i++) {
             const x = Math.random() * canvas.value.width
