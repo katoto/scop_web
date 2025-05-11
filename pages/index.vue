@@ -206,19 +206,19 @@ let isShowColorBg = (num: number) => {
         <div v-if="showBlockGreen && isShowColorBg(1)" :style="{
           width: selectedProduct === null ? 'calc(25vw + 20px)' : '100%',
           left: selectedProduct === null ? 'calc(25vw - 10px)' : '0'
-        }" class="bg-breath-block green"></div>
+        }" class="bg-breath-block-item bg-breath-block green"></div>
         <div v-if="showBlockRed && isShowColorBg(2)" :style="{
           width: selectedProduct === null ? 'calc(25vw + 20px)' : '100%',
           left: selectedProduct === null ? 'calc(50vw - 10px)' : '0'
-        }" class="bg-breath-block-red  red"></div>
+        }" class="bg-breath-block-item bg-breath-block-red  red"></div>
         <div v-if="showBlockGold && isShowColorBg(0)" :style="{
           width: selectedProduct === null ? 'calc(25vw + 20px)' : '100%',
           left: selectedProduct === null ? 'calc(25vw + 20px)' : '0'
-        }" class="bg-breath-block gold"></div>
+        }" class="bg-breath-block-item bg-breath-block gold"></div>
         <div v-if="showBlockOrange && isShowColorBg(3)" :style="{
           width: selectedProduct === null ? 'calc(25vw + 20px)' : '100%',
           left: selectedProduct === null ? 'calc(75vw - 10px)' : '0'
-        }" class="bg-breath-block orange"></div>
+        }" class="bg-breath-block-item bg-breath-block orange"></div>
       </div>
       <div class="pinzi-box-wrap" :class="{ 'detail-mode': selectedProduct !== null }">
         <StarCanvas />
