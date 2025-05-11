@@ -123,19 +123,9 @@ const updateDomSize = () => {
 };
 
 const getAnimationDelay = (index: number) => {
-  // 对于4个产品：index 1和2先出现（延迟0.2s），index 0和3后出现（延迟0.6s）
+  // 对于4个产品：index 1和2先出现（延迟0.5s），index 0和3后出现（延迟1.2s）
   const isMiddle = index === 1 || index === 2;
-  return isMiddle ? 0.2 : 0.6;
-};
-
-const getInitialTransform = (index: number) => {
-  // 中间两个产品从中间展开，两边的产品从更远的位置进入
-  const isMiddle = index === 1 || index === 2;
-  if (index < 2) {
-    return `translateX(${isMiddle ? 100 : 400}%)`; // 左侧产品
-  } else {
-    return `translateX(${isMiddle ? -100 : -400}%)`; // 右侧产品
-  }
+  return isMiddle ? 0.5 : 1.2;
 };
 
 onMounted(() => {
@@ -185,13 +175,10 @@ let log = () => {
             'fade-out': selectedProduct !== null && selectedProduct !== index,
             'show-product': showProducts,
             'middle-product': index === 1 || index === 2,
-            'side-product': index === 0 || index === 3,
+            'side-product': index === 0 || index === 3
           }" :style="{
-            transform: !showProducts
-              ? getInitialTransform(index)
-              : 'translateX(0)',
             opacity: showProducts ? 1 : 0,
-            transitionDelay: `${getAnimationDelay(index)}s`,
+            transitionDelay: `${getAnimationDelay(index)}s`
           }" @click="(e) => handleProductClick(index, e)">
             <BreatheCard :background="`linear-gradient(45deg, ${product.color}, rgba(255, 255, 255, 0.508))`"
               :animationDelay="`${index * 0.1}s`">
@@ -324,7 +311,6 @@ let log = () => {
         align-items: center;
         padding: 0 20px;
         padding-bottom: 50px;
-        min-height: 400px;
       }
 
       .card-wrap {
@@ -335,35 +321,41 @@ let log = () => {
         justify-content: center;
         height: 100%;
         cursor: pointer;
-        transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1);
-        will-change: transform, opacity;
+        opacity: 0;
+        transform: scale(0.9);
+        transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 
         &.middle-product {
-          transition-duration: 0.8s; // 中间产品动画稍快
-          z-index: 2; // 确保中间产品在上层
+          transition-duration: 1s;
         }
 
         &.side-product {
-          transition-duration: 1.2s; // 两边产品动画稍慢
-          z-index: 1;
+          transition-duration: 1.2s;
         }
 
         &.show-product {
           opacity: 1;
-          transform: translateX(0) !important;
+          transform: scale(1);
+
+          .pinzi {
+            filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.2));
+          }
+        }
+
+        &.fade-out {
+          opacity: 0;
+          transform: scale(0.9);
         }
 
         .pinzi {
-          -webkit-box-reflect: below -14px linear-gradient(to bottom, rgba(255,
-                255,
-                255,
-                0) 0%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0.4) 100%);
+          -webkit-box-reflect: below -14px linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0.4) 100%);
           width: clamp(100px, 15vw, 180px);
           height: auto;
           object-fit: contain;
           max-width: 100%;
-          transition: transform 0.3s ease;
+          transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
           margin: 0 10px;
+          filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
         }
       }
 
@@ -651,32 +643,21 @@ let log = () => {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 30px;
+        gap: 40px;
       }
 
       .card-wrap {
-        transform: translateY(100vh) !important;
-
-        &.middle-product {
-          transform: translateY(50vh) !important;
-        }
-
-        &.side-product {
-          transform: translateY(80vh) !important;
-        }
+        opacity: 0;
+        transform: scale(0.9);
 
         &.show-product {
-          transform: translateY(0) !important;
+          opacity: 1;
+          transform: scale(1);
         }
-      }
 
-      .pinzi {
-        width: clamp(60px, 30vw, 100px);
-        margin: 0 0 10px 0;
-        -webkit-box-reflect: below -8px linear-gradient(to bottom, rgba(255,
-              255,
-              255,
-              0) 0%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0.4) 100%);
+        .pinzi {
+          width: clamp(80px, 20vw, 160px);
+        }
       }
     }
   }
