@@ -129,9 +129,7 @@ let isShowColorBg = (num: number) => {
       </div>
       <div class="pinzi-box-wrap" :class="{ 'detail-mode': selectedProduct !== null }">
         <StarCanvas />
-        <div>
-          <ProductAnimateWrap />
-        </div>
+        <ProductAnimateWrap />
       </div>
     </div>
   </div>
@@ -294,7 +292,7 @@ let isShowColorBg = (num: number) => {
 .pinzi-box-wrap {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   // display: flex;
   // align-items: center;
   // justify-content: center;
