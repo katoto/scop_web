@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, reactive, onMounted } from "vue";
 
 let selectedProductIndex = ref<any>(null);
 let isBack = ref(false);
@@ -50,29 +50,119 @@ let handleClickBack = () => {
   selectedProductIndex.value = null;
   isBack.value = true;
 };
+function getActiveClass(num: type) {
+  if (num === selectedProductIndex.value && isBack.value) {
+    return 'product-item-bg-active'
+  }
+  return ''
+}
+
+let domState = reactive({
+  left: 0,
+  top: 0,
+  width: 0,
+  height: 0
+})
+
+let domSizeArr = ref([]);
+
+onMounted(() => {
+  if (domRef.value) {
+    let doms = domRef.value.querySelectorAll('.product-item-wrap');
+    doms.forEach((dom: HTMLElement, index) => {
+      domSizeArr.value[index] = {
+        left: dom.offsetLeft,
+        top: dom.offsetTop,
+        width: dom.offsetWidth,
+        height: dom.offsetHeight
+      }
+    });
+
+  }
+
+})
+
+let domRef = ref(null)
+let handleGotoDetail = (num: number) => {
+  selectedProductIndex.value = num
+  isBack.value = true;
+  if (domRef.value) {
+    let doms = domRef.value.querySelectorAll('.product-item-wrap');
+    let dom: HTMLElement = doms[num]
+    if (dom) {
+      domState.left = dom.offsetLeft
+      domState.top = dom.offsetTop;
+      domState.width = dom.offsetWidth;
+      domState.height = dom.offsetHeight;
+    }
+  }
+};
 </script>
 
 <template>
-  <div class="product-container" v-if="selectedProductIndex === null">
-    <div v-for="(product, index) in products" :key="index" :class="`product-item-wrap product-item-wrap-${index}`"
-      @click="selectedProductIndex = index">
-      <div :class="`product-item-bg product-item-bg-${index}`" :style="isBack
-        ? {
-          animationDelay: '0s',
-        }
-        : {}
-        "></div>
-      <div class="product-item" :class="`fade-in-${index}`" :style="isBack
-        ? {
-          animationDelay: '0s',
-        }
-        : {}
-        ">
-        <img class="product-img" :src="product.image" alt="{{ product.name }}" />
+
+  <div class="product-container-wrap">
+    <button class="back-btn" @click="handleClickBack" v-if="selectedProductIndex !== null">
+      <svg width="48" height="48" viewBox="0 0 48 48">
+        <circle cx="24" cy="24" r="23" stroke="#fff" stroke-width="2" fill="none" />
+        <polyline points="28,16 20,24 28,32" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+    </button>
+    <div class="product-container" ref="domRef">
+      <div v-for="(product, index) in products" :key="index"
+        :class="`product-item-wrap product-item-wrap-${index} ${selectedProductIndex !== null && selectedProductIndex !== index ? 'product-item-wrap-hide' : getActiveClass(index)} `"
+        @click="handleGotoDetail(index)">
+        <div :class="`product-item-bg product-item-bg-${index}`" :style="isBack
+          ? {
+            animationDelay: '0s',
+          }
+          : {}
+          "></div>
+        <div class="product-item" :class="`fade-in-${index}`" :style="isBack
+          ? {
+            animationDelay: '0s',
+          }
+          : {}
+          ">
+          <img class="product-img" :src="product.image" alt="{{ product.name }}" />
+        </div>
       </div>
     </div>
+    <div :class="`detail-container detail-container-${domIndex}`" v-for="(domItem, domIndex) in domSizeArr" :style="selectedProductIndex === domIndex ? {
+      left: 0 + 'px',
+      top: 0 + 'px',
+      width: '100%',
+      height: '100%',
+      opacity: 1,
+      zIndex: '1'
+    } : {
+      left: domItem.left + 'px',
+      top: domItem.top + 'px',
+      width: domItem.width + 'px',
+      height: domItem.height + 'px',
+      opacity: 0,
+      zIndex: '-1'
+
+    }">
+      <div :class="`product-detail-item-bg product-detail-bg-${selectedProductIndex}`">
+
+      </div>
+      <div :class="`product-detail-${selectedProductIndex}`">
+        <img class="product-img-detail" :src="products[domIndex].image" alt="{{ product.name }}" />
+      </div>
+      <div :style="{
+        paddingLeft: '100px',
+        color: '#fff',
+        width: '60%'
+      }">
+
+      </div>
+    </div>
+
   </div>
-  <div class="product-container" v-if="selectedProductIndex !== null">
+
+  <!-- <div class="product-container" v-if="selectedProductIndex !== null">
 
     <button class="back-btn" @click="handleClickBack">
       <svg width="48" height="48" viewBox="0 0 48 48">
@@ -85,13 +175,57 @@ let handleClickBack = () => {
     <div :class="`product-item-wrap product-item-wrap-${selectedProductIndex}`">
       <div :class="`product-item-bg product-item-bg-${selectedProductIndex}`"></div>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <style scoped>
+.product-container-wrap {
+  position: relative;
+  height: 100vh;
+}
+
+.detail-container {
+  position: absolute;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s ease;
+}
+
+.product-detail-item-bg {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  filter: blur(50px);
+  position: absolute;
+}
+
+.product-detail-bg-0 {
+  background: rgba(230, 255, 0, 0.9);
+  opacity: 0.35;
+}
+
+.product-detail-bg-1 {
+  background: rgba(0, 220, 0, 0.6);
+  opacity: 0.35;
+}
+
+.product-detail-bg-2 {
+  background: rgba(255, 0, 0, 1);
+  opacity: 0.35;
+}
+
+.product-detail-bg-3 {
+  background: rgba(255, 114, 0, 0.9);
+  opacity: 0.35;
+}
+
 .product-container {
   display: flex;
   height: 100vh;
+  position: relative;
 }
 
 .product-item-wrap {
@@ -100,7 +234,17 @@ let handleClickBack = () => {
   align-items: center;
   justify-content: center;
   position: relative;
-  animation: productFadeIn 1s ease-in 1;
+  animation: all 1s ease-in 1;
+  opacity: 1;
+}
+
+.product-item-wrap-hide {
+  transition: opacity 1s ease;
+  opacity: 0;
+}
+
+.product-item-bg-active {
+  opacity: 0;
 }
 
 @keyframes productFadeIn {
@@ -186,6 +330,12 @@ let handleClickBack = () => {
   max-width: 150px;
   -webkit-box-reflect: below 0px linear-gradient(transparent, rgba(255, 255, 255, 0.3));
   transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.product-img-detail {
+  width: 100%;
+  max-width: 150px;
+  -webkit-box-reflect: below 0px linear-gradient(transparent, rgba(255, 255, 255, 0.3));
 }
 
 .product-img:hover {
