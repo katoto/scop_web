@@ -190,7 +190,7 @@ let handleGotoDetail = (num: number) => {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 1s ease;
+  transition: all 0.6s ease;
 }
 
 .product-detail-item-bg {
@@ -369,8 +369,8 @@ let handleGotoDetail = (num: number) => {
 }
 
 .back-btn {
-  position: absolute;
-  top: 40px;
+  position: fixed;
+  top: 150px;
   left: 40px;
   background: none;
   border: none;
