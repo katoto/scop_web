@@ -1,0 +1,254 @@
+<script setup lang="ts">
+import { ref } from "vue";
+
+let selectedProductIndex = ref<any>(null);
+let isBack = ref(false);
+const products = [
+  {
+    id: 1,
+    name: "产品一",
+    description:
+      "这是产品一的详细介绍。这是一个创新的解决方案，能够帮助用户更好地完成工作。",
+    image: "/images/pro-3.png",
+    color:
+      "linear-gradient(135deg, rgba(255, 107, 107, 0.7), rgba(255, 230, 109, 0.5))",
+    animationType: "default",
+  },
+  {
+    id: 2,
+    name: "产品二",
+    description:
+      "这是产品二的详细介绍。这是一个革命性的产品，能够改变用户的生活方式。",
+    image: "/images/pro-4.png",
+    color:
+      "linear-gradient(135deg, rgba(78, 205, 196, 0.7), rgba(85, 98, 112, 0.5))",
+    animationType: "wave",
+  },
+  {
+    id: 3,
+    name: "产品三",
+    description:
+      "这是产品三的详细介绍。这是一个突破性的技术，能够提升用户的工作效率。",
+    image: "/images/pro-2.png",
+    color:
+      "linear-gradient(135deg, rgba(168, 230, 207, 0.7), rgba(255, 211, 182, 0.5))",
+    animationType: "pulse",
+  },
+  {
+    id: 4,
+    name: "产品四",
+    description:
+      "这是产品四的详细介绍。这是一个创新的设计，能够满足用户的多样化需求。",
+    image: "/images/pro-1.png",
+    color:
+      "linear-gradient(135deg, rgba(184, 242, 230, 0.7), rgba(255, 166, 158, 0.5))",
+    animationType: "float",
+  },
+];
+
+let handleClickBack = () => {
+  selectedProductIndex.value = null;
+  isBack.value = true;
+};
+</script>
+
+<template>
+  <div class="product-container" v-if="selectedProductIndex === null">
+    <div v-for="(product, index) in products" :key="index" :class="`product-item-wrap product-item-wrap-${index}`"
+      @click="selectedProductIndex = index">
+      <div :class="`product-item-bg product-item-bg-${index}`" :style="isBack
+        ? {
+          animationDelay: '0s',
+        }
+        : {}
+        "></div>
+      <div class="product-item" :class="`fade-in-${index}`" :style="isBack
+        ? {
+          animationDelay: '0s',
+        }
+        : {}
+        ">
+        <img class="product-img" :src="product.image" alt="{{ product.name }}" />
+      </div>
+    </div>
+  </div>
+  <div class="product-container" v-if="selectedProductIndex !== null">
+
+    <button class="back-btn" @click="handleClickBack">
+      <svg width="48" height="48" viewBox="0 0 48 48">
+        <circle cx="24" cy="24" r="23" stroke="#fff" stroke-width="2" fill="none" />
+        <polyline points="28,16 20,24 28,32" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+    </button>
+
+    <div :class="`product-item-wrap product-item-wrap-${selectedProductIndex}`">
+      <div :class="`product-item-bg product-item-bg-${selectedProductIndex}`"></div>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.product-container {
+  display: flex;
+  height: 100vh;
+}
+
+.product-item-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: productFadeIn 1s ease-in 1;
+}
+
+@keyframes productFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.product-item-bg {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  filter: blur(50px);
+  position: absolute;
+}
+
+.product-item-bg-0 {
+  background: rgba(230, 255, 0, 0.9);
+  animation: bgColorAnimate 2s ease-in-out infinite;
+  animation-delay: 1.2s;
+  opacity: 0;
+}
+
+.product-item-bg-1 {
+  background: rgba(0, 220, 0, 0.6);
+  animation: bgColorAnimate 2s ease-in-out infinite;
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+
+.product-item-bg-2 {
+  background: rgba(255, 0, 0, 1);
+  animation: bgColorAnimate 2s ease-in-out infinite;
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+
+.product-item-bg-3 {
+  background: rgba(255, 114, 0, 0.9);
+  animation: bgColorAnimate 2s ease-in-out infinite;
+  animation-delay: 1.2s;
+  opacity: 0;
+}
+
+.product-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  width: 80%;
+  filter: blur(0px);
+}
+
+.fade-in-0 {
+  animation-name: fadeIn;
+  animation-delay: 1.2s;
+}
+
+.fade-in-1 {
+  animation-name: fadeIn;
+  animation-delay: 0.4s;
+}
+
+.fade-in-2 {
+  animation-name: fadeIn;
+  animation-delay: 0.4s;
+}
+
+.fade-in-3 {
+  animation-name: fadeIn;
+  animation-delay: 1.2s;
+}
+
+.product-img {
+  width: 100%;
+  max-width: 150px;
+  -webkit-box-reflect: below 0px linear-gradient(transparent, rgba(255, 255, 255, 0.3));
+  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.product-img:hover {
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bgColorAnimate {
+  0% {
+    opacity: 0.2;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 0.2;
+  }
+}
+
+.back-btn {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 20;
+  transition: all 0.3s ease;
+  pointer-events: auto;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  svg {
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
+  }
+}
+
+@media (max-width: 768px) {
+  .back-btn {
+    top: 16px;
+    left: 16px;
+    width: 36px;
+    height: 36px;
+
+    svg {
+      width: 36px;
+      height: 36px;
+    }
+  }
+}
+</style>
