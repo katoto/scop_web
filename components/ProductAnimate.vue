@@ -206,15 +206,15 @@ let handleClickBack = () => {
 
 @keyframes bgColorAnimate {
   0% {
-    opacity: 0.2;
-  }
-
-  50% {
     opacity: 0.3;
   }
 
+  50% {
+    opacity: 0.5;
+  }
+
   100% {
-    opacity: 0.2;
+    opacity: 0.3;
   }
 }
 
