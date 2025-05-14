@@ -69,12 +69,20 @@ let domSizeArr = ref([]);
 onMounted(() => {
   if (domRef.value) {
     let doms = domRef.value.querySelectorAll('.product-item-wrap');
+    let innerWidth = window.innerWidth;
+    let innerHeight = window.innerHeight;
+    let flag = false
+    if (innerWidth <= 768) {
+      flag = true
+    }
+
+
     doms.forEach((dom: HTMLElement, index) => {
       domSizeArr.value[index] = {
-        left: dom.offsetLeft,
-        top: dom.offsetTop,
-        width: dom.offsetWidth,
-        height: dom.offsetHeight
+        left: flag ? 0 : dom.offsetLeft,
+        top: flag ? 0 : dom.offsetTop,
+        width: flag ? innerWidth : dom.offsetWidth,
+        height: flag ? innerHeight : dom.offsetHeight
       }
     });
 
@@ -148,14 +156,24 @@ let handleGotoDetail = (num: number) => {
       <div :class="`product-detail-item-bg product-detail-bg-${selectedProductIndex}`">
 
       </div>
-      <div :class="`product-detail-${selectedProductIndex}`">
-        <img class="product-img-detail" :src="products[domIndex].image" alt="{{ product.name }}" />
+      <div :class="`product-detail-com product-detail-${selectedProductIndex}`">
+        <div class="product-detail-com-inner">
+          <img class="product-img-detail" :src="products[domIndex].image" alt="{{ product.name }}" />
+        </div>
       </div>
-      <div :style="{
-        paddingLeft: '100px',
-        color: '#fff',
-        width: '60%'
-      }">
+      <div class="product-detail-desc" v-if="selectedProductIndex !== null">
+        <div class="detail-content-block">
+          <div class="icon-title">
+            <span class="icon">🍄</span>
+            <span class="title">{{ products[selectedProductIndex].name }}&nbsp;CP-101</span>
+          </div>
+          <div class="desc-list">
+            <div>天然蘑菇提取物为主要活性成分</div>
+            <div>增强免疫力，辅助癌症治疗</div>
+            <div>抑制癌细胞增殖，促进细胞正常凋亡</div>
+          </div>
+          <button class="detail-btn">点击了解更多</button>
+        </div>
 
       </div>
     </div>
@@ -191,6 +209,7 @@ let handleGotoDetail = (num: number) => {
   align-items: center;
   justify-content: center;
   transition: all 0.6s ease;
+  flex-direction: row;
 }
 
 .product-detail-item-bg {
@@ -221,6 +240,8 @@ let handleGotoDetail = (num: number) => {
   background: rgba(255, 114, 0, 0.9);
   opacity: 0.35;
 }
+
+.product-detail-com {}
 
 .product-container {
   display: flex;
@@ -305,6 +326,13 @@ let handleGotoDetail = (num: number) => {
   filter: blur(0px);
 }
 
+.product-detail-com-inner {
+  /* width: 20vw; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .fade-in-0 {
   animation-name: fadeIn;
   animation-delay: 1.2s;
@@ -342,6 +370,12 @@ let handleGotoDetail = (num: number) => {
   transform: scale(1.05);
 }
 
+.product-detail-desc {
+  width: 60%;
+  padding: 0 20px;
+  padding-left: 100px;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -369,7 +403,7 @@ let handleGotoDetail = (num: number) => {
 }
 
 .back-btn {
-  position: fixed;
+  position: absolute;
   top: 150px;
   left: 40px;
   background: none;
@@ -388,9 +422,138 @@ let handleGotoDetail = (num: number) => {
   }
 }
 
+.detail-btn {
+  background: #fff;
+  color: #1a2b0d;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 8px 24px;
+  cursor: pointer;
+  letter-spacing: 0.18em;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  opacity: 1;
+  transform: translateY(0);
+
+  &:hover {
+    background: #e6f5c9;
+    color: #1a2b0d;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+
+.detail-content-block {
+  flex: 1;
+  max-width: 600px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  /* margin-right: 80px; */
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform, opacity;
+
+  &.hidden {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  .icon-title {
+    display: flex;
+    align-items: center;
+    font-size: 2.6rem;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    margin-bottom: 32px;
+    transform: translateY(0);
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    .icon {
+      font-size: 2.2rem;
+      margin-right: 18px;
+    }
+
+    .title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+    }
+  }
+
+  .desc-list {
+    font-size: 1.3rem;
+    line-height: 2.2rem;
+    margin-bottom: 36px;
+    letter-spacing: 0.18em;
+    transform: translateY(0);
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s;
+
+    div {
+      margin-bottom: 8px;
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+  }
+
+  .detail-btn {
+    background: #fff;
+    color: #1a2b0d;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 8px 24px;
+    cursor: pointer;
+    letter-spacing: 0.18em;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    opacity: 1;
+    transform: translateY(0);
+
+    &:hover {
+      background: #e6f5c9;
+      color: #1a2b0d;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .detail-content-block {
+    width: 600px;
+  }
+
+}
+
 @media (max-width: 768px) {
+  .detail-container {
+    position: absolute;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+
+  .product-detail-desc {
+    /* width: 60%; */
+    /* width: 75%; */
+    width: 100%;
+    padding-left: 20px;
+  }
+
+
   .back-btn {
-    top: 16px;
+    top: 100px;
+    position: absolute;
     left: 16px;
     width: 36px;
     height: 36px;
@@ -399,6 +562,97 @@ let handleGotoDetail = (num: number) => {
       width: 36px;
       height: 36px;
     }
+  }
+
+  .detail-btn {
+    font-size: 1rem;
+    padding: 12px 32px;
+    width: 100%;
+    max-width: 280px;
+  }
+
+
+
+  .detail-content-block {
+    margin: 0;
+    padding: 0 20px 40px;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+
+    .icon-title {
+      font-size: 2rem;
+      margin-bottom: 24px;
+      flex-direction: column;
+      gap: 12px;
+
+      .icon {
+        font-size: 2.4rem;
+        margin: 0;
+      }
+
+      .title {
+        font-size: 1.8rem;
+      }
+    }
+
+    .desc-list {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 32px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .detail-btn {
+      font-size: 1rem;
+      padding: 12px 32px;
+      width: 100%;
+      max-width: 280px;
+    }
+  }
+
+
+}
+
+.detail-img-block {
+  width: 320px;
+  min-width: 220px;
+  max-width: 380px;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-left: 80px; */
+  /* margin-right: 60px; */
+
+  .detail-img {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 340px;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.18));
+    -webkit-box-reflect: below -10px linear-gradient(transparent 60%, rgba(0,
+          0,
+          0,
+          0.15) 100%);
+    transition: all 0.6s ease-in-out;
+    opacity: 1;
+
+    &.animating {
+      position: relative;
+      transition: all 0.6s ease-in-out;
+    }
+
+  }
+
+  .detail-img-2 {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    opacity: 0;
   }
 }
 </style>
