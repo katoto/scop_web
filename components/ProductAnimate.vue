@@ -575,7 +575,8 @@ let handleGotoDetail = (num: number) => {
 
   .detail-content-block {
     margin: 0;
-    padding: 0 20px 40px;
+    /* padding: 0 20px 40px; */
+    padding: 0 0px 0px;
     width: 100%;
     align-items: center;
     text-align: center;
