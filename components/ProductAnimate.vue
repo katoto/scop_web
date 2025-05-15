@@ -293,7 +293,7 @@ let handleGotoDetail = (num: number) => {
 
 .product-item-bg-0 {
   background: rgba(230, 255, 0, 0.9);
-  animation: bgColorAnimate 2s ease-in-out infinite;
+  animation: bgColorAnimate2 1.8s ease-out infinite;
   animation-delay: 1.2s;
   opacity: 0;
 }
@@ -307,14 +307,14 @@ let handleGotoDetail = (num: number) => {
 
 .product-item-bg-2 {
   background: rgba(255, 0, 0, 1);
-  animation: bgColorAnimate 2s ease-in-out infinite;
+  animation: bgColorAnimate2 2.2s ease-in-out infinite;
   animation-delay: 0.4s;
   opacity: 0;
 }
 
 .product-item-bg-3 {
   background: rgba(255, 114, 0, 0.9);
-  animation: bgColorAnimate 2s ease-in-out infinite;
+  animation: bgColorAnimate 1.9s ease-in-out infinite;
   animation-delay: 1.2s;
   opacity: 0;
 }
@@ -370,7 +370,7 @@ let handleGotoDetail = (num: number) => {
 }
 
 .product-img-show {
-  animation: fadeInShow 1s ease-in 1;
+  animation: fadeInShow 1.2s ease-in-out 1;
 }
 
 @keyframes fadeInShow {
@@ -471,6 +471,21 @@ let handleGotoDetail = (num: number) => {
 
   100% {
     opacity: 0.3;
+  }
+}
+
+@keyframes bgColorAnimate2 {
+  0% {
+    opacity: 0.5;
+
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 0.5;
   }
 }
 
