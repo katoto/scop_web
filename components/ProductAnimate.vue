@@ -322,7 +322,6 @@ let handleGotoDetail = (num: number) => {
   opacity: 0;
   animation-duration: 1s;
   animation-fill-mode: forwards;
-  width: 80%;
   filter: blur(0px);
 }
 
@@ -353,21 +352,72 @@ let handleGotoDetail = (num: number) => {
   animation-delay: 1.2s;
 }
 
+
 .product-img {
-  width: 100%;
-  max-width: 150px;
-  -webkit-box-reflect: below 0px linear-gradient(transparent, rgba(255, 255, 255, 0.3));
+  /* width: 100%; */
+  height: 100%;
+  /* max-width: 150px; */
+  -webkit-box-reflect: below -15% linear-gradient(transparent, rgba(255, 255, 255, 0.3));
   transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.product-item {
+  height: 250px;
+  position: relative;
+}
+
+.fade-in-0 {
+  padding-top: 10px;
+  left: 100px;
+}
+
+.fade-in-1 {
+  left: 30px;
+}
+
+.fade-in-2 {
+  right: 30px;
+}
+
+.fade-in-3 {
+  padding-top: 10px;
+  right: 100px;
+}
+
+
+@media (max-width: 768px) {
+  .product-item {
+    height: 30vw;
+  }
+
+  .fade-in-0 {
+    padding-top: 2vw;
+    left: 3vw;
+  }
+
+  .fade-in-1 {
+    left: 1vw;
+  }
+
+  .fade-in-2 {
+    right: 1vw;
+  }
+
+  .fade-in-3 {
+    padding-top: 2vw;
+    right: 3vw;
+  }
+
 }
 
 .product-img-detail {
   width: 100%;
   max-width: 150px;
-  -webkit-box-reflect: below 0px linear-gradient(transparent, rgba(255, 255, 255, 0.3));
+  -webkit-box-reflect: below -15% linear-gradient(transparent, rgba(255, 255, 255, 0.3));
 }
 
 .product-img:hover {
-  transform: scale(1.05);
+  /* transform: scale(1.05); */
 }
 
 .product-detail-desc {
@@ -635,7 +685,7 @@ let handleGotoDetail = (num: number) => {
     height: 340px;
     object-fit: contain;
     filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.18));
-    -webkit-box-reflect: below -10px linear-gradient(transparent 60%, rgba(0,
+    -webkit-box-reflect: below -15% linear-gradient(transparent 60%, rgba(0,
           0,
           0,
           0.15) 100%);
