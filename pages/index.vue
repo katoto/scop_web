@@ -118,16 +118,25 @@ let isShowColorBg = (num: number) => {
   }
   return selectedProduct.value === num;
 };
+
+let isLoad = ref(false)
+
+let handleLoad = () => {
+  isLoad.value = true
+}
 </script>
 
 <template>
 
   <div class="contact-page">
+    <img src="/images/bg-line-2.png" @load="handleLoad" :style="{
+      display: 'none'
+    }" />
     <div class="content-product" ref="contentDomref">
       <div class="background-wrapper" :style="{ transform: `translateX(${position.offsetX * 20}px)` }">
         <div class="background-image"></div>
       </div>
-      <div class="pinzi-box-wrap" :class="{ 'detail-mode': selectedProduct !== null }">
+      <div class="pinzi-box-wrap" :class="{ 'detail-mode': selectedProduct !== null }" v-if="isLoad">
         <StarCanvas />
         <ProductAnimateWrap />
       </div>
