@@ -119,7 +119,7 @@ let handleGotoDetail = (num: number) => {
     </button>
     <div class="product-container" ref="domRef">
       <div v-for="(product, index) in products" :key="index"
-        :class="`product-item-wrap product-item-wrap-${index} ${selectedProductIndex !== null && selectedProductIndex !== index ? 'product-item-wrap-hide' : getActiveClass(index)} `"
+        :class="`product-item-wrap product-item-wrap-${index} ${selectedProductIndex !== null ? 'product-item-wrap-hide' : ''}`"
         @click="handleGotoDetail(index)">
         <div :class="`product-item-bg product-item-bg-${index}`" :style="isBack
           ? {
@@ -133,7 +133,11 @@ let handleGotoDetail = (num: number) => {
           }
           : {}
           ">
-          <img class="product-img" :src="product.image" alt="{{ product.name }}" />
+          <img :class="{
+            'product-img': true,
+            'product-img-hide': selectedProductIndex !== null,
+            'product-img-show': selectedProductIndex === null
+          }" :src="product.image" alt="{{ product.name }}" />
         </div>
       </div>
     </div>
@@ -359,6 +363,24 @@ let handleGotoDetail = (num: number) => {
   /* max-width: 150px; */
   -webkit-box-reflect: below -15% linear-gradient(transparent, rgba(255, 255, 255, 0.3));
   transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.product-img-hide {
+  opacity: 0;
+}
+
+.product-img-show {
+  animation: fadeInShow 1s ease-in 1;
+}
+
+@keyframes fadeInShow {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .product-item {
