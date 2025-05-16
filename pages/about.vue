@@ -70,24 +70,30 @@
         <!-- 后四位专家模块排版 -->
         <div class="expert-modules">
           <div class="expert-card">
-            <div class="expert-avatar">
-              <img src="/images/pro-3.png" alt="冈田邦彦" />
+            <div class="expert-card-img">
+              <img src="/about-Scophil/3-3专家团队-冈田邦彦.jpg" alt="冈田邦彦" />
             </div>
             <h4>冈田邦彦</h4>
             <p>日本再生医疗领域权威，德岛大学硕士、名古屋大学博士，DRAQUA与REBOR等多家生医企业董事长。主导干细胞培养、骨再生与组织工程等前沿研究，推动再生医疗临床应用。</p>
           </div>
           <div class="expert-card">
-            <div class="expert-avatar">
-              <img src="/images/pro-4.png" alt="丁明跃" />
+            <div class="expert-card-img">
+              <img src="/about-Scophil/3-4专家团队-丁明跃.png" alt="丁明跃" />
             </div>
             <h4>丁明跃</h4>
             <p>华中科技大学生命科学与技术学院教授、博士生导师。高端生物医学成像专家，长期致力于医疗器械与成像技术创新。</p>
           </div>
           <div class="expert-card">
+            <div class="expert-card-img">
+              <img src="/about-Scophil/3-5专家团队-燕炜.jpg" alt="燕炜" />
+            </div>
             <h4>燕炜</h4>
             <p>医疗健康管理专家，内科医生。毕业于中南大学湘雅医学院与北京大学光华管理学院，拥有20余年医疗行业经验，参与多项1.1类新药临床试验。</p>
           </div>
           <div class="expert-card">
+            <div class="expert-card-img">
+              <img src="/about-Scophil/3-6专家团队-文辉清.png" alt="文辉清" />
+            </div>
             <h4>文辉清</h4>
             <p>南方医科大学第五附属医院肝胆外科主任，岭南名医。专注肝胆结石及内镜微创治疗。</p>
           </div>
@@ -424,28 +430,63 @@ function clearActive() {
 .expert-modules {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 32px;
   margin-top: 1.5rem;
+  justify-content: center;
 }
 
 .expert-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  padding: 0 0 28px 0;
+  flex: 1 1 260px;
+  min-width: 240px;
+  max-width: 320px;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.expert-card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13);
+  transform: translateY(-6px) scale(1.03);
+}
+
+.expert-card-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 18px 18px 0 0;
+  overflow: hidden;
   background: #f5f5f5;
-  border-radius: 12px;
-  padding: 24px 20px;
-  flex: 1 1 220px;
-  min-width: 220px;
-  max-width: 260px;
-  color: #333;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  border-left: 5px solid #FFD700;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.expert-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .expert-card h4 {
-  color: #FFD700;
-  font-size: 1.15rem;
+  color: #222;
+  font-size: 1.18rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin: 1.2rem 0 0.7rem 0;
+  text-align: center;
+}
+
+.expert-card p {
+  font-size: 1.02rem;
+  color: #555;
+  text-align: center;
+  margin: 0 18px;
+  line-height: 1.8;
 }
 
 .partners {
