@@ -12,17 +12,59 @@
       </div>
     </section>
 
-
-
-    <!-- 品牌理念 -->
-    <section class="section philosophy">
-      <h2>品牌理念</h2>
-      <ul>
-        <li><span class="highlight">科学严谨：</span> 坚信严谨的科研是产品价值的基石。专注于干细胞科技、多肽技术与天然草本活性物质的深度开发。</li>
-        <li><span class="highlight">安全优先：</span> 全系列产品均通过严格质量检测，确保无污染、无激素、无有害添加，保障消费者使用安心。</li>
-        <li><span class="highlight">精准功效：</span> 针对不同人群需求，开发抗癌、护肝、男性机能、私护修复等多维产品线，见效稳定。</li>
-        <li><span class="highlight">全球视野：</span> 品牌布局全球，产品远销亚洲、欧美多个国家，致力于打造国际领先的高端生命健康品牌。</li>
-      </ul>
+    <!-- 品牌理念横排 -->
+    <section class="philosophy-row-section">
+      <div class="philosophy-row">
+        <!-- 科学严谨 -->
+        <div class="philosophy-card" style="background-image:url('/about-Scophil/2-1品牌理念-科学严谨.jpg')">
+          <div class="philosophy-card-bg"></div>
+          <div class="philosophy-card-content">
+            <svg viewBox="0 0 48 48">
+              <circle cx="24" cy="24" r="20" stroke="#fff" stroke-width="2" fill="none" />
+              <path d="M16 32l8-16 8 16" stroke="#fff" stroke-width="2" fill="none" />
+            </svg>
+            <h3>科学严谨</h3>
+            <p>坚信严谨的科研是产品价值的基石，专注于干细胞科技、多肽技术与天然草本活性物质的深度开发。</p>
+          </div>
+        </div>
+        <!-- 安全优先 -->
+        <div class="philosophy-card" style="background-image:url('/about-Scophil/2-2品牌理念-安全优先.png')">
+          <div class="philosophy-card-bg"></div>
+          <div class="philosophy-card-content">
+            <svg viewBox="0 0 48 48">
+              <rect x="10" y="14" width="28" height="20" rx="4" stroke="#fff" stroke-width="2" fill="none" />
+              <path d="M24 18v12" stroke="#fff" stroke-width="2" />
+              <circle cx="24" cy="24" r="2" fill="#fff" />
+            </svg>
+            <h3>安全优先</h3>
+            <p>全系列产品均通过严格质量检测，确保无污染、无激素、无有害添加，保障消费者使用安心。</p>
+          </div>
+        </div>
+        <!-- 精准功效 -->
+        <div class="philosophy-card" style="background-image:url('/about-Scophil/2-3品牌理念-精准功效.jpg')">
+          <div class="philosophy-card-bg"></div>
+          <div class="philosophy-card-content">
+            <svg viewBox="0 0 48 48">
+              <rect x="12" y="12" width="24" height="24" rx="6" stroke="#fff" stroke-width="2" fill="none" />
+              <path d="M24 18v12M18 24h12" stroke="#fff" stroke-width="2" />
+            </svg>
+            <h3>精准功效</h3>
+            <p>针对不同人群需求，开发抗癌、护肝、男性机能、私护修复等多维产品线，见效稳定。</p>
+          </div>
+        </div>
+        <!-- 全球视野 -->
+        <div class="philosophy-card" style="background-image:url('/about-Scophil/2-4品牌理念-全球视野.png')">
+          <div class="philosophy-card-bg"></div>
+          <div class="philosophy-card-content">
+            <svg viewBox="0 0 48 48">
+              <circle cx="24" cy="24" r="20" stroke="#fff" stroke-width="2" fill="none" />
+              <path d="M24 4v40M4 24h40" stroke="#fff" stroke-width="2" fill="none" />
+            </svg>
+            <h3>全球视野</h3>
+            <p>品牌布局全球，产品远销亚洲、欧美多个国家，致力于打造国际领先的高端生命健康品牌。</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- 专家团队 -->
@@ -194,20 +236,78 @@
   line-height: 2;
 }
 
-.philosophy ul {
-  list-style: none;
-  padding: 0;
+.philosophy-row-section {
+  width: 100%;
+  background: #fff;
+  padding: 48px 0 32px 0;
+  display: flex;
+  justify-content: center;
 }
 
-.philosophy li {
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-  line-height: 1.8;
+.philosophy-row {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+  max-width: 1400px;
+  justify-content: center;
 }
 
-.highlight {
-  color: #FFD700;
+.philosophy-card {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 420px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
+}
+
+.philosophy-card-bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(40, 30, 10, 0.45);
+  backdrop-filter: blur(8px);
+  z-index: 1;
+}
+
+.philosophy-card-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px 32px 24px;
+  height: 100%;
+  text-align: center;
+}
+
+.philosophy-card-content svg {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 18px;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2;
+}
+
+.philosophy-card-content h3 {
+  font-size: 1.35rem;
   font-weight: 700;
+  margin-bottom: 1.1rem;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.22);
+}
+
+.philosophy-card-content p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
 }
 
 .experts-list {
@@ -341,6 +441,12 @@
   object-fit: cover;
 }
 
+@media (max-width: 1200px) {
+  .philosophy-row {
+    gap: 16px;
+  }
+}
+
 @media (max-width: 900px) {
 
   .expert-row,
@@ -368,6 +474,15 @@
   .banner-content {
     margin-left: 0;
     padding: 24px 8px 24px 8px;
+  }
+
+  .philosophy-row {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .philosophy-card {
+    min-height: 260px;
   }
 }
 </style>
