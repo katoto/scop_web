@@ -547,6 +547,18 @@ onUnmounted(() => {
   line-height: 1.8;
 }
 
+.section.partners {
+  width: 100vw;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  background: #f8f8f8;
+}
+
+.section.partners h2 {
+  padding-top: 2.5rem;
+}
+
 .partner-carousel {
   display: flex;
   align-items: center;
@@ -558,17 +570,19 @@ onUnmounted(() => {
 }
 
 .partner-card-carousel {
-  background: #fff;
-  border-radius: 24px;
-  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.08);
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   min-height: 380px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   position: relative;
+  background: #fff;
+  border-radius: 8px;
 }
 
 .partner-card-carousel-inner {
@@ -582,7 +596,7 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 32px 48px;
+  padding: 32px 64px;
   gap: 48px;
 }
 
@@ -706,7 +720,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 14px;
   margin-top: 18px;
-  margin-bottom: 2px;
+  margin-bottom: 8px;
 }
 
 .carousel-dot {
