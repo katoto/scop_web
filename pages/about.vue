@@ -747,4 +747,481 @@ onUnmounted(() => {
   margin: 0 0 2.5rem 0;
   line-height: 1.2;
 }
+
+@media (max-width: 900px) {
+  .banner {
+    height: unset;
+    padding: 0;
+    padding-top: 5rem;
+    padding-bottom: 0rem;
+  }
+
+  .banner-content {
+    margin-left: 0;
+    padding: 16px 8px 16px 8px;
+    max-width: 100%;
+    font-size: 0.98rem;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+
+  .banner-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .banner-content p {
+    font-size: 0.98rem;
+  }
+
+  .philosophy-row {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .philosophy-card {
+    min-height: 220px;
+    width: 100%;
+    max-width: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+
+  .philosophy-card-content {
+    padding: 18px 8px 18px 8px;
+  }
+
+  .philosophy-card-content h3 {
+    font-size: 1.08rem;
+  }
+
+  .philosophy-card-content p {
+    font-size: 0.98rem;
+  }
+
+  .section.experts {
+    padding: 0;
+  }
+
+  .experts-list {
+    padding: 0;
+    max-width: 100vw;
+  }
+
+  .expert-row,
+  .expert-row.reverse {
+    flex-direction: column;
+    padding: 0 8px;
+    gap: 18px;
+    min-height: unset;
+  }
+
+  .expert-img {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 0 12px 0;
+  }
+
+  .expert-img img {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .expert-info h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .expert-desc {
+    font-size: 0.98rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .expert-points {
+    font-size: 0.95rem;
+    padding-left: 1em;
+  }
+
+  .expert-modules {
+    flex-direction: column;
+    gap: 14px;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+  }
+
+  .expert-card {
+    max-width: 100%;
+    min-width: 0;
+    border-radius: 10px;
+    padding: 0 0 16px 0;
+  }
+
+  .expert-card-img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: unset !important;
+    min-height: unset !important;
+    max-height: unset !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none !important;
+    padding: 0 !important;
+  }
+
+  .expert-card-img img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block;
+    border-radius: 0 !important;
+    max-height: 60vw;
+  }
+
+  .partner-carousel {
+    padding: 12px 0 18px 0;
+  }
+
+  .partner-card-carousel-content {
+    flex-direction: column;
+    gap: 14px;
+    padding: 10px 2px;
+    align-items: center;
+  }
+
+  .partner-card-left {
+    align-items: center;
+    text-align: center;
+  }
+
+  .partner-card-title {
+    font-size: 1.15rem;
+  }
+
+  .partner-card-desc {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  .partner-card-btn {
+    font-size: 0.95rem;
+    padding: 0.5em 1.2em;
+  }
+
+  .partner-card-right img {
+    max-width: 100%;
+    border-radius: 6px;
+  }
+
+  .partner-card-carousel {
+    border-radius: 4px;
+    min-height: 0;
+    padding: 0;
+  }
+
+  .carousel-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+    margin: 0 2px;
+  }
+
+  .carousel-indicators {
+    gap: 6px;
+    margin-top: 8px;
+    margin-bottom: 2px;
+  }
+
+  .carousel-dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .section.experts h2,
+  .section.partners h2 {
+    font-size: 1.2rem;
+    margin: 1.2rem 0 1.2rem 0;
+    padding-top: 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+
+  html,
+  body,
+  .about-page {
+    overflow-x: hidden !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    box-sizing: border-box;
+  }
+
+  .about-page,
+  .section,
+  .section.experts,
+  .section.partners {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .banner {
+    height: unset;
+    padding: 0;
+    min-width: 0;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    padding-top: 5rem;
+    padding-bottom: 0rem;
+  }
+
+  .banner-content {
+    margin-left: 0;
+    padding: 8px 2vw 8px 2vw;
+    max-width: 100vw;
+    font-size: 0.9rem;
+
+  }
+
+  .banner-content h2 {
+    font-size: 1rem;
+  }
+
+  .banner-content p {
+    font-size: 0.9rem;
+  }
+
+  .philosophy-row-section,
+  .philosophy-row {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    padding: 0 !important;
+    flex-direction: column !important;
+  }
+
+  .philosophy-card {
+    min-height: 100px;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  .philosophy-card-content {
+    padding: 8px 2vw 8px 2vw;
+  }
+
+  .philosophy-card-content h3 {
+    font-size: 0.92rem;
+  }
+
+  .philosophy-card-content p {
+    font-size: 0.88rem;
+  }
+
+  .experts-list {
+    padding: 0;
+    max-width: 100vw;
+    width: 100vw;
+  }
+
+  .expert-row,
+  .expert-row.reverse {
+    flex-direction: column !important;
+    padding: 0 2vw;
+    gap: 8px;
+    min-height: unset;
+    width: 100vw;
+    max-width: 100vw;
+    background: none !important;
+    box-shadow: none !important;
+  }
+
+  .expert-img {
+    max-width: 100vw;
+    width: 100vw;
+    margin: 0 0 6px 0;
+    padding: 0 !important;
+  }
+
+  .expert-img img {
+    width: 100vw;
+    max-width: 100vw;
+    border-radius: 4px;
+    object-fit: contain !important;
+    height: auto !important;
+  }
+
+  .expert-info h3 {
+    font-size: 0.92rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .expert-desc {
+    font-size: 0.88rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .expert-points {
+    font-size: 0.85rem;
+    padding-left: 0.5em;
+  }
+
+  .expert-modules {
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    width: 100vw;
+    max-width: 100vw;
+  }
+
+  .expert-card {
+    max-width: 100vw;
+    min-width: 0;
+    border-radius: 4px;
+    padding: 0 0 4px 0;
+    box-shadow: none !important;
+  }
+
+  .expert-card-img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: unset !important;
+    min-height: unset !important;
+    max-height: unset !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none !important;
+    padding: 0 !important;
+  }
+
+  .expert-card-img img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block;
+    border-radius: 0 !important;
+    max-height: 60vw;
+  }
+
+  .expert-card h4 {
+    font-size: 0.88rem;
+    margin: 0.3rem 0 0.2rem 0;
+  }
+
+  .expert-card p {
+    font-size: 0.85rem;
+    margin: 0 2px;
+  }
+
+  .partner-carousel {
+    padding: 2px 0 6px 0;
+    width: 100vw;
+    max-width: 100vw;
+  }
+
+  .partner-card-carousel-content {
+    flex-direction: column !important;
+    gap: 4px;
+    padding: 2px 1vw;
+    align-items: center;
+    width: 100vw;
+    max-width: 100vw;
+  }
+
+  .partner-card-left {
+    align-items: center;
+    text-align: center;
+  }
+
+  .partner-card-title {
+    font-size: 0.92rem;
+  }
+
+  .partner-card-desc {
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .partner-card-btn {
+    font-size: 0.85rem;
+    padding: 0.3em 0.6em;
+  }
+
+  .partner-card-right img {
+    max-width: 100vw;
+    border-radius: 2px;
+    object-fit: contain !important;
+    height: auto !important;
+  }
+
+  .partner-card-carousel {
+    border-radius: 0;
+    min-height: 0;
+    padding: 0;
+    width: 100vw;
+    max-width: 100vw;
+    background: none !important;
+    box-shadow: none !important;
+  }
+
+  .carousel-arrow {
+    width: 18px;
+    height: 18px;
+    font-size: 0.7rem;
+    margin: 0 1px;
+  }
+
+  .carousel-indicators {
+    gap: 2px;
+    margin-top: 2px;
+    margin-bottom: 0;
+  }
+
+  .carousel-dot {
+    width: 4px;
+    height: 4px;
+  }
+
+  .section.experts h2,
+  .section.partners h2 {
+    font-size: 0.85rem;
+    margin: 0.4rem 0 0.4rem 0;
+    padding-top: 0.4rem;
+  }
+}
+
+/* sss */
+
+@media (max-width: 900px) {
+  .philosophy-card {
+    min-height: unset !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    display: block !important;
+  }
+
+  .philosophy-card-content {
+    padding: 16px 10px 16px 10px !important;
+    font-size: 0.95rem !important;
+    line-height: 1.8 !important;
+    word-break: break-all;
+    white-space: normal;
+  }
+
+  .philosophy-card-content h3 {
+    font-size: 1.05rem !important;
+    margin-bottom: 0.7em;
+  }
+
+  .philosophy-card-content p {
+    font-size: 0.92rem !important;
+    line-height: 1.8 !important;
+    margin: 0;
+  }
+}
 </style>
