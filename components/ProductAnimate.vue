@@ -50,7 +50,7 @@ let handleClickBack = () => {
   selectedProductIndex.value = null;
   isBack.value = true;
 };
-function getActiveClass(num: type) {
+function getActiveClass(num: any) {
   if (num === selectedProductIndex.value && isBack.value) {
     return 'product-item-bg-active'
   }
@@ -64,7 +64,7 @@ let domState = reactive({
   height: 0
 })
 
-let domSizeArr = ref([]);
+let domSizeArr = ref<any>([]);
 
 onMounted(() => {
   if (domRef.value) {
@@ -77,7 +77,7 @@ onMounted(() => {
     }
 
 
-    doms.forEach((dom: HTMLElement, index) => {
+    doms.forEach((dom: HTMLElement, index: any) => {
       domSizeArr.value[index] = {
         left: flag ? 0 : dom.offsetLeft,
         top: flag ? 0 : dom.offsetTop,
@@ -90,7 +90,7 @@ onMounted(() => {
 
 })
 
-let domRef = ref(null)
+let domRef = ref<any>(null)
 let handleGotoDetail = (num: number) => {
   selectedProductIndex.value = num
   isBack.value = true;
@@ -162,10 +162,10 @@ let handleGotoDetail = (num: number) => {
       </div>
       <div :class="`product-detail-com product-detail-${selectedProductIndex}`">
         <div class="product-detail-com-inner">
-          <img class="product-img-detail" :src="products[domIndex].image" alt="{{ product.name }}" />
+          <img class="product-img-detail pc-hide" :src="products[domIndex].image" alt="{{ product.name }}" />
         </div>
       </div>
-      <div class="product-detail-desc" v-if="selectedProductIndex !== null">
+      <div class="product-detail-desc pc-hide" v-if="selectedProductIndex !== null">
         <div class="detail-content-block">
           <div class="icon-title">
             <span class="icon">🍄</span>
@@ -181,7 +181,7 @@ let handleGotoDetail = (num: number) => {
 
       </div>
     </div>
-
+    <ProductDetail :index="selectedProductIndex" />
   </div>
 
   <!-- <div class="product-container" v-if="selectedProductIndex !== null">
@@ -406,6 +406,15 @@ let handleGotoDetail = (num: number) => {
   right: 100px;
 }
 
+.pc-hide {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .pc-hide {
+    display: block;
+  }
+}
 
 @media (max-width: 768px) {
   .product-item {
