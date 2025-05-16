@@ -141,8 +141,9 @@
   z-index: 2;
   text-align: left;
   max-width: 700px;
-  margin: 0 auto;
-  padding: 32px 24px 32px 24px;
+  margin-left: 100px;
+  margin-right: auto;
+  padding: 32px 24px 32px 0;
   color: #fff;
 }
 
@@ -362,6 +363,11 @@
   .partner-list {
     flex-direction: column;
     gap: 16px;
+  }
+
+  .banner-content {
+    margin-left: 0;
+    padding: 24px 8px 24px 8px;
   }
 }
 </style>
