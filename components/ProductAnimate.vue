@@ -448,7 +448,7 @@ let handleGotoDetail = (num: number) => {
 }
 
 .product-img:hover {
-  /* transform: scale(1.05); */
+  transform: scale(1.05);
 }
 
 .product-detail-desc {
