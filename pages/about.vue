@@ -119,7 +119,7 @@ import { ref } from 'vue'
 const philosophyList = [
   {
     title: '科学严谨',
-    desc: '坚信严谨的科研是产品价值的基石，专注于干细胞科技、多肽技术与天然草本活性物质的深度开发。',
+    desc: 'Scophil 坚信严谨的科研是产品价值的基石。品牌背靠国际一流实验室与专家团队，专注于干细胞科技、多肽技术与天然草本活性物质的深度开发。',
     bg: '/about-Scophil/2-1品牌理念-科学严谨.jpg',
     icon: `<svg viewBox=\"0 0 48 48\"><circle cx=\"24\" cy=\"24\" r=\"20\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\"/><path d=\"M16 32l8-16 8 16\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\"/></svg>`
   },
@@ -131,13 +131,13 @@ const philosophyList = [
   },
   {
     title: '精准功效',
-    desc: '针对不同人群需求，开发抗癌、护肝、男性机能、私护修复等多维产品线，见效稳定。',
+    desc: '结合不同人群需求，Scophil 开发出涵盖抗癌、护肝、男性机能、私护修复等多维产品线，针对性强，见效稳定。',
     bg: '/about-Scophil/2-3品牌理念-精准功效.jpg',
     icon: `<svg viewBox=\"0 0 48 48\"><rect x=\"12\" y=\"12\" width=\"24\" height=\"24\" rx=\"6\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\"/><path d=\"M24 18v12M18 24h12\" stroke=\"#fff\" stroke-width=\"2\"/></svg>`
   },
   {
     title: '全球视野',
-    desc: '品牌布局全球，产品远销亚洲、欧美多个国家，致力于打造国际领先的高端生命健康品牌。',
+    desc: '品牌布局全球，目前产品远销亚洲、欧美多个国家，致力于打造国际领先的高端生命健康品牌。',
     bg: '/about-Scophil/2-4品牌理念-全球视野.png',
     icon: `<svg viewBox=\"0 0 48 48\"><circle cx=\"24\" cy=\"24\" r=\"20\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\"/><path d=\"M24 4v40M4 24h40\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\"/></svg>`
   }
