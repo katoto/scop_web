@@ -38,7 +38,7 @@
         <!-- 前两位专家错位排版 -->
         <div class="expert-row">
           <div class="expert-img left">
-            <img src="/images/pro-1.png" alt="本庶佑教授" />
+            <img src="/about-Scophil/3-1专家团队-本庶佑教授.jpg" alt="本庶佑教授" />
           </div>
           <div class="expert-info right">
             <h3>本庶佑教授</h3>
@@ -63,7 +63,7 @@
             </ul>
           </div>
           <div class="expert-img right">
-            <img src="/images/pro-2.png" alt="Gabazza Esteban教授" />
+            <img src="/about-Scophil/3-2专家团队-Gabazza Esteban教授.jpg" alt="Gabazza Esteban教授" />
           </div>
         </div>
         <!-- 后四位专家模块排版 -->
