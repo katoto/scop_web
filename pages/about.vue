@@ -239,7 +239,7 @@ function clearActive() {
 .philosophy-row-section {
   width: 100%;
   background: #fff;
-  padding: 48px 0 32px 0;
+  /* padding: 48px 0 32px 0; */
   display: flex;
   justify-content: center;
   background-size: cover;
@@ -249,9 +249,9 @@ function clearActive() {
 
 .philosophy-row {
   display: flex;
-  gap: 32px;
+  /* gap: 32px; */
   width: 100%;
-  max-width: 1400px;
+  /* max-width: 1400px; */
   justify-content: center;
 }
 
@@ -259,10 +259,10 @@ function clearActive() {
   position: relative;
   flex: 1 1 0;
   min-width: 0;
-  min-height: 420px;
+  min-height: 700px;
   background-size: cover;
   background-position: center;
-  border-radius: 20px;
+  /* border-radius: 20px; */
   overflow: hidden;
   display: flex;
   align-items: stretch;
@@ -272,8 +272,8 @@ function clearActive() {
 
 .philosophy-card.active,
 .philosophy-card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  /* transform: translateY(-8px) scale(1.03); */
+  /* box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18); */
 }
 
 .philosophy-card-bg {
@@ -456,7 +456,7 @@ function clearActive() {
 
 @media (max-width: 1200px) {
   .philosophy-row {
-    gap: 16px;
+    /* gap: 16px; */
   }
 }
 
@@ -491,7 +491,7 @@ function clearActive() {
 
   .philosophy-row {
     flex-direction: column;
-    gap: 24px;
+    /* gap: 24px; */
   }
 
   .philosophy-card {
