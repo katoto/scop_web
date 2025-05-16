@@ -354,7 +354,7 @@ function clearActive() {
   display: flex;
   align-items: center;
   gap: 40px;
-  margin-bottom: 3.5rem;
+  /* margin-bottom: 3.5rem; */
   background: #fff;
   border-radius: 0;
   box-shadow: none;
@@ -363,8 +363,8 @@ function clearActive() {
 
 .expert-row.reverse {
   flex-direction: row-reverse;
-  background: #f5f5f5;
   padding: 0 64px;
+  background: #f8f8f8;
 }
 
 .expert-img {
@@ -433,6 +433,9 @@ function clearActive() {
   gap: 32px;
   margin-top: 1.5rem;
   justify-content: center;
+  background: #fff;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 .expert-card {
@@ -460,7 +463,7 @@ function clearActive() {
   aspect-ratio: 4/3;
   border-radius: 18px 18px 0 0;
   overflow: hidden;
-  background: #f5f5f5;
+  /* background: #f5f5f5; */
   display: flex;
   align-items: center;
   justify-content: center;
