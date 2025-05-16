@@ -8,20 +8,6 @@
       </div>
     </div>
 
-    <!-- 背景图 -->
-    <div class="content-product">
-      <ParticlesCanvas>
-      </ParticlesCanvas>
-      <div class="pinzi-box-wrap">
-        <div class="pinzi-box">
-          <img src="/images/pro-3.png" class="pinzi" />
-          <img src="/images/pro-4.png" class="pinzi" />
-          <img src="/images/pro-2.png" class="pinzi" />
-          <img src="/images/pro-1.png" class="pinzi" />
-        </div>
-      </div>
-    </div>
-
     <!-- 公司概况 -->
     <section class="company-overview py-5">
       <div class="container">
