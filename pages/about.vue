@@ -13,55 +13,19 @@
     </section>
 
     <!-- 品牌理念横排 -->
-    <section class="philosophy-row-section">
+    <section class="philosophy-row-section" :style="{
+      backgroundImage: activeIndex !== -1 ? `url('${philosophyList[activeIndex].bg}')` : '',
+      transition: 'background-image 0.4s',
+    }">
       <div class="philosophy-row">
-        <!-- 科学严谨 -->
-        <div class="philosophy-card" style="background-image:url('/about-Scophil/2-1品牌理念-科学严谨.jpg')">
-          <div class="philosophy-card-bg"></div>
+        <div v-for="(item, idx) in philosophyList" :key="item.title" class="philosophy-card"
+          :class="{ active: activeIndex === idx }" :style="{ cursor: 'pointer' }" @mouseenter="setActive(idx)"
+          @mouseleave="clearActive" @click="setActive(idx)">
+          <div class="philosophy-card-bg" :class="{ active: activeIndex === idx }"></div>
           <div class="philosophy-card-content">
-            <svg viewBox="0 0 48 48">
-              <circle cx="24" cy="24" r="20" stroke="#fff" stroke-width="2" fill="none" />
-              <path d="M16 32l8-16 8 16" stroke="#fff" stroke-width="2" fill="none" />
-            </svg>
-            <h3>科学严谨</h3>
-            <p>坚信严谨的科研是产品价值的基石，专注于干细胞科技、多肽技术与天然草本活性物质的深度开发。</p>
-          </div>
-        </div>
-        <!-- 安全优先 -->
-        <div class="philosophy-card" style="background-image:url('/about-Scophil/2-2品牌理念-安全优先.png')">
-          <div class="philosophy-card-bg"></div>
-          <div class="philosophy-card-content">
-            <svg viewBox="0 0 48 48">
-              <rect x="10" y="14" width="28" height="20" rx="4" stroke="#fff" stroke-width="2" fill="none" />
-              <path d="M24 18v12" stroke="#fff" stroke-width="2" />
-              <circle cx="24" cy="24" r="2" fill="#fff" />
-            </svg>
-            <h3>安全优先</h3>
-            <p>全系列产品均通过严格质量检测，确保无污染、无激素、无有害添加，保障消费者使用安心。</p>
-          </div>
-        </div>
-        <!-- 精准功效 -->
-        <div class="philosophy-card" style="background-image:url('/about-Scophil/2-3品牌理念-精准功效.jpg')">
-          <div class="philosophy-card-bg"></div>
-          <div class="philosophy-card-content">
-            <svg viewBox="0 0 48 48">
-              <rect x="12" y="12" width="24" height="24" rx="6" stroke="#fff" stroke-width="2" fill="none" />
-              <path d="M24 18v12M18 24h12" stroke="#fff" stroke-width="2" />
-            </svg>
-            <h3>精准功效</h3>
-            <p>针对不同人群需求，开发抗癌、护肝、男性机能、私护修复等多维产品线，见效稳定。</p>
-          </div>
-        </div>
-        <!-- 全球视野 -->
-        <div class="philosophy-card" style="background-image:url('/about-Scophil/2-4品牌理念-全球视野.png')">
-          <div class="philosophy-card-bg"></div>
-          <div class="philosophy-card-content">
-            <svg viewBox="0 0 48 48">
-              <circle cx="24" cy="24" r="20" stroke="#fff" stroke-width="2" fill="none" />
-              <path d="M24 4v40M4 24h40" stroke="#fff" stroke-width="2" fill="none" />
-            </svg>
-            <h3>全球视野</h3>
-            <p>品牌布局全球，产品远销亚洲、欧美多个国家，致力于打造国际领先的高端生命健康品牌。</p>
+            <span v-html="item.icon"></span>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.desc }}</p>
           </div>
         </div>
       </div>
@@ -150,7 +114,43 @@
 </template>
 
 <script setup>
-// 组件逻辑
+import { ref } from 'vue'
+
+const philosophyList = [
+  {
+    title: '科学严谨',
+    desc: '坚信严谨的科研是产品价值的基石，专注于干细胞科技、多肽技术与天然草本活性物质的深度开发。',
+    bg: '/about-Scophil/2-1品牌理念-科学严谨.jpg',
+    icon: `<svg viewBox=\"0 0 48 48\"><circle cx=\"24\" cy=\"24\" r=\"20\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\"/><path d=\"M16 32l8-16 8 16\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\"/></svg>`
+  },
+  {
+    title: '安全优先',
+    desc: '全系列产品均通过严格质量检测，确保无污染、无激素、无有害添加，保障消费者使用安心。',
+    bg: '/about-Scophil/2-2品牌理念-安全优先.png',
+    icon: `<svg viewBox=\"0 0 48 48\"><rect x=\"10\" y=\"14\" width=\"28\" height=\"20\" rx=\"4\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\"/><path d=\"M24 18v12\" stroke=\"#fff\" stroke-width=\"2\"/><circle cx=\"24\" cy=\"24\" r=\"2\" fill=\"#fff\"/></svg>`
+  },
+  {
+    title: '精准功效',
+    desc: '针对不同人群需求，开发抗癌、护肝、男性机能、私护修复等多维产品线，见效稳定。',
+    bg: '/about-Scophil/2-3品牌理念-精准功效.jpg',
+    icon: `<svg viewBox=\"0 0 48 48\"><rect x=\"12\" y=\"12\" width=\"24\" height=\"24\" rx=\"6\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\"/><path d=\"M24 18v12M18 24h12\" stroke=\"#fff\" stroke-width=\"2\"/></svg>`
+  },
+  {
+    title: '全球视野',
+    desc: '品牌布局全球，产品远销亚洲、欧美多个国家，致力于打造国际领先的高端生命健康品牌。',
+    bg: '/about-Scophil/2-4品牌理念-全球视野.png',
+    icon: `<svg viewBox=\"0 0 48 48\"><circle cx=\"24\" cy=\"24\" r=\"20\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\"/><path d=\"M24 4v40M4 24h40\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\"/></svg>`
+  }
+]
+
+const activeIndex = ref(0)
+
+function setActive(idx) {
+  activeIndex.value = idx
+}
+function clearActive() {
+  activeIndex.value = 0
+}
 </script>
 
 <style scoped>
@@ -242,6 +242,9 @@
   padding: 48px 0 32px 0;
   display: flex;
   justify-content: center;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.4s;
 }
 
 .philosophy-row {
@@ -264,14 +267,24 @@
   display: flex;
   align-items: stretch;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
+  transition: transform 0.2s;
+}
+
+.philosophy-card.active,
+.philosophy-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
 }
 
 .philosophy-card-bg {
   position: absolute;
   inset: 0;
   background: rgba(40, 30, 10, 0.45);
-  backdrop-filter: blur(8px);
   z-index: 1;
+}
+
+.philosophy-card-bg.active {
+  backdrop-filter: blur(8px);
 }
 
 .philosophy-card-content {
