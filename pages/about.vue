@@ -35,36 +35,37 @@
     <section class="section experts">
       <h2>专家团队</h2>
       <div class="experts-list">
-        <!-- 前两位专家错位排版 -->
+        <!-- 本庶佑教授 -->
         <div class="expert-row">
           <div class="expert-img left">
             <img src="/about-Scophil/3-1专家团队-本庶佑教授.jpg" alt="本庶佑教授" />
           </div>
           <div class="expert-info right">
             <h3>本庶佑教授</h3>
-            <p>日本著名免疫学家，2018年诺贝尔生理学或医学奖得主。京都大学高等研究院特别教授，癌症免疫疗法开创者。</p>
-            <ul>
-              <li>发现PD-1，揭示T细胞免疫调节机制</li>
-              <li>开创免疫疗法，提出阻断PD-1/PD-L1，激活抗癌免疫反应</li>
-              <li>发现AID酶，阐明抗体多样性与免疫系统适应性机制</li>
-              <li>鉴定IL-4/IL-5，推进免疫与过敏反应研究</li>
-            </ul>
+            <div class="expert-desc">日本著名免疫学家，2018年诺贝尔生理学或医学奖得主。京都大学高等研究院特别教授，癌症免疫疗法开创者。</div>
           </div>
+          <ul class="expert-points">
+            <li>发现PD-1，揭示T细胞免疫调节机制</li>
+            <li>开创免疫疗法，提出阻断PD-1/PD-L1，激活抗癌免疫反应</li>
+            <li>发现AID酶，阐明抗体多样性与免疫系统适应性机制</li>
+            <li>鉴定IL-4/IL-5，推进免疫与过敏反应研究</li>
+          </ul>
         </div>
+        <!-- Gabazza Esteban教授 -->
         <div class="expert-row reverse">
-          <div class="expert-info left">
-            <h3>Gabazza Esteban教授</h3>
-            <p>日本三重大学医学研究科特任教授。免疫学与呼吸内科学专家，CP-101研发领军人。</p>
-            <ul>
-              <li>发现姬松茸PD-1，拓展免疫研究新方向</li>
-              <li>提取CP-101，开发具有抗癌功效的姬松茸提取物</li>
-              <li>免疫学研究权威，发表论文千余篇，总引用超16,000次</li>
-              <li>探索肺部免疫机制，推动慢性肺病与免疫相关治疗研究</li>
-            </ul>
-          </div>
           <div class="expert-img right">
             <img src="/about-Scophil/3-2专家团队-Gabazza Esteban教授.jpg" alt="Gabazza Esteban教授" />
           </div>
+          <div class="expert-info left">
+            <h3>Gabazza Esteban教授</h3>
+            <div class="expert-desc">日本三重大学医学研究科特任教授。免疫学与呼吸内科学专家，CP-101研发领军人。</div>
+          </div>
+          <ul class="expert-points">
+            <li>发现姬松茸PD-1，拓展免疫研究新方向</li>
+            <li>提取CP-101，开发具有抗癌功效的姬松茸提取物</li>
+            <li>免疫学研究权威，发表论文千余篇，总引用超16,000次</li>
+            <li>探索肺部免疫机制，推动慢性肺病与免疫相关治疗研究</li>
+          </ul>
         </div>
         <!-- 后四位专家模块排版 -->
         <div class="expert-modules">
@@ -323,64 +324,101 @@ function clearActive() {
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
 }
 
+.section.experts {
+  width: 100vw;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  background: #f8f8f8;
+}
+
 .experts-list {
-  margin-top: 2rem;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0px 0;
+}
+
+.expert-row,
+.expert-row.reverse {
+  min-height: 420px;
 }
 
 .expert-row {
   display: flex;
-  align-items: flex-start;
-  margin-bottom: 2.5rem;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 3.5rem;
+  background: #fff;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0 64px;
 }
 
 .expert-row.reverse {
   flex-direction: row-reverse;
+  background: #f5f5f5;
+  padding: 0 64px;
 }
 
 .expert-img {
-  flex: 0 0 180px;
+  flex: 0 0 320px;
+  max-width: 320px;
+  min-width: 220px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0;
 }
 
-.expert-img img {
-  width: 160px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 16px;
-  border: 3px solid #FFD700;
-  background: #f5f5f5;
-}
-
-.expert-info {
-  flex: 1;
-  margin-left: 32px;
-  margin-right: 32px;
-}
-
-.expert-row.reverse .expert-info {
-  margin-left: 0;
-  margin-right: 32px;
-}
-
-.expert-row:not(.reverse) .expert-info {
+.expert-row.reverse .expert-img {
   margin-left: 32px;
   margin-right: 0;
 }
 
-.expert-info h3 {
-  color: #FFD700;
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
+.expert-row:not(.reverse) .expert-img {
+  margin-left: 0;
+  margin-right: 32px;
 }
 
-.expert-info ul {
-  margin: 0.5rem 0 0 1.2rem;
-  padding: 0;
-  font-size: 1rem;
-  line-height: 1.7;
+.expert-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
+  border: none;
+}
+
+.expert-info {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.expert-info h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 1.2rem;
+}
+
+.expert-desc {
+  font-size: 1.15rem;
+  color: #555;
+  margin-bottom: 1.2rem;
+  font-weight: 500;
+}
+
+.expert-points {
+  flex: 1;
+  margin: 0;
+  padding-left: 1.2rem;
+  color: #333;
+  font-size: 1.08rem;
+  line-height: 2;
+  list-style: disc;
 }
 
 .expert-modules {
@@ -464,18 +502,17 @@ function clearActive() {
 
   .expert-row,
   .expert-row.reverse {
-    flex-direction: column !important;
-    align-items: flex-start;
+    flex-direction: column;
+    padding: 0 12px;
+    gap: 20px;
+    min-height: unset;
   }
 
   .expert-img,
-  .expert-info {
-    margin: 0 0 16px 0 !important;
-  }
-
-  .expert-img img {
-    width: 120px;
-    height: 120px;
+  .expert-info,
+  .expert-points {
+    max-width: 100%;
+    width: 100%;
   }
 
   .expert-modules,
@@ -497,5 +534,24 @@ function clearActive() {
   .philosophy-card {
     min-height: 260px;
   }
+
+  .experts-list {
+    padding: 24px 0;
+  }
+
+  .expert-img {
+    margin: 0 0 16px 0;
+  }
+}
+
+.section.experts h2 {
+  color: #222;
+  font-size: 2.4rem;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: 2px;
+  margin: 0 0 2.5rem 0;
+  line-height: 1.2;
+  padding-top: 2.5rem;
 }
 </style>
