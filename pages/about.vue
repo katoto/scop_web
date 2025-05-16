@@ -101,27 +101,38 @@
       </div>
     </section>
 
-    <!-- 合作机构 -->
+    <!-- 合作机构轮播 -->
     <section class="section partners">
       <h2>合作机构</h2>
-      <div class="partner-list">
-        <div class="partner-card">
-          <h4>三重大学</h4>
-          <p>
-            日本国立三重大学在医学与免疫学领域享有盛誉。研究团队深度参与蘑菇精CP-101的开发，专注姬松茸活性成分的免疫调节与抗癌功效。通过先进的亚临界水提取技术，验证CP-101的有效性，为天然成分与现代科技结合提供坚实科研支持。
-          </p>
+      <div class="partner-carousel">
+        <button class="carousel-arrow left" @click="prevPartner"><span>&lt;</span></button>
+        <div class="partner-card-carousel">
+          <div class="partner-card-carousel-inner">
+            <div class="partner-card-carousel-content">
+              <div class="partner-card-left">
+                <div class="partner-card-title">{{ partners[partnerIndex].name }}</div>
+                <div class="partner-card-desc">{{ partners[partnerIndex].desc }}</div>
+                <!-- <a class="partner-card-btn" :href="partners[partnerIndex].link">了解更多</a> -->
+              </div>
+              <div class="partner-card-right">
+                <img :src="partners[partnerIndex].img" :alt="partners[partnerIndex].name" />
+              </div>
+            </div>
+          </div>
+          <!-- 指示器 -->
+          <div class="carousel-indicators">
+            <span v-for="(item, idx) in partners" :key="item.name" class="carousel-dot"
+              :class="{ active: partnerIndex === idx }" @click="partnerIndex = idx"></span>
+          </div>
         </div>
-        <div class="partner-card">
-          <h4>岩出菌学研究所</h4>
-          <p>1963年创立，成功培育姬松茸"岩出101株"。1980年在日本癌症学会公布其显著抗癌效果，药用价值持续获多项学术验证，奠定坚实科研基础。</p>
-        </div>
+        <button class="carousel-arrow right" @click="nextPartner"><span>&gt;</span></button>
       </div>
     </section>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 const philosophyList = [
   {
@@ -158,6 +169,39 @@ function setActive(idx) {
 function clearActive() {
   activeIndex.value = 0
 }
+
+const partners = [
+  {
+    name: '三重大学',
+    desc: '日本国立三重大学在医学与免疫学领域享有盛誉。研究团队深度参与蘑菇精CP-101的开发，专注姬松茸活性成分的免疫调节与抗癌功效。通过先进的亚临界水提取技术，验证CP-101的有效性，为天然成分与现代科技结合提供坚实科研支持。',
+    img: '/about-Scophil/4-1合作机构-三重大学.jpg',
+    link: '#'
+  },
+  {
+    name: '岩出菌学研究所',
+    desc: '1963年创立，成功培育姬松茸"岩出101株"。1980年在日本癌症学会公布其显著抗癌效果，药用价值持续获多项学术验证，奠定坚实科研基础。',
+    img: '/about-Scophil/4-2-2合作机构-岩出菌学研究所.png',
+    link: '#'
+  }
+]
+const partnerIndex = ref(0)
+function prevPartner() {
+  partnerIndex.value = (partnerIndex.value - 1 + partners.length) % partners.length
+}
+function nextPartner() {
+  partnerIndex.value = (partnerIndex.value + 1) % partners.length
+}
+
+// 自动轮播
+let carouselTimer = null
+onMounted(() => {
+  carouselTimer = setInterval(() => {
+    nextPartner()
+  }, 4000)
+})
+onUnmounted(() => {
+  if (carouselTimer) clearInterval(carouselTimer)
+})
 </script>
 
 <style scoped>
@@ -338,6 +382,17 @@ function clearActive() {
   background: #f8f8f8;
 }
 
+.section.experts h2 {
+  color: #222;
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin: 0 0 2.5rem 0;
+  line-height: 1.2;
+  padding-top: 2.5rem;
+}
+
 .experts-list {
   width: 100%;
   max-width: 1600px;
@@ -492,103 +547,184 @@ function clearActive() {
   line-height: 1.8;
 }
 
-.partners {
-  margin-top: 3rem;
-}
-
-.partner-list {
+.partner-carousel {
   display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
-}
-
-.partner-card {
-  background: #f5f5f5;
-  border-radius: 12px;
-  padding: 24px 20px;
-  flex: 1 1 320px;
-  min-width: 320px;
-  max-width: 480px;
-  color: #333;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  border-left: 5px solid #FFD700;
-}
-
-.partner-card h4 {
-  color: #FFD700;
-  font-size: 1.15rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
-.expert-avatar {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 16px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid #FFD700;
-}
-
-.expert-avatar img {
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  height: 100%;
+  margin: 0 auto;
+  padding: 32px 0 48px 0;
+  gap: 0;
+}
+
+.partner-card-carousel {
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 1200px;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.partner-card-carousel-inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.partner-card-carousel-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 32px 48px;
+  gap: 48px;
+}
+
+.partner-card-left {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.partner-card-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 1.2rem;
+}
+
+.partner-card-desc {
+  font-size: 1.08rem;
+  color: #555;
+  margin-bottom: 2.2rem;
+  line-height: 2;
+}
+
+.partner-card-btn {
+  display: inline-block;
+  background: #1677ff;
+  color: #fff;
+  font-size: 1.08rem;
+  font-weight: 600;
+  border-radius: 24px;
+  padding: 0.7em 2.2em;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(22, 119, 255, 0.08);
+  transition: background 0.2s;
+}
+
+.partner-card-btn:hover {
+  background: #0056d6;
+}
+
+.partner-card-right {
+  flex: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+.partner-card-right img {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 18px;
   object-fit: cover;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
-@media (max-width: 1200px) {
-  .philosophy-row {
-    /* gap: 16px; */
-  }
+.carousel-arrow {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #fff;
+  border: none;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  color: #1677ff;
+  cursor: pointer;
+  margin: 0 24px;
+  transition: background 0.2s, box-shadow 0.2s;
+  z-index: 2;
 }
 
-@media (max-width: 900px) {
+.carousel-arrow:hover {
+  background: #f0f6ff;
+  box-shadow: 0 4px 18px rgba(22, 119, 255, 0.10);
+}
 
-  .expert-row,
-  .expert-row.reverse {
+.carousel-arrow span {
+  display: block;
+  font-weight: 700;
+}
+
+@media (max-width: 1100px) {
+  .partner-card-carousel-content {
     flex-direction: column;
-    padding: 0 12px;
-    gap: 20px;
-    min-height: unset;
+    gap: 24px;
+    padding: 24px 8px;
   }
 
-  .expert-img,
-  .expert-info,
-  .expert-points {
+  .partner-card-right img {
     max-width: 100%;
-    width: 100%;
-  }
-
-  .expert-modules,
-  .partner-list {
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .banner-content {
-    margin-left: 0;
-    padding: 24px 8px 24px 8px;
-  }
-
-  .philosophy-row {
-    flex-direction: column;
-    /* gap: 24px; */
-  }
-
-  .philosophy-card {
-    min-height: 260px;
-  }
-
-  .experts-list {
-    padding: 24px 0;
-  }
-
-  .expert-img {
-    margin: 0 0 16px 0;
   }
 }
 
-.section.experts h2 {
+@media (max-width: 700px) {
+  .partner-card-carousel {
+    min-height: 0;
+    border-radius: 12px;
+  }
+
+  .partner-card-carousel-content {
+    padding: 12px 2px;
+  }
+
+  .carousel-arrow {
+    width: 44px;
+    height: 44px;
+    font-size: 1.4rem;
+    margin: 0 6px;
+  }
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-top: 18px;
+  margin-bottom: 2px;
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #e0e6ef;
+  transition: background 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.carousel-dot.active {
+  background: #1677ff;
+  box-shadow: 0 2px 8px rgba(22, 119, 255, 0.13);
+}
+
+.section.partners h2 {
   color: #222;
   font-size: 2.4rem;
   font-weight: 800;
@@ -596,6 +732,5 @@ function clearActive() {
   letter-spacing: 2px;
   margin: 0 0 2.5rem 0;
   line-height: 1.2;
-  padding-top: 2.5rem;
 }
 </style>
