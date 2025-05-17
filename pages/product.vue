@@ -137,14 +137,14 @@ const productDesc = [
 
 .product-hero {
   text-align: left;
-  padding: 180px 20px 40px 150px;
+  padding: 160px 20px 40px 150px;
   background: url('/product/product-gbjgw-bg.png') no-repeat center center;
   background-size: cover;
   color: white;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  height: 750px;
+  height: 700px;
 }
 
 .banner-content {
