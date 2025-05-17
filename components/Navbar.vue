@@ -1,6 +1,7 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" :class="{ 'hovernow': isScrolled || isHovered || isNewsDetail }"
-    @mouseenter="handleMouseEnter" @mouseleave="handleMouseLeave">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top"
+    :class="{ 'hovernow': isScrolled || isHovered || isNewsDetail }" @mouseenter="handleMouseEnter"
+    @mouseleave="handleMouseLeave">
     <div class="container">
       <NuxtLink class="navbar-brand" :to="localePath('/')">
         <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -35,6 +36,9 @@
           </li>
           <li class="nav-item">
             <NuxtLink class="nav-link" :to="localePath('/about')">{{ $t('nav.about') }}</NuxtLink>
+          </li>
+          <li class="nav-item">
+            <NuxtLink class="nav-link" :to="localePath('/product')">{{ $t('nav.product') }}</NuxtLink>
           </li>
           <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
