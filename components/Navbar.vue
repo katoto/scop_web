@@ -30,7 +30,13 @@
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav me-auto" style="margin: 0 auto;">
-          <li class="nav-item dropdown">
+          <li class="nav-item">
+            <NuxtLink class="nav-link" :to="localePath('/')">{{ $t('nav.home') }}</NuxtLink>
+          </li>
+          <li class="nav-item">
+            <NuxtLink class="nav-link" :to="localePath('/about')">{{ $t('nav.about') }}</NuxtLink>
+          </li>
+          <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
               {{ $t('nav.solutions') }}
             </a>
@@ -52,7 +58,7 @@
                 </NuxtLink>
               </li>
             </ul>
-          </li>
+          </li> -->
           <li class="nav-item">
             <NuxtLink class="nav-link" :to="localePath('/rd')">{{ $t('nav.rd') }}</NuxtLink>
           </li>
@@ -62,9 +68,9 @@
           <li class="nav-item">
             <NuxtLink class="nav-link" :to="localePath('/brand')">{{ $t('nav.brand') }}</NuxtLink>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <NuxtLink class="nav-link" :to="localePath('/about')">{{ $t('nav.about') }}</NuxtLink>
-          </li>
+          </li> -->
           <li class="nav-item">
             <NuxtLink class="nav-link" :to="localePath('/contact')">{{ $t('nav.contact') }}</NuxtLink>
           </li>
@@ -72,8 +78,7 @@
 
         <!-- Language Switcher -->
         <div class="dropdown">
-          <button class="btn btn-link dropdown-toggle" type="button" id="languageDropdown"
-            data-bs-toggle="dropdown">
+          <button class="btn btn-link dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown">
             {{ currentLocale.name }}
           </button>
           <ul class="dropdown-menu dropdown-menu-end">
