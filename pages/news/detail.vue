@@ -13,7 +13,7 @@
 
             <!-- Video Module -->
             <div class="video-module ">
-                <video class="main-video" controls poster="/news/specialNew-2.jpeg">
+                <video class="main-video" controls poster="/news/specialNew-2.png">
                     <source src="/news/new-1m45s.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
