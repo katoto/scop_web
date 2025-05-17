@@ -28,11 +28,11 @@ body {
 .btn {
   border-radius: 0.5rem;
   padding: 0.5rem 1.5rem;
-  
+
   &-primary {
     background-color: #007bff;
     border-color: #007bff;
-    
+
     &:hover {
       background-color: darken(#007bff, 10%);
       border-color: darken(#007bff, 10%);

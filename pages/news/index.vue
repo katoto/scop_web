@@ -186,7 +186,7 @@ const newsList = ref([
   },
   // 专题活动
   {
-    img: '/news/specialNew-1.jpeg',
+    img: '/news/specialNew-1.png',
     date: '2024.11.01',
     title: '「癌症互助推进研究慈善基金」发布会于日本东京顺利举行！CP-101扛起人类灭癌大旗',
     desc: '2024年10月14日，「一般社団法人癌症互助推进研究慈善基金」成立发布会于日本东京都港区虎之门Hills Forum举行。吸引了约650名与会参与者，包括政府官方代表、知名学者智库、医疗行业专家、主流新闻媒体代表，以及社会各界人士等。',
@@ -194,12 +194,12 @@ const newsList = ref([
     link: 'https://mp.weixin.qq.com/s/sacvMx1pB1nMHct_kyNGVQ'
   },
   {
-    img: '/news/specialNew-2.jpeg',
+    img: '/news/specialNew-2.png',
     date: '2024.12.20',
     title: 'CP-101闪耀亮相深圳国际营养健康产业展 共探生命健康科学前沿，引领行业新潮向！',
     desc: '12月12日，在业界满怀期待与瞩目中，应HNC深圳国际营养与健康产业展主办方的热情邀约，全球知名生命健康与抗衰领域领军企业——日本SCOPHIL再生医疗集团，重磅登场，瞬间点燃现场炽热氛围，吸引无数业内人士纷至沓来。',
     type: 'specialNew',
-    link: 'https://sz.ifeng.com/c/8fRuNrNhADL'
+    link: '/news/detail'
   },
 
 

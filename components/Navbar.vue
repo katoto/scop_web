@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" :class="{ 'hovernow': isScrolled || isHovered }"
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" :class="{ 'hovernow': isScrolled || isHovered || isNewsDetail }"
     @mouseenter="handleMouseEnter" @mouseleave="handleMouseLeave">
     <div class="container">
       <NuxtLink class="navbar-brand" :to="localePath('/')">
@@ -95,7 +95,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
 
 const { locale, locales } = useI18n()
 const switchLocalePath = useSwitchLocalePath()
@@ -104,6 +104,10 @@ const route = useRoute()
 
 const isScrolled = ref(false)
 const isHovered = ref(false)
+
+const isNewsDetail = computed(() => {
+  return route.path.includes('/news/detail')
+})
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 0
