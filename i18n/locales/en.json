@@ -1,5 +1,6 @@
 {
   "nav": {
+    "home": "home",
     "solutions": "Solutions",
     "passenger": "Passenger",
     "commercialEV": "Commercial EV",
@@ -180,4 +181,4 @@
       "desc": "CATL provides green, clean, safe, and reliable product solutions for the electrification development of airport parks and port terminals."
     }
   }
-} 
+}

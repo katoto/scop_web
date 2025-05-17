@@ -1,14 +1,15 @@
 {
   "nav": {
+    "home": "首页",
     "solutions": "解决方案",
     "passenger": "乘用车",
     "commercialEV": "商业应用",
     "energyStorage": "储能系统",
     "recycling": "循环回收",
     "rd": "研发",
-    "news": "新闻",
+    "news": "新闻与动态",
     "brand": "品牌",
-    "about": "关于我们",
+    "about": "关于 Scophil",
     "contact": "联系我们"
   },
   "footer": {
@@ -180,4 +181,4 @@
       "desc": "宁德时代为机场园区、港口码头的电动化发展保驾护航，提供了绿色清洁、安全可靠的产品解决方案。"
     }
   }
-} 
+}
