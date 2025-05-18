@@ -212,7 +212,7 @@ onUnmounted(() => {
 
 .banner {
   position: relative;
-  height: 420px;
+  height: 600px;
   background: url('/about-Scophil/1-1品牌愿景与使命-背景图-调暗版.png') center/cover no-repeat;
   display: flex;
   align-items: center;
