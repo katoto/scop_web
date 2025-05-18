@@ -36,7 +36,7 @@ async function translate() {
       },
       {
         headers: {
-          Authorization: "Bearer 输入你的APIKEY",
+          Authorization: "Bearer sk-219d3094fd0c4f4e9c6bd3a6a72e5894",
           "Content-Type": "application/json",
         },
       }
