@@ -56,22 +56,22 @@
           <div class="expert-img right">
             <img src="/about-Scophil/3-2专家团队-Gabazza Esteban教授.jpg" alt="Gabazza Esteban教授" />
           </div>
-          <div class="expert-info left">
-            <h3>Gabazza Esteban教授</h3>
-            <div class="expert-desc">日本三重大学医学研究科特任教授。免疫学与呼吸内科学专家，CP-101研发领军人。</div>
-          </div>
           <ul class="expert-points">
             <li>发现姬松茸PD-1，拓展免疫研究新方向</li>
             <li>提取CP-101，开发具有抗癌功效的姬松茸提取物</li>
             <li>免疫学研究权威，发表论文千余篇，总引用超16,000次</li>
             <li>探索肺部免疫机制，推动慢性肺病与免疫相关治疗研究</li>
           </ul>
+          <div class="expert-info left">
+            <h3>Gabazza Esteban教授</h3>
+            <div class="expert-desc">日本三重大学医学研究科特任教授。免疫学与呼吸内科学专家，CP-101研发领军人。</div>
+          </div>
         </div>
         <!-- 后四位专家模块排版 -->
         <div class="expert-modules">
           <div class="expert-card">
             <div class="expert-card-img">
-              <img src="/about-Scophil/3-3专家团队-冈田邦彦.jpg" alt="冈田邦彦" />
+              <img src="/about-Scophil/3-3专家团队-冈田邦彦.png" alt="冈田邦彦" />
             </div>
             <h4>冈田邦彦</h4>
             <p>日本再生医疗领域权威，德岛大学硕士、名古屋大学博士，DRAQUA与REBOR等多家生医企业董事长。主导干细胞培养、骨再生与组织工程等前沿研究，推动再生医疗临床应用。</p>
@@ -85,7 +85,7 @@
           </div>
           <div class="expert-card">
             <div class="expert-card-img">
-              <img src="/about-Scophil/3-5专家团队-燕炜.jpg" alt="燕炜" />
+              <img src="/about-Scophil/3-5专家团队-燕炜.png" alt="燕炜" />
             </div>
             <h4>燕炜</h4>
             <p>医疗健康管理专家，内科医生。毕业于中南大学湘雅医学院与北京大学光华管理学院，拥有20余年医疗行业经验，参与多项1.1类新药临床试验。</p>
@@ -444,7 +444,8 @@ onUnmounted(() => {
 
 .expert-img img {
   width: 100%;
-  height: auto;
+  /* height: auto; */
+  height: 290px;
   border-radius: 18px;
   object-fit: cover;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
