@@ -47,7 +47,7 @@ async function translate() {
         path.join(__dirname, `./i18n/locales/${lang.value}.json`),
         result
       );
-      console.log(`生成语言包${lang.text}/${lang.value}.json成功`);
+      // console.log(`生成语言包${lang.text}成功`);
     }
   }
 }

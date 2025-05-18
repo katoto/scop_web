@@ -8,7 +8,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "i18n-create": "node ./AITranslate.js"
+    "i18n-create": "node ./AITranslate.cjs"
   },
   "dependencies": {
     "@nuxtjs/i18n": "^9.5.4",
