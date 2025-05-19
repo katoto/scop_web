@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+
 const productImages = [
   '/product/ashitaba.png',
   '/product/sweettea.jpg',
@@ -30,6 +32,29 @@ const productDesc = [
   '改善微循环，激活毛细血管再生，提升生殖系统供血能力',
   '专利抗癌与免疫调节因子，提升抗疲劳、抗氧化与恢复力'
 ];
+
+const patentOptions = [
+  {
+    id: 1,
+    title: '姬松茸亚临界水提取物 CP-101',
+    patentNo: '专利号：7141630',
+    desc: '采用亚临界萃取技术，保留完整多糖体活性，增强免疫系统，可用于前列腺癌辅助防护。',
+    image: '/product/agaricus_cp101.jpg',
+  },
+  {
+    id: 2,
+    title: '长胡椒提取物',
+    patentNo: '专利号：6246859',
+    desc: '激活血管Tie2受体，改善微循环，提升血流动力，有效改善末梢循环问题。',
+    image: '/product/longpepper_extract.jpg',
+  },
+];
+
+const activePatent = ref(patentOptions[0]);
+
+function setActivePatent(option: typeof patentOptions[0]) {
+  activePatent.value = option;
+}
 </script>
 
 <template>
@@ -51,27 +76,19 @@ const productDesc = [
 
     <section class="product-section">
       <h2>两大专利成分</h2>
-      <div class="patent-list">
-        <div class="patent-item">
-          <img src="/product/agaricus_cp101.jpg" alt="姬松茸亚临界水提取物" />
-          <div>
-            <h3>姬松茸亚临界水提取物 CP-101（专利号：7141630）</h3>
-            <ul>
-              <li>增强免疫系统，提升身体防御机制</li>
-              <li>可用于前列腺癌辅助防护</li>
-              <li>亚临界萃取，保留完整多糖体活性</li>
-            </ul>
-          </div>
+      <div class="patent-flex-box">
+        <div class="patent-left">
+          <div class="patent-title">{{ activePatent.title }}</div>
+          <div class="patent-no">{{ activePatent.patentNo }}</div>
+          <div class="patent-desc">{{ activePatent.desc }}</div>
         </div>
-        <div class="patent-item">
-          <img src="/product/longpepper_extract.jpg" alt="长胡椒提取物" />
-          <div>
-            <h3>长胡椒提取物（专利号：6246859）</h3>
-            <ul>
-              <li>激活血管Tie2受体，修复毛细血管屏障</li>
-              <li>提升血流动力，改善末梢循环</li>
-              <li>减轻浮肿与手脚冰冷，增强营养输送力</li>
-            </ul>
+        <div class="patent-right" :style="{ backgroundImage: `url(${activePatent.image})` }">
+          <div class="patent-menu">
+            <div v-for="option in patentOptions" :key="option.id" class="patent-menu-item"
+              :class="{ active: activePatent.id === option.id }" @mouseenter="setActivePatent(option)"
+              @click="setActivePatent(option)">
+              <span>{{ option.title }}（{{ option.patentNo }}）</span>
+            </div>
           </div>
         </div>
       </div>
@@ -234,42 +251,89 @@ const productDesc = [
   }
 }
 
-.patent-list {
+.patent-flex-box {
   display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  min-height: 380px;
+}
 
-  .patent-item {
-    display: flex;
-    flex: 1 1 400px;
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 2px 12px rgba(191, 161, 74, 0.08);
-    padding: 24px;
-    align-items: center;
+.patent-left {
+  flex: 1 1 40%;
+  padding: 56px 40px 56px 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #fff;
+}
 
-    img {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin-right: 24px;
-      background: #f9f6e7;
-    }
+.patent-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 18px;
+  line-height: 1.2;
+}
 
-    h3 {
-      color: #bfa14a;
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-    }
+.patent-no {
+  font-size: 1.1rem;
+  color: #bfa14a;
+  margin-bottom: 18px;
+}
 
-    ul {
-      color: #333;
-      font-size: 1rem;
-      padding-left: 18px;
-      margin: 0;
-    }
-  }
+.patent-desc {
+  font-size: 1.15rem;
+  color: #444;
+  line-height: 1.8;
+}
+
+.patent-right {
+  flex: 1 1 60%;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 380px;
+  transition: background-image 0.3s;
+}
+
+.patent-menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  padding: 0 0 38px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.patent-menu-item {
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 500;
+  padding: 12px 28px;
+  border-radius: 30px;
+  background: rgba(0, 0, 0, 0.18);
+  margin: 0 12px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.25s;
+  border: 2px solid transparent;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(2px);
+}
+
+.patent-menu-item.active,
+.patent-menu-item:hover {
+  background: rgba(191, 161, 74, 0.92);
+  color: #fff;
+  border-color: #fffbe8;
+  box-shadow: 0 4px 18px rgba(191, 161, 74, 0.18);
+  z-index: 3;
 }
 
 .feature-list {
@@ -418,11 +482,30 @@ const productDesc = [
     padding: 6px 12px;
   }
 
-  .patent-list,
-  .science-list,
-  .compound-list {
+  .patent-flex-box {
     flex-direction: column;
-    align-items: center;
+    min-height: 0;
+  }
+
+  .patent-left {
+    padding: 32px 18px 18px 18px;
+    text-align: center;
+  }
+
+  .patent-right {
+    min-height: 220px;
+  }
+
+  .patent-menu {
+    flex-direction: column;
+    padding: 18px 0;
+    gap: 18px;
+  }
+
+  .patent-menu-item {
+    margin: 0 0 12px 0;
+    width: 90vw;
+    max-width: 340px;
   }
 
   .product-section {
