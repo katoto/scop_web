@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 
 const productImages = [
   '/product/ashitaba.png',
@@ -101,6 +101,34 @@ const scienceList = [
     desc: '采用日本本土植物，来源透明，每一批次均可验证追踪。'
   }
 ];
+
+const half = Math.ceil(productImages.length / 2);
+const firstRow = computed(() => productImages.slice(0, half));
+const secondRow = computed(() => productImages.slice(half));
+
+const activeRow = ref<null | number>(null); // 0 或 1
+const activeIdx = ref<null | number>(null);
+const locked = ref(false);
+
+function pauseRow(row: number, idx: number) {
+  if (locked.value) return;
+  activeRow.value = row;
+  activeIdx.value = idx;
+}
+function lockRow(row: number, idx: number) {
+  activeRow.value = row;
+  activeIdx.value = idx;
+  locked.value = true;
+}
+function unlockRow() {
+  activeRow.value = null;
+  activeIdx.value = null;
+  locked.value = false;
+}
+
+function handleMouseLeave(row: number) {
+  if (!locked.value) activeRow.value = null;
+}
 </script>
 
 <template>
@@ -192,12 +220,35 @@ const scienceList = [
 
     <section class="product-section">
       <h2>黄金复方：40种植物平衡精华</h2>
-      <div class="compound-list">
-        <div v-for="(img, idx) in productImages" :key="img" class="compound-item">
-          <img :src="img" :alt="productNames[idx]" />
-          <div class="compound-info">
-            <h4>{{ productNames[idx] }}</h4>
-            <p>{{ productDesc[idx] }}</p>
+      <div class="compound-carousel">
+        <div class="carousel-row" :class="{ paused: activeRow === 0 }" @mouseleave="handleMouseLeave(0)"
+          @click.self="unlockRow">
+          <div v-for="(img, idx) in firstRow" :key="'row1-' + idx" class="compound-item"
+            :class="{ active: activeRow === 0 && activeIdx === idx }" @mouseenter="pauseRow(0, idx)"
+            @click.stop="lockRow(0, idx)">
+            <img :src="img" :alt="productNames[idx]" />
+            <div class="compound-info" v-if="activeRow === 0 && activeIdx === idx">
+              <h4>{{ productNames[idx] }}</h4>
+              <p>{{ productDesc[idx] }}</p>
+            </div>
+          </div>
+          <div v-for="(img, idx) in firstRow" :key="'row1-copy-' + idx" class="compound-item">
+            <img :src="img" :alt="productNames[idx]" />
+          </div>
+        </div>
+        <div class="carousel-row reverse" :class="{ paused: activeRow === 1 }" @mouseleave="handleMouseLeave(1)"
+          @click.self="unlockRow">
+          <div v-for="(img, idx) in secondRow" :key="'row2-' + idx" class="compound-item"
+            :class="{ active: activeRow === 1 && activeIdx === idx }" @mouseenter="pauseRow(1, idx)"
+            @click.stop="lockRow(1, idx)">
+            <img :src="img" :alt="productNames[idx + firstRow.length]" />
+            <div class="compound-info" v-if="activeRow === 1 && activeIdx === idx">
+              <h4>{{ productNames[idx + firstRow.length] }}</h4>
+              <p>{{ productDesc[idx + firstRow.length] }}</p>
+            </div>
+          </div>
+          <div v-for="(img, idx) in secondRow" :key="'row2-copy-' + idx" class="compound-item">
+            <img :src="img" :alt="productNames[idx + firstRow.length]" />
           </div>
         </div>
       </div>
@@ -594,46 +645,109 @@ const scienceList = [
   background: #e5e7eb;
 }
 
-.compound-list {
+.compound-carousel {
+  width: 100vw;
+  background: #faf9f6;
+  padding: 48px 0;
+  overflow: hidden;
+}
+
+.carousel-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  position: relative;
+  animation: carousel-left 30s linear infinite;
+}
 
-  .compound-item {
-    width: 220px;
-    background: #fff;
-    border-radius: 14px;
-    box-shadow: 0 2px 8px rgba(191, 161, 74, 0.08);
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.carousel-row:first-child {
+  margin-bottom: 50px;
+}
 
-    img {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 10px;
-      background: #f9f6e7;
-    }
+.carousel-row.reverse {
+  animation: carousel-right 30s linear infinite;
+}
 
-    .compound-info {
-      text-align: center;
+.carousel-row.paused {
+  animation-play-state: paused !important;
+}
 
-      h4 {
-        color: #bfa14a;
-        font-size: 1.1rem;
-        margin-bottom: 6px;
-      }
-
-      p {
-        color: #333;
-        font-size: 0.98rem;
-      }
-    }
+@keyframes carousel-left {
+  0% {
+    transform: translateX(0);
   }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes carousel-right {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.compound-item {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: #fff;
+  margin: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 12px rgba(191, 161, 74, 0.08);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.compound-item img {
+  width: 90px;
+  height: 90px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.compound-item.active {
+  z-index: 2;
+  transform: scale(1.25);
+  box-shadow: 0 8px 32px rgba(191, 161, 74, 0.18);
+}
+
+.compound-item.active img {
+  filter: brightness(1.1) contrast(1.1);
+}
+
+.compound-item .compound-info {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 100%;
+  box-shadow: 0 2px 12px rgba(191, 161, 74, 0.12);
+  padding: 18px 20px;
+  text-align: center;
+  color: #222;
+  font-size: 1rem;
+  pointer-events: none;
+  opacity: 1;
+  z-index: 10;
+  transition: opacity 0.2s;
+}
+
+.compound-item:not(.active) .compound-info {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .market-img {
@@ -750,6 +864,23 @@ const scienceList = [
 
   .science-icon {
     margin-bottom: 8px;
+  }
+
+  .compound-carousel {
+    padding: 18px 0;
+  }
+
+  .compound-item,
+  .compound-item img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .compound-item .compound-info {
+    width: 90vw;
+    min-width: 0;
+    font-size: 0.95rem;
+    padding: 10px 8px;
   }
 }
 
