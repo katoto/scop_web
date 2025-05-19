@@ -36,7 +36,7 @@ async function translate() {
       },
       {
         headers: {
-          Authorization: "Bearer sk-219d3094fd0c4f4e9c6bd3a6a72e5894",
+          Authorization: "Bearer sk-xxx34434",
           "Content-Type": "application/json",
         },
       }
