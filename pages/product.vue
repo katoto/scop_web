@@ -224,31 +224,29 @@ function handleMouseLeave(row: number) {
         <div class="carousel-row" :class="{ paused: activeRow === 0 }" @mouseleave="handleMouseLeave(0)"
           @click.self="unlockRow">
           <div v-for="(img, idx) in firstRow" :key="'row1-' + idx" class="compound-item"
-            :class="{ active: activeRow === 0 && activeIdx === idx }" @mouseenter="pauseRow(0, idx)"
-            @click.stop="lockRow(0, idx)">
-            <img :src="img" :alt="productNames[idx]" />
+            :class="{ active: activeRow === 0 && activeIdx === idx }" :style="{ backgroundImage: `url(${img})` }"
+            @mouseenter="pauseRow(0, idx)" @click.stop="lockRow(0, idx)">
             <div class="compound-info" v-if="activeRow === 0 && activeIdx === idx">
               <h4>{{ productNames[idx] }}</h4>
               <p>{{ productDesc[idx] }}</p>
             </div>
           </div>
-          <div v-for="(img, idx) in firstRow" :key="'row1-copy-' + idx" class="compound-item">
-            <img :src="img" :alt="productNames[idx]" />
+          <div v-for="(img, idx) in firstRow" :key="'row1-copy-' + idx" class="compound-item"
+            :style="{ backgroundImage: `url(${img})` }">
           </div>
         </div>
         <div class="carousel-row reverse" :class="{ paused: activeRow === 1 }" @mouseleave="handleMouseLeave(1)"
           @click.self="unlockRow">
           <div v-for="(img, idx) in secondRow" :key="'row2-' + idx" class="compound-item"
-            :class="{ active: activeRow === 1 && activeIdx === idx }" @mouseenter="pauseRow(1, idx)"
-            @click.stop="lockRow(1, idx)">
-            <img :src="img" :alt="productNames[idx + firstRow.length]" />
+            :class="{ active: activeRow === 1 && activeIdx === idx }" :style="{ backgroundImage: `url(${img})` }"
+            @mouseenter="pauseRow(1, idx)" @click.stop="lockRow(1, idx)">
             <div class="compound-info" v-if="activeRow === 1 && activeIdx === idx">
               <h4>{{ productNames[idx + firstRow.length] }}</h4>
               <p>{{ productDesc[idx + firstRow.length] }}</p>
             </div>
           </div>
-          <div v-for="(img, idx) in secondRow" :key="'row2-copy-' + idx" class="compound-item">
-            <img :src="img" :alt="productNames[idx + firstRow.length]" />
+          <div v-for="(img, idx) in secondRow" :key="'row2-copy-' + idx" class="compound-item"
+            :style="{ backgroundImage: `url(${img})` }">
           </div>
         </div>
       </div>
@@ -705,6 +703,9 @@ function handleMouseLeave(row: number) {
   box-shadow: 0 2px 12px rgba(191, 161, 74, 0.08);
   cursor: pointer;
   flex-shrink: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .compound-item img {
@@ -720,6 +721,7 @@ function handleMouseLeave(row: number) {
   z-index: 2;
   transform: scale(1.25);
   box-shadow: 0 8px 32px rgba(191, 161, 74, 0.18);
+  transition: all 0.3s ease;
 }
 
 .compound-item.active img {
@@ -732,12 +734,12 @@ function handleMouseLeave(row: number) {
   top: 0;
   width: 100%;
   height: 100%;
-  background: #fff;
+  background: #222;
   border-radius: 100%;
   box-shadow: 0 2px 12px rgba(191, 161, 74, 0.12);
   padding: 18px 20px;
   text-align: center;
-  color: #222;
+  color: #fff;
   font-size: 1rem;
   pointer-events: none;
   opacity: 1;
