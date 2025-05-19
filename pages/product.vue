@@ -84,11 +84,21 @@ function setActivePatent(option: typeof patentOptions[0]) {
         </div>
         <div class="patent-right" :style="{ backgroundImage: `url(${activePatent.image})` }">
           <div class="patent-menu">
-            <div v-for="option in patentOptions" :key="option.id" class="patent-menu-item"
-              :class="{ active: activePatent.id === option.id }" @mouseenter="setActivePatent(option)"
-              @click="setActivePatent(option)">
-              <span>{{ option.title }}（{{ option.patentNo }}）</span>
-              <template v-if="activePatent.id === option.id">
+            <div class="patent-menu-item" :class="{ active: activePatent.id === patentOptions[0].id }"
+              @mouseenter="setActivePatent(patentOptions[0])" @click="setActivePatent(patentOptions[0])">
+              <span>{{ patentOptions[0].title }}（{{ patentOptions[0].patentNo }}）</span>
+              <template v-if="activePatent.id === patentOptions[0].id">
+                <div class="dot-animate">
+                  <span class="ripple"></span>
+                  <span class="dot"></span>
+                </div>
+              </template>
+            </div>
+            <div class="patent-divider"></div>
+            <div class="patent-menu-item" :class="{ active: activePatent.id === patentOptions[1].id }"
+              @mouseenter="setActivePatent(patentOptions[1])" @click="setActivePatent(patentOptions[1])">
+              <span>{{ patentOptions[1].title }}（{{ patentOptions[1].patentNo }}）</span>
+              <template v-if="activePatent.id === patentOptions[1].id">
                 <div class="dot-animate">
                   <span class="ripple"></span>
                   <span class="dot"></span>
@@ -417,6 +427,16 @@ function setActivePatent(option: typeof patentOptions[0]) {
   }
 }
 
+.patent-divider {
+  width: 1px;
+  height: 100%;
+  background: #fff;
+  align-self: stretch;
+  border-radius: 1px;
+  margin: 0;
+  box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.18);
+}
+
 .feature-list {
   display: flex;
   flex-wrap: wrap;
@@ -587,6 +607,10 @@ function setActivePatent(option: typeof patentOptions[0]) {
     width: 100%;
     min-height: 60px;
     border-radius: 0;
+  }
+
+  .patent-divider {
+    display: none;
   }
 
   .product-section {
