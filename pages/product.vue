@@ -130,6 +130,29 @@ function unlockRow() {
 function handleMouseLeave(row: number) {
   if (!locked.value) activeRow.value = null;
 }
+
+const marketCompare = [
+  {
+    label: '血管调理',
+    market: '❌ 多为兴奋刺激型',
+    cp101: '✅ 激活Tie2，修复毛细血管屏障'
+  },
+  {
+    label: '循环改善',
+    market: '❌ 成分不明，剂量低',
+    cp101: '✅ 专利胡椒碱，临床验证提升血流'
+  },
+  {
+    label: '安全性',
+    market: '⚠️ 含激素/化学物质',
+    cp101: '✅ 植物提取，亚临界低温萃取'
+  },
+  {
+    label: '长期服用',
+    market: '⚠️ 可能刺激肠胃',
+    cp101: '✅ 温和无刺激，适合长效调养'
+  }
+];
 </script>
 
 <template>
@@ -249,13 +272,18 @@ function handleMouseLeave(row: number) {
 
     <section class="product-section">
       <h2>市场对比优势</h2>
-      <!-- <img class="market-img" src="/product/1.2.6-市场对比.png" alt="市场对比优势" /> -->
-      <ul class="market-list">
-        <li>血管调理：激活Tie2，修复毛细血管屏障</li>
-        <li>循环改善：专利胡椒碱，临床验证提升血流</li>
-        <li>安全性：植物提取，亚临界低温萃取</li>
-        <li>长期服用：温和不刺激肠胃，适合长期调养</li>
-      </ul>
+      <div class="market-compare-table">
+        <div class="market-compare-header">
+          <div>指标</div>
+          <div>市面同类产品</div>
+          <div>CP-101 固本金刚丸</div>
+        </div>
+        <div v-for="item in marketCompare" :key="item.label" class="market-compare-row">
+          <div class="market-compare-label">{{ item.label }}</div>
+          <div class="market-compare-market">{{ item.market }}</div>
+          <div class="market-compare-cp101">{{ item.cp101 }}</div>
+        </div>
+      </div>
     </section>
   </div>
 </template>
@@ -768,32 +796,77 @@ function handleMouseLeave(row: number) {
   line-height: 1.5;
 }
 
-.market-img {
+.market-compare-table {
   width: 100%;
-  max-width: 700px;
-  display: block;
-  margin: 0 auto 18px auto;
-  border-radius: 12px;
-  background: #f9f6e7;
-  box-shadow: 0 2px 8px rgba(191, 161, 74, 0.08);
+  max-width: 900px;
+  margin: 0 auto 32px auto;
+  border-radius: 18px;
+  background: #f9f7f3;
+  box-shadow: 0 2px 16px rgba(191, 161, 74, 0.08);
+  overflow: hidden;
+  font-size: 1.05rem;
 }
 
-.market-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  font-size: 1.1rem;
-  color: #bfa14a;
-  font-weight: 600;
-  justify-content: center;
+.market-compare-header,
+.market-compare-row {
+  display: flex !important;
+  flex-direction: row !important;
+}
 
-  li {
-    background: #fffbe8;
-    border: 1px solid #f3e6b2;
-    border-radius: 8px;
-    padding: 10px 22px;
-    min-width: 180px;
+.market-compare-header {
+  background: #f7ecd2;
+  font-weight: 700;
+  color: #bfa14a;
+  font-size: 1.13rem;
+  border-bottom: 1px solid #f0e9d8;
+
+  >div {
+    flex: 1 1 0;
+    padding: 18px 8px;
     text-align: center;
+  }
+}
+
+.market-compare-row {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 1px solid #f5f5f5;
+  transition: background 0.2s;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background: #f5f3ea;
+  }
+
+  >div {
+    flex: 1 1 0;
+    padding: 18px 8px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.05rem;
+  }
+
+  .market-compare-label {
+    font-weight: 600;
+    color: #222;
+    background: #f5f5f7;
+  }
+
+  .market-compare-market {
+    color: #d32f2f;
+    background: #fff3f3;
+    font-weight: 500;
+  }
+
+  .market-compare-cp101 {
+    color: #388e3c;
+    background: #f3fcf5;
+    font-weight: 600;
   }
 }
 
@@ -899,6 +972,15 @@ function handleMouseLeave(row: number) {
     min-width: 0;
     font-size: 0.95rem;
     padding: 10px 8px;
+  }
+
+  .market-compare-table {
+    font-size: 0.98rem;
+  }
+
+  .market-compare-header>div,
+  .market-compare-row>div {
+    padding: 12px 2px;
   }
 }
 
