@@ -86,24 +86,24 @@ function setActivePatent(option: typeof patentOptions[0]) {
           <div class="patent-menu">
             <div class="patent-menu-item" :class="{ active: activePatent.id === patentOptions[0].id }"
               @mouseenter="setActivePatent(patentOptions[0])" @click="setActivePatent(patentOptions[0])">
-              <span>{{ patentOptions[0].title }}（{{ patentOptions[0].patentNo }}）</span>
               <template v-if="activePatent.id === patentOptions[0].id">
                 <div class="dot-animate">
                   <span class="ripple"></span>
                   <span class="dot"></span>
                 </div>
               </template>
+              <span>{{ patentOptions[0].title }}</span>
             </div>
             <div class="patent-divider"></div>
             <div class="patent-menu-item" :class="{ active: activePatent.id === patentOptions[1].id }"
               @mouseenter="setActivePatent(patentOptions[1])" @click="setActivePatent(patentOptions[1])">
-              <span>{{ patentOptions[1].title }}（{{ patentOptions[1].patentNo }}）</span>
               <template v-if="activePatent.id === patentOptions[1].id">
                 <div class="dot-animate">
                   <span class="ripple"></span>
                   <span class="dot"></span>
                 </div>
               </template>
+              <span>{{ patentOptions[1].title }}</span>
             </div>
           </div>
         </div>
@@ -332,9 +332,10 @@ function setActivePatent(option: typeof patentOptions[0]) {
 .patent-menu-item {
   flex: 1 1 50%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: #bfa14a;
   font-size: 1.15rem;
   font-weight: 500;
   border-radius: 0;
@@ -348,46 +349,28 @@ function setActivePatent(option: typeof patentOptions[0]) {
   height: 100%;
 }
 
-.patent-menu-item span {
+.patent-menu-item .dot-animate {
   position: relative;
-  z-index: 2;
-}
-
-.patent-menu-item.active,
-.patent-menu-item:hover {
-  color: #fff;
-  z-index: 3;
-}
-
-.patent-menu-item.active {
-  font-weight: 700;
-}
-
-.patent-menu-item.active .dot-animate {
-  position: absolute;
-  top: 18px;
-  left: 50%;
-  transform: translateX(-50%);
   width: 14px;
   height: 14px;
-  z-index: 5;
+  margin-bottom: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.patent-menu-item.active .dot-animate .dot {
+.patent-menu-item .dot-animate .dot {
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: #fff;
+  background: #bfa14a;
   animation: dot-breath 1.2s infinite alternate;
   position: absolute;
   left: 0;
   top: 0;
 }
 
-.patent-menu-item.active .dot-animate .ripple {
+.patent-menu-item .dot-animate .ripple {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -395,36 +378,24 @@ function setActivePatent(option: typeof patentOptions[0]) {
   height: 32px;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(191, 161, 74, 0.25);
   animation: dot-ripple 1.2s infinite;
   pointer-events: none;
 }
 
-@keyframes dot-breath {
-  0% {
-    transform: scale(1);
-  }
-
-  100% {
-    transform: scale(1.35);
-  }
+.patent-menu-item span {
+  position: relative;
+  z-index: 2;
 }
 
-@keyframes dot-ripple {
-  0% {
-    opacity: 0.7;
-    transform: translate(-50%, -50%) scale(1);
-  }
+.patent-menu-item.active,
+.patent-menu-item:hover {
+  color: #bfa14a;
+  z-index: 3;
+}
 
-  80% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(2.2);
-  }
-
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(2.2);
-  }
+.patent-menu-item.active {
+  font-weight: 700;
 }
 
 .patent-divider {
