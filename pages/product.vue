@@ -75,7 +75,7 @@ function setActivePatent(option: typeof patentOptions[0]) {
     </section>
 
     <section class="product-section">
-      <h2>两大专利成分</h2>
+      <h2 class="patent-section-title">两大专利成分</h2>
       <div class="patent-flex-box">
         <div class="patent-left">
           <div class="patent-title">{{ activePatent.title }}</div>
@@ -270,7 +270,6 @@ function setActivePatent(option: typeof patentOptions[0]) {
 .patent-flex-box {
   display: flex;
   background: #fff;
-  border-radius: 18px;
   overflow: hidden;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
   min-height: 380px;
@@ -587,5 +586,16 @@ function setActivePatent(option: typeof patentOptions[0]) {
   .product-section {
     padding: 0 6vw;
   }
+}
+
+.patent-section-title {
+  color: #222 !important;
+  text-align: center !important;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 28px;
+  letter-spacing: 0.08em;
+  width: 100%;
+  display: block;
 }
 </style>
