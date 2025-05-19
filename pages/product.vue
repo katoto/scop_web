@@ -78,6 +78,29 @@ const features = [
     img: '/product/prostate_health.png'
   }
 ];
+
+const scienceList = [
+  {
+    icon: '🔬',
+    title: '日本原产科研背景',
+    desc: '由三重大学免疫团队研发，融合现代分子免疫学成果。'
+  },
+  {
+    icon: '✅',
+    title: 'GMP认证 × ISO国际标准',
+    desc: '全线生产于日本GMP认证工厂，符合ISO质量体系标准，安全可控。'
+  },
+  {
+    icon: '📚',
+    title: '专利支持 + 实证研究背书',
+    desc: '拥有多项专利技术支持，并且经过大量实证研究验证。'
+  },
+  {
+    icon: '🔍',
+    title: '原料全程可追溯',
+    desc: '采用日本本土植物，来源透明，每一批次均可验证追踪。'
+  }
+];
 </script>
 
 <template>
@@ -153,13 +176,17 @@ const features = [
 
     <section class="product-section">
       <h2>科研权威 × 品质保障 × 专利支持</h2>
-      <div class="science-list">
-        <img src="/product/japan_research.png" alt="日本原产科研背景" />
-        <img src="/product/gmp_certification.png" alt="GMP认证" />
-        <img src="/product/iso_standard.png" alt="ISO国际标准" />
-        <img src="/product/patent.png" alt="专利" />
-        <img src="/product/research_backing.png" alt="实证研究背书" />
-        <img src="/product/traceable.svg" alt="原料全程可追溯" />
+      <div class="science-blocks">
+        <div v-for="(item, idx) in scienceList" :key="item.title" class="science-block">
+          <div class="science-icon">
+            <span>{{ item.icon }}</span>
+          </div>
+          <div class="science-text">
+            <div class="science-title">{{ item.title }}</div>
+            <div class="science-desc">{{ item.desc }}</div>
+          </div>
+          <div v-if="idx < scienceList.length - 1" class="science-divider"></div>
+        </div>
       </div>
     </section>
 
@@ -503,20 +530,68 @@ const features = [
   line-height: 1.8;
 }
 
-.science-list {
+.science-blocks {
+  max-width: 1100px;
+  margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  justify-content: center;
+  flex-direction: column;
+  gap: 0;
+  background: #fff;
+}
 
-  img {
-    width: 120px;
-    height: 80px;
-    object-fit: contain;
-    background: #f9f6e7;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(191, 161, 74, 0.08);
-  }
+.science-block {
+  display: flex;
+  align-items: center;
+  padding: 48px 0 36px 0;
+  position: relative;
+}
+
+.science-icon {
+  flex: 0 0 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.science-icon span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.8rem;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #f4f8fc;
+  color: #2563eb;
+  box-shadow: 0 2px 12px rgba(37, 99, 235, 0.06);
+}
+
+.science-text {
+  flex: 1 1 0;
+  padding-left: 36px;
+  min-width: 0;
+}
+
+.science-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 12px;
+}
+
+.science-desc {
+  font-size: 1.08rem;
+  color: #444;
+  line-height: 1.8;
+}
+
+.science-divider {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: #e5e7eb;
 }
 
 .compound-list {
@@ -659,6 +734,22 @@ const features = [
     width: 100%;
     max-width: 100%;
     min-width: 0;
+  }
+
+  .science-block {
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 0 24px 0;
+    text-align: center;
+  }
+
+  .science-text {
+    padding-left: 0;
+    margin-top: 18px;
+  }
+
+  .science-icon {
+    margin-bottom: 8px;
   }
 }
 
