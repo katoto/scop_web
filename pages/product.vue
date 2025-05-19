@@ -42,6 +42,11 @@ const productDesc = [
         <p class="subtitle">永葆20岁的健康活力，从血管开始激活</p>
         <p class="desc">日本植物精萃 × 微循环激活科技，精准修复血管与荷尔蒙系统，从源头改善疲劳、低能、冷感等男性常见困扰。黄金配方支持男性体力、免疫与性荷尔蒙，温和调养，长期见效。</p>
       </div>
+      <div class="menu-bar">
+        <div class="menu-item active">CP101固本金刚丸</div>
+        <div class="menu-item">CP101蘑菇精系列</div>
+        <div class="menu-item">CP101肝源力</div>
+      </div>
     </section>
 
     <section class="product-section">
@@ -137,18 +142,53 @@ const productDesc = [
 
 .product-hero {
   text-align: left;
-  padding: 160px 20px 40px 150px;
+  padding: 160px 20px 40px 20px;
   background: url('/product/product-gbjgw-bg.png') no-repeat center center;
   background-size: cover;
   color: white;
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-between;
   height: 700px;
+  position: relative;
 }
 
 .banner-content {
   max-width: 50%;
+  align-self: flex-start;
+  padding-left: 100px;
+  box-sizing: border-box;
+}
+
+.menu-bar {
+  display: flex;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 12px 24px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: auto;
+  margin-bottom: 40px;
+}
+
+.menu-item {
+  color: white;
+  font-size: 1rem;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  &.active {
+    background: rgba(191, 161, 74, 0.8);
+    font-weight: 600;
+  }
 }
 
 .product-hero h1 {
@@ -356,6 +396,27 @@ const productDesc = [
 }
 
 @media (max-width: 900px) {
+  .product-hero {
+    padding: 140px 20px 40px 20px;
+    height: auto;
+    min-height: 700px;
+  }
+
+  .banner-content {
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .menu-bar {
+    width: auto;
+    margin: 40px auto;
+    padding: 8px 16px;
+  }
+
+  .menu-item {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
 
   .patent-list,
   .science-list,
