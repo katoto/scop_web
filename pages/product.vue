@@ -285,6 +285,29 @@ const marketCompare = [
         </div>
       </div>
     </section>
+
+    <section class="product-section">
+      <h2>服用建议与适用人群</h2>
+      <div class="advice-cards">
+        <div class="advice-card">
+          <div class="advice-title">每日建议用量</div>
+          <div class="advice-divider"></div>
+          <div class="advice-desc">
+            每日 1～2 粒，饭后服用效果最佳。可根据个人状态进行调整，不建议超量服用。
+          </div>
+        </div>
+        <div class="advice-card">
+          <div class="advice-title">推荐人群</div>
+          <div class="advice-divider"></div>
+          <ul class="advice-list">
+            <li>经常疲劳、精力下滑的男性</li>
+            <li>手脚冰冷、易浮肿人群</li>
+            <li>亚健康、中年转弱男性</li>
+            <li>长时间高压工作者，需持续精力支持者</li>
+          </ul>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -993,5 +1016,65 @@ const marketCompare = [
   letter-spacing: 0.08em;
   width: 100%;
   display: block;
+}
+
+.advice-cards {
+  display: flex;
+  gap: 48px;
+  justify-content: center;
+  margin-top: 32px;
+  background: none;
+}
+
+.advice-card {
+  flex: 1 1 0;
+  min-width: 260px;
+  max-width: 420px;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: none;
+}
+
+.advice-title {
+  color: #2563eb;
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 12px;
+}
+
+.advice-divider {
+  width: 100%;
+  height: 1px;
+  background: #e5e7eb;
+  margin: 0 0 18px 0;
+  border: none;
+}
+
+.advice-desc,
+.advice-list {
+  color: #444;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 900px) {
+  .advice-cards {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .advice-card {
+    max-width: 100%;
+    padding: 0 12px;
+  }
 }
 </style>
