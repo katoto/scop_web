@@ -111,6 +111,7 @@ const activeIdx = ref<null | number>(null);
 const locked = ref(false);
 
 function pauseRow(row: number, idx: number) {
+  console.log('pauseRow==', row, idx)
   if (locked.value) return;
   activeRow.value = row;
   activeIdx.value = idx;
@@ -231,9 +232,6 @@ function handleMouseLeave(row: number) {
               <p>{{ productDesc[idx] }}</p>
             </div>
           </div>
-          <div v-for="(img, idx) in firstRow" :key="'row1-copy-' + idx" class="compound-item"
-            :style="{ backgroundImage: `url(${img})` }">
-          </div>
         </div>
         <div class="carousel-row reverse" :class="{ paused: activeRow === 1 }" @mouseleave="handleMouseLeave(1)"
           @click.self="unlockRow">
@@ -244,9 +242,6 @@ function handleMouseLeave(row: number) {
               <h4>{{ productNames[idx + firstRow.length] }}</h4>
               <p>{{ productDesc[idx + firstRow.length] }}</p>
             </div>
-          </div>
-          <div v-for="(img, idx) in secondRow" :key="'row2-copy-' + idx" class="compound-item"
-            :style="{ backgroundImage: `url(${img})` }">
           </div>
         </div>
       </div>
@@ -648,14 +643,17 @@ function handleMouseLeave(row: number) {
   background: #faf9f6;
   padding: 48px 0;
   overflow: hidden;
+  position: relative;
 }
 
 .carousel-row {
   display: flex;
   align-items: center;
+  overflow: visible;
   width: 100vw;
   position: relative;
   animation: carousel-left 30s linear infinite;
+  padding: 0 200px;
 }
 
 .carousel-row:first-child {
@@ -692,6 +690,8 @@ function handleMouseLeave(row: number) {
 
 .compound-item {
   position: relative;
+  overflow: visible;
+  z-index: 1;
   width: 180px;
   height: 180px;
   border-radius: 50%;
@@ -718,7 +718,7 @@ function handleMouseLeave(row: number) {
 }
 
 .compound-item.active {
-  z-index: 2;
+  z-index: 10;
   transform: scale(1.25);
   box-shadow: 0 8px 32px rgba(191, 161, 74, 0.18);
   transition: all 0.3s ease;
