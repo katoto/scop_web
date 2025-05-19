@@ -280,15 +280,16 @@ const features = [
 
 .product-section {
   margin: 48px auto 0 auto;
-  max-width: 1100px;
+  // max-width: 1100px;
   padding: 0 20px;
 
   h2 {
-    color: #bfa14a;
+    color: #222;
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 28px;
     letter-spacing: 0.08em;
+    text-align: center;
   }
 }
 
