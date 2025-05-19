@@ -55,6 +55,29 @@ const activePatent = ref(patentOptions[0]);
 function setActivePatent(option: typeof patentOptions[0]) {
   activePatent.value = option;
 }
+
+const features = [
+  {
+    title: '改善男性性功能与精力状态',
+    desc: '提升精力，改善性功能，增强自信。',
+    img: '/product/male_function.png'
+  },
+  {
+    title: '调节肾功能，缓解疲劳虚弱',
+    desc: '调理肾脏，缓解疲劳，恢复活力。',
+    img: '/product/kidney_function.png'
+  },
+  {
+    title: '强化免疫系统',
+    desc: '增强免疫力，提升身体防御能力。',
+    img: '/product/immune_system.png'
+  },
+  {
+    title: '改善前列腺健康与荷尔蒙状态',
+    desc: '维护前列腺健康，平衡荷尔蒙。',
+    img: '/product/prostate_health.png'
+  }
+];
 </script>
 
 <template>
@@ -112,17 +135,19 @@ function setActivePatent(option: typeof patentOptions[0]) {
 
     <section class="product-section">
       <h2>多重功能支持</h2>
-      <ul class="feature-list">
-        <li>改善男性性功能与精力状态</li>
-        <li>调节肾功能，缓解疲劳虚弱</li>
-        <li>强化免疫系统</li>
-        <li>改善前列腺健康与荷尔蒙状态</li>
-      </ul>
-      <div class="feature-imgs">
-        <img src="/product/male_function.png" alt="改善男性性功能与精力状态" />
-        <img src="/product/kidney_function.png" alt="调节肾功能，缓解疲劳虚弱" />
-        <img src="/product/immune_system.png" alt="强化免疫系统" />
-        <img src="/product/prostate_health.png" alt="改善前列腺健康与荷尔蒙状态" />
+      <div class="feature-blocks">
+        <div v-for="(feature, idx) in features" :key="feature.title"
+          :class="['feature-block', { reverse: idx % 2 === 1, 'gray-bg': idx % 2 === 1 }]">
+          <div class="feature-block-inner">
+            <div class="feature-img">
+              <img :src="feature.img" :alt="feature.title" />
+            </div>
+            <div class="feature-text">
+              <h3>{{ feature.title }}</h3>
+              <p>{{ feature.desc }}</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -407,40 +432,74 @@ function setActivePatent(option: typeof patentOptions[0]) {
   box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.18);
 }
 
-.feature-list {
+.feature-blocks {
   display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  font-size: 1.1rem;
-  color: #bfa14a;
-  font-weight: 600;
-  margin-bottom: 18px;
-
-  li {
-    background: #fffbe8;
-    border: 1px solid #f3e6b2;
-    border-radius: 8px;
-    padding: 10px 22px;
-    min-width: 180px;
-    text-align: center;
-  }
+  flex-direction: column;
+  gap: 48px;
+  margin-top: 32px;
 }
 
-.feature-imgs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  justify-content: center;
-  margin-top: 18px;
+.feature-block {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: #fff;
+}
 
-  img {
-    width: 180px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 10px;
-    background: #f9f6e7;
-    box-shadow: 0 2px 8px rgba(191, 161, 74, 0.08);
-  }
+.feature-block.gray-bg {
+  background: #f7f7f7;
+}
+
+.feature-block-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  padding: 48px 0;
+}
+
+.feature-block.reverse .feature-block-inner {
+  flex-direction: row-reverse;
+}
+
+.feature-img {
+  flex: 0 0 380px;
+  max-width: 420px;
+  width: 38vw;
+  min-width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-img img {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(191, 161, 74, 0.10);
+  background: #f9f6e7;
+}
+
+.feature-text {
+  flex: 1 1 0;
+  min-width: 220px;
+  max-width: 600px;
+}
+
+.feature-text h3 {
+  font-size: 1.6rem;
+  color: #222;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.feature-text p {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.8;
 }
 
 .science-list {
@@ -585,6 +644,20 @@ function setActivePatent(option: typeof patentOptions[0]) {
 
   .product-section {
     padding: 0 6vw;
+  }
+
+  .feature-block-inner {
+    flex-direction: column !important;
+    gap: 18px;
+    text-align: center;
+    padding: 24px 0;
+  }
+
+  .feature-img,
+  .feature-text {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
   }
 }
 
