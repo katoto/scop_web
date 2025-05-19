@@ -745,11 +745,27 @@ function handleMouseLeave(row: number) {
   opacity: 1;
   z-index: 10;
   transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .compound-item:not(.active) .compound-info {
   opacity: 0;
   pointer-events: none;
+}
+
+.compound-item .compound-info h4 {
+  font-size: 0.92rem;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.compound-item .compound-info p {
+  font-size: 0.85rem;
+  margin: 0;
+  line-height: 1.5;
 }
 
 .market-img {
