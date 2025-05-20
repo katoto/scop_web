@@ -33,21 +33,21 @@ const patentOptions = [
     title: '低温亚临界水提取',
     patentNo: '',
     desc: '避免成分降解与溶剂残留，保留高活性',
-    image: '/product/agaricus_cp101.jpg',
+    image: '/product0/1.1.2-1低温亚临界水提取.jpg',
   },
   {
     id: 2,
     title: '专利支持',
     patentNo: '专利号：7141630',
     desc: '日本专利提取技术（专利号：7141630）',
-    image: '/product/longpepper_extract.jpg',
+    image: '/product0/1.1.2-2专利支持.jpg',
   },
   {
     id: 3,
     title: '高浓度净化',
     patentNo: '',
     desc: '确保有效成分浓度统一，品质稳定',
-    image: '/product/longpepper_extract.jpg',
+    image: '/product0/1.1.2-3高浓度净化.jpg',
   },
 ];
 
