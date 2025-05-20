@@ -80,24 +80,34 @@ function setActivePatent(option: typeof patentOptions[0]) {
 
 const features = [
   {
-    title: '改善男性性功能与精力状态',
-    desc: '提升精力，改善性功能，增强自信。',
+    title: '护肝抗癌',
+    desc: 'Livinol™中的Garcinol可抑制癌细胞扩散\n姬松茸激活巨噬细胞，增强肝脏免疫抗癌能力\n萝卜硫素诱导癌细胞凋亡，激活解毒酶系统\n多重抗氧化成分降低肝癌风险',
     img: '/product/male_function.png'
   },
   {
-    title: '调节肾功能，缓解疲劳虚弱',
-    desc: '调理肾脏，缓解疲劳，恢复活力。',
+    title: '强抗氧化，减缓肝细胞衰老',
+    desc: '芽孢西兰花粉末启动Nrf2通路清除自由基\n野葡萄稳定肝细胞膜、促进微循环\n姬松茸增强抗氧环境，马利亚蓟促进肝细胞再生\nL-鸟氨酸盐酸盐减轻肝脏代谢压力',
     img: '/product/kidney_function.png'
   },
   {
-    title: '强化免疫系统',
-    desc: '增强免疫力，提升身体防御能力。',
+    title: '解酒护肝',
+    desc: 'Livinol™抵御酒精毒害，抑制炎症\nL-鸟氨酸加速酒精代谢\n马利亚蓟修复肝细胞，野葡萄促进解毒微循环',
     img: '/product/immune_system.png'
   },
   {
-    title: '改善前列腺健康与荷尔蒙状态',
-    desc: '维护前列腺健康，平衡荷尔蒙。',
+    title: '美白焕肤',
+    desc: 'Livinol™调节肠道菌群、排毒护肤\n野葡萄促进黑色素代谢\n芽孢西兰花 & 姬松茸提升皮肤代谢、改善肤色',
     img: '/product/prostate_health.png'
+  },
+  {
+    title: '血糖调节',
+    desc: 'Livinol™通过菌群调节碳水吸收\n印度藤黄协同成分改善脂肪代谢，增强胰岛素敏感性\n姬松茸 & 芽孢西兰花提升肝脏对葡萄糖摄取和储存',
+    img: '/product/male_function.png'
+  },
+  {
+    title: '调脂抗脂肪肝',
+    desc: 'Livinol™抑制脂肪积累\n印度藤黄促进脂肪酸氧化、降低血脂\n芽孢西兰花 & 马利亚蓟增强肝功能，改善脂肪浸润',
+    img: '/product/kidney_function.png'
   }
 ];
 
@@ -275,7 +285,7 @@ const marketCompare = [
     </section>
 
     <section class="product-section">
-      <h2>多重功能支持</h2>
+      <h2>主要功效</h2>
       <div class="feature-blocks">
         <div v-for="(feature, idx) in features" :key="feature.title"
           :class="['feature-block', { reverse: idx % 2 === 1, 'gray-bg': idx % 2 === 1 }]">
