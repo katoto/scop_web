@@ -169,13 +169,13 @@ const marketCompare = [
       <div class="menu-bar">
 
 
-        <div class="menu-item active">
+        <div class="menu-item">
           <NuxtLink class="nav-link" :to="localePath('/product')">CP101固本金刚丸</NuxtLink>
         </div>
         <div class="menu-item">
           <NuxtLink class="nav-link" :to="localePath('/product0')">CP101蘑菇精系列</NuxtLink>
         </div>
-        <div class="menu-item">
+        <div class="menu-item active">
           <NuxtLink class="nav-link" :to="localePath('/product2')">CP101肝源力</NuxtLink>
         </div>
       </div>
@@ -357,7 +357,6 @@ const marketCompare = [
   backdrop-filter: blur(10px);
   padding: 0px;
   border-radius: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
   margin-top: auto;
   margin-bottom: 40px;
 }
