@@ -145,24 +145,14 @@ function handleMouseLeave(row: number) {
 
 const marketCompare = [
   {
-    label: '血管调理',
-    market: '❌ 多为兴奋刺激型',
-    cp101: '✅ 激活Tie2，修复毛细血管屏障'
+    label: '核心成分',
+    market: '基础成分',
+    cp101: '高浓缩强化'
   },
   {
-    label: '循环改善',
-    market: '❌ 成分不明，剂量低',
-    cp101: '✅ 专利胡椒碱，临床验证提升血流'
-  },
-  {
-    label: '安全性',
-    market: '⚠️ 含激素/化学物质',
-    cp101: '✅ 植物提取，亚临界低温萃取'
-  },
-  {
-    label: '长期服用',
-    market: '⚠️ 可能刺激肠胃',
-    cp101: '✅ 温和无刺激，适合长效调养'
+    label: '使用人群',
+    market: '一般免疫调理 / 癌症辅助',
+    cp101: '重症 / 术后 / 高需求者'
   }
 ];
 </script>
@@ -302,17 +292,26 @@ const marketCompare = [
     </section>
 
     <section class="product-section">
-      <h2>市场对比优势</h2>
+      <h2>产品对比</h2>
       <div class="market-compare-table">
         <div class="market-compare-header">
           <div>指标</div>
-          <div>市面同类产品</div>
-          <div>CP-101 固本金刚丸</div>
+          <div>蘑菇精 CP-101</div>
+          <div>蘑菇精 CP-101 Super</div>
         </div>
         <div v-for="item in marketCompare" :key="item.label" class="market-compare-row">
           <div class="market-compare-label">{{ item.label }}</div>
           <div class="market-compare-market">{{ item.market }}</div>
           <div class="market-compare-cp101">{{ item.cp101 }}</div>
+        </div>
+        <div class="market-compare-row">
+          <div class="market-compare-label">预约咨询</div>
+          <div class="market-compare-market">
+            <NuxtLink :to="localePath('/contact')" class="consult-link">预约咨询</NuxtLink>
+          </div>
+          <div class="market-compare-cp101">
+            <NuxtLink :to="localePath('/contact')" class="consult-link">预约咨询</NuxtLink>
+          </div>
         </div>
       </div>
     </section>
@@ -1142,6 +1141,21 @@ const marketCompare = [
   100% {
     opacity: 0;
     transform: translate(-50%, -50%) scale(2.8);
+  }
+}
+
+.consult-link {
+  color: #bfa14a;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 16px;
+  border: 2px solid #bfa14a;
+  border-radius: 20px;
+  transition: all 0.3s;
+
+  &:hover {
+    background: #bfa14a;
+    color: white;
   }
 }
 </style>
