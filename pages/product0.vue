@@ -37,16 +37,23 @@ const productDesc = [
 const patentOptions = [
   {
     id: 1,
-    title: '姬松茸亚临界水提取物 CP-101',
-    patentNo: '专利号：7141630',
-    desc: '采用亚临界萃取技术，保留完整多糖体活性，增强免疫系统，可用于前列腺癌辅助防护。',
+    title: '低温亚临界水提取',
+    patentNo: '',
+    desc: '避免成分降解与溶剂残留，保留高活性',
     image: '/product/agaricus_cp101.jpg',
   },
   {
     id: 2,
-    title: '长胡椒提取物',
-    patentNo: '专利号：6246859',
-    desc: '激活血管Tie2受体，改善微循环，提升血流动力，有效改善末梢循环问题。',
+    title: '专利支持',
+    patentNo: '专利号：7141630',
+    desc: '日本专利提取技术（专利号：7141630）',
+    image: '/product/longpepper_extract.jpg',
+  },
+  {
+    id: 3,
+    title: '高浓度净化',
+    patentNo: '',
+    desc: '确保有效成分浓度统一，品质稳定',
     image: '/product/longpepper_extract.jpg',
   },
 ];
@@ -182,7 +189,7 @@ const marketCompare = [
     </section>
 
     <section class="product-section">
-      <h2 class="patent-section-title">两大专利成分</h2>
+      <h2 class="patent-section-title">技术特点</h2>
       <div class="patent-flex-box">
         <div class="patent-left">
           <div class="patent-title">{{ activePatent.title }}</div>
@@ -211,6 +218,17 @@ const marketCompare = [
                 </div>
               </template>
               <span>{{ patentOptions[1].title }}</span>
+            </div>
+            <div class="patent-divider"></div>
+            <div class="patent-menu-item" :class="{ active: activePatent.id === patentOptions[2].id }"
+              @mouseenter="setActivePatent(patentOptions[2])" @click="setActivePatent(patentOptions[2])">
+              <template v-if="activePatent.id === patentOptions[2].id">
+                <div class="dot-animate">
+                  <span class="ripple"></span>
+                  <span class="dot"></span>
+                </div>
+              </template>
+              <span>{{ patentOptions[2].title }}</span>
             </div>
           </div>
         </div>
