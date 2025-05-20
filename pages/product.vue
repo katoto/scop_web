@@ -507,25 +507,26 @@ const marketCompare = [
 }
 
 .patent-menu-item .dot-animate .dot {
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   background: #bfa14a;
-  animation: dot-breath 1.2s infinite alternate;
+  animation: dot-breath 0.7s infinite alternate;
   position: absolute;
   left: 0;
   top: 0;
+  box-shadow: 0 0 8px 2px #bfa14a55;
 }
 
 .patent-menu-item .dot-animate .ripple {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: rgba(191, 161, 74, 0.25);
+  background: rgba(191, 161, 74, 0.35);
   animation: dot-ripple 1.2s infinite;
   pointer-events: none;
 }
@@ -1075,6 +1076,33 @@ const marketCompare = [
   .advice-card {
     max-width: 100%;
     padding: 0 12px;
+  }
+}
+
+@keyframes dot-breath {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.6);
+  }
+}
+
+@keyframes dot-ripple {
+  0% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  80% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2.8);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2.8);
   }
 }
 </style>
