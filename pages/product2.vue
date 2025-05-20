@@ -114,23 +114,23 @@ const features = [
 const scienceList = [
   {
     icon: '🔬',
-    title: '日本原产科研背景',
-    desc: '由三重大学免疫团队研发，融合现代分子免疫学成果。'
+    title: '双日本专利加持',
+    desc: '亚临界萃取技术（专利号：7141630）\nLivinol™藤黄果成分（专利号：5980228）'
   },
   {
     icon: '✅',
-    title: 'GMP认证 × ISO国际标准',
-    desc: '全线生产于日本GMP认证工厂，符合ISO质量体系标准，安全可控。'
+    title: '日本国内原料可溯源',
+    desc: '所有成分原料均来自日本国内明确产地，确保安全与高纯度'
   },
   {
-    icon: '📚',
-    title: '专利支持 + 实证研究背书',
-    desc: '拥有多项专利技术支持，并且经过大量实证研究验证。'
+    icon: '🏭',
+    title: '通过GMP认证 & ISO国际标准制造',
+    desc: '生产过程符合国际制药/营养品制造规范，品质稳定可控'
   },
   {
-    icon: '🔍',
-    title: '原料全程可追溯',
-    desc: '采用日本本土植物，来源透明，每一批次均可验证追踪。'
+    icon: '📊',
+    title: '实证研究支持功效',
+    desc: '肝酶指标下降、肝功能改善、美白与血糖平衡成效明确'
   }
 ];
 
@@ -303,7 +303,7 @@ const marketCompare = [
     </section>
 
     <section class="product-section">
-      <h2>科研权威 × 品质保障 × 专利支持</h2>
+      <h2>科研与权威认证 </h2>
       <div class="science-blocks">
         <div v-for="(item, idx) in scienceList" :key="item.title" class="science-block">
           <div class="science-icon">
