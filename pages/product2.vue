@@ -380,6 +380,8 @@ const marketCompare = [
   font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
   min-height: 100vh;
   padding-bottom: 60px;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .product-hero {
@@ -635,11 +637,9 @@ const marketCompare = [
 
 .feature-block {
   position: relative;
-  left: 50%;
-  right: 50%;
-  width: 100vw;
-  transform: translateX(-50%);
+  width: 100%;
   background: #fff;
+  margin: 0;
 }
 
 .feature-block.gray-bg {
@@ -761,21 +761,23 @@ const marketCompare = [
 }
 
 .compound-carousel {
-  width: 100vw;
+  width: 100%;
   background: #faf9f6;
   padding: 48px 0;
   overflow: hidden;
   position: relative;
+  margin: 0;
 }
 
 .carousel-row {
   display: flex;
   align-items: center;
   overflow: visible;
-  width: 100vw;
+  width: 100%;
   position: relative;
   animation: carousel-left 30s linear infinite;
   padding: 0 200px;
+  box-sizing: border-box;
 }
 
 .carousel-row:first-child {
@@ -1018,7 +1020,8 @@ const marketCompare = [
   }
 
   .product-section {
-    padding: 0 6vw;
+    padding: 0 20px;
+    box-sizing: border-box;
   }
 
   .feature-block-inner {
@@ -1062,10 +1065,11 @@ const marketCompare = [
   }
 
   .compound-item .compound-info {
-    width: 90vw;
+    width: 100%;
     min-width: 0;
     font-size: 0.95rem;
     padding: 10px 8px;
+    box-sizing: border-box;
   }
 
   .market-compare-table {
@@ -1096,6 +1100,8 @@ const marketCompare = [
   margin-top: 32px;
   background: none;
   flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .advice-card {
