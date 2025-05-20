@@ -162,17 +162,17 @@ const marketCompare = [
     <!-- banner -->
     <section class="product-hero">
       <div class="banner-content">
-        <h1>CP-101 固本金刚丸</h1>
-        <p class="subtitle">永葆20岁的健康活力，从血管开始激活</p>
-        <p class="desc">日本植物精萃 × 微循环激活科技，精准修复血管与荷尔蒙系统，从源头改善疲劳、低能、冷感等男性常见困扰。黄金配方支持男性体力、免疫与性荷尔蒙，温和调养，长期见效。</p>
+        <h1>蘑菇精 CP-101+ CP-101 Super</h1>
+        <p class="subtitle">45年全球科研积累 + 多项国际认证 + 专利技术</p>
+        <p class="desc">为免疫调节与健康支持提供坚实保障</p>
       </div>
       <div class="menu-bar">
 
 
-        <div class="menu-item active">
+        <div class="menu-item">
           <NuxtLink class="nav-link" :to="localePath('/product')">CP101固本金刚丸</NuxtLink>
         </div>
-        <div class="menu-item">
+        <div class="menu-item active">
           <NuxtLink class="nav-link" :to="localePath('/product0')">CP101蘑菇精系列</NuxtLink>
         </div>
         <div class="menu-item">
@@ -355,7 +355,7 @@ const marketCompare = [
   gap: 20px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  padding: 12px 24px;
+  padding: 0px;
   border-radius: 30px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   margin-top: auto;

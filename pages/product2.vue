@@ -355,7 +355,7 @@ const marketCompare = [
   gap: 20px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  padding: 12px 24px;
+  padding: 0px;
   border-radius: 30px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   margin-top: auto;
