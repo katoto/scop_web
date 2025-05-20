@@ -340,39 +340,32 @@ const marketCompare = [
     </section>
 
     <section class="product-section">
-      <h2>市场对比优势</h2>
-      <div class="market-compare-table">
-        <div class="market-compare-header">
-          <div>指标</div>
-          <div>市面同类产品</div>
-          <div>CP-101 固本金刚丸</div>
-        </div>
-        <div v-for="item in marketCompare" :key="item.label" class="market-compare-row">
-          <div class="market-compare-label">{{ item.label }}</div>
-          <div class="market-compare-market">{{ item.market }}</div>
-          <div class="market-compare-cp101">{{ item.cp101 }}</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="product-section">
-      <h2>服用建议与适用人群</h2>
+      <h2>使用方法与注意事项</h2>
       <div class="advice-cards">
         <div class="advice-card">
-          <div class="advice-title">每日建议用量</div>
-          <div class="advice-divider"></div>
-          <div class="advice-desc">
-            每日 1～2 粒，饭后服用效果最佳。可根据个人状态进行调整，不建议超量服用。
-          </div>
-        </div>
-        <div class="advice-card">
-          <div class="advice-title">推荐人群</div>
+          <div class="advice-title">📦 每日推荐剂量</div>
           <div class="advice-divider"></div>
           <ul class="advice-list">
-            <li>经常疲劳、精力下滑的男性</li>
-            <li>手脚冰冷、易浮肿人群</li>
-            <li>亚健康、中年转弱男性</li>
-            <li>长时间高压工作者，需持续精力支持者</li>
+            <li>每日1包（2粒），建议饭后用温水服用</li>
+            <li>连续服用30天以上，建立长期肝功能支持机制</li>
+          </ul>
+        </div>
+        <div class="advice-card">
+          <div class="advice-title">🕒 服用周期建议</div>
+          <div class="advice-divider"></div>
+          <ul class="advice-list">
+            <li>基础养护（30天）：缓解酒精与代谢压力</li>
+            <li>深度调理（90天）：改善脂肪肝、稳定肝酶</li>
+            <li>长期维护（6个月+）：优化肝功能与抗癌机制</li>
+          </ul>
+        </div>
+        <div class="advice-card">
+          <div class="advice-title">🧾 注意事项</div>
+          <div class="advice-divider"></div>
+          <ul class="advice-list">
+            <li>请勿置于儿童可触及处</li>
+            <li>如有肝病病史请遵医嘱使用</li>
+            <li>孕期及哺乳期女性请谨慎使用</li>
           </ul>
         </div>
       </div>
@@ -1098,50 +1091,66 @@ const marketCompare = [
 
 .advice-cards {
   display: flex;
-  gap: 48px;
+  gap: 32px;
   justify-content: center;
   margin-top: 32px;
   background: none;
+  flex-wrap: wrap;
 }
 
 .advice-card {
   flex: 1 1 0;
-  min-width: 260px;
-  max-width: 420px;
+  min-width: 280px;
+  max-width: 360px;
   background: none;
   border-radius: 0;
   box-shadow: none;
-  padding: 0 32px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  border: none;
 }
 
 .advice-title {
   color: #2563eb;
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   display: flex;
   align-items: center;
   gap: 8px;
-  padding-top: 12px;
 }
 
 .advice-divider {
   width: 100%;
   height: 1px;
   background: #e5e7eb;
-  margin: 0 0 18px 0;
+  margin: 0 0 16px 0;
   border: none;
 }
 
-.advice-desc,
 .advice-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.advice-list li {
   color: #444;
   font-size: 1.05rem;
   line-height: 1.8;
+  margin-bottom: 8px;
+  padding-left: 16px;
+  position: relative;
+}
+
+.advice-list li:before {
+  content: "•";
+  color: #bfa14a;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
 }
 
 @media (max-width: 900px) {
@@ -1152,7 +1161,7 @@ const marketCompare = [
 
   .advice-card {
     max-width: 100%;
-    padding: 0 12px;
+    padding: 20px;
   }
 }
 
