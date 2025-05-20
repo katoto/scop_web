@@ -162,9 +162,9 @@ const marketCompare = [
     <!-- banner -->
     <section class="product-hero">
       <div class="banner-content">
-        <h1>CP-101 固本金刚丸</h1>
-        <p class="subtitle">永葆20岁的健康活力，从血管开始激活</p>
-        <p class="desc">日本植物精萃 × 微循环激活科技，精准修复血管与荷尔蒙系统，从源头改善疲劳、低能、冷感等男性常见困扰。黄金配方支持男性体力、免疫与性荷尔蒙，温和调养，长期见效。</p>
+        <h1>CP-101 肝源力</h1>
+        <p class="subtitle">专为肝功能保护而生的天然营养干预方案</p>
+        <p class="desc">双专利技术 + 七重成分协同，构建肝脏健康防护网</p>
       </div>
       <div class="menu-bar">
 
@@ -182,7 +182,7 @@ const marketCompare = [
     </section>
 
     <section class="product-section">
-      <h2 class="patent-section-title">两大专利成分</h2>
+      <h2 class="patent-section-title">技术特点</h2>
       <div class="patent-flex-box">
         <div class="patent-left">
           <div class="patent-title">{{ activePatent.title }}</div>
