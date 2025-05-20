@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 const localePath = useLocalePath()
+const { t } = useI18n()
 
 const productImages = [
   '/product/ashitaba.png',
@@ -16,92 +17,128 @@ const productImages = [
   '/product/longpepper.jpg',
   '/product/agaricus.png',
 ];
-const productNames = [
-  '明日叶', '甘茶', '卷心菜', '羽衣甘蓝', '红甜菜', '熊笹', '香菇', '牛蒡根', '南瓜籽提取物', '日本酵母锌', '长胡椒提取物', '姬松茸亚临界水提取物'
-];
-const productDesc = [
-  '富含钾、钙与叶绿素，有助于血液净化、缓解疲劳、维持荷尔蒙平衡',
-  '调节自律神经、安稳精神状态，缓解压力性性功能低下',
-  '含植酸与维生素U，有助于抗氧化与肝功能维护',
-  '含多种矿物质与类黄酮，支持血管健康与激素调节',
-  '促进血液循环、提升氧合能力，有助于勃起质量与精力状态',
-  '具天然杀菌力，改善口腔肠道微生态，降低体内炎症反应',
-  '富含多糖体，增强免疫功能、抗疲劳、维持系统活性',
-  '帮助排毒、提升消化代谢效率，有助于营养吸收',
-  '含丰富锌元素，是前列腺维护与荷尔蒙调节关键营养素',
-  '高吸收性有机锌源，支持睾酮合成与免疫系统运作',
-  '改善微循环，激活毛细血管再生，提升生殖系统供血能力',
-  '专利抗癌与免疫调节因子，提升抗疲劳、抗氧化与恢复力'
-];
 
-const patentOptions = [
+const productNames = computed(() => [
+  t('product.compound.ingredients.ashitaba.name'),
+  t('product.compound.ingredients.sweettea.name'),
+  t('product.compound.ingredients.cabbage.name'),
+  t('product.compound.ingredients.kale.name'),
+  t('product.compound.ingredients.beetroot.name'),
+  t('product.compound.ingredients.bambooleaf.name'),
+  t('product.compound.ingredients.shitake.name'),
+  t('product.compound.ingredients.burdock.name'),
+  t('product.compound.ingredients.pumpkinseed.name'),
+  t('product.compound.ingredients.yeastzinc.name'),
+  t('product.compound.ingredients.longpepper.name'),
+  t('product.compound.ingredients.agaricus.name')
+]);
+
+const productDesc = computed(() => [
+  t('product.compound.ingredients.ashitaba.desc'),
+  t('product.compound.ingredients.sweettea.desc'),
+  t('product.compound.ingredients.cabbage.desc'),
+  t('product.compound.ingredients.kale.desc'),
+  t('product.compound.ingredients.beetroot.desc'),
+  t('product.compound.ingredients.bambooleaf.desc'),
+  t('product.compound.ingredients.shitake.desc'),
+  t('product.compound.ingredients.burdock.desc'),
+  t('product.compound.ingredients.pumpkinseed.desc'),
+  t('product.compound.ingredients.yeastzinc.desc'),
+  t('product.compound.ingredients.longpepper.desc'),
+  t('product.compound.ingredients.agaricus.desc')
+]);
+
+const patentOptions = computed(() => [
   {
     id: 1,
-    title: '姬松茸亚临界水提取物 CP-101',
-    patentNo: '专利号：7141630',
-    desc: '采用亚临界萃取技术，保留完整多糖体活性，增强免疫系统，可用于前列腺癌辅助防护。',
+    title: t('product.patent.options.agaricus.title'),
+    patentNo: t('product.patent.options.agaricus.patentNo'),
+    desc: t('product.patent.options.agaricus.desc'),
     image: '/product/agaricus_cp101.jpg',
   },
   {
     id: 2,
-    title: '长胡椒提取物',
-    patentNo: '专利号：6246859',
-    desc: '激活血管Tie2受体，改善微循环，提升血流动力，有效改善末梢循环问题。',
+    title: t('product.patent.options.longpepper.title'),
+    patentNo: t('product.patent.options.longpepper.patentNo'),
+    desc: t('product.patent.options.longpepper.desc'),
     image: '/product/longpepper_extract.jpg',
   },
-];
+]);
 
-const activePatent = ref(patentOptions[0]);
-
-function setActivePatent(option: typeof patentOptions[0]) {
-  activePatent.value = option;
-}
-
-const features = [
+const features = computed(() => [
   {
-    title: '改善男性性功能与精力状态',
-    desc: '提升精力，改善性功能，增强自信。',
+    title: t('product.features.items.male.title'),
+    desc: t('product.features.items.male.desc'),
     img: '/product/male_function.png'
   },
   {
-    title: '调节肾功能，缓解疲劳虚弱',
-    desc: '调理肾脏，缓解疲劳，恢复活力。',
+    title: t('product.features.items.kidney.title'),
+    desc: t('product.features.items.kidney.desc'),
     img: '/product/kidney_function.png'
   },
   {
-    title: '强化免疫系统',
-    desc: '增强免疫力，提升身体防御能力。',
+    title: t('product.features.items.immune.title'),
+    desc: t('product.features.items.immune.desc'),
     img: '/product/immune_system.png'
   },
   {
-    title: '改善前列腺健康与荷尔蒙状态',
-    desc: '维护前列腺健康，平衡荷尔蒙。',
+    title: t('product.features.items.prostate.title'),
+    desc: t('product.features.items.prostate.desc'),
     img: '/product/prostate_health.png'
   }
-];
+]);
 
-const scienceList = [
+const scienceList = computed(() => [
   {
     icon: '🔬',
-    title: '日本原产科研背景',
-    desc: '由三重大学免疫团队研发，融合现代分子免疫学成果。'
+    title: t('product.science.items.research.title'),
+    desc: t('product.science.items.research.desc')
   },
   {
     icon: '✅',
-    title: 'GMP认证 × ISO国际标准',
-    desc: '全线生产于日本GMP认证工厂，符合ISO质量体系标准，安全可控。'
+    title: t('product.science.items.certification.title'),
+    desc: t('product.science.items.certification.desc')
   },
   {
     icon: '📚',
-    title: '专利支持 + 实证研究背书',
-    desc: '拥有多项专利技术支持，并且经过大量实证研究验证。'
+    title: t('product.science.items.patent.title'),
+    desc: t('product.science.items.patent.desc')
   },
   {
     icon: '🔍',
-    title: '原料全程可追溯',
-    desc: '采用日本本土植物，来源透明，每一批次均可验证追踪。'
+    title: t('product.science.items.traceability.title'),
+    desc: t('product.science.items.traceability.desc')
   }
-];
+]);
+
+const marketCompare = computed(() => [
+  {
+    label: t('product.marketCompare.items.vascular.label'),
+    market: t('product.marketCompare.items.vascular.market'),
+    cp101: t('product.marketCompare.items.vascular.cp101')
+  },
+  {
+    label: t('product.marketCompare.items.circulation.label'),
+    market: t('product.marketCompare.items.circulation.market'),
+    cp101: t('product.marketCompare.items.circulation.cp101')
+  },
+  {
+    label: t('product.marketCompare.items.safety.label'),
+    market: t('product.marketCompare.items.safety.market'),
+    cp101: t('product.marketCompare.items.safety.cp101')
+  },
+  {
+    label: t('product.marketCompare.items.longterm.label'),
+    market: t('product.marketCompare.items.longterm.market'),
+    cp101: t('product.marketCompare.items.longterm.cp101')
+  }
+]);
+
+const activePatent = ref(patentOptions.value[0]);
+
+function setActivePatent(option: typeof patentOptions.value[0]) {
+  activePatent.value = option;
+}
 
 const half = Math.ceil(productImages.length / 2);
 const firstRow = computed(() => productImages.slice(0, half));
@@ -132,28 +169,14 @@ function handleMouseLeave(row: number) {
   if (!locked.value) activeRow.value = null;
 }
 
-const marketCompare = [
-  {
-    label: '血管调理',
-    market: '❌ 多为兴奋刺激型',
-    cp101: '✅ 激活Tie2，修复毛细血管屏障'
-  },
-  {
-    label: '循环改善',
-    market: '❌ 成分不明，剂量低',
-    cp101: '✅ 专利胡椒碱，临床验证提升血流'
-  },
-  {
-    label: '安全性',
-    market: '⚠️ 含激素/化学物质',
-    cp101: '✅ 植物提取，亚临界低温萃取'
-  },
-  {
-    label: '长期服用',
-    market: '⚠️ 可能刺激肠胃',
-    cp101: '✅ 温和无刺激，适合长效调养'
-  }
-];
+const targetList = computed(() => {
+  return [
+    t('product.advice.target.list.0'),
+    t('product.advice.target.list.1'),
+    t('product.advice.target.list.2'),
+    t('product.advice.target.list.3')
+  ];
+});
 </script>
 
 <template>
@@ -162,27 +185,27 @@ const marketCompare = [
     <!-- banner -->
     <section class="product-hero">
       <div class="banner-content">
-        <h1>CP-101 固本金刚丸</h1>
-        <p class="subtitle">永葆20岁的健康活力，从血管开始激活</p>
-        <p class="desc">日本植物精萃 × 微循环激活科技，精准修复血管与荷尔蒙系统，从源头改善疲劳、低能、冷感等男性常见困扰。黄金配方支持男性体力、免疫与性荷尔蒙，温和调养，长期见效。</p>
+        <h1>{{ t('product.hero.title') }}</h1>
+        <p class="subtitle">{{ t('product.hero.subtitle') }}</p>
+        <p class="desc">{{ t('product.hero.desc') }}</p>
       </div>
       <div class="menu-bar">
 
 
         <div class="menu-item active">
-          <NuxtLink class="nav-link" :to="localePath('/product')">CP101固本金刚丸</NuxtLink>
+          <NuxtLink class="nav-link" :to="localePath('/product')">{{ t('product.menu.cp101') }}</NuxtLink>
         </div>
         <div class="menu-item">
-          <NuxtLink class="nav-link" :to="localePath('/product0')">CP101蘑菇精系列</NuxtLink>
+          <NuxtLink class="nav-link" :to="localePath('/product0')">{{ t('product.menu.mushroom') }}</NuxtLink>
         </div>
         <div class="menu-item">
-          <NuxtLink class="nav-link" :to="localePath('/product2')">CP101肝源力</NuxtLink>
+          <NuxtLink class="nav-link" :to="localePath('/product2')">{{ t('product.menu.liver') }}</NuxtLink>
         </div>
       </div>
     </section>
 
     <section class="product-section">
-      <h2 class="patent-section-title">两大专利成分</h2>
+      <h2 class="patent-section-title">{{ t('product.patent.title') }}</h2>
       <div class="patent-flex-box">
         <div class="patent-left">
           <div class="patent-title">{{ activePatent.title }}</div>
@@ -218,7 +241,7 @@ const marketCompare = [
     </section>
 
     <section class="product-section">
-      <h2>多重功能支持</h2>
+      <h2>{{ t('product.features.title') }}</h2>
       <div class="feature-blocks">
         <div v-for="(feature, idx) in features" :key="feature.title"
           :class="['feature-block', { reverse: idx % 2 === 1, 'gray-bg': idx % 2 === 1 }]">
@@ -236,7 +259,7 @@ const marketCompare = [
     </section>
 
     <section class="product-section">
-      <h2>科研权威 × 品质保障 × 专利支持</h2>
+      <h2>{{ t('product.science.title') }}</h2>
       <div class="science-blocks">
         <div v-for="(item, idx) in scienceList" :key="item.title" class="science-block">
           <div class="science-icon">
@@ -252,7 +275,7 @@ const marketCompare = [
     </section>
 
     <section class="product-section">
-      <h2>黄金复方：40种植物平衡精华</h2>
+      <h2>{{ t('product.compound.title') }}</h2>
       <div class="compound-carousel">
         <div class="carousel-row" :class="{ paused: activeRow === 0 }" @mouseleave="handleMouseLeave(0)"
           @click.self="unlockRow">
@@ -280,7 +303,7 @@ const marketCompare = [
     </section>
 
     <section class="product-section">
-      <h2>市场对比优势</h2>
+      <h2>{{ t('product.marketCompare.title') }}</h2>
       <div class="market-compare-table">
         <div class="market-compare-header">
           <div>指标</div>
@@ -296,23 +319,20 @@ const marketCompare = [
     </section>
 
     <section class="product-section">
-      <h2>服用建议与适用人群</h2>
+      <h2>{{ t('product.advice.title') }}</h2>
       <div class="advice-cards">
         <div class="advice-card">
-          <div class="advice-title">每日建议用量</div>
+          <div class="advice-title">{{ t('product.advice.dosage.title') }}</div>
           <div class="advice-divider"></div>
           <div class="advice-desc">
-            每日 1～2 粒，饭后服用效果最佳。可根据个人状态进行调整，不建议超量服用。
+            {{ t('product.advice.dosage.desc') }}
           </div>
         </div>
         <div class="advice-card">
-          <div class="advice-title">推荐人群</div>
+          <div class="advice-title">{{ t('product.advice.target.title') }}</div>
           <div class="advice-divider"></div>
           <ul class="advice-list">
-            <li>经常疲劳、精力下滑的男性</li>
-            <li>手脚冰冷、易浮肿人群</li>
-            <li>亚健康、中年转弱男性</li>
-            <li>长时间高压工作者，需持续精力支持者</li>
+            <li v-for="(item, index) in targetList" :key="index">{{ item }}</li>
           </ul>
         </div>
       </div>
