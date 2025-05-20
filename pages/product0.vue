@@ -79,11 +79,6 @@ const features = [
     title: '强化免疫系统',
     desc: '增强免疫力，提升身体防御能力。',
     img: '/product/immune_system.png'
-  },
-  {
-    title: '改善前列腺健康与荷尔蒙状态',
-    desc: '维护前列腺健康，平衡荷尔蒙。',
-    img: '/product/prostate_health.png'
   }
 ];
 
@@ -236,7 +231,7 @@ const marketCompare = [
     </section>
 
     <section class="product-section">
-      <h2>多重功能支持</h2>
+      <h2>主要功效</h2>
       <div class="feature-blocks">
         <div v-for="(feature, idx) in features" :key="feature.title"
           :class="['feature-block', { reverse: idx % 2 === 1, 'gray-bg': idx % 2 === 1 }]">
