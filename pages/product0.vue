@@ -351,7 +351,7 @@ const marketCompare = [
 .product-hero {
   text-align: left;
   padding: 160px 20px 40px 20px;
-  background: url('/product/product-gbjgw-bg.png') no-repeat center center;
+  background: url('/product0/1.1.1-导航栏-原图.png') no-repeat center center;
   background-size: cover;
   color: white;
   display: flex;
