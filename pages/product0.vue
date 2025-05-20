@@ -317,24 +317,28 @@ const marketCompare = [
     </section>
 
     <section class="product-section">
-      <h2>服用建议与适用人群</h2>
+      <h2>使用方法和注意事项</h2>
       <div class="advice-cards">
         <div class="advice-card">
-          <div class="advice-title">每日建议用量</div>
+          <div class="advice-title">每日服用</div>
           <div class="advice-divider"></div>
           <div class="advice-desc">
-            每日 1～2 粒，饭后服用效果最佳。可根据个人状态进行调整，不建议超量服用。
+            建议每日服用一片CP-101，饭后用温水服用，具体用量可根据个人健康状况或医生建议进行调整。
           </div>
         </div>
         <div class="advice-card">
-          <div class="advice-title">推荐人群</div>
+          <div class="advice-title">贴心提示</div>
           <div class="advice-divider"></div>
-          <ul class="advice-list">
-            <li>经常疲劳、精力下滑的男性</li>
-            <li>手脚冰冷、易浮肿人群</li>
-            <li>亚健康、中年转弱男性</li>
-            <li>长时间高压工作者，需持续精力支持者</li>
-          </ul>
+          <div class="advice-desc">
+            请将产品置于儿童无法触及的地方，避免误食。如正在服用其他药物或有特殊健康状况，请在使用前咨询医生。
+          </div>
+        </div>
+        <div class="advice-card">
+          <div class="advice-title">过敏人群谨慎使用</div>
+          <div class="advice-divider"></div>
+          <div class="advice-desc">
+            对于蘑菇类产品过敏的用户，使用CP-101时需谨慎，若出现不适应立即停止使用并寻求医疗帮助。
+          </div>
         </div>
       </div>
     </section>
