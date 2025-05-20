@@ -191,13 +191,13 @@ const targetList = computed(() => {
       </div>
       <div class="menu-bar">
 
-
-        <div class="menu-item active">
-          <NuxtLink class="nav-link" :to="localePath('/product')">{{ t('product.menu.cp101') }}</NuxtLink>
-        </div>
         <div class="menu-item">
           <NuxtLink class="nav-link" :to="localePath('/product0')">{{ t('product.menu.mushroom') }}</NuxtLink>
         </div>
+        <div class="menu-item active">
+          <NuxtLink class="nav-link" :to="localePath('/product')">{{ t('product.menu.cp101') }}</NuxtLink>
+        </div>
+
         <div class="menu-item">
           <NuxtLink class="nav-link" :to="localePath('/product2')">{{ t('product.menu.liver') }}</NuxtLink>
         </div>

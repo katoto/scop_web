@@ -38,7 +38,7 @@
             <NuxtLink class="nav-link" :to="localePath('/about')">{{ $t('nav.about') }}</NuxtLink>
           </li>
           <li class="nav-item">
-            <NuxtLink class="nav-link" :to="localePath('/product')">{{ $t('nav.product') }}</NuxtLink>
+            <NuxtLink class="nav-link" :to="localePath('/product0')">{{ $t('nav.product') }}</NuxtLink>
           </li>
           <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
