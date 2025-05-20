@@ -1,91 +1,91 @@
 {
   "nav": {
-    "home": "home",
+    "home": "Home",
     "solutions": "Solutions",
-    "passenger": "Passenger",
-    "commercialEV": "Commercial EV",
-    "energyStorage": "Energy Storage",
+    "passenger": "Passenger Vehicles",
+    "commercialEV": "Commercial Applications",
+    "energyStorage": "Energy Storage Systems",
     "recycling": "Recycling",
     "rd": "R&D",
-    "news": "News",
+    "news": "News & Updates",
     "brand": "Brand",
-    "about": "About Us",
+    "about": "About Scophil",
     "product": "Product Center",
     "contact": "Contact Us"
   },
   "footer": {
     "solutions": "Solutions",
     "rd": "R&D",
-    "innovation": "Innovation",
-    "technology": "Technology",
+    "innovation": "Innovative Concepts",
+    "technology": "Cutting-edge Technology",
     "brand": "Brand",
-    "techBrand": "Tech Brand",
+    "techBrand": "Technology Brand",
     "serviceBrand": "Service Brand",
     "about": "About Us",
-    "culture": "Culture",
-    "strategy": "Strategy",
-    "profile": "Profile",
+    "culture": "Corporate Culture",
+    "strategy": "Corporate Strategy",
+    "profile": "Company Profile",
     "sustainability": "Sustainability",
-    "careers": "Careers",
-    "copyright": "Contemporary Amperex Technology Co., Limited. All Rights Reserved.",
+    "careers": "Join Us",
+    "copyright": "CATL New Energy Technologies Co., Ltd. All rights reserved",
     "privacy": "Privacy Policy",
-    "legal": "Legal Notice"
+    "legal": "Legal Statement"
   },
   "about": {
     "title": "About Us",
     "subtitle": "Global Leading Battery Manufacturer",
     "overview": {
       "title": "Company Overview",
-      "description": "Contemporary Amperex Technology Co., Limited (CATL) is a global leader in new energy innovation technology, dedicated to providing first-class solutions and services for global new energy applications.",
+      "description": "CATL New Energy Technologies Co., Ltd. is a global leading new energy innovation technology company, dedicated to providing top-tier solutions and services for global new energy applications.",
       "mission": {
         "title": "Mission",
-        "description": "To provide innovative battery solutions for global customers"
+        "description": "To provide innovative battery solutions for global customers."
       },
       "vision": {
         "title": "Vision",
-        "description": "To become the world's leading battery manufacturer"
+        "description": "To become the global leading battery manufacturer."
       }
     },
     "global": {
-      "title": "Global Presence",
-      "description": "CATL has established a complete global network of R&D, manufacturing, sales, and service.",
+      "title": "Global Layout",
+      "description": "CATL has established a complete R&D, manufacturing, sales, and service network globally.",
       "manufacturing": {
         "title": "Global Manufacturing",
-        "description": "Production bases established in China, Germany, Hungary, and other locations, achieving global layout."
+        "description": "Established production bases in China, Germany, Hungary, etc., achieving a global layout."
       },
       "rd": {
-        "title": "R&D Centers",
-        "description": "Multiple R&D centers established globally, gathering top talents to drive technological innovation."
+        "title": "Research Centers",
+        "description": "Set up multiple research centers globally, gathering top talents to promote technological innovation."
       },
       "sales": {
         "title": "Sales Network",
-        "description": "Products sold worldwide, providing power battery solutions for numerous renowned automotive manufacturers."
+        "description": "Products are exported globally, providing power battery solutions for many well-known automobile manufacturers."
       }
     },
     "culture": {
       "title": "Corporate Culture",
       "innovation": {
-        "title": "Innovation Driven",
-        "description": "Continuous innovation, leading industry development"
+        "title": "Innovation-driven",
+        "description": "Continuous innovation, leading industry development."
       },
       "quality": {
         "title": "Quality First",
-        "description": "Pursuing excellence, creating premium projects"
+        "description": "Pursuing excellent quality, building premium projects."
       },
       "sustainability": {
         "title": "Sustainable Development",
-        "description": "Practicing green development, building a better future together"
+        "description": "Practicing green development, jointly building a better future."
       }
     }
   },
   "contact": {
     "title": "Contact Us",
-    "subtitle": "Looking Forward to Your Communication",
+    "subtitle": "Looking forward to communicating with you",
     "headquarters": {
       "title": "Headquarters",
       "address": {
         "title": "Address",
-        "content": "No. 2, Xingang Road, Zhangwan Town, Jiaocheng District, Ningde City, Fujian Province"
+        "content": "No. 2 Xingang Road, Zhangwan Town, Jiaocheng District, Ningde City, Fujian Province"
       },
       "phone": {
         "title": "Phone",
@@ -97,89 +97,252 @@
       }
     },
     "global": {
-      "title": "Global Contact",
+      "title": "Global Contact Information",
       "asia": {
         "title": "Asia",
-        "content": "China, Japan, Korea, India and other regions"
+        "content": "China, Japan, South Korea, India, and other regions"
       },
       "europe": {
         "title": "Europe",
-        "content": "Germany, Hungary, France and other regions"
+        "content": "Germany, Hungary, France, and other regions"
       },
       "america": {
-        "title": "Americas",
-        "content": "United States, Canada and other regions"
+        "title": "America",
+        "content": "United States, Canada, and other regions"
       }
     },
     "form": {
-      "title": "Online Inquiry",
+      "title": "Online Consultation",
       "name": "Name",
       "email": "Email",
       "subject": "Subject",
-      "message": "Message",
+      "message": "Message Content",
       "submit": "Submit"
     }
   },
   "hero": {
     "title": "Commercial Applications",
-    "subtitle": "Win Every Degree"
+    "subtitle": "Winning Every Degree"
   },
   "advantages": {
-    "title": "Five Advantages",
+    "title": "Five Major Advantages",
     "value": {
       "title": "Let Time Witness Value",
-      "desc": "Through black technology innovation combining hardware and software, and material mechanisms of internal maintenance and external protection, CATL achieves longer battery life, better long-term performance, and higher economic benefits."
+      "desc": "Through hardware-software integration black tech innovation and internal-nourishment external-protection material mechanism, CATL achieves longer battery life and superior long-term performance, bringing higher economic benefits."
     },
     "reliability": {
-      "title": "Reliability Brings Peace of Mind",
-      "desc": "Five layers of reliability protection from design, testing, materials to production processes and manufacturing procedures ensure each battery is safe, reliable, and durable."
+      "title": "Reliability Conveys Peace of Mind",
+      "desc": "Five layers of reliability assurance from design, testing, materials to production processes and processing flows ensure that every battery is safe and durable."
     },
     "adaptability": {
-      "title": "All-weather Performance",
-      "desc": "Whether in high temperature, extreme cold, or heavy rain, CATL provides comprehensive protection."
+      "title": "All-round Adaptability",
+      "desc": "Whether it's high temperature, low cold or rainwater intrusion, CATL can provide you with comprehensive protection."
     },
     "service": {
-      "title": "Service Beyond Expectations",
-      "desc": "Providing high-quality after-sales service with rapid response standards and a global service network."
+      "title": "Service Exceeds Expectations",
+      "desc": "With rapid response standards and a global after-sales network, we provide users with high-quality after-sales services."
     },
     "intelligence": {
-      "title": "Intelligence Reveals Details",
-      "desc": "The interconnected intelligent Battery Management System (BMS) makes batteries safer, systems more efficient, and travel more secure."
+      "title": "Intelligence Insights Every Detail",
+      "desc": "Interconnected intelligent battery management systems (BMS) make batteries safer, systems more efficient, and travel more secure."
     }
   },
   "solutions": {
     "title": "Solutions",
     "roadPassenger": {
-      "title": "Road Passenger Solutions",
-      "desc": "CATL provides safe, reliable, and durable scenario-based solutions for road passenger transportation, addressing high-frequency usage and high stability requirements."
+      "title": "Road Passenger Transport Solutions",
+      "desc": "CATL provides safe, reliable, and durable scenario-based solutions for road passenger transport characterized by frequent use and high stability requirements."
     },
     "cityDelivery": {
-      "title": "City Delivery Solutions",
-      "desc": "CATL power batteries are adapted for light trucks, light buses, mini trucks, and mini vans, widely used in express delivery, supermarket distribution, fresh food, and other scenarios."
+      "title": "Urban Delivery Solutions",
+      "desc": "CATL power batteries are compatible with light trucks, light buses, micro trucks, and mini vans, widely used in express delivery, supermarket distribution, fresh produce, and other scenarios."
     },
     "heavyDuty": {
-      "title": "Heavy-duty Transport Solutions",
-      "desc": "CATL provides powerful clean power for heavy-duty transport vehicles, meeting the requirements of mining areas, ports, urban short-haul, and construction projects."
+      "title": "Heavy Haulage Solutions",
+      "desc": "CATL provides powerful clean energy for heavy haulage vehicles, meeting the requirements of various working conditions such as mining areas, ports, urban short-distance transportation, and construction engineering."
     },
     "roadCleaning": {
-      "title": "Road Cleaning Solutions",
-      "desc": "CATL provides customized solutions for different road cleaning vehicle requirements. Battery products feature high safety, long life, and strong environmental adaptability."
+      "title": "Urban Road Cleaning Solutions",
+      "desc": "CATL provides customized solutions according to different road cleaning vehicle needs. The battery products have high safety, long life, and strong environmental adaptability."
     },
     "construction": {
       "title": "Construction Machinery Solutions",
-      "desc": "CATL provides safe, reliable, and durable battery product solutions for construction machinery based on complex working conditions in mining areas and ports."
+      "desc": "CATL provides safe, reliable, and durable battery product solutions for construction machinery based on the characteristics of complex working conditions in mining areas and ports."
     },
     "twoWheeler": {
       "title": "Two-wheeler Solutions",
-      "desc": "CATL provides green, intelligent, and safe solutions for two-wheelers, applied in commuting, food delivery, express delivery, and other scenarios."
+      "desc": "CATL provides green, intelligent, and safe solutions for two-wheelers, applied in commuting, food delivery, courier services, and other scenarios."
     },
     "marine": {
       "title": "Marine Solutions",
-      "desc": "CATL provides safe, reliable, and environmentally friendly solutions for ship electrification, contributing to water ecological civilization construction."
+      "desc": "CATL provides safe, reliable, and environmentally friendly solutions for marine electrification, promoting the construction of ecological civilization in water areas."
     },
     "special": {
       "title": "Special Application Solutions",
-      "desc": "CATL provides green, clean, safe, and reliable product solutions for the electrification development of airport parks and port terminals."
+      "desc": "CATL safeguards the electrified development of airport parks and port terminals, providing green, clean, and reliable product solutions."
+    }
+  },
+  "product": {
+    "hero": {
+      "title": "CP-101 Solid Gold Pill",
+      "subtitle": "Forever 20: Activate Vascular Health",
+      "desc": "Japanese plant extracts × Microcirculation activation technology, precisely repairing blood vessels and hormone systems, improving fatigue, low energy, cold sensitivity, and other common male issues. Golden formula supports male physical strength, immunity, and sex hormones, gentle conditioning, effective in the long term."
+    },
+    "menu": {
+      "cp101": "CP101 Solid Gold Pill",
+      "mushroom": "CP101 Mushroom Essence Series",
+      "liver": "CP101 Liver Source Power"
+    },
+    "patent": {
+      "title": "Two Patent Ingredients",
+      "options": {
+        "agaricus": {
+          "title": "Agaricus Subcritical Water Extract CP-101",
+          "patentNo": "Patent No.: 7141630",
+          "desc": "Using subcritical extraction technology to retain the complete polysaccharide activity, enhancing the immune system, suitable for auxiliary protection against prostate cancer."
+        },
+        "longpepper": {
+          "title": "Long Pepper Extract",
+          "patentNo": "Patent No.: 6246859",
+          "desc": "Activates Tie2 receptors in blood vessels, improves microcirculation, enhances blood flow dynamics, effectively improving peripheral circulation problems."
+        }
+      }
+    },
+    "features": {
+      "title": "Multiple Function Support",
+      "items": {
+        "male": {
+          "title": "Improves Male Sexual Function and Energy State",
+          "desc": "Boosts energy, improves sexual function, enhances confidence."
+        },
+        "kidney": {
+          "title": "Regulates Kidney Function, Relieves Fatigue and Weakness",
+          "desc": "Treats kidneys, relieves fatigue, restores vitality."
+        },
+        "immune": {
+          "title": "Strengthens Immune System",
+          "desc": "Enhances immunity, improves body defense capabilities."
+        },
+        "prostate": {
+          "title": "Improves Prostate Health and Hormone Status",
+          "desc": "Maintains prostate health, balances hormones."
+        }
+      }
+    },
+    "science": {
+      "title": "Scientific Authority × Quality Assurance × Patent Support",
+      "items": {
+        "research": {
+          "title": "Japanese Original Research Background",
+          "desc": "Developed by the immunology team of Mie University, integrating modern molecular immunology results."
+        },
+        "certification": {
+          "title": "GMP Certification × ISO International Standards",
+          "desc": "Produced in Japanese GMP certified factories, conforming to ISO quality system standards, safe and controllable."
+        },
+        "patent": {
+          "title": "Patent Support + Empirical Research Endorsement",
+          "desc": "Supported by multiple patents and verified through extensive empirical studies."
+        },
+        "traceability": {
+          "title": "Full Traceability of Ingredients",
+          "desc": "Uses native Japanese plants, transparent sources, each batch verifiable."
+        }
+      }
+    },
+    "compound": {
+      "title": "Golden Compound: Balanced Essence of 40 Plants",
+      "ingredients": {
+        "ashitaba": {
+          "name": "Tomorrow Leaf",
+          "desc": "Rich in potassium, calcium, and chlorophyll, helps purify blood, relieve fatigue, and maintain hormone balance."
+        },
+        "sweettea": {
+          "name": "Sweet Tea",
+          "desc": "Regulates autonomic nerves, calms mental state, relieves stress-induced sexual dysfunction."
+        },
+        "cabbage": {
+          "name": "Cabbage",
+          "desc": "Contains phytic acid and vitamin U, helps antioxidant and liver function maintenance."
+        },
+        "kale": {
+          "name": "Kale",
+          "desc": "Contains various minerals and flavonoids, supports vascular health and hormone regulation."
+        },
+        "beetroot": {
+          "name": "Beetroot",
+          "desc": "Promotes blood circulation, enhances oxygenation ability, helps improve erection quality and energy state."
+        },
+        "bambooleaf": {
+          "name": "Bear Bamboo Leaf",
+          "desc": "Has natural antibacterial properties, improves oral and intestinal microbiota, reduces systemic inflammation."
+        },
+        "shitake": {
+          "name": "Shiitake Mushroom",
+          "desc": "Rich in polysaccharides, enhances immune function, anti-fatigue, maintains system activity."
+        },
+        "burdock": {
+          "name": "Burdock Root",
+          "desc": "Helps detoxify, enhances digestive metabolism efficiency, aids nutrient absorption."
+        },
+        "pumpkinseed": {
+          "name": "Pumpkin Seed Extract",
+          "desc": "Rich in zinc, key nutrients for prostate maintenance and hormone regulation."
+        },
+        "yeastzinc": {
+          "name": "Japanese Yeast Zinc",
+          "desc": "Highly absorbable organic zinc source, supports testosterone synthesis and immune system operation."
+        },
+        "longpepper": {
+          "name": "Long Pepper Extract",
+          "desc": "Improves microcirculation, activates capillary regeneration, enhances reproductive system blood supply capability."
+        },
+        "agaricus": {
+          "name": "Agaricus Subcritical Water Extract",
+          "desc": "Patented anticancer and immune regulatory factors, enhance anti-fatigue, antioxidation, and recovery."
+        }
+      }
+    },
+    "marketCompare": {
+      "title": "Market Comparison Advantages",
+      "items": {
+        "vascular": {
+          "label": "Vascular Regulation",
+          "market": "❌ Mostly Excitatory Stimulants",
+          "cp101": "✅ Activates Tie2, Repairs Capillary Barrier"
+        },
+        "circulation": {
+          "label": "Circulation Improvement",
+          "market": "❌ Unclear Ingredients, Low Dosage",
+          "cp101": "✅ Patented Piperine, Clinically Verified Blood Flow Enhancement"
+        },
+        "safety": {
+          "label": "Safety",
+          "market": "⚠️ Contains Hormones/Chemicals",
+          "cp101": "✅ Plant Extracts, Subcritical Low-Temperature Extraction"
+        },
+        "longterm": {
+          "label": "Long-Term Use",
+          "market": "⚠️ May Irritate Stomach",
+          "cp101": "✅ Gentle and Non-Irritating, Suitable for Long-Term Conditioning"
+        }
+      }
+    },
+    "advice": {
+      "title": "Dosage Recommendations and Target Groups",
+      "dosage": {
+        "title": "Daily Recommended Dosage",
+        "desc": "1-2 capsules daily, best taken after meals. Adjust based on personal condition, do not exceed recommended dosage."
+      },
+      "target": {
+        "title": "Recommended Groups",
+        "list": [
+          "Men frequently experiencing fatigue and declining energy",
+          "People with cold hands and feet, prone to swelling",
+          "Sub-healthy, middle-aged men transitioning to weaker states",
+          "Long-term high-pressure workers requiring sustained energy support"
+        ]
+      }
     }
   }
 }
