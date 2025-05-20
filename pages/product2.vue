@@ -9,12 +9,6 @@ const productImages = [
   '/product/kale.jpg',
   '/product/beetroot.png',
   '/product/bambooleaf.jpg',
-  '/product/shitake.jpg',
-  '/product/burdock.jpeg',
-  '/product/pumpkinseed.png',
-  '/product/yeastzinc.png',
-  '/product/longpepper.jpg',
-  '/product/agaricus.png',
 ];
 const productNames = [
   'Livinol™（Garcinol）',
