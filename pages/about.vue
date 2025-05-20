@@ -38,7 +38,7 @@
         <!-- 本庶佑教授 -->
         <div class="expert-row">
           <div class="expert-img left">
-            <img src="/about-Scophil/3-1专家团队-本庶佑教授.jpg" alt="本庶佑教授" />
+            <img src="/about-Scophil/expert_honjo.jpg" alt="本庶佑教授" />
           </div>
           <div class="expert-info right">
             <h3>本庶佑教授</h3>
@@ -54,7 +54,7 @@
         <!-- Gabazza Esteban教授 -->
         <div class="expert-row reverse">
           <div class="expert-img right">
-            <img src="/about-Scophil/3-2专家团队-Gabazza Esteban教授.jpg" alt="Gabazza Esteban教授" />
+            <img src="/about-Scophil/expert_gabazza.jpg" alt="Gabazza Esteban教授" />
           </div>
           <ul class="expert-points">
             <li>发现姬松茸PD-1，拓展免疫研究新方向</li>
@@ -71,28 +71,28 @@
         <div class="expert-modules">
           <div class="expert-card">
             <div class="expert-card-img">
-              <img src="/about-Scophil/3-3专家团队-冈田邦彦.png" alt="冈田邦彦" />
+              <img src="/about-Scophil/expert_okada.png" alt="冈田邦彦" />
             </div>
             <h4>冈田邦彦</h4>
             <p>日本再生医疗领域权威，德岛大学硕士、名古屋大学博士，DRAQUA与REBOR等多家生医企业董事长。主导干细胞培养、骨再生与组织工程等前沿研究，推动再生医疗临床应用。</p>
           </div>
           <div class="expert-card">
             <div class="expert-card-img">
-              <img src="/about-Scophil/3-4专家团队-丁明跃.png" alt="丁明跃" />
+              <img src="/about-Scophil/expert_ding.png" alt="丁明跃" />
             </div>
             <h4>丁明跃</h4>
             <p>华中科技大学生命科学与技术学院教授、博士生导师。高端生物医学成像专家，长期致力于医疗器械与成像技术创新。</p>
           </div>
           <div class="expert-card">
             <div class="expert-card-img">
-              <img src="/about-Scophil/3-5专家团队-燕炜.png" alt="燕炜" />
+              <img src="/about-Scophil/expert_yan.png" alt="燕炜" />
             </div>
             <h4>燕炜</h4>
             <p>医疗健康管理专家，内科医生。毕业于中南大学湘雅医学院与北京大学光华管理学院，拥有20余年医疗行业经验，参与多项1.1类新药临床试验。</p>
           </div>
           <div class="expert-card">
             <div class="expert-card-img">
-              <img src="/about-Scophil/3-6专家团队-文辉清.png" alt="文辉清" />
+              <img src="/about-Scophil/expert_wen.png" alt="文辉清" />
             </div>
             <h4>文辉清</h4>
             <p>南方医科大学第五附属医院肝胆外科主任，岭南名医。专注肝胆结石及内镜微创治疗。</p>
@@ -138,25 +138,25 @@ const philosophyList = [
   {
     title: '科学严谨',
     desc: 'Scophil 坚信严谨的科研是产品价值的基石。品牌背靠国际一流实验室与专家团队，专注于干细胞科技、多肽技术与天然草本活性物质的深度开发。',
-    bg: '/about-Scophil/2-1品牌理念-科学严谨.jpg',
+    bg: '/about-Scophil/philosophy_science.jpg',
     icon: `<svg viewBox=\"0 0 48 48\"><circle cx=\"24\" cy=\"24\" r=\"20\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\"/><path d=\"M16 32l8-16 8 16\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\"/></svg>`
   },
   {
     title: '安全优先',
     desc: '全系列产品均通过严格质量检测，确保无污染、无激素、无有害添加，保障消费者使用安心。',
-    bg: '/about-Scophil/2-2品牌理念-安全优先.png',
+    bg: '/about-Scophil/philosophy_safety.png',
     icon: `<svg viewBox=\"0 0 48 48\"><rect x=\"10\" y=\"14\" width=\"28\" height=\"20\" rx=\"4\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\"/><path d=\"M24 18v12\" stroke=\"#fff\" stroke-width=\"2\"/><circle cx=\"24\" cy=\"24\" r=\"2\" fill=\"#fff\"/></svg>`
   },
   {
     title: '精准功效',
     desc: '结合不同人群需求，Scophil 开发出涵盖抗癌、护肝、男性机能、私护修复等多维产品线，针对性强，见效稳定。',
-    bg: '/about-Scophil/2-3品牌理念-精准功效.jpg',
+    bg: '/about-Scophil/philosophy_precision.jpg',
     icon: `<svg viewBox=\"0 0 48 48\"><rect x=\"12\" y=\"12\" width=\"24\" height=\"24\" rx=\"6\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\"/><path d=\"M24 18v12M18 24h12\" stroke=\"#fff\" stroke-width=\"2\"/></svg>`
   },
   {
     title: '全球视野',
     desc: '品牌布局全球，目前产品远销亚洲、欧美多个国家，致力于打造国际领先的高端生命健康品牌。',
-    bg: '/about-Scophil/2-4品牌理念-全球视野.png',
+    bg: '/about-Scophil/philosophy_global.png',
     icon: `<svg viewBox=\"0 0 48 48\"><circle cx=\"24\" cy=\"24\" r=\"20\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\"/><path d=\"M24 4v40M4 24h40\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\"/></svg>`
   }
 ]
@@ -174,13 +174,13 @@ const partners = [
   {
     name: '三重大学',
     desc: '日本国立三重大学在医学与免疫学领域享有盛誉。研究团队深度参与蘑菇精CP-101的开发，专注姬松茸活性成分的免疫调节与抗癌功效。通过先进的亚临界水提取技术，验证CP-101的有效性，为天然成分与现代科技结合提供坚实科研支持。',
-    img: '/about-Scophil/4-1合作机构-三重大学.jpg',
+    img: '/about-Scophil/partner_mie.jpg',
     link: '#'
   },
   {
     name: '岩出菌学研究所',
     desc: '1963年创立，成功培育姬松茸"岩出101株"。1980年在日本癌症学会公布其显著抗癌效果，药用价值持续获多项学术验证，奠定坚实科研基础。',
-    img: '/about-Scophil/4-2-2合作机构-岩出菌学研究所.png',
+    img: '/about-Scophil/partner_iwade.png',
     link: '#'
   }
 ]
@@ -213,7 +213,7 @@ onUnmounted(() => {
 .banner {
   position: relative;
   height: 600px;
-  background: url('/about-Scophil/1-1品牌愿景与使命-背景图-调暗版.png') center/cover no-repeat;
+  background: url('/about-Scophil/vision_bg_dark.png') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
