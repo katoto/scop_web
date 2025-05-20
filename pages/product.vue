@@ -347,6 +347,9 @@ const targetList = computed(() => {
   font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
   min-height: 100vh;
   padding-bottom: 60px;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 
 .product-hero {
@@ -602,11 +605,12 @@ const targetList = computed(() => {
 
 .feature-block {
   position: relative;
-  left: 50%;
-  right: 50%;
-  width: 100vw;
-  transform: translateX(-50%);
+  width: 100%;
   background: #fff;
+  margin: 0;
+  left: 0;
+  right: 0;
+  transform: none;
 }
 
 .feature-block.gray-bg {
@@ -728,21 +732,27 @@ const targetList = computed(() => {
 }
 
 .compound-carousel {
-  width: 100vw;
+  width: 100%;
   background: #faf9f6;
   padding: 48px 0;
   overflow: hidden;
   position: relative;
+  margin: 0;
+  left: 0;
+  right: 0;
 }
 
 .carousel-row {
   display: flex;
   align-items: center;
   overflow: visible;
-  width: 100vw;
+  width: 100%;
   position: relative;
   animation: carousel-left 30s linear infinite;
   padding: 0 200px;
+  margin: 0;
+  left: 0;
+  right: 0;
 }
 
 .carousel-row:first-child {
@@ -985,7 +995,9 @@ const targetList = computed(() => {
   }
 
   .product-section {
-    padding: 0 6vw;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .feature-block-inner {
@@ -1019,7 +1031,15 @@ const targetList = computed(() => {
   }
 
   .compound-carousel {
-    padding: 18px 0;
+    width: 100%;
+    margin: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .carousel-row {
+    width: 100%;
+    padding: 0 100px;
   }
 
   .compound-item,
@@ -1029,10 +1049,13 @@ const targetList = computed(() => {
   }
 
   .compound-item .compound-info {
-    width: 90vw;
+    width: 100%;
+    max-width: 90vw;
     min-width: 0;
     font-size: 0.95rem;
     padding: 10px 8px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .market-compare-table {
