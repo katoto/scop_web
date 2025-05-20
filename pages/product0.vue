@@ -3,12 +3,12 @@ import { ref, computed } from 'vue';
 const localePath = useLocalePath()
 
 const productImages = [
-  '/product0/1.1.5-1鸡腿菇.jpg',
-  '/product0/1.1.5-2灭菌型乳酸菌.jpg',
-  '/product0/1.1.5-3长胡椒提取物.jpg',
-  '/product0/1.1.5-4难消化性糊精.jpg',
-  '/product0/1.1.5-5大豆异黄酮发酵粉末.jpg',
-  '/product0/1.1.5-6猴头菇.jpg'
+  '/product0/coprinus_comatus.jpg',
+  '/product0/sterilized_lactobacillus.jpg',
+  '/product0/long_pepper_extract.jpg',
+  '/product0/resistant_dextrin.jpg',
+  '/product0/fermented_soy_isoflavone.jpg',
+  '/product0/hericium_erinaceus.jpg'
 ];
 const productNames = [
   '鸡腿菇',
@@ -33,21 +33,21 @@ const patentOptions = [
     title: '低温亚临界水提取',
     patentNo: '',
     desc: '避免成分降解与溶剂残留，保留高活性',
-    image: '/product0/1.1.2-1低温亚临界水提取.jpg',
+    image: '/product0/subcritical_water_extraction.jpg',
   },
   {
     id: 2,
     title: '专利支持',
     patentNo: '专利号：7141630',
     desc: '日本专利提取技术（专利号：7141630）',
-    image: '/product0/1.1.2-2专利支持.jpg',
+    image: '/product0/patent_support.jpg',
   },
   {
     id: 3,
     title: '高浓度净化',
     patentNo: '',
     desc: '确保有效成分浓度统一，品质稳定',
-    image: '/product0/1.1.2-3高浓度净化.jpg',
+    image: '/product0/high_concentration_purification.jpg',
   },
 ];
 
@@ -61,17 +61,17 @@ const features = [
   {
     title: '🧬 抑制免疫检查点',
     desc: '干预 PD-1 / PD-L1 通路，打破肿瘤免疫逃逸机制。通过作用于免疫检查点通路，有效阻断肿瘤细胞抑制T细胞活性，恢复机体对癌细胞的识别与攻击能力，是免疫治疗的核心机制之一。',
-    img: '/product0/1.1.3-1抑制免疫检查点.jpg'
+    img: '/product0/immune_checkpoint_inhibition.jpg'
   },
   {
     title: '🌿 激活树突状细胞与巨噬细胞',
     desc: '提升先天免疫系统反应，全面激活免疫链条。CP-101能促进树突状细胞成熟，增强抗原呈递功能，并激活巨噬细胞，提升免疫系统识别与清除异常细胞的能力。',
-    img: '/product0/1.1.3-2激活树突状细胞与巨噬细胞.jpg'
+    img: '/product0/dendritic_macrophage_activation.jpg'
   },
   {
     title: '💪 辅助抗癌 · 增强体力',
     desc: '协助抑制肿瘤生长、减轻疲劳、延缓衰老过程。多糖体等活性成分具备显著的免疫调节与抗氧化作用，有助于改善体力与免疫低下状态，减轻放化疗副作用，支持癌症康复过程。',
-    img: '/product0/1.1.3-3辅助抗癌 · 增强体力.jpg'
+    img: '/product0/cancer_support_energy.jpg'
   }
 ];
 
@@ -79,32 +79,38 @@ const scienceList = [
   {
     icon: '🔬',
     title: '诺贝尔奖研究支持',
-    desc: '基于 2018 年诺贝尔奖得主本庶佑教授 PD-1 免疫机制研究'
+    desc: '基于 2018 年诺贝尔奖得主本庶佑教授 PD-1 免疫机制研究',
+    img: '/product0/nobel_research_support.png'
   },
   {
     icon: '✅',
     title: 'FDA 双重认证',
-    desc: '姬松茸（岩出101株）及其提取物获美国 FDA 认证具免疫支持与调节功效'
+    desc: '姬松茸（岩出101株）及其提取物获美国 FDA 认证具免疫支持与调节功效',
+    img: '/product0/fda_double_certification.png'
   },
   {
     icon: '🧠',
     title: '45年科研积累背景',
-    desc: '日本岩出菌学研究所自20世纪70年代起，持续研究姬松茸101菌株，构建全球领先的抗癌真菌研究体系'
+    desc: '日本岩出菌学研究所自20世纪70年代起，持续研究姬松茸101菌株，构建全球领先的抗癌真菌研究体系',
+    img: '/product0/45_years_research_background.svg'
   },
   {
     icon: '📚',
     title: '全球 135+ 项科研成果',
-    desc: '涵盖抗肿瘤、免疫调节、多糖活性等关键研究方向'
+    desc: '涵盖抗肿瘤、免疫调节、多糖活性等关键研究方向',
+    img: '/product0/experimental_verification.svg'
   },
   {
     icon: '🏫',
     title: '日本三重大学科研支持',
-    desc: 'CP-101由三重大学免疫团队研发提取与验证功效'
+    desc: 'CP-101由三重大学免疫团队研发提取与验证功效',
+    img: '/product0/mie_university_support.png'
   },
   {
     icon: '🧬',
     title: '实验验证',
-    desc: '证实可有效激活免疫细胞、增强免疫应答能力'
+    desc: '证实可有效激活免疫细胞、增强免疫应答能力',
+    img: '/product0/experimental_verification.svg'
   }
 ];
 
@@ -353,7 +359,7 @@ const marketCompare = [
 .product-hero {
   text-align: left;
   padding: 160px 20px 40px 20px;
-  background: url('/product0/1.1.1-导航栏-原图.png') no-repeat center center;
+  background: url('/product0/banner_original.png') no-repeat center center;
   background-size: cover;
   color: white;
   display: flex;
