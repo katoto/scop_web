@@ -37,18 +37,39 @@ const productDesc = [
 const patentOptions = [
   {
     id: 1,
-    title: '姬松茸亚临界水提取物 CP-101',
+    title: '日本亚临界萃取专利技术',
     patentNo: '专利号：7141630',
-    desc: '采用亚临界萃取技术，保留完整多糖体活性，增强免疫系统，可用于前列腺癌辅助防护。',
+    desc: '应用于姬松茸核心成分提取，广泛用于 CP-101 产品中。采用低温低压工艺，有效保留活性成分，显著提升吸收效率。',
     image: '/product/agaricus_cp101.jpg',
   },
   {
     id: 2,
-    title: '长胡椒提取物',
-    patentNo: '专利号：6246859',
-    desc: '激活血管Tie2受体，改善微循环，提升血流动力，有效改善末梢循环问题。',
+    title: 'pH响应型肠溶缓释技术',
+    patentNo: '',
+    desc: '减少胃酸破坏，实现靶向肠道吸收，提升生物利用率。',
     image: '/product/longpepper_extract.jpg',
   },
+  {
+    id: 3,
+    title: 'Livinol™专利成分',
+    patentNo: '专利号：5980228',
+    desc: '具备抗癌、抗氧化、抗炎、调节肠道菌群等多重功能。',
+    image: '/product/agaricus_cp101.jpg',
+  },
+  {
+    id: 4,
+    title: '七重活性成分协同配方',
+    patentNo: '',
+    desc: '实现抗炎、抗氧化、解毒、再生、调糖、调脂一体化功效。',
+    image: '/product/longpepper_extract.jpg',
+  },
+  {
+    id: 5,
+    title: '日本GMP认证 & ISO标准工厂制造',
+    patentNo: '',
+    desc: '全流程可追溯，符合国际出口与个性化定制标准。',
+    image: '/product/agaricus_cp101.jpg',
+  }
 ];
 
 const activePatent = ref(patentOptions[0]);
@@ -211,6 +232,42 @@ const marketCompare = [
                 </div>
               </template>
               <span>{{ patentOptions[1].title }}</span>
+            </div>
+            <!-- 3 -->
+            <div class="patent-divider"></div>
+            <div class="patent-menu-item" :class="{ active: activePatent.id === patentOptions[2].id }"
+              @mouseenter="setActivePatent(patentOptions[2])" @click="setActivePatent(patentOptions[2])">
+              <template v-if="activePatent.id === patentOptions[2].id">
+                <div class="dot-animate">
+                  <span class="ripple"></span>
+                  <span class="dot"></span>
+                </div>
+              </template>
+              <span>{{ patentOptions[2].title }}</span>
+            </div>
+            <!-- 4 -->
+            <div class="patent-divider"></div>
+            <div class="patent-menu-item" :class="{ active: activePatent.id === patentOptions[3].id }"
+              @mouseenter="setActivePatent(patentOptions[3])" @click="setActivePatent(patentOptions[3])">
+              <template v-if="activePatent.id === patentOptions[3].id">
+                <div class="dot-animate">
+                  <span class="ripple"></span>
+                  <span class="dot"></span>
+                </div>
+              </template>
+              <span>{{ patentOptions[3].title }}</span>
+            </div>
+            <!-- 5 -->
+            <div class="patent-divider"></div>
+            <div class="patent-menu-item" :class="{ active: activePatent.id === patentOptions[4].id }"
+              @mouseenter="setActivePatent(patentOptions[4])" @click="setActivePatent(patentOptions[4])">
+              <template v-if="activePatent.id === patentOptions[4].id">
+                <div class="dot-animate">
+                  <span class="ripple"></span>
+                  <span class="dot"></span>
+                </div>
+              </template>
+              <span>{{ patentOptions[4].title }}</span>
             </div>
           </div>
         </div>
