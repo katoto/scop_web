@@ -3,18 +3,12 @@ import { ref, computed } from 'vue';
 const localePath = useLocalePath()
 
 const productImages = [
-  '/product/ashitaba.png',
-  '/product/sweettea.jpg',
-  '/product/cabbage.jpg',
-  '/product/kale.jpg',
-  '/product/beetroot.png',
-  '/product/bambooleaf.jpg',
-  '/product/shitake.jpg',
-  '/product/burdock.jpeg',
-  '/product/pumpkinseed.png',
-  '/product/yeastzinc.png',
-  '/product/longpepper.jpg',
-  '/product/agaricus.png',
+  '/product0/1.1.5-1鸡腿菇.jpg',
+  '/product0/1.1.5-2灭菌型乳酸菌.jpg',
+  '/product0/1.1.5-3长胡椒提取物.jpg',
+  '/product0/1.1.5-4难消化性糊精.jpg',
+  '/product0/1.1.5-5大豆异黄酮发酵粉末.jpg',
+  '/product0/1.1.5-6猴头菇.jpg'
 ];
 const productNames = [
   '鸡腿菇',
