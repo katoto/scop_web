@@ -17,21 +17,20 @@ const productImages = [
   '/product/agaricus.png',
 ];
 const productNames = [
-  '明日叶', '甘茶', '卷心菜', '羽衣甘蓝', '红甜菜', '熊笹', '香菇', '牛蒡根', '南瓜籽提取物', '日本酵母锌', '长胡椒提取物', '姬松茸亚临界水提取物'
+  '鸡腿菇',
+  '灭菌型乳酸菌',
+  '长胡椒提取物',
+  '难消化性糊精',
+  '大豆异黄酮发酵粉末',
+  '猴头菇'
 ];
 const productDesc = [
-  '富含钾、钙与叶绿素，有助于血液净化、缓解疲劳、维持荷尔蒙平衡',
-  '调节自律神经、安稳精神状态，缓解压力性性功能低下',
-  '含植酸与维生素U，有助于抗氧化与肝功能维护',
-  '含多种矿物质与类黄酮，支持血管健康与激素调节',
-  '促进血液循环、提升氧合能力，有助于勃起质量与精力状态',
-  '具天然杀菌力，改善口腔肠道微生态，降低体内炎症反应',
-  '富含多糖体，增强免疫功能、抗疲劳、维持系统活性',
-  '帮助排毒、提升消化代谢效率，有助于营养吸收',
-  '含丰富锌元素，是前列腺维护与荷尔蒙调节关键营养素',
-  '高吸收性有机锌源，支持睾酮合成与免疫系统运作',
-  '改善微循环，激活毛细血管再生，提升生殖系统供血能力',
-  '专利抗癌与免疫调节因子，提升抗疲劳、抗氧化与恢复力'
+  '抗氧化抗炎、免疫增强、改善皮肤状态',
+  '提高防御力、缓解过敏、改善口腔与肠道健康',
+  '改善代谢、血液循环、抗黑色素瘤',
+  '降低血糖血脂、改善肠道环境',
+  '抗癌、抗氧化',
+  '增强免疫、神经保护、预防认知退化'
 ];
 
 const patentOptions = [
@@ -66,18 +65,18 @@ function setActivePatent(option: typeof patentOptions[0]) {
 
 const features = [
   {
-    title: '改善男性性功能与精力状态',
-    desc: '提升精力，改善性功能，增强自信。',
+    title: '🧬 抑制免疫检查点',
+    desc: '干预 PD-1 / PD-L1 通路，打破肿瘤免疫逃逸机制。通过作用于免疫检查点通路，有效阻断肿瘤细胞抑制T细胞活性，恢复机体对癌细胞的识别与攻击能力，是免疫治疗的核心机制之一。',
     img: '/product/male_function.png'
   },
   {
-    title: '调节肾功能，缓解疲劳虚弱',
-    desc: '调理肾脏，缓解疲劳，恢复活力。',
+    title: '🌿 激活树突状细胞与巨噬细胞',
+    desc: '提升先天免疫系统反应，全面激活免疫链条。CP-101能促进树突状细胞成熟，增强抗原呈递功能，并激活巨噬细胞，提升免疫系统识别与清除异常细胞的能力。',
     img: '/product/kidney_function.png'
   },
   {
-    title: '强化免疫系统',
-    desc: '增强免疫力，提升身体防御能力。',
+    title: '💪 辅助抗癌 · 增强体力',
+    desc: '协助抑制肿瘤生长、减轻疲劳、延缓衰老过程。多糖体等活性成分具备显著的免疫调节与抗氧化作用，有助于改善体力与免疫低下状态，减轻放化疗副作用，支持癌症康复过程。',
     img: '/product/immune_system.png'
   }
 ];
@@ -85,23 +84,33 @@ const features = [
 const scienceList = [
   {
     icon: '🔬',
-    title: '日本原产科研背景',
-    desc: '由三重大学免疫团队研发，融合现代分子免疫学成果。'
+    title: '诺贝尔奖研究支持',
+    desc: '基于 2018 年诺贝尔奖得主本庶佑教授 PD-1 免疫机制研究'
   },
   {
     icon: '✅',
-    title: 'GMP认证 × ISO国际标准',
-    desc: '全线生产于日本GMP认证工厂，符合ISO质量体系标准，安全可控。'
+    title: 'FDA 双重认证',
+    desc: '姬松茸（岩出101株）及其提取物获美国 FDA 认证具免疫支持与调节功效'
+  },
+  {
+    icon: '🧠',
+    title: '45年科研积累背景',
+    desc: '日本岩出菌学研究所自20世纪70年代起，持续研究姬松茸101菌株，构建全球领先的抗癌真菌研究体系'
   },
   {
     icon: '📚',
-    title: '专利支持 + 实证研究背书',
-    desc: '拥有多项专利技术支持，并且经过大量实证研究验证。'
+    title: '全球 135+ 项科研成果',
+    desc: '涵盖抗肿瘤、免疫调节、多糖活性等关键研究方向'
   },
   {
-    icon: '🔍',
-    title: '原料全程可追溯',
-    desc: '采用日本本土植物，来源透明，每一批次均可验证追踪。'
+    icon: '🏫',
+    title: '日本三重大学科研支持',
+    desc: 'CP-101由三重大学免疫团队研发提取与验证功效'
+  },
+  {
+    icon: '🧬',
+    title: '实验验证',
+    desc: '证实可有效激活免疫细胞、增强免疫应答能力'
   }
 ];
 
@@ -249,7 +258,7 @@ const marketCompare = [
     </section>
 
     <section class="product-section">
-      <h2>科研权威 × 品质保障 × 专利支持</h2>
+      <h2>科研与权威认证</h2>
       <div class="science-blocks">
         <div v-for="(item, idx) in scienceList" :key="item.title" class="science-block">
           <div class="science-icon">
@@ -265,7 +274,7 @@ const marketCompare = [
     </section>
 
     <section class="product-section">
-      <h2>黄金复方：40种植物平衡精华</h2>
+      <h2>辅助活性成分</h2>
       <div class="compound-carousel">
         <div class="carousel-row" :class="{ paused: activeRow === 0 }" @mouseleave="handleMouseLeave(0)"
           @click.self="unlockRow">
