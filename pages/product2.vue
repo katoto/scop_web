@@ -3,12 +3,12 @@ import { ref, computed } from 'vue';
 const localePath = useLocalePath()
 
 const productImages = [
-  '/product2/1.3.5-1Livinol™（Garcinol）.jpg',
-  '/product2/1.3.5-2芽孢西兰花粉末.jpg',
-  '/product2/1.3.5-3马利亚蓟（Milk Thistle）.jpg',
-  '/product2/1.3.5-4野葡萄提取物.jpg',
-  '/product2/1.3.5-5L-鸟氨酸盐酸盐.png',
-  '/product2/1.3.5-6印度藤黄及协同物质.jpg',
+  '/product2/1.3.5-1_livinol.jpg',
+  '/product2/1.3.5-2_broccoli.jpg',
+  '/product2/1.3.5-3_thistle.jpg',
+  '/product2/1.3.5-4_grape.jpg',
+  '/product2/1.3.5-5_ornithine.png',
+  '/product2/1.3.5-6_garcinia.jpg',
 ];
 const productNames = [
   'Livinol™（Garcinol）',
@@ -33,35 +33,35 @@ const patentOptions = [
     title: '日本亚临界萃取专利技术',
     patentNo: '专利号：7141630',
     desc: '应用于姬松茸核心成分提取，广泛用于 CP-101 产品中。采用低温低压工艺，有效保留活性成分，显著提升吸收效率。',
-    image: '/product2/1.3.2-1日本亚临界萃取专利技术.jpg',
+    image: '/product2/1.3.2-1_extract.jpg',
   },
   {
     id: 2,
     title: 'pH响应型肠溶缓释技术',
     patentNo: '',
     desc: '减少胃酸破坏，实现靶向肠道吸收，提升生物利用率。',
-    image: '/product2/1.3.2-2pH响应型肠溶缓释技术.jpg',
+    image: '/product2/1.3.2-2_release.jpg',
   },
   {
     id: 3,
     title: 'Livinol™专利成分',
     patentNo: '专利号：5980228',
     desc: '具备抗癌、抗氧化、抗炎、调节肠道菌群等多重功能。',
-    image: '/product2/1.3.2-3Livinol™专利成分（专利号：5980228）.jpg',
+    image: '/product2/1.3.2-3_patent.jpg',
   },
   {
     id: 4,
     title: '七重活性成分协同配方',
     patentNo: '',
     desc: '实现抗炎、抗氧化、解毒、再生、调糖、调脂一体化功效。',
-    image: '/product2/1.3.2-4七重活性成分协同配方.png',
+    image: '/product2/1.3.2-4_active.png',
   },
   {
     id: 5,
     title: '日本GMP认证 & ISO标准工厂制造',
     patentNo: '',
     desc: '全流程可追溯，符合国际出口与个性化定制标准。',
-    image: '/product2/1.3.2-5-日本GMP认证 & ISO标准工厂制造.jpg',
+    image: '/product2/1.3.2-5_cert.jpg',
   }
 ];
 
@@ -75,32 +75,32 @@ const features = [
   {
     title: '护肝抗癌',
     desc: 'Livinol™中的Garcinol可抑制癌细胞扩散\n姬松茸激活巨噬细胞，增强肝脏免疫抗癌能力\n萝卜硫素诱导癌细胞凋亡，激活解毒酶系统\n多重抗氧化成分降低肝癌风险',
-    img: '/product2/1.3.3-1护肝抗癌.jpg'
+    img: '/product2/1.3.3-1_liver.jpg'
   },
   {
     title: '强抗氧化，减缓肝细胞衰老',
     desc: '芽孢西兰花粉末启动Nrf2通路清除自由基\n野葡萄稳定肝细胞膜、促进微循环\n姬松茸增强抗氧环境，马利亚蓟促进肝细胞再生\nL-鸟氨酸盐酸盐减轻肝脏代谢压力',
-    img: '/product2/1.3.3-2强抗氧化，减缓肝细胞衰老.jpg'
+    img: '/product2/1.3.3-2_antioxid.jpg'
   },
   {
     title: '解酒护肝',
     desc: 'Livinol™抵御酒精毒害，抑制炎症\nL-鸟氨酸加速酒精代谢\n马利亚蓟修复肝细胞，野葡萄促进解毒微循环',
-    img: '/product2/1.3.3-3解酒护肝.jpg'
+    img: '/product2/1.3.3-3_alcohol.jpg'
   },
   {
     title: '美白焕肤',
     desc: 'Livinol™调节肠道菌群、排毒护肤\n野葡萄促进黑色素代谢\n芽孢西兰花 & 姬松茸提升皮肤代谢、改善肤色',
-    img: '/product2/1.3.3-4美白焕肤.jpg'
+    img: '/product2/1.3.3-4_whiten.jpg'
   },
   {
     title: '血糖调节',
     desc: 'Livinol™通过菌群调节碳水吸收\n印度藤黄协同成分改善脂肪代谢，增强胰岛素敏感性\n姬松茸 & 芽孢西兰花提升肝脏对葡萄糖摄取和储存',
-    img: '/product2/1.3.3-5血糖调节.jpg'
+    img: '/product2/1.3.3-5_sugar.jpg'
   },
   {
     title: '调脂抗脂肪肝',
     desc: 'Livinol™抑制脂肪积累\n印度藤黄促进脂肪酸氧化、降低血脂\n芽孢西兰花 & 马利亚蓟增强肝功能，改善脂肪浸润',
-    img: '/product2/1.3.3-6调脂抗脂肪肝.png'
+    img: '/product2/1.3.3-6_fatty.png'
   }
 ];
 
@@ -387,7 +387,7 @@ const marketCompare = [
 .product-hero {
   text-align: left;
   padding: 160px 20px 40px 20px;
-  background: url('/product2/1.3.1-1导航栏-调暗版.png') no-repeat center center;
+  background: url('/product2/1.3.1-1_banner.png') no-repeat center center;
   background-size: cover;
   color: white;
   display: flex;
