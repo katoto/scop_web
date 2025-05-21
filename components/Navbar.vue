@@ -67,6 +67,9 @@
             <NuxtLink class="nav-link" :to="localePath('/rd')">{{ $t('nav.rd') }}</NuxtLink>
           </li>
           <li class="nav-item">
+            <NuxtLink class="nav-link" :to="localePath('/rdfeedback')">{{ $t('nav.rdFeedback') }}</NuxtLink>
+          </li>
+          <li class="nav-item">
             <NuxtLink class="nav-link" :to="localePath('/news')">{{ $t('nav.news') }}</NuxtLink>
           </li>
           <li class="nav-item">
