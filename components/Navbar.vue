@@ -72,9 +72,6 @@
           <li class="nav-item">
             <NuxtLink class="nav-link" :to="localePath('/news')">{{ $t('nav.news') }}</NuxtLink>
           </li>
-          <li class="nav-item">
-            <NuxtLink class="nav-link" :to="localePath('/brand')">{{ $t('nav.brand') }}</NuxtLink>
-          </li>
           <!-- <li class="nav-item">
             <NuxtLink class="nav-link" :to="localePath('/about')">{{ $t('nav.about') }}</NuxtLink>
           </li> -->
