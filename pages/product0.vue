@@ -380,7 +380,7 @@ onMounted(() => {
 .product-hero {
   text-align: left;
   padding: 160px 20px 40px 20px;
-  background: url('/product0/banner_original.png') no-repeat center center;
+  background: url('/product0/banner_original1.png') no-repeat center center;
   background-size: cover;
   color: white;
   display: flex;
