@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 const localePath = useLocalePath()
 
 const productImages = [
@@ -178,6 +178,26 @@ const marketCompare = [
     cp101: '✅ 温和无刺激，适合长效调养'
   }
 ];
+
+const featureRefs = ref<HTMLElement[]>([]);
+
+onMounted(() => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.2,
+    rootMargin: '0px 0px -100px 0px'
+  });
+
+  featureRefs.value.forEach(el => {
+    if (el) observer.observe(el);
+  });
+});
 </script>
 
 <template>
@@ -281,6 +301,7 @@ const marketCompare = [
       <h2>主要功效</h2>
       <div class="feature-blocks">
         <div v-for="(feature, idx) in features" :key="feature.title"
+          :ref="el => { if (el) featureRefs[idx] = el as HTMLElement }"
           :class="['feature-block', { reverse: idx % 2 === 1, 'gray-bg': idx % 2 === 1 }]">
           <div class="feature-block-inner">
             <div class="feature-img">
@@ -639,7 +660,45 @@ const marketCompare = [
   position: relative;
   width: 100%;
   background: #fff;
-  margin: 0;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .feature-img {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+  }
+
+  .feature-text {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+  }
+
+  &.animate-in {
+
+    .feature-img,
+    .feature-text {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  &.reverse {
+    .feature-img {
+      transform: translateX(30px);
+    }
+
+    .feature-text {
+      transform: translateX(-30px);
+    }
+  }
 }
 
 .feature-block.gray-bg {
