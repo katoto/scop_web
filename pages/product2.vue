@@ -205,13 +205,18 @@ onMounted(() => {
 
     <!-- banner -->
     <section class="product-hero">
-      <div class="banner-content">
-        <h1>CP-101 肝源力</h1>
-        <p class="subtitle">专为肝功能保护而生的天然营养干预方案</p>
-        <p class="desc">双专利技术 + 七重成分协同，构建肝脏健康防护网</p>
+      <div class="hero-container">
+        <div class="banner-content">
+          <h1>CP-101 肝源力</h1>
+          <p class="subtitle">专为肝功能保护而生的天然营养干预方案</p>
+          <p class="desc">双专利技术 + 七重成分协同，构建肝脏健康防护网</p>
+        </div>
+        <div class="hero-image">
+          <img src="/images/pro-1.png" />
+        </div>
       </div>
-      <div class="menu-bar">
 
+      <div class="menu-bar">
         <div class="menu-item">
           <NuxtLink class="nav-link" :to="localePath('/product0')">CP101蘑菇精系列</NuxtLink>
         </div>
@@ -419,11 +424,38 @@ onMounted(() => {
   position: relative;
 }
 
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
 .banner-content {
+  flex: 1;
   max-width: 50%;
-  align-self: flex-start;
   padding-left: 100px;
   box-sizing: border-box;
+}
+
+.hero-image {
+  flex: 1;
+  max-width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  max-width: 140px;
+  width: 140px;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(191, 161, 74, 0.12);
+  -webkit-box-reflect: below -15% linear-gradient(transparent, rgba(255, 255, 255, 0.3));
 }
 
 .menu-bar {
@@ -482,15 +514,6 @@ onMounted(() => {
   font-size: 1.1rem;
   color: white;
   margin-bottom: 24px;
-}
-
-.product-hero .hero-img {
-  max-width: 340px;
-  width: 90vw;
-  border-radius: 18px;
-  box-shadow: 0 4px 32px rgba(191, 161, 74, 0.12);
-  margin: 0 auto;
-  display: block;
 }
 
 .product-section {
@@ -1032,9 +1055,24 @@ onMounted(() => {
     min-height: 700px;
   }
 
+  .hero-container {
+    flex-direction: column;
+    gap: 24px;
+  }
+
   .banner-content {
     max-width: 100%;
-    margin-bottom: 40px;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .hero-image {
+    max-width: 100%;
+  }
+
+  .hero-image img {
+    max-width: 140px;
+    width: 140px;
   }
 
   .menu-bar {

@@ -182,13 +182,23 @@ onMounted(() => {
 
     <!-- banner -->
     <section class="product-hero">
-      <div class="banner-content">
-        <h1>蘑菇精 CP-101+ CP-101 Super</h1>
-        <p class="subtitle">45年全球科研积累 + 多项国际认证 + 专利技术</p>
-        <p class="desc">为免疫调节与健康支持提供坚实保障</p>
+      <div class="hero-container">
+        <div class="banner-content">
+          <h1>蘑菇精 CP-101+ CP-101 Super</h1>
+          <p class="subtitle">45年全球科研积累 + 多项国际认证 + 专利技术</p>
+          <p class="desc">为免疫调节与健康支持提供坚实保障</p>
+        </div>
+        <div class="hero-images">
+          <div class="hero-image">
+            <img src="/images/pro-4.png" />
+          </div>
+          <div class="hero-image">
+            <img src="/images/pro-2.png" />
+          </div>
+        </div>
       </div>
-      <div class="menu-bar">
 
+      <div class="menu-bar">
         <div class="menu-item active">
           <NuxtLink class="nav-link" :to="localePath('/product0')">CP101蘑菇精系列</NuxtLink>
         </div>
@@ -391,11 +401,45 @@ onMounted(() => {
   position: relative;
 }
 
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
 .banner-content {
+  flex: 1;
   max-width: 50%;
-  align-self: flex-start;
   padding-left: 100px;
   box-sizing: border-box;
+}
+
+.hero-images {
+  flex: 1;
+  max-width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  max-width: 140px;
+  width: 140px;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(191, 161, 74, 0.12);
+  -webkit-box-reflect: below -15% linear-gradient(transparent, rgba(255, 255, 255, 0.3));
 }
 
 .menu-bar {
@@ -1003,9 +1047,26 @@ onMounted(() => {
     min-height: 700px;
   }
 
+  .hero-container {
+    flex-direction: column;
+    gap: 24px;
+  }
+
   .banner-content {
     max-width: 100%;
-    margin-bottom: 40px;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .hero-images {
+    max-width: 100%;
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  .hero-image img {
+    max-width: 140px;
+    width: 140px;
   }
 
   .menu-bar {

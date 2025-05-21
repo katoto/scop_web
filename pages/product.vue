@@ -204,11 +204,17 @@ onMounted(() => {
 
     <!-- banner -->
     <section class="product-hero">
-      <div class="banner-content">
-        <h1>{{ t('product.hero.title') }}</h1>
-        <p class="subtitle">{{ t('product.hero.subtitle') }}</p>
-        <p class="desc">{{ t('product.hero.desc') }}</p>
+      <div class="hero-container">
+        <div class="banner-content">
+          <h1>{{ t('product.hero.title') }}</h1>
+          <p class="subtitle">{{ t('product.hero.subtitle') }}</p>
+          <p class="desc">{{ t('product.hero.desc') }}</p>
+        </div>
+        <div class="hero-image">
+          <img src="/images/pro-3.png" />
+        </div>
       </div>
+
       <div class="menu-bar">
 
         <div class="menu-item">
@@ -387,11 +393,38 @@ onMounted(() => {
   position: relative;
 }
 
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
 .banner-content {
+  flex: 1;
   max-width: 50%;
-  align-self: flex-start;
   padding-left: 100px;
   box-sizing: border-box;
+}
+
+.hero-image {
+  flex: 1;
+  max-width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  max-width: 140px;
+  width: 140px;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(191, 161, 74, 0.12);
+  -webkit-box-reflect: below -15% linear-gradient(transparent, rgba(255, 255, 255, 0.3));
 }
 
 .menu-bar {
@@ -450,15 +483,6 @@ onMounted(() => {
   font-size: 1.1rem;
   color: white;
   margin-bottom: 24px;
-}
-
-.product-hero .hero-img {
-  max-width: 340px;
-  width: 90vw;
-  border-radius: 18px;
-  box-shadow: 0 4px 32px rgba(191, 161, 74, 0.12);
-  margin: 0 auto;
-  display: block;
 }
 
 .product-section {
@@ -1004,9 +1028,19 @@ onMounted(() => {
     min-height: 700px;
   }
 
+  .hero-container {
+    flex-direction: column;
+    gap: 24px;
+  }
+
   .banner-content {
     max-width: 100%;
-    margin-bottom: 40px;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .hero-image {
+    max-width: 100%;
   }
 
   .menu-bar {
@@ -1121,6 +1155,11 @@ onMounted(() => {
   .market-compare-header>div,
   .market-compare-row>div {
     padding: 12px 2px;
+  }
+
+  .hero-image img {
+    max-width: 140px;
+    width: 140px;
   }
 }
 
