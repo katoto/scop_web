@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, reactive, ref, nextTick } from "vue";
 import NumberScroll from '@/components/NumberScroll.vue'
+const switchLocalePath = useSwitchLocalePath()
 
 let position = reactive({
   offsetX: 0,
@@ -155,6 +156,8 @@ const researchList = [
     decimals: 0,
   },
 ]
+
+const localePath = useLocalePath()
 </script>
 
 <template>
@@ -187,6 +190,40 @@ const researchList = [
           :suffix="item.suffix" :color="'#C9A14D'" style="font-size: 80px; line-height: 1;" />
         <div style="font-size: 18px; color: rgb(201, 161, 77); margin-left: 6px;">{{ item.label }}</div>
         <div style="font-size: 15px; color: #666; max-width: 600px; margin-left: 10px;">{{ item.desc }}</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 科研实力 -->
+  <section class="research-strength-section">
+    <div class="research-strength-bg">
+      <div class="research-strength-row">
+        <div class="research-strength-col">
+          <span class="icon">🔬</span>诺贝尔奖支持机制：基于本庶佑教授提出的PD-1免疫通路干预
+          <div class="strength-btn-wrap">
+            <NuxtLink class="nav-link" :to="localePath('/rd')">
+              <button class="strength-more-btn">了解更多</button>
+            </NuxtLink>
+          </div>
+        </div>
+        <div class="research-strength-divider"></div>
+        <div class="research-strength-col">
+          <span class="icon">🧬</span>日本专利提取技术：CP-101 = 姬松茸亚临界水提取物
+          <div class="strength-btn-wrap">
+            <NuxtLink class="nav-link" :to="localePath('/rd')">
+              <button class="strength-more-btn">了解更多</button>
+            </NuxtLink>
+          </div>
+        </div>
+        <div class="research-strength-divider"></div>
+        <div class="research-strength-col">
+          <span class="icon">✅</span>GMP + ISO 认证生产体系：所有产品由日本本地全链路生产
+          <div class="strength-btn-wrap">
+            <NuxtLink class="nav-link" :to="localePath('/rd')">
+              <button class="strength-more-btn">了解更多</button>
+            </NuxtLink>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -627,6 +664,108 @@ const researchList = [
 
   100% {
     background-position: 0% 50%;
+  }
+}
+
+.research-strength-section {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background: url('/r_and_d/banner_bg2.png') center center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.research-strength-bg {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.research-strength-row {
+  width: 100%;
+  max-width: 1600px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.research-strength-col {
+  flex: 1;
+  text-align: center;
+  color: #fff;
+  font-size: 1.25rem;
+  padding: 200px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+  word-break: break-all;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.research-strength-col:hover {
+  transform: translateY(-10px);
+}
+
+.research-strength-divider {
+  width: 1px;
+  height: auto;
+  align-self: stretch;
+  background: #fff;
+  opacity: 0.7;
+}
+
+.icon {
+  font-size: 1.5em;
+  margin-right: 10px;
+}
+
+.strength-btn-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.strength-more-btn {
+  background: rgba(255, 255, 255, 0.92);
+  color: #C9A14D;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 28px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.strength-more-btn:hover {
+  background: #C9A14D;
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .research-strength-row {
+    flex-direction: column;
+  }
+
+  .research-strength-divider {
+    width: 60%;
+    height: 1px;
+    margin: 16px 0;
+  }
+
+  .research-strength-col {
+    padding: 16px 0;
+    font-size: 1rem;
   }
 }
 </style>
