@@ -182,7 +182,7 @@ onMounted(() => {
 .product-hero {
   text-align: left;
   padding: 160px 20px 40px 20px;
-  background: url('/r_and_d/banner_bg.png') no-repeat center center;
+  background: url('/r_and_d/banner_bg2.png') no-repeat center center;
   background-size: cover;
   color: white;
   display: flex;
