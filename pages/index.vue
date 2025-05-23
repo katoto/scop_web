@@ -230,6 +230,9 @@ const localePath = useLocalePath()
 
   <!-- 专家团队 -->
   <section class="expert-section">
+    <div class="expert-section-title">
+      <h2>专家团队</h2>
+    </div>
     <div class="expert-modules-with-btn">
       <div class="expert-modules">
         <div class="expert-card">
@@ -801,6 +804,19 @@ const localePath = useLocalePath()
   width: 100%;
   background: #f7f7f7;
   padding: 60px 0 40px 0;
+}
+
+.expert-section-title {
+  text-align: center;
+  width: 100%;
+  padding: 40px 0;
+
+  h2 {
+    display: inline-block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+  }
 }
 
 .expert-modules-with-btn {
