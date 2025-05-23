@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, reactive, ref, nextTick } from "vue";
+import NumberScroll from '@/components/NumberScroll.vue'
 
 let position = reactive({
   offsetX: 0,
@@ -124,6 +125,36 @@ let isLoad = ref(false)
 let handleLoad = () => {
   isLoad.value = true
 }
+
+const researchList = [
+  {
+    start: 0,
+    end: 45,
+    duration: 1200,
+    label: '年科研积累',
+    desc: '日本细菌学会 × 癌学会 自1980年起持续研究姬松茸及其多糖体活性',
+    suffix: '',
+    decimals: 0,
+  },
+  {
+    start: 0,
+    end: 135,
+    duration: 1200,
+    label: '项国际研究报告',
+    desc: '涵盖抗肿瘤、免疫调节、糖类分子活性等多个前沿医学方向',
+    suffix: '+',
+    decimals: 0,
+  },
+  {
+    start: 0,
+    end: 20,
+    duration: 1200,
+    label: '国家科研机构参与',
+    desc: '亚洲、欧美等多国机构深入验证姬松茸提取物在癌症辅助治疗中的作用',
+    suffix: '+',
+    decimals: 0,
+  },
+]
 </script>
 
 <template>
@@ -142,6 +173,23 @@ let handleLoad = () => {
       </div>
     </div>
   </div>
+
+  <!-- 科研历史 -->
+  <section class="research-history-section">
+    <div class="research-history-title" style="text-align: center; width: 100%; margin-top: 60px;">
+      <h2 style="display: inline-block; font-size: 2.5rem; font-weight: 700; margin: 0;">科研历史</h2>
+    </div>
+    <div class="research-history-container"
+      style="padding: 60px 0; display: flex; flex-direction: column; align-items: center; gap: 80px;">
+      <div v-for="item in researchList" :key="item.label"
+        style="display: flex; flex-direction: row; align-items: flex-end; justify-content: center; gap: 10px; width: 100%;">
+        <NumberScroll :start="item.start" :end="item.end" :duration="item.duration" :decimals="item.decimals"
+          :suffix="item.suffix" :color="'#C9A14D'" style="font-size: 80px; line-height: 1;" />
+        <div style="font-size: 18px; color: rgb(201, 161, 77); margin-left: 6px;">{{ item.label }}</div>
+        <div style="font-size: 15px; color: #666; max-width: 600px; margin-left: 10px;">{{ item.desc }}</div>
+      </div>
+    </div>
+  </section>
 
 </template>
 
