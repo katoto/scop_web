@@ -228,6 +228,34 @@ const localePath = useLocalePath()
     </div>
   </section>
 
+  <!-- 专家团队 -->
+  <section class="expert-section">
+    <div class="expert-modules-with-btn">
+      <div class="expert-modules">
+        <div class="expert-card">
+          <div class="expert-card-img">
+            <img src="/about-Scophil/expert_honjo.jpg" alt="本庶佑教授" />
+          </div>
+          <h4>本庶佑教授</h4>
+          <p>日本著名免疫学家，2018年诺贝尔生理学或医学奖得主。京都大学高等研究院特别教授，癌症免疫疗法开创者。</p>
+        </div>
+        <div class="expert-card">
+          <div class="expert-card-img">
+            <img src="/about-Scophil/expert_gabazza.jpg" alt="Gabazza Esteban教授" />
+          </div>
+          <h4>Gabazza Esteban教授</h4>
+          <p>日本三重大学医学研究科特任教授。免疫学与呼吸内科学专家，CP-101研发领军人。</p>
+        </div>
+        <div class="expert-all-btn-wrap">
+          <NuxtLink class="nav-link" :to="localePath('/about')">
+            <button class="expert-all-btn">查看全部专家团队</button>
+          </NuxtLink>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
 </template>
 
 <style lang="less" scoped>
@@ -765,6 +793,136 @@ const localePath = useLocalePath()
 
   .research-strength-col {
     padding: 16px 0;
+    font-size: 1rem;
+  }
+}
+
+.expert-section {
+  width: 100%;
+  background: #f7f7f7;
+  padding: 60px 0 40px 0;
+}
+
+.expert-modules-with-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  max-width: 1600px;
+  margin: 0 auto;
+
+}
+
+.expert-modules {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.expert-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.06);
+  flex: 1 1 0;
+  min-width: 220px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 24px 24px 24px;
+  transition: box-shadow 0.2s, transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.expert-card:hover {
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.12);
+  transform: scale(1.06);
+}
+
+.expert-card-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 0;
+  overflow: hidden;
+  margin-bottom: 18px;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.expert-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.expert-card h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+.expert-card p {
+  font-size: 0.98rem;
+  color: #666;
+  margin: 0;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .expert-modules {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .expert-card {
+    max-width: 90vw;
+    min-width: 0;
+  }
+}
+
+.expert-all-btn-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+}
+
+.expert-all-btn {
+  background: #fff;
+  color: #C9A14D;
+  border: 2px solid #C9A14D;
+  border-radius: 24px;
+  padding: 12px 36px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+
+.expert-all-btn:hover {
+  background: #C9A14D;
+  color: #fff;
+  border-color: #C9A14D;
+}
+
+@media (max-width: 900px) {
+  .expert-modules-with-btn {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+
+  }
+
+  .expert-all-btn {
+    width: 90vw;
+    padding: 14px 0;
     font-size: 1rem;
   }
 }
