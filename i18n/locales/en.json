@@ -83,44 +83,7 @@
   "contact": {
     "title": "Contact Us",
     "subtitle": "Looking forward to communicating with you",
-    "headquarters": {
-      "title": "Headquarters",
-      "address": {
-        "title": "Address",
-        "content": "No. 2 Xingang Road, Zhangwan Town, Jiaocheng District, Ningde City, Fujian Province"
-      },
-      "phone": {
-        "title": "Phone",
-        "content": "+86-593-2888888"
-      },
-      "email": {
-        "title": "Email",
-        "content": "contact_catl.com"
-      }
-    },
-    "global": {
-      "title": "Global Contact Information",
-      "asia": {
-        "title": "Asia",
-        "content": "China, Japan, South Korea, India, and other regions"
-      },
-      "europe": {
-        "title": "Europe",
-        "content": "Germany, Hungary, France, and other regions"
-      },
-      "america": {
-        "title": "America",
-        "content": "United States, Canada, and other regions"
-      }
-    },
-    "form": {
-      "title": "Online Consultation",
-      "name": "Name",
-      "email": "Email",
-      "subject": "Subject",
-      "message": "Message Content",
-      "submit": "Submit"
-    }
+    
   },
   "hero": {
     "title": "Commercial Applications",
