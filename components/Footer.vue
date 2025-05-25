@@ -1,123 +1,155 @@
 <template>
-  <footer class="bg-light py-5 ">
+  <footer class="bg-light py-5">
     <div class="container">
-      <div class="row">
-        <div class="col-md-3 mb-4">
-          <h5>{{ $t('footer.solutions') }}</h5>
+      <div class="footer-nav">
+        <div class="footer-nav-item">
+          <h5>{{ $t('nav.about') }}</h5>
           <ul class="list-unstyled">
             <li>
-              <NuxtLink :to="switchLocalePath('/solution/passenger')">{{ $t('nav.passenger') }}</NuxtLink>
-            </li>
-            <li>
-              <NuxtLink :to="switchLocalePath('/solution/commercialEV')">{{ $t('nav.commercialEV') }}</NuxtLink>
-            </li>
-            <li>
-              <NuxtLink :to="switchLocalePath('/solution/energyStorage')">{{ $t('nav.energyStorage') }}</NuxtLink>
-            </li>
-            <li>
-              <NuxtLink :to="switchLocalePath('/solution/recycling')">{{ $t('nav.recycling') }}</NuxtLink>
+              <NuxtLink :to="localePath('/about')">{{ $t('nav.about') }}</NuxtLink>
             </li>
           </ul>
         </div>
-        <div class="col-md-3 mb-4">
-          <h5>{{ $t('footer.rd') }}</h5>
+        <div class="footer-nav-item">
+          <h5>{{ $t('nav.product') }}</h5>
           <ul class="list-unstyled">
             <li>
-              <NuxtLink :to="switchLocalePath('/rd/innovation')">{{ $t('footer.innovation') }}</NuxtLink>
-            </li>
-            <li>
-              <NuxtLink :to="switchLocalePath('/rd/technology')">{{ $t('footer.technology') }}</NuxtLink>
+              <NuxtLink :to="localePath('/product0')">{{ $t('nav.product') }}</NuxtLink>
             </li>
           </ul>
         </div>
-        <div class="col-md-3 mb-4">
-          <h5>{{ $t('footer.brand') }}</h5>
+        <div class="footer-nav-item">
+          <h5>{{ $t('nav.r_and_d') }}</h5>
           <ul class="list-unstyled">
             <li>
-              <NuxtLink :to="switchLocalePath('/brand/tech')">{{ $t('footer.techBrand') }}</NuxtLink>
+              <NuxtLink :to="localePath('/rd')">{{ $t('nav.rd') }}</NuxtLink>
             </li>
             <li>
-              <NuxtLink :to="switchLocalePath('/brand/service')">{{ $t('footer.serviceBrand') }}</NuxtLink>
+              <NuxtLink :to="localePath('/rdfeedback')">{{ $t('nav.rdFeedback') }}</NuxtLink>
             </li>
           </ul>
         </div>
-        <div class="col-md-3 mb-4">
-          <h5>{{ $t('footer.about') }}</h5>
+        <div class="footer-nav-item">
+          <h5>{{ $t('nav.news') }}</h5>
           <ul class="list-unstyled">
             <li>
-              <NuxtLink :to="switchLocalePath('/about/culture')">{{ $t('footer.culture') }}</NuxtLink>
+              <NuxtLink :to="localePath('/news')">{{ $t('nav.news') }}</NuxtLink>
             </li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-item">
+          <h5>{{ $t('nav.contact') }}</h5>
+          <ul class="list-unstyled">
             <li>
-              <NuxtLink :to="switchLocalePath('/about/strategy')">{{ $t('footer.strategy') }}</NuxtLink>
-            </li>
-            <li>
-              <NuxtLink :to="switchLocalePath('/about/profile')">{{ $t('footer.profile') }}</NuxtLink>
-            </li>
-            <li>
-              <NuxtLink :to="switchLocalePath('/about/sustainability')">{{ $t('footer.sustainability') }}</NuxtLink>
-            </li>
-            <li>
-              <NuxtLink :to="switchLocalePath('/about/careers')">{{ $t('footer.careers') }}</NuxtLink>
+              <NuxtLink :to="localePath('/contact')">{{ $t('nav.contact') }}</NuxtLink>
             </li>
           </ul>
         </div>
       </div>
       <hr>
-      <div class="row">
-        <div class="col-md-6">
-          <p class="mb-0">&copy; {{ new Date().getFullYear() }} {{ $t('footer.copyright') }}</p>
-        </div>
-        <div class="col-md-6 text-md-end">
-          <ul class="list-inline mb-0">
-            <li class="list-inline-item">
-              <NuxtLink :to="switchLocalePath('/privacy')">{{ $t('footer.privacy') }}</NuxtLink>
-            </li>
-            <li class="list-inline-item">
-              <NuxtLink :to="switchLocalePath('/legal')">{{ $t('footer.legal') }}</NuxtLink>
-            </li>
-          </ul>
-        </div>
+      <div class="footer-copyright">
+        <p class="mb-0 text-center">&copy; {{ new Date().getFullYear() }} {{ $t('footer.copyright') }}</p>
       </div>
     </div>
   </footer>
 </template>
 
 <script setup>
-const switchLocalePath = useSwitchLocalePath()
+const localePath = useLocalePath()
 </script>
 
 <style lang="less" scoped>
 footer {
-  a {
-    color: #666;
-    text-decoration: none;
+  .footer-nav {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 2rem;
 
-    &:hover {
-      color: #007bff;
-    }
-  }
+    .footer-nav-item {
+      flex: 1;
+      min-width: 160px;
+      max-width: 200px;
 
-  h5 {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    color: #333;
-  }
+      h5 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        color: #333;
+        font-weight: 600;
+        position: relative;
+        padding-bottom: 8px;
+      }
 
-  ul {
-    li {
-      margin-bottom: 0.5rem;
+      ul {
+        li {
+          margin-bottom: 0.8rem;
+
+          a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 0;
+            display: inline-block;
+            cursor: pointer;
+
+            &::before {
+              content: '';
+              position: absolute;
+              left: 0;
+              bottom: -2px;
+              width: 0;
+              height: 1px;
+              background-color: #C9A14D;
+              transition: width 0.3s ease;
+            }
+
+            &:hover {
+              color: #C9A14D;
+              padding-left: 8px;
+
+              &::before {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
     }
   }
 
   hr {
     margin: 2rem 0;
+    border-color: #eee;
   }
 
-  .list-inline-item {
-    margin-left: 1rem;
+  .footer-copyright {
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+  }
+}
 
-    &:first-child {
-      margin-left: 0;
+@media screen and (max-width: 768px) {
+  footer {
+    .footer-nav {
+      .footer-nav-item {
+        flex: 0 0 calc(50% - 20px);
+        max-width: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  footer {
+    .footer-nav {
+      .footer-nav-item {
+        flex: 0 0 100%;
+      }
     }
   }
 }

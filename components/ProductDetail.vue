@@ -15,7 +15,7 @@ console.log('index', index);
         <div class="product-detail-desc">
             <div class="detail-content-block">
                 <div class="icon-title">
-                    <span class="icon">🍄</span>
+                    <!-- <span class="icon">🍄</span> -->
                     <span class="title">{{ products[index].name }}</span>
                 </div>
                 <div class="desc-list">

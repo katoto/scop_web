@@ -3,8 +3,7 @@
 
 <template>
   <div>
-    <Navbar1 />
-    <!-- <Navbar /> -->
+    <Navbar />
     <main class="main-content">
       <slot />
     </main>
