@@ -94,7 +94,7 @@ const handleClick = (child) => {
 <template>
     <nav class="navbar" :class="{ 'scrolled': isScrolled }">
         <div class="navbar-container navbar-container-desktop">
-            <div @click="() => {
+            <div style="cursor: pointer;" @click="() => {
                 navigateTo('/')
             }">
                 <svg class="logo-svg" viewBox="0 0 1689.13 419.02">

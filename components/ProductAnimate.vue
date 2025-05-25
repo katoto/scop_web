@@ -126,12 +126,12 @@ let handleGotoDetail = (num: number) => {
       <div class="product-detail-desc pc-hide" v-if="selectedProductIndex !== null">
         <div class="detail-content-block">
           <div class="icon-title">
-            <span class="icon">🍄</span>
-            <span class="title">{{ products[selectedProductIndex].name }}&nbsp;CP-101</span>
+            <!-- <span class="icon">🍄</span> -->
+            <span class="title">{{ products[selectedProductIndex].name }}</span>
           </div>
           <div class="desc-list">
-            <div>天然蘑菇提取物为主要活性成分</div>
-            <div>抑制癌细胞增殖，促进细胞正常凋亡111</div>
+            <div class="desc-list-subName">{{ products[selectedProductIndex].subName }}</div>
+            <div>{{ products[selectedProductIndex].description }}</div>
           </div>
           <button class="detail-btn" @click="() => {
             navigateTo(products[selectedProductIndex].link)
@@ -387,7 +387,7 @@ let handleGotoDetail = (num: number) => {
 
 .product-img-detail {
   width: 100%;
-  max-width: 150px;
+  max-width: 90px;
   -webkit-box-reflect: below -15% linear-gradient(transparent, rgba(255, 255, 255, 0.3));
 }
 
@@ -507,10 +507,10 @@ let handleGotoDetail = (num: number) => {
   .icon-title {
     display: flex;
     align-items: center;
-    font-size: 2.6rem;
+    font-size: 2rem;
     font-weight: bold;
     letter-spacing: 0.2em;
-    margin-bottom: 32px;
+    margin-bottom: 12px;
     transform: translateY(0);
     transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
 
@@ -528,7 +528,6 @@ let handleGotoDetail = (num: number) => {
 
   .desc-list {
     font-size: 1.3rem;
-    line-height: 2.2rem;
     margin-bottom: 36px;
     letter-spacing: 0.18em;
     transform: translateY(0);
@@ -538,6 +537,7 @@ let handleGotoDetail = (num: number) => {
       margin-bottom: 8px;
       opacity: 1;
       transform: translateY(0);
+      line-height: 1.8rem;
       transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
   }
@@ -612,7 +612,6 @@ let handleGotoDetail = (num: number) => {
   }
 
 
-
   .detail-content-block {
     margin: 0;
     /* padding: 0 20px 40px; */
@@ -623,7 +622,7 @@ let handleGotoDetail = (num: number) => {
 
     .icon-title {
       font-size: 2rem;
-      margin-bottom: 24px;
+      margin: 12px 0 2px 0;
       flex-direction: column;
       gap: 12px;
 
@@ -633,7 +632,7 @@ let handleGotoDetail = (num: number) => {
       }
 
       .title {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
       }
     }
 
@@ -643,6 +642,9 @@ let handleGotoDetail = (num: number) => {
       margin-bottom: 32px;
       width: 100%;
       max-width: 400px;
+    }
+    .desc-list-subName {
+      font-size: 1.3rem;
     }
 
     .detail-btn {

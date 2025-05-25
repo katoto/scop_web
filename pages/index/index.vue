@@ -146,17 +146,22 @@ const localePath = useLocalePath()
 
   <!-- 科研历史 -->
   <section class="research-history-section">
-    <div class="research-history-title" style="text-align: center; width: 100%; margin-top: 60px;">
-      <h2 style="display: inline-block; font-size: 32px; font-weight: 700; margin: 0;">科研历史</h2>
+    <div class="research-history-title">
+      <h2>科研历史</h2>
     </div>
-    <div class="research-history-container"
-      style="padding: 60px 0; display: flex; flex-direction: column; align-items: center; gap: 80px;">
-      <div v-for="item in researchList" :key="item.label"
-        style="display: flex; flex-direction: row; align-items: flex-end; justify-content: center; gap: 10px; width: 100%;">
-        <NumberScroll :start="item.start" :end="item.end" :duration="item.duration" :decimals="item.decimals"
-          :suffix="item.suffix" :color="'#C9A14D'" style="font-size: 80px; line-height: 1;" />
-        <div style="font-size: 18px; color: rgb(201, 161, 77); margin-left: 6px;">{{ item.label }}</div>
-        <div style="font-size: 15px; color: #666; max-width: 600px; margin-left: 10px;">{{ item.desc }}</div>
+    <div class="research-history-container">
+      <div v-for="item in researchList" :key="item.label" class="research-history-item">
+        <NumberScroll 
+          :start="item.start" 
+          :end="item.end" 
+          :duration="item.duration" 
+          :decimals="item.decimals"
+          :suffix="item.suffix" 
+          :color="'#C9A14D'" 
+          class="research-number" 
+        />
+        <div class="research-label">{{ item.label }}</div>
+        <div class="research-desc">{{ item.desc }}</div>
       </div>
     </div>
   </section>
@@ -850,7 +855,7 @@ const localePath = useLocalePath()
   }
 
   .research-strength-divider {
-    width: 60%;
+    width: 100%;
     height: 1px;
     margin: 16px 0;
   }
@@ -1021,23 +1026,29 @@ const localePath = useLocalePath()
     }
   }
 
-
   .mc_a1s1_list {
     padding-bottom: 0;
     margin-bottom: 0;
     overflow: hidden;
     padding: 0 80px;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .mc_a1s1_li {
-    float: left;
+    float: none;
     width: 33.333333%;
     list-style-type: none;
+    padding: 0 15px;
+    box-sizing: border-box;
   }
 
   .mc_a1s1_a {
     display: block;
     padding: 55px 40px 65px;
+    background: #fff;
+    transition: all 0.3s ease;
+    height: 100%;
   }
 
   .mc_a1s1_a:hover {
@@ -1097,7 +1108,7 @@ const localePath = useLocalePath()
     line-height: 54px;
     font-size: 14px;
     font-weight: bold;
-    font-family: "OPPOSans2_En_design-Heavy", "OPPOSans2_En_design-Regular", "å¾®è½¯é›…é»‘", Arial, "PingFangSC-Light", "Helvetica Neue", Helvetica, "Microsoft Yahei", "Hiragino Sans GB", tahoma, SimSun, sans-serif;
+    font-family: "OPPOSans2_En_design-Heavy", "OPPOSans2_En_design-Regular", "微软雅黑", Arial, "PingFangSC-Light", "Helvetica Neue", Helvetica, "Microsoft Yahei", "Hiragino Sans GB", tahoma, SimSun, sans-serif;
     color: #fff;
   }
 
@@ -1171,7 +1182,231 @@ const localePath = useLocalePath()
     left: 0;
     object-fit: cover;
   }
+}
 
+// 移动端适配
+@media screen and (max-width: 768px) {
+  .news-section {
+    .news-section-title {
+      padding: 20px 0;
 
+      h2 {
+        font-size: 28px;
+      }
+    }
+
+    .mc_a1s1_list {
+      padding: 0 20px;
+      flex-direction: column;
+    }
+
+    .mc_a1s1_li {
+      width: 100%;
+      padding: 0;
+      margin-bottom: 20px;
+
+      &:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px solid #e5e5e5;
+      }
+    }
+
+    .mc_a1s1_a {
+      padding: 30px 20px;
+    }
+
+    .mc_a1s1_txt {
+      font-size: 20px;
+      line-height: 28px;
+      height: auto;
+      min-height: 56px;
+      margin-bottom: 30px;
+    }
+
+    .mc_a1s1_date {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .mc_a1s1_imgbox {
+      margin-top: 30px;
+    }
+
+    .mc_list_png {
+      height: 180px;
+    }
+
+    .mc_a1s1_morebtn {
+      padding: 0 30px;
+      line-height: 44px;
+      font-size: 13px;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .news-section {
+    .news-section-title h2 {
+      font-size: 24px;
+    }
+
+    .mc_a1s1_list {
+      padding: 0 15px;
+    }
+
+    .mc_a1s1_a {
+      padding: 25px 15px;
+    }
+
+    .mc_a1s1_txt {
+      font-size: 18px;
+      line-height: 26px;
+      min-height: 52px;
+      margin-bottom: 25px;
+    }
+
+    .mc_a1s1_date {
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .mc_a1s1_imgbox {
+      margin-top: 25px;
+    }
+
+    .mc_list_png {
+      height: 160px;
+    }
+
+    .mc_a1s1_morebtn {
+      padding: 0 25px;
+      line-height: 40px;
+      font-size: 12px;
+    }
+  }
+}
+
+.research-history-section {
+  width: 100%;
+  padding: 60px 0;
+  background: #fff;
+
+  .research-history-title {
+    text-align: center;
+    width: 100%;
+    margin-top: 60px;
+
+    h2 {
+      display: inline-block;
+      font-size: 32px;
+      font-weight: 700;
+      margin: 0;
+    }
+  }
+
+  .research-history-container {
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .research-history-item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+
+    .research-number {
+      font-size: 80px;
+      line-height: 1;
+      color: #C9A14D;
+    }
+
+    .research-label {
+      font-size: 18px;
+      color: #C9A14D;
+      margin-left: 6px;
+    }
+
+    .research-desc {
+      font-size: 15px;
+      color: #666;
+      max-width: 600px;
+      margin-left: 10px;
+    }
+  }
+}
+
+// 移动端适配
+@media screen and (max-width: 768px) {
+  .research-history-section {
+    padding: 40px 0;
+
+    .research-history-title {
+      margin-top: 40px;
+
+      h2 {
+        font-size: 28px;
+      }
+    }
+
+    .research-history-container {
+      padding: 40px 20px;
+      gap: 40px;
+    }
+
+    .research-history-item {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 15px;
+
+      .research-number {
+        font-size: 60px;
+      }
+
+      .research-label {
+        margin-left: 0;
+        font-size: 16px;
+      }
+
+      .research-desc {
+        margin-left: 0;
+        font-size: 14px;
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .research-history-section {
+    .research-history-title h2 {
+      font-size: 24px;
+    }
+
+    .research-history-item {
+      .research-number {
+        font-size: 48px;
+      }
+
+      .research-label {
+        font-size: 15px;
+      }
+
+      .research-desc {
+        font-size: 13px;
+        padding: 0 15px;
+      }
+    }
+  }
 }
 </style>
