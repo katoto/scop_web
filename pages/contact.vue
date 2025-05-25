@@ -1,7 +1,8 @@
 <template>
   <div class="contact-page">
-    <!-- 背景图 -->
-    <div class="content-product">
+    <!-- 修改顶部背景部分 -->
+    <div class="contact-hero">
+      <img class="contact-bg" src="/contact/contact_bg.png" alt="">
       <h2 class="title">{{ $t('contact.title') }}</h2>
     </div>
 
@@ -46,67 +47,78 @@
   position: relative;
   min-height: 100vh;
   overflow: hidden;
+}
 
-  .content-product {
-    background-image: url('/contact/contact_bg.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 0 -140px;
-    height: 69vh;
-    display: flex;
-    align-items: center;
+.contact-hero {
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
 
-    .title {
-      position: relative;
-      z-index: 12;
-      color: #fff;
-      text-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
-      margin: 0;
-      animation: fadeInUp 1.2s;
-      margin-left: 70px;
-      font-size: 24px;
-      margin-top: -100px;
-    }
+  .contact-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center -140px;
+    height: 390px;
+    z-index: 1;
   }
 
-  .qrcode-wrap {
+  .title {
+    position: relative;
+    z-index: 12;
+    color: #fff;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+    margin: 0;
     display: flex;
     align-items: center;
+    margin-left: 100px;
+    font-size: 2rem;
+    animation: fadeInUp 1.2s;
+  }
+}
+
+.qrcode-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+  .qrcode-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    height: 60vh;
-    .qrcode-item {
+    color: #faa73c;
+
+    .sub-title {
+      margin-top: 30px;
+      font-size: 20px;
+      margin-bottom: 2px;
+      font-family: monospace;
+    }
+
+    .qrcode {
+      width: 180px;
+      height: 180px;
+    }
+
+    .wechat-cont {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      color: #faa73c;
 
-      .sub-title {
-        margin-top: 30px;
-        font-size: 20px;
-        margin-bottom: 2px;
-        font-family: monospace;
+      .icon_wechat {
+        width: 19px;
+        height: 16px;
+        display: block;
+        margin-right: 2px;
       }
 
-      .qrcode {
-        width: 180px;
-        height: 180px;
-      }
-
-      .wechat-cont {
-        display: flex;
-        align-items: center;
-
-        .icon_wechat {
-          width: 19px;
-          height: 16px;
-          display: block;
-          margin-right: 2px;
-        }
-
-        .logo-name {
-          font-weight: bold;
-        }
+      .logo-name {
+        font-weight: bold;
       }
     }
   }

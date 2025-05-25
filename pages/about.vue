@@ -5,7 +5,7 @@
       <div class="banner-overlay"></div>
       <!-- 品牌介绍 -->
       <div class="banner-content">
-        <h2>关于 Scophil</h2>
+        <h2 class="title">关于 Scophil</h2>
         <p>
           Scophil 源自 "Science"（科学）与 "Philosophy"（哲学）的结合，寓意「科学赋能生命之美」。我们致力于通过前沿生物科技与严谨科研精神，为人类带来卓越健康解决方案，重塑生命活力与幸福品质。
         </p>
@@ -205,6 +205,25 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0)
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp
+}
+
 .about-page {
   color: #333;
   font-family: 'Source Han Sans SC', '思源黑体', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
@@ -238,6 +257,18 @@ onUnmounted(() => {
   margin-right: auto;
   padding: 32px 24px 32px 0;
   color: #fff;
+
+  .title {
+    position: relative;
+    z-index: 12;
+    color: #fff;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    animation: fadeInUp 1.2s;
+  }
 }
 
 .banner h1 {

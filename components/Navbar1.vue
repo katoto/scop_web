@@ -128,10 +128,10 @@ const handleClick = (child) => {
             <div class="menu desktop-menu" @mouseleave="handleMouseLeave">
                 <span v-for="(item, menuIndex) in menu" :key="item.name" class="menu-item"
                     @mouseenter="handleMouseEnter(menuIndex)">
-
-                    <NuxtLink class="nav-link" :to="localePath(item.path)" v-if="!item.children"> {{ $t(item.name) }}
+                    <NuxtLink class="nav-link" 
+                        :to="item.children ? localePath(item.children[0].path) : localePath(item.path)"> 
+                        {{ $t(item.name) }}
                     </NuxtLink>
-                    <span v-else class="nav-link"> {{ $t(item.name) }}</span>
                     <div class="menu-item-children" v-if="item.children && currentMenuIndex === menuIndex">
                         <span v-for="(child, childIndex) in item.children" :key="child.name" class="menu-item-child"
                             @click="handleClick(child)">
@@ -145,11 +145,19 @@ const handleClick = (child) => {
             <div class="mobile-menu" :class="{ 'active': isMobileMenuOpen }">
                 <div class="mobile-menu-content">
                     <div v-for="(item, menuIndex) in menu" :key="item.name" class="mobile-menu-item">
-                        <NuxtLink class="mobile-nav-link" :to="localePath(item.path)" v-if="!item.children"
-                            @click="closeMobileMenu">
-                            {{ $t(item.name) }}
-                        </NuxtLink>
+                        <template v-if="!item.children">
+                            <NuxtLink class="mobile-nav-link" 
+                                :to="localePath(item.path)"
+                                @click="closeMobileMenu">
+                                {{ $t(item.name) }}
+                            </NuxtLink>
+                        </template>
                         <template v-else>
+                            <NuxtLink class="mobile-nav-link" 
+                                :to="localePath(item.children[0].path)"
+                                @click="closeMobileMenu">
+                                {{ $t(item.name) }}
+                            </NuxtLink>
                             <div class="mobile-submenu">
                                 <div class="mobile-submenu-title">{{ $t(item.name) }}</div>
                                 <div class="mobile-submenu-items">
