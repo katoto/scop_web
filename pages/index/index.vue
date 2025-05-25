@@ -31,6 +31,10 @@ let showBlockRed = ref(false);
 let showBlockGold = ref(false);
 let showBlockOrange = ref(false);
 
+// Fix ref array initialization
+const researchStrengthCols = ref<HTMLElement[]>([]);
+const observer = ref<IntersectionObserver | null>(null);
+
 const products = [
   {
     id: 1,
@@ -100,15 +104,43 @@ const getAnimationDelay = (index: number) => {
 };
 
 onMounted(() => {
-
   updateDomSize();
   window.addEventListener("mousemove", handleMouseMove);
   window.addEventListener("resize", updateDomSize);
+
+  // Setup intersection observer for research strength columns
+  observer.value = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('cont-fade-in');
+      } else {
+        entry.target.classList.remove('cont-fade-in');
+      }
+    });
+  }, {
+    threshold: 0.2,
+    rootMargin: '0px'
+  });
+
+  // Observe all research strength columns
+  nextTick(() => {
+    const cols = document.querySelectorAll('.research-strength-col');
+    cols.forEach(col => {
+      if (col instanceof HTMLElement) {
+        observer.value?.observe(col);
+      }
+    });
+  });
 });
 
 onUnmounted(() => {
   window.removeEventListener("mousemove", handleMouseMove);
   window.removeEventListener("resize", updateDomSize);
+
+  // Cleanup observer
+  if (observer.value) {
+    observer.value.disconnect();
+  }
 });
 
 let log = () => {
@@ -258,6 +290,84 @@ const localePath = useLocalePath()
 
     </div>
   </section>
+
+  <!-- 新闻中心 -->
+  <section class="news-section">
+    <div class="news-section-title">
+      <h2>新闻中心</h2>
+    </div>
+
+    <div>
+      <div class="mc_a1_bd">
+        <ul class="mc_a1s1_list clearfix">
+          <li class="mc_a1s1_li">
+            <a href="/news/8415.html" class="mc_a1s1_a">
+              <div class="mc_a1s1_txtbox">
+                <div class="mc_a1s1_date">
+                  <i class="iconfont iconshijian"></i>
+                  <span>2025-05-08</span>
+                </div>
+                <div class="mc_a1s1_txt">
+                  宁德时代发布全球首款9MWh超大容量TENER Stack储能系统解决方案
+                </div>
+                <div class="mc_a1s1_more">
+                  <div class="mc_a1s1_morebtn">了解更多</div>
+                </div>
+              </div>
+              <div class="mc_a1s1_imgbox mc_list_imgbox">
+                <img src="/news/brandNew-1.jpeg" alt="" class="mc_list_png">
+                <img src="https://www.catl.com/uploads/1/image/public/202505/20250509171703_id04ypj7pg.jpg" alt=""
+                  class="mc_list_img">
+              </div>
+            </a>
+          </li>
+          <li class="mc_a1s1_li">
+            <a href="/news/8402.html" class="mc_a1s1_a">
+              <div class="mc_a1s1_txtbox">
+                <div class="mc_a1s1_date">
+                  <i class="iconfont iconshijian"></i>
+                  <span>2025-04-29</span>
+                </div>
+                <div class="mc_a1s1_txt">
+                  宁德时代成为首家通过动力电池新国标的企业
+                </div>
+                <div class="mc_a1s1_more">
+                  <div class="mc_a1s1_morebtn">了解更多</div>
+                </div>
+              </div>
+              <div class="mc_a1s1_imgbox mc_list_imgbox">
+                <img src="/news/brandNew-2.jpeg" alt="" class="mc_list_png">
+                <img src="https://www.catl.com/uploads/1/image/public/202504/20250430184055_1stc8rdx7t.jpg" alt=""
+                  class="mc_list_img">
+              </div>
+            </a>
+          </li>
+          <li class="mc_a1s1_li">
+            <a href="/news/8401.html" class="mc_a1s1_a">
+              <div class="mc_a1s1_txtbox">
+                <div class="mc_a1s1_date">
+                  <i class="iconfont iconshijian"></i>
+                  <span>2025-04-23</span>
+                </div>
+                <div class="mc_a1s1_txt">
+                  宁德时代携手五大车企，发布10款巧克力换电新车型
+                </div>
+                <div class="mc_a1s1_more">
+                  <div class="mc_a1s1_morebtn">了解更多</div>
+                </div>
+              </div>
+              <div class="mc_a1s1_imgbox mc_list_imgbox">
+                <img src="/news/brandNew-3.jpeg" alt="" class="mc_list_png">
+                <img src="https://www.catl.com/uploads/1/image/public/202504/20250428193603_sw9jxmtvdv.jpg" alt=""
+                  class="mc_list_img">
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
 
 </template>
 
@@ -739,11 +849,18 @@ const localePath = useLocalePath()
   justify-content: center;
   min-height: 80px;
   word-break: break-all;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 2s ease-out, transform 1s ease-out;
+  opacity: 0;
+  transform: translateY(30px);
+
+  &.cont-fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .research-strength-col:hover {
-  transform: translateY(-10px);
+  transform: translateY(-15px);
 }
 
 .research-strength-divider {
@@ -809,7 +926,7 @@ const localePath = useLocalePath()
 .expert-section-title {
   text-align: center;
   width: 100%;
-  padding: 40px 0;
+  padding: 30px 0;
 
   h2 {
     display: inline-block;
@@ -941,5 +1058,185 @@ const localePath = useLocalePath()
     padding: 14px 0;
     font-size: 1rem;
   }
+}
+
+.news-section {
+  background: #f7f7f7;
+
+  .news-section-title {
+    text-align: center;
+    width: 100%;
+    padding: 30px 0;
+
+    h2 {
+      display: inline-block;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 0;
+    }
+  }
+
+
+  .mc_a1s1_list {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+    padding: 0 80px;
+  }
+
+  .mc_a1s1_li {
+    float: left;
+    width: 33.333333%;
+    list-style-type: none;
+  }
+
+  .mc_a1s1_a {
+    display: block;
+    padding: 55px 40px 65px;
+  }
+
+  .mc_a1s1_a:hover {
+    box-shadow: 15px 9px 14px 2px rgba(110, 117, 129, .18);
+  }
+
+  .mc_a1s1_li:not(:last-child) {
+    border-right: 1px solid #e5e5e5;
+  }
+
+  .mc_a1s1_a:hover .mc_a1s1_morebtn::before {
+    transform: scale(.5);
+    opacity: 0;
+  }
+
+  .mc_a1s1_a:hover .mc_a1s1_morebtn::after {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .mc_a1s1_a:hover .mc_a1s1_morebtn {
+    color: #C9A14D;
+  }
+
+  .mc_a1s1_a:hover .mc_a1s1_imgbox::after {
+    width: 100%;
+  }
+
+  .mc_a1s1_date {
+    font-size: 16px;
+    color: #C9A14D;
+    line-height: 20px;
+    margin-bottom: 25px;
+  }
+
+  .mc_a1s1_date i,
+  .mc_a1s1_date em {
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  .mc_a1s1_txt {
+    font-size: 24px;
+    line-height: 34px;
+    color: #C9A14D;
+    height: 68px;
+    overflow: hidden;
+    margin-bottom: 60px;
+  }
+
+  .mc_a1s1_morebtn {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 40px;
+    line-height: 54px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "OPPOSans2_En_design-Heavy", "OPPOSans2_En_design-Regular", "å¾®è½¯é›…é»‘", Arial, "PingFangSC-Light", "Helvetica Neue", Helvetica, "Microsoft Yahei", "Hiragino Sans GB", tahoma, SimSun, sans-serif;
+    color: #fff;
+  }
+
+  .mc_a1s1_morebtn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background: #C9A14D;
+    transition: all .36s;
+    transform: scale(1) !important;
+  }
+
+  .mc_a1s1_morebtn::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    border: 1px solid #C9A14D;
+    opacity: 0;
+    transform: scale(1);
+    transition: all .36s;
+  }
+
+  .mc_list_imgbox {
+    position: relative;
+  }
+
+  .mc_a1s1_imgbox {
+    margin-top: 55px;
+    overflow: visible;
+  }
+
+  .mc_a1s1_imgbox::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -30px;
+    z-index: 1;
+    width: 100%;
+    height: 1px;
+    background: #e5e5e5;
+  }
+
+  .mc_a1s1_imgbox::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -30px;
+    z-index: 2;
+    width: 0;
+    height: 1px;
+    background: #0028aa;
+    transition: all .5s;
+  }
+
+  .mc_list_png {
+    width: 100%;
+    height: 210px;
+    position: relative;
+    z-index: 1;
+    top: 0;
+    left: 0;
+  }
+
+  .mc_list_img {
+    width: 100%;
+    height: 210px;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+  }
+
+
+
 }
 </style>
