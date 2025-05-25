@@ -87,12 +87,13 @@
   align-items: center;
   justify-content: center;
   padding: 60px 0;
+
   .qrcode-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #faa73c;
+    color: #C9A14D;
 
     .sub-title {
       margin-top: 30px;
@@ -112,13 +113,14 @@
 
       .icon_wechat {
         width: 19px;
-        height: 16px;
+        height: 15px;
         display: block;
-        margin-right: 2px;
+        margin-right: 3px;
       }
 
       .logo-name {
         font-weight: bold;
+        font-family: 'Source Han Sans SC', '思源黑体', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
       }
     }
   }
