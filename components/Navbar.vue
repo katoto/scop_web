@@ -10,10 +10,16 @@ const isMobileMenuOpen = ref(false)
 
 const toggleMobileMenu = () => {
     isMobileMenuOpen.value = !isMobileMenuOpen.value
+    if (isMobileMenuOpen.value) {
+        document.body.style.overflow = 'hidden'
+    } else {
+        document.body.style.overflow = ''
+    }
 }
 
 const closeMobileMenu = () => {
     isMobileMenuOpen.value = false
+    document.body.style.overflow = ''
 }
 
 const handleScroll = () => {
@@ -143,6 +149,12 @@ const handleClick = (child) => {
                 </span>
             </div>
 
+            <!-- 移动端菜单遮罩 -->
+            <div class="mobile-menu-overlay" 
+                :class="{ 'active': isMobileMenuOpen }" 
+                @click="closeMobileMenu">
+            </div>
+
             <!-- 移动端菜单 -->
             <div class="mobile-menu" :class="{ 'active': isMobileMenuOpen }">
                 <div class="mobile-menu-content">
@@ -153,10 +165,6 @@ const handleClick = (child) => {
                             </NuxtLink>
                         </template>
                         <template v-else>
-                            <NuxtLink class="mobile-nav-link" :to="localePath(item.children[0].path)"
-                                @click="closeMobileMenu">
-                                {{ $t(item.name) }}
-                            </NuxtLink>
                             <div class="mobile-submenu">
                                 <div class="mobile-submenu-title">{{ $t(item.name) }}</div>
                                 <div class="mobile-submenu-items">
@@ -309,6 +317,25 @@ const handleClick = (child) => {
     }
 }
 
+.mobile-menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 8;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
 .mobile-menu {
     display: none;
     position: fixed;
@@ -319,8 +346,10 @@ const handleClick = (child) => {
     background-color: #fff;
     transform: translateX(100%);
     transition: transform 0.3s ease;
-    z-index: 10;
+    z-index: 1000;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
 
     &.active {
         transform: translateX(0);
@@ -329,6 +358,10 @@ const handleClick = (child) => {
 
 .mobile-menu-content {
     padding: 20px;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
 .mobile-menu-item {
@@ -337,11 +370,12 @@ const handleClick = (child) => {
 
 .mobile-nav-link {
     display: block;
-    padding: 10px 0;
+    padding: 12px 0;
     color: #343a40;
     text-decoration: none;
     font-size: 16px;
     transition: color 0.3s ease;
+    border-bottom: 1px solid #f0f0f0;
 
     &:hover {
         color: #C9A14D;
@@ -350,18 +384,24 @@ const handleClick = (child) => {
 
 .mobile-submenu {
     .mobile-submenu-title {
-        padding: 10px 0;
-        font-weight: 500;
-        color: #C9A14D;
+        padding: 12px 0;
+        color: #343a40;
+        border-bottom: 1px solid #f0f0f0;
     }
 
     .mobile-submenu-items {
         padding-left: 15px;
     }
+
+    .mobile-nav-link {
+        padding: 10px 0;
+        font-size: 15px;
+        color: #666;
+    }
 }
 
 .mobile-language-switcher {
-    margin-top: 20px;
+    margin-top: auto;
     padding-top: 20px;
     border-top: 1px solid #eee;
 }
@@ -466,6 +506,9 @@ const handleClick = (child) => {
 }
 
 @media screen and (max-width: 768px) {
+    .mobile-menu-overlay {
+        display: block;
+    }
 
     .desktop-menu,
     .desktop-dropdown {
