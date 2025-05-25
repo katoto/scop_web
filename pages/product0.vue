@@ -516,7 +516,7 @@ onMounted(() => {
 
   h2 {
     color: #222;
-    font-size: 2rem;
+    font-size: 32px;
     font-weight: 700;
     margin-bottom: 28px;
     letter-spacing: 0.08em;

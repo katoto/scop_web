@@ -1,55 +1,16 @@
 <script setup lang="ts">
 import { ref, reactive, onMounted } from "vue";
+import { useRouter } from '#app';
+import { products } from '@/data/products';
 
 let selectedProductIndex = ref<any>(null);
 let isBack = ref(false);
-const products = [
-  {
-    id: 1,
-    name: "产品一",
-    description:
-      "这是产品一的详细介绍。这是一个创新的解决方案，能够帮助用户更好地完成工作。",
-    image: "/images/pro-3.png",
-    color:
-      "linear-gradient(135deg, rgba(255, 107, 107, 0.7), rgba(255, 230, 109, 0.5))",
-    animationType: "default",
-  },
-  {
-    id: 2,
-    name: "产品二",
-    description:
-      "这是产品二的详细介绍。这是一个革命性的产品，能够改变用户的生活方式。",
-    image: "/images/pro-4.png",
-    color:
-      "linear-gradient(135deg, rgba(78, 205, 196, 0.7), rgba(85, 98, 112, 0.5))",
-    animationType: "wave",
-  },
-  {
-    id: 3,
-    name: "产品三",
-    description:
-      "这是产品三的详细介绍。这是一个突破性的技术，能够提升用户的工作效率。",
-    image: "/images/pro-2.png",
-    color:
-      "linear-gradient(135deg, rgba(168, 230, 207, 0.7), rgba(255, 211, 182, 0.5))",
-    animationType: "pulse",
-  },
-  {
-    id: 4,
-    name: "产品四",
-    description:
-      "这是产品四的详细介绍。这是一个创新的设计，能够满足用户的多样化需求。",
-    image: "/images/pro-1.png",
-    color:
-      "linear-gradient(135deg, rgba(184, 242, 230, 0.7), rgba(255, 166, 158, 0.5))",
-    animationType: "float",
-  },
-];
 
 let handleClickBack = () => {
   selectedProductIndex.value = null;
   isBack.value = true;
 };
+
 function getActiveClass(num: any) {
   if (num === selectedProductIndex.value && isBack.value) {
     return 'product-item-bg-active'
@@ -76,7 +37,6 @@ onMounted(() => {
       flag = true
     }
 
-
     doms.forEach((dom: HTMLElement, index: any) => {
       domSizeArr.value[index] = {
         left: flag ? 0 : dom.offsetLeft,
@@ -85,7 +45,6 @@ onMounted(() => {
         height: flag ? innerHeight : dom.offsetHeight
       }
     });
-
   }
 
 })
@@ -108,7 +67,6 @@ let handleGotoDetail = (num: number) => {
 </script>
 
 <template>
-
   <div class="product-container-wrap">
     <button class="back-btn" @click="handleClickBack" v-if="selectedProductIndex !== null">
       <svg width="48" height="48" viewBox="0 0 48 48">
@@ -173,31 +131,17 @@ let handleGotoDetail = (num: number) => {
           </div>
           <div class="desc-list">
             <div>天然蘑菇提取物为主要活性成分</div>
-            <div>增强免疫力，辅助癌症治疗</div>
-            <div>抑制癌细胞增殖，促进细胞正常凋亡</div>
+            <div>抑制癌细胞增殖，促进细胞正常凋亡111</div>
           </div>
-          <button class="detail-btn">点击了解更多</button>
+          <button class="detail-btn" @click="() => {
+            navigateTo(products[selectedProductIndex].link)
+          }">点击了解更多</button>
         </div>
-
       </div>
     </div>
     <ProductDetail :index="selectedProductIndex" />
   </div>
 
-  <!-- <div class="product-container" v-if="selectedProductIndex !== null">
-
-    <button class="back-btn" @click="handleClickBack">
-      <svg width="48" height="48" viewBox="0 0 48 48">
-        <circle cx="24" cy="24" r="23" stroke="#fff" stroke-width="2" fill="none" />
-        <polyline points="28,16 20,24 28,32" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"
-          stroke-linejoin="round" />
-      </svg>
-    </button>
-
-    <div :class="`product-item-wrap product-item-wrap-${selectedProductIndex}`">
-      <div :class="`product-item-bg product-item-bg-${selectedProductIndex}`"></div>
-    </div>
-  </div> -->
 </template>
 
 <style scoped>
@@ -520,7 +464,7 @@ let handleGotoDetail = (num: number) => {
 
 .detail-btn {
   background: #fff;
-  color: #1a2b0d;
+  color: #C9A14D;
   border: 2px solid #fff;
   border-radius: 4px;
   font-size: 1.1rem;
@@ -534,7 +478,7 @@ let handleGotoDetail = (num: number) => {
 
   &:hover {
     background: #e6f5c9;
-    color: #1a2b0d;
+    color: #C9A14D;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
@@ -600,7 +544,7 @@ let handleGotoDetail = (num: number) => {
 
   .detail-btn {
     background: #fff;
-    color: #1a2b0d;
+    color: #C9A14D;
     border: 2px solid #fff;
     border-radius: 4px;
     font-size: 1.1rem;
@@ -614,7 +558,7 @@ let handleGotoDetail = (num: number) => {
 
     &:hover {
       background: #e6f5c9;
-      color: #1a2b0d;
+      color: #C9A14D;
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }

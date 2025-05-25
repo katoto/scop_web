@@ -453,7 +453,6 @@ onMounted(() => {
   max-width: 140px;
   width: 140px;
   height: auto;
-  border-radius: 18px;
   box-shadow: 0 4px 32px rgba(191, 161, 74, 0.12);
   -webkit-box-reflect: below -15% linear-gradient(transparent, rgba(255, 255, 255, 0.3));
 }

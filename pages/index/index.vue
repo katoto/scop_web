@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, reactive, ref, nextTick } from "vue";
 import NumberScroll from '@/components/NumberScroll.vue'
-const switchLocalePath = useSwitchLocalePath()
 
 let position = reactive({
   offsetX: 0,
@@ -39,42 +38,38 @@ const products = [
   {
     id: 1,
     name: "产品一",
-    description:
-      "这是产品一的详细介绍。这是一个创新的解决方案，能够帮助用户更好地完成工作。",
+    description: "这是产品一的详细介绍。这是一个创新的解决方案，能够帮助用户更好地完成工作。",
     image: "/images/pro-3.png",
-    color:
-      "linear-gradient(135deg, rgba(255, 107, 107, 0.7), rgba(255, 230, 109, 0.5))",
+    color: "linear-gradient(135deg, rgba(255, 107, 107, 0.7), rgba(255, 230, 109, 0.5))",
     animationType: "default",
+    link: "/product/1"
   },
   {
     id: 2,
     name: "产品二",
-    description:
-      "这是产品二的详细介绍。这是一个革命性的产品，能够改变用户的生活方式。",
+    description: "这是产品二的详细介绍。这是一个革命性的产品，能够改变用户的生活方式。",
     image: "/images/pro-4.png",
-    color:
-      "linear-gradient(135deg, rgba(78, 205, 196, 0.7), rgba(85, 98, 112, 0.5))",
+    color: "linear-gradient(135deg, rgba(78, 205, 196, 0.7), rgba(85, 98, 112, 0.5))",
     animationType: "wave",
+    link: "/product/2"
   },
   {
     id: 3,
     name: "产品三",
-    description:
-      "这是产品三的详细介绍。这是一个突破性的技术，能够提升用户的工作效率。",
+    description: "这是产品三的详细介绍。这是一个突破性的技术，能够提升用户的工作效率。",
     image: "/images/pro-2.png",
-    color:
-      "linear-gradient(135deg, rgba(168, 230, 207, 0.7), rgba(255, 211, 182, 0.5))",
+    color: "linear-gradient(135deg, rgba(168, 230, 207, 0.7), rgba(255, 211, 182, 0.5))",
     animationType: "pulse",
+    link: "/product/3"
   },
   {
     id: 4,
     name: "产品四",
-    description:
-      "这是产品四的详细介绍。这是一个创新的设计，能够满足用户的多样化需求。",
+    description: "这是产品四的详细介绍。这是一个创新的设计，能够满足用户的多样化需求。",
     image: "/images/pro-1.png",
-    color:
-      "linear-gradient(135deg, rgba(184, 242, 230, 0.7), rgba(255, 166, 158, 0.5))",
+    color: "linear-gradient(135deg, rgba(184, 242, 230, 0.7), rgba(255, 166, 158, 0.5))",
     animationType: "float",
+    link: "/product/4"
   },
 ];
 
@@ -193,7 +188,6 @@ const localePath = useLocalePath()
 </script>
 
 <template>
-
   <div class="contact-page">
     <img src="/images/bg-line-2.png" @load="handleLoad" :style="{
       display: 'none'
@@ -212,7 +206,7 @@ const localePath = useLocalePath()
   <!-- 科研历史 -->
   <section class="research-history-section">
     <div class="research-history-title" style="text-align: center; width: 100%; margin-top: 60px;">
-      <h2 style="display: inline-block; font-size: 2.5rem; font-weight: 700; margin: 0;">科研历史</h2>
+      <h2 style="display: inline-block; font-size: 32px; font-weight: 700; margin: 0;">科研历史</h2>
     </div>
     <div class="research-history-container"
       style="padding: 60px 0; display: flex; flex-direction: column; align-items: center; gap: 80px;">
@@ -924,7 +918,7 @@ const localePath = useLocalePath()
 
   h2 {
     display: inline-block;
-    font-size: 2.5rem;
+    font-size: 32px;
     font-weight: 700;
     margin: 0;
   }
@@ -1064,7 +1058,7 @@ const localePath = useLocalePath()
 
     h2 {
       display: inline-block;
-      font-size: 2.5rem;
+      font-size: 32px;
       font-weight: 700;
       margin: 0;
     }

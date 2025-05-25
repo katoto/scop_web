@@ -312,7 +312,7 @@ const filteredFeedback = computed(() => {
 
   h2 {
     color: #222;
-    font-size: 2rem;
+    font-size: 32px;
     font-weight: 700;
     margin-bottom: 28px;
     letter-spacing: 0.08em;
@@ -955,7 +955,7 @@ const filteredFeedback = computed(() => {
 .patent-section-title {
   color: #222 !important;
   text-align: center !important;
-  font-size: 2rem;
+  font-size: 32px;
   font-weight: 700;
   margin-bottom: 28px;
   letter-spacing: 0.08em;

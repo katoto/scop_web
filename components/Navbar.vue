@@ -4,8 +4,7 @@
     @mouseleave="handleMouseLeave">
     <div class="container">
       <NuxtLink class="navbar-brand" :to="localePath('/')">
-        <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="0 0 1689.13 419.02">
+        <svg class="logo-svg" viewBox="0 0 1689.13 419.02">
           <defs>
             <linearGradient id="logoGradient" x1="0" y1="209.51" x2="279.35" y2="209.51" gradientUnits="userSpaceOnUse">
               <stop offset="0" stop-color="#9e8766" />

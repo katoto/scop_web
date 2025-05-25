@@ -385,7 +385,7 @@ onUnmounted(() => {
 .section.experts h2 {
   color: #222;
   text-align: center;
-  font-size: 2.4rem;
+  font-size: 32px;
   font-weight: 800;
   letter-spacing: 2px;
   margin: 0 0 2.5rem 0;
@@ -741,7 +741,7 @@ onUnmounted(() => {
 
 .section.partners h2 {
   color: #222;
-  font-size: 2.4rem;
+  font-size: 32px;
   font-weight: 800;
   text-align: center;
   letter-spacing: 2px;

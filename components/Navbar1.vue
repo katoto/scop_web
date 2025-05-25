@@ -94,9 +94,10 @@ const handleClick = (child) => {
 
 <template>
     <nav class="navbar" :class="{ 'scrolled': isScrolled }">
-        <div class="navbar-container navbar-container-desktop">
-            <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                viewBox="0 0 1689.13 419.02">
+        <div class="navbar-container navbar-container-desktop" @click="() => {
+            navigateTo('/')
+        }">
+            <svg class="logo-svg" viewBox="0 0 1689.13 419.02">
                 <defs>
                     <linearGradient id="logoGradient" x1="0" y1="209.51" x2="279.35" y2="209.51"
                         gradientUnits="userSpaceOnUse">
@@ -224,7 +225,7 @@ const handleClick = (child) => {
 
 .navbar:hover {
     background-color: #fff;
-    color: #000;
+    color: #C9A14D;
 
     .logo-svg {
         color: transparent;
@@ -238,7 +239,7 @@ const handleClick = (child) => {
 
 .scrolled {
     background-color: #fff;
-    color: #000;
+    color: #C9A14D;
 
     .logo-svg {
         color: transparent;
@@ -330,7 +331,7 @@ const handleClick = (child) => {
 .mobile-nav-link {
     display: block;
     padding: 10px 0;
-    color: #000;
+    color: #C9A14D;
     text-decoration: none;
     font-size: 16px;
     transition: color 0.3s ease;
@@ -344,7 +345,7 @@ const handleClick = (child) => {
     .mobile-submenu-title {
         padding: 10px 0;
         font-weight: 500;
-        color: #000;
+        color: #C9A14D;
     }
 
     .mobile-submenu-items {
@@ -373,16 +374,13 @@ const handleClick = (child) => {
     height: 100%;
 
     .menu-item {
-        height: 100%;
-    }
-
-    .menu-item {
         cursor: pointer;
         height: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
+        padding: 0 10px;
     }
 
     .menu-item::after {
@@ -421,7 +419,7 @@ const handleClick = (child) => {
         height: 50px;
         background-color: #fff;
         z-index: 10;
-        color: #000;
+        color: #C9A14D;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -497,11 +495,11 @@ const handleClick = (child) => {
 
 // 
 .navbar:hover .dropdown-toggle {
-    color: #000;
+    color: #C9A14D;
 }
 
 .scrolled .dropdown-toggle {
-    color: #000;
+    color: #C9A14D;
 }
 
 .dropdown-toggle {
@@ -526,7 +524,7 @@ const handleClick = (child) => {
 
     .dropdown-item {
         padding: 0.5rem 1.5rem;
-        color: #000;
+        color: #C9A14D;
         transition: all 0.5s ease;
 
         &:hover {
