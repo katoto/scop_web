@@ -96,20 +96,20 @@ onMounted(() => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('animate-in');
-        observer.unobserve(entry.target);
+        setTimeout(() => {
+          observer.unobserve(entry.target);
+        }, 1000);
       }
     });
   }, {
-    threshold: 0.2,
-    rootMargin: '0px 0px -100px 0px'
+    threshold: 0.1,
+    rootMargin: '-50px 0px'
   });
 
-  // 观察第一组 feature blocks
   featureRefs.value.forEach(el => {
     if (el) observer.observe(el);
   });
 
-  // 观察第二组 feature blocks
   feature2Refs.value.forEach(el => {
     if (el) observer.observe(el);
   });
@@ -448,20 +448,39 @@ onMounted(() => {
     transform: translateY(0);
   }
 
+  .feature-block-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    padding: 48px 0;
+  }
+
   .feature-img {
     opacity: 0;
     transform: translateX(-30px);
     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+    flex: 0 0 380px;
+    max-width: 420px;
+    width: 38vw;
+    min-width: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .feature-text {
     opacity: 0;
     transform: translateX(30px);
     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+    flex: 1 1 0;
+    min-width: 220px;
+    max-width: 600px;
   }
 
   &.animate-in {
-
     .feature-img,
     .feature-text {
       opacity: 1;
@@ -476,6 +495,13 @@ onMounted(() => {
 
     .feature-text {
       transform: translateX(-30px);
+    }
+
+    &.animate-in {
+      .feature-img,
+      .feature-text {
+        transform: translateX(0);
+      }
     }
   }
 }
@@ -1029,6 +1055,160 @@ onMounted(() => {
   &:hover {
     background: #bfa14a;
     color: white;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .product-hero {
+    padding: 120px 20px 40px 20px;
+    height: auto;
+    min-height: 400px;
+    background-position: center;
+  }
+
+  .banner-content {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .product-hero h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .product-hero .desc {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .product-section {
+    padding: 0 15px;
+    margin-top: 30px;
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+  }
+
+  .feature-blocks {
+    gap: 30px;
+    margin-top: 20px;
+  }
+
+  .feature-block {
+    .feature-block-inner {
+      flex-direction: column !important;
+      gap: 20px;
+      padding: 24px 15px;
+    }
+
+    .feature-img,
+    .feature-text {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+
+    &.animate-in {
+      .feature-img,
+      .feature-text {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    &.reverse {
+      .feature-img,
+      .feature-text {
+        transform: translateY(20px);
+      }
+
+      &.animate-in {
+        .feature-img,
+        .feature-text {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+
+  .feature-img img {
+    width: 100%;
+    border-radius: 12px;
+  }
+
+  .feature-text {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    text-align: left;
+  }
+
+  .feature-text h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+
+  .feature-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .product-hero {
+    padding: 100px 15px 30px 15px;
+    min-height: 320px;
+  }
+
+  .banner-content {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .product-hero h1 {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+  }
+
+  .product-hero .desc {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .product-section {
+    padding: 0 12px;
+    margin-top: 24px;
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+  }
+
+  .feature-blocks {
+    gap: 24px;
+    margin-top: 16px;
+  }
+
+  .feature-block-inner {
+    padding: 20px 12px;
+    gap: 16px;
+  }
+
+  .feature-text h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .feature-text p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .feature-img img {
+    border-radius: 8px;
   }
 }
 </style>

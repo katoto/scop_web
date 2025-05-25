@@ -80,6 +80,28 @@
     font-size: 2rem;
     animation: fadeInUp 1.2s;
   }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 37, 114, .1);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    width: 100%;
+    height: 64%;
+    background: linear-gradient(180deg, rgba(10, 37, 114, .4), rgba(10, 37, 114, 0));
+  }
 }
 
 .qrcode-wrap {
@@ -121,6 +143,94 @@
       .logo-name {
         font-weight: bold;
         font-family: 'Source Han Sans SC', '思源黑体', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      }
+    }
+  }
+}
+
+// 移动端适配
+@media screen and (max-width: 768px) {
+  .contact-hero {
+    height: 300px;
+
+    .contact-bg {
+      height: 300px;
+      object-position: center -80px;
+    }
+
+    .title {
+      margin-left: 40px;
+      font-size: 1.8rem;
+    }
+  }
+
+  .qrcode-wrap {
+    padding: 40px 0;
+
+    .qrcode-item {
+      .sub-title {
+        margin-top: 24px;
+        font-size: 18px;
+      }
+
+      .qrcode {
+        width: 160px;
+        height: 160px;
+      }
+
+      .wechat-cont {
+        .icon_wechat {
+          width: 17px;
+          height: 13px;
+        }
+
+        .logo-name {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contact-hero {
+    height: 240px;
+
+    .contact-bg {
+      height: 240px;
+      object-position: center -60px;
+    }
+
+    .title {
+      margin-left: 20px;
+      font-size: 1.5rem;
+    }
+  }
+
+  .qrcode-wrap {
+    padding: 30px 0;
+
+    .qrcode-item {
+      .sub-title {
+        margin-top: 20px;
+        font-size: 16px;
+        margin-bottom: 1px;
+      }
+
+      .qrcode {
+        width: 140px;
+        height: 140px;
+      }
+
+      .wechat-cont {
+        .icon_wechat {
+          width: 15px;
+          height: 11px;
+        }
+
+        .logo-name {
+          font-size: 14px;
+        }
       }
     }
   }

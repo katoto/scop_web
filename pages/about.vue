@@ -976,7 +976,6 @@ onUnmounted(() => {
 }
 
 @media (max-width: 600px) {
-
   html,
   body,
   .about-page {
@@ -1013,7 +1012,6 @@ onUnmounted(() => {
     padding: 8px 2vw 8px 2vw;
     max-width: 100vw;
     font-size: 0.9rem;
-
   }
 
   .banner-content h2 {
@@ -1075,14 +1073,18 @@ onUnmounted(() => {
     width: 100vw;
     margin: 0 0 6px 0;
     padding: 0 !important;
+    display: flex;
+    justify-content: center;
   }
 
   .expert-img img {
-    width: 100vw;
-    max-width: 100vw;
+    width: 70vw;
+    max-width: 280px;
+    height: 70vw;
+    max-height: 280px;
     border-radius: 4px;
-    object-fit: contain !important;
-    height: auto !important;
+    object-fit: cover;
+    object-position: center;
   }
 
   .expert-info h3 {
@@ -1254,6 +1256,374 @@ onUnmounted(() => {
     font-size: 0.92rem !important;
     line-height: 1.8 !important;
     margin: 0;
+  }
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 768px) {
+  .banner {
+    height: 400px;
+    padding: 0;
+  }
+
+  .banner-content {
+    margin-left: 40px;
+    padding: 24px 20px;
+    max-width: 90%;
+  }
+
+  .banner-content .title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .banner-content p {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .philosophy-row-section .philosophy-row {
+    flex-direction: column;
+  }
+
+  .philosophy-row-section .philosophy-card {
+    min-height: 280px;
+    margin-bottom: 20px;
+  }
+
+  .philosophy-row-section .philosophy-card .philosophy-card-content {
+    padding: 30px 20px;
+  }
+
+  .philosophy-row-section .philosophy-card .philosophy-card-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .philosophy-row-section .philosophy-card .philosophy-card-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .philosophy-row-section .philosophy-card .philosophy-card-content svg {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 15px;
+  }
+
+  .section.experts {
+    padding: 40px 20px;
+  }
+
+  .section.experts h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .section.experts .expert-row,
+  .section.experts .expert-row.reverse {
+    flex-direction: column;
+    padding: 0 20px;
+    gap: 24px;
+    min-height: auto;
+    margin-bottom: 40px;
+  }
+
+  .section.experts .expert-row .expert-img,
+  .section.experts .expert-row.reverse .expert-img {
+    flex: 0 0 280px;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .section.experts .expert-row .expert-img img,
+  .section.experts .expert-row.reverse .expert-img img {
+    height: 260px;
+  }
+
+  .section.experts .expert-row .expert-info,
+  .section.experts .expert-row.reverse .expert-info {
+    text-align: center;
+  }
+
+  .section.experts .expert-row .expert-info h3,
+  .section.experts .expert-row.reverse .expert-info h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .section.experts .expert-row .expert-info .expert-desc,
+  .section.experts .expert-row.reverse .expert-info .expert-desc {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .section.experts .expert-row .expert-points,
+  .section.experts .expert-row.reverse .expert-points {
+    font-size: 1rem;
+    padding-left: 1.5rem;
+  }
+
+  .section.experts .expert-modules {
+    gap: 24px;
+    padding: 0 20px;
+  }
+
+  .section.experts .expert-modules .expert-card {
+    flex: 0 0 calc(50% - 12px);
+    min-width: 280px;
+    max-width: none;
+  }
+
+  .section.experts .expert-modules .expert-card .expert-card-img {
+    aspect-ratio: 3/2;
+  }
+
+  .section.experts .expert-modules .expert-card .expert-card-img img {
+    object-fit: cover;
+  }
+
+  .section.experts .expert-modules .expert-card h4 {
+    font-size: 1.2rem;
+    margin: 1rem 0 0.6rem;
+  }
+
+  .section.experts .expert-modules .expert-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .section.partners {
+    padding: 40px 20px;
+  }
+
+  .section.partners h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .section.partners .partner-carousel {
+    padding: 20px 0 40px;
+  }
+
+  .section.partners .partner-carousel .partner-card-carousel {
+    min-height: 320px;
+  }
+
+  .section.partners .partner-carousel .partner-card-carousel .partner-card-carousel-content {
+    padding: 24px 20px;
+    gap: 24px;
+  }
+
+  .section.partners .partner-carousel .partner-card-carousel .partner-card-carousel-content .partner-card-left .partner-card-title {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .section.partners .partner-carousel .partner-card-carousel .partner-card-carousel-content .partner-card-left .partner-card-desc {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+  }
+
+  .section.partners .partner-carousel .partner-card-carousel .partner-card-carousel-content .partner-card-right img {
+    max-width: 100%;
+    border-radius: 12px;
+  }
+
+  .section.partners .partner-carousel .carousel-arrow {
+    width: 48px;
+    height: 48px;
+    font-size: 1.8rem;
+    margin: 0 12px;
+  }
+
+  .section.partners .partner-carousel .carousel-indicators {
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  .section.partners .partner-carousel .carousel-indicators .carousel-dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .banner {
+    height: 320px;
+  }
+
+  .banner-content {
+    margin-left: 20px;
+    padding: 20px 15px;
+  }
+
+  .banner-content .title {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .banner-content p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .philosophy-row-section .philosophy-card {
+    min-height: 240px;
+    margin-bottom: 15px;
+  }
+
+  .philosophy-row-section .philosophy-card .philosophy-card-content {
+    padding: 24px 15px;
+  }
+
+  .philosophy-row-section .philosophy-card .philosophy-card-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .philosophy-row-section .philosophy-card .philosophy-card-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .philosophy-row-section .philosophy-card .philosophy-card-content svg {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 12px;
+  }
+
+  .section.experts {
+    padding: 30px 15px;
+  }
+
+  .section.experts h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .section.experts .expert-row,
+  .section.experts .expert-row.reverse {
+    padding: 0 15px;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+
+  .section.experts .expert-row .expert-img,
+  .section.experts .expert-row.reverse .expert-img {
+    flex: 0 0 auto;
+    max-width: 100%;
+    margin: 0 auto 12px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .section.experts .expert-row .expert-img img,
+  .section.experts .expert-row.reverse .expert-img img {
+    width: 70vw;
+    max-width: 240px;
+    height: 70vw;
+    max-height: 240px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 4px;
+  }
+
+  .section.experts .expert-row .expert-info h3,
+  .section.experts .expert-row.reverse .expert-info h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .section.experts .expert-row .expert-info .expert-desc,
+  .section.experts .expert-row.reverse .expert-info .expert-desc {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .section.experts .expert-row .expert-points,
+  .section.experts .expert-row.reverse .expert-points {
+    font-size: 0.95rem;
+    padding-left: 1.2rem;
+  }
+
+  .section.experts .expert-modules {
+    gap: 20px;
+    padding: 0 15px;
+  }
+
+  .section.experts .expert-modules .expert-card {
+    flex: 0 0 100%;
+    min-width: 0;
+  }
+
+  .section.experts .expert-modules .expert-card .expert-card-img {
+    aspect-ratio: 4/3;
+  }
+
+  .section.experts .expert-modules .expert-card h4 {
+    font-size: 1.1rem;
+    margin: 0.8rem 0 0.5rem;
+  }
+
+  .section.experts .expert-modules .expert-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .section.partners {
+    padding: 30px 15px;
+  }
+
+  .section.partners h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .section.partners .partner-carousel {
+    padding: 15px 0 30px;
+  }
+
+  .section.partners .partner-carousel .partner-card-carousel {
+    min-height: 280px;
+  }
+
+  .section.partners .partner-carousel .partner-card-carousel .partner-card-carousel-content {
+    padding: 20px 15px;
+    gap: 20px;
+  }
+
+  .section.partners .partner-carousel .partner-card-carousel .partner-card-carousel-content .partner-card-left .partner-card-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .section.partners .partner-carousel .partner-card-carousel .partner-card-carousel-content .partner-card-left .partner-card-desc {
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+  }
+
+  .section.partners .partner-carousel .partner-card-carousel .partner-card-carousel-content .partner-card-right img {
+    border-radius: 8px;
+  }
+
+  .section.partners .partner-carousel .carousel-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 1.4rem;
+    margin: 0 8px;
+  }
+
+  .section.partners .partner-carousel .carousel-indicators {
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .section.partners .partner-carousel .carousel-indicators .carousel-dot {
+    width: 6px;
+    height: 6px;
   }
 }
 </style>
