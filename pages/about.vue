@@ -32,7 +32,7 @@
     </section>
 
     <!-- 专家团队 -->
-    <section class="section experts">
+    <section id="experts" class="section experts">
       <h2>专家团队</h2>
       <div class="experts-list">
         <!-- 本庶佑教授 -->

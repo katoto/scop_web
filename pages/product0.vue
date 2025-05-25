@@ -8,7 +8,14 @@ const productImages = [
   '/product0/long_pepper_extract.jpg',
   '/product0/resistant_dextrin.jpg',
   '/product0/fermented_soy_isoflavone.jpg',
-  '/product0/hericium_erinaceus.jpg'
+  '/product0/hericium_erinaceus.jpg',
+  
+  '/product0/coprinus_comatus.jpg',
+  '/product0/sterilized_lactobacillus.jpg',
+  '/product0/long_pepper_extract.jpg',
+  '/product0/resistant_dextrin.jpg',
+  '/product0/fermented_soy_isoflavone.jpg',
+  '/product0/hericium_erinaceus.jpg',
 ];
 const productNames = [
   '鸡腿菇',
@@ -157,6 +164,8 @@ const marketCompare = [
 ];
 
 const featureRefs = ref<HTMLElement[]>([]);
+const scienceRefs = ref<HTMLElement[]>([]);
+const adviceRefs = ref<HTMLElement[]>([]);
 
 onMounted(() => {
   const observer = new IntersectionObserver((entries) => {
@@ -172,6 +181,14 @@ onMounted(() => {
   });
 
   featureRefs.value.forEach(el => {
+    if (el) observer.observe(el);
+  });
+
+  scienceRefs.value.forEach(el => {
+    if (el) observer.observe(el);
+  });
+
+  adviceRefs.value.forEach(el => {
     if (el) observer.observe(el);
   });
 });
@@ -281,7 +298,9 @@ onMounted(() => {
     <section class="product-section">
       <h2>科研与权威认证</h2>
       <div class="science-blocks">
-        <div v-for="(item, idx) in scienceList" :key="item.title" class="science-block">
+        <div v-for="(item, idx) in scienceList" :key="item.title" 
+          :ref="el => { if (el) scienceRefs[idx] = el as HTMLElement }"
+          class="science-block">
           <div class="science-icon">
             <span>{{ item.icon }}</span>
           </div>
@@ -350,24 +369,20 @@ onMounted(() => {
     <section class="product-section">
       <h2>使用方法和注意事项</h2>
       <div class="advice-cards">
-        <div class="advice-card">
-          <div class="advice-title">每日服用</div>
+        <div v-for="(_, idx) in 3" :key="idx"
+          :ref="el => { if (el) adviceRefs[idx] = el as HTMLElement }"
+          class="advice-card">
+          <div class="advice-title" v-if="idx === 0">每日服用</div>
+          <div class="advice-title" v-else-if="idx === 1">贴心提示</div>
+          <div class="advice-title" v-else>过敏人群谨慎使用</div>
           <div class="advice-divider"></div>
-          <div class="advice-desc">
+          <div class="advice-desc" v-if="idx === 0">
             建议每日服用一片CP-101，饭后用温水服用，具体用量可根据个人健康状况或医生建议进行调整。
           </div>
-        </div>
-        <div class="advice-card">
-          <div class="advice-title">贴心提示</div>
-          <div class="advice-divider"></div>
-          <div class="advice-desc">
+          <div class="advice-desc" v-else-if="idx === 1">
             请将产品置于儿童无法触及的地方，避免误食。如正在服用其他药物或有特殊健康状况，请在使用前咨询医生。
           </div>
-        </div>
-        <div class="advice-card">
-          <div class="advice-title">过敏人群谨慎使用</div>
-          <div class="advice-divider"></div>
-          <div class="advice-desc">
+          <div class="advice-desc" v-else>
             对于蘑菇类产品过敏的用户，使用CP-101时需谨慎，若出现不适应立即停止使用并寻求医疗帮助。
           </div>
         </div>
@@ -481,7 +496,7 @@ onMounted(() => {
 }
 
 .product-hero h1 {
-  font-size: 2.8rem;
+  font-size: 2rem;
   color: white;
   font-weight: 800;
   margin-bottom: 12px;
@@ -495,7 +510,7 @@ onMounted(() => {
 }
 
 .product-hero .desc {
-  font-size: 1.1rem;
+  font-size: 1.08rem;
   color: white;
   margin-bottom: 24px;
 }
@@ -643,6 +658,14 @@ onMounted(() => {
 .patent-menu-item span {
   position: relative;
   z-index: 2;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 6px;
+  padding: 0px 8px;
+  text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;
 }
 
 .patent-menu-item.active,
@@ -759,7 +782,7 @@ onMounted(() => {
 }
 
 .feature-text h3 {
-  font-size: 1.6rem;
+  font-size: 2rem;
   color: #222;
   font-weight: 700;
   margin-bottom: 18px;
@@ -785,6 +808,34 @@ onMounted(() => {
   align-items: center;
   padding: 48px 0 36px 0;
   position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .science-icon {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+  }
+
+  .science-text {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+  }
+
+  &.animate-in {
+    .science-icon,
+    .science-text {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 }
 
 .science-icon {
@@ -1204,6 +1255,35 @@ onMounted(() => {
   flex-direction: column;
   align-items: flex-start;
   border: none;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .advice-title {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+    color: #bfa14a;
+  }
+
+  .advice-desc {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+  }
+
+  &.animate-in {
+    .advice-title,
+    .advice-desc {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 }
 
 .advice-title {

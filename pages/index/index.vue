@@ -9,69 +9,13 @@ let position = reactive({
 let domSize = reactive({
   width: 0,
 });
-let domRef = ref<null | HTMLElement>(null);
 let contentDomref = ref<null | HTMLElement>(null);
 let selectedProduct = ref<number | null>(null);
-let animatingProduct = ref<null | {
-  image: string;
-  startRect: DOMRect;
-  endRect: DOMRect;
-  index: number;
-  animating: boolean;
-}>(null);
-let showDetail = ref(false);
-let detailImgBlockRef = ref<HTMLElement | null>(null);
-let showIntro = ref(true);
-let showLogo = ref(true);
-let showProducts = ref(false);
-let isTransitioning = ref(false);
-let showBlockGreen = ref(false);
-let showBlockRed = ref(false);
-let showBlockGold = ref(false);
-let showBlockOrange = ref(false);
 
 // Fix ref array initialization
 const researchStrengthCols = ref<HTMLElement[]>([]);
 const observer = ref<IntersectionObserver | null>(null);
 
-const products = [
-  {
-    id: 1,
-    name: "产品一",
-    description: "这是产品一的详细介绍。这是一个创新的解决方案，能够帮助用户更好地完成工作。",
-    image: "/images/pro-3.png",
-    color: "linear-gradient(135deg, rgba(255, 107, 107, 0.7), rgba(255, 230, 109, 0.5))",
-    animationType: "default",
-    link: "/product/1"
-  },
-  {
-    id: 2,
-    name: "产品二",
-    description: "这是产品二的详细介绍。这是一个革命性的产品，能够改变用户的生活方式。",
-    image: "/images/pro-4.png",
-    color: "linear-gradient(135deg, rgba(78, 205, 196, 0.7), rgba(85, 98, 112, 0.5))",
-    animationType: "wave",
-    link: "/product/2"
-  },
-  {
-    id: 3,
-    name: "产品三",
-    description: "这是产品三的详细介绍。这是一个突破性的技术，能够提升用户的工作效率。",
-    image: "/images/pro-2.png",
-    color: "linear-gradient(135deg, rgba(168, 230, 207, 0.7), rgba(255, 211, 182, 0.5))",
-    animationType: "pulse",
-    link: "/product/3"
-  },
-  {
-    id: 4,
-    name: "产品四",
-    description: "这是产品四的详细介绍。这是一个创新的设计，能够满足用户的多样化需求。",
-    image: "/images/pro-1.png",
-    color: "linear-gradient(135deg, rgba(184, 242, 230, 0.7), rgba(255, 166, 158, 0.5))",
-    animationType: "float",
-    link: "/product/4"
-  },
-];
 
 const handleMouseMove = (e: MouseEvent) => {
   if (!contentDomref.value) return;
@@ -138,9 +82,6 @@ onUnmounted(() => {
   }
 });
 
-let log = () => {
-  console.log("jjhhh==");
-};
 let isShowColorBg = (num: number) => {
   if (selectedProduct.value === null) {
     return true;
@@ -276,7 +217,7 @@ const localePath = useLocalePath()
           <p>日本三重大学医学研究科特任教授。免疫学与呼吸内科学专家，CP-101研发领军人。</p>
         </div>
         <div class="expert-all-btn-wrap">
-          <NuxtLink class="nav-link" :to="localePath('/about')">
+          <NuxtLink class="nav-link" :to="localePath('/about#experts')">
             <button class="expert-all-btn">查看全部专家团队</button>
           </NuxtLink>
         </div>
@@ -445,12 +386,8 @@ const localePath = useLocalePath()
         transition: opacity 8s cubic-bezier(0.4, 0, 0.2, 1);
       }
 
-
-
       .gold {
         background: rgba(230, 255, 0, 0.9);
-        // left: -10px;
-        // width: calc(25vw + 20px);
         animation-delay: 0s;
         z-index: 1;
       }
@@ -807,6 +744,17 @@ const localePath = useLocalePath()
   display: flex;
   align-items: center;
   justify-content: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
 }
 
 .research-strength-bg {
@@ -814,6 +762,8 @@ const localePath = useLocalePath()
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 2;
 }
 
 .research-strength-row {
@@ -830,6 +780,7 @@ const localePath = useLocalePath()
   text-align: center;
   color: #fff;
   font-size: 1.25rem;
+  font-weight: 500;
   padding: 200px 32px;
   display: flex;
   flex-direction: column;
@@ -840,10 +791,17 @@ const localePath = useLocalePath()
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 2s ease-out, transform 1s ease-out;
   opacity: 0;
   transform: translateY(30px);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 
   &.cont-fade-in {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  .icon {
+    font-size: 1.8em;
+    margin-right: 12px;
+    font-weight: 600;
   }
 }
 
@@ -859,11 +817,6 @@ const localePath = useLocalePath()
   opacity: 0.7;
 }
 
-.icon {
-  font-size: 1.5em;
-  margin-right: 10px;
-}
-
 .strength-btn-wrap {
   width: 100%;
   display: flex;
@@ -872,20 +825,23 @@ const localePath = useLocalePath()
 }
 
 .strength-more-btn {
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.95);
   color: #C9A14D;
   border: none;
   border-radius: 20px;
-  padding: 6px 28px;
-  font-size: 1rem;
-  font-weight: 500;
+  padding: 8px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .strength-more-btn:hover {
   background: #C9A14D;
   color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 @media (max-width: 900px) {
@@ -964,8 +920,8 @@ const localePath = useLocalePath()
 }
 
 .expert-card-img {
-  width: 100px;
-  height: 100px;
+  width: 160px;
+  height: 146px;
   border-radius: 0;
   overflow: hidden;
   margin-bottom: 18px;
@@ -978,7 +934,8 @@ const localePath = useLocalePath()
 .expert-card-img img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: 18px;
 }
 
 .expert-card h4 {

@@ -466,7 +466,7 @@ onMounted(() => {
 }
 
 .product-hero h1 {
-  font-size: 2.8rem;
+  font-size: 2rem;
   color: white;
   font-weight: 800;
   margin-bottom: 12px;
@@ -480,7 +480,7 @@ onMounted(() => {
 }
 
 .product-hero .desc {
-  font-size: 1.1rem;
+  font-size: 1.08rem;
   color: white;
   margin-bottom: 24px;
 }
@@ -619,6 +619,14 @@ onMounted(() => {
 .patent-menu-item span {
   position: relative;
   z-index: 2;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 6px;
+  padding: 0px 8px;
+  text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;
 }
 
 .patent-menu-item.active,
@@ -735,7 +743,7 @@ onMounted(() => {
 }
 
 .feature-text h3 {
-  font-size: 1.6rem;
+  font-size: 2rem;
   color: #222;
   font-weight: 700;
   margin-bottom: 18px;

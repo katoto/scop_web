@@ -19,6 +19,11 @@ const features = [
     img: '/r_and_d/dendritic_cell_activation.jpg'
   },
   {
+    title: 'GMP + ISO 双重认证保障',
+    desc: '所有产品由日本本地 GMP 工厂制造，符合 ISO 国际质量标准。生产全流程可追溯，确保每一批次的稳定性、安全性与合规性。',
+    img: '/r_and_d/gmp_iso.jpg'
+  },
+  {
     title: '💊 科学复方 × 专利激活，重建微循环系统（CP-101固本金刚丸）',
     desc: 'CP-101固本金刚丸融合多种天然活性成分，以精准复配提升血管功能。其中关键成分——长胡椒提取物（日本专利号：6246859）可有效激活Tie2信号通路，修复毛细血管屏障，强化血流动力。通过重建微循环网络，助力营养高效输送、能量顺畅分配，为改善疲劳、冰冷、浮肿等亚健康状态提供核心支持。',
     img: '/r_and_d/microcirculation_reconstruction.jpeg'
