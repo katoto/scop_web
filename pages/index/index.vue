@@ -301,65 +301,59 @@ const localePath = useLocalePath()
       <div class="mc_a1_bd">
         <ul class="mc_a1s1_list clearfix">
           <li class="mc_a1s1_li">
-            <a href="/news/8415.html" class="mc_a1s1_a">
+            <a href="/news/detail" class="mc_a1s1_a">
               <div class="mc_a1s1_txtbox">
                 <div class="mc_a1s1_date">
                   <i class="iconfont iconshijian"></i>
-                  <span>2025-05-08</span>
+                  <span>2024-12-20</span>
                 </div>
                 <div class="mc_a1s1_txt">
-                  宁德时代发布全球首款9MWh超大容量TENER Stack储能系统解决方案
+                  CP-101闪耀亮相深圳国际营养健康产业展 共探生命健康科学前沿，引领行业新潮向！
                 </div>
                 <div class="mc_a1s1_more">
                   <div class="mc_a1s1_morebtn">了解更多</div>
                 </div>
               </div>
               <div class="mc_a1s1_imgbox mc_list_imgbox">
-                <img src="/news/brandNew-1.jpeg" alt="" class="mc_list_png">
-                <img src="https://www.catl.com/uploads/1/image/public/202505/20250509171703_id04ypj7pg.jpg" alt=""
-                  class="mc_list_img">
+                <img src="/news/specialNew-2.png" alt="" class="mc_list_png">
               </div>
             </a>
           </li>
           <li class="mc_a1s1_li">
-            <a href="/news/8402.html" class="mc_a1s1_a">
+            <a href="https://mp.weixin.qq.com/s/sacvMx1pB1nMHct_kyNGVQ" class="mc_a1s1_a">
               <div class="mc_a1s1_txtbox">
                 <div class="mc_a1s1_date">
                   <i class="iconfont iconshijian"></i>
-                  <span>2025-04-29</span>
+                  <span>2024-11-01</span>
                 </div>
                 <div class="mc_a1s1_txt">
-                  宁德时代成为首家通过动力电池新国标的企业
+                  「癌症互助推进研究慈善基金」发布会于日本东京顺利举行！
                 </div>
                 <div class="mc_a1s1_more">
                   <div class="mc_a1s1_morebtn">了解更多</div>
                 </div>
               </div>
               <div class="mc_a1s1_imgbox mc_list_imgbox">
-                <img src="/news/brandNew-2.jpeg" alt="" class="mc_list_png">
-                <img src="https://www.catl.com/uploads/1/image/public/202504/20250430184055_1stc8rdx7t.jpg" alt=""
-                  class="mc_list_img">
+                <img src="/news/specialNew-1.png" alt="" class="mc_list_png">
               </div>
             </a>
           </li>
           <li class="mc_a1s1_li">
-            <a href="/news/8401.html" class="mc_a1s1_a">
+            <a href="https://mp.weixin.qq.com/s/XnJcIHE6dXIKuavgDQIkmA" class="mc_a1s1_a">
               <div class="mc_a1s1_txtbox">
                 <div class="mc_a1s1_date">
                   <i class="iconfont iconshijian"></i>
-                  <span>2025-04-23</span>
+                  <span>2025-03-01</span>
                 </div>
                 <div class="mc_a1s1_txt">
-                  宁德时代携手五大车企，发布10款巧克力换电新车型
+                  南师大 41 岁年轻女教授逝世揭示残酷事实:癌症盯上年轻人!
                 </div>
                 <div class="mc_a1s1_more">
                   <div class="mc_a1s1_morebtn">了解更多</div>
                 </div>
               </div>
               <div class="mc_a1s1_imgbox mc_list_imgbox">
-                <img src="/news/brandNew-3.jpeg" alt="" class="mc_list_png">
-                <img src="https://www.catl.com/uploads/1/image/public/202504/20250428193603_sw9jxmtvdv.jpg" alt=""
-                  class="mc_list_img">
+                <img src="/news/realNew-2.jpeg" alt="" class="mc_list_png">
               </div>
             </a>
           </li>
@@ -1224,18 +1218,8 @@ const localePath = useLocalePath()
     z-index: 1;
     top: 0;
     left: 0;
+    object-fit: cover;
   }
-
-  .mc_list_img {
-    width: 100%;
-    height: 210px;
-    height: 100%;
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    left: 0;
-  }
-
 
 
 }
