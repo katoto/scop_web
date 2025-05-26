@@ -9,7 +9,7 @@ const productImages = [
   '/product0/resistant_dextrin.jpg',
   '/product0/fermented_soy_isoflavone.jpg',
   '/product0/hericium_erinaceus.jpg',
-  
+
   '/product0/coprinus_comatus.jpg',
   '/product0/sterilized_lactobacillus.jpg',
   '/product0/long_pepper_extract.jpg',
@@ -298,9 +298,8 @@ onMounted(() => {
     <section class="product-section">
       <h2>科研与权威认证</h2>
       <div class="science-blocks">
-        <div v-for="(item, idx) in scienceList" :key="item.title" 
-          :ref="el => { if (el) scienceRefs[idx] = el as HTMLElement }"
-          class="science-block">
+        <div v-for="(item, idx) in scienceList" :key="item.title"
+          :ref="el => { if (el) scienceRefs[idx] = el as HTMLElement }" class="science-block">
           <div class="science-icon">
             <span>{{ item.icon }}</span>
           </div>
@@ -369,8 +368,7 @@ onMounted(() => {
     <section class="product-section">
       <h2>使用方法和注意事项</h2>
       <div class="advice-cards">
-        <div v-for="(_, idx) in 3" :key="idx"
-          :ref="el => { if (el) adviceRefs[idx] = el as HTMLElement }"
+        <div v-for="(_, idx) in 3" :key="idx" :ref="el => { if (el) adviceRefs[idx] = el as HTMLElement }"
           class="advice-card">
           <div class="advice-title" v-if="idx === 0">每日服用</div>
           <div class="advice-title" v-else-if="idx === 1">贴心提示</div>
@@ -449,8 +447,8 @@ onMounted(() => {
 }
 
 .hero-image img {
-  max-width: 140px;
-  width: 140px;
+  max-width: 120px;
+  width: 120px;
   height: auto;
   border-radius: 18px;
   box-shadow: 0 4px 32px rgba(191, 161, 74, 0.12);
@@ -720,15 +718,6 @@ onMounted(() => {
     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
   }
 
-  &.animate-in {
-
-    .feature-img,
-    .feature-text {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
   &.reverse {
     .feature-img {
       transform: translateX(30px);
@@ -738,6 +727,17 @@ onMounted(() => {
       transform: translateX(-30px);
     }
   }
+
+  &.animate-in {
+
+    .feature-img,
+    .feature-text {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+
 }
 
 .feature-block.gray-bg {
@@ -830,6 +830,7 @@ onMounted(() => {
   }
 
   &.animate-in {
+
     .science-icon,
     .science-text {
       opacity: 1;
@@ -1112,12 +1113,12 @@ onMounted(() => {
   .hero-images {
     max-width: 100%;
     flex-direction: row;
-    gap: 16px;
+    gap: 26px;
   }
 
   .hero-image img {
-    max-width: 140px;
-    width: 140px;
+    max-width: 120px;
+    width: 120px;
   }
 
   .menu-bar {
@@ -1278,6 +1279,7 @@ onMounted(() => {
   }
 
   &.animate-in {
+
     .advice-title,
     .advice-desc {
       opacity: 1;

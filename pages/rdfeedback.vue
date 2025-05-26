@@ -927,6 +927,7 @@ const filteredFeedback = computed(() => {
   .banner-content {
     max-width: 100%;
     margin-bottom: 40px;
+    padding-left: 0;
   }
 
   .menu-bar {
