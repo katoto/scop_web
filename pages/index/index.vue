@@ -88,35 +88,29 @@ let handleLoad = () => {
   isLoad.value = true
 }
 
-const researchList = [
-  {
+const researchList = {
+  years: {
     start: 0,
     end: 45,
     duration: 1200,
-    label: '年科研积累',
-    desc: '日本细菌学会 × 癌学会 自1980年起持续研究姬松茸及其多糖体活性',
     suffix: '',
     decimals: 0,
   },
-  {
+  reports: {
     start: 0,
     end: 135,
     duration: 1200,
-    label: '项国际研究报告',
-    desc: '涵盖抗肿瘤、免疫调节、糖类分子活性等多个前沿医学方向',
     suffix: '+',
     decimals: 0,
   },
-  {
+  institutions: {
     start: 0,
     end: 20,
     duration: 1200,
-    label: '国家科研机构参与',
-    desc: '亚洲、欧美等多国机构深入验证姬松茸提取物在癌症辅助治疗中的作用',
     suffix: '+',
     decimals: 0,
   },
-]
+};
 
 const localePath = useLocalePath()
 </script>
@@ -140,10 +134,10 @@ const localePath = useLocalePath()
   <!-- 科研历史 -->
   <section class="research-history-section">
     <div class="research-history-title">
-      <h2>科研历史</h2>
+      <h2>{{ $t('home.researchHistory.title') }}</h2>
     </div>
     <div class="research-history-container">
-      <div v-for="item in researchList" :key="item.label" class="research-history-item">
+      <div v-for="(item, key) in researchList" :key="key" class="research-history-item">
         <NumberScroll 
           :start="item.start" 
           :end="item.end" 
@@ -153,8 +147,8 @@ const localePath = useLocalePath()
           :color="'#C9A14D'" 
           class="research-number" 
         />
-        <div class="research-label">{{ item.label }}</div>
-        <div class="research-desc">{{ item.desc }}</div>
+        <div class="research-label">{{ $t(`home.researchHistory.items.${key}.label`) }}</div>
+        <div class="research-desc">{{ $t(`home.researchHistory.items.${key}.desc`) }}</div>
       </div>
     </div>
   </section>
@@ -164,28 +158,28 @@ const localePath = useLocalePath()
     <div class="research-strength-bg">
       <div class="research-strength-row">
         <div class="research-strength-col">
-          <span class="icon">🔬</span>诺贝尔奖支持机制：基于本庶佑教授提出的PD-1免疫通路干预
+          <span class="icon">🔬</span>{{ $t('home.researchStrength.items.nobel.content') }}
           <div class="strength-btn-wrap">
             <NuxtLink class="nav-link" :to="localePath('/rd')">
-              <button class="strength-more-btn">了解更多</button>
+              <button class="strength-more-btn">{{ $t('home.researchStrength.items.nobel.button') }}</button>
             </NuxtLink>
           </div>
         </div>
         <div class="research-strength-divider"></div>
         <div class="research-strength-col">
-          <span class="icon">🧬</span>日本专利提取技术：CP-101 = 姬松茸亚临界水提取物
+          <span class="icon">🧬</span>{{ $t('home.researchStrength.items.patent.content') }}
           <div class="strength-btn-wrap">
             <NuxtLink class="nav-link" :to="localePath('/rd')">
-              <button class="strength-more-btn">了解更多</button>
+              <button class="strength-more-btn">{{ $t('home.researchStrength.items.patent.button') }}</button>
             </NuxtLink>
           </div>
         </div>
         <div class="research-strength-divider"></div>
         <div class="research-strength-col">
-          <span class="icon">✅</span>GMP + ISO 认证生产体系：所有产品由日本本地全链路生产
+          <span class="icon">✅</span>{{ $t('home.researchStrength.items.certification.content') }}
           <div class="strength-btn-wrap">
             <NuxtLink class="nav-link" :to="localePath('/rd')">
-              <button class="strength-more-btn">了解更多</button>
+              <button class="strength-more-btn">{{ $t('home.researchStrength.items.certification.button') }}</button>
             </NuxtLink>
           </div>
         </div>
@@ -196,38 +190,37 @@ const localePath = useLocalePath()
   <!-- 专家团队 -->
   <section class="expert-section">
     <div class="expert-section-title">
-      <h2>专家团队</h2>
+      <h2>{{ $t('home.expertTeam.title') }}</h2>
     </div>
     <div class="expert-modules-with-btn">
       <div class="expert-modules">
         <div class="expert-card">
           <div class="expert-card-img">
-            <img src="/about-Scophil/expert_honjo.jpg" alt="本庶佑教授" />
+            <img src="/about-Scophil/expert_honjo.jpg" :alt="$t('home.expertTeam.experts.honjo.name')" />
           </div>
-          <h4>本庶佑教授</h4>
-          <p>日本著名免疫学家，2018年诺贝尔生理学或医学奖得主。京都大学高等研究院特别教授，癌症免疫疗法开创者。</p>
+          <h4>{{ $t('home.expertTeam.experts.honjo.name') }}</h4>
+          <p>{{ $t('home.expertTeam.experts.honjo.title') }}</p>
         </div>
         <div class="expert-card">
           <div class="expert-card-img">
-            <img src="/about-Scophil/expert_gabazza.jpg" alt="Gabazza Esteban教授" />
+            <img src="/about-Scophil/expert_gabazza.jpg" :alt="$t('home.expertTeam.experts.gabazza.name')" />
           </div>
-          <h4>Gabazza Esteban教授</h4>
-          <p>日本三重大学医学研究科特任教授。免疫学与呼吸内科学专家，CP-101研发领军人。</p>
+          <h4>{{ $t('home.expertTeam.experts.gabazza.name') }}</h4>
+          <p>{{ $t('home.expertTeam.experts.gabazza.title') }}</p>
         </div>
         <div class="expert-all-btn-wrap">
           <NuxtLink class="nav-link" :to="localePath('/about#experts')">
-            <button class="expert-all-btn">查看全部专家团队</button>
+            <button class="expert-all-btn">{{ $t('home.expertTeam.viewAll') }}</button>
           </NuxtLink>
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- 新闻中心 -->
   <section class="news-section">
     <div class="news-section-title">
-      <h2>新闻中心</h2>
+      <h2>{{ $t('home.news.title') }}</h2>
     </div>
 
     <div>
@@ -238,13 +231,13 @@ const localePath = useLocalePath()
               <div class="mc_a1s1_txtbox">
                 <div class="mc_a1s1_date">
                   <i class="iconfont iconshijian"></i>
-                  <span>2024-12-20</span>
+                  <span>{{ $t('home.news.items.exhibition.date') }}</span>
                 </div>
                 <div class="mc_a1s1_txt">
-                  CP-101闪耀亮相深圳国际营养健康产业展 共探生命健康科学前沿，引领行业新潮向！
+                  {{ $t('home.news.items.exhibition.title') }}
                 </div>
                 <div class="mc_a1s1_more">
-                  <div class="mc_a1s1_morebtn">了解更多</div>
+                  <div class="mc_a1s1_morebtn">{{ $t('home.news.items.exhibition.button') }}</div>
                 </div>
               </div>
               <div class="mc_a1s1_imgbox mc_list_imgbox">
@@ -257,13 +250,13 @@ const localePath = useLocalePath()
               <div class="mc_a1s1_txtbox">
                 <div class="mc_a1s1_date">
                   <i class="iconfont iconshijian"></i>
-                  <span>2024-11-01</span>
+                  <span>{{ $t('home.news.items.charity.date') }}</span>
                 </div>
                 <div class="mc_a1s1_txt">
-                  「癌症互助推进研究慈善基金」发布会于日本东京顺利举行！
+                  {{ $t('home.news.items.charity.title') }}
                 </div>
                 <div class="mc_a1s1_more">
-                  <div class="mc_a1s1_morebtn">了解更多</div>
+                  <div class="mc_a1s1_morebtn">{{ $t('home.news.items.charity.button') }}</div>
                 </div>
               </div>
               <div class="mc_a1s1_imgbox mc_list_imgbox">
@@ -276,13 +269,13 @@ const localePath = useLocalePath()
               <div class="mc_a1s1_txtbox">
                 <div class="mc_a1s1_date">
                   <i class="iconfont iconshijian"></i>
-                  <span>2025-03-01</span>
+                  <span>{{ $t('home.news.items.research.date') }}</span>
                 </div>
                 <div class="mc_a1s1_txt">
-                  南师大 41 岁年轻女教授逝世揭示残酷事实:癌症盯上年轻人!
+                  {{ $t('home.news.items.research.title') }}
                 </div>
                 <div class="mc_a1s1_more">
-                  <div class="mc_a1s1_morebtn">了解更多</div>
+                  <div class="mc_a1s1_morebtn">{{ $t('home.news.items.research.button') }}</div>
                 </div>
               </div>
               <div class="mc_a1s1_imgbox mc_list_imgbox">
