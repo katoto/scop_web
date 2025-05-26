@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue';
+import { getLocalizedImagePath } from '~/utils/image'
+
 const localePath = useLocalePath()
 
 const productImages = [
@@ -47,7 +49,7 @@ const patentOptions = [
     title: '专利支持',
     patentNo: '专利号：7141630',
     desc: '日本专利提取技术（专利号：7141630）',
-    image: '/product0/patent_support.jpg',
+    image: getLocalizedImagePath('/product0/patent_support.jpg'),
   },
   {
     id: 3,

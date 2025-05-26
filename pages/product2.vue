@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue';
+import { getLocalizedImagePath } from '~/utils/image';
 const localePath = useLocalePath()
 
 const productImages = [
-  '/product2/1.3.5-1_livinol.jpg',
-  '/product2/1.3.5-2_broccoli.jpg',
-  '/product2/1.3.5-3_thistle.jpg',
-  '/product2/1.3.5-4_grape.jpg',
-  '/product2/1.3.5-5_ornithine.png',
-  '/product2/1.3.5-6_garcinia.jpg',
+  getLocalizedImagePath('/product2/1.3.5-1_livinol.jpg'),
+  getLocalizedImagePath('/product2/1.3.5-2_broccoli.jpg'),
+  getLocalizedImagePath('/product2/1.3.5-3_thistle.jpg'),
+  getLocalizedImagePath('/product2/1.3.5-4_grape.jpg'),
+  getLocalizedImagePath('/product2/1.3.5-5_ornithine.png'),
+  getLocalizedImagePath('/product2/1.3.5-6_garcinia.jpg'),
 ];
 const productNames = [
   'Livinol™（Garcinol）',

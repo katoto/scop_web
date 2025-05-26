@@ -13,8 +13,8 @@
 
             <!-- Video Module -->
             <div class="video-module ">
-                <video class="main-video" controls poster="/news/specialNew-2.png">
-                    <source src="/news/new-1m45s.mp4" type="video/mp4">
+                <video class="main-video" controls :poster="getLocalizedImagePath('/news/specialNew-2.png')">
+                    <source :src="getLocalizedImagePath('/news/new-1m45s.mp4')" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -22,7 +22,7 @@
             <div class="article-content">
                 <p>12月12日，在业界满怀期待与瞩目中，应HNC深圳国际营养与健康产业展主办方的热情邀约，全球知名生命健康与抗衰领域领军企业——日本SCOPHIL再生医疗集团，重磅登场，瞬间点燃现场炽热氛围，吸引无数业内人士纷至沓来。
                 </p>
-                <img src="/news/detail-1.png" alt="">
+                <img :src="getLocalizedImagePath('/news/detail-1.png')" alt="">
 
                 <h2>SCOPHIL国际前沿产品燃爆展会现场</h2>
                 <p>踏入SCOPHIL品牌展位，仿若迈入一座科技感与专业度满格的生命健康殿堂。率先映入眼帘的便是集团旗下癌症重疾治疗的"黑科技"新品——蘑菇精CP-101，它静静陈列在展示柜中，却散发着足以改变癌症治疗格局的强大气场。
@@ -33,15 +33,15 @@
 
                 <p>与此同时，CP-101产品成分中还富含鸡腿菇、猴头菇等药物价值极高的天然提取物，对于人体免疫调节、肠道健康、抗氧化与抗炎、神经保护和整体健康具有明显效果，能够用于预防医学和日常健康维护。帮助解消疾病治疗带来的后遗症，辅助减轻患者治疗反应。前来问询的专业观众络绎不绝，大家都怀揣着对前沿癌症治疗方案的急切求知欲，将展台围得水泄不通。
                 </p>
-                <img src="/news/detail-2.png" alt="">
+                <img :src="getLocalizedImagePath('/news/detail-2.png')" alt="">
 
                 <p>紧邻一旁的是集团风靡全球的抗衰老产品线：干细胞上清液、NAD+、NMN产品，它们宛如岁月的"逆行者"，承载着延缓衰老、重焕青春活力的使命。观展者们饶有兴致地聆听产品背后的研发故事，拉着专业讲解员详细介绍产品功效，深挖产品背后的技术奥秘，眼中满是对技术的赞叹和对青春的憧憬。
                 </p>
-                <img src="/news/detail-3.png" alt="">
+                <img :src="getLocalizedImagePath('/news/detail-3.png')" alt="">
 
                 <p>女性健康领域的Palilis私护产品，更是以其严苛工艺与创新理念，重新定义女性私护新标准，吸引众多消费者和行业从业者驻足，探讨合作可能。尤其在了解到Palilis私护系列是SCOPHIL耗时六年推出的明星产品，并且是日本首家成功研发并取得专利的女性私护黏膜吸收技术的企业、奠定女性健康全新标准后，现场参展代表赞叹声不断，咨询声此起彼伏。
                 </p>
-                <img src="/news/detail-4.png" alt="">
+                <img :src="getLocalizedImagePath('/news/detail-4.png')" alt="">
                 <h2>专家齐聚一堂，共筑交流高地</h2>
                 <p>本次圆桌研讨会的嘉宾阵容堪称"豪华"，受邀专家涵盖国内知名医疗专家、科研院校前沿学者，他们手握生命科学领域最新研究成果，癌症治疗新药物和新技术的研发现状，从学术底层逻辑剖析产业趋势，并结合自生从业经验分享中日在生命健康及癌症领域的交流合作经验。
                 </p>
@@ -53,7 +53,7 @@
 
 
 
-                <img src="/news/detail-5.png" alt="">
+                <img :src="getLocalizedImagePath('/news/detail-5.png')" alt="">
 
                 <p>在探讨PD-1于癌症医疗重要性环节，国内知名医疗专家、南方医科大学第五附属医院肝胆外科主任文辉清先生手持话筒，神情专注，结合临床详实案例，深入浅出地进行讲解。PD-1免疫检查点抑制剂在肝胆外科领域的运用，为肝癌、胆管癌这类预后不佳、传统治疗手段受限的恶性肿瘤带来了全新曙光，正逐步重塑肝胆外科疾病的诊疗生态，展现出令人瞩目的临床价值与应用前景。
                 </p>
@@ -123,7 +123,7 @@
 </template>
 
 <script setup>
-// Component logic here if needed
+import { getLocalizedImagePath } from '~/utils/image'
 </script>
 
 <style lang="less" scoped>
