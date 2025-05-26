@@ -17,7 +17,7 @@ const features = [
   {
     title: '🌿 树突状细胞激活路径（CP-101 蘑菇精）',
     desc: 'CP-101激活免疫系统中关键的树突状细胞和巨噬细胞，增强体内防御网络。',
-    img: '/r_and_d/dendritic_cell_activation.jpg'
+    img: getLocalizedImagePath('/r_and_d/dendritic_cell_activation.jpg')
   },
   {
     title: 'GMP + ISO 双重认证保障',
@@ -40,22 +40,22 @@ let features2 = [
   {
     title: '🔬 体内实验：肺癌小鼠模型验证免疫激活作用（CP-101 蘑菇精）',
     desc: '在突变 EGFR 肺癌小鼠模型中，喂食含 2% CP-101 的实验组（F2组），相比未摄入提取物的对照组（NF组），其肺组织中 PD-L1、PD-L2 和 CTLA4 三项免疫检查点相关基因的 mRNA 表达量显著下降。\n研究表明：\n✅ CP-101 能有效抑制免疫检查点分子表达\n✅ 验证其免疫调节与抗肿瘤潜力\n（表达量以 mRNA / GAPDH 比值表示，数据为 6 周后组织检测所得平均值）',
-    img: '/r_and_d/in_vivo_experiment.jpg'
+    img: getLocalizedImagePath('/r_and_d/in_vivo_experiment.jpg')
   },
   {
     title: '🧪 体外实验：抑制肺癌细胞生长、降低免疫检查点表达（CP-101 蘑菇精）',
     desc: '在体外实验中，CP-101 应用于人类肺癌细胞系 A549，展现出显著的抗癌活性：\n✅ 在 10～200 μg/ml 浓度范围内，抑制癌细胞增殖，且呈浓度依赖性\n✅ 在 20 μg/ml 浓度作用下，24 小时内显著降低 PD-L1 与 PD-L2 的 mRNA 表达量\n结果证实，CP-101 不仅能直接抑制癌细胞生长，还可调节免疫检查点，增强免疫识别作用。',
-    img: '/r_and_d/in_vitro_experiment.jpg'
+    img: getLocalizedImagePath('/r_and_d/in_vitro_experiment.jpg')
   },
   {
     title: '🌿 姬松茸提取物对树突状细胞的免疫激活作用（CP-101 蘑菇精）',
     desc: '研究显示，姬松茸提取物可激活树突状细胞，提高其免疫激活能力：\n✅ 促进免疫共刺激因子 CD80、CD86 表达\n✅ 增强 IL-12 与 IFN-γ 分泌，激活 T 细胞反应\n✅ 呈浓度依赖性，提取物浓度越高，激活效果越显著\n通过激活树突状细胞，姬松茸可间接发挥抗肿瘤与免疫增强作用。',
-    img: '/r_and_d/agaricus_immune_activation.jpg'
+    img: getLocalizedImagePath('/r_and_d/agaricus_immune_activation.jpg')
   },
   {
     title: '🔄 三重免疫协同机制（CP-101 蘑菇精）',
     desc: 'CP-101 × 鸡腿菇 × 乳酸杆菌复合物在实验中展现出显著免疫增强作用：\n●抑制 PD-L1 / PD-L2 / CTLA-4，激活免疫细胞\n●鸡腿菇增强抗肿瘤免疫反应\n●乳酸杆菌调节肠道微生态，支持系统性免疫\n实验验证：三者联合作用于细胞模型，协同提升免疫识别、攻击与稳定性',
-    img: '/r_and_d/triple_immune_synergy.jpg'
+    img: getLocalizedImagePath('/r_and_d/triple_immune_synergy.jpg')
   },
   {
     title: '💫 促进末梢循环（CP-101固本金刚丸）',

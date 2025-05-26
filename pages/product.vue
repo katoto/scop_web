@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue';
+import { getLocalizedImagePath } from '~/utils/image';
+
 const localePath = useLocalePath()
 const { t } = useI18n()
 
@@ -54,7 +56,7 @@ const patentOptions = computed(() => [
     title: t('product.patent.options.agaricus.title'),
     patentNo: t('product.patent.options.agaricus.patentNo'),
     desc: t('product.patent.options.agaricus.desc'),
-    image: '/product/agaricus_cp101.jpg',
+    image: getLocalizedImagePath('/product/agaricus_cp101.jpg'),
   },
   {
     id: 2,

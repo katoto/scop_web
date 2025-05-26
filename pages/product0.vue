@@ -42,7 +42,7 @@ const patentOptions = [
     title: '低温亚临界水提取',
     patentNo: '',
     desc: '避免成分降解与溶剂残留，保留高活性',
-    image: '/product0/subcritical_water_extraction.jpg',
+    image: getLocalizedImagePath('/product0/subcritical_water_extraction.jpg'),
   },
   {
     id: 2,
@@ -56,7 +56,7 @@ const patentOptions = [
     title: '高浓度净化',
     patentNo: '',
     desc: '确保有效成分浓度统一，品质稳定',
-    image: '/product0/high_concentration_purification.jpg',
+    image: getLocalizedImagePath('/product0/high_concentration_purification.jpg'),
   },
 ];
 
@@ -75,12 +75,12 @@ const features = [
   {
     title: '🌿 激活树突状细胞与巨噬细胞',
     desc: '提升先天免疫系统反应，全面激活免疫链条。CP-101能促进树突状细胞成熟，增强抗原呈递功能，并激活巨噬细胞，提升免疫系统识别与清除异常细胞的能力。',
-    img: '/product0/dendritic_macrophage_activation.jpg'
+    img: getLocalizedImagePath('/product0/dendritic_macrophage_activation.jpg')
   },
   {
     title: '💪 辅助抗癌 · 增强体力',
     desc: '协助抑制肿瘤生长、减轻疲劳、延缓衰老过程。多糖体等活性成分具备显著的免疫调节与抗氧化作用，有助于改善体力与免疫低下状态，减轻放化疗副作用，支持癌症康复过程。',
-    img: '/product0/cancer_support_energy.jpg'
+    img: getLocalizedImagePath('/product0/cancer_support_energy.jpg')
   }
 ];
 

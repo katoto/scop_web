@@ -34,7 +34,7 @@ const patentOptions = [
     title: '日本亚临界萃取专利技术',
     patentNo: '专利号：7141630',
     desc: '应用于姬松茸核心成分提取，广泛用于 CP-101 产品中。采用低温低压工艺，有效保留活性成分，显著提升吸收效率。',
-    image: '/product2/1.3.2-1_extract.jpg',
+    image: getLocalizedImagePath('/product2/1.3.2-1_extract.jpg'),
   },
   {
     id: 2,
