@@ -82,13 +82,6 @@ onUnmounted(() => {
   }
 });
 
-let isShowColorBg = (num: number) => {
-  if (selectedProduct.value === null) {
-    return true;
-  }
-  return selectedProduct.value === num;
-};
-
 let isLoad = ref(false)
 
 let handleLoad = () => {

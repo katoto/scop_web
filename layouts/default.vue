@@ -13,7 +13,6 @@
 
 <style lang="less" scoped>
 .main-content {
-  // padding-top: 76px; // Height of navbar
   min-height: calc(100vh - 300px); // 减去导航栏和页脚的高度
 }
 

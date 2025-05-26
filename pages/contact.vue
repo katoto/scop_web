@@ -64,7 +64,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center -140px;
-    height: 390px;
+    height: 400px;
     z-index: 1;
   }
 
