@@ -681,15 +681,6 @@ onMounted(() => {
     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
   }
 
-  &.animate-in {
-
-    .feature-img,
-    .feature-text {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
   &.reverse {
     .feature-img {
       transform: translateX(30px);
@@ -699,6 +690,17 @@ onMounted(() => {
       transform: translateX(-30px);
     }
   }
+
+  &.animate-in {
+
+    .feature-img,
+    .feature-text {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+
 }
 
 .feature-block.gray-bg {

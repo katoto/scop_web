@@ -334,9 +334,8 @@ onMounted(() => {
     <section class="product-section">
       <h2>科研与权威认证 </h2>
       <div class="science-blocks">
-        <div v-for="(item, idx) in scienceList" :key="item.title" 
-          :ref="el => { if (el) scienceRefs[idx] = el as HTMLElement }"
-          class="science-block">
+        <div v-for="(item, idx) in scienceList" :key="item.title"
+          :ref="el => { if (el) scienceRefs[idx] = el as HTMLElement }" class="science-block">
           <div class="science-icon">
             <span>{{ item.icon }}</span>
           </div>
@@ -380,8 +379,7 @@ onMounted(() => {
     <section class="product-section">
       <h2>使用方法与注意事项</h2>
       <div class="advice-cards">
-        <div v-for="(_, idx) in 3" :key="idx"
-          :ref="el => { if (el) adviceRefs[idx] = el as HTMLElement }"
+        <div v-for="(_, idx) in 3" :key="idx" :ref="el => { if (el) adviceRefs[idx] = el as HTMLElement }"
           class="advice-card">
           <div class="advice-title" v-if="idx === 0">📦 每日推荐剂量</div>
           <div class="advice-title" v-else-if="idx === 1">🕒 服用周期建议</div>
@@ -719,15 +717,6 @@ onMounted(() => {
     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
   }
 
-  &.animate-in {
-
-    .feature-img,
-    .feature-text {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
   &.reverse {
     .feature-img {
       transform: translateX(30px);
@@ -737,6 +726,16 @@ onMounted(() => {
       transform: translateX(-30px);
     }
   }
+
+  &.animate-in {
+
+    .feature-img,
+    .feature-text {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
 }
 
 .feature-block.gray-bg {
@@ -829,6 +828,7 @@ onMounted(() => {
   }
 
   &.animate-in {
+
     .science-icon,
     .science-text {
       opacity: 1;
@@ -1277,6 +1277,7 @@ onMounted(() => {
   }
 
   &.animate-in {
+
     .advice-title,
     .advice-list {
       opacity: 1;
