@@ -335,9 +335,9 @@ onMounted(() => {
       <h2>{{ t('product.marketCompare.title') }}</h2>
       <div class="market-compare-table">
         <div class="market-compare-header">
-          <div>指标</div>
-          <div>市面同类产品</div>
-          <div>CP-101 固本金刚丸</div>
+          <div>{{ t('product.marketCompare.headers.label') }}</div>
+          <div>{{ t('product.marketCompare.headers.market') }}</div>
+          <div>{{ t('product.marketCompare.headers.cp101') }}</div>
         </div>
         <div v-for="item in marketCompare" :key="item.label" class="market-compare-row">
           <div class="market-compare-label">{{ item.label }}</div>

@@ -52,22 +52,22 @@
         "honjo": {
           "name": "Professor Honjo",
           "title": "A renowned Japanese immunologist and 2018 Nobel laureate in Physiology or Medicine. Special Professor at Kyoto University's Institute for Advanced Study, pioneer of cancer immunotherapy.",
-          "points": [
-            "Discovered PD-1, revealing the T cell immune regulation mechanism",
-            "Pioneered immunotherapy, proposing blockade of PD-1/PD-L1 to activate anti-cancer immune responses",
-            "Discovered the AID enzyme, elucidating antibody diversity and immune system adaptation mechanisms",
-            "Identified IL-4/IL-5, advancing immune and allergic reaction research"
-          ]
+          "points": {
+            "point1": "Discovered PD-1, revealing the T cell immune regulation mechanism",
+            "point2": "Pioneered immunotherapy, proposing blockade of PD-1/PD-L1 to activate anti-cancer immune responses",
+            "point3": "Discovered the AID enzyme, elucidating antibody diversity and immune system adaptation mechanisms",
+            "point4": "Identified IL-4/IL-5, advancing immune and allergic reaction research"
+          }
         },
         "gabazza": {
           "name": "Professor Gabazza Esteban",
           "title": "Special Professor at Mie University Graduate School of Medicine. Expert in immunology and respiratory medicine, lead developer of CP-101.",
-          "points": [
-            "Discovered Agaricus PD-1, expanding new directions in immune research",
-            "Extracted CP-101, developing an Agaricus extract with anti-cancer efficacy",
-            "Authority in immunology research, published over a thousand papers with over 16,000 citations",
-            "Exploring pulmonary immune mechanisms, promoting chronic lung disease and immune-related treatment research"
-          ]
+          "points": {
+            "point1": "Discovered Agaricus PD-1, expanding new directions in immune research",
+            "point2": "Extracted CP-101, developing an Agaricus extract with anti-cancer efficacy",
+            "point3": "Authority in immunology research, published over a thousand papers with over 16,000 citations",
+            "point4": "Exploring pulmonary immune mechanisms, promoting chronic lung disease and immune-related treatment research"
+          }
         },
         "okada": {
           "name": "Kunihiko Okada",

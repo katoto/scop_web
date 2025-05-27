@@ -46,7 +46,7 @@
             <div class="expert-desc">{{ $t('about.experts.items.honjo.title') }}</div>
           </div>
           <ul class="expert-points">
-            <li v-for="(point, index) in expertPoints.honjo" :key="index">
+            <li v-for="(point, key) in expertPoints.honjo" :key="key">
               {{ point }}
             </li>
           </ul>
@@ -61,7 +61,7 @@
             <div class="expert-desc">{{ $t('about.experts.items.gabazza.title') }}</div>
           </div>
           <ul class="expert-points">
-            <li v-for="(point, index) in expertPoints.gabazza" :key="index">
+            <li v-for="(point, key) in expertPoints.gabazza" :key="key">
               {{ point }}
             </li>
           </ul>
@@ -145,23 +145,26 @@ const philosophyBackgrounds = {
 const activeIndex = ref(0)
 
 const expertPoints = computed(() => {
-  const honjoRaw = tm('about.experts.items.honjo.points') || []
-  const gabazzaRaw = tm('about.experts.items.gabazza.points') || []
+  const honjoPoints = tm('about.experts.items.honjo.points') || {}
+  const gabazzaPoints = tm('about.experts.items.gabazza.points') || {}
   
   // 从 AST 对象中提取文本内容
-  const extractText = (arr) => {
-    if (!Array.isArray(arr)) return []
-    return arr.map(item => {
-      if (typeof item === 'string') return item
-      // 从 AST 对象中提取 static 文本
-      if (item?.body?.static) return item.body.static
-      return ''
-    }).filter(Boolean) // 过滤掉空值
+  const extractText = (obj) => {
+    if (typeof obj !== 'object' || obj === null) return {}
+    const result = {}
+    for (const [key, value] of Object.entries(obj)) {
+      if (typeof value === 'string') {
+        result[key] = value
+      } else if (value?.body?.static) {
+        result[key] = value.body.static
+      }
+    }
+    return result
   }
 
   return {
-    honjo: extractText(honjoRaw),
-    gabazza: extractText(gabazzaRaw)
+    honjo: extractText(honjoPoints),
+    gabazza: extractText(gabazzaPoints)
   }
 })
 
