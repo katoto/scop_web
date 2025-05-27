@@ -845,5 +845,8 @@
         "desc": "Collection of thank you letters from grateful patients"
       }
     }
+  },
+  "contact": {
+    "title": "Contact Us"
   }
 }
