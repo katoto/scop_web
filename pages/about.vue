@@ -147,9 +147,22 @@ const activeIndex = ref(0)
 const expertPoints = computed(() => {
   const honjoRaw = tm('about.experts.items.honjo.points') || []
   const gabazzaRaw = tm('about.experts.items.gabazza.points') || []
-  // 将 tm 返回的 AST 对象数组（例如 honjoRaw）中每个 item 的 body.static 提取出来，从而将数组转换为纯字符串数组
-  const toStrArr = (arr) => Array.isArray(arr) ? arr.map(item => (typeof item === 'string' ? item : (item?.body?.static || ''))) : []
-  return { honjo: toStrArr(honjoRaw), gabazza: toStrArr(gabazzaRaw) }
+  
+  // 从 AST 对象中提取文本内容
+  const extractText = (arr) => {
+    if (!Array.isArray(arr)) return []
+    return arr.map(item => {
+      if (typeof item === 'string') return item
+      // 从 AST 对象中提取 static 文本
+      if (item?.body?.static) return item.body.static
+      return ''
+    }).filter(Boolean) // 过滤掉空值
+  }
+
+  return {
+    honjo: extractText(honjoRaw),
+    gabazza: extractText(gabazzaRaw)
+  }
 })
 
 function getPhilosophyIcon(key) {
