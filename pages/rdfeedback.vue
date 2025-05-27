@@ -1,142 +1,143 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue';
 const localePath = useLocalePath()
+const { t } = useI18n()
 
 const activeIdx = ref(0)
 const navList = [
-  { label: '癌症案例', value: 'cancer' },
-  { label: '其他疾病', value: 'other' },
-  { label: '临床研究', value: 'research' },
-  { label: '媒体报道', value: 'media' },
-  { label: '感谢信', value: 'thanks' }
+  { label: t('rdfeedback.nav.cancer'), value: 'cancer' },
+  { label: t('rdfeedback.nav.other'), value: 'other' },
+  { label: t('rdfeedback.nav.research'), value: 'research' },
+  { label: t('rdfeedback.nav.media'), value: 'media' },
+  { label: t('rdfeedback.nav.thanks'), value: 'thanks' }
 ]
 
 const feedbackList = [
   {
     id: 1,
     category: 'cancer',
-    title: '乳腺癌患者反馈',
-    date: '2024年',
-    desc: '一位44岁的乳腺癌患者，患癌六年后，肿块大到无法直接进行手术切除，在服用姬松茸后，肿块部分自然脱落、变小，为外科治疗创造了条件。',
+    title: t('rdfeedback.cases.breastCancer.title'),
+    date: t('rdfeedback.cases.breastCancer.date'),
+    desc: t('rdfeedback.cases.breastCancer.desc'),
     img: '/rd_feedback/4.2.1-1乳腺癌.jpg',
     link: '#'
   },
   {
     id: 2,
     category: 'cancer',
-    title: '恶性淋巴癌患者反馈',
-    date: '2024年',
-    desc: '62岁患者因身体不适入院检查，诊断为恶性淋巴癌，预期寿命不足6个月。治疗第二周开始服用岩出101姬松茸后，患者食欲大增，炎症明显减少。10个月后顺利出院。',
+    title: t('rdfeedback.cases.lymphoma.title'),
+    date: t('rdfeedback.cases.lymphoma.date'),
+    desc: t('rdfeedback.cases.lymphoma.desc'),
     img: '/rd_feedback/4.2.1-2恶性淋巴癌.jpg',
     link: '#'
   },
   {
     id: 3,
     category: 'cancer',
-    title: '肺癌患者反馈',
-    date: '2024年',
-    desc: '一位78岁的肺癌老人，体检中发现已经是癌症三期，通过常规治疗加上服用姬松茸，四个月后便恢复正常出院。正在癌症治疗历史中算是奇迹。',
+    title: t('rdfeedback.cases.lungCancer.title'),
+    date: t('rdfeedback.cases.lungCancer.date'),
+    desc: t('rdfeedback.cases.lungCancer.desc'),
     img: '/rd_feedback/4.2.1-3肺癌 .jpg',
     link: '#'
   },
   {
     id: 4,
     category: 'cancer',
-    title: '前列腺癌患者反馈',
-    date: '2024年',
-    desc: '2005年11月患者被确诊时76岁，伴有癌细胞转移，全身疼痛、头痛恶心、舌头不适等症状。确诊后2个月，开始进行姬松茸的辅助治疗，食用岩出101姬松茸提取物的第二天身体不适症状变得到立马改善。在后续半年的检测治疗中，PSA值（前列腺特异性抗原）值快速下降，效果显著。',
+    title: t('rdfeedback.cases.prostateCancer.title'),
+    date: t('rdfeedback.cases.prostateCancer.date'),
+    desc: t('rdfeedback.cases.prostateCancer.desc'),
     img: '/rd_feedback/4.2.1-4前列腺癌.jpg',
     link: '#'
   },
   {
     id: 5,
     category: 'other',
-    title: '前列腺肥大症患者反馈',
-    date: '2024年',
-    desc: '患者1985年被诊断为前列腺肥大症，未得到有效治疗。2004年底开始食用岩出101姬松茸提取物后，排尿困难迅速缓解，半年后身体恢复正常。',
+    title: t('rdfeedback.cases.prostateEnlargement.title'),
+    date: t('rdfeedback.cases.prostateEnlargement.date'),
+    desc: t('rdfeedback.cases.prostateEnlargement.desc'),
     img: '/rd_feedback/4.2.1-5前列腺肥大症.jpg',
     link: '#'
   },
   {
     id: 6,
     category: 'other',
-    title: '淋巴癌治疗副作用改善案例',
-    date: '2024年',
-    desc: '59岁男性淋巴癌患者，治疗反应严重，身体机能受损。服用岩出101姬松茸提取物后，不良反应消失，身体机能恢复，并成功抵抗了大流感。',
+    title: t('rdfeedback.cases.lymphomaSideEffects.title'),
+    date: t('rdfeedback.cases.lymphomaSideEffects.date'),
+    desc: t('rdfeedback.cases.lymphomaSideEffects.desc'),
     img: '/rd_feedback/4.2.1-6抑制淋巴癌治疗副作用.jpg',
     link: '#'
   },
   {
     id: 7,
     category: 'research',
-    title: '慢性B型肝炎临床实验报告',
-    date: '2024年',
-    desc: '临床实验报告研究了姬松茸（Agaricus blazei Murrill）对慢性B型肝炎患者肝功能的影响。由中日医疗团队联合进行，研究发现姬松茸能够显著改善患者的肝功能和临床症状。治疗前后，血清铁蛋白、S-GPT、S-GOT、胆红素等多项指标显著改善，差异具有统计学意义（P值0.005-0.001）。',
+    title: t('rdfeedback.cases.hepatitisB.title'),
+    date: t('rdfeedback.cases.hepatitisB.date'),
+    desc: t('rdfeedback.cases.hepatitisB.desc'),
     img: '/rd_feedback/4.2.1-7慢性B型肝炎临床实验/01.jpg',
     link: '#'
   },
   {
     id: 8,
     category: 'media',
-    title: 'CP-101体验者新闻报道',
-    date: '2024年',
-    desc: 'CP-101体验者的相关新闻报道集锦',
+    title: t('rdfeedback.cases.cp101News.title'),
+    date: t('rdfeedback.cases.cp101News.date'),
+    desc: t('rdfeedback.cases.cp101News.desc'),
     img: '/rd_feedback/4.2.1-8CP-101体验者新闻报道/737391e7431436df562aed158773e784.jpg',
     link: '#',
     isMediaGallery: true,
     galleryImages: [
       {
         img: '/rd_feedback/4.2.1-8CP-101体验者新闻报道/737391e7431436df562aed158773e784.jpg',
-        title: 'CP-101体验者新闻报道 1'
+        title: t('rdfeedback.cases.cp101News.title') + ' 1'
       },
       {
         img: '/rd_feedback/4.2.1-8CP-101体验者新闻报道/070021de52a7237ef1bf9c39ce8bfe7a.jpg',
-        title: 'CP-101体验者新闻报道 2'
+        title: t('rdfeedback.cases.cp101News.title') + ' 2'
       },
       {
         img: '/rd_feedback/4.2.1-8CP-101体验者新闻报道/8de7704fb91dac98cab8ba2c542a55c3.jpg',
-        title: 'CP-101体验者新闻报道 3'
+        title: t('rdfeedback.cases.cp101News.title') + ' 3'
       },
       {
         img: '/rd_feedback/4.2.1-8CP-101体验者新闻报道/400c6e83f9eabdfb5c959d42c3c47caa.jpg',
-        title: 'CP-101体验者新闻报道 4'
+        title: t('rdfeedback.cases.cp101News.title') + ' 4'
       },
       {
         img: '/rd_feedback/4.2.1-8CP-101体验者新闻报道/187f1a9ee8a284b7b4ed4d384c384866.jpg',
-        title: 'CP-101体验者新闻报道 5'
+        title: t('rdfeedback.cases.cp101News.title') + ' 5'
       },
       {
         img: '/rd_feedback/4.2.1-8CP-101体验者新闻报道/22cfd018d03aac90c5755265bbe20b3f.jpg',
-        title: 'CP-101体验者新闻报道 6'
+        title: t('rdfeedback.cases.cp101News.title') + ' 6'
       },
       {
         img: '/rd_feedback/4.2.1-8CP-101体验者新闻报道/09cb6bfffc1e4d9d6dfedbebb7d4a46e.jpg',
-        title: 'CP-101体验者新闻报道 7'
+        title: t('rdfeedback.cases.cp101News.title') + ' 7'
       },
       {
         img: '/rd_feedback/4.2.1-8CP-101体验者新闻报道/6ba0d698a3ac8b198f6b469518ab826b.jpg',
-        title: 'CP-101体验者新闻报道 8'
+        title: t('rdfeedback.cases.cp101News.title') + ' 8'
       },
       {
         img: '/rd_feedback/4.2.1-8CP-101体验者新闻报道/6a633f2ce89b1c9d50ddab04856a5131.jpg',
-        title: 'CP-101体验者新闻报道 9'
+        title: t('rdfeedback.cases.cp101News.title') + ' 9'
       },
       {
         img: '/rd_feedback/4.2.1-8CP-101体验者新闻报道/4af96dfca020eb9201b9375cdb51d66a.jpg',
-        title: 'CP-101体验者新闻报道 10'
+        title: t('rdfeedback.cases.cp101News.title') + ' 10'
       },
       {
         img: '/rd_feedback/4.2.1-8CP-101体验者新闻报道/a2542fe42bb2489b8544651f720cf401.jpg',
-        title: 'CP-101体验者新闻报道 11'
+        title: t('rdfeedback.cases.cp101News.title') + ' 11'
       }
     ]
   },
   {
     id: 9,
     category: 'thanks',
-    title: '患者感谢信',
-    date: '2024年',
-    desc: '来自患者的感谢信集锦',
+    title: t('rdfeedback.cases.thanksLetters.title'),
+    date: t('rdfeedback.cases.thanksLetters.date'),
+    desc: t('rdfeedback.cases.thanksLetters.desc'),
     img: '/rd_feedback/4.2.1-9患者感谢信/1-1.jpg',
     link: '#',
     isGallery: true,
@@ -149,9 +150,9 @@ const feedbackList = [
   {
     id: 10,
     category: 'thanks',
-    title: '患者感谢信',
-    date: '2024年',
-    desc: '来自患者的感谢信集锦',
+    title: t('rdfeedback.cases.thanksLetters.title'),
+    date: t('rdfeedback.cases.thanksLetters.date'),
+    desc: t('rdfeedback.cases.thanksLetters.desc'),
     img: '/rd_feedback/4.2.1-9患者感谢信/2-1.jpg',
     link: '#',
     isGallery: true,
@@ -165,9 +166,9 @@ const feedbackList = [
   {
     id: 11,
     category: 'thanks',
-    title: '患者感谢信',
-    date: '2024年',
-    desc: '来自患者的感谢信集锦',
+    title: t('rdfeedback.cases.thanksLetters.title'),
+    date: t('rdfeedback.cases.thanksLetters.date'),
+    desc: t('rdfeedback.cases.thanksLetters.desc'),
     img: '/rd_feedback/4.2.1-9患者感谢信/3-1.jpg',
     link: '#',
     isGallery: true,
@@ -208,10 +209,9 @@ const filteredFeedback = computed(() => {
     <!-- banner -->
     <section class="product-hero">
       <div class="banner-content">
-        <h1>临床应用反馈</h1>
-        <p class="subtitle"></p>
-        <p class="desc">多项临床与实际应用研究验证了产品的显著效果，使用者普遍反馈身体机能提升、症状改善。科学数据与真实体验相结合，充分体现了产品的安全性与有效性，助力用户重获健康活力。
-        </p>
+        <h1>{{ t('rdfeedback.title') }}</h1>
+        <p class="subtitle">{{ t('rdfeedback.subtitle') }}</p>
+        <p class="desc">{{ t('rdfeedback.description') }}</p>
       </div>
     </section>
 
