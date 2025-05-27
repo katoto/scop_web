@@ -2,6 +2,7 @@
 import { ref, computed, onMounted } from 'vue';
 import { getLocalizedImagePath } from '~/utils/image'
 
+const { t } = useI18n()
 const localePath = useLocalePath()
 
 const productImages = [
@@ -19,109 +20,124 @@ const productImages = [
   '/product0/fermented_soy_isoflavone.jpg',
   '/product0/hericium_erinaceus.jpg',
 ];
-const productNames = [
-  '鸡腿菇',
-  '灭菌型乳酸菌',
-  '长胡椒提取物',
-  '难消化性糊精',
-  '大豆异黄酮发酵粉末',
-  '猴头菇'
-];
-const productDesc = [
-  '抗氧化抗炎、免疫增强、改善皮肤状态',
-  '提高防御力、缓解过敏、改善口腔与肠道健康',
-  '改善代谢、血液循环、抗黑色素瘤',
-  '降低血糖血脂、改善肠道环境',
-  '抗癌、抗氧化',
-  '增强免疫、神经保护、预防认知退化'
-];
 
-const patentOptions = [
+const productNames = computed(() => [
+  t('product.product0.compounds.items.coprinus.name'),
+  t('product.product0.compounds.items.lactobacillus.name'),
+  t('product.product0.compounds.items.pepper.name'),
+  t('product.product0.compounds.items.dextrin.name'),
+  t('product.product0.compounds.items.soy.name'),
+  t('product.product0.compounds.items.hericium.name')
+]);
+
+const productDesc = computed(() => [
+  t('product.product0.compounds.items.coprinus.desc'),
+  t('product.product0.compounds.items.lactobacillus.desc'),
+  t('product.product0.compounds.items.pepper.desc'),
+  t('product.product0.compounds.items.dextrin.desc'),
+  t('product.product0.compounds.items.soy.desc'),
+  t('product.product0.compounds.items.hericium.desc')
+]);
+
+const patentOptions = computed(() => [
   {
     id: 1,
-    title: '低温亚临界水提取',
+    title: t('product.product0.tech.options.extraction.title'),
     patentNo: '',
-    desc: '避免成分降解与溶剂残留，保留高活性',
+    desc: t('product.product0.tech.options.extraction.desc'),
     image: getLocalizedImagePath('/product0/subcritical_water_extraction.jpg'),
   },
   {
     id: 2,
-    title: '专利支持',
-    patentNo: '专利号：7141630',
-    desc: '日本专利提取技术（专利号：7141630）',
+    title: t('product.product0.tech.options.patent.title'),
+    patentNo: t('product.product0.tech.options.patent.patentNo'),
+    desc: t('product.product0.tech.options.patent.desc'),
     image: getLocalizedImagePath('/product0/patent_support.jpg'),
   },
   {
     id: 3,
-    title: '高浓度净化',
+    title: t('product.product0.tech.options.purification.title'),
     patentNo: '',
-    desc: '确保有效成分浓度统一，品质稳定',
+    desc: t('product.product0.tech.options.purification.desc'),
     image: getLocalizedImagePath('/product0/high_concentration_purification.jpg'),
   },
-];
+]);
 
-const activePatent = ref(patentOptions[0]);
+const activePatent = ref(patentOptions.value[0]);
 
-function setActivePatent(option: typeof patentOptions[0]) {
+function setActivePatent(option: typeof patentOptions.value[0]) {
   activePatent.value = option;
 }
 
-const features = [
+const features = computed(() => [
   {
-    title: '🧬 抑制免疫检查点',
-    desc: '干预 PD-1 / PD-L1 通路，打破肿瘤免疫逃逸机制。通过作用于免疫检查点通路，有效阻断肿瘤细胞抑制T细胞活性，恢复机体对癌细胞的识别与攻击能力，是免疫治疗的核心机制之一。',
+    title: t('product.product0.features.items.immune.title'),
+    desc: t('product.product0.features.items.immune.desc'),
     img: '/product0/immune_checkpoint_inhibition.jpg'
   },
   {
-    title: '🌿 激活树突状细胞与巨噬细胞',
-    desc: '提升先天免疫系统反应，全面激活免疫链条。CP-101能促进树突状细胞成熟，增强抗原呈递功能，并激活巨噬细胞，提升免疫系统识别与清除异常细胞的能力。',
+    title: t('product.product0.features.items.dendritic.title'),
+    desc: t('product.product0.features.items.dendritic.desc'),
     img: getLocalizedImagePath('/product0/dendritic_macrophage_activation.jpg')
   },
   {
-    title: '💪 辅助抗癌 · 增强体力',
-    desc: '协助抑制肿瘤生长、减轻疲劳、延缓衰老过程。多糖体等活性成分具备显著的免疫调节与抗氧化作用，有助于改善体力与免疫低下状态，减轻放化疗副作用，支持癌症康复过程。',
+    title: t('product.product0.features.items.cancer.title'),
+    desc: t('product.product0.features.items.cancer.desc'),
     img: getLocalizedImagePath('/product0/cancer_support_energy.jpg')
   }
-];
+]);
 
-const scienceList = [
+const scienceList = computed(() => [
   {
-    icon: '🔬',
-    title: '诺贝尔奖研究支持',
-    desc: '基于 2018 年诺贝尔奖得主本庶佑教授 PD-1 免疫机制研究',
+    icon: t('product.product0.science.items.nobel.icon'),
+    title: t('product.product0.science.items.nobel.title'),
+    desc: t('product.product0.science.items.nobel.desc'),
     img: '/product0/nobel_research_support.png'
   },
   {
-    icon: '✅',
-    title: 'FDA 双重认证',
-    desc: '姬松茸（岩出101株）及其提取物获美国 FDA 认证具免疫支持与调节功效',
+    icon: t('product.product0.science.items.fda.icon'),
+    title: t('product.product0.science.items.fda.title'),
+    desc: t('product.product0.science.items.fda.desc'),
     img: '/product0/fda_double_certification.png'
   },
   {
-    icon: '🧠',
-    title: '45年科研积累背景',
-    desc: '日本岩出菌学研究所自20世纪70年代起，持续研究姬松茸101菌株，构建全球领先的抗癌真菌研究体系',
+    icon: t('product.product0.science.items.research.icon'),
+    title: t('product.product0.science.items.research.title'),
+    desc: t('product.product0.science.items.research.desc'),
     img: '/product0/45_years_research_background.svg'
   },
   {
-    icon: '📚',
-    title: '全球 135+ 项科研成果',
-    desc: '涵盖抗肿瘤、免疫调节、多糖活性等关键研究方向',
+    icon: t('product.product0.science.items.results.icon'),
+    title: t('product.product0.science.items.results.title'),
+    desc: t('product.product0.science.items.results.desc'),
     img: '/product0/experimental_verification.svg'
   },
   {
-    icon: '🏫',
-    title: '日本三重大学科研支持',
-    desc: 'CP-101由三重大学免疫团队研发提取与验证功效',
+    icon: t('product.product0.science.items.university.icon'),
+    title: t('product.product0.science.items.university.title'),
+    desc: t('product.product0.science.items.university.desc'),
     img: '/product0/mie_university_support.png'
   },
   {
-    icon: '🧬',
-    title: '实验验证',
-    desc: '证实可有效激活免疫细胞、增强免疫应答能力',
+    icon: t('product.product0.science.items.verification.icon'),
+    title: t('product.product0.science.items.verification.title'),
+    desc: t('product.product0.science.items.verification.desc'),
     img: '/product0/experimental_verification.svg'
   }
-];
+]);
+
+const marketCompare = computed(() => [
+  {
+    label: t('product.product0.compare.items.core.label'),
+    market: t('product.product0.compare.items.core.cp101'),
+    cp101: t('product.product0.compare.items.core.super')
+  },
+  {
+    label: t('product.product0.compare.items.users.label'),
+    market: t('product.product0.compare.items.users.cp101'),
+    cp101: t('product.product0.compare.items.users.super')
+  }
+]);
 
 const half = Math.ceil(productImages.length / 2);
 const firstRow = computed(() => productImages.slice(0, half));
@@ -151,19 +167,6 @@ function unlockRow() {
 function handleMouseLeave(row: number) {
   if (!locked.value) activeRow.value = null;
 }
-
-const marketCompare = [
-  {
-    label: '核心成分',
-    market: '基础成分',
-    cp101: '高浓缩强化'
-  },
-  {
-    label: '使用人群',
-    market: '一般免疫调理 / 癌症辅助',
-    cp101: '重症 / 术后 / 高需求者'
-  }
-];
 
 const featureRefs = ref<HTMLElement[]>([]);
 const scienceRefs = ref<HTMLElement[]>([]);
@@ -203,9 +206,9 @@ onMounted(() => {
     <section class="product-hero">
       <div class="hero-container">
         <div class="banner-content">
-          <h1>蘑菇精 CP-101+ CP-101 Super</h1>
-          <p class="subtitle">45年全球科研积累 + 多项国际认证 + 专利技术</p>
-          <p class="desc">为免疫调节与健康支持提供坚实保障</p>
+          <h1>{{ t('product.product0.hero.title') }}</h1>
+          <p class="subtitle">{{ t('product.product0.hero.subtitle') }}</p>
+          <p class="desc">{{ t('product.product0.hero.desc') }}</p>
         </div>
         <div class="hero-images">
           <div class="hero-image">
@@ -219,20 +222,19 @@ onMounted(() => {
 
       <div class="menu-bar">
         <div class="menu-item active">
-          <NuxtLink class="nav-link" :to="localePath('/product0')">CP101蘑菇精系列</NuxtLink>
+          <NuxtLink class="nav-link" :to="localePath('/product0')">{{ t('product.product0.menu.mushroom') }}</NuxtLink>
         </div>
         <div class="menu-item">
-          <NuxtLink class="nav-link" :to="localePath('/product')">CP101固本金刚丸</NuxtLink>
+          <NuxtLink class="nav-link" :to="localePath('/product')">{{ t('product.product0.menu.pill') }}</NuxtLink>
         </div>
-
         <div class="menu-item">
-          <NuxtLink class="nav-link" :to="localePath('/product2')">CP101肝源力</NuxtLink>
+          <NuxtLink class="nav-link" :to="localePath('/product2')">{{ t('product.product0.menu.liver') }}</NuxtLink>
         </div>
       </div>
     </section>
 
     <section class="product-section">
-      <h2 class="patent-section-title">技术特点</h2>
+      <h2 class="patent-section-title">{{ t('product.product0.tech.title') }}</h2>
       <div class="patent-flex-box">
         <div class="patent-left">
           <div class="patent-title">{{ activePatent.title }}</div>
@@ -241,37 +243,16 @@ onMounted(() => {
         </div>
         <div class="patent-right" :style="{ backgroundImage: `url(${activePatent.image})` }">
           <div class="patent-menu">
-            <div class="patent-menu-item" :class="{ active: activePatent.id === patentOptions[0].id }"
-              @mouseenter="setActivePatent(patentOptions[0])" @click="setActivePatent(patentOptions[0])">
-              <template v-if="activePatent.id === patentOptions[0].id">
+            <div v-for="(option, index) in patentOptions" :key="option.id"
+              class="patent-menu-item" :class="{ active: activePatent.id === option.id }"
+              @mouseenter="setActivePatent(option)" @click="setActivePatent(option)">
+              <template v-if="activePatent.id === option.id">
                 <div class="dot-animate">
                   <span class="ripple"></span>
                   <span class="dot"></span>
                 </div>
               </template>
-              <span>{{ patentOptions[0].title }}</span>
-            </div>
-            <div class="patent-divider"></div>
-            <div class="patent-menu-item" :class="{ active: activePatent.id === patentOptions[1].id }"
-              @mouseenter="setActivePatent(patentOptions[1])" @click="setActivePatent(patentOptions[1])">
-              <template v-if="activePatent.id === patentOptions[1].id">
-                <div class="dot-animate">
-                  <span class="ripple"></span>
-                  <span class="dot"></span>
-                </div>
-              </template>
-              <span>{{ patentOptions[1].title }}</span>
-            </div>
-            <div class="patent-divider"></div>
-            <div class="patent-menu-item" :class="{ active: activePatent.id === patentOptions[2].id }"
-              @mouseenter="setActivePatent(patentOptions[2])" @click="setActivePatent(patentOptions[2])">
-              <template v-if="activePatent.id === patentOptions[2].id">
-                <div class="dot-animate">
-                  <span class="ripple"></span>
-                  <span class="dot"></span>
-                </div>
-              </template>
-              <span>{{ patentOptions[2].title }}</span>
+              <span>{{ option.title }}</span>
             </div>
           </div>
         </div>
@@ -279,7 +260,7 @@ onMounted(() => {
     </section>
 
     <section class="product-section">
-      <h2>主要功效</h2>
+      <h2>{{ t('product.product0.features.title') }}</h2>
       <div class="feature-blocks">
         <div v-for="(feature, idx) in features" :key="feature.title"
           :ref="el => { if (el) featureRefs[idx] = el as HTMLElement }"
@@ -298,7 +279,7 @@ onMounted(() => {
     </section>
 
     <section class="product-section">
-      <h2>科研与权威认证</h2>
+      <h2>{{ t('product.product0.science.title') }}</h2>
       <div class="science-blocks">
         <div v-for="(item, idx) in scienceList" :key="item.title"
           :ref="el => { if (el) scienceRefs[idx] = el as HTMLElement }" class="science-block">
@@ -315,7 +296,7 @@ onMounted(() => {
     </section>
 
     <section class="product-section">
-      <h2>辅助活性成分</h2>
+      <h2>{{ t('product.product0.compounds.title') }}</h2>
       <div class="compound-carousel">
         <div class="carousel-row" :class="{ paused: activeRow === 0 }" @mouseleave="handleMouseLeave(0)"
           @click.self="unlockRow">
@@ -343,12 +324,12 @@ onMounted(() => {
     </section>
 
     <section class="product-section">
-      <h2>产品对比</h2>
+      <h2>{{ t('product.product0.compare.title') }}</h2>
       <div class="market-compare-table">
         <div class="market-compare-header">
-          <div>指标</div>
-          <div>蘑菇精 CP-101</div>
-          <div>蘑菇精 CP-101 Super</div>
+          <div>{{ t('product.product0.compare.headers.label') }}</div>
+          <div>{{ t('product.product0.compare.headers.cp101') }}</div>
+          <div>{{ t('product.product0.compare.headers.super') }}</div>
         </div>
         <div v-for="item in marketCompare" :key="item.label" class="market-compare-row">
           <div class="market-compare-label">{{ item.label }}</div>
@@ -356,35 +337,29 @@ onMounted(() => {
           <div class="market-compare-cp101">{{ item.cp101 }}</div>
         </div>
         <div class="market-compare-row">
-          <div class="market-compare-label">预约咨询</div>
+          <div class="market-compare-label">{{ t('product.product0.compare.consult.label') }}</div>
           <div class="market-compare-market">
-            <NuxtLink :to="localePath('/contact')" class="consult-link">预约咨询</NuxtLink>
+            <NuxtLink :to="localePath('/contact')" class="consult-link">{{ t('product.product0.compare.consult.button') }}</NuxtLink>
           </div>
           <div class="market-compare-cp101">
-            <NuxtLink :to="localePath('/contact')" class="consult-link">预约咨询</NuxtLink>
+            <NuxtLink :to="localePath('/contact')" class="consult-link">{{ t('product.product0.compare.consult.button') }}</NuxtLink>
           </div>
         </div>
       </div>
     </section>
 
     <section class="product-section">
-      <h2>使用方法和注意事项</h2>
+      <h2>{{ t('product.product0.advice.title') }}</h2>
       <div class="advice-cards">
         <div v-for="(_, idx) in 3" :key="idx" :ref="el => { if (el) adviceRefs[idx] = el as HTMLElement }"
           class="advice-card">
-          <div class="advice-title" v-if="idx === 0">每日服用</div>
-          <div class="advice-title" v-else-if="idx === 1">贴心提示</div>
-          <div class="advice-title" v-else>过敏人群谨慎使用</div>
+          <div class="advice-title" v-if="idx === 0">{{ t('product.product0.advice.items.daily.title') }}</div>
+          <div class="advice-title" v-else-if="idx === 1">{{ t('product.product0.advice.items.tips.title') }}</div>
+          <div class="advice-title" v-else>{{ t('product.product0.advice.items.allergy.title') }}</div>
           <div class="advice-divider"></div>
-          <div class="advice-desc" v-if="idx === 0">
-            建议每日服用一片CP-101，饭后用温水服用，具体用量可根据个人健康状况或医生建议进行调整。
-          </div>
-          <div class="advice-desc" v-else-if="idx === 1">
-            请将产品置于儿童无法触及的地方，避免误食。如正在服用其他药物或有特殊健康状况，请在使用前咨询医生。
-          </div>
-          <div class="advice-desc" v-else>
-            对于蘑菇类产品过敏的用户，使用CP-101时需谨慎，若出现不适应立即停止使用并寻求医疗帮助。
-          </div>
+          <div class="advice-desc" v-if="idx === 0">{{ t('product.product0.advice.items.daily.desc') }}</div>
+          <div class="advice-desc" v-else-if="idx === 1">{{ t('product.product0.advice.items.tips.desc') }}</div>
+          <div class="advice-desc" v-else>{{ t('product.product0.advice.items.allergy.desc') }}</div>
         </div>
       </div>
     </section>

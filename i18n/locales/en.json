@@ -242,6 +242,11 @@
     },
     "marketCompare": {
       "title": "Market Comparison Advantages",
+      "headers": {
+        "label": "Indicator",
+        "market": "Similar products on the market",
+        "cp101": "CP-101 固本金刚丸"
+      },
       "items": {
         "vascular": {
           "label": "Vascular Regulation",
@@ -266,19 +271,324 @@
       }
     },
     "advice": {
-      "title": "Dosage Recommendations and Target Groups",
+      "title": "Recommended Usage and Target Groups",
       "dosage": {
         "title": "Daily Recommended Dosage",
-        "desc": "1-2 capsules daily, best taken after meals. Adjust based on personal condition, do not exceed recommended dosage."
+        "desc": "1-2 capsules daily, best taken after meals. Adjustable based on individual condition, do not exceed recommended dosage."
       },
       "target": {
         "title": "Recommended Groups",
         "list": [
-          "Men frequently experiencing fatigue and declining energy",
-          "People with cold hands and feet, prone to swelling",
-          "Sub-healthy, middle-aged men transitioning to weaker states",
+          "Men experiencing frequent fatigue and energy decline",
+          "People with cold extremities and prone to edema",
+          "Men in sub-health and middle-aged decline",
           "Long-term high-pressure workers requiring sustained energy support"
         ]
+      }
+    },
+    "product0": {
+      "hero": {
+        "title": "Mushroom Extract CP-101+ CP-101 Super",
+        "subtitle": "45 Years of Global Research + Multiple International Certifications + Patent Technology",
+        "desc": "Providing solid guarantee for immune regulation and health support"
+      },
+      "menu": {
+        "mushroom": "CP101 Mushroom Extract Series",
+        "pill": "CP101 Solid Gold Pill",
+        "liver": "CP101 Liver Power"
+      },
+      "tech": {
+        "title": "Technical Features",
+        "options": {
+          "extraction": {
+            "title": "Low-temperature Subcritical Water Extraction",
+            "desc": "Avoids component decomposition and solvent residue, maintains high activity"
+          },
+          "patent": {
+            "title": "Patent Support",
+            "patentNo": "Patent No.: 7141630",
+            "desc": "Japanese patent extraction technology (Patent No.: 7141630)"
+          },
+          "purification": {
+            "title": "High Concentration Purification",
+            "desc": "Unifies active ingredient concentration, stabilizes quality"
+          }
+        }
+      },
+      "features": {
+        "title": "Main Effects",
+        "items": {
+          "immune": {
+            "title": "🧬 Immune Checkpoint Inhibition",
+            "desc": "Intervenes in PD-1/PD-L1 pathway, breaks tumor immune escape mechanism. Acts on immune checkpoint pathway, effectively prevents tumor cell inhibition of T-cell activity, restores body's ability to recognize and attack cancer cells, one of the core mechanisms of immunotherapy."
+          },
+          "dendritic": {
+            "title": "🌿 Dendritic Cell and Macrophage Activation",
+            "desc": "Enhances natural immune system response, comprehensively activates immune chain. CP-101 promotes dendritic cell maturation, strengthens antigen presentation function, activates macrophages, improves immune system's ability to recognize and remove abnormal cells."
+          },
+          "cancer": {
+            "title": "💪 Anti-cancer Support & Physical Enhancement",
+            "desc": "Supports tumor growth inhibition, fatigue reduction, aging process delay. Active ingredients like polysaccharides have significant immune regulation and antioxidant effects, helps improve physical strength and immune decline states, reduces side effects of radiation and chemotherapy, supports cancer recovery process."
+          }
+        }
+      },
+      "science": {
+        "title": "Research and Authoritative Certifications",
+        "items": {
+          "nobel": {
+            "icon": "🔬",
+            "title": "Nobel Prize Research Support",
+            "desc": "Based on Professor Tasuku Honjo's 2018 Nobel Prize-winning PD-1 immune mechanism research"
+          },
+          "fda": {
+            "icon": "✅",
+            "title": "FDA Dual Certification",
+            "desc": "Agaricus blazei (Iwade 101 strain) and its extract obtained FDA-certified immune support and regulation effects"
+          },
+          "research": {
+            "icon": "🧠",
+            "title": "45 Years of Research Background",
+            "desc": "Japan Iwade Institute of Mycology has conducted continuous research on Agaricus blazei 101 strain since 1970s, building world-leading anti-cancer fungal research system"
+          },
+          "results": {
+            "icon": "📚",
+            "title": "Over 135 Global Research Results",
+            "desc": "Covers important research areas including anti-tumor, immune regulation, polysaccharide activity"
+          },
+          "university": {
+            "icon": "🏫",
+            "title": "Mie University Research Support",
+            "desc": "CP-101 is developed and extracted by Mie University immune team, with verified effects"
+          },
+          "verification": {
+            "icon": "🧬",
+            "title": "Experimental Verification",
+            "desc": "Immune cell activation and immune response capability improvement effectively confirmed"
+          }
+        }
+      },
+      "compounds": {
+        "title": "Auxiliary Active Ingredients",
+        "items": {
+          "coprinus": {
+            "name": "Coprinus",
+            "desc": "Antioxidant anti-inflammatory, immune enhancement, skin condition improvement"
+          },
+          "lactobacillus": {
+            "name": "Sterilized Lactobacillus",
+            "desc": "Defense enhancement, allergy relief, oral and intestinal health improvement"
+          },
+          "pepper": {
+            "name": "Long Pepper Extract",
+            "desc": "Metabolism improvement, blood circulation, anti-melanoma"
+          },
+          "dextrin": {
+            "name": "Resistant Dextrin",
+            "desc": "Blood sugar and lipid reduction, intestinal environment improvement"
+          },
+          "soy": {
+            "name": "Soy Isoflavone Fermented Powder",
+            "desc": "Anti-cancer, antioxidant"
+          },
+          "hericium": {
+            "name": "Hericium Erinaceus",
+            "desc": "Immune enhancement, neuroprotection, cognitive decline prevention"
+          }
+        }
+      },
+      "compare": {
+        "title": "Product Comparison",
+        "headers": {
+          "label": "Indicator",
+          "cp101": "Mushroom Extract CP-101",
+          "super": "Mushroom Extract CP-101 Super"
+        },
+        "items": {
+          "core": {
+            "label": "Core Components",
+            "cp101": "Basic Components",
+            "super": "High Concentration Enhanced"
+          },
+          "users": {
+            "label": "Target Users",
+            "cp101": "General Immune Regulation / Cancer Support",
+            "super": "Severe Cases / Post-surgery / High-demand Users"
+          }
+        },
+        "consult": {
+          "label": "Book Consultation",
+          "button": "Book Consultation"
+        }
+      },
+      "advice": {
+        "title": "Usage Methods and Precautions",
+        "items": {
+          "daily": {
+            "title": "Daily Usage",
+            "desc": "Recommended to take 1 capsule of CP-101 daily after meals with warm water. Specific dosage can be adjusted based on individual health condition and doctor's advice."
+          },
+          "tips": {
+            "title": "Tips",
+            "desc": "Store product out of children's reach to avoid accidental ingestion. Consult doctor before use if taking other medications or have special health conditions."
+          },
+          "allergy": {
+            "title": "Use with Caution for Allergy-prone Users",
+            "desc": "Users allergic to mushroom products need attention when using CP-101, discontinue use immediately and seek medical help if adverse reactions occur."
+          }
+        }
+      }
+    },
+    "product2": {
+      "hero": {
+        "title": "CP-101 Liver Power",
+        "subtitle": "Natural Nutritional Intervention Program Born for Liver Protection",
+        "desc": "Dual Patent Technology + Seven-fold Component Synergy, Building Liver Health Protection Network"
+      },
+      "menu": {
+        "mushroom": "CP101 Mushroom Extract Series",
+        "pill": "CP101 Solid Gold Pill",
+        "liver": "CP101 Liver Power"
+      },
+      "patent": {
+        "title": "Technical Features",
+        "options": {
+          "extraction": {
+            "title": "Japanese Subcritical Extraction Patent Technology",
+            "patentNo": "Patent No.: 7141630",
+            "desc": "Applied to Agaricus blazei core component extraction, widely used in CP-101 products. Low temperature and pressure process effectively maintains active ingredients, significantly improves absorption efficiency."
+          },
+          "release": {
+            "title": "pH-responsive Enteric Sustained Release Technology",
+            "patentNo": "",
+            "desc": "Reduces gastric acid destruction, targets intestinal absorption, improves bioavailability."
+          },
+          "livinol": {
+            "title": "Livinol™ Patent Component",
+            "patentNo": "Patent No.: 5980228",
+            "desc": "Multi-functional with anti-cancer, antioxidant, anti-inflammatory, gut microbiota regulation capabilities."
+          },
+          "active": {
+            "title": "Seven-fold Active Component Synergy",
+            "patentNo": "",
+            "desc": "Achieves integrated effects of anti-inflammatory, antioxidant, detoxification, regeneration, sugar regulation, and lipid regulation."
+          },
+          "cert": {
+            "title": "Japanese GMP Certification & ISO Standard Factory Manufacturing",
+            "patentNo": "",
+            "desc": "Full process traceable, compliant with international export and custom specification standards."
+          }
+        }
+      },
+      "features": {
+        "title": "Main Effects",
+        "items": {
+          "liver": {
+            "title": "Liver Protection & Anti-cancer",
+            "desc": "Livinol™'s Garcinol inhibits cancer cell spread\nAgaricus blazei activates macrophages, strengthens liver's immune anti-cancer capability\nSulforaphane induces cancer cell apoptosis, activates detoxification enzyme system\nMultiple antioxidant components reduce liver cancer risk"
+          },
+          "antioxidant": {
+            "title": "Powerful Antioxidant, Delays Liver Cell Aging",
+            "desc": "Broccoli sprout powder activates Nrf2 pathway, removes free radicals\nWild grape stabilizes liver cell membrane, promotes microcirculation\nAgaricus blazei strengthens antioxidant environment, Milk Thistle promotes liver cell regeneration\nL-ornithine hydrochloride reduces liver metabolic stress"
+          },
+          "alcohol": {
+            "title": "Alcohol Detoxification & Liver Protection",
+            "desc": "Livinol™ resists alcohol toxicity, inhibits inflammation\nL-ornithine accelerates alcohol metabolism\nMilk Thistle repairs liver cells, wild grape promotes detoxification microcirculation"
+          },
+          "whiten": {
+            "title": "Whitening & Skin Regeneration",
+            "desc": "Livinol™ regulates gut microbiota, detoxification and skin care\nWild grape promotes melanin metabolism\nBroccoli sprout & Agaricus blazei improve skin metabolism, enhance skin tone"
+          },
+          "sugar": {
+            "title": "Blood Sugar Regulation",
+            "desc": "Livinol™ regulates carbohydrate absorption through microbiota\nGarcinia cambogia and synergistic components improve fat metabolism, strengthen insulin sensitivity\nAgaricus blazei & broccoli sprout improve liver glucose uptake and storage"
+          },
+          "fatty": {
+            "title": "Lipid Regulation & Fatty Liver Management",
+            "desc": "Livinol™ inhibits fat accumulation\nGarcinia cambogia promotes fatty acid oxidation, reduces blood lipids\nBroccoli sprout & Milk Thistle strengthen liver function, improve fat infiltration"
+          }
+        }
+      },
+      "science": {
+        "title": "Research and Authoritative Certifications",
+        "items": {
+          "patent": {
+            "icon": "🔬",
+            "title": "Dual Japanese Patent Support",
+            "desc": "Subcritical extraction technology (Patent No.: 7141630)\nLivinol™ Garcinia component (Patent No.: 5980228)"
+          },
+          "source": {
+            "icon": "✅",
+            "title": "Japanese Domestic Ingredient Traceability",
+            "desc": "All component ingredients supplied from clear Japanese domestic sources, ensuring safety and high purity"
+          },
+          "cert": {
+            "icon": "🏭",
+            "title": "GMP Certification & ISO International Standard Manufacturing",
+            "desc": "Manufacturing process complies with international pharmaceutical/nutritional manufacturing standards, quality stably manageable"
+          },
+          "research": {
+            "icon": "📊",
+            "title": "Effect Support from Evidence-based Research",
+            "desc": "Clear effects on liver enzyme reduction, liver function improvement, whitening and blood sugar balance"
+          }
+        }
+      },
+      "compounds": {
+        "title": "Auxiliary Active Ingredients",
+        "items": {
+          "livinol": {
+            "name": "Livinol™ (Garcinol)",
+            "desc": "Anti-inflammatory antioxidant, liver cancer defense, microbiota regulation, blood sugar stabilization"
+          },
+          "broccoli": {
+            "name": "Broccoli Sprout Powder",
+            "desc": "Antioxidant system activation, detoxification, skin tone improvement"
+          },
+          "thistle": {
+            "name": "Milk Thistle",
+            "desc": "Liver cell regeneration, liver enzyme reduction, anti-fatigue"
+          },
+          "grape": {
+            "name": "Wild Grape Extract",
+            "desc": "Liver cell membrane stabilization, microcirculation improvement, whitening"
+          },
+          "ornithine": {
+            "name": "L-ornithine Hydrochloride",
+            "desc": "Ammonia metabolism promotion, alcohol detoxification, liver fatigue relief"
+          },
+          "garcinia": {
+            "name": "Garcinia Cambogia and Synergistic Substances",
+            "desc": "Lipid regulation, metabolism improvement, blood sugar balance support"
+          }
+        }
+      },
+      "advice": {
+        "title": "Usage Instructions and Precautions",
+        "items": {
+          "dosage": {
+            "title": "📦 Daily Recommended Dosage",
+            "list": {
+              "1": "Take 1 pack (2 capsules) daily, preferably after meals with warm water",
+              "2": "Continue for 30+ days to establish long-term liver function support mechanism"
+            }
+          },
+          "period": {
+            "title": "🕒 Recommended Usage Period",
+            "list": {
+              "1": "Basic Care (30 days): Relieves alcohol and metabolic stress",
+              "2": "Deep Care (90 days): Improves fatty liver, stabilizes liver enzymes",
+              "3": "Long-term Maintenance (6+ months): Optimizes liver function and anti-cancer mechanisms"
+            }
+          },
+          "notice": {
+            "title": "🧾 Precautions",
+            "list": {
+              "1": "Keep out of reach of children",
+              "2": "Follow doctor's advice if you have a history of liver disease",
+              "3": "Use with caution during pregnancy and breastfeeding"
+            }
+          }
+        }
       }
     }
   },

@@ -1,132 +1,136 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue';
 import { getLocalizedImagePath } from '~/utils/image';
+
+const { t } = useI18n()
 const localePath = useLocalePath()
 
 const productImages = [
-  getLocalizedImagePath('/product2/1.3.5-1_livinol.jpg'),
-  getLocalizedImagePath('/product2/1.3.5-2_broccoli.jpg'),
-  getLocalizedImagePath('/product2/1.3.5-3_thistle.jpg'),
-  getLocalizedImagePath('/product2/1.3.5-4_grape.jpg'),
-  getLocalizedImagePath('/product2/1.3.5-5_ornithine.png'),
-  getLocalizedImagePath('/product2/1.3.5-6_garcinia.jpg'),
-];
-const productNames = [
-  'Livinol™（Garcinol）',
-  '芽孢西兰花粉末',
-  '马利亚蓟（Milk Thistle）',
-  '野葡萄提取物',
-  'L-鸟氨酸盐酸盐',
-  '印度藤黄及协同物质'
-];
-const productDesc = [
-  '抗炎抗氧化、肝癌防护、调菌群、稳定血糖',
-  '启动抗氧化系统、解毒、改善肤色',
-  '肝细胞再生、降低肝酶、抗疲劳',
-  '稳定肝细胞膜、改善微循环、美白',
-  '促进氨代谢、解酒、缓解肝疲劳',
-  '调脂、改善代谢、辅助血糖平衡'
+  '/product2/1.3.5-1_livinol.jpg',
+  '/product2/1.3.5-2_broccoli.jpg',
+  '/product2/1.3.5-3_thistle.jpg',
+  '/product2/1.3.5-4_grape.jpg',
+  '/product2/1.3.5-5_ornithine.png',
+  '/product2/1.3.5-6_garcinia.jpg',
 ];
 
-const patentOptions = [
+const productNames = computed(() => [
+  t('product.product2.compounds.items.livinol.name'),
+  t('product.product2.compounds.items.broccoli.name'),
+  t('product.product2.compounds.items.thistle.name'),
+  t('product.product2.compounds.items.grape.name'),
+  t('product.product2.compounds.items.ornithine.name'),
+  t('product.product2.compounds.items.garcinia.name')
+]);
+
+const productDesc = computed(() => [
+  t('product.product2.compounds.items.livinol.desc'),
+  t('product.product2.compounds.items.broccoli.desc'),
+  t('product.product2.compounds.items.thistle.desc'),
+  t('product.product2.compounds.items.grape.desc'),
+  t('product.product2.compounds.items.ornithine.desc'),
+  t('product.product2.compounds.items.garcinia.desc')
+]);
+
+const patentOptions = computed(() => [
   {
     id: 1,
-    title: '日本亚临界萃取专利技术',
-    patentNo: '专利号：7141630',
-    desc: '应用于姬松茸核心成分提取，广泛用于 CP-101 产品中。采用低温低压工艺，有效保留活性成分，显著提升吸收效率。',
+    title: t('product.product2.patent.options.extraction.title'),
+    patentNo: t('product.product2.patent.options.extraction.patentNo'),
+    desc: t('product.product2.patent.options.extraction.desc'),
     image: getLocalizedImagePath('/product2/1.3.2-1_extract.jpg'),
   },
   {
     id: 2,
-    title: 'pH响应型肠溶缓释技术',
+    title: t('product.product2.patent.options.release.title'),
     patentNo: '',
-    desc: '减少胃酸破坏，实现靶向肠道吸收，提升生物利用率。',
+    desc: t('product.product2.patent.options.release.desc'),
     image: '/product2/1.3.2-2_release.jpg',
   },
   {
     id: 3,
-    title: 'Livinol™专利成分',
-    patentNo: '专利号：5980228',
-    desc: '具备抗癌、抗氧化、抗炎、调节肠道菌群等多重功能。',
+    title: t('product.product2.patent.options.livinol.title'),
+    patentNo: t('product.product2.patent.options.livinol.patentNo'),
+    desc: t('product.product2.patent.options.livinol.desc'),
     image: '/product2/1.3.2-3_patent.jpg',
   },
   {
     id: 4,
-    title: '七重活性成分协同配方',
+    title: t('product.product2.patent.options.active.title'),
     patentNo: '',
-    desc: '实现抗炎、抗氧化、解毒、再生、调糖、调脂一体化功效。',
+    desc: t('product.product2.patent.options.active.desc'),
     image: '/product2/1.3.2-4_active.png',
   },
   {
     id: 5,
-    title: '日本GMP认证 & ISO标准工厂制造',
+    title: t('product.product2.patent.options.cert.title'),
     patentNo: '',
-    desc: '全流程可追溯，符合国际出口与个性化定制标准。',
+    desc: t('product.product2.patent.options.cert.desc'),
     image: '/product2/1.3.2-5_cert.jpg',
   }
-];
+]);
 
-const activePatent = ref(patentOptions[0]);
+const activePatent = ref(patentOptions.value[0]);
 
-function setActivePatent(option: typeof patentOptions[0]) {
+function setActivePatent(option: typeof patentOptions.value[0]) {
   activePatent.value = option;
 }
 
-const features = [
+const features = computed(() => [
   {
-    title: '护肝抗癌',
-    desc: 'Livinol™中的Garcinol可抑制癌细胞扩散\n姬松茸激活巨噬细胞，增强肝脏免疫抗癌能力\n萝卜硫素诱导癌细胞凋亡，激活解毒酶系统\n多重抗氧化成分降低肝癌风险',
+    title: t('product.product2.features.items.liver.title'),
+    desc: t('product.product2.features.items.liver.desc'),
     img: '/product2/1.3.3-1_liver.jpg'
   },
   {
-    title: '强抗氧化，减缓肝细胞衰老',
-    desc: '芽孢西兰花粉末启动Nrf2通路清除自由基\n野葡萄稳定肝细胞膜、促进微循环\n姬松茸增强抗氧环境，马利亚蓟促进肝细胞再生\nL-鸟氨酸盐酸盐减轻肝脏代谢压力',
+    title: t('product.product2.features.items.antioxidant.title'),
+    desc: t('product.product2.features.items.antioxidant.desc'),
     img: '/product2/1.3.3-2_antioxid.jpg'
   },
   {
-    title: '解酒护肝',
-    desc: 'Livinol™抵御酒精毒害，抑制炎症\nL-鸟氨酸加速酒精代谢\n马利亚蓟修复肝细胞，野葡萄促进解毒微循环',
+    title: t('product.product2.features.items.alcohol.title'),
+    desc: t('product.product2.features.items.alcohol.desc'),
     img: '/product2/1.3.3-3_alcohol.jpg'
   },
   {
-    title: '美白焕肤',
-    desc: 'Livinol™调节肠道菌群、排毒护肤\n野葡萄促进黑色素代谢\n芽孢西兰花 & 姬松茸提升皮肤代谢、改善肤色',
+    title: t('product.product2.features.items.whiten.title'),
+    desc: t('product.product2.features.items.whiten.desc'),
     img: '/product2/1.3.3-4_whiten.jpg'
   },
   {
-    title: '血糖调节',
-    desc: 'Livinol™通过菌群调节碳水吸收\n印度藤黄协同成分改善脂肪代谢，增强胰岛素敏感性\n姬松茸 & 芽孢西兰花提升肝脏对葡萄糖摄取和储存',
+    title: t('product.product2.features.items.sugar.title'),
+    desc: t('product.product2.features.items.sugar.desc'),
     img: '/product2/1.3.3-5_sugar.jpg'
   },
   {
-    title: '调脂抗脂肪肝',
-    desc: 'Livinol™抑制脂肪积累\n印度藤黄促进脂肪酸氧化、降低血脂\n芽孢西兰花 & 马利亚蓟增强肝功能，改善脂肪浸润',
+    title: t('product.product2.features.items.fatty.title'),
+    desc: t('product.product2.features.items.fatty.desc'),
     img: '/product2/1.3.3-6_fatty.png'
   }
-];
+]);
 
-const scienceList = [
+const scienceList = computed(() => [
   {
-    icon: '🔬',
-    title: '双日本专利加持',
-    desc: '亚临界萃取技术（专利号：7141630）\nLivinol™藤黄果成分（专利号：5980228）'
+    icon: t('product.product2.science.items.patent.icon'),
+    title: t('product.product2.science.items.patent.title'),
+    desc: t('product.product2.science.items.patent.desc')
   },
   {
-    icon: '✅',
-    title: '日本国内原料可溯源',
-    desc: '所有成分原料均来自日本国内明确产地，确保安全与高纯度'
+    icon: t('product.product2.science.items.source.icon'),
+    title: t('product.product2.science.items.source.title'),
+    desc: t('product.product2.science.items.source.desc')
   },
   {
-    icon: '🏭',
-    title: '通过GMP认证 & ISO国际标准制造',
-    desc: '生产过程符合国际制药/营养品制造规范，品质稳定可控'
+    icon: t('product.product2.science.items.cert.icon'),
+    title: t('product.product2.science.items.cert.title'),
+    desc: t('product.product2.science.items.cert.desc')
   },
   {
-    icon: '📊',
-    title: '实证研究支持功效',
-    desc: '肝酶指标下降、肝功能改善、美白与血糖平衡成效明确'
+    icon: t('product.product2.science.items.research.icon'),
+    title: t('product.product2.science.items.research.title'),
+    desc: t('product.product2.science.items.research.desc')
   }
-];
+]);
 
 const half = Math.ceil(productImages.length / 2);
 const firstRow = computed(() => productImages.slice(0, half));
@@ -157,32 +161,35 @@ function handleMouseLeave(row: number) {
   if (!locked.value) activeRow.value = null;
 }
 
-const marketCompare = [
-  {
-    label: '血管调理',
-    market: '❌ 多为兴奋刺激型',
-    cp101: '✅ 激活Tie2，修复毛细血管屏障'
-  },
-  {
-    label: '循环改善',
-    market: '❌ 成分不明，剂量低',
-    cp101: '✅ 专利胡椒碱，临床验证提升血流'
-  },
-  {
-    label: '安全性',
-    market: '⚠️ 含激素/化学物质',
-    cp101: '✅ 植物提取，亚临界低温萃取'
-  },
-  {
-    label: '长期服用',
-    market: '⚠️ 可能刺激肠胃',
-    cp101: '✅ 温和无刺激，适合长效调养'
-  }
-];
-
 const featureRefs = ref<HTMLElement[]>([]);
 const scienceRefs = ref<HTMLElement[]>([]);
 const adviceRefs = ref<HTMLElement[]>([]);
+
+const adviceLists = computed(() => ({
+  dosage: {
+    title: t('product.product2.advice.items.dosage.title'),
+    list: [
+      t('product.product2.advice.items.dosage.list.1'),
+      t('product.product2.advice.items.dosage.list.2')
+    ]
+  },
+  period: {
+    title: t('product.product2.advice.items.period.title'),
+    list: [
+      t('product.product2.advice.items.period.list.1'),
+      t('product.product2.advice.items.period.list.2'),
+      t('product.product2.advice.items.period.list.3')
+    ]
+  },
+  notice: {
+    title: t('product.product2.advice.items.notice.title'),
+    list: [
+      t('product.product2.advice.items.notice.list.1'),
+      t('product.product2.advice.items.notice.list.2'),
+      t('product.product2.advice.items.notice.list.3')
+    ]
+  }
+}));
 
 onMounted(() => {
   const observer = new IntersectionObserver((entries) => {
@@ -218,9 +225,9 @@ onMounted(() => {
     <section class="product-hero">
       <div class="hero-container">
         <div class="banner-content">
-          <h1>CP-101 肝源力</h1>
-          <p class="subtitle">专为肝功能保护而生的天然营养干预方案</p>
-          <p class="desc">双专利技术 + 七重成分协同，构建肝脏健康防护网</p>
+          <h1>{{ t('product.product2.hero.title') }}</h1>
+          <p class="subtitle">{{ t('product.product2.hero.subtitle') }}</p>
+          <p class="desc">{{ t('product.product2.hero.desc') }}</p>
         </div>
         <div class="hero-image">
           <img src="/images/pro-1.png" />
@@ -229,20 +236,19 @@ onMounted(() => {
 
       <div class="menu-bar">
         <div class="menu-item">
-          <NuxtLink class="nav-link" :to="localePath('/product0')">CP101蘑菇精系列</NuxtLink>
+          <NuxtLink class="nav-link" :to="localePath('/product0')">{{ t('product.product2.menu.mushroom') }}</NuxtLink>
         </div>
         <div class="menu-item">
-          <NuxtLink class="nav-link" :to="localePath('/product')">CP101固本金刚丸</NuxtLink>
+          <NuxtLink class="nav-link" :to="localePath('/product')">{{ t('product.product2.menu.pill') }}</NuxtLink>
         </div>
-
         <div class="menu-item active">
-          <NuxtLink class="nav-link" :to="localePath('/product2')">CP101肝源力</NuxtLink>
+          <NuxtLink class="nav-link" :to="localePath('/product2')">{{ t('product.product2.menu.liver') }}</NuxtLink>
         </div>
       </div>
     </section>
 
     <section class="product-section">
-      <h2 class="patent-section-title">技术特点</h2>
+      <h2 class="patent-section-title">{{ t('product.product2.patent.title') }}</h2>
       <div class="patent-flex-box">
         <div class="patent-left">
           <div class="patent-title">{{ activePatent.title }}</div>
@@ -251,62 +257,16 @@ onMounted(() => {
         </div>
         <div class="patent-right" :style="{ backgroundImage: `url(${activePatent.image})` }">
           <div class="patent-menu">
-            <div class="patent-menu-item" :class="{ active: activePatent.id === patentOptions[0].id }"
-              @mouseenter="setActivePatent(patentOptions[0])" @click="setActivePatent(patentOptions[0])">
-              <template v-if="activePatent.id === patentOptions[0].id">
+            <div v-for="(option, index) in patentOptions" :key="option.id"
+              class="patent-menu-item" :class="{ active: activePatent.id === option.id }"
+              @mouseenter="setActivePatent(option)" @click="setActivePatent(option)">
+              <template v-if="activePatent.id === option.id">
                 <div class="dot-animate">
                   <span class="ripple"></span>
                   <span class="dot"></span>
                 </div>
               </template>
-              <span>{{ patentOptions[0].title }}</span>
-            </div>
-            <div class="patent-divider"></div>
-            <div class="patent-menu-item" :class="{ active: activePatent.id === patentOptions[1].id }"
-              @mouseenter="setActivePatent(patentOptions[1])" @click="setActivePatent(patentOptions[1])">
-              <template v-if="activePatent.id === patentOptions[1].id">
-                <div class="dot-animate">
-                  <span class="ripple"></span>
-                  <span class="dot"></span>
-                </div>
-              </template>
-              <span>{{ patentOptions[1].title }}</span>
-            </div>
-            <!-- 3 -->
-            <div class="patent-divider"></div>
-            <div class="patent-menu-item" :class="{ active: activePatent.id === patentOptions[2].id }"
-              @mouseenter="setActivePatent(patentOptions[2])" @click="setActivePatent(patentOptions[2])">
-              <template v-if="activePatent.id === patentOptions[2].id">
-                <div class="dot-animate">
-                  <span class="ripple"></span>
-                  <span class="dot"></span>
-                </div>
-              </template>
-              <span>{{ patentOptions[2].title }}</span>
-            </div>
-            <!-- 4 -->
-            <div class="patent-divider"></div>
-            <div class="patent-menu-item" :class="{ active: activePatent.id === patentOptions[3].id }"
-              @mouseenter="setActivePatent(patentOptions[3])" @click="setActivePatent(patentOptions[3])">
-              <template v-if="activePatent.id === patentOptions[3].id">
-                <div class="dot-animate">
-                  <span class="ripple"></span>
-                  <span class="dot"></span>
-                </div>
-              </template>
-              <span>{{ patentOptions[3].title }}</span>
-            </div>
-            <!-- 5 -->
-            <div class="patent-divider"></div>
-            <div class="patent-menu-item" :class="{ active: activePatent.id === patentOptions[4].id }"
-              @mouseenter="setActivePatent(patentOptions[4])" @click="setActivePatent(patentOptions[4])">
-              <template v-if="activePatent.id === patentOptions[4].id">
-                <div class="dot-animate">
-                  <span class="ripple"></span>
-                  <span class="dot"></span>
-                </div>
-              </template>
-              <span>{{ patentOptions[4].title }}</span>
+              <span>{{ option.title }}</span>
             </div>
           </div>
         </div>
@@ -314,7 +274,7 @@ onMounted(() => {
     </section>
 
     <section class="product-section">
-      <h2>主要功效</h2>
+      <h2>{{ t('product.product2.features.title') }}</h2>
       <div class="feature-blocks">
         <div v-for="(feature, idx) in features" :key="feature.title"
           :ref="el => { if (el) featureRefs[idx] = el as HTMLElement }"
@@ -333,7 +293,7 @@ onMounted(() => {
     </section>
 
     <section class="product-section">
-      <h2>科研与权威认证 </h2>
+      <h2>{{ t('product.product2.science.title') }}</h2>
       <div class="science-blocks">
         <div v-for="(item, idx) in scienceList" :key="item.title"
           :ref="el => { if (el) scienceRefs[idx] = el as HTMLElement }" class="science-block">
@@ -350,7 +310,7 @@ onMounted(() => {
     </section>
 
     <section class="product-section">
-      <h2>辅助活性成分</h2>
+      <h2>{{ t('product.product2.compounds.title') }}</h2>
       <div class="compound-carousel">
         <div class="carousel-row" :class="{ paused: activeRow === 0 }" @mouseleave="handleMouseLeave(0)"
           @click.self="unlockRow">
@@ -378,27 +338,22 @@ onMounted(() => {
     </section>
 
     <section class="product-section">
-      <h2>使用方法与注意事项</h2>
+      <h2>{{ t('product.product2.advice.title') }}</h2>
       <div class="advice-cards">
         <div v-for="(_, idx) in 3" :key="idx" :ref="el => { if (el) adviceRefs[idx] = el as HTMLElement }"
           class="advice-card">
-          <div class="advice-title" v-if="idx === 0">📦 每日推荐剂量</div>
-          <div class="advice-title" v-else-if="idx === 1">🕒 服用周期建议</div>
-          <div class="advice-title" v-else>🧾 注意事项</div>
+          <div class="advice-title" v-if="idx === 0">{{ adviceLists.dosage.title }}</div>
+          <div class="advice-title" v-else-if="idx === 1">{{ adviceLists.period.title }}</div>
+          <div class="advice-title" v-else>{{ adviceLists.notice.title }}</div>
           <div class="advice-divider"></div>
           <ul class="advice-list" v-if="idx === 0">
-            <li>每日1包（2粒），建议饭后用温水服用</li>
-            <li>连续服用30天以上，建立长期肝功能支持机制</li>
+            <li v-for="(item, index) in adviceLists.dosage.list" :key="index">{{ item }}</li>
           </ul>
           <ul class="advice-list" v-else-if="idx === 1">
-            <li>基础养护（30天）：缓解酒精与代谢压力</li>
-            <li>深度调理（90天）：改善脂肪肝、稳定肝酶</li>
-            <li>长期维护（6个月+）：优化肝功能与抗癌机制</li>
+            <li v-for="(item, index) in adviceLists.period.list" :key="index">{{ item }}</li>
           </ul>
           <ul class="advice-list" v-else>
-            <li>请勿置于儿童可触及处</li>
-            <li>如有肝病病史请遵医嘱使用</li>
-            <li>孕期及哺乳期女性请谨慎使用</li>
+            <li v-for="(item, index) in adviceLists.notice.list" :key="index">{{ item }}</li>
           </ul>
         </div>
       </div>
