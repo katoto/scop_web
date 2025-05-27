@@ -1,11 +1,6 @@
 {
   "nav": {
     "home": "首页",
-    "solutions": "解决方案",
-    "passenger": "乘用车",
-    "commercialEV": "商业应用",
-    "energyStorage": "储能系统",
-    "recycling": "循环回收",
     "r_and_d": "科研实力",
     "rd": "核心技术",
     "rdFeedback": "临床应用反馈",

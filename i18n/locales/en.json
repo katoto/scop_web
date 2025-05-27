@@ -1,11 +1,6 @@
 {
   "nav": {
     "home": "Home",
-    "solutions": "Solutions",
-    "passenger": "Passenger Vehicles",
-    "commercialEV": "Commercial Applications",
-    "energyStorage": "Energy Storage Systems",
-    "recycling": "Recycling",
     "r_and_d": "Research & Development",
     "rd": "Core Technology",
     "rdFeedback": "Clinical Application Feedback",

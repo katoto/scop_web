@@ -1,11 +1,6 @@
 {
   "nav": {
     "home": "トップページ",
-    "solutions": "ソリューション",
-    "passenger": "乗用車",
-    "commercialEV": "商用車",
-    "energyStorage": "エネルギー貯蔵",
-    "recycling": "リサイクル",
     "r_and_d": "研究開発",
     "rd": "コア技術",
     "rdFeedback": "臨床応用フィードバック",
