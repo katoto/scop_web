@@ -35,10 +35,26 @@
     "philosophy": {
       "title": "Brand Philosophy",
       "items": {
-        "science": { "title": "Scientific Rigor", "desc": "Scophil believes that rigorous research is the cornerstone of product value. Backed by international first-class laboratories and expert teams, we devote ourselves to deep development of stem cell technology, peptide technology and natural herbal active substances.", "icon": "science" },
-        "safety": { "title": "Safety First", "desc": "All series products undergo strict quality inspection, ensuring no contamination, hormones or harmful additives, guaranteeing consumers' peace of mind.", "icon": "safety" },
-        "precision": { "title": "Precise Efficacy", "desc": "Scophil develops a diverse product line covering anti-cancer, liver protection, male function, intimate care repair, etc., tailored to different needs, with strong targeting and stable efficacy.", "icon": "precision" },
-        "global": { "title": "Global Vision", "desc": "The brand is deployed globally, and its products are sold in multiple countries in Asia and Europe-America, aiming to become an internationally leading high-end life health brand.", "icon": "global" }
+        "science": {
+          "title": "Scientific Rigor",
+          "desc": "Scophil believes that rigorous research is the cornerstone of product value. Backed by international first-class laboratories and expert teams, we devote ourselves to deep development of stem cell technology, peptide technology and natural herbal active substances.",
+          "icon": "science"
+        },
+        "safety": {
+          "title": "Safety First",
+          "desc": "All series products undergo strict quality inspection, ensuring no contamination, hormones or harmful additives, guaranteeing consumers' peace of mind.",
+          "icon": "safety"
+        },
+        "precision": {
+          "title": "Precise Efficacy",
+          "desc": "Scophil develops a diverse product line covering anti-cancer, liver protection, male function, intimate care repair, etc., tailored to different needs, with strong targeting and stable efficacy.",
+          "icon": "precision"
+        },
+        "global": {
+          "title": "Global Vision",
+          "desc": "The brand is deployed globally, and its products are sold in multiple countries in Asia and Europe-America, aiming to become an internationally leading high-end life health brand.",
+          "icon": "global"
+        }
       }
     },
     "experts": {
@@ -689,6 +705,144 @@
           "title": "Death of 41-year-old Female Professor at South China Normal University Reveals Harsh Reality: Cancer Targets Young People!",
           "button": "Learn More"
         }
+      }
+    }
+  },
+  "rd": {
+    "banner": {
+      "title": "Core Technologies",
+      "subtitle": "",
+      "description": "Scophil has always driven product development through rigorous scientific research. All three of its major product lines are built upon real experimental validation and authoritative certification."
+    },
+    "sections": {
+      "core_tech": "Introduction to Core Technologies",
+      "clinical_results": "Clinical Research Results"
+    },
+    "features": [
+      {
+        "title": "💧 Subcritical Water Extraction Technology (Patent No. 7141630)",
+        "desc": "The CP-101 series utilizes advanced subcritical water extraction technology. This method avoids the degradation of active ingredients and solvent residue issues commonly seen in traditional high-temperature or solvent-based extraction processes by using low-temperature subcritical water. It ensures the integrity and high bioactivity of the effective anticancer components found in Agaricus blazei."
+      },
+      {
+        "title": "🧬 Immune Checkpoint Inhibition Mechanism (CP-101 Mushroom Extract)",
+        "desc": "Acts on the PD-1 / PD-L1 pathway, releasing the suppression of T cells by tumors and restoring the immune system’s ability to recognize and attack cancer cells. Based on Nobel Prize-winning PD-1 immune mechanism research by Professor Tasuku Honjo in 2018."
+      },
+      {
+        "title": "🌿 Dendritic Cell Activation Pathway (CP-101 Mushroom Extract)",
+        "desc": "CP-101 activates key dendritic cells and macrophages within the immune system, enhancing the body's defense network."
+      },
+      {
+        "title": "GMP + ISO Dual Certification Assurance",
+        "desc": "All products are manufactured in GMP-certified factories in Japan and comply with ISO international quality standards. The entire production process is traceable, ensuring stability, safety, and compliance for every batch."
+      },
+      {
+        "title": "💊 Scientific Formulation × Patent-Activated Microcirculation Reconstruction (CP-101 Kokuhon Gokanmaru)",
+        "desc": "CP-101 Kokuhon Gokanmaru combines multiple natural active ingredients to precisely enhance vascular function. Its key component — Long Pepper extract (Japanese Patent No.: 6246859) — effectively activates the Tie2 signaling pathway, repairing capillary barriers and improving blood flow dynamics. By reconstructing microcirculatory networks, it supports efficient nutrient delivery and smooth energy distribution, offering core support for improving sub-health conditions such as fatigue, cold sensitivity, and swelling."
+      },
+      {
+        "title": "🛡️ Patented Ingredient Livinol™ (Patent No.: 5980228) (CP-101 Kangen Riki)",
+        "desc": "This product contains the patented ingredient Livinol™, which has been validated through multiple experiments to inhibit hepatitis, liver cancer, and fatty liver disease. Additionally, Livinol™ helps regulate gut microbiota and maintain balanced blood sugar levels. Its active compound, Garcinol, forms a strong protective barrier for liver health, supporting multi-level protection and repair."
+      }
+    ],
+    "clinical_results": [
+      {
+        "title": "🔬 In Vivo Experiment: Immune Activation Verified in Lung Cancer Mouse Model (CP-101 Mushroom Extract)",
+        "desc": "In a mutated EGFR lung cancer mouse model, the experimental group (F2 group) fed with 2% CP-101 showed significantly reduced mRNA expression of three immune checkpoint-related genes — PD-L1, PD-L2, and CTLA4 — in lung tissues compared to the non-supplemented control group (NF group).\nResearch findings:\n✅ CP-101 effectively suppresses the expression of immune checkpoint molecules\n✅ Confirms immunomodulatory and anti-tumor potential\n(Expression levels are represented as mRNA / GAPDH ratios; data represent average values obtained from tissue analysis after 6 weeks)"
+      },
+      {
+        "title": "🧪 In Vitro Experiment: Suppression of Lung Cancer Cell Growth and Reduced Immune Checkpoint Expression (CP-101 Mushroom Extract)",
+        "desc": "In vitro studies showed that CP-101 applied to human lung cancer cell line A549 exhibited significant anti-cancer activity:\n✅ Inhibited cancer cell proliferation within the concentration range of 10–200 μg/ml, showing dose-dependent effects\n✅ Significantly reduced PD-L1 and PD-L2 mRNA expression within 24 hours at a concentration of 20 μg/ml\nResults confirm that CP-101 not only directly inhibits cancer cell growth but also modulates immune checkpoints to enhance immune recognition."
+      },
+      {
+        "title": "🌿 Immune Activation of Dendritic Cells by Agaricus Blazei Extract (CP-101 Mushroom Extract)",
+        "desc": "Studies show that Agaricus blazei extract can activate dendritic cells and enhance their immune-stimulating capabilities:\n✅ Promotes expression of co-stimulatory molecules CD80 and CD86\n✅ Enhances secretion of IL-12 and IFN-γ, activating T-cell responses\n✅ Exhibits dose-dependent activation, with higher extract concentrations leading to stronger effects\nBy activating dendritic cells, Agaricus blazei indirectly exerts anti-tumor and immune-enhancing effects."
+      },
+      {
+        "title": "🔄 Triple Immune Synergy Mechanism (CP-101 Mushroom Extract)",
+        "desc": "The combination of CP-101, Shiitake mushroom, and Lactobacillus demonstrated significant immune-enhancing effects in experiments:\n● Inhibits PD-L1 / PD-L2 / CTLA-4, activating immune cells\n● Shiitake enhances anti-tumor immune response\n● Lactobacillus regulates gut microbiome, supporting systemic immunity\nExperimental verification: When combined in a cellular model, the three components synergistically enhance immune recognition, attack, and stability"
+      },
+      {
+        "title": "💫 Improved Peripheral Circulation (CP-101 Kokuhon Gokanmaru)",
+        "desc": "After administration of 120μg piperine, subjects showed a significant increase in skin temperature of hands, confirming improved peripheral circulation and relief of cold extremities."
+      },
+      {
+        "title": "📊 Significant Improvement in Lower Limb Edema Index (ECW/TBW) (CP-101 Kokuhon Gokanmaru)",
+        "desc": "In clinical trials, subjects taking CP-101 Kokuhon Gokanmaru showed a marked decrease in ECW/TBW (extracellular water ratio), indicating improved fluid distribution and reduced tissue edema."
+      },
+      {
+        "title": "🔬 Enhanced Tie2 Pathway Activation Stabilizes Vascular Structure (CP-101 Kokuhon Gokanmaru)",
+        "desc": "Experimental data show that following ingestion of CP-101 Kokuhon Gokanmaru, Tie2 pathway activity was enhanced in subjects. Activation of this pathway helps maintain endothelial cell stability, reducing fluid leakage due to increased vascular permeability, thereby stabilizing vascular structure and reducing tissue fluid loss."
+      },
+      {
+        "title": "👥 Subjective Feedback: Improved Mental State and Temperature Perception (CP-101 Kokuhon Gokanmaru)",
+        "desc": "Based on subjective feedback from users after taking CP-101 Kokuhon Gokanmaru, most reported improvements in mental state and reduced fatigue during continuous use. Some users also reported relief from cold hands and feet, an overall sense of warmth, increased energy, and improved performance in daily work and life activities."
+      },
+      {
+        "title": "📉 Significant Reduction in ALT and AST Liver Enzyme Levels (CP-101 KanGen Riki)",
+        "desc": "In animal experiments and early intervention models, continuous intake of \"KanGen Riki\" significantly reduced liver enzyme markers ALT and AST, indicating clear alleviation of liver cell damage and contributing to improved overall hepatic metabolic capacity."
+      },
+      {
+        "title": "🔍 Improvement in Fatty Liver Infiltration in Non-Alcoholic Fatty Liver Disease (NAFLD) (CP-101 KanGen Riki)",
+        "desc": "Research shows that taking \"KanGen Riki\" effectively reduces lipid deposition in liver cells and improves hepatic steatosis, providing a potential complementary improvement strategy for patients with non-alcoholic fatty liver disease (NAFLD)."
+      }
+    ]
+  },
+  "rdfeedback": {
+    "title": "Clinical Application Feedback",
+    "subtitle": "",
+    "description": "Multiple clinical and practical application studies have verified the product's remarkable effects. Users generally report improved physical function and symptom relief. Combining scientific data with real-world experiences fully demonstrates the product’s safety and effectiveness, helping users regain health and vitality.",
+    "nav": {
+      "cancer": "Cancer Cases",
+      "other": "Other Diseases",
+      "research": "Clinical Research",
+      "media": "Media Coverage",
+      "thanks": "Thank You Letters"
+    },
+    "cases": {
+      "breastCancer": {
+        "title": "Breast Cancer Patient Feedback",
+        "date": "2024",
+        "desc": "A 44-year-old breast cancer patient, six years after diagnosis, developed a tumor too large for immediate surgical removal. After taking Agaricus blazei Murrill (ABM), part of the tumor naturally detached and shrank, enabling surgery."
+      },
+      "lymphoma": {
+        "title": "Malignant Lymphoma Patient Feedback",
+        "date": "2024",
+        "desc": "A 62-year-old patient was hospitalized due to general discomfort and diagnosed with malignant lymphoma, with a life expectancy of less than six months. Starting from the second week of treatment, he began taking ABM-Iwata 101. His appetite increased significantly, and inflammation was visibly reduced. Ten months later, he was discharged in good health."
+      },
+      "lungCancer": {
+        "title": "Lung Cancer Patient Feedback",
+        "date": "2024",
+        "desc": "A 78-year-old lung cancer patient was diagnosed at stage III during a routine checkup. With conventional treatment plus ABM supplementation, he recovered fully and was discharged after four months—an event considered a miracle in cancer treatment history."
+      },
+      "prostateCancer": {
+        "title": "Prostate Cancer Patient Feedback",
+        "date": "2024",
+        "desc": "The patient was diagnosed at age 76 in November 2005 with metastatic cancer and suffered from whole-body pain, headaches, nausea, and tongue discomfort. Two months after diagnosis, he started using ABM Iwata 101 extract. The very next day after consumption, his symptoms began to improve immediately. Over the following six months, his PSA (prostate-specific antigen) levels dropped rapidly, showing highly significant results."
+      },
+      "prostateEnlargement": {
+        "title": "Benign Prostatic Hyperplasia (BPH) Patient Feedback",
+        "date": "2024",
+        "desc": "Diagnosed with BPH in 1985, the patient had not received effective treatment. At the end of 2004, he started consuming ABM Iwata 101 extract, which quickly relieved his urinary difficulties. Six months later, his condition returned to normal."
+      },
+      "lymphomaSideEffects": {
+        "title": "Lymphoma Treatment Side Effect Improvement Case",
+        "date": "2024",
+        "desc": "A 59-year-old male lymphoma patient experienced severe side effects from treatment, including impaired physical function. After taking ABM Iwata 101 extract, the adverse reactions disappeared, his physical functions recovered, and he successfully resisted a major flu outbreak."
+      },
+      "hepatitisB": {
+        "title": "Chronic Hepatitis B Clinical Trial Report",
+        "date": "2024",
+        "desc": "This clinical trial studied the effect of Agaricus blazei Murrill on liver function in patients with chronic hepatitis B. Conducted jointly by Chinese and Japanese medical teams, the study found that ABM significantly improved liver function and clinical symptoms. Before and after treatment, multiple indicators such as serum ferritin, S-GPT, S-GOT, and bilirubin showed statistically significant improvements (P-value: 0.005–0.001)."
+      },
+      "cp101News": {
+        "title": "CP-101 User News Reports",
+        "date": "2024",
+        "desc": "Collection of news reports about CP-101 users"
+      },
+      "thanksLetters": {
+        "title": "Patients' Thank You Letters",
+        "date": "2024",
+        "desc": "Collection of thank you letters from grateful patients"
       }
     }
   }

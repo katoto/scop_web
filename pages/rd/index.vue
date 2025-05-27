@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue';
+import { ref, onMounted } from 'vue';
 import { getLocalizedImagePath } from '~/utils/image'
 import { useI18n } from 'vue-i18n'
-const localePath = useLocalePath()
 const { t } = useI18n()
 
 const features = [
@@ -125,7 +124,7 @@ onMounted(() => {
 
     <!-- banner -->
     <section class="product-hero" :style="{
-      background: `url(${getLocalizedImagePath('/r_and_d/banner_bg2.png')}) no-repeat center center`,
+      background: `url(${'/r_and_d/banner_bg2.png'}) no-repeat center center`,
       backgroundSize: 'cover'
     }">
       <div class="banner-content">
