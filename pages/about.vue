@@ -145,26 +145,19 @@ const philosophyBackgrounds = {
 const activeIndex = ref(0)
 
 const expertPoints = computed(() => {
-  const honjoPoints = tm('about.experts.items.honjo.points') || {}
-  const gabazzaPoints = tm('about.experts.items.gabazza.points') || {}
-  
-  // 从 AST 对象中提取文本内容
-  const extractText = (obj) => {
-    if (typeof obj !== 'object' || obj === null) return {}
-    const result = {}
-    for (const [key, value] of Object.entries(obj)) {
-      if (typeof value === 'string') {
-        result[key] = value
-      } else if (value?.body?.static) {
-        result[key] = value.body.static
-      }
-    }
-    return result
-  }
-
   return {
-    honjo: extractText(honjoPoints),
-    gabazza: extractText(gabazzaPoints)
+    honjo: {
+      point1: t('about.experts.items.honjo.points.point1'),
+      point2: t('about.experts.items.honjo.points.point2'),
+      point3: t('about.experts.items.honjo.points.point3'),
+      point4: t('about.experts.items.honjo.points.point4')
+    },
+    gabazza: {
+      point1: t('about.experts.items.gabazza.points.point1'),
+      point2: t('about.experts.items.gabazza.points.point2'),
+      point3: t('about.experts.items.gabazza.points.point3'),
+      point4: t('about.experts.items.gabazza.points.point4')
+    }
   }
 })
 
