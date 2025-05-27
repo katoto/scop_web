@@ -5,27 +5,28 @@
       <div class="banner-overlay"></div>
       <!-- 品牌介绍 -->
       <div class="banner-content">
-        <h2 class="title">关于 Scophil</h2>
-        <p>
-          Scophil 源自 "Science"（科学）与 "Philosophy"（哲学）的结合，寓意「科学赋能生命之美」。我们致力于通过前沿生物科技与严谨科研精神，为人类带来卓越健康解决方案，重塑生命活力与幸福品质。
-        </p>
+        <h2 class="title">{{ $t('about.title') }}</h2>
+        <p>{{ $t('about.description') }}</p>
       </div>
     </section>
 
     <!-- 品牌理念横排 -->
     <section class="philosophy-row-section" :style="{
-      backgroundImage: activeIndex !== -1 ? `url('${philosophyList[activeIndex].bg}')` : '',
+      backgroundImage: activeIndex !== -1 ? `url('${philosophyBackgrounds[philosophyKeys[activeIndex]]}')` : '',
       transition: 'background-image 0.4s',
     }">
       <div class="philosophy-row">
-        <div v-for="(item, idx) in philosophyList" :key="item.title" class="philosophy-card"
-          :class="{ active: activeIndex === idx }" :style="{ cursor: 'pointer' }" @mouseenter="setActive(idx)"
-          @mouseleave="clearActive" @click="setActive(idx)">
+        <div v-for="(key, idx) in philosophyKeys" :key="key" class="philosophy-card"
+          :class="{ active: activeIndex === idx }" 
+          :style="{ cursor: 'pointer' }" 
+          @mouseenter="setActive(idx)"
+          @mouseleave="clearActive" 
+          @click="setActive(idx)">
           <div class="philosophy-card-bg" :class="{ active: activeIndex === idx }"></div>
           <div class="philosophy-card-content">
-            <span v-html="item.icon"></span>
-            <h3>{{ item.title }}</h3>
-            <p>{{ item.desc }}</p>
+            <span v-html="getPhilosophyIcon(key)"></span>
+            <h3>{{ $t(`about.philosophy.items.${key}.title`) }}</h3>
+            <p>{{ $t(`about.philosophy.items.${key}.desc`) }}</p>
           </div>
         </div>
       </div>
@@ -33,69 +34,67 @@
 
     <!-- 专家团队 -->
     <section id="experts" class="section experts">
-      <h2>专家团队</h2>
+      <h2>{{ $t('about.experts.title') }}</h2>
       <div class="experts-list">
         <!-- 本庶佑教授 -->
         <div class="expert-row">
           <div class="expert-img left">
-            <img src="/about-Scophil/expert_honjo.jpg" alt="本庶佑教授" />
+            <img src="/about-Scophil/expert_honjo.jpg" :alt="$t('about.experts.items.honjo.name')" />
           </div>
           <div class="expert-info right">
-            <h3>本庶佑教授</h3>
-            <div class="expert-desc">日本著名免疫学家，2018年诺贝尔生理学或医学奖得主。京都大学高等研究院特别教授，癌症免疫疗法开创者。</div>
+            <h3>{{ $t('about.experts.items.honjo.name') }}</h3>
+            <div class="expert-desc">{{ $t('about.experts.items.honjo.title') }}</div>
           </div>
           <ul class="expert-points">
-            <li>发现PD-1，揭示T细胞免疫调节机制</li>
-            <li>开创免疫疗法，提出阻断PD-1/PD-L1，激活抗癌免疫反应</li>
-            <li>发现AID酶，阐明抗体多样性与免疫系统适应性机制</li>
-            <li>鉴定IL-4/IL-5，推进免疫与过敏反应研究</li>
+            <li v-for="(point, index) in expertPoints.honjo" :key="index">
+              {{ point }}
+            </li>
           </ul>
         </div>
         <!-- Gabazza Esteban教授 -->
         <div class="expert-row reverse">
           <div class="expert-img right">
-            <img src="/about-Scophil/expert_gabazza.jpg" alt="Gabazza Esteban教授" />
+            <img src="/about-Scophil/expert_gabazza.jpg" :alt="$t('about.experts.items.gabazza.name')" />
+          </div>
+          <div class="expert-info left">
+            <h3>{{ $t('about.experts.items.gabazza.name') }}</h3>
+            <div class="expert-desc">{{ $t('about.experts.items.gabazza.title') }}</div>
           </div>
           <ul class="expert-points">
-            <li>发现姬松茸PD-1，拓展免疫研究新方向</li>
-            <li>提取CP-101，开发具有抗癌功效的姬松茸提取物</li>
-            <li>免疫学研究权威，发表论文千余篇，总引用超16,000次</li>
-            <li>探索肺部免疫机制，推动慢性肺病与免疫相关治疗研究</li>
+            <li v-for="(point, index) in expertPoints.gabazza" :key="index">
+              {{ point }}
+            </li>
           </ul>
-          <div class="expert-info left">
-            <h3>Gabazza Esteban教授</h3>
-            <div class="expert-desc">日本三重大学医学研究科特任教授。免疫学与呼吸内科学专家，CP-101研发领军人。</div>
-          </div>
         </div>
         <!-- 后四位专家模块排版 -->
         <div class="expert-modules">
           <div class="expert-card">
             <div class="expert-card-img">
-              <img src="/about-Scophil/expert_okada.png" alt="冈田邦彦" />
+              <img src="/about-Scophil/expert_okada.png" :alt="$t('about.experts.items.okada.name')" />
             </div>
-            <h4>冈田邦彦</h4>
-            <p>日本再生医疗领域权威，德岛大学硕士、名古屋大学博士，DRAQUA与REBOR等多家生医企业董事长。主导干细胞培养、骨再生与组织工程等前沿研究，推动再生医疗临床应用。</p>
+            <h4>{{ $t('about.experts.items.okada.name') }}</h4>
+            <p>{{ $t('about.experts.items.okada.title') }}</p>
           </div>
           <div class="expert-card">
             <div class="expert-card-img">
-              <img src="/about-Scophil/expert_ding.png" alt="丁明跃" />
+              <img src="/about-Scophil/expert_ding.png" :alt="$t('about.experts.items.ding.name')" />
             </div>
-            <h4>丁明跃</h4>
-            <p>华中科技大学生命科学与技术学院教授、博士生导师。高端生物医学成像专家，长期致力于医疗器械与成像技术创新。</p>
+            <h4>{{ $t('about.experts.items.ding.name') }}</h4>
+            <p>{{ $t('about.experts.items.ding.title') }}</p>
           </div>
           <div class="expert-card">
             <div class="expert-card-img">
-              <img src="/about-Scophil/expert_yan.png" alt="燕炜" />
+              <img src="/about-Scophil/expert_yan.png" :alt="$t('about.experts.items.yan.name')" />
             </div>
-            <h4>燕炜</h4>
-            <p>医疗健康管理专家，内科医生。毕业于中南大学湘雅医学院与北京大学光华管理学院，拥有20余年医疗行业经验，参与多项1.1类新药临床试验。</p>
+            <h4>{{ $t('about.experts.items.yan.name') }}</h4>
+            <p>{{ $t('about.experts.items.yan.title') }}</p>
           </div>
           <div class="expert-card">
             <div class="expert-card-img">
-              <img src="/about-Scophil/expert_wen.png" alt="文辉清" />
+              <img src="/about-Scophil/expert_wen.png" :alt="$t('about.experts.items.wen.name')" />
             </div>
-            <h4>文辉清</h4>
-            <p>南方医科大学第五附属医院肝胆外科主任，岭南名医。专注肝胆结石及内镜微创治疗。</p>
+            <h4>{{ $t('about.experts.items.wen.name') }}</h4>
+            <p>{{ $t('about.experts.items.wen.title') }}</p>
           </div>
         </div>
       </div>
@@ -103,25 +102,24 @@
 
     <!-- 合作机构轮播 -->
     <section class="section partners">
-      <h2>合作机构</h2>
+      <h2>{{ $t('about.partners.title') }}</h2>
       <div class="partner-carousel">
         <button class="carousel-arrow left" @click="prevPartner"><span>&lt;</span></button>
         <div class="partner-card-carousel">
           <div class="partner-card-carousel-inner">
             <div class="partner-card-carousel-content">
               <div class="partner-card-left">
-                <div class="partner-card-title">{{ partners[partnerIndex].name }}</div>
-                <div class="partner-card-desc">{{ partners[partnerIndex].desc }}</div>
-                <!-- <a class="partner-card-btn" :href="partners[partnerIndex].link">了解更多</a> -->
+                <div class="partner-card-title">{{ $t(`about.partners.items.${partnerKeys[partnerIndex]}.name`) }}</div>
+                <div class="partner-card-desc">{{ $t(`about.partners.items.${partnerKeys[partnerIndex]}.desc`) }}</div>
               </div>
               <div class="partner-card-right">
-                <img :src="partners[partnerIndex].img" :alt="partners[partnerIndex].name" />
+                <img :src="partnerImages[partnerIndex]" :alt="$t(`about.partners.items.${partnerKeys[partnerIndex]}.name`)" />
               </div>
             </div>
           </div>
           <!-- 指示器 -->
           <div class="carousel-indicators">
-            <span v-for="(item, idx) in partners" :key="item.name" class="carousel-dot"
+            <span v-for="(key, idx) in partnerKeys" :key="key" class="carousel-dot"
               :class="{ active: partnerIndex === idx }" @click="partnerIndex = idx"></span>
           </div>
         </div>
@@ -132,64 +130,59 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, computed, watch } from 'vue'
+import { useI18n } from 'vue-i18n'
 
-const philosophyList = [
-  {
-    title: '科学严谨',
-    desc: 'Scophil 坚信严谨的科研是产品价值的基石。品牌背靠国际一流实验室与专家团队，专注于干细胞科技、多肽技术与天然草本活性物质的深度开发。',
-    bg: '/about-Scophil/philosophy_science.jpg',
-    icon: `<svg viewBox=\"0 0 48 48\"><circle cx=\"24\" cy=\"24\" r=\"20\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\"/><path d=\"M16 32l8-16 8 16\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\"/></svg>`
-  },
-  {
-    title: '安全优先',
-    desc: '全系列产品均通过严格质量检测，确保无污染、无激素、无有害添加，保障消费者使用安心。',
-    bg: '/about-Scophil/philosophy_safety.png',
-    icon: `<svg viewBox=\"0 0 48 48\"><rect x=\"10\" y=\"14\" width=\"28\" height=\"20\" rx=\"4\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\"/><path d=\"M24 18v12\" stroke=\"#fff\" stroke-width=\"2\"/><circle cx=\"24\" cy=\"24\" r=\"2\" fill=\"#fff\"/></svg>`
-  },
-  {
-    title: '精准功效',
-    desc: '结合不同人群需求，Scophil 开发出涵盖抗癌、护肝、男性机能、私护修复等多维产品线，针对性强，见效稳定。',
-    bg: '/about-Scophil/philosophy_precision.jpg',
-    icon: `<svg viewBox=\"0 0 48 48\"><rect x=\"12\" y=\"12\" width=\"24\" height=\"24\" rx=\"6\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\"/><path d=\"M24 18v12M18 24h12\" stroke=\"#fff\" stroke-width=\"2\"/></svg>`
-  },
-  {
-    title: '全球视野',
-    desc: '品牌布局全球，目前产品远销亚洲、欧美多个国家，致力于打造国际领先的高端生命健康品牌。',
-    bg: '/about-Scophil/philosophy_global.png',
-    icon: `<svg viewBox=\"0 0 48 48\"><circle cx=\"24\" cy=\"24\" r=\"20\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\"/><path d=\"M24 4v40M4 24h40\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\"/></svg>`
-  }
-]
+const { t, locale, messages, tm } = useI18n()
 
+const philosophyKeys = ['science', 'safety', 'precision', 'global']
+const philosophyBackgrounds = {
+  science: '/about-Scophil/philosophy_science.jpg',
+  safety: '/about-Scophil/philosophy_safety.png',
+  precision: '/about-Scophil/philosophy_precision.jpg',
+  global: '/about-Scophil/philosophy_global.png'
+}
 const activeIndex = ref(0)
+
+const expertPoints = computed(() => {
+  const honjoRaw = tm('about.experts.items.honjo.points') || []
+  const gabazzaRaw = tm('about.experts.items.gabazza.points') || []
+  // 将 tm 返回的 AST 对象数组（例如 honjoRaw）中每个 item 的 body.static 提取出来，从而将数组转换为纯字符串数组
+  const toStrArr = (arr) => Array.isArray(arr) ? arr.map(item => (typeof item === 'string' ? item : (item?.body?.static || ''))) : []
+  return { honjo: toStrArr(honjoRaw), gabazza: toStrArr(gabazzaRaw) }
+})
+
+function getPhilosophyIcon(key) {
+  const icons = {
+    science: `<svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" stroke="#fff" stroke-width="2" fill="none"/><path d="M16 32l8-16 8 16" stroke="#fff" stroke-width="2" fill="none"/></svg>`,
+    safety: `<svg viewBox="0 0 48 48"><rect x="10" y="14" width="28" height="20" rx="4" stroke="#fff" stroke-width="2" fill="none"/><path d="M24 18v12" stroke="#fff" stroke-width="2"/><circle cx="24" cy="24" r="2" fill="#fff"/></svg>`,
+    precision: `<svg viewBox="0 0 48 48"><rect x="12" y="12" width="24" height="24" rx="6" stroke="#fff" stroke-width="2" fill="none"/><path d="M24 18v12M18 24h12" stroke="#fff" stroke-width="2"/></svg>`,
+    global: `<svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" stroke="#fff" stroke-width="2" fill="none"/><path d="M24 4v40M4 24h40" stroke="#fff" stroke-width="2" fill="none"/></svg>`
+  }
+  return icons[key]
+}
 
 function setActive(idx) {
   activeIndex.value = idx
 }
+
 function clearActive() {
   activeIndex.value = 0
 }
 
-const partners = [
-  {
-    name: '三重大学',
-    desc: '日本国立三重大学在医学与免疫学领域享有盛誉。研究团队深度参与蘑菇精CP-101的开发，专注姬松茸活性成分的免疫调节与抗癌功效。通过先进的亚临界水提取技术，验证CP-101的有效性，为天然成分与现代科技结合提供坚实科研支持。',
-    img: '/about-Scophil/partner_mie.jpg',
-    link: '#'
-  },
-  {
-    name: '岩出菌学研究所',
-    desc: '1963年创立，成功培育姬松茸"岩出101株"。1980年在日本癌症学会公布其显著抗癌效果，药用价值持续获多项学术验证，奠定坚实科研基础。',
-    img: '/about-Scophil/partner_iwade.png',
-    link: '#'
-  }
+const partnerKeys = ['mie', 'iwade']
+const partnerImages = [
+  '/about-Scophil/partner_mie.jpg',
+  '/about-Scophil/partner_iwade.png'
 ]
 const partnerIndex = ref(0)
+
 function prevPartner() {
-  partnerIndex.value = (partnerIndex.value - 1 + partners.length) % partners.length
+  partnerIndex.value = (partnerIndex.value - 1 + partnerKeys.length) % partnerKeys.length
 }
+
 function nextPartner() {
-  partnerIndex.value = (partnerIndex.value + 1) % partners.length
+  partnerIndex.value = (partnerIndex.value + 1) % partnerKeys.length
 }
 
 // 自动轮播
@@ -199,6 +192,7 @@ onMounted(() => {
     nextPartner()
   }, 4000)
 })
+
 onUnmounted(() => {
   if (carouselTimer) clearInterval(carouselTimer)
 })
@@ -939,7 +933,7 @@ onUnmounted(() => {
   }
 
   .partner-card-right img {
-    max-width: 100%;
+    max-width: 100vw;
     border-radius: 6px;
   }
 

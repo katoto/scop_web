@@ -34,49 +34,70 @@
     "legal": "Legal Statement"
   },
   "about": {
-    "title": "About Us",
-    "subtitle": "Global Leading Battery Manufacturer",
-    "overview": {
-      "title": "Company Overview",
-      "description": "CATL New Energy Technologies Co., Ltd. is a global leading new energy innovation technology company, dedicated to providing top-tier solutions and services for global new energy applications.",
-      "mission": {
-        "title": "Mission",
-        "description": "To provide innovative battery solutions for global customers."
-      },
-      "vision": {
-        "title": "Vision",
-        "description": "To become the global leading battery manufacturer."
+    "title": "About Scophil",
+    "subtitle": "Science Empowers Life's Beauty",
+    "description": "Scophil derives from the fusion of "Science" and "Philosophy", meaning "Science Empowers Life's Beauty". We are dedicated to bringing outstanding health solutions to mankind through cutting-edge bio-technology and rigorous research spirit, re-constructing vitality and happiness quality of life.",
+    "philosophy": {
+      "title": "Brand Philosophy",
+      "items": {
+        "science": { "title": "Scientific Rigor", "desc": "Scophil believes that rigorous research is the cornerstone of product value. Backed by international first-class laboratories and expert teams, we devote ourselves to deep development of stem cell technology, peptide technology and natural herbal active substances.", "icon": "science" },
+        "safety": { "title": "Safety First", "desc": "All series products undergo strict quality inspection, ensuring no contamination, hormones or harmful additives, guaranteeing consumers' peace of mind.", "icon": "safety" },
+        "precision": { "title": "Precise Efficacy", "desc": "Scophil develops a diverse product line covering anti-cancer, liver protection, male function, intimate care repair, etc., tailored to different needs, with strong targeting and stable efficacy.", "icon": "precision" },
+        "global": { "title": "Global Vision", "desc": "The brand is deployed globally, and its products are sold in multiple countries in Asia and Europe-America, aiming to become an internationally leading high-end life health brand.", "icon": "global" }
       }
     },
-    "global": {
-      "title": "Global Layout",
-      "description": "CATL has established a complete R&D, manufacturing, sales, and service network globally.",
-      "manufacturing": {
-        "title": "Global Manufacturing",
-        "description": "Established production bases in China, Germany, Hungary, etc., achieving a global layout."
-      },
-      "rd": {
-        "title": "Research Centers",
-        "description": "Set up multiple research centers globally, gathering top talents to promote technological innovation."
-      },
-      "sales": {
-        "title": "Sales Network",
-        "description": "Products are exported globally, providing power battery solutions for many well-known automobile manufacturers."
+    "experts": {
+      "title": "Expert Team",
+      "items": {
+        "honjo": {
+          "name": "Professor Honjo",
+          "title": "A renowned Japanese immunologist and 2018 Nobel laureate in Physiology or Medicine. Special Professor at Kyoto University's Institute for Advanced Study, pioneer of cancer immunotherapy.",
+          "points": [
+            "Discovered PD-1, revealing the T cell immune regulation mechanism",
+            "Pioneered immunotherapy, proposing blockade of PD-1/PD-L1 to activate anti-cancer immune responses",
+            "Discovered the AID enzyme, elucidating antibody diversity and immune system adaptation mechanisms",
+            "Identified IL-4/IL-5, advancing immune and allergic reaction research"
+          ]
+        },
+        "gabazza": {
+          "name": "Professor Gabazza Esteban",
+          "title": "Special Professor at Mie University Graduate School of Medicine. Expert in immunology and respiratory medicine, lead developer of CP-101.",
+          "points": [
+            "Discovered Agaricus PD-1, expanding new directions in immune research",
+            "Extracted CP-101, developing an Agaricus extract with anti-cancer efficacy",
+            "Authority in immunology research, published over a thousand papers with over 16,000 citations",
+            "Exploring pulmonary immune mechanisms, promoting chronic lung disease and immune-related treatment research"
+          ]
+        },
+        "okada": {
+          "name": "Kunihiko Okada",
+          "title": "Authority in Japan's regenerative medicine field, Master from Tokushima University, PhD from Nagoya University, Chairman of DRAQUA and REBOR among other bio-medical enterprises. Leading cutting-edge research in stem cell culture, bone regeneration and tissue engineering, promoting clinical applications of regenerative medicine."
+        },
+        "ding": {
+          "name": "Ming Yue Ding",
+          "title": "Professor and doctoral supervisor at Huazhong University of Science and Technology School of Life Science and Technology. Expert in high-end biomedical imaging, long devoted to innovation in medical devices and imaging technology."
+        },
+        "yan": {
+          "name": "Wei Yan",
+          "title": "Expert in medical health management, internist. Graduated from Xiangya School of Medicine (Central South University) and Guanghua School of Management (Peking University), with over 20 years of experience in the medical industry, participating in multiple 1.1 class new drug clinical trials."
+        },
+        "wen": {
+          "name": "Hui Qing Wen",
+          "title": "Director of Hepatobiliary Surgery at the Fifth Affiliated Hospital of Southern Medical University, Lingnan famous physician. Dedicated to hepatobiliary stone and endoscopic minimally invasive treatment."
+        }
       }
     },
-    "culture": {
-      "title": "Corporate Culture",
-      "innovation": {
-        "title": "Innovation-driven",
-        "description": "Continuous innovation, leading industry development."
-      },
-      "quality": {
-        "title": "Quality First",
-        "description": "Pursuing excellent quality, building premium projects."
-      },
-      "sustainability": {
-        "title": "Sustainable Development",
-        "description": "Practicing green development, jointly building a better future."
+    "partners": {
+      "title": "Partner Institutions",
+      "items": {
+        "mie": {
+          "name": "Mie University",
+          "desc": "Japan's National Mie University enjoys high acclaim in the fields of medicine and immunology. Its research team deeply participates in the development of mushroom essence CP-101, focusing on the immune regulation and anti-cancer efficacy of Agaricus active ingredients. Through advanced subcritical water extraction technology, the efficacy of CP-101 is verified, providing solid scientific support for the integration of natural ingredients and modern technology."
+        },
+        "iwade": {
+          "name": "Iwade Institute of Mycology",
+          "desc": "Founded in 1963, successfully cultivated Agaricus "Iwade 101 strain". In 1980, its significant anti-cancer effect was announced at the Japanese Cancer Society, and its medicinal value has been continuously verified by multiple academic studies, laying a solid scientific foundation."
+        }
       }
     }
   },
