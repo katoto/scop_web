@@ -36,7 +36,7 @@
   "about": {
     "title": "About Scophil",
     "subtitle": "Science Empowers Life's Beauty",
-    "description": "Scophil derives from the fusion of "Science" and "Philosophy", meaning "Science Empowers Life's Beauty". We are dedicated to bringing outstanding health solutions to mankind through cutting-edge bio-technology and rigorous research spirit, re-constructing vitality and happiness quality of life.",
+    "description": "Scophil derives from the fusion of \"Science\" and \"Philosophy\", meaning \"Science Empowers Life's Beauty\". We are dedicated to bringing outstanding health solutions to mankind through cutting-edge bio-technology and rigorous research spirit, re-constructing vitality and happiness quality of life.",
     "philosophy": {
       "title": "Brand Philosophy",
       "items": {
@@ -96,7 +96,7 @@
         },
         "iwade": {
           "name": "Iwade Institute of Mycology",
-          "desc": "Founded in 1963, successfully cultivated Agaricus "Iwade 101 strain". In 1980, its significant anti-cancer effect was announced at the Japanese Cancer Society, and its medicinal value has been continuously verified by multiple academic studies, laying a solid scientific foundation."
+          "desc": "Founded in 1963, successfully cultivated Agaricus \"Iwade 101 strain\". In 1980, its significant anti-cancer effect was announced at the Japanese Cancer Society, and its medicinal value has been continuously verified by multiple academic studies, laying a solid scientific foundation."
         }
       }
     }
@@ -104,7 +104,44 @@
   "contact": {
     "title": "Contact Us",
     "subtitle": "Looking forward to communicating with you",
-    
+    "headquarters": {
+      "title": "Headquarters",
+      "address": {
+        "title": "Address",
+        "content": "No. 2 Xingang Road, Zhangwan Town, Jiaocheng District, Ningde City, Fujian Province"
+      },
+      "phone": {
+        "title": "Phone",
+        "content": "+86-593-2888888"
+      },
+      "email": {
+        "title": "Email",
+        "content": "contact_catl.com"
+      }
+    },
+    "global": {
+      "title": "Global Contact",
+      "asia": {
+        "title": "Asia",
+        "content": "China, Japan, Korea, India and other regions"
+      },
+      "europe": {
+        "title": "Europe",
+        "content": "Germany, Hungary, France and other regions"
+      },
+      "america": {
+        "title": "Americas",
+        "content": "United States, Canada and other regions"
+      }
+    },
+    "form": {
+      "title": "Online Consultation",
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Submit"
+    }
   },
   "hero": {
     "title": "Commercial Applications",
@@ -328,6 +365,106 @@
           "Sub-healthy, middle-aged men transitioning to weaker states",
           "Long-term high-pressure workers requiring sustained energy support"
         ]
+      }
+    }
+  },
+  "home": {
+    "product": {
+      "title": "Product Showcase",
+      "items": {
+        "cp101": {
+          "name": "CP-101 Solid Gold Pill",
+          "desc": "Japanese plant extracts × Microcirculation activation technology, precisely repairing blood vessels and hormone systems, improving fatigue, low energy, cold sensitivity, and other common male issues. Golden formula supports male physical strength, immunity, and sex hormones, gentle conditioning, effective in the long term."
+        },
+        "mushroom": {
+          "name": "CP-101 Mushroom Essence Series",
+          "desc": "Using subcritical extraction technology to retain complete polysaccharide activity, enhancing the immune system, suitable for auxiliary protection against prostate cancer."
+        },
+        "liver": {
+          "name": "CP-101 Liver Source Power",
+          "desc": "Activates Tie2 receptors in blood vessels, improves microcirculation, enhances blood flow dynamics, effectively improving peripheral circulation problems."
+        }
+      }
+    },
+    "background": {
+      "title": "Background Introduction",
+      "subtitle": "Global Leading Agaricus Extract R&D and Manufacturer",
+      "description": "Scophil Co., Ltd. is a global leading new energy innovation technology company, dedicated to providing first-class solutions and services for global new energy applications.",
+      "mission": {
+        "title": "Mission",
+        "description": "To provide innovative battery solutions for global customers"
+      },
+      "vision": {
+        "title": "Vision",
+        "description": "To become a global leading battery manufacturer"
+      }
+    },
+    "researchHistory": {
+      "title": "Research History",
+      "items": {
+        "years": {
+          "label": "Years of Research",
+          "desc": "Japanese Bacteriological Society × Cancer Society has been continuously researching Agaricus and its polysaccharide activity since 1980"
+        },
+        "reports": {
+          "label": "International Research Reports",
+          "desc": "Covering multiple cutting-edge medical directions including anti-tumor, immune regulation, and carbohydrate molecular activity"
+        },
+        "institutions": {
+          "label": "National Research Institutions",
+          "desc": "Multiple institutions in Asia, Europe, and America have deeply verified the role of Agaricus extract in cancer adjuvant therapy"
+        }
+      }
+    },
+    "researchStrength": {
+      "title": "Research Strength",
+      "items": {
+        "nobel": {
+          "content": "Nobel Prize Support Mechanism: Based on Professor Honjo's proposed PD-1 immune pathway intervention",
+          "button": "Learn More"
+        },
+        "patent": {
+          "content": "Japanese Patent Extraction Technology: CP-101 = Agaricus Subcritical Water Extract",
+          "button": "Learn More"
+        },
+        "certification": {
+          "content": "GMP + ISO Certified Production System: All products produced in Japan with full supply chain",
+          "button": "Learn More"
+        }
+      }
+    },
+    "expertTeam": {
+      "title": "Expert Team",
+      "experts": {
+        "honjo": {
+          "name": "Professor Honjo",
+          "title": "A renowned Japanese immunologist and 2018 Nobel laureate in Physiology or Medicine. Special Professor at Kyoto University's Institute for Advanced Study, pioneer of cancer immunotherapy."
+        },
+        "gabazza": {
+          "name": "Professor Gabazza Esteban",
+          "title": "Special Professor at Mie University Graduate School of Medicine. Expert in immunology and respiratory medicine, lead developer of CP-101."
+        }
+      },
+      "viewAll": "View All Expert Team"
+    },
+    "news": {
+      "title": "News Center",
+      "items": {
+        "exhibition": {
+          "date": "2024-12-20",
+          "title": "CP-101 Shines at Shenzhen International Nutrition and Health Industry Exhibition, Exploring Life Health Science Frontiers and Leading Industry Trends!",
+          "button": "Learn More"
+        },
+        "charity": {
+          "date": "2024-11-01",
+          "title": "Cancer Mutual Aid Research Promotion Charity Foundation Launch Ceremony Successfully Held in Tokyo, Japan!",
+          "button": "Learn More"
+        },
+        "research": {
+          "date": "2025-03-01",
+          "title": "Death of 41-year-old Female Professor at South China Normal University Reveals Harsh Reality: Cancer Targets Young People!",
+          "button": "Learn More"
+        }
       }
     }
   }
