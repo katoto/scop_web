@@ -101,52 +101,6 @@
       }
     }
   },
-  "contact": {
-    "title": "Contact Us",
-    "subtitle": "Looking forward to communicating with you",
-    "headquarters": {
-      "title": "Headquarters",
-      "address": {
-        "title": "Address",
-        "content": "No. 2 Xingang Road, Zhangwan Town, Jiaocheng District, Ningde City, Fujian Province"
-      },
-      "phone": {
-        "title": "Phone",
-        "content": "+86-593-2888888"
-      },
-      "email": {
-        "title": "Email",
-        "content": "contact_catl.com"
-      }
-    },
-    "global": {
-      "title": "Global Contact",
-      "asia": {
-        "title": "Asia",
-        "content": "China, Japan, Korea, India and other regions"
-      },
-      "europe": {
-        "title": "Europe",
-        "content": "Germany, Hungary, France and other regions"
-      },
-      "america": {
-        "title": "Americas",
-        "content": "United States, Canada and other regions"
-      }
-    },
-    "form": {
-      "title": "Online Consultation",
-      "name": "Name",
-      "email": "Email",
-      "subject": "Subject",
-      "message": "Message",
-      "submit": "Submit"
-    }
-  },
-  "hero": {
-    "title": "Commercial Applications",
-    "subtitle": "Winning Every Degree"
-  },
   "advantages": {
     "title": "Five Major Advantages",
     "value": {
@@ -168,41 +122,6 @@
     "intelligence": {
       "title": "Intelligence Insights Every Detail",
       "desc": "Interconnected intelligent battery management systems (BMS) make batteries safer, systems more efficient, and travel more secure."
-    }
-  },
-  "solutions": {
-    "title": "Solutions",
-    "roadPassenger": {
-      "title": "Road Passenger Transport Solutions",
-      "desc": "CATL provides safe, reliable, and durable scenario-based solutions for road passenger transport characterized by frequent use and high stability requirements."
-    },
-    "cityDelivery": {
-      "title": "Urban Delivery Solutions",
-      "desc": "CATL power batteries are compatible with light trucks, light buses, micro trucks, and mini vans, widely used in express delivery, supermarket distribution, fresh produce, and other scenarios."
-    },
-    "heavyDuty": {
-      "title": "Heavy Haulage Solutions",
-      "desc": "CATL provides powerful clean energy for heavy haulage vehicles, meeting the requirements of various working conditions such as mining areas, ports, urban short-distance transportation, and construction engineering."
-    },
-    "roadCleaning": {
-      "title": "Urban Road Cleaning Solutions",
-      "desc": "CATL provides customized solutions according to different road cleaning vehicle needs. The battery products have high safety, long life, and strong environmental adaptability."
-    },
-    "construction": {
-      "title": "Construction Machinery Solutions",
-      "desc": "CATL provides safe, reliable, and durable battery product solutions for construction machinery based on the characteristics of complex working conditions in mining areas and ports."
-    },
-    "twoWheeler": {
-      "title": "Two-wheeler Solutions",
-      "desc": "CATL provides green, intelligent, and safe solutions for two-wheelers, applied in commuting, food delivery, courier services, and other scenarios."
-    },
-    "marine": {
-      "title": "Marine Solutions",
-      "desc": "CATL provides safe, reliable, and environmentally friendly solutions for marine electrification, promoting the construction of ecological civilization in water areas."
-    },
-    "special": {
-      "title": "Special Application Solutions",
-      "desc": "CATL safeguards the electrified development of airport parks and port terminals, providing green, clean, and reliable product solutions."
     }
   },
   "product": {
