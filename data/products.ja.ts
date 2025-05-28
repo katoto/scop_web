@@ -7,7 +7,7 @@ export const products = [
     image: "/images/pro-3.png",
     color: "linear-gradient(135deg, rgba(255, 107, 107, 0.7), rgba(255, 230, 109, 0.5))",
     animationType: "default",
-    link: '/product'
+    link: '/ja/product'
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const products = [
     image: "/images/pro-4.png",
     color: "linear-gradient(135deg, rgba(78, 205, 196, 0.7), rgba(85, 98, 112, 0.5))",
     animationType: "wave",
-    link: '/product0'
+    link: '/ja/product0'
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ export const products = [
     image: "/images/pro-2.png",
     color: "linear-gradient(135deg, rgba(168, 230, 207, 0.7), rgba(255, 211, 182, 0.5))",
     animationType: "pulse",
-    link: '/product0'
+    link: '/ja/product0'
   },
   {
     id: 4,
@@ -37,6 +37,6 @@ export const products = [
     image: "/images/pro-1.png",
     color: "linear-gradient(135deg, rgba(184, 242, 230, 0.7), rgba(255, 166, 158, 0.5))",
     animationType: "float",
-    link: '/product2'
+    link: '/ja/product2'
   }
 ]; 
