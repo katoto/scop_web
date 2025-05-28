@@ -1,7 +1,10 @@
 <script setup lang="ts">
-import { ref, reactive, onMounted } from "vue";
-import { useRouter } from '#app';
-import { products } from '@/data/products';
+import { ref, reactive, onMounted, computed } from "vue";
+import { useI18n } from 'vue-i18n';
+import { getProducts } from '@/data/products';
+
+const { locale, t } = useI18n();
+const products = computed(() => getProducts(locale.value));
 
 let selectedProductIndex = ref<any>(null);
 let isBack = ref(false);
@@ -10,13 +13,6 @@ let handleClickBack = () => {
   selectedProductIndex.value = null;
   isBack.value = true;
 };
-
-function getActiveClass(num: any) {
-  if (num === selectedProductIndex.value && isBack.value) {
-    return 'product-item-bg-active'
-  }
-  return ''
-}
 
 let domState = reactive({
   left: 0,
@@ -135,7 +131,7 @@ let handleGotoDetail = (num: number) => {
           </div>
           <button class="detail-btn" @click="() => {
             navigateTo(products[selectedProductIndex].link)
-          }">点击了解更多</button>
+          }">{{ t('home.detail.learnMore') }}</button>
         </div>
       </div>
     </div>

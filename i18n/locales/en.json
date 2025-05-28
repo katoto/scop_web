@@ -609,6 +609,9 @@
     }
   },
   "home": {
+    "detail": {
+      "learnMore": "Learn More"
+    },
     "product": {
       "title": "Product Showcase",
       "items": {

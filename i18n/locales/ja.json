@@ -640,6 +640,9 @@
     }
   },
   "home": {
+    "detail": {
+      "learnMore": "詳細を見る"
+    },
     "product": {
       "title": "製品展示",
       "items": {

@@ -1,30 +1,48 @@
 <script setup lang="ts">
-import { toRefs } from 'vue'
-import { products } from '@/data/products'
-let props = defineProps(['index'])
+import { toRefs, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { getProducts } from '@/data/products'
+
+const { t, locale } = useI18n()
+let props = defineProps<{
+  index: number | null
+}>()
 let { index } = toRefs(props)
-console.log('index', index);
+
+const productDetail = computed(() => {
+  if (index.value === null) return null
+  const products = getProducts(locale.value)
+  const product = products[index.value]
+  if (!product) return null
+  return {
+    image: product.image,
+    name: product.name,
+    subName: product.subName,
+    description: product.description,
+    link: product.link
+  }
+})
 
 </script>
 
 <template>
-    <div v-if="index !== null" class="pc-show">
+    <div v-if="productDetail" class="pc-show">
         <div class="pc-picture">
-            <img class="img-detail" :src="products[index].image" />
+            <img class="img-detail" :src="productDetail.image" :alt="productDetail.name" />
         </div>
         <div class="product-detail-desc">
             <div class="detail-content-block">
                 <div class="icon-title">
                     <!-- <span class="icon">🍄</span> -->
-                    <span class="title">{{ products[index].name }}</span>
+                    <span class="title">{{ productDetail.name }}</span>
                 </div>
                 <div class="desc-list">
-                    <div>{{ products[index].subName }}</div>
-                    <div>{{ products[index].description }}</div>
+                    <div>{{ productDetail.subName }}</div>
+                    <div>{{ productDetail.description }}</div>
                 </div>
                 <button class="detail-btn" @click="() => {
-                    navigateTo(products[index].link)
-                }">点击了解更多</button>
+                    if (productDetail) navigateTo(productDetail.link)
+                }">{{ t('home.detail.learnMore') }}</button>
             </div>
 
         </div>
