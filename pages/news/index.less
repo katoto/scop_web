@@ -298,6 +298,82 @@
   }
 }
 
+// iPad 适配
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .news-hero {
+    min-height: 340px;
+    height: 35vh;
+
+    .news-bg {
+      height: 340px;
+    }
+
+    .title {
+      margin-left: 60px;
+      font-size: 1.9rem;
+    }
+  }
+
+  .news-contain {
+    padding: 0 40px;
+  }
+
+  .news-list {
+    padding: 0 16px;
+  }
+
+  .mc_e1_list {
+    gap: 24px;
+  }
+
+  .mc_e1_li.news-card {
+    width: calc(50% - 12px);
+    min-width: 300px;
+  }
+
+  .mc_e1_imgbox {
+    height: 200px;
+  }
+
+  .news-card-title {
+    font-size: 18px;
+  }
+
+  .news-card-date {
+    font-size: 15px;
+  }
+
+  .news-card-desc {
+    font-size: 14px;
+    -webkit-line-clamp: 4;
+  }
+
+  .mc_e1_txtbox {
+    padding: 18px 16px;
+  }
+
+  /* iPad 横屏 */
+  @media (orientation: landscape) {
+    .news-hero {
+      min-height: 300px;
+      height: 30vh;
+
+      .news-bg {
+        height: 300px;
+      }
+    }
+
+    .mc_e1_li.news-card {
+      width: calc(33.33% - 16px);
+      min-width: 280px;
+    }
+
+    .mc_e1_imgbox {
+      height: 180px;
+    }
+  }
+}
+
 @media screen and (max-width: 480px) {
   .news-hero {
     min-height: 240px;

@@ -260,42 +260,12 @@ let handleGotoDetail = (num: number) => {
 }
 
 .product-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  filter: blur(0px);
-}
-
-.product-detail-com-inner {
-  /* width: 20vw; */
+  height: 250px;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-.fade-in-0 {
-  animation-name: fadeIn;
-  animation-delay: 1.2s;
-}
-
-.fade-in-1 {
-  animation-name: fadeIn;
-  animation-delay: 0.4s;
-}
-
-.fade-in-2 {
-  animation-name: fadeIn;
-  animation-delay: 0.4s;
-}
-
-.fade-in-3 {
-  animation-name: fadeIn;
-  animation-delay: 1.2s;
-}
-
 
 .product-img {
   /* width: 100%; */
@@ -303,6 +273,32 @@ let handleGotoDetail = (num: number) => {
   /* max-width: 150px; */
   -webkit-box-reflect: below -15% linear-gradient(transparent, rgba(255, 255, 255, 0.3));
   transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* iPad 适配 */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .product-item {
+    height: 200px;
+  }
+  
+  .product-img {
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+  }
+  
+  /* iPad 横屏 */
+  @media (orientation: landscape) {
+    .product-item {
+      height: 180px;
+    }
+    
+    .product-img {
+      max-width: 170px;
+      max-height: 180px;
+    }
+  }
 }
 
 .product-img-hide {
