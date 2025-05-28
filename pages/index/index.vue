@@ -13,7 +13,6 @@ let contentDomref = ref<null | HTMLElement>(null);
 let selectedProduct = ref<number | null>(null);
 
 // Fix ref array initialization
-const researchStrengthCols = ref<HTMLElement[]>([]);
 const observer = ref<IntersectionObserver | null>(null);
 
 
@@ -34,12 +33,6 @@ const updateDomSize = () => {
   if (contentDomref.value) {
     domSize.width = contentDomref.value.offsetWidth;
   }
-};
-
-const getAnimationDelay = (index: number) => {
-  // 对于4个产品：index 1和2先出现（延迟0.5s），index 0和3后出现（延迟1.2s）
-  const isMiddle = index === 1 || index === 2;
-  return isMiddle ? 0.1 : 0.5;
 };
 
 onMounted(() => {
@@ -1391,6 +1384,97 @@ const localePath = useLocalePath()
       .research-desc {
         font-size: 13px;
         padding: 0 15px;
+      }
+    }
+  }
+}
+
+// Add iPad specific styles
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .research-strength-section {
+    .research-strength-col {
+      padding: 120px 24px;
+      font-size: 1.1rem;
+    }
+  }
+
+  .expert-section {
+    padding: 40px 0 30px 0;
+
+    .expert-section-title h2 {
+      font-size: 28px;
+    }
+
+    .expert-modules {
+      gap: 24px;
+      padding: 0 20px;
+    }
+
+    .expert-card {
+      padding: 24px 20px 20px 20px;
+
+      h4 {
+        font-size: 1.1rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+    }
+  }
+
+  .news-section {
+    .news-section-title h2 {
+      font-size: 28px;
+    }
+
+    .mc_a1s1_list {
+      padding: 0 40px;
+    }
+
+    .mc_a1s1_a {
+      padding: 40px 30px 50px;
+    }
+
+    .mc_a1s1_txt {
+      font-size: 20px;
+      line-height: 30px;
+      height: 60px;
+      margin-bottom: 40px;
+    }
+
+    .mc_a1s1_date {
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .mc_list_png {
+      height: 180px;
+    }
+  }
+
+  .research-history-section {
+    padding: 40px 0;
+
+    .research-history-title h2 {
+      font-size: 28px;
+    }
+
+    .research-history-container {
+      gap: 60px;
+    }
+
+    .research-history-item {
+      .research-number {
+        font-size: 70px;
+      }
+
+      .research-label {
+        font-size: 17px;
+      }
+
+      .research-desc {
+        font-size: 14px;
       }
     }
   }

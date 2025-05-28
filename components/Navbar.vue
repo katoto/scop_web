@@ -542,6 +542,39 @@ const handleClick = (child) => {
     }
 }
 
+// Add iPad specific styles
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .desktop-menu {
+        gap: 12px;
+        
+        .menu-item {
+            padding: 0 6px;
+            
+            .nav-link {
+                font-size: 0.9rem;
+            }
+        }
+    }
+
+    .logo-svg {
+        width: 100px;
+    }
+
+    .dropdown-toggle {
+        font-size: 0.9rem;
+    }
+
+    .menu-item-children {
+        height: 40px;
+        gap: 12px;
+
+        .menu-item-child {
+            .nav-link {
+                font-size: 0.9rem;
+            }
+        }
+    }
+}
 
 // 
 .navbar:hover .dropdown-toggle {
