@@ -1,7 +1,7 @@
 export const products = [
   {
     id: 1,
-    name: "CP-101 固本金刚丸",
+    name: "CP-101 固本金剛丸",
     subName: "男性機能サポート",
     description: "CP-101技術、亜鉛酵母、ペプチド成分を融合。動物実験でテストステロン、精子品質、性機能の改善を実証。主要成分は日本特許（Tie2経路）を取得し、GMPとISO認証工場で製造。",
     image: "/images/pro-3.png",

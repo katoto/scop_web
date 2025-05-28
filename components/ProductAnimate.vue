@@ -260,11 +260,33 @@ let handleGotoDetail = (num: number) => {
 }
 
 .product-item {
-  height: 250px;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  filter: blur(0px);
+}
+
+.fade-in-0 {
+  animation-name: fadeIn;
+  animation-delay: 1.2s;
+}
+
+.fade-in-1 {
+  animation-name: fadeIn;
+  animation-delay: 0.4s;
+}
+
+.fade-in-2 {
+  animation-name: fadeIn;
+  animation-delay: 0.4s;
+}
+
+.fade-in-3 {
+  animation-name: fadeIn;
+  animation-delay: 1.2s;
 }
 
 .product-img {
