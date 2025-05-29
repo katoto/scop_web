@@ -1273,7 +1273,7 @@ const localePath = useLocalePath()
   .research-history-title {
     text-align: center;
     width: 100%;
-    margin-top: 60px;
+    margin-top: 0px;
 
     h2 {
       display: inline-block;
@@ -1329,7 +1329,7 @@ const localePath = useLocalePath()
     padding: 40px 0;
 
     .research-history-title {
-      margin-top: 40px;
+      margin-top: 0px;
 
       h2 {
         font-size: 28px;

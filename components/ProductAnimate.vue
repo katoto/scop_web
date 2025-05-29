@@ -458,7 +458,7 @@ let handleGotoDetail = (num: number) => {
 
 .back-btn {
   position: absolute;
-  top: 150px;
+  top: 140px;
   left: 40px;
   background: none;
   border: none;

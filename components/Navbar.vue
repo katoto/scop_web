@@ -140,12 +140,14 @@ const handleClick = (child) => {
                         :to="item.children ? localePath(item.children[0].path) : localePath(item.path)">
                         {{ $t(item.name) }}
                     </NuxtLink>
-                    <div class="menu-item-children" v-if="item.children && currentMenuIndex === menuIndex">
-                        <span v-for="(child, childIndex) in item.children" :key="child.name" class="menu-item-child"
-                            @click="handleClick(child)">
-                            <NuxtLink class="nav-link" :to="localePath(child.path)"> {{ $t(child.name) }}</NuxtLink>
-                        </span>
-                    </div>
+                    <Transition name="fade">
+                        <div class="menu-item-children" v-show="item.children && currentMenuIndex === menuIndex">
+                            <span v-for="(child, childIndex) in item.children" :key="child.name" class="menu-item-child"
+                                @click="handleClick(child)">
+                                <NuxtLink class="nav-link" :to="localePath(child.path)"> {{ $t(child.name) }}</NuxtLink>
+                            </span>
+                        </div>
+                    </Transition>
                 </span>
             </div>
 
@@ -223,6 +225,7 @@ const handleClick = (child) => {
     padding: 0 20px;
     background-color: transparent;
     color: #fff;
+    transition: background-color 0.3s;
 }
 
 .logo-svg {
@@ -472,6 +475,24 @@ const handleClick = (child) => {
         justify-content: center;
         gap: 20px;
         box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    // Vue transition classes
+    .fade-enter-active,
+    .fade-leave-active {
+        transition: all 0.3s ease;
+    }
+
+    .fade-enter-from,
+    .fade-leave-to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    .fade-enter-to,
+    .fade-leave-from {
+        opacity: 1;
+        transform: translateY(0);
     }
 
     .menu-item-child {

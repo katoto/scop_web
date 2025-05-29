@@ -58,7 +58,7 @@ const productDetail = computed(() => {
     top: 100px;
     left: 0px;
     width: 100%;
-    padding-top: 20vh;
+    padding-top: 18vh;
     z-index: 1;
 }
 

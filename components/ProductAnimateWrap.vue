@@ -3,23 +3,25 @@ import { ref } from "vue";
 import ProductAnimate from "./ProductAnimate.vue";
 
 let showProduct = ref(false);
+let showLogo = ref(true);
 
 let handleAnimateEnd = () => {
     showProduct.value = true;
+    showLogo.value = false;
     console.log("动画结束");
 };
 </script>
 
 <template>
     <ProductAnimate v-if="showProduct" />
-    <div class="page-wrap" v-if="!showProduct">
+    <div class="page-wrap" v-if="showLogo">
         <img class="page-logo" src="/images/svg/logo.svg" @animationend="handleAnimateEnd" />
     </div>
 </template>
 
 <style scoped>
 .page-wrap {
-    position: fixed;
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,6 +29,7 @@ let handleAnimateEnd = () => {
     left: 0;
     width: 100%;
     height: 100vh;
+    z-index: 100;
 }
 
 .page-logo {
