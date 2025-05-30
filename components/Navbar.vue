@@ -299,7 +299,7 @@ const handleClick = (child) => {
     span {
         width: 100%;
         height: 3px;
-        background-color: currentColor;
+        background-color: #C9A14D;
         transition: all 0.3s ease;
     }
 
@@ -350,7 +350,7 @@ const handleClick = (child) => {
     transform: translateX(100%);
     transition: transform 0.3s ease;
     z-index: 1000;
-    overflow-y: auto;
+    overflow: hidden;
     -webkit-overflow-scrolling: touch;
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
 
@@ -365,6 +365,9 @@ const handleClick = (child) => {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 80px;
 }
 
 .mobile-menu-item {
