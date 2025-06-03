@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 import { getLocalizedImagePath } from '~/utils/image'
 import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
@@ -73,20 +73,67 @@ const section3 = [
     img: '/product34/3.5.png'
   },
   {
-    title: t('product_type2.section3.5.title'),
-    desc: t('product_type2.section3.5.desc'),
-    img: '/r_and_d/immune_checkpoint_inhibition.png'
-  },
+    title: [
+      t('product_type2.section3.5.title'),
+      t('product_type2.section3.6.title')
+    ],
+    desc: [
+      t('product_type2.section3.5.desc'),
+      t('product_type2.section3.6.desc')
+    ],
+    img: '/product34/3.5.png',
+    isCombined: true
+  }
+];
+
+const section4 = [
   {
-    title: t('product_type2.section3.6.title'),
-    desc: t('product_type2.section3.6.desc'),
-    img: '/r_and_d/subcritical_water_extraction.png'
+    title: t('product_type2.section4.0.title'),
+    desc: t('product_type2.section4.0.desc'),
+    img: '/product34/4.jpeg'
   }
 ];
 
 const featureRefs = ref<HTMLElement[]>([]);
 const feature2Refs = ref<HTMLElement[]>([]);
 const feature3Refs = ref<HTMLElement[]>([]);
+const feature4Refs = ref<HTMLElement[]>([]);
+const adviceRefs = ref<HTMLElement[]>([]);
+
+const adviceItems = computed(() => [
+  {
+    title: t('product_type2.advice.items.desc1.title'),
+    desc: t('product_type2.advice.items.desc1.desc')
+  },
+  {
+    title: t('product_type2.advice.items.desc2.title'),
+    desc: t('product_type2.advice.items.desc2.desc')
+  },
+  {
+    title: t('product_type2.advice.items.desc3.title'),
+    desc: t('product_type2.advice.items.desc3.desc')
+  },
+  {
+    title: t('product_type2.advice.items.desc4.title'),
+    desc: t('product_type2.advice.items.desc4.desc')
+  },
+  {
+    title: t('product_type2.advice.items.desc5.title'),
+    desc: t('product_type2.advice.items.desc5.desc')
+  },
+  {
+    title: t('product_type2.advice.items.desc6.title'),
+    desc: t('product_type2.advice.items.desc6.desc')
+  },
+  {
+    title: t('product_type2.advice.items.desc7.title'),
+    desc: t('product_type2.advice.items.desc7.desc')
+  },
+  {
+    title: t('product_type2.advice.items.desc8.title'),
+    desc: t('product_type2.advice.items.desc8.desc')
+  }
+]);
 
 onMounted(() => {
   const observer = new IntersectionObserver((entries) => {
@@ -114,18 +161,46 @@ onMounted(() => {
   feature3Refs.value.forEach(el => {
     if (el) observer.observe(el);
   });
+
+  feature4Refs.value.forEach(el => {
+    if (el) observer.observe(el);
+  });
+
+  adviceRefs.value.forEach(el => {
+    if (el) observer.observe(el);
+  });
 });
 
 const marketCompare = computed(() => [
   {
-    label: t('product.product0.compare.items.core.label'),
-    market: t('product.product0.compare.items.core.cp101'),
-    cp101: t('product.product0.compare.items.core.super')
+    label: t('product_type2.compare.items.core.label'),
+    market: t('product_type2.compare.items.core.cp101'),
+    cp101: t('product_type2.compare.items.core.super')
   },
   {
-    label: t('product.product0.compare.items.users.label'),
-    market: t('product.product0.compare.items.users.cp101'),
-    cp101: t('product.product0.compare.items.users.super')
+    label: t('product_type2.compare.items.users.label'),
+    market: t('product_type2.compare.items.users.cp101'),
+    cp101: t('product_type2.compare.items.users.super')
+  },
+  {
+    label: t('product_type2.compare.items.desc2.label'),
+    market: t('product_type2.compare.items.desc2.cp101'),
+    cp101: t('product_type2.compare.items.desc2.super')
+  },
+  {
+    label: t('product_type2.compare.items.desc3.label'),
+    market: t('product_type2.compare.items.desc3.cp101'),
+    cp101: t('product_type2.compare.items.desc3.super')
+  },
+  {
+    label: t('product_type2.compare.items.desc4.label'),
+    market: t('product_type2.compare.items.desc4.cp101'),
+    cp101: t('product_type2.compare.items.desc4.super')
+  },
+  {
+    label: t('product_type2.compare.items.desc5.label'),
+    market: t('product_type2.compare.items.desc5.cp101'),
+    cp101: t('product_type2.compare.items.desc5.super')
   }
 ]);
 
@@ -136,7 +211,7 @@ const marketCompare = computed(() => [
 
     <!-- banner -->
     <section class="product-hero" :style="{
-      background: `url(${'/r_and_d/banner_bg2.png'}) no-repeat center center`,
+      background: `url(${'/product34/0.png'}) no-repeat center center`,
       backgroundSize: 'cover'
     }">
       <div class="banner-content">
@@ -186,8 +261,54 @@ const marketCompare = computed(() => [
     <section class="product-section">
       <h2>{{ t('product_type2.sections.section3') }}</h2>
       <div class="feature-blocks two-column">
-        <div v-for="(feature, idx) in section3" :key="feature.title"
+        <div v-for="(feature, idx) in section3" :key="Array.isArray(feature.title) ? feature.title[0] : feature.title"
           :ref="el => { if (el) feature3Refs[idx] = el as HTMLElement }" class="feature-block">
+          <div class="feature-block-inner">
+            <div class="feature-img">
+              <img :src="feature.img" :alt="Array.isArray(feature.title) ? feature.title[0] : feature.title" />
+            </div>
+            <div class="feature-text">
+              <template v-if="feature.isCombined">
+                <div v-for="(title, i) in feature.title" :key="title" class="combined-feature">
+                  <h3>{{ title }}</h3>
+                  <p>{{ feature.desc[i] }}</p>
+                </div>
+              </template>
+              <template v-else>
+                <h3>{{ feature.title }}</h3>
+                <p>{{ feature.desc }}</p>
+              </template>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 产品对比 -->
+    <section class="product-section">
+      <h2>{{ t('product_type2.compare.title') }}</h2>
+      <div class="market-compare-table">
+        <div class="market-compare-header">
+          <div>{{ t('product_type2.compare.headers.label') }}</div>
+          <div>{{ t('product_type2.compare.headers.cp101') }}</div>
+          <div>{{ t('product_type2.compare.headers.super') }}</div>
+        </div>
+        <div v-for="item in marketCompare" :key="item.label" class="market-compare-row">
+          <div class="market-compare-label">{{ item.label }}</div>
+          <div class="market-compare-market">{{ item.market }}</div>
+          <div class="market-compare-cp101">{{ item.cp101 }}</div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="product-section">
+      <h2>{{ t('product_type2.sections.section4') }}</h2>
+      <div class="feature-blocks">
+        <div v-for="(feature, idx) in section4" :key="feature.title"
+          :ref="el => { if (el) feature4Refs[idx] = el as HTMLElement }"
+          :class="['feature-block', { reverse: idx % 2 === 1, 'gray-bg': idx % 2 === 1 }]">
           <div class="feature-block-inner">
             <div class="feature-img">
               <img :src="feature.img" :alt="feature.title" />
@@ -201,27 +322,24 @@ const marketCompare = computed(() => [
       </div>
     </section>
 
-
+    <!-- 使用人群 -->
     <section class="product-section">
-      <h2>{{ t('product.product0.compare.title') }}</h2>
-      <div class="market-compare-table">
-        <div class="market-compare-header">
-          <div>{{ t('product.product0.compare.headers.label') }}</div>
-          <div>{{ t('product.product0.compare.headers.cp101') }}</div>
-          <div>{{ t('product.product0.compare.headers.super') }}</div>
-        </div>
-        <div v-for="item in marketCompare" :key="item.label" class="market-compare-row">
-          <div class="market-compare-label">{{ item.label }}</div>
-          <div class="market-compare-market">{{ item.market }}</div>
-          <div class="market-compare-cp101">{{ item.cp101 }}</div>
-        </div>
-        <div class="market-compare-row">
-          <div class="market-compare-label">{{ t('product.product0.compare.consult.label') }}</div>
-          <div class="market-compare-market">
-            <NuxtLink :to="localePath('/contact')" class="consult-link">{{ t('product.product0.compare.consult.button') }}</NuxtLink>
+      <h2>{{ t('product_type2.advice.title') }}</h2>
+      <div class="advice-cards">
+        <div class="advice-row">
+          <div v-for="(item, idx) in adviceItems.slice(0, 4)" :key="item.title" 
+            :ref="el => { if (el) adviceRefs[idx] = el as HTMLElement }"
+            class="advice-card">
+            <div class="advice-title">{{ item.title }}</div>
+            <div class="advice-desc">{{ item.desc }}</div>
           </div>
-          <div class="market-compare-cp101">
-            <NuxtLink :to="localePath('/contact')" class="consult-link">{{ t('product.product0.compare.consult.button') }}</NuxtLink>
+        </div>
+        <div class="advice-row">
+          <div v-for="(item, idx) in adviceItems.slice(4)" :key="item.title" 
+            :ref="el => { if (el) adviceRefs[idx + 4] = el as HTMLElement }"
+            class="advice-card">
+            <div class="advice-title">{{ item.title }}</div>
+            <div class="advice-desc">{{ item.desc }}</div>
           </div>
         </div>
       </div>
