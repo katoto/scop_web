@@ -8,7 +8,10 @@
     "brand": "ブランド",
     "about": "Scophilについて",
     "product": "製品センター",
-    "contact": "お問い合わせ"
+    "contact": "お問い合わせ",
+    "product_type1": "CP-101シリーズ",
+    "product_type2": "幹細胞シリーズ",
+    "product_type3": "Palilisシリーズ"
   },
   "footer": {
     "solutions": "ソリューション",

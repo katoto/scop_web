@@ -57,7 +57,21 @@ let menu = ref([
     },
     {
         name: 'nav.product',
-        path: '/product0'
+        path: '',
+        children: [
+            {
+                name: 'nav.product_type1',
+                path: '/product0'
+            },
+            {
+                name: 'nav.product_type2',
+                path: '/product_type2'
+            },
+            {
+                name: 'nav.product_type3',
+                path: '/product_type3'
+            }
+        ]
     },
     {
         name: 'nav.r_and_d',
