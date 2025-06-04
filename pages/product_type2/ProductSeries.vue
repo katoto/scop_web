@@ -69,13 +69,14 @@ const rowCount = computed(() => Math.ceil(productSeriesList.value.length / 2))
 .product-series-section {
   background-size: cover;
   padding-bottom: 60px;
-  font-size: 0.92rem; // 整体字体缩小
+  font-size: 0.92rem;
 
   .series-row {
     display: flex;
     justify-content: center;
     gap: 24px;
     margin-bottom: 32px;
+    flex-wrap: wrap;
 
     .series-card {
       width: 46%;
@@ -115,10 +116,10 @@ const rowCount = computed(() => Math.ceil(productSeriesList.value.length / 2))
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
-        margin-bottom: 10px; // 原18px，缩小
+        margin-bottom: 10px;
 
         .series-title {
-          font-size: 1.3rem; // 原2rem，缩小
+          font-size: 1.3rem;
           font-weight: bold;
           color: #c49a6c;
           line-height: 1.1;
@@ -133,7 +134,7 @@ const rowCount = computed(() => Math.ceil(productSeriesList.value.length / 2))
 
         .series-info {
           text-align: right;
-          font-size: 0.95rem; // 原1.1rem，缩小
+          font-size: 0.95rem;
 
           .series-concentration {
             color: #c49a6c;
@@ -149,16 +150,16 @@ const rowCount = computed(() => Math.ceil(productSeriesList.value.length / 2))
       }
 
       .effect-table-block {
-        margin-top: 6px; // 原12px，缩小
-        padding-top: 6px; // 原12px，缩小
+        margin-top: 6px;
+        padding-top: 6px;
 
         .effect-title-row {
           display: flex;
           align-items: center;
-          margin-bottom: 4px; // 原8px，缩小
+          margin-bottom: 4px;
 
           .effect-title {
-            font-size: 1.1rem; // 原1.6rem，缩小
+            font-size: 1.1rem;
             font-weight: bold;
             color: #222;
             margin-right: 16px;
@@ -183,9 +184,9 @@ const rowCount = computed(() => Math.ceil(productSeriesList.value.length / 2))
           .effect-row {
             display: flex;
             align-items: center;
-            font-size: 0.98rem; // 原1.15rem，缩小
-            padding: 0 10px; // 原18px，缩小
-            height: 28px; // 原38px，缩小
+            font-size: 0.98rem;
+            padding: 0 10px;
+            height: 28px;
             background: #c49a6c;
             color: #fff;
             transition: all 0.2s ease-in-out;
@@ -198,17 +199,17 @@ const rowCount = computed(() => Math.ceil(productSeriesList.value.length / 2))
 
             .effect-check {
               margin-right: 10px;
-              font-size: 1em; // 原1.1em，略缩小
+              font-size: 1em;
               color: #a97c3a;
               font-weight: bold;
-              min-width: 18px; // 原22px，缩小
+              min-width: 18px;
               text-align: left;
             }
 
             .effect-text {
               flex: 1;
               text-align: left;
-              font-size: 1em; // 原1.08em，缩小
+              font-size: 1em;
               font-weight: 500;
               letter-spacing: 0.01em;
             }
@@ -230,6 +231,51 @@ const rowCount = computed(() => Math.ceil(productSeriesList.value.length / 2))
 
         .series-product-imgs img {
           width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .product-series-section {
+    .series-row {
+      gap: 16px;
+      margin-bottom: 16px;
+
+      .series-card {
+        width: 100%;
+        padding: 16px 12px;
+
+        .series-header {
+          .series-title {
+            font-size: 1.2rem;
+          }
+
+          .series-info {
+            font-size: 0.9rem;
+          }
+        }
+
+        .effect-table-block {
+          .effect-title-row {
+            .effect-title {
+              font-size: 1rem;
+            }
+          }
+
+          .series-effect-table {
+            .effect-row {
+              font-size: 0.9rem;
+              height: 24px;
+              padding: 0 8px;
+            }
+          }
+        }
+
+        .series-desc {
+          font-size: 18px;
+          margin: 20px 0;
         }
       }
     }
