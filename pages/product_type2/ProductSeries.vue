@@ -1,6 +1,6 @@
 <template>
   <section class="product-section">
-    <h2>产品系列</h2>
+    <h2>{{ t('product_type2.sections.section5') }}</h2>
     <section class="product-series-section">
       <div class="series-row" v-for="(row, rowIdx) in rowCount" :key="rowIdx">
         <div class="series-card" v-for="(item, idx) in productSeriesList.slice(rowIdx * 2, rowIdx * 2 + 2)"
@@ -16,7 +16,7 @@
           <!-- 疗愈效果表格 -->
           <div class="effect-table-block">
             <div class="effect-title-row">
-              <span class="effect-title">疗愈效果</span>
+              <span class="effect-title">{{ t('product_type2.effect.title') }}</span>
               <div class="effect-title-line"></div>
             </div>
             <div class="series-effect-table">
@@ -68,7 +68,7 @@ const rowCount = computed(() => Math.ceil(productSeriesList.value.length / 2))
 
 .product-series-section {
   background-size: cover;
-  padding-bottom: 120px; // 原200px，缩小
+  padding-bottom: 60px;
   font-size: 0.92rem; // 整体字体缩小
 
   .series-row {

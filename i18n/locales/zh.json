@@ -843,8 +843,7 @@
       "section2": "技术特点",
       "section3": "疾病干预应用",
       "section4": "NMN 点滴注射",
-      "section5": "使用人群(按文档精准提取并优化)",
-      "section6": "产品系列"
+      "section5": "产品系列"
     },
     "section1": [
       {
@@ -952,10 +951,6 @@
           "cp101": "miRNA、mRNA、蛋白质、生长因子（如EGF、TGF-β、IGF-1）",
           "super": "参与细胞命运调控、促进再生、免疫调节"
         }
-      },
-      "consult": {
-        "label": "预约咨询",
-        "button": "预约咨询"
       }
     },
     "advice": {
@@ -994,6 +989,9 @@
           "desc": "促进肌肉恢复，增强代谢。"
         }
       }
+    },
+    "effect": {
+      "title": "疗愈效果"
     }
   }
 }

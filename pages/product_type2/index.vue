@@ -10,7 +10,7 @@ const section1 = [
   {
     title: t('product_type2.section1.0.title'),
     desc: t('product_type2.section1.0.desc'),
-    img: '/product34/1.1.png'
+    img: getLocalizedImagePath('/product34/1.1.png')
   },
   {
     title: t('product_type2.section1.1.title'),
@@ -28,7 +28,7 @@ let section2 = [
   {
     title: t('product_type2.section2.1.title'),
     desc: t('product_type2.section2.1.desc'),
-    img: getLocalizedImagePath('/product34/2.2.png')
+    img: '/product34/2.2.png'
   },
   {
     title: t('product_type2.section2.2.title'),
@@ -51,7 +51,7 @@ const section3 = [
   {
     title: t('product_type2.section3.0.title'),
     desc: t('product_type2.section3.0.desc'),
-    img: '/product34/3.1.png'
+    img: getLocalizedImagePath('/product34/3.1.png')
   },
   {
     title: t('product_type2.section3.1.title'),
