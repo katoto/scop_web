@@ -1,197 +1,49 @@
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 import { getLocalizedImagePath } from '~/utils/image'
-
+import { useI18n } from 'vue-i18n'
+import ProductSeries from './ProductSeries.vue'
 const { t } = useI18n()
 const localePath = useLocalePath()
 
-const productImages = [
-  '/product0/coprinus_comatus.jpg',
-  '/product0/sterilized_lactobacillus.jpg',
-  '/product0/long_pepper_extract.jpg',
-  '/product0/resistant_dextrin.jpg',
-  '/product0/fermented_soy_isoflavone.jpg',
-  '/product0/hericium_erinaceus.jpg',
-
-  '/product0/coprinus_comatus.jpg',
-  '/product0/sterilized_lactobacillus.jpg',
-  '/product0/long_pepper_extract.jpg',
-  '/product0/resistant_dextrin.jpg',
-  '/product0/fermented_soy_isoflavone.jpg',
-  '/product0/hericium_erinaceus.jpg',
+const section1 = [
+  {
+    title: t('product_type3.section1.0.title'),
+    desc: t('product_type3.section1.0.desc'),
+    img: '/product35/2-1.jpg'
+  },
+  {
+    title: t('product_type3.section1.1.title'),
+    desc: t('product_type3.section1.1.desc'),
+    img: '/product35/2-2.png'
+  },
+  {
+    title: t('product_type3.section1.1.title'),
+    desc: t('product_type3.section1.1.desc'),
+    img: '/product35/2-3.jpg'
+  }
 ];
 
-const productNames = computed(() => [
-  t('product.product0.compounds.items.coprinus.name'),
-  t('product.product0.compounds.items.lactobacillus.name'),
-  t('product.product0.compounds.items.pepper.name'),
-  t('product.product0.compounds.items.dextrin.name'),
-  t('product.product0.compounds.items.soy.name'),
-  t('product.product0.compounds.items.hericium.name')
-]);
-
-const productDesc = computed(() => [
-  t('product.product0.compounds.items.coprinus.desc'),
-  t('product.product0.compounds.items.lactobacillus.desc'),
-  t('product.product0.compounds.items.pepper.desc'),
-  t('product.product0.compounds.items.dextrin.desc'),
-  t('product.product0.compounds.items.soy.desc'),
-  t('product.product0.compounds.items.hericium.desc')
-]);
-
-const patentOptions = computed(() => [
-  {
-    id: 1,
-    title: t('product.product0.tech.options.extraction.title'),
-    patentNo: '',
-    desc: t('product.product0.tech.options.extraction.desc'),
-    image: getLocalizedImagePath('/product0/subcritical_water_extraction.jpg'),
-  },
-  {
-    id: 2,
-    title: t('product.product0.tech.options.patent.title'),
-    patentNo: t('product.product0.tech.options.patent.patentNo'),
-    desc: t('product.product0.tech.options.patent.desc'),
-    image: getLocalizedImagePath('/product0/patent_support.jpg'),
-  },
-  {
-    id: 3,
-    title: t('product.product0.tech.options.purification.title'),
-    patentNo: '',
-    desc: t('product.product0.tech.options.purification.desc'),
-    image: getLocalizedImagePath('/product0/high_concentration_purification.jpg'),
-  },
-]);
-
-const activePatent = ref(patentOptions.value[0]);
-
-function setActivePatent(option: typeof patentOptions.value[0]) {
-  activePatent.value = option;
-}
-
-const features = computed(() => [
-  {
-    title: t('product.product0.features.items.immune.title'),
-    desc: t('product.product0.features.items.immune.desc'),
-    img: '/product0/immune_checkpoint_inhibition.jpg'
-  },
-  {
-    title: t('product.product0.features.items.dendritic.title'),
-    desc: t('product.product0.features.items.dendritic.desc'),
-    img: getLocalizedImagePath('/product0/dendritic_macrophage_activation.jpg')
-  },
-  {
-    title: t('product.product0.features.items.cancer.title'),
-    desc: t('product.product0.features.items.cancer.desc'),
-    img: getLocalizedImagePath('/product0/cancer_support_energy.jpg')
-  }
-]);
-
-const scienceList = computed(() => [
-  {
-    icon: t('product.product0.science.items.nobel.icon'),
-    title: t('product.product0.science.items.nobel.title'),
-    desc: t('product.product0.science.items.nobel.desc'),
-    img: '/product0/nobel_research_support.png'
-  },
-  {
-    icon: t('product.product0.science.items.fda.icon'),
-    title: t('product.product0.science.items.fda.title'),
-    desc: t('product.product0.science.items.fda.desc'),
-    img: '/product0/fda_double_certification.png'
-  },
-  {
-    icon: t('product.product0.science.items.research.icon'),
-    title: t('product.product0.science.items.research.title'),
-    desc: t('product.product0.science.items.research.desc'),
-    img: '/product0/45_years_research_background.svg'
-  },
-  {
-    icon: t('product.product0.science.items.results.icon'),
-    title: t('product.product0.science.items.results.title'),
-    desc: t('product.product0.science.items.results.desc'),
-    img: '/product0/experimental_verification.svg'
-  },
-  {
-    icon: t('product.product0.science.items.university.icon'),
-    title: t('product.product0.science.items.university.title'),
-    desc: t('product.product0.science.items.university.desc'),
-    img: '/product0/mie_university_support.png'
-  },
-  {
-    icon: t('product.product0.science.items.verification.icon'),
-    title: t('product.product0.science.items.verification.title'),
-    desc: t('product.product0.science.items.verification.desc'),
-    img: '/product0/experimental_verification.svg'
-  }
-]);
-
-const marketCompare = computed(() => [
-  {
-    label: t('product.product0.compare.items.core.label'),
-    market: t('product.product0.compare.items.core.cp101'),
-    cp101: t('product.product0.compare.items.core.super')
-  },
-  {
-    label: t('product.product0.compare.items.users.label'),
-    market: t('product.product0.compare.items.users.cp101'),
-    cp101: t('product.product0.compare.items.users.super')
-  }
-]);
-
-const half = Math.ceil(productImages.length / 2);
-const firstRow = computed(() => productImages.slice(0, half));
-const secondRow = computed(() => productImages.slice(half));
-
-const activeRow = ref<null | number>(null); // 0 或 1
-const activeIdx = ref<null | number>(null);
-const locked = ref(false);
-
-function pauseRow(row: number, idx: number) {
-  console.log('pauseRow==', row, idx)
-  if (locked.value) return;
-  activeRow.value = row;
-  activeIdx.value = idx;
-}
-function lockRow(row: number, idx: number) {
-  activeRow.value = row;
-  activeIdx.value = idx;
-  locked.value = true;
-}
-function unlockRow() {
-  activeRow.value = null;
-  activeIdx.value = null;
-  locked.value = false;
-}
-
-function handleMouseLeave(row: number) {
-  if (!locked.value) activeRow.value = null;
-}
-
-const featureRefs = ref<HTMLElement[]>([]);
-const scienceRefs = ref<HTMLElement[]>([]);
-const adviceRefs = ref<HTMLElement[]>([]);
-
-const section2 = [
+let section2 = [
   {
     title: t('product_type3.section2.0.title'),
     desc: t('product_type3.section2.0.desc'),
-    img: getLocalizedImagePath('/r_and_d/in_vivo_experiment.jpg')
+    img: '/product35/3-1.jpg'
   },
   {
     title: t('product_type3.section2.1.title'),
     desc: t('product_type3.section2.1.desc'),
-    img: getLocalizedImagePath('/r_and_d/in_vitro_experiment.jpg')
+    img: '/product35/3-2.jpg'
   },
   {
     title: t('product_type3.section2.2.title'),
     desc: t('product_type3.section2.2.desc'),
-    img: getLocalizedImagePath('/r_and_d/agaricus_immune_activation.jpg')
+    img: '/product35/3-3.jpg'
   },
   {
     title: t('product_type3.section2.3.title'),
     desc: t('product_type3.section2.3.desc'),
-    img: getLocalizedImagePath('/r_and_d/triple_immune_synergy.jpg')
+    img: '/product35/3-4.png'
   }
 ];
 
@@ -199,109 +51,224 @@ const section3 = [
   {
     title: t('product_type3.section3.0.title'),
     desc: t('product_type3.section3.0.desc'),
-    img: '/r_and_d/subcritical_water_extraction.png'
+    img: getLocalizedImagePath('/product35/3.1.png')
   },
   {
     title: t('product_type3.section3.1.title'),
     desc: t('product_type3.section3.1.desc'),
-    img: '/r_and_d/immune_checkpoint_inhibition.png'
+    img: '/product35/3.2.png'
+  },
+  {
+    title: t('product_type3.section3.2.title'),
+    desc: t('product_type3.section3.2.desc'),
+    img: '/product35/3.3.png'
+  },
+  {
+    title: t('product_type3.section3.3.title'),
+    desc: t('product_type3.section3.3.desc'),
+    img: '/product35/3.4.png'
+  },
+  {
+    title: t('product_type3.section3.4.title'),
+    desc: t('product_type3.section3.4.desc'),
+    img: '/product35/3.5.png'
+  },
+  {
+    title: [
+      t('product_type3.section3.5.title'),
+      t('product_type3.section3.6.title')
+    ],
+    desc: [
+      t('product_type3.section3.5.desc'),
+      t('product_type3.section3.6.desc')
+    ],
+    img: '/product35/3.5.png',
+    isCombined: true
   }
 ];
 
+const section4 = [
+  {
+    title: t('product_type3.section4.0.title'),
+    desc: t('product_type3.section4.0.desc'),
+    img: '/product35/4.jpeg'
+  }
+];
+
+const featureRefs = ref<HTMLElement[]>([]);
 const feature2Refs = ref<HTMLElement[]>([]);
 const feature3Refs = ref<HTMLElement[]>([]);
+const adviceRefs = ref<HTMLElement[]>([]);
+
+const adviceItems = computed(() => [
+  {
+    title: t('product_type3.advice.items.desc1.title'),
+    desc: t('product_type3.advice.items.desc1.desc')
+  },
+  {
+    title: t('product_type3.advice.items.desc2.title'),
+    desc: t('product_type3.advice.items.desc2.desc')
+  },
+  {
+    title: t('product_type3.advice.items.desc3.title'),
+    desc: t('product_type3.advice.items.desc3.desc')
+  },
+  {
+    title: t('product_type3.advice.items.desc4.title'),
+    desc: t('product_type3.advice.items.desc4.desc')
+  },
+  {
+    title: t('product_type3.advice.items.desc5.title'),
+    desc: t('product_type3.advice.items.desc5.desc')
+  },
+  {
+    title: t('product_type3.advice.items.desc6.title'),
+    desc: t('product_type3.advice.items.desc6.desc')
+  },
+  {
+    title: t('product_type3.advice.items.desc7.title'),
+    desc: t('product_type3.advice.items.desc7.desc')
+  },
+  {
+    title: t('product_type3.advice.items.desc8.title'),
+    desc: t('product_type3.advice.items.desc8.desc')
+  }
+]);
 
 onMounted(() => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('animate-in');
-        observer.unobserve(entry.target);
+        setTimeout(() => {
+          observer.unobserve(entry.target);
+        }, 1000);
       }
     });
   }, {
-    threshold: 0.2,
-    rootMargin: '0px 0px -100px 0px'
+    threshold: 0.1,
+    rootMargin: '-50px 0px'
   });
 
   featureRefs.value.forEach(el => {
     if (el) observer.observe(el);
   });
 
-  scienceRefs.value.forEach(el => {
+  feature2Refs.value.forEach(el => {
     if (el) observer.observe(el);
   });
+
+  feature3Refs.value.forEach(el => {
+    if (el) observer.observe(el);
+  });
+
 
   adviceRefs.value.forEach(el => {
     if (el) observer.observe(el);
   });
 });
+
+const marketCompare = computed(() => [
+  {
+    label: t('product_type3.compare.items.core.label'),
+    market: t('product_type3.compare.items.core.cp101'),
+  },
+  {
+    label: t('product_type3.compare.items.users.label'),
+    market: t('product_type3.compare.items.users.cp101'),
+  },
+  {
+    label: t('product_type3.compare.items.desc2.label'),
+    market: t('product_type3.compare.items.desc2.cp101'),
+  },
+  {
+    label: t('product_type3.compare.items.desc3.label'),
+    market: t('product_type3.compare.items.desc3.cp101'),
+  },
+  {
+    label: t('product_type3.compare.items.desc4.label'),
+    market: t('product_type3.compare.items.desc4.cp101'),
+  },
+  {
+    label: t('product_type3.compare.items.desc5.label'),
+    market: t('product_type3.compare.items.desc5.cp101'),
+  },
+  {
+    label: t('product_type3.compare.items.desc6.label'),
+    market: t('product_type3.compare.items.desc6.cp101'),
+  },
+  {
+    label: t('product_type3.compare.items.desc7.label'),
+    market: t('product_type3.compare.items.desc7.cp101'),
+  },
+  {
+    label: t('product_type3.compare.items.desc8.label'),
+    market: t('product_type3.compare.items.desc8.cp101'),
+  },
+  {
+    label: t('product_type3.compare.items.desc9.label'),
+    market: t('product_type3.compare.items.desc9.cp101'),
+  },
+  {
+    label: t('product_type3.compare.items.desc10.label'),
+    market: t('product_type3.compare.items.desc10.cp101'),
+  },
+  {
+    label: t('product_type3.compare.items.desc11.label'),
+    market: t('product_type3.compare.items.desc11.cp101'),
+  },
+  {
+    label: t('product_type3.compare.items.desc12.label'),
+    market: t('product_type3.compare.items.desc12.cp101'),
+  },
+  {
+    label: t('product_type3.compare.items.desc13.label'),
+    market: t('product_type3.compare.items.desc13.cp101'),
+  },
+  {
+    label: t('product_type3.compare.items.desc14.label'),
+    market: t('product_type3.compare.items.desc14.cp101'),
+  },
+  {
+    label: t('product_type3.compare.items.desc15.label'),
+    market: t('product_type3.compare.items.desc15.cp101'),
+  },
+  {
+    label: t('product_type3.compare.items.desc16.label'),
+    market: t('product_type3.compare.items.desc16.cp101'),
+  }
+]);
+
 </script>
 
 <template>
   <div class="product-center-page">
-
     <!-- banner -->
-    <section class="product-hero">
-      <div class="hero-container">
-        <div class="banner-content">
-          <h1>{{ t('product.product0.hero.title') }}</h1>
-          <p class="subtitle">{{ t('product.product0.hero.subtitle') }}</p>
-          <p class="desc">{{ t('product.product0.hero.desc') }}</p>
-        </div>
-        <div class="hero-images">
-          <div class="hero-image">
-            <img src="/images/pro-4.png" />
-          </div>
-          <div class="hero-image">
-            <img src="/images/pro-2.png" />
-          </div>
-        </div>
+    <section class="product-hero" :style="{
+      background: `url(${'/product35/0.png'}) no-repeat center center`,
+      backgroundSize: 'cover'
+    }">
+      <div class="banner-content">
+        <h1>{{ t('product_type3.banner.title') }}</h1>
+        <p class="desc">{{ t('product_type3.banner.description') }}</p>
       </div>
+    </section>
 
-      <div class="menu-bar">
-        <div class="menu-item active">
-          <NuxtLink class="nav-link" :to="localePath('/product0')">{{ t('product.product0.menu.mushroom') }}</NuxtLink>
-        </div>
-        <div class="menu-item">
-          <NuxtLink class="nav-link" :to="localePath('/product')">{{ t('product.product0.menu.pill') }}</NuxtLink>
-        </div>
-        <div class="menu-item">
-          <NuxtLink class="nav-link" :to="localePath('/product2')">{{ t('product.product0.menu.liver') }}</NuxtLink>
-        </div>
+    <!-- 生命与灵魂链接之路 -->
+    <section class="product-type3-cont">
+      <img src="/product35/1.png" alt="">
+      <div class="product-type3-cont-box">
+        <h4>Palilis，取意于此</h4>
+        <h4>寓意开启新生命灵魂与肉体的重塑！</h4>
+        <h4>"通过灵魂让肉体更健康·通过肉体让灵魂解放与认知"</h4>
+        <h4>一切源于palilis</h4>
       </div>
     </section>
 
     <section class="product-section">
-      <h2 class="patent-section-title">{{ t('product.product0.tech.title') }}</h2>
-      <div class="patent-flex-box">
-        <div class="patent-left">
-          <div class="patent-title">{{ activePatent.title }}</div>
-          <div class="patent-no">{{ activePatent.patentNo }}</div>
-          <div class="patent-desc">{{ activePatent.desc }}</div>
-        </div>
-        <div class="patent-right" :style="{ backgroundImage: `url(${activePatent.image})` }">
-          <div class="patent-menu">
-            <div v-for="(option, index) in patentOptions" :key="option.id"
-              class="patent-menu-item" :class="{ active: activePatent.id === option.id }"
-              @mouseenter="setActivePatent(option)" @click="setActivePatent(option)">
-              <template v-if="activePatent.id === option.id">
-                <div class="dot-animate">
-                  <span class="ripple"></span>
-                  <span class="dot"></span>
-                </div>
-              </template>
-              <span>{{ option.title }}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="product-section">
-      <h2>{{ t('product.product0.features.title') }}</h2>
+      <h2>{{ t('product_type3.sections.section1') }}</h2>
       <div class="feature-blocks">
-        <div v-for="(feature, idx) in features" :key="feature.title"
+        <div v-for="(feature, idx) in section1" :key="feature.title"
           :ref="el => { if (el) featureRefs[idx] = el as HTMLElement }"
           :class="['feature-block', { reverse: idx % 2 === 1, 'gray-bg': idx % 2 === 1 }]">
           <div class="feature-block-inner">
@@ -318,97 +285,11 @@ onMounted(() => {
     </section>
 
     <section class="product-section">
-      <h2>{{ t('product.product0.science.title') }}</h2>
-      <div class="science-blocks">
-        <div v-for="(item, idx) in scienceList" :key="item.title"
-          :ref="el => { if (el) scienceRefs[idx] = el as HTMLElement }" class="science-block">
-          <div class="science-icon">
-            <span>{{ item.icon }}</span>
-          </div>
-          <div class="science-text">
-            <div class="science-title">{{ item.title }}</div>
-            <div class="science-desc">{{ item.desc }}</div>
-          </div>
-          <div v-if="idx < scienceList.length - 1" class="science-divider"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="product-section">
-      <h2>{{ t('product.product0.compounds.title') }}</h2>
-      <div class="compound-carousel">
-        <div class="carousel-row" :class="{ paused: activeRow === 0 }" @mouseleave="handleMouseLeave(0)"
-          @click.self="unlockRow">
-          <div v-for="(img, idx) in firstRow" :key="'row1-' + idx" class="compound-item"
-            :class="{ active: activeRow === 0 && activeIdx === idx }" :style="{ backgroundImage: `url(${img})` }"
-            @mouseenter="pauseRow(0, idx)" @click.stop="lockRow(0, idx)">
-            <div class="compound-info" v-if="activeRow === 0 && activeIdx === idx">
-              <h4>{{ productNames[idx] }}</h4>
-              <p>{{ productDesc[idx] }}</p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-row reverse" :class="{ paused: activeRow === 1 }" @mouseleave="handleMouseLeave(1)"
-          @click.self="unlockRow">
-          <div v-for="(img, idx) in secondRow" :key="'row2-' + idx" class="compound-item"
-            :class="{ active: activeRow === 1 && activeIdx === idx }" :style="{ backgroundImage: `url(${img})` }"
-            @mouseenter="pauseRow(1, idx)" @click.stop="lockRow(1, idx)">
-            <div class="compound-info" v-if="activeRow === 1 && activeIdx === idx">
-              <h4>{{ productNames[idx + firstRow.length] }}</h4>
-              <p>{{ productDesc[idx + firstRow.length] }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="product-section">
-      <h2>{{ t('product.product0.compare.title') }}</h2>
-      <div class="market-compare-table">
-        <div class="market-compare-header">
-          <div>{{ t('product.product0.compare.headers.label') }}</div>
-          <div>{{ t('product.product0.compare.headers.cp101') }}</div>
-          <div>{{ t('product.product0.compare.headers.super') }}</div>
-        </div>
-        <div v-for="item in marketCompare" :key="item.label" class="market-compare-row">
-          <div class="market-compare-label">{{ item.label }}</div>
-          <div class="market-compare-market">{{ item.market }}</div>
-          <div class="market-compare-cp101">{{ item.cp101 }}</div>
-        </div>
-        <div class="market-compare-row">
-          <div class="market-compare-label">{{ t('product.product0.compare.consult.label') }}</div>
-          <div class="market-compare-market">
-            <NuxtLink :to="localePath('/contact')" class="consult-link">{{ t('product.product0.compare.consult.button') }}</NuxtLink>
-          </div>
-          <div class="market-compare-cp101">
-            <NuxtLink :to="localePath('/contact')" class="consult-link">{{ t('product.product0.compare.consult.button') }}</NuxtLink>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="product-section">
-      <h2>{{ t('product.product0.advice.title') }}</h2>
-      <div class="advice-cards">
-        <div v-for="(_, idx) in 3" :key="idx" :ref="el => { if (el) adviceRefs[idx] = el as HTMLElement }"
-          class="advice-card">
-          <div class="advice-title" v-if="idx === 0">{{ t('product.product0.advice.items.daily.title') }}</div>
-          <div class="advice-title" v-else-if="idx === 1">{{ t('product.product0.advice.items.tips.title') }}</div>
-          <div class="advice-title" v-else>{{ t('product.product0.advice.items.allergy.title') }}</div>
-          <div class="advice-divider"></div>
-          <div class="advice-desc" v-if="idx === 0">{{ t('product.product0.advice.items.daily.desc') }}</div>
-          <div class="advice-desc" v-else-if="idx === 1">{{ t('product.product0.advice.items.tips.desc') }}</div>
-          <div class="advice-desc" v-else>{{ t('product.product0.advice.items.allergy.desc') }}</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="product-section">
       <h2>{{ t('product_type3.sections.section2') }}</h2>
-      <div class="feature-blocks two-column">
+      <div class="feature-blocks">
         <div v-for="(feature, idx) in section2" :key="feature.title"
           :ref="el => { if (el) feature2Refs[idx] = el as HTMLElement }"
-          class="feature-block">
+          :class="['feature-block', { reverse: idx % 2 === 1, 'gray-bg': idx % 2 === 1 }]">
           <div class="feature-block-inner">
             <div class="feature-img">
               <img :src="feature.img" :alt="feature.title" />
@@ -421,25 +302,106 @@ onMounted(() => {
         </div>
       </div>
     </section>
+
+    <!-- 主要功效 -->
+    <section class="product-effect">
+      <h2>{{ t('product_type3.sections.section2') }}</h2>
+      <div class="product-effect-box">
+        <div class="image-container">
+          <img src="/product35/4.png" alt="">
+          <div class="overlay-text">
+            <h3>私处的"保养品"·私处的"化妆品"·日本私护"爱马仕"</h3>
+            <h3>日本第一家女性私处抗衰老产品·女性独有的抗衰新概念由Palilis重新定义</h3>
+          </div>
+        </div>
+        <div class="white-overlay">
+          <div>
+            <h3>💧修复粘膜屏障 · 提升水润紧致</h3>
+            <p>多重植物精华深入滋养私密部位，促进糖原合成与锁水保湿，有效修护产后、术后及感染引起的粘膜屏障损伤，恢复水润弹性状态。</p>
+          </div>
+
+          <div>
+            <h3>🛡️ 缓解炎症不适 · 抑制黑色素沉着</h3>
+            <p>天然抑菌与抗氧化因子有效缓解瘙痒、异味、干涩，调节微生态平衡；其中大蒜发酵提取物富含SOD，可清除自由基、减少色素沉积，改善暗沉与色斑。</p>
+          </div>
+
+          <div>
+            <h3>🌿 促进上皮细胞更新 · 增强免疫防御</h3>
+            <p>活性肽与植物复合因子促进阴道上皮细胞增殖与修复，强化局部屏障，提高私密区域免疫功能，降低感染复发概率。</p>
+          </div>
+
+          <div>
+            <h3>🌸 激活神经毛细血管 · 日常私密养护</h3>
+            <p>17种天然植物精华改善血液循环，强化神经与肌层张力，提升敏感度与舒适感，适用于术后恢复、经期护理及性生活后的日常呵护。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
     <section class="product-section">
       <h2>{{ t('product_type3.sections.section3') }}</h2>
       <div class="feature-blocks two-column">
-        <div v-for="(feature, idx) in section3" :key="feature.title"
-          :ref="el => { if (el) feature3Refs[idx] = el as HTMLElement }"
-          class="feature-block">
+        <div v-for="(feature, idx) in section3" :key="Array.isArray(feature.title) ? feature.title[0] : feature.title"
+          :ref="el => { if (el) feature3Refs[idx] = el as HTMLElement }" class="feature-block">
           <div class="feature-block-inner">
             <div class="feature-img">
-              <img :src="feature.img" :alt="feature.title" />
+              <img :src="feature.img" :alt="Array.isArray(feature.title) ? feature.title[0] : feature.title" />
             </div>
             <div class="feature-text">
-              <h3>{{ feature.title }}</h3>
-              <p>{{ feature.desc }}</p>
+              <template v-if="feature.isCombined">
+                <div v-for="(title, i) in feature.title" :key="title" class="combined-feature">
+                  <h3>{{ title }}</h3>
+                  <p>{{ feature.desc[i] }}</p>
+                </div>
+              </template>
+              <template v-else>
+                <h3>{{ feature.title }}</h3>
+                <p>{{ feature.desc }}</p>
+              </template>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- 产品对比 -->
+    <section class="product-section">
+      <h2>{{ t('product_type3.compare.title') }}</h2>
+      <div class="market-compare-table">
+        <div class="market-compare-header">
+          <div>{{ t('product_type3.compare.headers.label') }}</div>
+          <div>{{ t('product_type3.compare.headers.cp101') }}</div>
+        </div>
+        <div v-for="item in marketCompare" :key="item.label" class="market-compare-row">
+          <div class="market-compare-label">{{ item.label }}</div>
+          <div class="market-compare-market">{{ item.market }}</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 使用人群 -->
+    <section class="product-section">
+      <h2>{{ t('product_type3.advice.title') }}</h2>
+      <div class="advice-cards">
+        <div class="advice-row">
+          <div v-for="(item, idx) in adviceItems.slice(0, 4)" :key="item.title"
+            :ref="el => { if (el) adviceRefs[idx] = el as HTMLElement }" class="advice-card">
+            <div class="advice-title">{{ item.title }}</div>
+            <div class="advice-desc">{{ item.desc }}</div>
+          </div>
+        </div>
+        <div class="advice-row">
+          <div v-for="(item, idx) in adviceItems.slice(4)" :key="item.title"
+            :ref="el => { if (el) adviceRefs[idx + 4] = el as HTMLElement }" class="advice-card">
+            <div class="advice-title">{{ item.title }}</div>
+            <div class="advice-desc">{{ item.desc }}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </div>
 </template>
 

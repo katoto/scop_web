@@ -205,45 +205,6 @@ const marketCompare = computed(() => [
   }
 ]);
 
-const productSeriesList = [
-  {
-    title: 'Scophil 黑标标准版',
-    subtitle: '',
-    concentration: '产品浓度',
-    detail: '蕴泡数量：1000亿 particles/mL',
-    effects: [
-      '促进组织修复, 抗炎, 调节免疫',
-      '促进神经和血管再生',
-      '减轻神经炎症, 促进神经元修复',
-      '保护细胞DNA, 修复受损组织',
-      '修复受损心肌细胞, 促进血管再生',
-      '改善神经保护, 缓解运动症状',
-      '恢复心肾功能, 减少心肾衰竭风险',
-      '改善血管内皮功能, 调节血压',
-      '增强胰岛素敏感性, 改善血糖控制',
-      '增强肝脏解毒, 修复能力',
-      '增强细胞能量代谢, 延缓衰老, 修复皮肤组织',
-      '减少自身免疫疾病, 恢复免疫平衡'
-    ],
-    desc: '脐带来源干细胞上清液点滴疗法',
-    bottleImg: '/product34/7.1-scophil-black.png'
-  },
-  {
-    title: 'Scophil 白标标准版',
-    subtitle: '',
-    concentration: '产品浓度',
-    detail: '蕴泡数量：超1000亿 particles/mL以上',
-    effects: [
-      '改善微环境调控, 解除多器官代谢失衡, 修复损伤',
-      '促进组织修复, 抗炎, 调节免疫',
-      '促进神经和血管再生',
-    ],
-    desc: '脐带、脐带血干细胞上清液点滴疗法',
-    bottleImg: '/product34/7.2-scophil-white.png'
-  },
-  // 其余2个产品...
-]
-
 </script>
 
 <template>
@@ -256,7 +217,6 @@ const productSeriesList = [
     }">
       <div class="banner-content">
         <h1>{{ t('product_type2.banner.title') }}</h1>
-        <p class="subtitle">{{ t('product_type2.banner.subtitle') }}</p>
         <p class="desc">{{ t('product_type2.banner.description') }}</p>
       </div>
     </section>
