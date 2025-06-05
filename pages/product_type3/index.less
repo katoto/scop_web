@@ -37,12 +37,22 @@
   }
 }
 
+
+.product-type3-essence-box {
+  text-align: center;
+  margin: 80px auto;
+
+  >h4 {
+    color: #C9A14D;
+  }
+}
+
 // 主要功效
 .product-effect {
   text-align: center;
 
   >h2 {
-    margin: 80px auto;
+    margin: 100px auto;
   }
 
   .product-effect-box {
@@ -1301,4 +1311,146 @@
   .advice-row {
     grid-template-columns: 1fr;
   }
+}
+
+.product-type3-essence-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 32px;
+  font-size: 1.18rem;
+  color: #888;
+  > div:first-child {
+    margin-bottom: 0;
+    font-size: 1.22rem;
+    color: #bfa14a;
+    letter-spacing: 0.12em;
+    font-weight: 500;
+  }
+}
+
+.product-type3-essence-img {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  min-height: 380px;
+  gap: 0;
+}
+
+.product-type3-essence-img img {
+  width: 600px;
+  height: auto;
+  display: block;
+  margin: 0;
+  margin-left: 20px;
+  z-index: 1;
+  position: relative;
+}
+
+.product-type3-essence-img .lf,
+.product-type3-essence-img .rf {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 180px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.product-type3-essence-img .lf {
+  left: 30px;
+  align-items: flex-end;
+}
+.product-type3-essence-img .rf {
+  right: 30px;
+  align-items: flex-start;
+}
+
+.product-type3-essence-img .lf span,
+.product-type3-essence-img .rf span {
+  display: block;
+  background: #fff;
+  border: 1.5px solid #bfa14a;
+  border-radius: 8px;
+  padding: 1px 0;
+  // margin-bottom: 8px;
+  color: #666;
+  font-size: 1rem;
+  text-align: center;
+  transition: background 0.2s, color 0.2s;
+  cursor: default;
+  font-family: inherit;
+  min-width: 160px;
+  max-width: 170px;
+  box-shadow: 0 2px 8px rgba(191,161,74,0.08);
+}
+
+@media (max-width: 900px) {
+  .product-type3-essence-img {
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+    min-height: unset;
+  }
+  .product-type3-essence-img img {
+    width: 160px;
+    margin: 12px 0;
+  }
+  .product-type3-essence-img .lf,
+  .product-type3-essence-img .rf {
+    position: static;
+    transform: none;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0;
+  }
+  .product-type3-essence-img .lf span,
+  .product-type3-essence-img .rf span {
+    min-width: 90px;
+    max-width: 120px;
+    font-size: 0.95rem;
+  }
+}
+
+.essence-title-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 85px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 18px auto;
+  font-size: 1.22rem;
+  font-weight: 500;
+  color: #bfa14a;
+  letter-spacing: 0.12em;
+}
+.essence-title-row span {
+  display: inline-block;
+  padding: 0 8px;
+  white-space: nowrap;
+}
+
+.essence-title-row .dot {
+  color: #bfa14a;
+  font-size: 1.4em;
+  margin: 0 8px;
+  line-height: 1;
+  vertical-align: middle;
+  user-select: none;
+  font-weight: bold;
+  display: inline-block;
+  transform: translateY(-1px);
 }
