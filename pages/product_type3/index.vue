@@ -49,42 +49,6 @@ let section2 = [
 const featureRefs = ref<HTMLElement[]>([]);
 const feature2Refs = ref<HTMLElement[]>([]);
 const feature3Refs = ref<HTMLElement[]>([]);
-const adviceRefs = ref<HTMLElement[]>([]);
-
-const adviceItems = computed(() => [
-  {
-    title: t("product_type3.advice.items.desc1.title"),
-    desc: t("product_type3.advice.items.desc1.desc"),
-  },
-  {
-    title: t("product_type3.advice.items.desc2.title"),
-    desc: t("product_type3.advice.items.desc2.desc"),
-  },
-  {
-    title: t("product_type3.advice.items.desc3.title"),
-    desc: t("product_type3.advice.items.desc3.desc"),
-  },
-  {
-    title: t("product_type3.advice.items.desc4.title"),
-    desc: t("product_type3.advice.items.desc4.desc"),
-  },
-  {
-    title: t("product_type3.advice.items.desc5.title"),
-    desc: t("product_type3.advice.items.desc5.desc"),
-  },
-  {
-    title: t("product_type3.advice.items.desc6.title"),
-    desc: t("product_type3.advice.items.desc6.desc"),
-  },
-  {
-    title: t("product_type3.advice.items.desc7.title"),
-    desc: t("product_type3.advice.items.desc7.desc"),
-  },
-  {
-    title: t("product_type3.advice.items.desc8.title"),
-    desc: t("product_type3.advice.items.desc8.desc"),
-  },
-]);
 
 onMounted(() => {
   const observer = new IntersectionObserver(
@@ -113,10 +77,6 @@ onMounted(() => {
   });
 
   feature3Refs.value.forEach((el) => {
-    if (el) observer.observe(el);
-  });
-
-  adviceRefs.value.forEach((el) => {
     if (el) observer.observe(el);
   });
 });
@@ -344,7 +304,6 @@ const marketCompare = computed(() => [
           </div>
         </div>
       </section>
-
     </section>
 
     <!-- 产品对比 -->
@@ -362,26 +321,52 @@ const marketCompare = computed(() => [
       </div>
     </section>
 
-    <!-- 使用人群 -->
+    <!-- 使用方法与注意事项 -->
     <section class="product-section">
-      <h2>{{ t("product_type3.advice.title") }}</h2>
-      <div class="advice-cards">
-        <div class="advice-row">
-          <div v-for="(item, idx) in adviceItems.slice(0, 4)" :key="item.title"
-            :ref="el => { if (el) adviceRefs[idx] = el as HTMLElement }" class="advice-card">
-            <div class="advice-title">{{ item.title }}</div>
-            <div class="advice-desc">{{ item.desc }}</div>
-          </div>
+      <h2>使用方法与注意事项</h2>
+      <div class="product-type3-use-cont">
+        <div class="product-type3-use-cont-item">
+          <h3>step 1.</h3>
+          <p>撕开包装取出推注器，手执注射器两端。</p>
+          <img src="/product35/6-1.png" alt="">
         </div>
-        <div class="advice-row">
-          <div v-for="(item, idx) in adviceItems.slice(4)" :key="item.title"
-            :ref="el => { if (el) adviceRefs[idx + 4] = el as HTMLElement }" class="advice-card">
-            <div class="advice-title">{{ item.title }}</div>
-            <div class="advice-desc">{{ item.desc }}</div>
-          </div>
+        <div class="product-type3-use-cont-item">
+          <h3>step 2.</h3>
+          <p>身体躺平，将注射器前三分之一插入阴道，推入部分产品。</p>
+          <img src="/product35/6-2.png" alt="">
+        </div>
+        <div class="product-type3-use-cont-item">
+          <h3>step 3.</h3>
+          <p>再往阴道深处继续插入三分之一注射器，推入部分产品。</p>
+          <img src="/product35/6-3.png" alt="">
+        </div>
+        <div class="product-type3-use-cont-item">
+          <h3>step 4.</h3>
+          <p>将注射器全部插入阴道并推入产品，让护理液均匀附着整个阴道粘膜。</p>
+          <img src="/product35/6-4.png" alt="">
         </div>
       </div>
+
+      <div class="product-type3-use-cont-desc">
+        <img src="/product35/6-5.png" alt="">
+        <h4>使用方法</h4>
+        <p>使用者应先清洁私密处，然后取适量 Palilis 私护产品均匀涂抹于私密肌肤并轻
+          轻按摩直至完全吸收。通常建议每日使用一次，使用者可根据自身私密处的具
+          体健康状况和个人需求，在专业人士指导下适当调整使用频率，以达到最佳护
+          理效果。</p>
+      </div>
+      <div class="product-type3-use-cont-desc">
+        <h4>注意事项</h4>
+        <div class="product-type3-use-cont-warning">
+          <div class="warning-item" data-index="1">请将产品放置在阴凉干燥处保存，避免阳光直射，防止因环境因素影响产品质量。</div>
+          <div class="warning-item" data-index="2">如产品不慎入眼，请立即用大量清水冲洗。</div>
+          <div class="warning-item" data-index="3">对产品中任何成分过敏者，请谨慎使用。</div>
+          <div class="warning-item" data-index="4">如在使用过程中出现过敏等不适症状，请立即停止使用，并咨询专业医生。</div>
+        </div>
+      </div>
+
     </section>
+
   </div>
 </template>
 
