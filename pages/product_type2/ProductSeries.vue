@@ -93,7 +93,7 @@ const rowCount = computed(() => Math.ceil(productSeriesList.value.length / 2))
       &:hover {
         transform: translateY(-8px);
         box-shadow: 0 8px 24px rgba(196, 154, 108, 0.15);
-        
+
         .series-title {
           color: #7a5a2a;
         }
@@ -105,7 +105,7 @@ const rowCount = computed(() => Math.ceil(productSeriesList.value.length / 2))
 
         .effect-row {
           transform: translateX(4px);
-          
+
           &.odd {
             background: #f8f8f8;
           }
@@ -212,6 +212,9 @@ const rowCount = computed(() => Math.ceil(productSeriesList.value.length / 2))
               font-size: 1em;
               font-weight: 500;
               letter-spacing: 0.01em;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
             }
           }
         }

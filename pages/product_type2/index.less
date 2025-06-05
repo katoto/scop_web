@@ -952,124 +952,135 @@
 
 @media screen and (max-width: 768px) {
   .product-hero {
-    padding: 120px 20px 40px 20px;
+    padding: 100px 16px 32px;
     height: auto;
-    min-height: 400px;
+    min-height: 360px;
     background-position: center;
+    background-size: cover;
   }
 
   .banner-content {
     max-width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 0;
+    text-align: center;
   }
 
   .product-hero h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    line-height: 1.3;
   }
 
   .product-hero .desc {
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
   }
 
   .product-section {
-    padding: 0 15px;
-    margin-top: 30px;
+    padding: 0 16px;
+    margin-top: 32px;
 
     h2 {
-      font-size: 1.8rem;
-      margin-bottom: 20px;
+      font-size: 1.6rem;
+      margin-bottom: 24px;
+      padding: 0 12px;
     }
   }
 
   .feature-blocks {
-    gap: 30px;
-    margin-top: 20px;
+    gap: 24px;
   }
 
   .feature-block {
     .feature-block-inner {
       flex-direction: column !important;
       gap: 20px;
-      padding: 24px 15px;
+      padding: 24px 16px;
     }
 
-    .feature-img,
+    .feature-img {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      margin: 0 auto;
+    }
+
     .feature-text {
-      transform: translateY(20px);
-      opacity: 0;
+      width: 100%;
+      text-align: left;
+      padding: 0;
     }
+  }
 
-    &.animate-in {
+  .feature-text h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
 
-      .feature-img,
-      .feature-text {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-    &.reverse {
-
-      .feature-img,
-      .feature-text {
-        transform: translateY(20px);
-      }
-
-      &.animate-in {
-
-        .feature-img,
-        .feature-text {
-          transform: translateY(0);
-        }
-      }
-    }
+  .feature-text p {
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
 
   .feature-img img {
     width: 100%;
     border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(191, 161, 74, 0.08);
   }
 
-  .feature-text {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    text-align: left;
+  // Market compare table mobile styles
+  .market-compare-table {
+    font-size: 0.9rem;
+    margin: 0 -16px;
+    border-radius: 0;
+    width: calc(100% + 32px);
   }
 
-  .feature-text h3 {
-    font-size: 1.3rem;
+  .market-compare-header > div,
+  .market-compare-row > div {
+    padding: 10px 4px;
+    font-size: 0.9rem;
+  }
+
+  // Advice cards mobile styles
+  .advice-cards {
+    margin-top: 24px;
+  }
+
+  .advice-row {
+    grid-template-columns: 1fr;
+  }
+
+  .advice-card {
+    padding: 16px;
+  }
+
+  .advice-title {
+    font-size: 1.1rem;
     margin-bottom: 12px;
   }
 
-  .feature-text p {
-    font-size: 1rem;
-    line-height: 1.7;
+  .advice-desc {
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
 }
 
 @media screen and (max-width: 480px) {
   .product-hero {
-    padding: 100px 15px 30px 15px;
-    min-height: 320px;
-  }
-
-  .banner-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 80px 12px 24px;
+    min-height: 300px;
   }
 
   .product-hero h1 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     margin-bottom: 8px;
   }
 
   .product-hero .desc {
-    font-size: 0.95rem;
-    line-height: 1.5;
+    font-size: 0.9rem;
   }
 
   .product-section {
@@ -1077,33 +1088,43 @@
     margin-top: 24px;
 
     h2 {
-      font-size: 1.5rem;
-      margin-bottom: 16px;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
     }
   }
 
-  .feature-blocks {
-    gap: 24px;
-    margin-top: 16px;
-  }
-
-  .feature-block-inner {
-    padding: 20px 12px;
-    gap: 16px;
+  .feature-block {
+    .feature-block-inner {
+      padding: 20px 12px;
+      gap: 16px;
+    }
   }
 
   .feature-text h3 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-bottom: 10px;
   }
 
   .feature-text p {
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 0.9rem;
   }
 
-  .feature-img img {
-    border-radius: 8px;
+  .market-compare-header > div,
+  .market-compare-row > div {
+    padding: 8px 4px;
+    font-size: 0.85rem;
+  }
+
+  .advice-card {
+    padding: 12px;
+  }
+
+  .advice-title {
+    font-size: 1rem;
+  }
+
+  .advice-desc {
+    font-size: 0.85rem;
   }
 }
 

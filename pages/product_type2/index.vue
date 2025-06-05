@@ -4,7 +4,6 @@ import { getLocalizedImagePath } from '~/utils/image'
 import { useI18n } from 'vue-i18n'
 import ProductSeries from './ProductSeries.vue'
 const { t } = useI18n()
-const localePath = useLocalePath()
 
 const section1 = [
   {
@@ -247,7 +246,7 @@ const marketCompare = computed(() => [
           :ref="el => { if (el) feature2Refs[idx] = el as HTMLElement }" class="feature-block">
           <div class="feature-block-inner">
             <div class="feature-img">
-              <img :src="feature.img" :alt="feature.title" />
+              <img style="object-fit: contain;" :src="feature.img" :alt="feature.title" />
             </div>
             <div class="feature-text">
               <h3>{{ feature.title }}</h3>
