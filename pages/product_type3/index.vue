@@ -348,7 +348,8 @@ const marketCompare = computed(() => [
       </div>
 
       <div class="product-type3-use-cont-desc">
-        <img src="/product35/6-5.png" alt="">
+        <img :src="getLocalizedImagePath('/product35/6-5.png')" alt="">
+        
         <h4>使用方法</h4>
         <p>使用者应先清洁私密处，然后取适量 Palilis 私护产品均匀涂抹于私密肌肤并轻
           轻按摩直至完全吸收。通常建议每日使用一次，使用者可根据自身私密处的具
