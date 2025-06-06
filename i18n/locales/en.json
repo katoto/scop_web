@@ -993,5 +993,185 @@
     "effect": {
       "title": "Healing Effect"
     }
+  },
+  "product_type3": {
+    "banner": {
+      "title": "Intimate Repair · Regeneration Activation · Building a Health Defense for Women",
+      "description": "Medically Researched and Co-created, Specifically Designed for Women After Childbirth, Surgery, and Those with Intimate Discomfort"
+    },
+    "sections": {
+      "section1": "Redefining Intimate Care",
+      "section2": "Core Technology"
+    },
+    "section1": [
+      {
+        "title": "Not a Luxury, but a Necessity",
+        "desc": "“We often ignore the signals from our intimate areas until they cry out loudly.” Palilis advocates for women’s empowerment, using scientific methods to understand and care for the most delicate parts of the body."
+      },
+      {
+        "title": "Intimate Care, Not Just for Comfort, but for Dignity and a Sense of Integrity",
+        "desc": "The intimate area is a mirror of health, the most sensitive region influenced by hormones, stress, and environment. Palilis addresses this from three dimensions: repair, physiological balance, and emotional perception, bringing a sense of security and reassurance."
+      },
+      {
+        "title": "Every Use is a Gentle Embrace for Yourself",
+        "desc": "The essence is not just a care tool, but a form of body language, reminding you that you deserve gentle treatment."
+      }
+    ],
+    "section2": [
+      {
+        "title": "Medically Researched and Developed",
+        "desc": "Jointly developed by gynecological experts and skin research teams to ensure the product mechanism is professional and reliable, meeting the special needs of intimate areas."
+      },
+      {
+        "title": "Multiple Natural Plant Extracts Composite Formula",
+        "desc": "Carefully selected from various food-grade ingredients, the formula precisely regulates the microenvironment of intimate skin, combining safety and activity."
+      },
+      {
+        "title": "Simulating Skin’s Self-Healing Mechanism",
+        "desc": "The formula can activate the self-repair program of mucosal tissue, promoting the regeneration of epithelial cells and tissue healing, improving overall repair efficiency."
+      },
+      {
+        "title": "Authoritative Certification",
+        "desc": "Palilis is protected by patents and has international and domestic safety technology qualifications, including MSDS test reports, SGS safety test reports, and disinfection product filing, ensuring safe use."
+      }
+    ],
+    "compare": {
+      "title": "Natural Plant Extracts",
+      "headers": {
+        "label": "Ingredient Name",
+        "cp101": "Brief Efficacy"
+      },
+      "items": {
+        "core": {
+          "label": "Soluble Placenta Extract",
+          "cp101": "Promotes cell repair, tissue regeneration, and improves skin elasticity and firmness"
+        },
+        "users": {
+          "label": "Amniotic Fluid Extract",
+          "cp101": "Rich in nutritional factors, promotes tissue repair, anti-inflammatory, and enhances skin self-repair ability"
+        },
+        "desc2": {
+          "label": "Ceramide",
+          "cp101": "Strengthens skin barrier, moisturizes and repairs, prevents discomfort caused by external irritation"
+        },
+        "desc3": {
+          "label": "Centella Asiatica Extract",
+          "cp101": "Anti-inflammatory and soothing, promotes wound healing, helps regenerate intimate tissue"
+        },
+        "desc4": {
+          "label": "Calendula Extract",
+          "cp101": "Relieves redness and irritation, has anti-inflammatory effects, aids in wound recovery"
+        },
+        "desc5": {
+          "label": "Rosemary Leaf Extract",
+          "cp101": "Antioxidant and antibacterial, improves blood circulation, promotes repair and metabolism"
+        },
+        "desc6": {
+          "label": "Chamomile Extract",
+          "cp101": "Relieves sensitivity, soothes skin, effectively improves irritation and discomfort"
+        },
+        "desc7": {
+          "label": "Scutellaria Baicalensis Root Extract",
+          "cp101": "Strong antibacterial and anti-inflammatory properties, removes free radicals, protects mucosal tissue"
+        },
+        "desc8": {
+          "label": "Sophora Flavescens Root Extract",
+          "cp101": "Antibacterial and anti-inflammatory, relieves itching, promotes mucosal health"
+        },
+        "desc9": {
+          "label": "Resveratrol",
+          "cp101": "Strong antioxidant and anti-aging properties, regulates estrogen levels, maintains female physiological balance"
+        },
+        "desc10": {
+          "label": "Lactobacillus Fermentation Product",
+          "cp101": "Restores the balance of intimate microbiota, inhibits harmful bacteria growth, enhances intimate immunity"
+        },
+        "desc11": {
+          "label": "Trifluoroacetyl Tripeptide-2",
+          "cp101": "Promotes collagen synthesis, improves sagging, enhances tissue elasticity"
+        },
+        "desc12": {
+          "label": "Sodium Hyaluronate",
+          "cp101": "Highly effective moisturizing, repairs dry and damaged mucosa, maintains hydration and softness"
+        },
+        "desc13": {
+          "label": "Niacinamide",
+          "cp101": "Improves dullness, brightens skin tone, promotes skin barrier repair"
+        },
+        "desc14": {
+          "label": "Coenzyme Q10",
+          "cp101": "Strong antioxidant, anti-aging, enhances cell activity"
+        },
+        "desc15": {
+          "label": "Adenosine",
+          "cp101": "Reduces wrinkles, promotes elastin production"
+        },
+        "desc16": {
+          "label": "Panthenol (Vitamin B5)",
+          "cp101": "Deep moisturizing and repair, soothes sensitivity, improves mucosal roughness"
+        }
+      }
+    },
+    "liftLink": {
+      "title1": "Palilis, Named for This Purpose",
+      "title2": "Symbolizing the Reshaping of the Soul and Body of a New Life!",
+      "title3": "“Through the soul, the body becomes healthier; through the body, the soul is liberated and recognized.”",
+      "title4": "All Starts with Palilis"
+    },
+    "effect": {
+      "title1": "Intimate “Skincare” · Intimate “Cosmetics” · The “Hermès” of Japanese Intimate Care",
+      "title2": "Japan’s First Female Intimate Anti-Aging Product · A New Concept of Anti-Aging for Women Redefined by Palilis",
+      "title3": "💧Repairing Mucosal Barrier · Enhancing Hydration and Firmness",
+      "desc1": "Multiple plant extracts deeply nourish the intimate area, promote glycogen synthesis and water retention, effectively repair mucosal barrier damage caused by childbirth, surgery, and infections, and restore a hydrated and elastic state.",
+      "title4": "🛡️Relieving Inflammation and Discomfort · Inhibiting Melanin Deposition",
+      "desc2": "Natural antibacterial and antioxidant factors effectively relieve itching, odor, and dryness, regulate the microbiota balance; garlic fermentation extract rich in SOD can remove free radicals, reduce pigment deposition, and improve dullness and pigmentation.",
+      "title5": "🌿Promoting Epithelial Cell Renewal · Enhancing Immune Defense",
+      "desc3": "Active peptides and plant complex factors promote the proliferation and repair of vaginal epithelial cells, strengthen local barriers, improve immune function in the intimate area, and reduce the probability of recurrent infections.",
+      "title6": "🌸Activating Neural Capillaries · Daily Intimate Care",
+      "desc4": "17 natural plant extracts improve blood circulation, strengthen neural and muscle layer tension, enhance sensitivity and comfort, suitable for postoperative recovery, menstrual care, and daily care after sexual activity."
+    },
+    "essence": {
+      "title": "The Fusion of Palilis Natural Plant Extracts",
+      "title1": "Herbal Extracts",
+      "title2": "Delicate Care",
+      "title3": "Derived from Herbs",
+      "desc1": "The product carefully selects 17 organic plant-based edible ingredients",
+      "desc2": "Ensuring their naturalness, safety, and high efficiency",
+      "label1": "Aloe Vera Extract",
+      "label2": "Sophora Flavescens Extract",
+      "label3": "Cranberry Extract",
+      "label4": "Lavender Extract",
+      "label5": "Garlic Extract",
+      "label6": "Oregano Leaf Extract",
+      "label7": "Rosemary Extract",
+      "label8": "Pomegranate Extract",
+      "label9": "Thyme Extract",
+      "label10": "Grapefruit Extract",
+      "label11": "Capsicum Extract",
+      "label12": "Pulsatilla Koreana Extract",
+      "label13": "Portulaca Oleracea Extract",
+      "label14": "Tea Extract",
+      "label15": "Apple Extract",
+      "label16": "Centella Asiatica Extract",
+      "label17": "Leonurus Cardiaca Extract"
+    },
+    "use": {
+      "title": "Usage and Precautions",
+      "step1": "step 1.",
+      "step2": "step 2.",
+      "step3": "step 3.",
+      "step4": "step 4.",
+      "step1_desc": "Open the package and take out the applicator, holding it by both ends.",
+      "step2_desc": "Lie down and insert the front one-third of the applicator into the vagina, and push in part of the product.",
+      "step3_desc": "Insert another one-third of the applicator into the vagina and push in part of the product.",
+      "step4_desc": "Insert the applicator completely into the vagina and push in the product, allowing the care liquid to evenly coat the entire vaginal mucosa.",
+      "desc1": "Usage",
+      "desc2": "Precautions",
+      "desc1_desc": "Users should first clean the intimate area, then take an appropriate amount of Palilis intimate care product and evenly apply it to the intimate skin, gently massaging until fully absorbed. It is usually recommended to use once daily. Users can adjust the frequency according to their specific intimate health conditions and personal needs under professional guidance to achieve the best care effect.",
+      "desc2_item1": "Store the product in a cool, dry place, avoiding direct sunlight to prevent quality issues due to environmental factors.",
+      "desc2_item2": "If the product accidentally gets into the eyes, immediately rinse with plenty of water.",
+      "desc2_item3": "Those allergic to any ingredient in the product should use it with caution.",
+      "desc2_item4": "If any allergic or other discomfort symptoms occur during use, stop immediately and consult a professional doctor."
+    }
   }
 }

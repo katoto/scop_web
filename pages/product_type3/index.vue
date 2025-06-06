@@ -169,10 +169,10 @@ const marketCompare = computed(() => [
     <section class="product-type3-cont">
       <img src="/product35/1.png" alt="" />
       <div class="product-type3-cont-box">
-        <h4>Palilis，取意于此</h4>
-        <h4>寓意开启新生命灵魂与肉体的重塑！</h4>
-        <h4>"通过灵魂让肉体更健康·通过肉体让灵魂解放与认知"</h4>
-        <h4>一切源于palilis</h4>
+        <h4>{{ t("product_type3.liftLink.title1") }}</h4>
+        <h4>{{ t("product_type3.liftLink.title2") }}</h4>
+        <h4>{{ t("product_type3.liftLink.title3") }}</h4>
+        <h4>{{ t("product_type3.liftLink.title4") }}</h4>
       </div>
     </section>
 
@@ -225,38 +225,38 @@ const marketCompare = computed(() => [
         <div class="image-container">
           <img src="/product35/4.png" alt="" />
           <div class="overlay-text">
-            <h3>私处的"保养品"·私处的"化妆品"·日本私护"爱马仕"</h3>
+            <h3>{{ t("product_type3.effect.title1") }}</h3>
             <h3>
-              日本第一家女性私处抗衰老产品·女性独有的抗衰新概念由Palilis重新定义
+              {{ t("product_type3.effect.title2") }}
             </h3>
           </div>
         </div>
         <div class="white-overlay">
           <div>
-            <h3>💧修复粘膜屏障 · 提升水润紧致</h3>
+            <h3>{{ t("product_type3.effect.title3") }}</h3>
             <p>
-              多重植物精华深入滋养私密部位，促进糖原合成与锁水保湿，有效修护产后、术后及感染引起的粘膜屏障损伤，恢复水润弹性状态。
+              {{ t("product_type3.effect.desc1") }}
             </p>
           </div>
 
           <div>
-            <h3>🛡️ 缓解炎症不适 · 抑制黑色素沉着</h3>
+            <h3>{{ t("product_type3.effect.title4") }}</h3>
             <p>
-              天然抑菌与抗氧化因子有效缓解瘙痒、异味、干涩，调节微生态平衡；其中大蒜发酵提取物富含SOD，可清除自由基、减少色素沉积，改善暗沉与色斑。
+              {{ t("product_type3.effect.desc2") }}
             </p>
           </div>
 
           <div>
-            <h3>🌿 促进上皮细胞更新 · 增强免疫防御</h3>
+            <h3>{{ t("product_type3.effect.title5") }}</h3>
             <p>
-              活性肽与植物复合因子促进阴道上皮细胞增殖与修复，强化局部屏障，提高私密区域免疫功能，降低感染复发概率。
+              {{ t("product_type3.effect.desc3") }}
             </p>
           </div>
 
           <div>
-            <h3>🌸 激活神经毛细血管 · 日常私密养护</h3>
+            <h3>{{ t("product_type3.effect.title6") }}</h3>
             <p>
-              17种天然植物精华改善血液循环，强化神经与肌层张力，提升敏感度与舒适感，适用于术后恢复、经期护理及性生活后的日常呵护。
+              {{ t("product_type3.effect.desc4") }}
             </p>
           </div>
         </div>
@@ -265,41 +265,41 @@ const marketCompare = computed(() => [
 
     <!-- Palilis 天然植物精华的汇聚融合 -->
     <section class="product-section product-type3-essence">
-      <h2>Palilis 天然植物精华的汇聚融合</h2>
+      <h2>{{ t("product_type3.essence.title") }}</h2>
       <div class="product-type3-essence-box">
-        <h4>产品精心挑选了17种有机植物可食用成分</h4>
-        <h4>全力确保其天然、安全与高效性</h4>
+        <h4>{{ t("product_type3.essence.desc1") }}</h4>
+        <h4>{{ t("product_type3.essence.desc2") }}</h4>
       </div>
       <section class="product-type3-essence-cont">
         <div class="essence-title-row">
-          <span>草本植萃</span>
+          <span>{{ t("product_type3.essence.title1") }}</span>
           <span class="dot">·</span>
-          <span>娇嫩呵护</span>
+          <span>{{ t("product_type3.essence.title2") }}</span>
           <span class="dot">·</span>
-          <span>源于草本</span>
+          <span>{{ t("product_type3.essence.title3") }}</span>
         </div>
         <div class="product-type3-essence-img">
           <div class="lf">
-            <span>芦荟提取物</span>
-            <span>苦参提取物</span>
-            <span>蔓越莓提取物</span>
-            <span>薰衣草提取物</span>
-            <span>大蒜提取物</span>
-            <span>牛至叶子提取物</span>
-            <span>迷迭香提取物</span>
-            <span>石榴提取物</span>
-            <span>百里香提取物</span>
+            <span>{{ t("product_type3.essence.label1") }}</span>
+            <span>{{ t("product_type3.essence.label2") }}</span>
+            <span>{{ t("product_type3.essence.label3") }}</span>
+            <span>{{ t("product_type3.essence.label4") }}</span>
+            <span>{{ t("product_type3.essence.label5") }}</span>
+            <span>{{ t("product_type3.essence.label6") }}</span>
+            <span>{{ t("product_type3.essence.label7") }}</span>
+            <span>{{ t("product_type3.essence.label8") }}</span>
+            <span>{{ t("product_type3.essence.label9") }}</span>
           </div>
           <img src="/product35/5.png" alt="" />
           <div class="rf">
-            <span>葡萄柚提取物</span>
-            <span>牛角椒提取物</span>
-            <span>朝鲜白头翁提取物</span>
-            <span>马齿苋提取物</span>
-            <span>茶叶提取物</span>
-            <span>苹果提取物</span>
-            <span>积雪草提取物</span>
-            <span>益母草提取物</span>
+            <span>{{ t("product_type3.essence.label10") }}</span>
+            <span>{{ t("product_type3.essence.label11") }}</span>
+            <span>{{ t("product_type3.essence.label12") }}</span>
+            <span>{{ t("product_type3.essence.label13") }}</span>
+            <span>{{ t("product_type3.essence.label14") }}</span>
+            <span>{{ t("product_type3.essence.label15") }}</span>
+            <span>{{ t("product_type3.essence.label16") }}</span>
+            <span>{{ t("product_type3.essence.label17") }}</span>
           </div>
         </div>
       </section>
@@ -322,26 +322,26 @@ const marketCompare = computed(() => [
 
     <!-- 使用方法与注意事项 -->
     <section class="product-section">
-      <h2>使用方法与注意事项</h2>
+      <h2>{{ t("product_type3.use.title") }}</h2>
       <div class="product-type3-use-cont">
         <div class="product-type3-use-cont-item">
-          <h3>step 1.</h3>
-          <p>撕开包装取出推注器，手执注射器两端。</p>
+          <h3>{{ t("product_type3.use.step1") }}</h3>
+          <p>{{ t("product_type3.use.step1_desc") }}</p>
           <img src="/product35/6-1.png" alt="">
         </div>
         <div class="product-type3-use-cont-item">
-          <h3>step 2.</h3>
-          <p>身体躺平，将注射器前三分之一插入阴道，推入部分产品。</p>
+          <h3>{{ t("product_type3.use.step2") }}</h3>
+          <p>{{ t("product_type3.use.step2_desc") }}</p>
           <img src="/product35/6-2.png" alt="">
         </div>
         <div class="product-type3-use-cont-item">
-          <h3>step 3.</h3>
-          <p>再往阴道深处继续插入三分之一注射器，推入部分产品。</p>
+          <h3>{{ t("product_type3.use.step3") }}</h3>
+          <p>{{ t("product_type3.use.step3_desc") }}</p>
           <img src="/product35/6-3.png" alt="">
         </div>
         <div class="product-type3-use-cont-item">
-          <h3>step 4.</h3>
-          <p>将注射器全部插入阴道并推入产品，让护理液均匀附着整个阴道粘膜。</p>
+          <h3>{{ t("product_type3.use.step4") }}</h3>
+          <p>{{ t("product_type3.use.step4_desc") }}</p>
           <img src="/product35/6-4.png" alt="">
         </div>
       </div>
@@ -349,19 +349,16 @@ const marketCompare = computed(() => [
       <div class="product-type3-use-cont-desc">
         <img :src="getLocalizedImagePath('/product35/6-5.png')" alt="">
 
-        <h4>使用方法</h4>
-        <p>使用者应先清洁私密处，然后取适量 Palilis 私护产品均匀涂抹于私密肌肤并轻
-          轻按摩直至完全吸收。通常建议每日使用一次，使用者可根据自身私密处的具
-          体健康状况和个人需求，在专业人士指导下适当调整使用频率，以达到最佳护
-          理效果。</p>
+        <h4>{{ t("product_type3.use.desc1") }}</h4>
+        <p>{{ t("product_type3.use.desc1_desc") }}</p>
       </div>
       <div class="product-type3-use-cont-desc">
-        <h4>注意事项</h4>
+        <h4>{{ t("product_type3.use.desc2") }}</h4>
         <div class="product-type3-use-cont-warning">
-          <div class="warning-item" data-index="1">请将产品放置在阴凉干燥处保存，避免阳光直射，防止因环境因素影响产品质量。</div>
-          <div class="warning-item" data-index="2">如产品不慎入眼，请立即用大量清水冲洗。</div>
-          <div class="warning-item" data-index="3">对产品中任何成分过敏者，请谨慎使用。</div>
-          <div class="warning-item" data-index="4">如在使用过程中出现过敏等不适症状，请立即停止使用，并咨询专业医生。</div>
+          <div class="warning-item" data-index="1">{{ t("product_type3.use.desc2_item1") }}</div>
+          <div class="warning-item" data-index="2">{{ t("product_type3.use.desc2_item2") }}</div>
+          <div class="warning-item" data-index="3">{{ t("product_type3.use.desc2_item3") }}</div>
+          <div class="warning-item" data-index="4">{{ t("product_type3.use.desc2_item4") }}</div>
         </div>
       </div>
 
