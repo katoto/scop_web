@@ -160,7 +160,7 @@ const marketCompare = computed(() => [
       backgroundSize: 'cover',
     }">
       <div class="banner-content">
-        <h1>{{ t("product_type3.banner.title") }}</h1>
+        <h1 class="title">{{ t("product_type3.banner.title") }}</h1>
         <p class="desc">{{ t("product_type3.banner.description") }}</p>
       </div>
     </section>

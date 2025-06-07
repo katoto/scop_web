@@ -209,7 +209,7 @@ const filteredFeedback = computed(() => {
     <!-- banner -->
     <section class="product-hero">
       <div class="banner-content">
-        <h1>{{ t('rdfeedback.title') }}</h1>
+        <h1 class="title">{{ t('rdfeedback.title') }}</h1>
         <p class="subtitle">{{ t('rdfeedback.subtitle') }}</p>
         <p class="desc">{{ t('rdfeedback.description') }}</p>
       </div>

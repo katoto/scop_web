@@ -201,12 +201,11 @@ onMounted(() => {
 
 <template>
   <div class="product-center-page">
-
     <!-- banner -->
     <section class="product-hero">
       <div class="hero-container">
         <div class="banner-content">
-          <h1>{{ t('product.product0.hero.title') }}</h1>
+          <h1 class="title">{{ t('product.product0.hero.title') }}</h1>
           <p class="subtitle">{{ t('product.product0.hero.subtitle') }}</p>
           <p class="desc">{{ t('product.product0.hero.desc') }}</p>
         </div>

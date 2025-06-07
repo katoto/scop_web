@@ -128,7 +128,7 @@ onMounted(() => {
       backgroundSize: 'cover'
     }">
       <div class="banner-content">
-        <h1>{{ t('rd.banner.title') }}</h1>
+        <h1 class="title">{{ t('rd.banner.title') }}</h1>
         <p class="subtitle">{{ t('rd.banner.subtitle') }}</p>
         <p class="desc">{{ t('rd.banner.description') }}</p>
       </div>
