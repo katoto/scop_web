@@ -131,6 +131,9 @@
 
 // 移动端适配
 @media screen and (max-width: 768px) {
+  .contact-page {
+    min-height: 70vh;
+  }
   .contact-hero {
     height: 300px;
 

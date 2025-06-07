@@ -155,15 +155,21 @@ const marketCompare = computed(() => [
 <template>
   <div class="product-center-page">
     <!-- banner -->
-    <section class="product-hero" :style="{
-      background: `url(${'/product35/0.png'}) no-repeat center center`,
-      backgroundSize: 'cover',
-    }">
-      <div class="banner-content">
-        <h1 class="title">{{ t("product_type3.banner.title") }}</h1>
-        <p class="desc">{{ t("product_type3.banner.description") }}</p>
+
+    <section class="product-hero">
+      <div class="hero-container">
+        <div class="banner-content">
+          <h1 class="title">{{ t('product_type3.banner.title') }}</h1>
+          <p class="desc">{{ t('product_type3.banner.description') }}</p>
+        </div>
+        <div class="hero-images">
+          <div class="hero-image">
+            <img src="/product35/0_product.png" />
+          </div>
+        </div>
       </div>
     </section>
+
 
     <!-- 生命与灵魂链接之路 -->
     <section class="product-type3-cont">
