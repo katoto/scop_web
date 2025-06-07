@@ -166,9 +166,7 @@ const handleClick = (child) => {
             </div>
 
             <!-- 移动端菜单遮罩 -->
-            <div class="mobile-menu-overlay" 
-                :class="{ 'active': isMobileMenuOpen }" 
-                @click="closeMobileMenu">
+            <div class="mobile-menu-overlay" :class="{ 'active': isMobileMenuOpen }" @click="closeMobileMenu">
             </div>
 
             <!-- 移动端菜单 -->
@@ -434,6 +432,11 @@ const handleClick = (child) => {
     height: 100%;
 }
 
+.desktop-dropdown {
+    transition: background-color 0.3s;
+    background: transparent;
+}
+
 // 桌面端菜单
 .desktop-menu {
     display: flex;
@@ -584,10 +587,10 @@ const handleClick = (child) => {
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .desktop-menu {
         gap: 12px;
-        
+
         .menu-item {
             padding: 0 6px;
-            
+
             .nav-link {
                 font-size: 0.9rem;
             }
