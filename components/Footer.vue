@@ -6,7 +6,7 @@
           <h5>{{ $t('nav.about') }}</h5>
           <ul class="list-unstyled">
             <li>
-              <NuxtLink :to="localePath('/about')">{{ $t('nav.about') }}</NuxtLink>
+              <NuxtLink :to="localePath('/about')" target="_blank">{{ $t('nav.about') }}</NuxtLink>
             </li>
           </ul>
         </div>
@@ -14,7 +14,13 @@
           <h5>{{ $t('nav.product') }}</h5>
           <ul class="list-unstyled">
             <li>
-              <NuxtLink :to="localePath('/product0')">{{ $t('nav.product') }}</NuxtLink>
+              <NuxtLink :to="localePath('/product0')" target="_blank">{{ $t('nav.product_type1') }}</NuxtLink>
+            </li>
+            <li>
+              <NuxtLink :to="localePath('/product_type2')" target="_blank">{{ $t('nav.product_type2') }}</NuxtLink>
+            </li>
+            <li>
+              <NuxtLink :to="localePath('/product_type3')" target="_blank">{{ $t('nav.product_type3') }}</NuxtLink>
             </li>
           </ul>
         </div>
@@ -22,10 +28,10 @@
           <h5>{{ $t('nav.r_and_d') }}</h5>
           <ul class="list-unstyled">
             <li>
-              <NuxtLink :to="localePath('/rd')">{{ $t('nav.rd') }}</NuxtLink>
+              <NuxtLink :to="localePath('/rd')" target="_blank">{{ $t('nav.rd') }}</NuxtLink>
             </li>
             <li>
-              <NuxtLink :to="localePath('/rdfeedback')">{{ $t('nav.rdFeedback') }}</NuxtLink>
+              <NuxtLink :to="localePath('/rdfeedback')" target="_blank">{{ $t('nav.rdFeedback') }}</NuxtLink>
             </li>
           </ul>
         </div>
@@ -33,7 +39,7 @@
           <h5>{{ $t('nav.news') }}</h5>
           <ul class="list-unstyled">
             <li>
-              <NuxtLink :to="localePath('/news')">{{ $t('nav.news') }}</NuxtLink>
+              <NuxtLink :to="localePath('/news')" target="_blank">{{ $t('nav.news') }}</NuxtLink>
             </li>
           </ul>
         </div>
@@ -42,7 +48,7 @@
           <h5>{{ $t('nav.contact') }}</h5>
           <ul class="list-unstyled">
             <li>
-              <NuxtLink :to="localePath('/contact')">{{ $t('nav.contact') }}</NuxtLink>
+              <NuxtLink :to="localePath('/contact')" target="_blank">{{ $t('nav.contact') }}</NuxtLink>
             </li>
           </ul>
         </div>
