@@ -70,7 +70,7 @@ const section3 = [
   {
     title: t('product_type2.section3.4.title'),
     desc: t('product_type2.section3.4.desc'),
-    img: '/product34/3.5.png'
+    img: '/product34/3.6-hair.png'
   },
   {
     title: [
