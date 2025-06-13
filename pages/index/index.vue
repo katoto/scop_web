@@ -11,10 +11,10 @@ let domSize = reactive({
 });
 let contentDomref = ref<null | HTMLElement>(null);
 let selectedProduct = ref<number | null>(null);
+let isVideoLoaded = ref(false);
 
 // Fix ref array initialization
 const observer = ref<IntersectionObserver | null>(null);
-
 
 const handleMouseMove = (e: MouseEvent) => {
   if (!contentDomref.value) return;
@@ -33,6 +33,10 @@ const updateDomSize = () => {
   if (contentDomref.value) {
     domSize.width = contentDomref.value.offsetWidth;
   }
+};
+
+const handleVideoLoad = () => {
+  isVideoLoaded.value = true;
 };
 
 onMounted(() => {
@@ -109,16 +113,27 @@ const localePath = useLocalePath()
 </script>
 
 <template>
-  <div class="contact-page">
+  <div class="contact-page">  
     <img src="/images/bg-line-2.png" @load="handleLoad" :style="{
-      display: 'none'
+      display: 'none'     
     }" />
+    
+    <video 
+      class="background-video" 
+      :class="{ 'video-loaded': isVideoLoaded }"
+      src="/images/bg.mp4" 
+      autoplay 
+      loop 
+      muted 
+      playsinline
+      @loadeddata="handleVideoLoad"
+    ></video>
     <div class="content-product" ref="contentDomref">
       <div class="background-wrapper" :style="{ transform: `translateX(${position.offsetX * 20}px)` }">
-        <div class="background-image"></div>
+        <div class="background-image" :class="{ 'fade-out': isVideoLoaded }"></div>
       </div>
       <div class="pinzi-box-wrap" :class="{ 'detail-mode': selectedProduct !== null }" v-if="isLoad">
-        <StarCanvas />
+        <!-- <StarCanvas /> -->
         <ProductAnimateWrap />
       </div>
     </div>
@@ -300,9 +315,20 @@ const localePath = useLocalePath()
   min-height: 100vh;
   overflow: hidden;
 
-  .page-header {
-    background-color: #f8f9fa;
-    margin-bottom: 2rem;
+  .background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+
+    &.video-loaded {
+      opacity: 1;
+    }
   }
 
   .content-product {
@@ -312,6 +338,7 @@ const localePath = useLocalePath()
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    z-index: 1;
 
     .background-wrapper {
       position: absolute;
@@ -333,6 +360,11 @@ const localePath = useLocalePath()
         background-position: center center;
         background-repeat: no-repeat;
         z-index: 0;
+        transition: opacity 0.5s ease-in-out;
+
+        &.fade-out {
+          opacity: 0;
+        }
       }
 
       .breath-blocks {

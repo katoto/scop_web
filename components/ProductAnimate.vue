@@ -165,7 +165,7 @@ let handleGotoDetail = (num: number) => {
   position: absolute;
 }
 
-.product-detail-bg-0 {
+/* .product-detail-bg-0 {
   background: rgba(230, 255, 0, 0.9);
   opacity: 0.35;
 }
@@ -183,7 +183,7 @@ let handleGotoDetail = (num: number) => {
 .product-detail-bg-3 {
   background: rgba(255, 114, 0, 0.9);
   opacity: 0.35;
-}
+} */
 
 .product-detail-com {}
 
@@ -230,7 +230,7 @@ let handleGotoDetail = (num: number) => {
   filter: blur(50px);
   position: absolute;
 }
-
+/* 
 .product-item-bg-0 {
   background: rgba(230, 255, 0, 0.9);
   animation: bgColorAnimate2 1.8s ease-out infinite;
@@ -257,7 +257,7 @@ let handleGotoDetail = (num: number) => {
   animation: bgColorAnimate 1.9s ease-in-out infinite;
   animation-delay: 1.2s;
   opacity: 0;
-}
+} */
 
 .product-item {
   display: flex;
