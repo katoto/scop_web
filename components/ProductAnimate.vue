@@ -83,7 +83,7 @@ let colorMap = {
 <template>
   <div class="product-container-wrap" :style="{
     backgroundColor: selectedBackgroundColor,
-    transition: 'background-color 0.6s ease'
+    transition: 'background-color 2.3s ease'
   }">
     <button class="back-btn" @click="handleClickBack" v-if="selectedProductIndex !== null">
       <svg width="48" height="48" viewBox="0 0 48 48">
@@ -167,7 +167,7 @@ let colorMap = {
 .product-container-wrap {
   position: relative;
   height: 100vh;
-  transition: background-color 0.6s ease;
+  transition: background-color 2.3s ease;
 }
 
 .detail-container {
