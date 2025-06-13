@@ -12,6 +12,7 @@ let domSize = reactive({
 let contentDomref = ref<null | HTMLElement>(null);
 let selectedProduct = ref<number | null>(null);
 let isVideoLoaded = ref(false);
+let videoError = ref(false);
 
 // Fix ref array initialization
 const observer = ref<IntersectionObserver | null>(null);
@@ -39,10 +40,32 @@ const handleVideoLoad = () => {
   isVideoLoaded.value = true;
 };
 
+const handleVideoError = () => {
+  videoError.value = true;
+  isVideoLoaded.value = false;
+};
+
+// Add video play attempt on user interaction
+const attemptVideoPlay = async () => {
+  const video = document.querySelector('.background-video') as HTMLVideoElement;
+  if (video) {
+    try {
+      await video.play();
+    } catch (err) {
+      console.log('Video autoplay failed:', err);
+      videoError.value = true;
+    }
+  }
+};
+
 onMounted(() => {
   updateDomSize();
   window.addEventListener("mousemove", handleMouseMove);
   window.addEventListener("resize", updateDomSize);
+  
+  // Attempt to play video after user interaction
+  document.addEventListener('click', attemptVideoPlay, { once: true });
+  document.addEventListener('touchstart', attemptVideoPlay, { once: true });
 
   // Setup intersection observer for research strength columns
   observer.value = new IntersectionObserver((entries) => {
@@ -72,6 +95,8 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener("mousemove", handleMouseMove);
   window.removeEventListener("resize", updateDomSize);
+  document.removeEventListener('click', attemptVideoPlay);
+  document.removeEventListener('touchstart', attemptVideoPlay);
 
   // Cleanup observer
   if (observer.value) {
@@ -120,17 +145,22 @@ const localePath = useLocalePath()
     
     <video 
       class="background-video" 
-      :class="{ 'video-loaded': isVideoLoaded }"
+      :class="{ 'video-loaded': isVideoLoaded, 'video-error': videoError }"
       src="/images/bg.mp4" 
       autoplay 
       loop 
       muted 
       playsinline
+      preload="auto"
       @loadeddata="handleVideoLoad"
+      @error="handleVideoError"
+      x5-video-player-type="h5"
+      x5-video-player-fullscreen="true"
+      x5-video-orientation="portraint"
     ></video>
     <div class="content-product" ref="contentDomref">
       <div class="background-wrapper" :style="{ transform: `translateX(${position.offsetX * 20}px)` }">
-        <div class="background-image" :class="{ 'fade-out': isVideoLoaded }"></div>
+        <div class="background-image" :class="{ 'fade-out': isVideoLoaded && !videoError }"></div>
       </div>
       <div class="pinzi-box-wrap" :class="{ 'detail-mode': selectedProduct !== null }" v-if="isLoad">
         <!-- <StarCanvas /> -->
@@ -325,9 +355,14 @@ const localePath = useLocalePath()
     z-index: 0;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
+    will-change: opacity;
 
     &.video-loaded {
       opacity: 1;
+    }
+
+    &.video-error {
+      display: none;
     }
   }
 
@@ -364,6 +399,7 @@ const localePath = useLocalePath()
 
         &.fade-out {
           opacity: 0;
+          transition: opacity 0.8s ease-in-out;
         }
       }
 

@@ -29,7 +29,7 @@ export default defineNuxtConfig({
   ],
   app: {
     head: {
-      title: "Commercial EV Solutions",
+      title: "scophil",
       meta: [
         { charset: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
