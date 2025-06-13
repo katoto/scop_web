@@ -6,6 +6,17 @@ import { getProducts } from '@/data/products';
 const { locale, t } = useI18n();
 const products = computed(() => getProducts(locale.value));
 
+const selectedBackgroundColor = computed(() => {
+  if (selectedProductIndex.value === null) return 'transparent';
+  const colorMap = {
+    0: 'rgba(230, 255, 0, 0.3)',
+    1: 'rgba(0, 220, 0, 0.3)',
+    2: 'rgba(255, 0, 0, 0.3)',
+    3: 'rgba(255, 114, 0, 0.3)'
+  };
+  return colorMap[selectedProductIndex.value as keyof typeof colorMap] || 'transparent';
+});
+
 let selectedProductIndex = ref<any>(null);
 let isBack = ref(false);
 
@@ -70,7 +81,10 @@ let colorMap = {
 </script>
 
 <template>
-  <div class="product-container-wrap">
+  <div class="product-container-wrap" :style="{
+    backgroundColor: selectedBackgroundColor,
+    transition: 'background-color 0.6s ease'
+  }">
     <button class="back-btn" @click="handleClickBack" v-if="selectedProductIndex !== null">
       <svg width="48" height="48" viewBox="0 0 48 48">
         <circle cx="24" cy="24" r="23" stroke="#fff" stroke-width="2" fill="none" />
@@ -153,6 +167,7 @@ let colorMap = {
 .product-container-wrap {
   position: relative;
   height: 100vh;
+  transition: background-color 0.6s ease;
 }
 
 .detail-container {
@@ -242,7 +257,7 @@ let colorMap = {
 }
 
 /* 背景色 */
-.product-item-bg-0 {
+/* .product-item-bg-0 {
   background: rgba(230, 255, 0, 0.9);
   animation: bgColorAnimate2 1.8s ease-out infinite;
   animation-delay: 1.2s;
@@ -268,7 +283,7 @@ let colorMap = {
   animation: bgColorAnimate 1.9s ease-in-out infinite;
   animation-delay: 1.2s;
   opacity: 0;
-}
+} */
 
 .product-item {
   display: flex;
