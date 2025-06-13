@@ -168,6 +168,7 @@ let colorMap = {
   position: relative;
   height: 100vh;
   transition: background-color 2.3s ease;
+  background-color: transparent;
 }
 
 .detail-container {
@@ -176,7 +177,6 @@ let colorMap = {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.6s ease;
   flex-direction: row;
 }
 
@@ -325,6 +325,11 @@ let colorMap = {
 
 /* iPad 适配 */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+  .product-container {
+    padding: 0 20px;
+  }
+
   .product-item {
     height: 200px;
   }
@@ -373,7 +378,7 @@ let colorMap = {
 }
 
 .fade-in-0 {
-  padding-top: 10px;
+  padding-top: 6px;
   left: 100px;
 }
 
@@ -401,6 +406,10 @@ let colorMap = {
 }
 
 @media (max-width: 768px) {
+  .product-container {
+    padding: 0 10px;
+  }
+
   .product-item {
     height: 30vw;
   }
@@ -620,7 +629,7 @@ let colorMap = {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: all 0.2s ease;
+    transition: opacity 2s ease;
   }
 
   .product-detail-desc {
