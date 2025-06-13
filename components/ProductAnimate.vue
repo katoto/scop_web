@@ -60,6 +60,13 @@ let handleGotoDetail = (num: number) => {
     }
   }
 };
+
+let colorMap = {
+  0: 'rgba(230, 255, 0, 0.9)',
+  1: 'green',
+  2: 'rgba(255, 0, 0, 1)',
+  3: 'rgba(255, 114, 0, 0.9)'
+}
 </script>
 
 <template>
@@ -101,14 +108,16 @@ let handleGotoDetail = (num: number) => {
       width: '100%',
       height: '100%',
       opacity: 1,
-      zIndex: '1'
+      zIndex: '1',
+      backgroundColor: 'transparent'
     } : {
-      left: domItem.left + 'px',
-      top: domItem.top + 'px',
-      width: domItem.width + 'px',
-      height: domItem.height + 'px',
+      // left: domItem.left + 'px',
+      // top: domItem.top + 'px',
+      // width: domItem.width + 'px',
+      // height: domItem.height + 'px',
       opacity: 0,
-      zIndex: '-1'
+      zIndex: '-1',
+      backgroundColor: colorMap[domIndex]
 
     }">
       <div :class="`product-detail-item-bg product-detail-bg-${selectedProductIndex}`">
@@ -191,6 +200,7 @@ let handleGotoDetail = (num: number) => {
   display: flex;
   height: 100vh;
   position: relative;
+  padding: 0 60px;
 }
 
 .product-item-wrap {
@@ -230,7 +240,8 @@ let handleGotoDetail = (num: number) => {
   filter: blur(50px);
   position: absolute;
 }
-/* 
+
+/* 背景色 */
 .product-item-bg-0 {
   background: rgba(230, 255, 0, 0.9);
   animation: bgColorAnimate2 1.8s ease-out infinite;
@@ -257,7 +268,7 @@ let handleGotoDetail = (num: number) => {
   animation: bgColorAnimate 1.9s ease-in-out infinite;
   animation-delay: 1.2s;
   opacity: 0;
-} */
+}
 
 .product-item {
   display: flex;
@@ -302,20 +313,20 @@ let handleGotoDetail = (num: number) => {
   .product-item {
     height: 200px;
   }
-  
+
   .product-img {
     max-width: 100px;
     max-height: 100px;
     width: auto;
     height: auto;
   }
-  
+
   /* iPad 横屏 */
   @media (orientation: landscape) {
     .product-item {
       height: 180px;
     }
-    
+
     .product-img {
       max-width: 170px;
       max-height: 180px;
@@ -657,6 +668,7 @@ let handleGotoDetail = (num: number) => {
       width: 100%;
       max-width: 400px;
     }
+
     .desc-list-subName {
       font-size: 1.3rem;
     }
