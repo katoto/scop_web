@@ -36,6 +36,21 @@ const updateDomSize = () => {
   }
 };
 
+const handleTouchStart = () => {
+  let video = document.querySelector('.background-video')
+  if (video && video instanceof HTMLVideoElement) {
+    video.play();
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('touchstart', handleTouchStart)
+});
+
+onUnmounted(() => {
+  window.removeEventListener('touchstart', handleTouchStart)
+});
+
 const handleVideoLoad = () => {
   isVideoLoaded.value = true;
 };
@@ -62,7 +77,7 @@ onMounted(() => {
   updateDomSize();
   window.addEventListener("mousemove", handleMouseMove);
   window.addEventListener("resize", updateDomSize);
-  
+
   // Attempt to play video after user interaction
   document.addEventListener('click', attemptVideoPlay, { once: true });
   document.addEventListener('touchstart', attemptVideoPlay, { once: true });
@@ -138,26 +153,13 @@ const localePath = useLocalePath()
 </script>
 
 <template>
-  <div class="contact-page">  
+  <div class="contact-page">
     <img src="/images/bg-line-2.png" @load="handleLoad" :style="{
-      display: 'none'     
+      display: 'none'
     }" />
-    
-    <video 
-      class="background-video" 
-      :class="{ 'video-loaded': isVideoLoaded, 'video-error': videoError }"
-      src="/images/bg.mp4" 
-      autoplay 
-      loop 
-      muted 
-      playsinline
-      preload="auto"
-      @loadeddata="handleVideoLoad"
-      @error="handleVideoError"
-      x5-video-player-type="h5"
-      x5-video-player-fullscreen="true"
-      x5-video-orientation="portraint"
-    ></video>
+
+    <video class="background-video" :class="{ 'video-loaded': isVideoLoaded }" src="/images/bg.mp4" autoplay loop muted
+      playsinline @loadeddata="handleVideoLoad"></video>
     <div class="content-product" ref="contentDomref">
       <div class="background-wrapper" :style="{ transform: `translateX(${position.offsetX * 20}px)` }">
         <div class="background-image" :class="{ 'fade-out': isVideoLoaded && !videoError }"></div>
@@ -176,15 +178,8 @@ const localePath = useLocalePath()
     </div>
     <div class="research-history-container">
       <div v-for="(item, key) in researchList" :key="key" class="research-history-item">
-        <NumberScroll 
-          :start="item.start" 
-          :end="item.end" 
-          :duration="item.duration" 
-          :decimals="item.decimals"
-          :suffix="item.suffix" 
-          :color="'#C9A14D'" 
-          class="research-number" 
-        />
+        <NumberScroll :start="item.start" :end="item.end" :duration="item.duration" :decimals="item.decimals"
+          :suffix="item.suffix" :color="'#C9A14D'" class="research-number" />
         <div class="research-label">{{ $t(`home.researchHistory.items.${key}.label`) }}</div>
         <div class="research-desc">{{ $t(`home.researchHistory.items.${key}.desc`) }}</div>
       </div>
