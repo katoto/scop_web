@@ -40,6 +40,26 @@
             </a>
           </li>
         </ul>
+
+        <!-- 分页组件 -->
+        <div class="pagination" v-if="totalPages > 1">
+          <button class="pagination-btn" :class="{ disabled: currentPage === 1 }" @click="changePage(currentPage - 1)"
+            :disabled="currentPage === 1">
+            上一页
+          </button>
+
+          <span class="pagination-numbers">
+            <button v-for="page in totalPages" :key="page" class="pagination-number"
+              :class="{ active: page === currentPage }" @click="changePage(page)">
+              {{ page }}
+            </button>
+          </span>
+
+          <button class="pagination-btn" :class="{ disabled: currentPage === totalPages }"
+            @click="changePage(currentPage + 1)" :disabled="currentPage === totalPages">
+            下一页
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -48,7 +68,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, nextTick } from 'vue'
 import { getCase } from '@/data/case'
 import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
@@ -57,10 +77,44 @@ const { locale } = useI18n()
 const { caseList, navList } = getCase(locale.value)
 
 const activeIdx = ref(0)
-const filteredNews = computed(() => {
+const currentPage = ref(1)
+const pageSize = ref(9) // PC端显示3行，每行3个，共9个
+
+// 过滤后的新闻数据
+const allFilteredNews = computed(() => {
   const type = navList[activeIdx.value].value
   return type === 'all' ? caseList : caseList.filter(news => news.type === type)
 })
+
+// 分页后的新闻数据
+const filteredNews = computed(() => {
+  const start = (currentPage.value - 1) * pageSize.value
+  const end = start + pageSize.value
+  return allFilteredNews.value.slice(start, end)
+})
+
+// 总页数
+const totalPages = computed(() => {
+  return Math.ceil(allFilteredNews.value.length / pageSize.value)
+})
+
+// 切换页码
+const changePage = (page) => {
+  currentPage.value = page
+  // 滚动到case-list顶部
+  nextTick(() => {
+    const caseListElement = document.querySelector('.case-nav')
+    if (caseListElement) {
+      caseListElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  })
+}
+
+// 切换分类时重置页码
+const changeCategory = (idx) => {
+  activeIdx.value = idx
+  currentPage.value = 1
+}
 
 </script>
 
