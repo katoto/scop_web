@@ -4,9 +4,13 @@ import { ref, onMounted, onUnmounted, computed } from 'vue'
 const { locale, locales } = useI18n()
 const switchLocalePath = useSwitchLocalePath()
 const localePath = useLocalePath()
+const route = useRoute()
 
 const isScrolled = ref(false)
 const isMobileMenuOpen = ref(false)
+const isScrolledNew = computed(() => {
+    return route.path === '/case' || route.path.startsWith('/case/')
+})
 
 const toggleMobileMenu = () => {
     isMobileMenuOpen.value = !isMobileMenuOpen.value
@@ -87,9 +91,13 @@ let menu = ref([
             }
         ]
     },
+    // {
+    //     name: 'nav.news',
+    //     path: '/news'
+    // },
     {
-        name: 'nav.news',
-        path: '/news'
+        name: 'nav.case',
+        path: '/case'
     },
     {
         name: 'nav.contact',
@@ -112,7 +120,7 @@ const handleClick = (child) => {
 </script>
 
 <template>
-    <nav class="navbar" :class="{ 'scrolled': isScrolled }">
+    <nav class="navbar" :class="{ 'scrolled': isScrolled, 'scrolled-new': isScrolledNew }">
         <div class="navbar-container navbar-container-desktop">
             <div style="cursor: pointer;" @click="() => {
                 navigateTo('/')
@@ -268,6 +276,20 @@ const handleClick = (child) => {
 }
 
 .scrolled {
+    background-color: #fff;
+    color: #343a40;
+
+    .logo-svg {
+        color: transparent;
+    }
+
+    .logo-path-1,
+    .logo-path-2 {
+        fill: url(#logoGradient);
+    }
+}
+
+.scrolled-new {
     background-color: #fff;
     color: #343a40;
 

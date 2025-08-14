@@ -45,6 +45,7 @@ const filteredNews = computed(() => {
   const type = navList[activeIdx.value].value
   return type === 'all' ? newsList : newsList.filter(news => news.type === type)
 })
+
 </script>
 
 
