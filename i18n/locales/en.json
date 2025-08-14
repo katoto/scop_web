@@ -1173,5 +1173,12 @@
       "desc2_item3": "Those allergic to any ingredient in the product should use it with caution.",
       "desc2_item4": "If any allergic or other discomfort symptoms occur during use, stop immediately and consult a professional doctor."
     }
+  },
+  "case": {
+    "banner": {
+      "title": "研究案例",
+      "subtitle": "",
+      "description": "基于真实患者的临床观察与数据记录，深入呈现产品在实际应用中的效果与价值，让科学证据为结论发声。"
+    }
   }
 }

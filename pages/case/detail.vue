@@ -35,7 +35,7 @@
                     <ul class="product">
                         <li class="product-li">
                             <div role="group" aria-label="product">
-                                <a href="/products/mosaic">
+                                <a>
                                     <img src="//www.elysiumhealth.com/cdn/shop/files/MosaicShopAll.png?v=1752787865&amp;width=200"
                                         alt="" class="img">
                                     <h3 class="product-title">Mosaic</h3>
@@ -51,7 +51,7 @@
                         </li>
                         <li class="product-li">
                             <div role="group" aria-label="product">
-                                <a href="/products/mosaic">
+                                <a>
                                     <img src="//www.elysiumhealth.com/cdn/shop/files/MosaicShopAll.png?v=1752787865&amp;width=200"
                                         alt="" class="img">
                                     <h3 class="product-title">Mosaic</h3>
@@ -101,8 +101,6 @@ onUnmounted(() => {
     window.removeEventListener('resize', checkMobile)
 })
 
-console.log('>>>newsDetail>', newsDetail)
-console.log('>>>newsDetail>', locale.value)
 </script>
 
 <style lang="less" scoped>
