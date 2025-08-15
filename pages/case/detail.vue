@@ -14,8 +14,8 @@
                 <!-- Video Module -->
                 <div class="article-content">
                     <template v-for="(item, index) in newsDetail.content" :key="index">
-                        <p v-if="item.type === 'paragraph'">{{ item.text }}</p>
-                        <h2 v-else-if="item.type === 'heading'">{{ item.text }}</h2>
+                        <p v-if="item.type === 'paragraph'" v-html="item.text"></p>
+                        <h2 v-else-if="item.type === 'heading'" v-html="item.text"></h2>
                         <img v-else-if="item.type === 'image'" :src="item.src" :alt="item.alt || ''">
                     </template>
                 </div>
@@ -36,15 +36,15 @@
                         <li class="product-li">
                             <div role="group" aria-label="product">
                                 <a>
-                                    <img src="//www.elysiumhealth.com/cdn/shop/files/MosaicShopAll.png?v=1752787865&amp;width=200"
-                                        alt="" class="img">
-                                    <h3 class="product-title">Mosaic</h3>
+                                    <img src="/images/pro-3.png" alt="" class="img" />
+                                    <h3 class="product-title">蘑菇精
+                                        <svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none'>
+                                            <path fill='#2D3648'
+                                                d='M6.41.577a.833.833 0 0 1 1.18 0l5.833 5.834a.833.833 0 0 1 0 1.178l-5.834 5.833a.833.833 0 0 1-1.178-1.178l4.41-4.41H1.168a.833.833 0 1 1 0-1.667h9.655L6.41 1.756a.833.833 0 0 1 0-1.179Z' />
+                                        </svg>
+                                    </h3>
                                     <p class="product-text">
-                                        Your skin is your largest organ, and your most visible. It faces the world and
-                                        protects you
-                                        from it. As you age, your skin loses elasticity and moisture–making it more
-                                        susceptible to
-                                        environmental ...
+                                        CP-101 - 为免疫调节与健康支持提供坚实保障
                                     </p>
                                 </a>
                             </div>
@@ -52,25 +52,21 @@
                         <li class="product-li">
                             <div role="group" aria-label="product">
                                 <a>
-                                    <img src="//www.elysiumhealth.com/cdn/shop/files/MosaicShopAll.png?v=1752787865&amp;width=200"
-                                        alt="" class="img">
-                                    <h3 class="product-title">Mosaic</h3>
+                                    <img src="/images/pro-4.png" alt="" class="img" />
+                                    <h3 class="product-title">固本金刚丸
+                                        <svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none'>
+                                            <path fill='#2D3648'
+                                                d='M6.41.577a.833.833 0 0 1 1.18 0l5.833 5.834a.833.833 0 0 1 0 1.178l-5.834 5.833a.833.833 0 0 1-1.178-1.178l4.41-4.41H1.168a.833.833 0 1 1 0-1.667h9.655L6.41 1.756a.833.833 0 0 1 0-1.179Z' />
+                                        </svg>
+                                    </h3>
                                     <p class="product-text">
-                                        Your skin is your largest organ, and your most visible. It faces the world and
-                                        protects you
-                                        from it. As you age, your skin loses elasticity and moisture–making it more
-                                        susceptible to
-                                        environmental ...
+                                        CP-101 - 永葆20岁的健康活力，从血管开始激活
                                     </p>
                                 </a>
                             </div>
                         </li>
-
                     </ul>
-
                 </div>
-
-
 
             </div>
         </div>
@@ -111,7 +107,7 @@ onUnmounted(() => {
 .case-detail {
     max-width: 1200px;
     margin: 50px auto;
-    padding: 40px 10px 40px 10px;
+    padding: 10px 10px 40px 10px;
     margin-left: 100px;
     // box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
 
@@ -179,7 +175,6 @@ onUnmounted(() => {
             width: 100%;
             margin-top: 8px;
 
-
             &:hover {
                 background-color: #0B1C30;
                 color: #fff;
@@ -195,12 +190,17 @@ onUnmounted(() => {
             transition: .3s;
             padding: 24px;
             margin-bottom: 16px;
+            text-align: center;
+            cursor: pointer;
 
             .img {
-                max-width: 100%;
-                aspect-ratio: 9 / 7;
+                max-width: 74%;
                 object-fit: cover;
                 object-position: center;
+                scale: 1;
+                background-color: #fff;
+                padding: 10px 20px;
+                margin-bottom: 10px;
             }
 
             .product-title {
@@ -212,6 +212,10 @@ onUnmounted(() => {
                 color: #0B1C30;
                 margin-bottom: 4px;
                 margin-top: 2px;
+                text-align: left;
+                display: flex;
+                align-items: center;
+                gap: 4px;
             }
 
             .product-text {
@@ -223,6 +227,7 @@ onUnmounted(() => {
                 overflow: hidden;
                 margin-bottom: 0;
                 color: rgb(11, 28, 48);
+                text-align: left;
             }
 
             &:hover {
@@ -285,6 +290,8 @@ onUnmounted(() => {
     img {
         display: block;
         margin: 10px auto;
+        max-width: 80%;
+        margin: 0 auto 10px;
     }
 
     h2 {
@@ -297,6 +304,24 @@ onUnmounted(() => {
     p {
         margin-bottom: 20px;
         text-align: justify;
+    }
+
+    b {
+        font-weight: bold;
+        color: #222;
+    }
+
+    li {
+        margin: 8px 0;
+        padding-left: 20px;
+        position: relative;
+        
+        &::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #666;
+        }
     }
 }
 
