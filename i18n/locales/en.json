@@ -1177,9 +1177,11 @@
   },
   "case": {
     "banner": {
-      "title": "研究案例",
+      "title": "Research Cases",
       "subtitle": "",
-      "description": "基于真实患者的临床观察与数据记录，深入呈现产品在实际应用中的效果与价值，让科学证据为结论发声。"
-    }
+      "description": "In-depth presentation of the product’s real-world effectiveness and value, grounded in clinical observations and data from actual patients—letting scientific evidence speak for itself."
+    },
+    "before_next": "Previous",
+    "next": "Next"
   }
 }

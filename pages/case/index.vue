@@ -11,7 +11,6 @@
         <p class="desc">{{ t('case.banner.description') }}</p>
       </div>
     </section>
-
     <!-- <div class="case-hero">
       <img class="case-bg" src="/case/topbg.png" alt="">
       <h2 class="title">{{ $t('nav.case') }}</h2>
@@ -41,7 +40,6 @@
           </li>
         </ul>
 
-        <!-- 分页组件 -->
         <div class="pagination" v-if="totalPages > 1">
           <button class="pagination-btn" :class="{ disabled: currentPage === 1 }" @click="changePage(currentPage - 1)"
             :disabled="currentPage === 1">
