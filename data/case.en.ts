@@ -161,6 +161,14 @@ export const navList = [
   { label: 'Special Events', value: 'specialNew' }
 ]
 
+export const caseContact = {
+  title: 'Contact Us',
+  name: 'Your Name',
+  email: 'Your Email',
+  submit: 'Submit'
+}
+
+
 export const caseDetail = {
   title: 'CP-101 Shines at Shenzhen International Nutrition and Health Industry Exhibition: Exploring Life Health Science Frontiers, Leading Industry Trends!',
   meta: {

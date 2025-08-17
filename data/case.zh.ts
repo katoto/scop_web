@@ -403,4 +403,31 @@ CP-101不是药物，但它是癌症治疗中不可忽视的助力。
       { name: '深圳新闻网', link: 'https://www.163.com/dy/article/JJRUOC4I05569INR.html' }
     ]
   }
-} 
+}
+
+export const caseContact = {
+  title: '联系我们',
+  name: '您的姓名',
+  email: '您的邮箱',
+  submit: '提交',
+  productInfo: {
+    title: '产品推荐',
+    list: [
+      {
+        name: 'CP-101',
+        img: '/images/pro-3.png',
+        desc: 'CP-101是一种用于治疗乳腺癌的药物，它通过增强免疫细胞的活性和抑制炎症因子的表达，来帮助患者恢复正常的生活质量和功能。'
+      },
+      {
+        name: 'CP-102',
+        img: '/images/pro-3.png',
+        desc: 'CP-101是一种用于治疗乳腺癌的药物，它通过增强免疫细胞的活性和抑制炎症因子的表达，来帮助患者恢复正常的生活质量和功能。'
+      },
+      {
+        name: '固本金刚丸',
+        img: '/images/pro-4.png',
+        desc: 'CP-101 - 永葆20岁的健康活力，从血管开始激'
+      }
+    ]
+  }
+}

@@ -161,6 +161,13 @@ export const navList = [
   { label: '特別イベント', value: 'specialNew' }
 ]
 
+export const caseContact = {
+  title: 'お問い合わせ',
+  name: 'お名前',
+  email: 'メールアドレス',
+  submit: '送信'
+}
+
 export const caseDetail = {
   title: 'CP-101が深セン国際栄養健康産業展で輝きを放つ：生命健康科学の最前線を探求し、業界の新潮流をリード！',
   meta: {
@@ -274,4 +281,5 @@ export const caseDetail = {
       { name: '深センニュースネット', link: 'https://www.163.com/dy/article/JJRUOC4I05569INR.html' }
     ]
   }
-} 
+}
+

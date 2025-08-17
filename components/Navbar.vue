@@ -9,7 +9,7 @@ const route = useRoute()
 const isScrolled = ref(false)
 const isMobileMenuOpen = ref(false)
 const isScrolledNew = computed(() => {
-    return route.path === '/case' || route.path.startsWith('/case/')
+    return route.path.includes('/case')
 })
 
 const toggleMobileMenu = () => {

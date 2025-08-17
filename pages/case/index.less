@@ -82,7 +82,6 @@
 .case-contain {
   padding: 0 90px;
   max-width: 1500px;
-  border: 1px solid #e5e5e5;
   margin: 0 auto;
 }
 
@@ -212,19 +211,29 @@
 
 // 移动端适配
 @media screen and (max-width: 768px) {
-  .case-hero {
-    min-height: 300px;
-    height: 30vh;
+  .case-page {
+    .case-hero {
+      min-height: 300px;
+      height: 44vh;
+      padding-top: 154px;
 
-    .case-bg {
-      height: 300px;
-    }
+      .banner-content {
+        text-align: center;
+        padding-left: 0;
+        max-width: 100%;
+      }
 
-    .title {
-      margin-left: 40px;
-      font-size: 1.8rem;
+      .case-bg {
+        height: 300px;
+      }
+
+      .title {
+        margin-left: 40px;
+        font-size: 1.8rem;
+      }
     }
   }
+
 
   .case-contain {
     padding: 0 20px;
@@ -282,19 +291,28 @@
 
 // iPad 适配
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .case-hero {
-    min-height: 340px;
-    height: 35vh;
+  .case-page {
+    .case-hero {
+      min-height: 340px;
+      height: 35vh;
 
-    .case-bg {
-      height: 340px;
-    }
+      .banner-content {
+        text-align: center;
+        padding-left: 0;
+        max-width: 100%;
+      }
 
-    .title {
-      margin-left: 60px;
-      font-size: 1.9rem;
+      .case-bg {
+        height: 340px;
+      }
+
+      .title {
+        margin-left: 60px;
+        font-size: 1.9rem;
+      }
     }
   }
+
 
   .case-contain {
     padding: 0 40px;
