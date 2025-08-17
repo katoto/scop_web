@@ -106,9 +106,9 @@ onUnmounted(() => {
 
 .case-detail {
     max-width: 1200px;
-    margin: 50px auto;
+    margin: 80px auto;
     padding: 10px 10px 40px 10px;
-    margin-left: 100px;
+    // margin-left: 100px;
     // box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
 
     ul,
@@ -249,7 +249,7 @@ onUnmounted(() => {
 
 .content-section {
     background: #fff;
-    padding: 40px 0 40px 30px;
+    padding: 0px 0 40px 30px;
     border-radius: 8px;
     flex: 1;
     min-width: 0;
