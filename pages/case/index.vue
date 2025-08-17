@@ -43,7 +43,7 @@
         <div class="pagination" v-if="totalPages > 1">
           <button class="pagination-btn" :class="{ disabled: currentPage === 1 }" @click="changePage(currentPage - 1)"
             :disabled="currentPage === 1">
-            上一页
+            {{ t('case.before_next') }}
           </button>
 
           <span class="pagination-numbers">
@@ -55,7 +55,7 @@
 
           <button class="pagination-btn" :class="{ disabled: currentPage === totalPages }"
             @click="changePage(currentPage + 1)" :disabled="currentPage === totalPages">
-            下一页
+            {{ t('case.next') }}
           </button>
         </div>
       </div>
