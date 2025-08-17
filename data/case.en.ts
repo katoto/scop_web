@@ -1,11 +1,11 @@
 export const caseList = [
   {
-    img: '/news/realNew-1.jpeg',
-    date: '2025-02-04',
-    title: 'From Onset to Sudden Death in Just Five Days: What Can We Learn from Big S\'s Case?',
-    desc: 'According to WHO statistics, there are approximately 3-5 million severe flu cases worldwide each year, with 290,000-650,000 flu-related deaths. Big S\'s sudden passing serves as a painful reminder that we must never take the flu lightly. Influenza is an acute respiratory infectious disease caused by the influenza virus, characterized by strong infectivity and rapid transmission, with symptoms much more severe than the common cold. Flu patients often experience high fever, chills, extreme fatigue, headache, muscle pain, and other systemic discomforts, along with respiratory symptoms such as cough, runny nose, and sore throat.',
-    type: 'realNew',
-    link: 'https://mp.weixin.qq.com/s/DfhL7qjVFtxI7nGcRFwcrA'
+    "img": "/news/case-0.png",
+    "date": "2025-08-15",
+    "title": "From Case Study to Science: Clinical Observation of CP-101 as Adjuvant Therapy in Breast Cancer",
+    "desc": "Breast-cancer treatment relies not only on surgery and drugs; immunologic adjuvants can also play a role. In this case, after an advanced-stage patient received CP-101 in combination therapy, tumor volume shrank and key indicators declined—suggesting the agent’s potential for enhancing immune function and improving therapeutic outcomes.",
+    "type": "realNew",
+    "link": "/case/detail?id=1"
   },
   {
     img: '/news/realNew-2.jpeg',
@@ -186,11 +186,6 @@ export const caseContact = {
 
 export const caseDetail = {
   title: 'CP-101 Shines at Shenzhen International Nutrition and Health Industry Exhibition: Exploring Life Health Science Frontiers, Leading Industry Trends!',
-  meta: {
-    source: 'Phoenix News Shenzhen',
-    date: 'December 20, 2024 09:30:11',
-    location: 'From Guangdong Province'
-  },
   video: {
     poster: '/news/specialNew-2.png',
     src: '/news/new-1m45s.mp4'

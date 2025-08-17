@@ -1182,6 +1182,7 @@
       "description": "In-depth presentation of the product’s real-world effectiveness and value, grounded in clinical observations and data from actual patients—letting scientific evidence speak for itself."
     },
     "before_next": "Previous",
-    "next": "Next"
+    "next": "Next",
+    "more": "Read more"
   }
 }

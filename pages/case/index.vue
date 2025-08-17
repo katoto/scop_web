@@ -33,8 +33,8 @@
               </div>
               <div class="mc_e1_txtbox">
                 <p class="mc_e1_txt case-card-title">{{ news.title }}</p>
-                <div class="mc_e1_date case-card-date">{{ news.date }}</div>
                 <div class="case-card-desc">{{ news.desc }}</div>
+                <div class="case-card-more">{{ t('case.more') }}</div>
               </div>
             </a>
           </li>

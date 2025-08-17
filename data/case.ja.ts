@@ -1,5 +1,13 @@
 export const caseList = [
   {
+    img: '/news/case-0.png',
+    date: '2025-08-15',
+    title: '症例から科学へ：CP-101の乳がん術後療法における臨床観察',
+    desc: '乳がん治療は手術や薬物療法に加え、免疫補助療法も役割を果たす。本症例では進行例にCP-101を併用した結果、腫瘍縮小と指標の改善が認められ、免疫機能向上と治療効果改善への可能性が示唆された。',
+    type: 'realNew',
+    link: '/case/detail?id=1'
+  },
+  {
     img: '/news/realNew-1.jpeg',
     date: '2025-02-04',
     title: '発症から突然死までわずか5日間！大Sのケースから学べること',
@@ -185,11 +193,6 @@ export const caseContact = {
 
 export const caseDetail = {
   title: 'CP-101が深セン国際栄養健康産業展で輝きを放つ：生命健康科学の最前線を探求し、業界の新潮流をリード！',
-  meta: {
-    source: '鳳凰ニュース深セン',
-    date: '2024年12月20日 09:30:11',
-    location: '広東省発'
-  },
   video: {
     poster: '/news/specialNew-2.png',
     src: '/news/new-1m45s.mp4'

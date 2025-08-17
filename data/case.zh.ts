@@ -171,11 +171,6 @@ export const navList = [
 
 export const caseDetail = {
   title: '从案例到科学：CP-101在乳腺癌辅助治疗中的临床观察',
-  meta: {
-    source: '',
-    date: '2024年12月20日 09:30:11',
-    location: '来自广东省'
-  },
   content: [
     {
       type: 'heading',

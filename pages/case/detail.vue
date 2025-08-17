@@ -2,11 +2,11 @@
     <div class="case-detail">
         <div class="article-header">
             <h1 class="article-title">{{ newsDetail.title }}</h1>
-            <div class="article-meta">
+            <!-- <div class="article-meta">
                 <span class="source" v-if="newsDetail.meta.source">{{ newsDetail.meta.source }}</span>
                 <span class="date">{{ newsDetail.meta.date }}</span>
                 <span class="location">{{ newsDetail.meta.location }}</span>
-            </div>
+            </div> -->
         </div>
         <div class="case-container">
             <div class="content-section">
@@ -298,7 +298,7 @@ onUnmounted(() => {
 .article-header {
     margin-bottom: 30px;
     text-align: left;
-    margin: 0 40px;
+    margin: 0 30px;
 
     .article-title {
         font-size: 32px;
