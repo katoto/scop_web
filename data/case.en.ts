@@ -165,7 +165,22 @@ export const caseContact = {
   title: 'Contact Us',
   name: 'Your Name',
   email: 'Your Email',
-  submit: 'Submit'
+  submit: 'Submit',
+  productInfo: {
+    title: 'Product Recommendations',
+    list: [
+      {
+        name: 'CP-101',
+        img: '/images/pro-4.png',
+        desc: 'An immune-regulating formula centered on Japanese Agaricus blazei to boost immunity and improve sub-health.'
+      },
+      {
+        name: 'CP-101 Super',
+        img: '/images/pro-2.png',
+        desc: 'Enhanced polysaccharide activity on the basis of Agaricus blazei, comprehensively elevating immune defense and anti-fatigue capacity.'
+      }
+    ]
+  }
 }
 
 

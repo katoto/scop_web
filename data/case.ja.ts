@@ -165,7 +165,22 @@ export const caseContact = {
   title: 'お問い合わせ',
   name: 'お名前',
   email: 'メールアドレス',
-  submit: '送信'
+  submit: '送信',
+  productInfo: {
+    title: 'おすすめ製品',
+    list: [
+      {
+        name: 'CP-101',
+        img: '/images/pro-4.png',
+        desc: '日本産アガリクスを核心とした免疫調節処方で、免疫力を高め、未病状態を改善します。'
+      },
+      {
+        name: 'CP-101 Super',
+        img: '/images/pro-2.png',
+        desc: 'アガリクスに加え、多糖体の活性を強化し、免疫防御力と抗疲労能力を総合的に向上させます。'
+      }
+    ]
+  }
 }
 
 export const caseDetail = {

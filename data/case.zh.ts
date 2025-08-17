@@ -177,7 +177,6 @@ export const caseDetail = {
     location: '来自广东省'
   },
   content: [
-
     {
       type: 'heading',
       text: '开篇'
@@ -241,7 +240,7 @@ export const caseDetail = {
     },
     {
       type: 'image-txt',
-      src: '[图5 CT三格对比]'
+      text: '[图5 CT三格对比]'
     },
     {
       type: 'heading',
@@ -259,7 +258,7 @@ export const caseDetail = {
     },
     {
       type: 'image-txt',
-      src: '[图6 折线图：CEA & CA15-3]'
+      text: '[图6 折线图：CEA & CA15-3]'
     },
     {
       type: 'paragraph',
@@ -284,7 +283,7 @@ export const caseDetail = {
     },
     {
       type: 'image-txt',
-      src: '[图7 数据对比图]'
+      text: '[图7 数据对比图]'
     },
     {
       type: 'paragraph',
@@ -309,7 +308,7 @@ export const caseDetail = {
     },
     {
       type: 'image-txt',
-      src: '[图8 乳腺癌机制插画]'
+      text: '[图8 乳腺癌机制插画]'
     },
     {
       type: 'paragraph',
@@ -323,7 +322,7 @@ export const caseDetail = {
     },
     {
       type: 'image-txt',
-      src: '[图9 炎症微环境插画]'
+      text: '[图9 炎症微环境插画]'
     },
     {
       type: 'paragraph',
@@ -339,7 +338,7 @@ export const caseDetail = {
     },
     {
       type: 'image-txt',
-      src: '[图10 成分协同作用图]'
+      text: '[图10 成分协同作用图]'
     },
     {
       type: 'heading',
@@ -360,7 +359,7 @@ export const caseDetail = {
     },
     {
       type: 'image-txt',
-      src: '[图11 临床研究流程图]'
+      text: '[图11 临床研究流程图]'
     },
     {
       type: 'heading',

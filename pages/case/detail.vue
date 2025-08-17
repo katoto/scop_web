@@ -9,13 +9,12 @@
             </div>
         </div>
         <div class="case-container">
-            <!-- Main Content Section -->
             <div class="content-section">
-                <!-- Video Module -->
                 <div class="article-content">
                     <template v-for="(item, index) in newsDetail.content" :key="index">
                         <p v-if="item.type === 'paragraph'" v-html="item.text"></p>
                         <h2 v-else-if="item.type === 'heading'" v-html="item.text"></h2>
+                        <span v-else-if="item.type === 'image-txt'" v-html="item.text"></span>
                         <img v-else-if="item.type === 'image'" :src="item.src" :alt="item.alt || ''">
                     </template>
                 </div>
@@ -29,7 +28,9 @@
                         :placeholder="caseContact.name">
                     <input id="k_id_email" type="email" name="email" class="input input-email" required="required"
                         :placeholder="caseContact.email" autocomplete="email">
-                    <button type="button" class="button page-newsletter__submit" @click="navigateToContact">{{ caseContact.submit }}</button>
+                    <button type="button" class="button page-newsletter__submit" @click="navigateToContact">{{
+                        caseContact.submit
+                        }}</button>
                 </div>
                 <div>
                     <h2 class="title">{{ caseContact.productInfo.title }}</h2>
@@ -62,9 +63,11 @@
                     <h2 class="title">{{ caseContact.title }}</h2>
                     <input id="k_id_name_mobile" type="text" name="name" class="input input-name" required="required"
                         :placeholder="caseContact.name">
-                    <input id="k_id_email_mobile" type="email" name="email" class="input input-email" required="required"
-                        :placeholder="caseContact.email" autocomplete="email">
-                    <button type="button" class="button page-newsletter__submit" @click="navigateToContact">{{ caseContact.submit }}</button>
+                    <input id="k_id_email_mobile" type="email" name="email" class="input input-email"
+                        required="required" :placeholder="caseContact.email" autocomplete="email">
+                    <button type="button" class="button page-newsletter__submit" @click="navigateToContact">{{
+                        caseContact.submit
+                        }}</button>
                 </div>
                 <div class="mobile-product-info">
                     <h2 class="title">{{ caseContact.productInfo.title }}</h2>
@@ -139,11 +142,12 @@ onUnmounted(() => {
 
 .case-detail {
     max-width: 1200px;
-    margin: 80px auto;
+    margin: 80px auto 40px;
     padding: 10px 10px 40px 10px;
 
     // margin-left: 100px;
     // box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+
     ul,
     li {
         list-style: none;
@@ -325,9 +329,16 @@ onUnmounted(() => {
 
     img {
         display: block;
-        margin: 10px auto;
+        margin: 10px auto 4px;
         max-width: 80%;
         margin: 0 auto 10px;
+    }
+
+    span {
+        font-size: 14px;
+        text-align: center;
+        display: block;
+        margin-bottom: 12px;
     }
 
     h2 {
@@ -449,50 +460,50 @@ onUnmounted(() => {
             gap: 12px;
 
             .mobile-product-li {
-                    border: 1px solid #F1F4F6;
-                    border-radius: 12px;
-                    transition: .3s;
-                    padding: 16px;
-                    text-align: left;
-                    cursor: pointer;
-                    background: #fff;
+                border: 1px solid #F1F4F6;
+                border-radius: 12px;
+                transition: .3s;
+                padding: 16px;
+                text-align: left;
+                cursor: pointer;
+                background: #fff;
 
                 .img {
                     display: block;
-                     width: 100px;
-                     height: 100px;
-                     object-fit: contain;
-                     object-position: center;
-                     background-color: #fff;
-                     padding: 6px;
-                     margin: 0 auto;
-                     margin-bottom: 10px;
-                     border-radius: 4px;
-                     border: 1px solid #f0f0f0;
-                 }
+                    width: 100px;
+                    height: 100px;
+                    object-fit: contain;
+                    object-position: center;
+                    background-color: #fff;
+                    padding: 6px;
+                    margin: 0 auto;
+                    margin-bottom: 10px;
+                    border-radius: 4px;
+                    border: 1px solid #f0f0f0;
+                }
 
-                 .product-title {
-                     font-size: 14px;
-                     line-height: 150%;
-                     font-weight: 500;
-                     color: #0B1C30;
-                     margin-bottom: 6px;
-                     margin-top: 0;
-                     display: flex;
-                     align-items: center;
-                     gap: 4px;
-                 }
+                .product-title {
+                    font-size: 14px;
+                    line-height: 150%;
+                    font-weight: 500;
+                    color: #0B1C30;
+                    margin-bottom: 6px;
+                    margin-top: 0;
+                    display: flex;
+                    align-items: center;
+                    gap: 4px;
+                }
 
-                 .product-text {
-                     font-size: 12px;
-                     line-height: 1.4;
-                     color: #666;
-                     margin: 0;
-                     display: -webkit-box;
-                     -webkit-line-clamp: 2;
-                     -webkit-box-orient: vertical;
-                     overflow: hidden;
-                 }
+                .product-text {
+                    font-size: 12px;
+                    line-height: 1.4;
+                    color: #666;
+                    margin: 0;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                }
 
                 &:hover {
                     background-color: #F8F9FA;
