@@ -18,6 +18,7 @@
                         <img v-else-if="item.type === 'image'" :src="item.src" :alt="item.alt || ''">
                         <hr v-else-if="item.type === 'hr'" />
                         <h6 v-else-if="item.type === 'subTitle'" v-html="item.text"></h6>
+                        <div class="case-footer" v-else-if="item.type === 'caseFooter'" v-html="item.text"></div>
                     </template>
                 </div>
             </div>
@@ -360,6 +361,7 @@ onUnmounted(() => {
         color: #222;
     }
 
+
     li {
         margin: 8px 0;
         padding-left: 20px;
@@ -372,6 +374,12 @@ onUnmounted(() => {
             color: #666;
         }
     }
+
+}
+
+:global(.case-footer) {
+    line-height: 22px;
+    font-size: 15px;
 }
 
 // 移动端产品模块样式

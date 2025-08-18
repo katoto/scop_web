@@ -279,17 +279,5 @@ export const caseDetail = {
       type: 'paragraph',
       text: 'This seminar was SCOPHIL\'s way of giving back to the industry, leveraging its deep industry resources and organizational capabilities to build a dialogue platform; it was also an opportunity for corporate self-renewal and keeping up with frontier needs, drawing inspiration from expert exchanges to feed back into subsequent product line expansion and technology upgrades, demonstrating its determination to lead the industry towards higher quality development.'
     }
-  ],
-  media: {
-    title: 'Major Media Coverage',
-    list: [
-      { name: 'Phoenix News', link: 'https://sz.ifeng.com/c/8fRuNrNhADL' },
-      { name: 'China.com', link: 'http://mtz.china.com/touzi/2024/1220/122024_146807.html' },
-      { name: 'NetEase', link: 'https://www.163.com/dy/article/JJRUOC4I05569INR.html' },
-      { name: 'Health Exhibition Network', link: 'http://jkzh.chexia.top/jiankang/6928853.html' },
-      { name: 'China Exhibition Network', link: 'http://www.zgzxnet.cn/huizhan/229.html' },
-      { name: 'Medical Headlines', link: 'http://www.yltt.cc/xinwen/89.html' },
-      { name: 'Shenzhen News Network', link: 'https://www.163.com/dy/article/JJRUOC4I05569INR.html' }
-    ]
-  }
+  ]
 } 

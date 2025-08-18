@@ -286,18 +286,6 @@ export const caseDetail = {
       type: 'paragraph',
       text: 'このセミナーは、SCOPHILが業界に還元する方法であり、深い業界リソースと組織能力を活用して対話プラットフォームを構築しました。また、企業の自己革新と最先端ニーズに追いつく機会でもあり、専門家の交流からインスピレーションを得て、その後の製品ライン拡大と技術アップグレードにフィードバックし、より高品質な発展に向けて業界をリードする決意を示しました。'
     }
-  ],
-  media: {
-    title: '主要メディアの報道',
-    list: [
-      { name: '鳳凰ニュース', link: 'https://sz.ifeng.com/c/8fRuNrNhADL' },
-      { name: '中国網', link: 'http://mtz.china.com/touzi/2024/1220/122024_146807.html' },
-      { name: '網易', link: 'https://www.163.com/dy/article/JJRUOC4I05569INR.html' },
-      { name: '健康展覧網', link: 'http://jkzh.chexia.top/jiankang/6928853.html' },
-      { name: '中国展覧網', link: 'http://www.zgzxnet.cn/huizhan/229.html' },
-      { name: '医療ヘッドライン', link: 'http://www.yltt.cc/xinwen/89.html' },
-      { name: '深センニュースネット', link: 'https://www.163.com/dy/article/JJRUOC4I05569INR.html' }
-    ]
-  }
+  ]
 }
 

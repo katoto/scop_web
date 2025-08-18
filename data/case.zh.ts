@@ -280,7 +280,7 @@ export const caseDetail = {
     },
     {
       type: 'paragraph',
-      text: `CP-101的作用机理包括三方面：
+      text: `CP-101的作用机理包括三方面：<br />
 1. 免疫激活
 <li>癌细胞表面常通过 PD-1/PD-L1 通路 抑制T细胞。</li>
 <li>CP-101中的活性多糖，可部分阻断该通路，使T细胞“重新苏醒”，恢复攻击能力 [8]。</li>`
@@ -364,7 +364,7 @@ export const caseDetail = {
       text: '参考文献 / 延伸阅读'
     },
     {
-      type: 'paragraph',
+      type: 'caseFooter',
       text: `<div>1. Ito H, et al. Antitumor activity of Agaricus blazei Murill and its medicinal effect on cancer patients. Cancer Science. 2004. <a href="https://pubmed.ncbi.nlm.nih.gov/15298730/">https://pubmed.ncbi.nlm.nih.gov/15298730/</a></div>
 2. Kawagishi H, et al. Immunomodulatory properties of polysaccharides from Agaricus blazei. Biochem Biophys Res Commun. 2008. <a href="https://pubmed.ncbi.nlm.nih.gov/18387608/">https://pubmed.ncbi.nlm.nih.gov/18387608/</a></div>
 <div>3. Duffy MJ. CA 15-3 and related mucins as circulating markers in breast cancer. Ann Clin Biochem. 1999. <a href="https://pubmed.ncbi.nlm.nih.gov/10445208/">https://pubmed.ncbi.nlm.nih.gov/10445208/</a></div>
@@ -375,19 +375,7 @@ export const caseDetail = {
 <div>8. Topalian SL, et al. Safety, activity, and immune correlates of anti–PD-1 antibody in cancer. N Engl J Med. 2012. <a href="https://pubmed.ncbi.nlm.nih.gov/22658127/">https://pubmed.ncbi.nlm.nih.gov/22658127/</a></div>
 `
     },
-  ],
-  media: {
-    title: '参考文献 / 延伸阅读',
-    list: [
-      { name: '凤凰网', link: 'https://sz.ifeng.com/c/8fRuNrNhADL' },
-      { name: '中华网', link: 'http://mtz.china.com/touzi/2024/1220/122024_146807.html' },
-      { name: '网易', link: 'https://www.163.com/dy/article/JJRUOC4I05569INR.html' },
-      { name: '健康展会网', link: 'http://jkzh.chexia.top/jiankang/6928853.html' },
-      { name: '中国会展网', link: 'http://www.zgzxnet.cn/huizhan/229.html' },
-      { name: '医疗头条网', link: 'http://www.yltt.cc/xinwen/89.html' },
-      { name: '深圳新闻网', link: 'https://www.163.com/dy/article/JJRUOC4I05569INR.html' }
-    ]
-  }
+  ]
 }
 
 export const caseContact = {
