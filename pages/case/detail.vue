@@ -16,6 +16,8 @@
                         <h2 v-else-if="item.type === 'heading'" v-html="item.text"></h2>
                         <span v-else-if="item.type === 'image-txt'" v-html="item.text"></span>
                         <img v-else-if="item.type === 'image'" :src="item.src" :alt="item.alt || ''">
+                        <hr v-else-if="item.type === 'hr'" />
+                        <h6 v-else-if="item.type === 'subTitle'" v-html="item.text"></h6>
                     </template>
                 </div>
             </div>

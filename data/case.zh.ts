@@ -234,10 +234,6 @@ export const caseDetail = {
       src: '/news/case-4.png'
     },
     {
-      type: 'image-txt',
-      text: '[图5 CT三格对比]'
-    },
-    {
       type: 'heading',
       text: '肿瘤标志物下降'
     },
@@ -250,10 +246,6 @@ export const caseDetail = {
     {
       type: 'image',
       src: '/news/case-5.png'
-    },
-    {
-      type: 'image-txt',
-      text: '[图6 折线图：CEA & CA15-3]'
     },
     {
       type: 'paragraph',
@@ -277,10 +269,6 @@ export const caseDetail = {
       src: '/news/case-6.png'
     },
     {
-      type: 'image-txt',
-      text: '[图7 数据对比图]'
-    },
-    {
       type: 'paragraph',
       text: `科普解释
 <li>CD8+ T细胞：人体内专门杀死癌细胞的“战士细胞” [5]。</li>
@@ -302,10 +290,6 @@ export const caseDetail = {
       src: '/news/case-7.png'
     },
     {
-      type: 'image-txt',
-      text: '[图8 乳腺癌机制插画]'
-    },
-    {
       type: 'paragraph',
       text: `2. 炎症调节
 <li>高水平的 IL-6、TNF-α 是肿瘤环境恶化的推手。</li>
@@ -314,10 +298,6 @@ export const caseDetail = {
     {
       type: 'image',
       src: '/news/case-8.png'
-    },
-    {
-      type: 'image-txt',
-      text: '[图9 炎症微环境插画]'
     },
     {
       type: 'paragraph',
@@ -330,10 +310,6 @@ export const caseDetail = {
     {
       type: 'image',
       src: '/news/case-9.png'
-    },
-    {
-      type: 'image-txt',
-      text: '[图10 成分协同作用图]'
     },
     {
       type: 'heading',
@@ -353,17 +329,13 @@ export const caseDetail = {
       src: '/news/case-10.png'
     },
     {
-      type: 'image-txt',
-      text: '[图11 临床研究流程图]'
-    },
-    {
       type: 'heading',
       text: '康复与希望'
     },
     {
       type: 'paragraph',
       text: `在完成手术并逐步康复后，这位患者在日记中写道：
-“CP-101不是神药，但它让我有力气熬过最艰难的日子。”
+“CP-101不是神药，但它让我有力气熬过最艰难的日子。” <br />
 医生的评语是：
 “她不仅延长了生存期，更以接近正常的状态回归生活。”`
     },
@@ -377,11 +349,30 @@ export const caseDetail = {
     },
     {
       type: 'paragraph',
-      text: `案例证据：患者影像与指标双重改善
-科学解释：免疫细胞活性恢复 + 炎症因子下降
-临床验证：群体研究数据支持
-现实意义：常规治疗 + 免疫辅助 = 为患者创造更多康复机会
-CP-101不是药物，但它是癌症治疗中不可忽视的助力。
+      text: `<li><b>案例证据：</b>患者影像与指标双重改善</li>
+<li><b>科学解释：</b>免疫细胞活性恢复 + 炎症因子下降</li>
+<li><b>临床验证：</b>群体研究数据支持</li>
+<li><b>现实意义：</b>常规治疗 + 免疫辅助 = 为患者创造更多康复机会</li>
+<li><b>CP-101不是药物，但它是癌症治疗中不可忽视的助力。</b></li>
+`
+    },
+    {
+      type: 'hr'
+    },
+    {
+      type: 'subTitle',
+      text: '参考文献 / 延伸阅读'
+    },
+    {
+      type: 'paragraph',
+      text: `<div>1. Ito H, et al. Antitumor activity of Agaricus blazei Murill and its medicinal effect on cancer patients. Cancer Science. 2004. <a href="https://pubmed.ncbi.nlm.nih.gov/15298730/">https://pubmed.ncbi.nlm.nih.gov/15298730/</a></div>
+2. Kawagishi H, et al. Immunomodulatory properties of polysaccharides from Agaricus blazei. Biochem Biophys Res Commun. 2008. <a href="https://pubmed.ncbi.nlm.nih.gov/18387608/">https://pubmed.ncbi.nlm.nih.gov/18387608/</a></div>
+<div>3. Duffy MJ. CA 15-3 and related mucins as circulating markers in breast cancer. Ann Clin Biochem. 1999. <a href="https://pubmed.ncbi.nlm.nih.gov/10445208/">https://pubmed.ncbi.nlm.nih.gov/10445208/</a></div>
+<div>4. Carrión RM, et al. Clinical utility of CEA and CA15-3 in breast cancer follow-up. Clin Chem Lab Med. 2002. <a href="https://pubmed.ncbi.nlm.nih.gov/12182735/">https://pubmed.ncbi.nlm.nih.gov/12182735/</a></div>
+<div>5. Pardoll DM. The blockade of immune checkpoints in cancer immunotherapy. Nat Rev Cancer. 2012. <a href="https://pubmed.ncbi.nlm.nih.gov/22270940/">https://pubmed.ncbi.nlm.nih.gov/22270940/</a></div>
+<div>6. Grivennikov SI, et al. Inflammation and cancer: the role of interleukin-6. Cell. 2009. <a href="https://pubmed.ncbi.nlm.nih.gov/19737587/">https://pubmed.ncbi.nlm.nih.gov/19737587/</a></div>
+<div>7. Lin WW, Karin M. A cytokine-mediated link between innate immunity, inflammation, and cancer. J Clin Invest. 2007. <a href="https://pubmed.ncbi.nlm.nih.gov/17200719/">https://pubmed.ncbi.nlm.nih.gov/17200719/</a></div>
+<div>8. Topalian SL, et al. Safety, activity, and immune correlates of anti–PD-1 antibody in cancer. N Engl J Med. 2012. <a href="https://pubmed.ncbi.nlm.nih.gov/22658127/">https://pubmed.ncbi.nlm.nih.gov/22658127/</a></div>
 `
     },
   ],
