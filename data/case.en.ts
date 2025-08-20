@@ -2,8 +2,8 @@ export const caseList = [
   {
     "img": "/news/case-0.png",
     "date": "2025-08-15",
-    "title": "From Case Study to Science: Clinical Observation of CP-101 as Adjuvant Therapy in Breast Cancer",
-    "desc": "Breast-cancer treatment relies not only on surgery and drugs; immunologic adjuvants can also play a role. In this case, after an advanced-stage patient received CP-101 in combination therapy, tumor volume shrank and key indicators declined—suggesting the agent’s potential for enhancing immune function and improving therapeutic outcomes.",
+    "title": `"I Thought It Was All Over" — The Story of a Japanese Breast Cancer Patient’s Reversal Through Persistent Immune Intervention and the Scientific Evidence Behind It`,
+    "desc": "Keiko Morita, 44, Japan: “Had I not kept taking CP-101 back then, I doubt I would have made it to this day. It isn’t a miracle, but it gave me back the strength to keep fighting my cancer.” She found, on the brink of despair, the will to battle her disease once more.",
     "type": "realNew",
     "link": "/case/detail?id=1"
   },
