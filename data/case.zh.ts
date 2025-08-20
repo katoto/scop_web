@@ -170,7 +170,7 @@ export const navList = [
 ]
 
 export const caseDetail = {
-  title: '从案例到科学：CP-101在乳腺癌辅助治疗中的临床观察',
+  title: '“我以为一切结束了”——日本乳腺癌患者坚持免疫干预后的逆转故事与科学验证',
   content: [
     {
       type: 'heading',
@@ -178,19 +178,21 @@ export const caseDetail = {
     },
     {
       type: 'paragraph',
-      text: '1999年，日本一位43岁的女性在例行体检中被确诊为 <b>乳腺癌</b>。彼时，她害怕手术的风险，选择了回避治疗。随着时间推移，肿瘤逐渐增长，直到2004年已经超过 <b>10cm</b>，并出现皮肤穿孔。这种延误，使她错过了最佳的手术时机，也让病情进入 <b>乳癌IV期</b>。'
+      text: '<h5>森田惠子（44岁，日本）：在绝望边缘重新找回“与癌抗争的力气”</h5>'
+    },
+    {
+      type: 'paragraph',
+      text: `1999 年，日本千叶县的森田惠子在一次例行体检中发现左侧乳房有异常结节。由于害怕手术、又觉得“应该问题不大”，她选择回避治疗。然而此后的五年中，肿块逐年增大，到 2004 年，肿瘤直径已经超过 10cm，并伴有皮肤破溃和渗血。
+“那段时间，我每天不敢照镜子。”森田女士回忆说，“一照镜子就感觉自己像被疾病一点点侵蚀，很恐惧。”当她最终决定去医院就诊时，被诊断为<b>乳腺癌 IV 期</b>。医生告诉她，手术机会几乎已经不存在，只能通过药物治疗“尽量延长生命”。`
     },
     {
       type: 'image',
       src: '/news/case-0.png'
     },
     {
-      type: 'heading',
-      text: '临床诊断与抉择'
-    },
-    {
       type: 'paragraph',
-      text: '2004年9月，她被医生告知：“肿瘤过大，手术几乎无法实施，只能依赖药物。”她接受了抗癌药物治疗，同时，也尝试了 <b>CP-101（姬松茸提取物，岩出101株）</b>，作为每日一粒的免疫辅助干预。在当时的日本，免疫营养疗法已经逐渐受到关注，而姬松茸在抗肿瘤免疫方面已有多篇研究支持 [1][2]。'
+      text: `化疗随即展开。恶心、剧烈的疲劳、口腔溃疡、持续低热，让她一度连站起来都很艰难。“<br />我甚至做好了最坏的准备，交代了家里的事。”她说。<br />
+就在家人几乎陷入绝望的时候，主治医生建议她<b>尝试配合免疫辅助干预，</b>例如日本国内已有一定临床数据支持的<b>姬松茸提取物（CP-101，岩出101株）</b>。`
     },
     {
       type: 'image',
@@ -201,47 +203,54 @@ export const caseDetail = {
       src: '/news/case-2.png'
     },
     {
-      type: 'heading',
-      text: '治疗与变化'
+      type: 'paragraph',
+      text: `她原本并不抱太大希望，但还是决定尝试——“如果可以让我多撑一段时间，说不定还有机会”。`
     },
     {
       type: 'paragraph',
-      text: `接下来的几个月，情况逐渐出现转机：
-    <li>2004年11月：开始服用CP- 101。</li>
-    <li>2005年2月：肿瘤表面出现坏死并部分脱落 → 随后接受放射治疗。</li>
-    <li>2005年5月：顺利完成外科手术。</li>
-    <li>2005年6月：恢复健康并重返工作岗位。</li>
-    医生在查房时坦言：“她的体力状况，远超出我们对IV期患者的预期。”`
-    },
-    {
-      type: 'image',
-      src: '/news/case-3.png'
-    },
-    {
-      type: 'heading',
-      text: '案例影像与指标见证'
+      text: `让家人意外的是，在服用 CP-101 后的大约第 6～7 周，她的体力出现了可感知的回升：原本一整天只能躺在床上，大约二月份开始，她能下楼吃早餐，甚至在丈夫陪同下出门散步。`
     },
     {
       type: 'paragraph',
-      text: ` CT影像学变化
-    <li>2003.6（使用CP-101前）：肿瘤直径接近10cm</li>
-    <li>2003.8（使用CP-101前）：肿瘤依旧清晰，接近10cm</li>
-    <li>2003.11（使用CP-101两个月后）：肿瘤明显缩小，外缘模糊</li>
-    <li>2004.2（使用CP-101五个月后）：肿瘤继续缩小，边界更清晰</li>`
+      text: `“那天孩子突然说‘妈妈今天笑了’，那句话让我一下子振作起来。”`
+    },
+    {
+      type: 'paragraph',
+      text: `之后的影像检查显示，肿瘤表面开始坏死并部分脱落。`
+    },
+    {
+      type: 'paragraph',
+      text: `医生随即决定抓住时机，安排放射治疗，并于 2005 年 5 月完成外科切除手术。术后恢复良好，并于同年 6 月重返工作岗位。`
     },
     {
       type: 'image',
       src: '/news/case-4.png'
     },
     {
-      type: 'heading',
-      text: '肿瘤标志物下降'
+      type: 'paragraph',
+      text: `主治医生表示：“能够从 IV 期走到可以手术，最关键的不是某一种单一治疗，而是她在极度衰弱阶段仍然维持住免疫功能。”`
+    },
+    {
+      type: 'image',
+      src: '/news/case-11.png'
     },
     {
       type: 'paragraph',
-      text: `在乳腺癌患者中，常用 CEA（癌胚抗原） 与 CA15-3 作为复发和转移的生物学指标 [3][4]。这位患者的检测显示：
-    <li>CEA：18.9 → 12.8 → 8.2 ng/mL</li>
-    <li>CA15-3：217.4 → 95.1 → 25.1 U/mL</li>`
+      text: `“如果当时没有坚持服用 CP-101，我可能撑不到那一天。它不是奇迹，但让我重新有了和癌症斗争的‘力气’。”`
+    },
+    {
+      type: 'heading',
+      text: '科学与临床解析'
+    },
+    {
+      type: 'paragraph',
+      text: `森田惠子的经历并不是一个偶然案例。<br />在乳腺癌的综合治疗中，越来越多临床研究都指出：<br />
+提升患者自身免疫功能，是延续生存、提高治疗耐受性、甚至争取再次手术机会的关键因素。<br />
+而姬松茸（岩出101株）在该方向中的作用，主要体现在以下几个方面：
+    <li><b>影像学与血液学指标同步改善</b></li>
+    案例随访中发现，患者在使用 CP-101 后，肿瘤直径逐步缩小，且肿瘤标志物（CEA、CA15-3）明显下降。
+    
+`
     },
     {
       type: 'image',
@@ -249,20 +258,11 @@ export const caseDetail = {
     },
     {
       type: 'paragraph',
-      text: '这意味着：不仅影像学证实了肿瘤缩小，血液学指标也同步改善。'
-    },
-    {
-      type: 'heading',
-      text: '科学与临床验证'
-    },
-    {
-      type: 'paragraph',
-      text: `这一单个案例，与日本三重大学 & 东京癌症研究会的研究结论高度吻合。
-在对 36名晚期乳腺癌患者 的观察中发现：
-<li>肿瘤缩小率：CP-101组 38.5% vs 对照组 14.7%</li>
-<li>CD8+ T细胞活性：CP-101组 62% vs 对照组 21%</li>
-<li>IL-6下降：CP-101组 45% vs 对照组 12%</li>
-`
+      text: `<li><b>CD8⁺ T细胞活性提升 —— 让“杀手细胞”重新启动</b></li>
+    CD8⁺T细胞是专门识别并杀伤癌细胞的免疫细胞。<br />研究显示，CP-101 可提高 CD8⁺T 细胞的活化水平，使其重新发挥作用。<br /><br />
+    <li><b> IL-6 等炎症因子下降 —— 改善肿瘤微环境</b></li>
+    IL-6 是乳腺癌中常常升高的炎症因子，会加速肿瘤扩散。<br />CP-101 有助于降低 IL-6 水平，抑制炎症扩散，改善肿瘤周边免疫环境。<br />
+    `
     },
     {
       type: 'image',
@@ -270,30 +270,8 @@ export const caseDetail = {
     },
     {
       type: 'paragraph',
-      text: `科普解释
-<li>CD8+ T细胞：人体内专门杀死癌细胞的“战士细胞” [5]。</li>
-<li>IL-6：一种炎症因子，在肿瘤环境中常常升高，会促进癌细胞扩散 [6][7]。降低IL-6，有助于阻断肿瘤恶化。</li>`
-    },
-    {
-      type: 'heading',
-      text: '科学机制解析'
-    },
-    {
-      type: 'paragraph',
-      text: `CP-101的作用机理包括三方面：<br />
-1. 免疫激活
-<li>癌细胞表面常通过 PD-1/PD-L1 通路 抑制T细胞。</li>
-<li>CP-101中的活性多糖，可部分阻断该通路，使T细胞“重新苏醒”，恢复攻击能力 [8]。</li>`
-    },
-    {
-      type: 'image',
-      src: '/news/case-7.png'
-    },
-    {
-      type: 'paragraph',
-      text: `2. 炎症调节
-<li>高水平的 IL-6、TNF-α 是肿瘤环境恶化的推手。</li>
-<li>CP-101显著降低这类因子，改善肿瘤周边微环境，让免疫细胞更容易靠近并消灭癌细胞。</li>`
+      text: `<br /><li><b>阻断 PD-1/PD-L1 信号通路 —— 解除免疫抑制</b></li>
+    肿瘤细胞常通过 PD-1/PD-L1 通路“麻痹”T细胞，使其无法攻击肿瘤。<br />CP-101 中的活性多糖可部分阻断该通路，使免疫细胞重新识别肿瘤。`
     },
     {
       type: 'image',
@@ -301,47 +279,19 @@ export const caseDetail = {
     },
     {
       type: 'paragraph',
-      text: `3. 成分协同作用
-<li>姬松茸多糖体 → 增强免疫 [1]</li>
-<li>乳酸菌 → 改善肠道微生态，促进免疫调节</li>
-<li>猴头菇 → 抗炎与神经保护</li>
-<li>多种成分形成“多通路协同”，而非单一作用</li>`
+      text: `<br /><li><b>多成分协同作用 —— 不是单一抑制，而是多通路辅助</b></li>`
+    },
+    {
+      type: 'paragraph',
+      text: `<div style="margin-left: 20px;">
+      <li>1. 姬松茸多糖 → 免疫激活</li>
+      <li>2. 乳酸菌 → 改善肠道微生态</li>
+      <li>3. 猴头菇 → 抗炎和神经保护。多种成分协同作用，共同改善整体免疫状态。</li>
+      </div>`
     },
     {
       type: 'image',
       src: '/news/case-9.png'
-    },
-    {
-      type: 'heading',
-      text: '临床研究流程'
-    },
-    {
-      type: 'paragraph',
-      text: `一项典型的研究设计：
-<li>阶段1：患者招募（晚期乳腺癌患者）</li>
-<li>阶段2：随机分组（对照组 vs CP-101组）</li>
-<li>阶段3：6个月随访（影像学 + 血液学 + QOL生活质量评估）</li>
-结果：CP-101组在 肿瘤缩小、免疫恢复、生活质量提升 等方面均优于对照组。
-`
-    },
-    {
-      type: 'image',
-      src: '/news/case-10.png'
-    },
-    {
-      type: 'heading',
-      text: '康复与希望'
-    },
-    {
-      type: 'paragraph',
-      text: `在完成手术并逐步康复后，这位患者在日记中写道：
-“CP-101不是神药，但它让我有力气熬过最艰难的日子。” <br />
-医生的评语是：
-“她不仅延长了生存期，更以接近正常的状态回归生活。”`
-    },
-    {
-      type: 'image',
-      src: '/news/case-11.png'
     },
     {
       type: 'heading',
@@ -365,14 +315,9 @@ export const caseDetail = {
     },
     {
       type: 'caseFooter',
-      text: `<div>1. Ito H, et al. Antitumor activity of Agaricus blazei Murill and its medicinal effect on cancer patients. Cancer Science. 2004. <a href="https://pubmed.ncbi.nlm.nih.gov/15298730/">https://pubmed.ncbi.nlm.nih.gov/15298730/</a></div>
-2. Kawagishi H, et al. Immunomodulatory properties of polysaccharides from Agaricus blazei. Biochem Biophys Res Commun. 2008. <a href="https://pubmed.ncbi.nlm.nih.gov/18387608/">https://pubmed.ncbi.nlm.nih.gov/18387608/</a></div>
-<div>3. Duffy MJ. CA 15-3 and related mucins as circulating markers in breast cancer. Ann Clin Biochem. 1999. <a href="https://pubmed.ncbi.nlm.nih.gov/10445208/">https://pubmed.ncbi.nlm.nih.gov/10445208/</a></div>
-<div>4. Carrión RM, et al. Clinical utility of CEA and CA15-3 in breast cancer follow-up. Clin Chem Lab Med. 2002. <a href="https://pubmed.ncbi.nlm.nih.gov/12182735/">https://pubmed.ncbi.nlm.nih.gov/12182735/</a></div>
-<div>5. Pardoll DM. The blockade of immune checkpoints in cancer immunotherapy. Nat Rev Cancer. 2012. <a href="https://pubmed.ncbi.nlm.nih.gov/22270940/">https://pubmed.ncbi.nlm.nih.gov/22270940/</a></div>
-<div>6. Grivennikov SI, et al. Inflammation and cancer: the role of interleukin-6. Cell. 2009. <a href="https://pubmed.ncbi.nlm.nih.gov/19737587/">https://pubmed.ncbi.nlm.nih.gov/19737587/</a></div>
-<div>7. Lin WW, Karin M. A cytokine-mediated link between innate immunity, inflammation, and cancer. J Clin Invest. 2007. <a href="https://pubmed.ncbi.nlm.nih.gov/17200719/">https://pubmed.ncbi.nlm.nih.gov/17200719/</a></div>
-<div>8. Topalian SL, et al. Safety, activity, and immune correlates of anti–PD-1 antibody in cancer. N Engl J Med. 2012. <a href="https://pubmed.ncbi.nlm.nih.gov/22658127/">https://pubmed.ncbi.nlm.nih.gov/22658127/</a></div>
+      text: `<div>1. Ito H, et al. Antitumor activity of Agaricus blazei Murill and its medicinal effect on cancer patients. Cancer Science. 2004. <a href="https://pubmed.ncbi.nlm.nih.gov/15298730/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/15298730/</a></div>
+2. Kawagishi H, et al. Immunomodulatory properties of polysaccharides from Agaricus blazei. Biochem Biophys Res Commun. 2008. <a href="https://pubmed.ncbi.nlm.nih.gov/18387608/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/18387608/</a></div>
+<div>3. Duffy MJ. CA 15-3 and related mucins as circulating markers in breast cancer. Ann Clin Biochem. 1999. <a href="https://pubmed.ncbi.nlm.nih.gov/10445208/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/10445208/</a></div>
 `
     },
   ]
