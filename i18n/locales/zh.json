@@ -694,12 +694,12 @@
   },
   "rd": {
     "banner": {
-      "title": "核心技术",
+      "title": "科研实力",
       "subtitle": "",
       "description": "Scophil 始终以严谨科研为产品核心驱动力，旗下三大产品线均建立在真实实验验证与权威认证基础之上。"
     },
     "sections": {
-      "core_tech": "核心技术介绍",
+      "core_tech": "科研实力介绍",
       "clinical_results": "临床研究成果"
     },
     "features": [

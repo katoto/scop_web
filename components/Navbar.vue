@@ -9,7 +9,7 @@ const route = useRoute()
 const isScrolled = ref(false)
 const isMobileMenuOpen = ref(false)
 const isScrolledNew = computed(() => {
-    return route.path.includes('/case')
+    return route.path.includes('/case/detail')
 })
 
 const toggleMobileMenu = () => {
@@ -79,17 +79,17 @@ let menu = ref([
     },
     {
         name: 'nav.r_and_d',
-        path: '',
-        children: [
-            {
-                name: 'nav.rd',
-                path: '/rd'
-            },
-            {
-                name: 'nav.rdFeedback',
-                path: '/rdfeedback'
-            }
-        ]
+        path: '/rd',
+        // children: [
+        //     {
+        //         name: 'nav.rd',
+        //         path: '/rd'
+        //     },
+        //     {
+        //         name: 'nav.rdFeedback',
+        //         path: '/rdfeedback'
+        //     }
+        // ]
     },
     // {
     //     name: 'nav.news',
@@ -212,7 +212,7 @@ const handleClick = (child) => {
             </div>
 
             <!-- 语言切换器 -->
-            <div class="dropdown desktop-dropdown" :class="{ 'scrolled': isScrolled }">
+            <div class="dropdown desktop-dropdown" :class="{ 'scrolled': isScrolled, 'scrolled-new': isScrolledNew }">
                 <button class="btn btn-link dropdown-toggle" type="button" id="languageDropdown"
                     data-bs-toggle="dropdown">
                     {{ currentLocale.name }}
@@ -292,6 +292,10 @@ const handleClick = (child) => {
 .scrolled-new {
     background-color: #fff;
     color: #343a40;
+
+    .dropdown-toggle {
+        color: #343a40;
+    }
 
     .logo-svg {
         color: transparent;
