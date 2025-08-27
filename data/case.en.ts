@@ -2,155 +2,11 @@ export const caseList = [
   {
     "img": "/case/case-0.png",
     "date": "2025-08-15",
-    "title": `"I Thought It Was All Over" — The Story of a Japanese Breast Cancer Patient’s Reversal Through Persistent Immune Intervention and the Scientific Evidence Behind It`,
-    "desc": "Keiko Morita, 44, Japan: “Had I not kept taking CP-101 back then, I doubt I would have made it to this day. It isn’t a miracle, but it gave me back the strength to keep fighting my cancer.” She found, on the brink of despair, the will to battle her disease once more.",
+    "title": `"I Thought It Was All Over" — The Story of a Japanese Breast Cancer Patient's Reversal Through Persistent Immune Intervention and the Scientific Evidence Behind It`,
+    "desc": "Keiko Morita, 44, Japan: 'Had I not kept taking CP-101 back then, I doubt I would have made it to this day. It isn\'t a miracle, but it gave me back the strength to keep fighting my cancer.' She found, on the brink of despair, the will to battle her disease once more.",
     "type": "realNew",
-    "link": "/case/detail?id=1"
+    "link": "/en/case/detail?id=1"
   },
-  // {
-  //   img: '/news/realNew-2.jpeg',
-  //   date: '2025-03-01',
-  //   title: 'Death of 41-Year-Old Professor Reveals Harsh Reality: Cancer Targets the Young!',
-  //   desc: 'Recently, a heartbreaking news story has drawn widespread attention online: Professor Song Wenwen of Nanjing Normal University, after a two-year battle with cancer, sadly passed away at the age of 41. Her passing has deeply saddened many and brought the heavy topic of cancer to public attention at the beginning of the new year.',
-  //   type: 'realNew',
-  //   link: 'https://mp.weixin.qq.com/s/XnJcIHE6dXIKuavgDQIkmA'
-  // },
-  // {
-  //   img: '/news/realNew-3.jpeg',
-  //   date: '2024.10.28',
-  //   title: 'Taiwanese Celebrity and Magician Liu Qian Reveals Lung Cancer Diagnosis',
-  //   desc: 'In fact, lung cancer has become one of the most common types of cancer globally, with both incidence and mortality rates remaining high, earning it the title of "the number one cancer killer."',
-  //   type: 'realNew',
-  //   link: 'https://mp.weixin.qq.com/s/1fZM1axFy8kgJ8w6mCw8pQ'
-  // },
-  // {
-  //   img: '/news/realNew-4.jpeg',
-  //   date: '2024.09.06',
-  //   title: '96-Year-Old Li Ka-shing Enters Cancer Research: Breakthrough in "King of Diseases" Treatment',
-  //   desc: 'Recently, 96-year-old Li Ka-shing appeared at a press conference at the Li Ka-shing Faculty of Medicine of the University of Hong Kong, witnessing via video link the Li Ka-shing Foundation\'s donation of breakthrough liver cancer treatment equipment — the histotripsy medical instrument.',
-  //   type: 'realNew',
-  //   link: 'https://mp.weixin.qq.com/s/cv7BzPHrsyyTKad94tkpOQ'
-  // },
-  // {
-  //   img: '/news/brandNew-1.jpeg',
-  //   date: '2024.08.15',
-  //   title: 'SCOPHIL Stem Cell Culture Supernatant: A New Path for Disease Treatment and Human Anti-aging!',
-  //   desc: 'SCOPHIL Group has been deeply involved in human natural health science for over twenty years, consistently combining independent innovation with excellent research achievements, establishing long-term strategic partnerships with Japan\'s top scientists and renowned medical institutions. Having served thousands of patients and accumulated rich successful treatment experience, it is an outstanding leader in the global regenerative medicine industry.',
-  //   type: 'brandNew',
-  //   link: 'https://mp.weixin.qq.com/s/WmMOjYTO-1gMC01j47h6dg'
-  // },
-  // {
-  //   img: '/news/brandNew-2.jpeg',
-  //   date: '2024.11.11',
-  //   title: 'SCOPHIL Cell Nourishment Targeted Therapy: Comprehensive Nourishment, Precise Protection, Rebuilding Health Barrier',
-  //   desc: 'In the continuous exploration of biological health and modern medicine, an innovative and highly promising combination therapy — ["Stem Cell Supernatant + NMN" Whole Body Nourishment + **Targeted Expression Therapy] — is gradually emerging. This therapy is like a carefully constructed health fortress, bringing balance and precision to our bodies, opening a new journey towards health and longevity.',
-  //   type: 'brandNew',
-  //   link: 'https://mp.weixin.qq.com/s/sJUqAne3_53GxlSdF_PX6g'
-  // },
-  // {
-  //   img: '/news/brandNew-3.jpeg',
-  //   date: '2024.09.04',
-  //   title: 'SCOPHIL Mushroom Extract CP-101: Healing Cancer Through Immune System Intervention, Addressing Modern Health Challenges',
-  //   desc: 'In daily life, we often hear conversations like: "The season changed, and I caught a cold, seems like my immunity has dropped." "Getting older, feel like my body can\'t take it anymore, immunity isn\'t as good as before." "Been busy with work lately, haven\'t exercised much, feel like my body\'s resistance has decreased."',
-  //   type: 'brandNew',
-  //   link: 'https://mp.weixin.qq.com/s/ixCq0zrflY4_yorC44q-Hg'
-  // },
-  // {
-  //   img: '/news/brandNew-4.jpeg',
-  //   date: '2024.08.20',
-  //   title: 'Palilis: Japan\'s Private Care Hermès for Women\'s True Anti-aging, Being Your True Self',
-  //   desc: 'In the star-studded Hollywood film industry, there is a widely circulated saying: "Loving yourself is the beginning of all beauty." This phrase is like a warm ray of sunshine, illuminating the path of women\'s self-care.',
-  //   type: 'brandNew',
-  //   link: 'https://mp.weixin.qq.com/s/PmcR8QN4z0d-9MJhsavtBA'
-  // },
-  // {
-  //   img: '/news/brandNew-5.jpeg',
-  //   date: '2024.11.25',
-  //   title: 'Mushroom Extract CP-101: FDA-Certified Immune Enhancer, Leaving Cancer No Escape',
-  //   desc: 'Cancer is a complex process involving cell mutation and immune system evasion. Under normal circumstances, the human immune system has the ability to monitor and clear abnormal cells, including those precancerous cells that begin to mutate. However, when cancer cells develop mechanisms to evade immune system surveillance, they may "lurk" under the immune system\'s watch and gradually accumulate, eventually forming tumors.',
-  //   type: 'brandNew',
-  //   link: 'https://mp.weixin.qq.com/s/2I4W8287WKbercRFZ6P-2w'
-  // },
-  // {
-  //   img: '/news/brandNew-6.jpeg',
-  //   date: '2024.12.15',
-  //   title: 'Mushroom Extract Successfully Treats Prostate Cancer? Let\'s Find Out!',
-  //   desc: 'Prostate-specific antigen (PSA) is a protein produced by prostate cells (both malignant and normal). PSA testing can measure PSA levels in the blood. Normal male PSA levels range from 2.5 to 4.0 ng/ML. When PSA index exceeds 4 (ng/ML), caution is needed and further examination is recommended. When PSA exceeds 10 (ng/ML), this level is considered very dangerous, with a 50% chance of cancer.',
-  //   type: 'brandNew',
-  //   link: 'https://mp.weixin.qq.com/s/EtBeUKKN9ICkzgVCIHPmLA'
-  // },
-  // {
-  //   img: '/news/brandNew-7.jpeg',
-  //   date: '2024.12.25',
-  //   title: 'Mushroom Extract\'s Anti-cancer Success Story: Senior Citizen Regains New Life!',
-  //   desc: 'Lymphoma is a malignant tumor originating from lymph nodes and lymphatic tissue. Since lymphatic tissue is distributed throughout the body, lymphomas in different locations show different symptoms, and with many subtypes, it is also known as the "thousand-faced tumor."',
-  //   type: 'brandNew',
-  //   link: 'https://mp.weixin.qq.com/s/LWuA3bUPOW5Npyo2X5U1uw'
-  // },
-  // {
-  //   img: '/news/brandNew-8.jpeg',
-  //   date: '2025.01.02',
-  //   title: 'Immunotherapy Breakthrough: Mushroom Extract CP-101 Becomes New Hope for Acute Non-lymphocytic Leukemia?',
-  //   desc: 'Leukemia, like a demon lurking in the shadows of life, mercilessly erodes the human hematopoietic system. It disrupts normal blood cell production, causes white blood cells to proliferate wildly but function inadequately, collapses the immune defense line, making patients vulnerable to bacteria and viruses; red blood cell count sharply decreases, plunging the body into an oxygen-deprived state with fatigue, weakness, and shortness of breath; platelet reduction increases bleeding risk, with skin bruising, gum bleeding, and digestive tract bleeding potentially occurring at any time, life quietly slipping away. Among the leukemia "family," acute non-lymphocytic leukemia is particularly dangerous.',
-  //   type: 'brandNew',
-  //   link: 'https://mp.weixin.qq.com/s/cbx-3pdU0tJ90V7um5zSMQ'
-  // },
-  // {
-  //   img: '/news/brandNew-9.jpeg',
-  //   date: '2024.12.09',
-  //   title: 'Must-Know Treatment Plan for Breast Cancer Patients!',
-  //   desc: 'Breast cancer, as a malignant tumor originating from breast epithelial tissue, poses a major threat to women\'s health globally. According to data released by the World Health Organization\'s International Agency for Research on Cancer (IARC), there were 2.26 million new breast cancer cases worldwide in 2020, surpassing lung cancer to become the number one cancer globally, severely affecting patients\' quality of life and longevity.',
-  //   type: 'brandNew',
-  //   link: 'https://mp.weixin.qq.com/s/SGNvDZACqtu7PwDf4Rl7YQ'
-  // },
-  // {
-  //   img: '/news/industryNew-1.jpeg',
-  //   date: '2024.09.14',
-  //   title: 'Aging is a Disease! Harvard Professor Reveals the Truth About "Aging Without Decline"',
-  //   desc: 'In 2014, Harvard Medical School professor and renowned longevity researcher David Sinclair was selected as one of Time magazine\'s 100 most influential people globally, for his decades of continuous research achievements in human anti-aging and important discovery: NMN can quickly compensate for the gradually decreasing NAD+ molecules (Coenzyme I) in the body, effectively activating "longevity proteins" and playing a role in delaying aging.',
-  //   type: 'industryNew',
-  //   link: 'https://mp.weixin.qq.com/s/XNQtw3cxCHwm_DCEYCDO-g'
-  // },
-  // {
-  //   img: '/news/industryNew-2.jpeg',
-  //   date: '2024.09.27',
-  //   title: 'National Policy Support! Stem Cell Application Accelerates',
-  //   desc: 'In 2024, with a series of favorable policies continuously introduced, China\'s stem cell industry has rapidly moved from a low-key research and development phase to a promising forefront, marking the arrival of the "spring" of China\'s cell industry policy.',
-  //   type: 'industryNew',
-  //   link: 'https://mp.weixin.qq.com/s/pwKgoank0OcwbSIotYl3tw'
-  // },
-  // {
-  //   img: '/news/industryNew-3.jpeg',
-  //   date: '2024.10.12',
-  //   title: '2024 Nobel Prize in Physiology or Medicine Announced! How Does RNA, Winner of Four Nobel Prizes, Affect Our Lives?',
-  //   desc: 'On October 7, the Karolinska Institute announced that the 2024 Nobel Prize in Physiology or Medicine would be awarded to American scientists Victor Ambros and Gary Ruvkun. This is in recognition of their discovery of microRNA (miRNA) and its role in post-transcriptional gene regulation.',
-  //   type: 'industryNew',
-  //   link: 'https://mp.weixin.qq.com/s/f5WmGhz5OWgKduDkzamEZw'
-  // },
-  // {
-  //   img: '/news/industryNew-4.jpeg',
-  //   date: '2024.10.23',
-  //   title: 'Farewell to Insulin Injections! Cell Therapy Brings Dawn for Complete Diabetes Cure',
-  //   desc: 'On September 26, 2024, Xinhua News Agency reported that a research team from Tianjin First Central Hospital, Peking University, and Changping Laboratory achieved clinical functional cure by transplanting chemically reprogrammed induced pluripotent stem cell-derived islet cells into a type 1 diabetes patient.',
-  //   type: 'industryNew',
-  //   link: 'https://mp.weixin.qq.com/s/9iCD65RYmU3N1JMql--LuQ'
-  // },
-  // {
-  //   img: '/news/specialNew-1.png',
-  //   date: '2024.11.01',
-  //   title: 'Cancer Mutual Aid Research Charity Fund Launch Event Successfully Held in Tokyo! CP-101 Leads Human Cancer Eradication',
-  //   desc: 'On October 14, 2024, the launch event of the "General Incorporated Association Cancer Mutual Aid Research Charity Fund" was held at Toranomon Hills Forum in Minato-ku, Tokyo. The event attracted about 650 participants, including government representatives, renowned scholars and think tanks, medical industry experts, mainstream media representatives, and various social sectors.',
-  //   type: 'specialNew',
-  //   link: 'https://mp.weixin.qq.com/s/sacvMx1pB1nMHct_kyNGVQ'
-  // },
-  // {
-  //   img: '/news/specialNew-2.png',
-  //   date: '2024.12.20',
-  //   title: 'CP-101 Shines at Shenzhen International Nutrition and Health Industry Exhibition: Exploring Life Health Science Frontiers, Leading Industry Trends!',
-  //   desc: 'On December 12, amid industry anticipation and attention, Japan\'s SCOPHIL Regenerative Medicine Group, a global leader in life health and anti-aging, made a grand appearance at the HNC Shenzhen International Nutrition and Health Industry Exhibition, instantly igniting the atmosphere and attracting numerous industry professionals.',
-  //   type: 'specialNew',
-  //   link: '/en/news/detail'
-  // }
 ]
 
 export const navList = [
@@ -183,101 +39,166 @@ export const caseContact = {
   }
 }
 
-
 export const caseDetail = {
-  title: 'CP-101 Shines at Shenzhen International Nutrition and Health Industry Exhibition: Exploring Life Health Science Frontiers, Leading Industry Trends!',
-  video: {
-    poster: '/news/specialNew-2.png',
-    src: '/news/new-1m45s.mp4'
-  },
+  title: '"I Thought Everything Was Over" — A Japanese Breast Cancer Patient\'s Reversal Story Through Persistent Immune Intervention and Scientific Validation',
   content: [
     {
+      type: 'heading',
+      text: 'Prologue'
+    },
+    {
       type: 'paragraph',
-      text: 'On December 12, amid industry anticipation and attention, Japan\'s SCOPHIL Regenerative Medicine Group, a global leader in life health and anti-aging, made a grand appearance at the HNC Shenzhen International Nutrition and Health Industry Exhibition, instantly igniting the atmosphere and attracting numerous industry professionals.'
+      text: '<h5>Keiko Morita (44 years old, Japan): Regaining the "Strength to Fight Cancer" at the Edge of Despair</h5>'
+    },
+    {
+      type: 'paragraph',
+      text: `In 1999, Keiko Morita from Chiba Prefecture, Japan, discovered an abnormal nodule in her left breast during a routine medical examination. Due to fear of surgery and thinking "it probably wasn\'t a big problem," she chose to avoid treatment. However, over the next five years, the lump grew larger each year. By 2004, the tumor diameter had exceeded 10cm and was accompanied by skin ulceration and bleeding.
+"During that time, I didn\'t dare look in the mirror every day," Ms. Morita recalled. "Looking in the mirror made me feel like I was being eroded by the disease bit by bit, which was very frightening." When she finally decided to seek medical treatment, she was diagnosed with <b>Stage IV breast cancer</b>. The doctor told her that surgical opportunities were almost non-existent, and only drug treatment could "try to prolong life."` 
     },
     {
       type: 'image',
-      src: '/news/detail-1.png'
+      src: '/news/case-0.png'
+    },
+    {
+      type: 'paragraph',
+      text: `Chemotherapy began immediately. Nausea, severe fatigue, oral ulcers, and persistent low fever made it difficult for her to even stand up at times. "<br />I even prepared for the worst and arranged family affairs," she said. <br />
+Just when the family was almost in despair, the attending physician suggested she <b>try immune adjuvant intervention,</b> such as <b>Agaricus blazei extract (CP-101, Iwade 101 strain)</b>, which has some clinical data support in Japan.`
+    },
+    {
+      type: 'image',
+      src: '/news/case-1.png'
+    },
+    {
+      type: 'image',
+      src: '/news/case-2.png'
+    },
+    {
+      type: 'paragraph',
+      text: `She didn\'t have much hope initially, but still decided to try — "If it can help me hold on a little longer, maybe there\'s still a chance."`
+    },
+    {
+      type: 'paragraph',
+      text: `To the family\'s surprise, around the 6th to 7th week after taking CP-101, her physical strength showed a noticeable recovery: previously she could only lie in bed all day, but starting around February, she could go downstairs for breakfast and even take walks outside with her husband\'s company.`
+    },
+    {
+      type: 'paragraph',
+      text: `"That day the child suddenly said \'Mom smiled today,\' and that sentence immediately lifted my spirits."`
+    },
+    {
+      type: 'paragraph',
+      text: `Subsequent imaging examinations showed that the tumor surface began to necrotize and partially shed.`
+    },
+    {
+      type: 'paragraph',
+      text: `The doctor immediately decided to seize the opportunity, arranged radiation therapy, and completed surgical resection in May 2005. Post-operative recovery was good, and she returned to work in June of the same year.`
+    },
+    {
+      type: 'image',
+      src: '/news/case-4.png'
+    },
+    {
+      type: 'paragraph',
+      text: `The attending physician stated: "The key to progressing from Stage IV to being operable was not any single treatment, but her ability to maintain immune function during the extremely weakened stage."`
+    },
+    {
+      type: 'image',
+      src: '/news/case-11.png'
+    },
+    {
+      type: 'paragraph',
+      text: `"If I hadn't persisted in taking CP-101 back then, I might not have made it to that day. It's not a miracle, but it gave me back the 'strength' to fight cancer."`
     },
     {
       type: 'heading',
-      text: 'SCOPHIL\'s Cutting-edge Products Ignite the Exhibition'
+      text: 'Scientific and Clinical Analysis'
     },
     {
       type: 'paragraph',
-      text: 'Entering the SCOPHIL brand booth was like stepping into a life health hall filled with technology and professionalism. The first thing that caught the eye was the group\'s "black technology" new product for cancer treatment — Mushroom Extract CP-101, quietly displayed in the showcase but emanating a powerful presence that could change the landscape of cancer treatment.'
-    },
-    {
-      type: 'paragraph',
-      text: 'CP-101 is a natural anti-cancer component jointly developed by Japan\'s Iwade Institute of Mycology and Mie University, derived from water-soluble extracts of Agaricus blazei. CP-101 works by interfering with the PD-1/PD-L1 immune escape mechanism, activating T-cell immune responses, and restoring the immune system\'s surveillance and clearance functions for tumors, representing an important immunotherapy strategy.'
-    },
-    {
-      type: 'paragraph',
-      text: 'Meanwhile, CP-101\'s composition is rich in natural extracts of high medicinal value such as Coprinus comatus and Hericium erinaceus, showing significant effects on human immune regulation, gut health, antioxidant and anti-inflammatory properties, neuroprotection, and overall health. It can be used for preventive medicine and daily health maintenance, helping to alleviate treatment side effects and reduce patient treatment reactions. Professional visitors came in an endless stream, all eager to learn about cutting-edge cancer treatment solutions, crowding the booth.'
+      text: `Keiko Morita's experience is not an isolated case.<br />In the comprehensive treatment of breast cancer, more and more clinical studies point out:<br />
+Enhancing patients' own immune function is a key factor in prolonging survival, improving treatment tolerance, and even gaining another surgical opportunity.<br />
+The role of Agaricus blazei (Iwade 101 strain) in this direction is mainly reflected in the following aspects:
+    <li><b>Simultaneous improvement of imaging and hematological indicators</b></li>
+    Case follow-up found that after using CP-101, patients showed gradual tumor diameter reduction and significant decrease in tumor markers (CEA, CA15-3).
+    
+`
     },
     {
       type: 'image',
-      src: '/news/detail-2.png'
+      src: '/news/case-5.png'
     },
     {
       type: 'paragraph',
-      text: 'Adjacent to it was the group\'s globally popular anti-aging product line: stem cell supernatant, NAD+, and NMN products, which act like "time reversers," carrying the mission of delaying aging and rejuvenating vitality. Visitors listened with great interest to the R&D stories behind the products, engaging with professional explainers for detailed product efficacy information, delving into the technical mysteries behind the products, their eyes full of admiration for the technology and longing for youth.'
+      text: `<li><b>Enhanced CD8⁺ T cell activity — Reactivating "killer cells"</b></li>
+    CD8⁺T cells are immune cells that specifically recognize and kill cancer cells.<br />Studies show that CP-101 can improve the activation level of CD8⁺T cells, enabling them to function again.<br /><br />
+    <li><b>Decreased inflammatory factors like IL-6 — Improving tumor microenvironment</b></li>
+    IL-6 is an inflammatory factor that is often elevated in breast cancer and accelerates tumor spread.<br />CP-101 helps reduce IL-6 levels, inhibit inflammatory spread, and improve the immune environment around tumors.<br />
+    `
     },
     {
       type: 'image',
-      src: '/news/detail-3.png'
+      src: '/news/case-6.png'
     },
     {
       type: 'paragraph',
-      text: 'The Palilis private care product in the women\'s health field, with its strict craftsmanship and innovative concepts, redefined new standards for women\'s private care, attracting numerous consumers and industry practitioners to stop and discuss potential cooperation. Especially after learning that the Palilis private care series is SCOPHIL\'s star product developed over six years, and that it is Japan\'s first company to successfully develop and patent mucosal absorption technology for women\'s private care, establishing new standards for women\'s health, the on-site representatives were full of praise, with inquiries coming one after another.'
+      text: `<br /><li><b>Blocking PD-1/PD-L1 signaling pathway — Relieving immune suppression</b></li>
+    Tumor cells often "paralyze" T cells through the PD-1/PD-L1 pathway, preventing them from attacking tumors.<br />Active polysaccharides in CP-101 can partially block this pathway, enabling immune cells to recognize tumors again.`
     },
     {
       type: 'image',
-      src: '/news/detail-4.png'
+      src: '/news/case-8.png'
+    },
+    {
+      type: 'paragraph',
+      text: `<br /><li><b>Multi-component synergistic action — Not single inhibition, but multi-pathway assistance</b></li>`
+    },
+    {
+      type: 'paragraph',
+      text: `<div style="margin-left: 20px;">
+      <li>1. Agaricus blazei polysaccharides → Immune activation</li>
+      <li>2. Lactic acid bacteria → Improving intestinal microecology</li>
+      <li>3. Lion's mane mushroom → Anti-inflammatory and neuroprotective</li>
+      <li>Multiple components work synergistically to improve overall immune status.</li>
+      </div>`
+    },
+    {
+      type: 'image',
+      src: '/news/case-9.png'
     },
     {
       type: 'heading',
-      text: 'Experts Gather to Build a Communication Platform'
+      text: 'Summary'
     },
     {
       type: 'paragraph',
-      text: 'The guest lineup for this roundtable discussion was truly "luxurious," with invited experts covering renowned domestic medical experts and frontier scholars from research institutions. They held the latest research achievements in life sciences, the development status of new cancer treatment drugs and technologies, analyzed industry trends from academic fundamentals, and shared Sino-Japanese exchange and cooperation experiences in life health and cancer fields based on their professional experience.'
+      text: `<b>From "almost no way out" to "still able to take another step"</b><br />
+When Ms. Keiko Morita was diagnosed, she was already at <b>Stage IV breast cancer</b>. The doctor's exact words at the time were "surgical opportunities are almost non-existent, we can only try to prolong life." The family thought all hope was lost. But after combining immune adjuvant intervention, her physical strength gradually returned: first she could get out of bed to eat, then go out for walks. A few months later, examinations showed tumor shrinkage, and the doctor decided to perform surgery on her. After successful surgery, she returned to work. <b>For the family, this was not a miracle, but a visible transformation.</b><br /><br />
+<b>Why was there such a transformation?</b><br />
+Research found that CP-101 can reawaken the body's "killer cells," reduce inflammation, and restore immune function. It doesn't directly kill cancer cells, but helps the body regain strength to fight, helping people get through the most difficult moments.<br /><br />
+<b>Living longer and living better</b><br />
+In studies of different cancer types, many patients not only lived longer, but more importantly, their quality of life improved: some could walk again, some had better appetite, some could continue to accompany their families. For patients and families, these changes are more real than numbers.<br /><br />
+<b>Different stages, different meanings</b><br />
+<li><b>For those with family risk:</b> Enhancing immunity early provides an extra layer of protection.</li>
+<li><b>For patients undergoing treatment,</b> during the hardships of chemotherapy and radiotherapy, having more strength and hope.</li>
+<li><b>Helping stabilize immunity, reducing concerns about recurrence.</b></li><br />
+<b>Conclusion</b><br />
+CP-101 is not a medicine, but it often gives patients and families an extra thought:<br />
+ <b>"Still able to take another step."</b><br />
+ This strength comes not only from science, but from real stories one by one.
+`
     },
     {
-      type: 'paragraph',
-      text: 'Senior representatives from health management were also present, leveraging massive market data and keen insights to accurately interpret capital flows, market growth rates, and potential opportunities, capturing the latest research needs. The director of the Japanese Cancer Mutual Aid Research Charity Foundation, bringing the foundation\'s mutual aid philosophy, shared the principles of CP-101 and PD-L1 blocking mechanisms, recounted CP-101\'s development experience and end-market feedback, and shared practical details of product implementation.'
+      type: 'hr'
     },
     {
-      type: 'paragraph',
-      text: 'Experts from multiple fields gathered, with different perspectives complementing each other, ensuring the seminar output had both theoretical height to guide future industry direction and practical guidelines to facilitate close Sino-Japanese cooperation in life health and cancer fields.'
+      type: 'subTitle',
+      text: 'References / Further Reading'
     },
     {
-      type: 'image',
-      src: '/news/detail-5.png'
-    },
-    {
-      type: 'paragraph',
-      text: 'In the discussion of PD-1\'s importance in cancer treatment, Mr. Wen Huiqing, a renowned domestic medical expert and director of hepatobiliary surgery at the Fifth Affiliated Hospital of Southern Medical University, held the microphone with focused attention, explaining in simple terms with detailed clinical cases. The application of PD-1 immune checkpoint inhibitors in hepatobiliary surgery has brought new hope for liver cancer and bile duct cancer, which have poor prognosis and limited traditional treatment methods, gradually reshaping the diagnosis and treatment ecology of hepatobiliary diseases, showing remarkable clinical value and application prospects.'
-    },
-    {
-      type: 'paragraph',
-      text: 'Ms. Xie Meng, director of the Japanese Cancer Mutual Aid Research Charity Foundation, cited extensively, sharing Japan\'s advanced experience in PD-1 drug development and clinical application. In 2018, Professor Tasuku Honjo of Japan won the Nobel Prize in Physiology or Medicine for "discovering negative immune regulation therapy for cancer," which caused a strong response in Japan, and this research achievement opened new pathways for cancer treatment in Japan. SCOPHIL\'s Mushroom Extract CP-101 is a new crystallization of cancer research born under the PD-1 development principle. CP-101 works by interfering with the PD-1/PD-L1 immune escape mechanism, activating T-cell immune responses, and restoring the immune system\'s surveillance and clearance functions for tumors, representing an important immunotherapy strategy.'
-    },
-    {
-      type: 'paragraph',
-      text: 'When discussing international experience in the health industry and Sino-Japanese cooperation opportunities, the atmosphere became even more heated. Professor Ding Mingyue, professor and doctoral supervisor at the School of Life Science and Technology of Huazhong University of Science and Technology, reviewed his decades of experience in cooperating with life health industry projects from various countries worldwide, elaborated on the complementary advantages of China and Japan in their respective fields of life health and cancer treatment, and looked forward to infinite possibilities of joint creation. Ms. Yan Wei, a renowned representative in the health management field, shared numerous ideas for international cooperation based on her professional experience, expressed gratitude to SCOPHIL for providing such an open platform for industry representatives to discuss, and looked forward to project cooperation with SCOPHIL and more international quality enterprises.'
-    },
-    {
-      type: 'paragraph',
-      text: 'As the organizer of the roundtable discussion, Japan\'s SCOPHIL Regenerative Medicine Group has been dedicated to life health product development, production, and promotion for many years, achieving remarkable results. Its multiple product lines, including anti-aging and women\'s health series, have established a firm foothold in the global market, relying on continuous R&D investment, strict product quality control, and advanced personalized service concepts.'
-    },
-    {
-      type: 'paragraph',
-      text: 'In recent years, SCOPHIL has focused on human serious diseases, addressing cancer prevention and treatment needs, collaborating with Japan\'s Iwade Institute of Mycology and Mie University to develop the natural anti-cancer component CP-101. This is a water-soluble component extracted from Agaricus blazei, with immune-boosting and excellent antioxidant properties, mainly used for preventive medicine and daily health maintenance.'
-    },
-    {
-      type: 'paragraph',
-      text: 'This seminar was SCOPHIL\'s way of giving back to the industry, leveraging its deep industry resources and organizational capabilities to build a dialogue platform; it was also an opportunity for corporate self-renewal and keeping up with frontier needs, drawing inspiration from expert exchanges to feed back into subsequent product line expansion and technology upgrades, demonstrating its determination to lead the industry towards higher quality development.'
+      type: 'caseFooter',
+      text: `<div>1. Ito H, et al. Antitumor activity of Agaricus blazei Murill and its medicinal effect on cancer patients. Cancer Science. 2004. <a href="https://pubmed.ncbi.nlm.nih.gov/15298730/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/15298730/</a></div>
+2. Kawagishi H, et al. Immunomodulatory properties of polysaccharides from Agaricus blazei. Biochem Biophys Res Commun. 2008. <a href="https://pubmed.ncbi.nlm.nih.gov/18387608/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/18387608/</a></div>
+<div>3. Duffy MJ. CA 15-3 and related mucins as circulating markers in breast cancer. Ann Clin Biochem. 1999. <a href="https://pubmed.ncbi.nlm.nih.gov/10445208/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/10445208/</a></div>
+`
     }
   ]
-} 
+}

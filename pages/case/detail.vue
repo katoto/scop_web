@@ -102,13 +102,14 @@
 
 <script setup>
 import { useI18n } from 'vue-i18n'
-import { getCaseDetail, caseContact } from '@/data/case'
+import { getCaseDetail, getCaseContact } from '@/data/case'
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const { locale } = useI18n()
 const localePath = useLocalePath()
 const router = useRouter()
 const newsDetail = getCaseDetail(locale.value)
+const caseContact = getCaseContact(locale.value)
 
 // 响应式检测移动端
 const isMobile = ref(false)

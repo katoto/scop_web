@@ -9,7 +9,7 @@ const route = useRoute()
 const isScrolled = ref(false)
 const isMobileMenuOpen = ref(false)
 const isScrolledNew = computed(() => {
-    return route.path.includes('/case/detail')
+    return route.path.includes('/case/detail') || route.path.includes('/news/detail')
 })
 
 const toggleMobileMenu = () => {
@@ -91,13 +91,13 @@ let menu = ref([
         //     }
         // ]
     },
-    // {
-    //     name: 'nav.news',
-    //     path: '/news'
-    // },
     {
         name: 'nav.case',
         path: '/case'
+    },
+    {
+        name: 'nav.news',
+        path: '/news'
     },
     {
         name: 'nav.contact',
