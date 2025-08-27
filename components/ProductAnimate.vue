@@ -6,17 +6,6 @@ import { getProducts } from '@/data/products';
 const { locale, t } = useI18n();
 const products = computed(() => getProducts(locale.value));
 
-const selectedBackgroundColor = computed(() => {
-  if (selectedProductIndex.value === null) return 'transparent';
-  const colorMap = {
-    0: 'rgba(230, 255, 0, 0.3)',
-    1: 'rgba(0, 220, 0, 0.3)',
-    2: 'rgba(255, 0, 0, 0.3)',
-    3: 'rgba(255, 114, 0, 0.3)'
-  };
-  return colorMap[selectedProductIndex.value as keyof typeof colorMap] || 'transparent';
-});
-
 let selectedProductIndex = ref<any>(null);
 let isBack = ref(false);
 
@@ -71,20 +60,10 @@ let handleGotoDetail = (num: number) => {
     }
   }
 };
-
-let colorMap = {
-  0: 'rgba(230, 255, 0, 0.9)',
-  1: 'green',
-  2: 'rgba(255, 0, 0, 1)',
-  3: 'rgba(255, 114, 0, 0.9)'
-}
 </script>
 
 <template>
-  <div class="product-container-wrap" :style="{
-    backgroundColor: selectedBackgroundColor,
-    transition: 'background-color 2.3s ease'
-  }">
+  <div class="product-container-wrap">
     <button class="back-btn" @click="handleClickBack" v-if="selectedProductIndex !== null">
       <svg width="48" height="48" viewBox="0 0 48 48">
         <circle cx="24" cy="24" r="23" stroke="#fff" stroke-width="2" fill="none" />
@@ -122,16 +101,14 @@ let colorMap = {
       width: '100%',
       height: '100%',
       opacity: 1,
-      zIndex: '1',
-      backgroundColor: 'transparent'
+      zIndex: '1'
     } : {
-      // left: domItem.left + 'px',
-      // top: domItem.top + 'px',
-      // width: domItem.width + 'px',
-      // height: domItem.height + 'px',
+      left: domItem.left + 'px',
+      top: domItem.top + 'px',
+      width: domItem.width + 'px',
+      height: domItem.height + 'px',
       opacity: 0,
-      zIndex: '-1',
-      backgroundColor: colorMap[domIndex]
+      zIndex: '-1'
 
     }">
       <div :class="`product-detail-item-bg product-detail-bg-${selectedProductIndex}`">
@@ -167,8 +144,6 @@ let colorMap = {
 .product-container-wrap {
   position: relative;
   height: 100vh;
-  transition: background-color 2.3s ease;
-  background-color: transparent;
 }
 
 .detail-container {
@@ -177,6 +152,7 @@ let colorMap = {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.6s ease;
   flex-direction: row;
 }
 
@@ -189,7 +165,7 @@ let colorMap = {
   position: absolute;
 }
 
-/* .product-detail-bg-0 {
+.product-detail-bg-0 {
   background: rgba(230, 255, 0, 0.9);
   opacity: 0.35;
 }
@@ -207,7 +183,7 @@ let colorMap = {
 .product-detail-bg-3 {
   background: rgba(255, 114, 0, 0.9);
   opacity: 0.35;
-} */
+}
 
 .product-detail-com {}
 
@@ -215,7 +191,6 @@ let colorMap = {
   display: flex;
   height: 100vh;
   position: relative;
-  padding: 0 60px;
 }
 
 .product-item-wrap {
@@ -256,8 +231,7 @@ let colorMap = {
   position: absolute;
 }
 
-/* 背景色 */
-/* .product-item-bg-0 {
+.product-item-bg-0 {
   background: rgba(230, 255, 0, 0.9);
   animation: bgColorAnimate2 1.8s ease-out infinite;
   animation-delay: 1.2s;
@@ -283,7 +257,7 @@ let colorMap = {
   animation: bgColorAnimate 1.9s ease-in-out infinite;
   animation-delay: 1.2s;
   opacity: 0;
-} */
+}
 
 .product-item {
   display: flex;
@@ -325,28 +299,23 @@ let colorMap = {
 
 /* iPad 适配 */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
-
-  .product-container {
-    padding: 0 20px;
-  }
-
   .product-item {
     height: 200px;
   }
-
+  
   .product-img {
     max-width: 100px;
     max-height: 100px;
     width: auto;
     height: auto;
   }
-
+  
   /* iPad 横屏 */
   @media (orientation: landscape) {
     .product-item {
       height: 180px;
     }
-
+    
     .product-img {
       max-width: 170px;
       max-height: 180px;
@@ -378,7 +347,7 @@ let colorMap = {
 }
 
 .fade-in-0 {
-  padding-top: 6px;
+  padding-top: 10px;
   left: 100px;
 }
 
@@ -406,10 +375,6 @@ let colorMap = {
 }
 
 @media (max-width: 768px) {
-  .product-container {
-    padding: 0 10px;
-  }
-
   .product-item {
     height: 30vw;
   }
@@ -629,7 +594,7 @@ let colorMap = {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: opacity 2s ease;
+    transition: all 0.2s ease;
   }
 
   .product-detail-desc {
@@ -692,7 +657,6 @@ let colorMap = {
       width: 100%;
       max-width: 400px;
     }
-
     .desc-list-subName {
       font-size: 1.3rem;
     }

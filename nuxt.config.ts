@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     locales: [
       { code: "zh", iso: "zh-CN", file: "zh.json", name: "中文" },
       { code: "en", iso: "en-US", file: "en.json", name: "English" },
-      { code: "ja", iso: "ja-JP", file: "ja.json", name: "日本語" },
+      // { code: "ja", iso: "ja-JP", file: "ja.json", name: "日本語" },
     ],
     defaultLocale: "zh",
     strategy: "prefix_except_default",
@@ -29,7 +29,7 @@ export default defineNuxtConfig({
   ],
   app: {
     head: {
-      title: "scophil",
+      title: "Commercial EV Solutions",
       meta: [
         { charset: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -38,9 +38,5 @@ export default defineNuxtConfig({
         { src: "/particles.min.js", type: "text/javascript", defer: false },
       ],
     },
-  },
-  devServer: {
-    host: "0.0.0.0",
-    port: 4000
   },
 });

@@ -41,7 +41,7 @@
                         <template v-for="(item, index) in getRandomItems(caseContact.productInfo.list, 2)" :key="index">
                             <li class="product-li">
                                 <div role="group" aria-label="product">
-                                    <a>
+                                    <a :href="item.link" target="_blank">
                                         <img :src="item.img" alt="" class="img" />
                                         <h3 class="product-title">{{ item.name }}
                                             <svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none'>
@@ -75,10 +75,10 @@
                 <div class="mobile-product-info">
                     <h2 class="title">{{ caseContact.productInfo.title }}</h2>
                     <ul class="product mobile-product">
-                        <template v-for="(item, index) in getRandomItems(caseContact.productInfo.list, 2)" :key="index">
+                        <template v-for="(item) in getRandomItems(caseContact.productInfo.list, 2)" :key="item.name">
                             <li class="product-li mobile-product-li">
                                 <div role="group" aria-label="product">
-                                    <a>
+                                    <a :href="item.link" target="_blank">
                                         <img :src="item.img" alt="" class="img" />
                                         <h3 class="product-title">{{ item.name }}
                                             <svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none'>

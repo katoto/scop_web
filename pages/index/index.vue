@@ -11,11 +11,10 @@ let domSize = reactive({
 });
 let contentDomref = ref<null | HTMLElement>(null);
 let selectedProduct = ref<number | null>(null);
-let isVideoLoaded = ref(false);
-let videoError = ref(false);
 
 // Fix ref array initialization
 const observer = ref<IntersectionObserver | null>(null);
+
 
 const handleMouseMove = (e: MouseEvent) => {
   if (!contentDomref.value) return;
@@ -36,51 +35,10 @@ const updateDomSize = () => {
   }
 };
 
-const handleTouchStart = () => {
-  let video = document.querySelector('.background-video')
-  if (video && video instanceof HTMLVideoElement) {
-    video.play();
-  }
-}
-
-onMounted(() => {
-  window.addEventListener('touchstart', handleTouchStart)
-});
-
-onUnmounted(() => {
-  window.removeEventListener('touchstart', handleTouchStart)
-});
-
-const handleVideoLoad = () => {
-  isVideoLoaded.value = true;
-};
-
-const handleVideoError = () => {
-  videoError.value = true;
-  isVideoLoaded.value = false;
-};
-
-// Add video play attempt on user interaction
-const attemptVideoPlay = async () => {
-  const video = document.querySelector('.background-video') as HTMLVideoElement;
-  if (video) {
-    try {
-      await video.play();
-    } catch (err) {
-      console.log('Video autoplay failed:', err);
-      videoError.value = true;
-    }
-  }
-};
-
 onMounted(() => {
   updateDomSize();
   window.addEventListener("mousemove", handleMouseMove);
   window.addEventListener("resize", updateDomSize);
-
-  // Attempt to play video after user interaction
-  document.addEventListener('click', attemptVideoPlay, { once: true });
-  document.addEventListener('touchstart', attemptVideoPlay, { once: true });
 
   // Setup intersection observer for research strength columns
   observer.value = new IntersectionObserver((entries) => {
@@ -110,8 +68,6 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener("mousemove", handleMouseMove);
   window.removeEventListener("resize", updateDomSize);
-  document.removeEventListener('click', attemptVideoPlay);
-  document.removeEventListener('touchstart', attemptVideoPlay);
 
   // Cleanup observer
   if (observer.value) {
@@ -157,15 +113,12 @@ const localePath = useLocalePath()
     <img src="/images/bg-line-2.png" @load="handleLoad" :style="{
       display: 'none'
     }" />
-
-    <video class="background-video" :class="{ 'video-loaded': isVideoLoaded }" src="/images/bg.mp4" autoplay loop muted
-      playsinline @loadeddata="handleVideoLoad"></video>
     <div class="content-product" ref="contentDomref">
       <div class="background-wrapper" :style="{ transform: `translateX(${position.offsetX * 20}px)` }">
-        <div class="background-image" :class="{ 'fade-out': isVideoLoaded && !videoError }"></div>
+        <div class="background-image"></div>
       </div>
       <div class="pinzi-box-wrap" :class="{ 'detail-mode': selectedProduct !== null }" v-if="isLoad">
-        <!-- <StarCanvas /> -->
+        <StarCanvas />
         <ProductAnimateWrap />
       </div>
     </div>
@@ -178,8 +131,15 @@ const localePath = useLocalePath()
     </div>
     <div class="research-history-container">
       <div v-for="(item, key) in researchList" :key="key" class="research-history-item">
-        <NumberScroll :start="item.start" :end="item.end" :duration="item.duration" :decimals="item.decimals"
-          :suffix="item.suffix" :color="'#C9A14D'" class="research-number" />
+        <NumberScroll 
+          :start="item.start" 
+          :end="item.end" 
+          :duration="item.duration" 
+          :decimals="item.decimals"
+          :suffix="item.suffix" 
+          :color="'#C9A14D'" 
+          class="research-number" 
+        />
         <div class="research-label">{{ $t(`home.researchHistory.items.${key}.label`) }}</div>
         <div class="research-desc">{{ $t(`home.researchHistory.items.${key}.desc`) }}</div>
       </div>
@@ -340,25 +300,9 @@ const localePath = useLocalePath()
   min-height: 100vh;
   overflow: hidden;
 
-  .background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    will-change: opacity;
-
-    &.video-loaded {
-      opacity: 1;
-    }
-
-    &.video-error {
-      display: none;
-    }
+  .page-header {
+    background-color: #f8f9fa;
+    margin-bottom: 2rem;
   }
 
   .content-product {
@@ -368,7 +312,6 @@ const localePath = useLocalePath()
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    z-index: 1;
 
     .background-wrapper {
       position: absolute;
@@ -390,12 +333,6 @@ const localePath = useLocalePath()
         background-position: center center;
         background-repeat: no-repeat;
         z-index: 0;
-        transition: opacity 0.5s ease-in-out;
-
-        &.fade-out {
-          opacity: 0;
-          transition: opacity 0.8s ease-in-out;
-        }
       }
 
       .breath-blocks {

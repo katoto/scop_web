@@ -51,7 +51,7 @@
 
   .title {
     position: relative;
-    z-index: 12;
+    z-index: 2;
     color: #fff;
     text-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
     margin: 0;
