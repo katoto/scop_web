@@ -36,6 +36,14 @@
           </ul>
         </div>
         <div class="footer-nav-item">
+          <h5>{{ $t('nav.case') }}</h5>
+          <ul class="list-unstyled">
+            <li>
+              <NuxtLink :to="localePath('/case')" target="_blank">{{ $t('nav.case') }}</NuxtLink>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-nav-item">
           <h5>{{ $t('nav.news') }}</h5>
           <ul class="list-unstyled">
             <li>

@@ -7,6 +7,7 @@ export const caseList = [
     type: 'realNew',
     link: '/case/detail?id=1'
   }
+  
 ]
 
 export const navList = [
