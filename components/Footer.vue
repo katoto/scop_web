@@ -28,10 +28,7 @@
           <h5>{{ $t('nav.r_and_d') }}</h5>
           <ul class="list-unstyled">
             <li>
-              <NuxtLink :to="localePath('/rd')" target="_blank">{{ $t('nav.rd') }}</NuxtLink>
-            </li>
-            <li>
-              <NuxtLink :to="localePath('/rdfeedback')" target="_blank">{{ $t('nav.rdFeedback') }}</NuxtLink>
+              <NuxtLink :to="localePath('/rd')" target="_blank">{{ $t('nav.r_and_d') }}</NuxtLink>
             </li>
           </ul>
         </div>
