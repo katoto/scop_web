@@ -157,6 +157,18 @@
   padding: 0 90px;
   max-width: 1500px;
   margin: 0 auto;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .case-list {
@@ -283,13 +295,19 @@
   font-size: 48px;
   margin-bottom: 16px;
   opacity: 0.6;
-}
-
 .empty-text {
-  font-size: 16px;
-  color: #999;
-  margin: 0;
-  font-weight: 500;
+    font-size: 16px;
+    color: #999;
+    margin: 0;
+    font-weight: 500;
+  }
+  
+  .empty-desc {
+    font-size: 14px;
+    color: #bbb;
+    margin: 8px 0 0 0;
+    line-height: 1.4;
+  }
 }
 
 .mc_e1_li {
@@ -468,6 +486,11 @@
 
   .empty-text {
     font-size: 14px;
+  }
+  
+  .empty-desc {
+    font-size: 12px;
+    margin-top: 6px;
   }
 }
 

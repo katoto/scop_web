@@ -5,10 +5,9 @@ export const caseList = [
     title: '“我以为一切结束了”——日本乳腺癌患者坚持免疫干预后的逆转故事与科学验证',
     desc: '森田惠子（44岁，日本）：“如果当时没有坚持服用 CP-101，我可能撑不到那一天。它不是奇迹，但让我重新有了和癌症斗争的‘力气’。”她在绝望边缘重新找回“与癌抗争的力气”',
     type: 'cp101_mushroom',
-    subType: '',
+    subType: 'breastCancer',
     link: '/case/detail?id=1'
   }
-
 ]
 
 export const caseNameList = [

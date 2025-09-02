@@ -13,19 +13,20 @@
 
       <!-- 大分类按钮 -->
       <div class="menu-bar">
-        <div class="menu-item active">
-          <a class="nav-link" href="javascript:void(0);">{{ t('case.menu.mushroom') }}</a>
+        <div class="menu-item" :class="{ active: activeMenuIdx === 0 }">
+          <a class="nav-link" href="javascript:void(0);" @click="activeMenuIdx = 0">{{ t('case.menu.mushroom') }}</a>
         </div>
-        <div class="menu-item">
-          <a class="nav-link" href="javascript:void(0);">{{ t('case.menu.pill') }}</a>
+        <div class="menu-item" :class="{ active: activeMenuIdx === 1 }">
+          <a class="nav-link" href="javascript:void(0);" @click="activeMenuIdx = 1">{{ t('case.menu.pill') }}</a>
         </div>
-        <div class="menu-item">
-          <a class="nav-link" href="javascript:void(0);">{{ t('case.menu.liver') }}</a>
+        <div class="menu-item" :class="{ active: activeMenuIdx === 2 }">
+          <a class="nav-link" href="javascript:void(0);" @click="activeMenuIdx = 2">{{ t('case.menu.liver') }}</a>
         </div>
       </div>
     </section>
 
-    <div class="case-contain">
+    <!-- Mushroom Content -->
+    <div class="case-contain" v-if="activeMenuIdx === 0">
       <div class="case-nav">
         <ul class="mc_e1_list">
           <li v-for="(item, idx) in caseNameList" :key="item.value" :class="['mc_e1_li', { active: idx === activeIdx }]"
@@ -54,7 +55,7 @@
         <div class="empty-state" v-else>
           <div class="empty-content">
             <div class="empty-icon">📄</div>
-            <p class="empty-text">暂无数据</p>
+            <p class="empty-text">{{ t('case.empty.pill.title') }}</p>
           </div>
         </div>
 
@@ -78,6 +79,34 @@
         </div>
       </div>
     </div>
+
+    <!-- Pill Content -->
+    <div class="case-contain" v-else-if="activeMenuIdx === 1">
+      <div class="case-list">
+        <div class="empty-state">
+          <div class="empty-content">
+            <div class="empty-icon">💊</div>
+            <p class="empty-text">{{ t('case.empty.pill.title') }}</p>
+            <p class="empty-desc">{{ t('case.empty.pill.desc') }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Liver Content -->
+    <div class="case-contain" v-else-if="activeMenuIdx === 2">
+      <div class="case-list">
+        <div class="empty-state">
+          <div class="empty-content">
+            <div class="empty-icon">🫀</div>
+            <p class="empty-text">{{ t('case.empty.liver.title') }}</p>
+            <p class="empty-desc">{{ t('case.empty.liver.desc') }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
   </div>
 
 
@@ -92,6 +121,7 @@ const { t } = useI18n()
 const { locale } = useI18n()
 const { caseList, caseNameList } = getCase(locale.value)
 
+const activeMenuIdx = ref(0) // 大分类菜单索引：0-mushroom, 1-pill, 2-liver
 const activeIdx = ref(0)
 const currentPage = ref(1)
 const pageSize = ref(9) // PC端显示3行，每行3个，共9个
@@ -99,7 +129,7 @@ const pageSize = ref(9) // PC端显示3行，每行3个，共9个
 // 过滤后的新闻数据
 const allFilteredNews = computed(() => {
   const type = caseNameList[activeIdx.value].value
-  return type === 'all' ? caseList : caseList.filter(news => news.type === type)
+  return type === 'all' ? caseList : caseList.filter(news => news.subType === type)
 })
 
 // 分页后的新闻数据

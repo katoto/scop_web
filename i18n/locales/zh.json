@@ -1189,6 +1189,20 @@
       "mushroom": "癌症",
       "pill": "男性健康",
       "liver": "肝脏疾病"
+    },
+    "empty": {
+      "mushroom": {
+        "title": "暂无数据",
+        "desc": "Mushroom 相关案例正在整理中，敬请期待"
+      },
+      "pill": {
+        "title": "暂无数据",
+        "desc": "Pill 相关案例正在整理中，敬请期待"
+      },
+      "liver": {
+        "title": "暂无数据",
+        "desc": "Liver 相关案例正在整理中，敬请期待"
+      }
     }
   }
 }

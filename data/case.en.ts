@@ -4,21 +4,22 @@ export const caseList = [
     "date": "2025-08-15",
     "title": `"I Thought It Was All Over" — The Story of a Japanese Breast Cancer Patient's Reversal Through Persistent Immune Intervention and the Scientific Evidence Behind It`,
     "desc": "Keiko Morita, 44, Japan: 'Had I not kept taking CP-101 back then, I doubt I would have made it to this day. It isn\'t a miracle, but it gave me back the strength to keep fighting my cancer.' She found, on the brink of despair, the will to battle her disease once more.",
-    "type": "realNew",
+    "type": "cp101_mushroom",
+    "subType": 'breastCancer',
     "link": "/en/case/detail?id=1"
   },
 ]
 
 export const caseNameList = [
-  { label: '全部', value: 'all' },
-  { label: '乳腺癌', value: 'breastCancer' },
-  { label: '前列腺癌', value: 'prostateCancer' },
-  { label: '胃癌', value: 'gastricCancer' },
-  { label: '食道癌', value: 'esophagealCancer' },
-  { label: '肺癌', value: 'lungCancer' },
-  { label: '鼻咽癌', value: 'nasalCancer' },
-  { label: '淋巴癌', value: 'lymphoma' },
-  { label: '甲状腺癌', value: 'thyroidCancer' },
+  { label: 'All', value: 'all' },
+  { label: 'Breast Cancer', value: 'breastCancer' },
+  { label: 'Prostate Cancer', value: 'prostateCancer' },
+  { label: 'Gastric Cancer', value: 'gastricCancer' },
+  { label: 'Esophageal Cancer', value: 'esophagealCancer' },
+  { label: 'Lung Cancer', value: 'lungCancer' },
+  { label: 'Nasal Cancer', value: 'nasalCancer' },
+  { label: 'Lymphoma', value: 'lymphoma' },
+  { label: 'Thyroid Cancer', value: 'thyroidCancer' },
 ]
 
 export const navList = [

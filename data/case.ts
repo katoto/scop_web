@@ -1,6 +1,9 @@
-import { caseList as zhCaseList, 
+import {
+  caseList as zhCaseList,
   caseNameList as zhCaseNameList,
-  navList as zhNavList, caseDetail as zhCaseDetail, caseContact as zhCaseContact } from './case.zh'
+  navList as zhNavList, caseDetail as zhCaseDetail,
+  caseContact as zhCaseContact
+} from './case.zh'
 import { caseList as enCaseList, caseNameList as enCaseNameList, navList as enNavList, caseDetail as enCaseDetail, caseContact as enCaseContact } from './case.en'
 import { caseList as jaCaseList, caseNameList as jaCaseNameList, navList as jaNavList, caseDetail as jaCaseDetail, caseContact as jaCaseContact } from './case.ja'
 

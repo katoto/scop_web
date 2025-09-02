@@ -1,7 +1,7 @@
 {
   "nav": {
     "home": "Home",
-    "r_and_d": "Research & Development",
+    "r_and_d": "Research",
     "rd": "Core Technology",
     "rdFeedback": "Clinical Application Feedback",
     "news": "News",
@@ -1183,6 +1183,27 @@
     },
     "before_next": "Previous",
     "next": "Next",
-    "more": "Read more"
+    "more": "Read more",
+
+    "menu": {
+      "mushroom": "Cancer",
+      "pill": "Men's Health",
+      "liver": "Liver Disease"
+    },
+    "empty": {
+      "mushroom": {
+        "title": "No data available",
+        "desc": "Mushroom related cases are being organized, please stay tuned."
+      },
+      "pill": {
+        "title": "No data available",
+        "desc": "Pill related cases are being organized, please stay tuned."
+      },
+      "liver": {
+        "title": "No data available",
+        "desc": "Liver related cases are being organized, please stay tuned."
+      }
+    }
+    
   }
 }
