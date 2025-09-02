@@ -9,6 +9,18 @@ export const caseList = [
   },
 ]
 
+export const caseNameList = [
+  { label: '全部', value: 'all' },
+  { label: '乳腺癌', value: 'breastCancer' },
+  { label: '前列腺癌', value: 'prostateCancer' },
+  { label: '胃癌', value: 'gastricCancer' },
+  { label: '食道癌', value: 'esophagealCancer' },
+  { label: '肺癌', value: 'lungCancer' },
+  { label: '鼻咽癌', value: 'nasalCancer' },
+  { label: '淋巴癌', value: 'lymphoma' },
+  { label: '甲状腺癌', value: 'thyroidCancer' },
+]
+
 export const navList = [
   { label: 'All', value: 'all' },
   { label: 'Real-time News', value: 'realNew' },
@@ -53,7 +65,7 @@ export const caseDetail = {
     {
       type: 'paragraph',
       text: `In 1999, Keiko Morita from Chiba Prefecture, Japan, discovered an abnormal nodule in her left breast during a routine medical examination. Due to fear of surgery and thinking "it probably wasn\'t a big problem," she chose to avoid treatment. However, over the next five years, the lump grew larger each year. By 2004, the tumor diameter had exceeded 10cm and was accompanied by skin ulceration and bleeding.
-"During that time, I didn\'t dare look in the mirror every day," Ms. Morita recalled. "Looking in the mirror made me feel like I was being eroded by the disease bit by bit, which was very frightening." When she finally decided to seek medical treatment, she was diagnosed with <b>Stage IV breast cancer</b>. The doctor told her that surgical opportunities were almost non-existent, and only drug treatment could "try to prolong life."` 
+"During that time, I didn\'t dare look in the mirror every day," Ms. Morita recalled. "Looking in the mirror made me feel like I was being eroded by the disease bit by bit, which was very frightening." When she finally decided to seek medical treatment, she was diagnosed with <b>Stage IV breast cancer</b>. The doctor told her that surgical opportunities were almost non-existent, and only drug treatment could "try to prolong life."`
     },
     {
       type: 'image',

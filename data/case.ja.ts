@@ -9,6 +9,18 @@ export const caseList = [
   },
 ]
 
+export const caseNameList = [
+  { label: 'すべて', value: 'all' },
+  { label: '乳腺癌', value: 'breastCancer' },
+  { label: '前列腺癌', value: 'prostateCancer' },
+  { label: '胃癌', value: 'gastricCancer' },
+  { label: '食道癌', value: 'esophagealCancer' },
+  { label: '肺癌', value: 'lungCancer' },
+  { label: '鼻咽癌', value: 'nasalCancer' },
+  { label: '淋巴癌', value: 'lymphoma' },
+  { label: '甲状腺癌', value: 'thyroidCancer' },
+]
+
 export const navList = [
   { label: 'すべて', value: 'all' },
   { label: 'リアルタイムニュース', value: 'realNew' },

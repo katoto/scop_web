@@ -10,22 +10,33 @@
         <p class="subtitle">{{ t('case.banner.subtitle') }}</p>
         <p class="desc">{{ t('case.banner.description') }}</p>
       </div>
+
+      <!-- 大分类按钮 -->
+      <div class="menu-bar">
+        <div class="menu-item active">
+          <a class="nav-link" href="javascript:void(0);">{{ t('case.menu.mushroom') }}</a>
+        </div>
+        <div class="menu-item">
+          <a class="nav-link" href="javascript:void(0);">{{ t('case.menu.pill') }}</a>
+        </div>
+        <div class="menu-item">
+          <a class="nav-link" href="javascript:void(0);">{{ t('case.menu.liver') }}</a>
+        </div>
+      </div>
     </section>
-    <!-- <div class="case-hero">
-      <img class="case-bg" src="/case/topbg.png" alt="">
-      <h2 class="title">{{ $t('nav.case') }}</h2>
-    </div> -->
+
     <div class="case-contain">
       <div class="case-nav">
-        <!-- <ul class="mc_e1_list">
-          <li v-for="(item, idx) in navList" :key="item.value" :class="['mc_e1_li', { active: idx === activeIdx }]"
+        <ul class="mc_e1_list">
+          <li v-for="(item, idx) in caseNameList" :key="item.value" :class="['mc_e1_li', { active: idx === activeIdx }]"
             @click="activeIdx = idx">
             <span class="mc_e1_txt">{{ item.label }}</span>
           </li>
-        </ul> -->
+        </ul>
       </div>
+
       <div class="case-list">
-        <ul class="mc_e1_list">
+        <ul class="mc_e1_list" v-if="filteredNews.length > 0">
           <li class="mc_e1_li case-card" v-for="news in filteredNews" :key="news.id">
             <a :href="news.link" target="_blank" class="mc_e1_lisbox">
               <div class="mc_e1_imgbox mc_list_imgbox">
@@ -39,8 +50,15 @@
             </a>
           </li>
         </ul>
+        
+        <div class="empty-state" v-else>
+          <div class="empty-content">
+            <div class="empty-icon">📄</div>
+            <p class="empty-text">暂无数据</p>
+          </div>
+        </div>
 
-        <div class="pagination" v-if="totalPages > 1">
+        <div class="pagination" v-if="totalPages > 1 && filteredNews.length > 0">
           <button class="pagination-btn" :class="{ disabled: currentPage === 1 }" @click="changePage(currentPage - 1)"
             :disabled="currentPage === 1">
             {{ t('case.before_next') }}
@@ -72,7 +90,7 @@ import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 
 const { locale } = useI18n()
-const { caseList, navList } = getCase(locale.value)
+const { caseList, caseNameList } = getCase(locale.value)
 
 const activeIdx = ref(0)
 const currentPage = ref(1)
@@ -80,7 +98,7 @@ const pageSize = ref(9) // PC端显示3行，每行3个，共9个
 
 // 过滤后的新闻数据
 const allFilteredNews = computed(() => {
-  const type = navList[activeIdx.value].value
+  const type = caseNameList[activeIdx.value].value
   return type === 'all' ? caseList : caseList.filter(news => news.type === type)
 })
 
@@ -106,12 +124,6 @@ const changePage = (page) => {
       caseListElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
   })
-}
-
-// 切换分类时重置页码
-const changeCategory = (idx) => {
-  activeIdx.value = idx
-  currentPage.value = 1
 }
 
 </script>

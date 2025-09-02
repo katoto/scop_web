@@ -5,7 +5,7 @@
     "rd": "核心技术",
     "rdFeedback": "临床应用反馈",
     "news": "新闻与动态",
-    "case": "研究案例",
+    "case": "真实案例",
     "brand": "品牌",
     "about": "关于 Scophil",
     "product": "产品中心",
@@ -1177,12 +1177,18 @@
   },
   "case": {
     "banner": {
-      "title": "研究案例",
+      "title": "真实案例",
       "subtitle": "",
       "description": "基于真实患者的临床观察与数据记录，深入呈现产品在实际应用中的效果与价值，让科学证据为结论发声。"
     },
     "before_next": "前一页",
     "next": "后一页",
-    "more": "了解更多"
+    "more": "了解更多",
+
+    "menu": {
+      "mushroom": "癌症",
+      "pill": "男性健康",
+      "liver": "肝脏疾病"
+    }
   }
 }

@@ -4,10 +4,23 @@ export const caseList = [
     date: '2025-08-15',
     title: '“我以为一切结束了”——日本乳腺癌患者坚持免疫干预后的逆转故事与科学验证',
     desc: '森田惠子（44岁，日本）：“如果当时没有坚持服用 CP-101，我可能撑不到那一天。它不是奇迹，但让我重新有了和癌症斗争的‘力气’。”她在绝望边缘重新找回“与癌抗争的力气”',
-    type: 'realNew',
+    type: 'cp101_mushroom',
+    subType: '',
     link: '/case/detail?id=1'
   }
-  
+
+]
+
+export const caseNameList = [
+  { label: '全部', value: 'all' },
+  { label: '乳腺癌', value: 'breastCancer' },
+  { label: '前列腺癌', value: 'prostateCancer' },
+  { label: '胃癌', value: 'gastricCancer' },
+  { label: '食道癌', value: 'esophagealCancer' },
+  { label: '肺癌', value: 'lungCancer' },
+  { label: '鼻咽癌', value: 'nasalCancer' },
+  { label: '淋巴癌', value: 'lymphoma' },
+  { label: '甲状腺癌', value: 'thyroidCancer' },
 ]
 
 export const navList = [

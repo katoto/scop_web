@@ -2,6 +2,10 @@
 import { ref, computed, onMounted } from 'vue';
 import { getLocalizedImagePath } from '~/utils/image'
 
+import { getCase } from '@/data/case'
+const { locale } = useI18n()
+const { caseList } = getCase(locale.value)
+const sliceCaseList = caseList.filter(item => item.type === 'cp101_mushroom').slice(0, 3)
 const { t } = useI18n()
 const localePath = useLocalePath()
 
@@ -242,9 +246,9 @@ onMounted(() => {
         </div>
         <div class="patent-right" :style="{ backgroundImage: `url(${activePatent.image})` }">
           <div class="patent-menu">
-            <div v-for="(option, index) in patentOptions" :key="option.id"
-              class="patent-menu-item" :class="{ active: activePatent.id === option.id }"
-              @mouseenter="setActivePatent(option)" @click="setActivePatent(option)">
+            <div v-for="(option, index) in patentOptions" :key="option.id" class="patent-menu-item"
+              :class="{ active: activePatent.id === option.id }" @mouseenter="setActivePatent(option)"
+              @click="setActivePatent(option)">
               <template v-if="activePatent.id === option.id">
                 <div class="dot-animate">
                   <span class="ripple"></span>
@@ -255,6 +259,29 @@ onMounted(() => {
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- case 案例 -->
+    <section class="news-section case-section">
+      <div class="news-section-title">
+        <h2>{{ $t('nav.case') }}</h2>
+      </div>
+      <div class="case-list">
+        <ul class="mc_e1_list">
+          <li class="mc_e1_li case-card" v-for="news in sliceCaseList" :key="news.title">
+            <a :href="news.link" target="_blank" class="mc_e1_lisbox">
+              <div class="mc_e1_imgbox mc_list_imgbox">
+                <img :src="news.img" alt="" class="mc_list_img" />
+              </div>
+              <div class="mc_e1_txtbox">
+                <p class="mc_e1_txt case-card-title">{{ news.title }}</p>
+                <div class="case-card-desc">{{ news.desc }}</div>
+                <div class="case-card-more">{{ $t('case.more') }}</div>
+              </div>
+            </a>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -338,10 +365,14 @@ onMounted(() => {
         <div class="market-compare-row">
           <div class="market-compare-label">{{ t('product.product0.compare.consult.label') }}</div>
           <div class="market-compare-market">
-            <NuxtLink :to="localePath('/contact')" class="consult-link">{{ t('product.product0.compare.consult.button') }}</NuxtLink>
+            <NuxtLink :to="localePath('/contact')" class="consult-link">{{ t('product.product0.compare.consult.button')
+            }}
+            </NuxtLink>
           </div>
           <div class="market-compare-cp101">
-            <NuxtLink :to="localePath('/contact')" class="consult-link">{{ t('product.product0.compare.consult.button') }}</NuxtLink>
+            <NuxtLink :to="localePath('/contact')" class="consult-link">{{ t('product.product0.compare.consult.button')
+            }}
+            </NuxtLink>
           </div>
         </div>
       </div>
