@@ -35,11 +35,11 @@ export default defineNuxtConfig({
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         {
           name: "description",
-          content: "Scophil is committed to bringing excellent health solutions through cutting-edge biotechnology and rigorous scientific research. CP-101 series products include Guben Jingang Pills, Mushroom Extract Series, and Liver Power, using Japanese patented technology and GMP certified production. | Scophil致力于通过前沿生物科技与严谨科研精神，为人类带来卓越健康解决方案。CP-101系列产品包括固本金刚丸、蘑菇精系列、肝源力，采用日本专利技术，GMP认证生产。",
+          content: "Scophil is committed to bringing excellent health solutions through cutting-edge biotechnology and rigorous scientific research. CP-101 series products include Guben Jingang Pills, Mushroom Extract Series, and Liver Power, using Japanese patented technology and GMP certified production. | Scophil致力于通过前沿生物科技与严谨科研精神，为人类带来卓越健康解决方案。CP-101系列产品包括金刚固本丸、蘑菇精系列、肝源力，采用日本专利技术，GMP认证生产。",
         },
         {
           name: "keywords",
-          content: "Scophil,CP-101,Guben Jingang Pills,固本金刚丸,Mushroom Extract,蘑菇精,Liver Power,肝源力,Agaricus blazei,姬松茸,Biotechnology,生物科技,Health Products,健康产品,Immune Regulation,免疫调节,Anti-cancer,抗癌,Liver Protection,护肝,Men's Health,男性健康,Japanese Patent,日本专利,GMP Certification,GMP认证,Subcritical Water Extraction,亚临界水提取",
+          content: "Scophil,CP-101,Guben Jingang Pills,金刚固本丸,Mushroom Extract,蘑菇精,Liver Power,肝源力,Agaricus blazei,姬松茸,Biotechnology,生物科技,Health Products,健康产品,Immune Regulation,免疫调节,Anti-cancer,抗癌,Liver Protection,护肝,Men's Health,男性健康,Japanese Patent,日本专利,GMP Certification,GMP认证,Subcritical Water Extraction,亚临界水提取",
         },
         {
           name: "robots",
@@ -51,7 +51,7 @@ export default defineNuxtConfig({
         },
         {
           property: "og:description",
-          content: "Scophil is committed to bringing excellent health solutions through cutting-edge biotechnology and rigorous scientific research. CP-101 series products include Guben Jingang Pills, Mushroom Extract Series, and Liver Power. | Scophil致力于通过前沿生物科技与严谨科研精神，为人类带来卓越健康解决方案。CP-101系列产品包括固本金刚丸、蘑菇精系列、肝源力。",
+          content: "Scophil is committed to bringing excellent health solutions through cutting-edge biotechnology and rigorous scientific research. CP-101 series products include Guben Jingang Pills, Mushroom Extract Series, and Liver Power. | Scophil致力于通过前沿生物科技与严谨科研精神，为人类带来卓越健康解决方案。CP-101系列产品包括金刚固本丸、蘑菇精系列、肝源力。",
         },
         {
           property: "og:type",

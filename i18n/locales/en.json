@@ -242,7 +242,7 @@
       "headers": {
         "label": "Indicator",
         "market": "Similar products on the market",
-        "cp101": "CP-101 固本金刚丸"
+        "cp101": "CP-101 金刚固本丸"
       },
       "items": {
         "vascular": {
@@ -1188,7 +1188,7 @@
     "menu": {
       "mushroom": "Cancer",
       "pill": "Men's Health",
-      "liver": "Liver Disease"
+      "liver": "Liver Health"
     },
     "empty": {
       "mushroom": {

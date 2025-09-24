@@ -102,14 +102,23 @@
 
 <script setup>
 import { useI18n } from 'vue-i18n'
-import { getCaseDetail, getCaseContact } from '@/data/case'
-import { ref, onMounted, onUnmounted } from 'vue'
+import { getCaseDetailById, getCaseContact } from '@/data/case'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
 
 const { locale } = useI18n()
 const localePath = useLocalePath()
 const router = useRouter()
-const newsDetail = getCaseDetail(locale.value)
-const caseContact = getCaseContact(locale.value)
+const route = useRoute()
+
+// 响应式地获取文章内容
+const newsDetail = computed(() => {
+    const articleId = route.query.id || '1' // 默认为第一篇文章
+    return getCaseDetailById(locale.value, articleId)
+})
+
+const caseContact = computed(() => {
+    return getCaseContact(locale.value)
+})
 
 // 响应式检测移动端
 const isMobile = ref(false)
