@@ -1,5 +1,14 @@
 export const caseList = [
   {
+    img: '/case/case-1.png',
+    date: '2025-09-24',
+    title: '"I Thought My Voice Was Gone Forever" — Life Reversal and Scientific Insights of a Japanese Malignant Lymphoma Patient After Persistent Immunointervention',
+    desc: '62-year-old Ichiro Sato (pseudonym) is a key member of a local community choir, known for his powerful voice and regarded by friends as the "soul" of the group.',
+    type: 'cp101_mushroom',
+    subType: 'lymphoma',
+    link: '/case/detail?id=2'
+  },
+  {
     "img": "/case/case-0.png",
     "date": "2025-08-15",
     "title": `"I Thought It Was All Over" — The Story of a Japanese Breast Cancer Patient's Reversal Through Persistent Immune Intervention and the Scientific Evidence Behind It`,
