@@ -19,6 +19,19 @@ export const caseList = [
   },
 ]
 
+export const pillCaseList = [
+  {
+    img: '/case/case-1.png',
+    date: '2025-10-15',
+    title: '"I thought I was done, now she says it\'s completely different" — A True Men\'s Health Story',
+    desc: 'Mr. Li, 42, department manager at a manufacturing company in Nanjing. Years of high-pressure life took a toll on his health and marital relationship. Through scientific intervention, he regained his confidence and dignity as a man.',
+    type: 'cp101_pill',
+    subType: 'mensHealth',
+    link: '/en/case/detail?id=3'
+  }
+]
+
+
 export const caseNameList = [
   { label: 'All', value: 'all' },
   { label: 'Breast Cancer', value: 'breastCancer' },
@@ -29,12 +42,4 @@ export const caseNameList = [
   { label: 'Nasal Cancer', value: 'nasalCancer' },
   { label: 'Lymphoma', value: 'lymphoma' },
   { label: 'Thyroid Cancer', value: 'thyroidCancer' },
-]
-
-export const navList = [
-  { label: 'All', value: 'all' },
-  { label: 'Real-time News', value: 'realNew' },
-  { label: 'Brand News', value: 'brandNew' },
-  { label: 'Industry News', value: 'industryNew' },
-  { label: 'Special Events', value: 'specialNew' }
 ]

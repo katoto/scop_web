@@ -117,7 +117,8 @@ const newsDetail = computed(() => {
 })
 
 const caseContact = computed(() => {
-    return getCaseContact(locale.value)
+    const articleId = route.query.id || '1' // 默认为第一篇文章
+    return getCaseContact(locale.value, articleId)
 })
 
 // 响应式检测移动端
@@ -157,9 +158,6 @@ onUnmounted(() => {
     max-width: 1200px;
     margin: 80px auto 40px;
     padding: 10px 10px 40px 10px;
-
-    // margin-left: 100px;
-    // box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
 
     ul,
     li {

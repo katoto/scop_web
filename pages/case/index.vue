@@ -51,7 +51,7 @@
             </a>
           </li>
         </ul>
-        
+
         <div class="empty-state" v-else>
           <div class="empty-content">
             <div class="empty-icon">📄</div>
@@ -81,16 +81,52 @@
     </div>
 
     <!-- Pill Content -->
-    <div class="case-contain" v-else-if="activeMenuIdx === 1">
+    <div class="case-contain pill-contain" v-else-if="activeMenuIdx === 1">
       <div class="case-list">
-        <div class="empty-state">
+        <ul class="mc_e1_list" v-if="pillFilteredNews.length > 0">
+          <li class="mc_e1_li case-card" v-for="news in pillFilteredNews" :key="news.id">
+            <a :href="news.link" target="_blank" class="mc_e1_lisbox">
+              <div class="mc_e1_imgbox mc_list_imgbox">
+                <img :src="news.img" alt="" class="mc_list_img" />
+              </div>
+              <div class="mc_e1_txtbox">
+                <p class="mc_e1_txt case-card-title">{{ news.title }}</p>
+                <div class="case-card-desc">{{ news.desc }}</div>
+                <div class="case-card-more">{{ t('case.more') }}</div>
+              </div>
+            </a>
+          </li>
+        </ul>
+
+        <div class="empty-state" v-else>
           <div class="empty-content">
             <div class="empty-icon">💊</div>
             <p class="empty-text">{{ t('case.empty.pill.title') }}</p>
             <p class="empty-desc">{{ t('case.empty.pill.desc') }}</p>
           </div>
         </div>
+
+        <div class="pagination" v-if="pillTotalPages > 1 && pillFilteredNews.length > 0">
+          <button class="pagination-btn" :class="{ disabled: pillCurrentPage === 1 }" @click="changePillPage(pillCurrentPage - 1)"
+            :disabled="pillCurrentPage === 1">
+            {{ t('case.before_next') }}
+          </button>
+
+          <span class="pagination-numbers">
+            <button v-for="page in pillTotalPages" :key="page" class="pagination-number"
+              :class="{ active: page === pillCurrentPage }" @click="changePillPage(page)">
+              {{ page }}
+            </button>
+          </span>
+
+          <button class="pagination-btn" :class="{ disabled: pillCurrentPage === pillTotalPages }"
+            @click="changePillPage(pillCurrentPage + 1)" :disabled="pillCurrentPage === pillTotalPages">
+            {{ t('case.next') }}
+          </button>
+        </div>
       </div>
+
+ 
     </div>
 
     <!-- Liver Content -->
@@ -113,43 +149,75 @@
 </template>
 
 <script setup>
-import { ref, computed, nextTick } from 'vue'
+import { ref, computed, nextTick, watch } from 'vue'
 import { getCase } from '@/data/case'
 import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 
 const { locale } = useI18n()
-const { caseList, caseNameList } = getCase(locale.value)
+const { caseList, caseNameList, pillCaseList } = getCase(locale.value)
 
 const activeMenuIdx = ref(0) // 大分类菜单索引：0-mushroom, 1-pill, 2-liver
 const activeIdx = ref(0)
 const currentPage = ref(1)
+const pillCurrentPage = ref(1)
 const pageSize = ref(9) // PC端显示3行，每行3个，共9个
 
-// 过滤后的新闻数据
+// 监听 activeMenuIdx 变化，重置页码
+watch(activeMenuIdx, () => {
+  currentPage.value = 1
+  pillCurrentPage.value = 1
+  activeIdx.value = 0
+})
+
+// Mushroom: 过滤后的新闻数据
 const allFilteredNews = computed(() => {
   const type = caseNameList[activeIdx.value].value
   return type === 'all' ? caseList : caseList.filter(news => news.subType === type)
 })
 
-// 分页后的新闻数据
+// Mushroom: 分页后的新闻数据
 const filteredNews = computed(() => {
   const start = (currentPage.value - 1) * pageSize.value
   const end = start + pageSize.value
   return allFilteredNews.value.slice(start, end)
 })
 
-// 总页数
+// Mushroom: 总页数
 const totalPages = computed(() => {
   return Math.ceil(allFilteredNews.value.length / pageSize.value)
 })
 
-// 切换页码
+// Pill: 分页后的数据
+const pillFilteredNews = computed(() => {
+  const start = (pillCurrentPage.value - 1) * pageSize.value
+  const end = start + pageSize.value
+  return pillCaseList.slice(start, end)
+})
+
+// Pill: 总页数
+const pillTotalPages = computed(() => {
+  return Math.ceil(pillCaseList.length / pageSize.value)
+})
+
+// Mushroom: 切换页码
 const changePage = (page) => {
   currentPage.value = page
   // 滚动到case-list顶部
   nextTick(() => {
     const caseListElement = document.querySelector('.case-nav')
+    if (caseListElement) {
+      caseListElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  })
+}
+
+// Pill: 切换页码
+const changePillPage = (page) => {
+  pillCurrentPage.value = page
+  // 滚动到case-list顶部
+  nextTick(() => {
+    const caseListElement = document.querySelector('.pill-contain')
     if (caseListElement) {
       caseListElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }

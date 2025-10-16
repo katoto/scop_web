@@ -19,6 +19,18 @@ export const caseList = [
   }
 ]
 
+export const pillCaseList = [
+  {
+    img: '/case/case-1.png',
+    date: '2025-10-15',
+    title: '"我以为自己不行了，现在她说完全不一样" ——一个真实的男性健康故事',
+    desc: '李先生，42岁，南京一家制造企业的部门主管。连年的高压生活让他的身体每况愈下，夫妻生活陷入困境。通过科学调理，他重拾了男人的自信与尊严。',
+    type: 'cp101_pill',
+    subType: 'mensHealth',
+    link: '/case/detail?id=3'
+  }
+]
+
 export const caseNameList = [
   { label: '全部', value: 'all' },
   { label: '乳腺癌', value: 'breastCancer' },
@@ -29,12 +41,4 @@ export const caseNameList = [
   { label: '鼻咽癌', value: 'nasalCancer' },
   { label: '淋巴癌', value: 'lymphoma' },
   { label: '甲状腺癌', value: 'thyroidCancer' },
-]
-
-export const navList = [
-  { label: '全部', value: 'all' },
-  { label: '实时新闻', value: 'realNew' },
-  { label: '品牌资讯', value: 'brandNew' },
-  { label: '业内资讯', value: 'industryNew' },
-  { label: '专题活动', value: 'specialNew' }
 ]

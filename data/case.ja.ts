@@ -21,12 +21,16 @@ export const caseNameList = [
   { label: '甲状腺癌', value: 'thyroidCancer' },
 ]
 
-export const navList = [
-  { label: 'すべて', value: 'all' },
-  { label: 'リアルタイムニュース', value: 'realNew' },
-  { label: 'ブランドニュース', value: 'brandNew' },
-  { label: '業界ニュース', value: 'industryNew' },
-  { label: '特別イベント', value: 'specialNew' }
+export const pillCaseList = [
+  {
+    img: '/case/case-1.png',
+    date: '2025-10-15',
+    title: '「もうダメだと思っていたが、今は彼女が全く違うと言う」——ある男性の健康回復の実話',
+    desc: '李さん、42歳、南京の製造企業の部門マネージャー。長年の高圧生活で体調が悪化し、夫婦生活にも支障が出た。科学的な調整を通じて、男性としての自信と尊厳を取り戻した。',
+    type: 'cp101_pill',
+    subType: 'mensHealth',
+    link: '/jp/case/detail?id=3'
+  }
 ]
 
 export const caseContact = {
