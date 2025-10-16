@@ -68,7 +68,6 @@ export const caseDetail = {
         <li><b>到第 8 周：</b>医院复查时，医生告诉他几个关键指标有明显改善。</li>
         </div>`
         },
-        // 表格
         {
             type: 'image',
             src: '/case/articles/17.png'
@@ -76,6 +75,10 @@ export const caseDetail = {
         {
             type: 'heading',
             text: '最直观的变化'
+        },
+        {
+            type: 'image',
+            src: '/case/articles/18.png'
         },
         {
             type: 'paragraph',
@@ -91,6 +94,10 @@ export const caseDetail = {
             text: `妻子有一次忍不住说：“你最近是不是变得不一样了？”李先生听完，心里久违地踏实。`
         },
         {
+            type: 'image',
+            src: '/case/articles/19.png'
+        },
+        {
             type: 'heading',
             text: '科学解读'
         },
@@ -104,7 +111,7 @@ export const caseDetail = {
         },
         {
             type: 'image',
-            src: '/case/articles/18.png'
+            src: '/case/articles/20.png'
         },
         {
             type: 'heading',
