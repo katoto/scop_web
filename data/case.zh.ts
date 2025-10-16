@@ -21,7 +21,7 @@ export const caseList = [
 
 export const pillCaseList = [
   {
-    img: '/case/case-1.png',
+    img: '/case/articles/13.png',
     date: '2025-10-15',
     title: '"我以为自己不行了，现在她说完全不一样" ——一个真实的男性健康故事',
     desc: '李先生，42岁，南京一家制造企业的部门主管。连年的高压生活让他的身体每况愈下，夫妻生活陷入困境。通过科学调理，他重拾了男人的自信与尊严。',

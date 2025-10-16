@@ -4,8 +4,8 @@ import NumberScroll from '@/components/NumberScroll.vue'
 import { getCase } from '@/data/case'
 import { useI18n } from 'vue-i18n'
 const { locale } = useI18n()
-const { caseList } = getCase(locale.value)
-const sliceCaseList = caseList.slice(0, 3)
+const { caseList, pillCaseList } = getCase(locale.value)
+const sliceCaseList = [...pillCaseList, ...caseList].slice(0, 3)
 
 let position = reactive({
   offsetX: 0,

@@ -149,7 +149,7 @@
 </template>
 
 <script setup>
-import { ref, computed, nextTick, watch } from 'vue'
+import { ref, computed, nextTick, watch, onMounted } from 'vue'
 import { getCase } from '@/data/case'
 import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
@@ -157,17 +157,31 @@ const { t } = useI18n()
 const { locale } = useI18n()
 const { caseList, caseNameList, pillCaseList } = getCase(locale.value)
 
-const activeMenuIdx = ref(0) // 大分类菜单索引：0-mushroom, 1-pill, 2-liver
+// 从 localStorage 读取保存的分类索引
+const getSavedMenuIdx = () => {
+  if (process.client) {
+    const saved = localStorage.getItem('caseActiveMenuIdx')
+    return saved !== null ? parseInt(saved, 10) : 0
+  }
+  return 0
+}
+
+const activeMenuIdx = ref(getSavedMenuIdx()) // 大分类菜单索引：0-mushroom, 1-pill, 2-liver
 const activeIdx = ref(0)
 const currentPage = ref(1)
 const pillCurrentPage = ref(1)
 const pageSize = ref(9) // PC端显示3行，每行3个，共9个
 
-// 监听 activeMenuIdx 变化，重置页码
-watch(activeMenuIdx, () => {
+// 监听 activeMenuIdx 变化，保存到 localStorage 并重置页码
+watch(activeMenuIdx, (newValue) => {
   currentPage.value = 1
   pillCurrentPage.value = 1
   activeIdx.value = 0
+  
+  // 保存到 localStorage
+  if (process.client) {
+    localStorage.setItem('caseActiveMenuIdx', newValue.toString())
+  }
 })
 
 // Mushroom: 过滤后的新闻数据
