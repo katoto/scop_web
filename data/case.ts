@@ -1,17 +1,20 @@
 import {
   caseList as zhCaseList,
   caseNameList as zhCaseNameList,
-  pillCaseList as zhPillCaseList
+  pillCaseList as zhPillCaseList,
+  pillNameList as zhPillNameList
 } from './case.zh'
 import {
   caseList as enCaseList,
   caseNameList as enCaseNameList,
-  pillCaseList as enPillCaseList
+  pillCaseList as enPillCaseList,
+  pillNameList as enPillNameList
 } from './case.en'
 import {
   caseList as jaCaseList,
   caseNameList as jaCaseNameList,
   pillCaseList as jaPillCaseList,
+  pillNameList as jaPillNameList,
   caseContact as jaCaseContact
 } from './case.ja'
 
@@ -26,6 +29,13 @@ import { caseDetail as zhCaseDetail3, caseContact as zhCaseContact3 } from './ar
 import { caseDetail as enCaseDetail3, caseContact as enCaseContact3 } from './articles/en/article-3'
 import { caseDetail as jaCaseDetail3, caseContact as jaCaseContact3 } from './articles/ja/article-3'
 
+import { caseDetail as zhCaseDetail4, caseContact as zhCaseContact4 } from './articles/zh/article-4'
+import { caseDetail as enCaseDetail4, caseContact as enCaseContact4 } from './articles/en/article-4'
+import { caseDetail as jaCaseDetail4, caseContact as jaCaseContact4 } from './articles/ja/article-4'
+import { caseDetail as zhCaseDetail5, caseContact as zhCaseContact5 } from './articles/zh/article-5'
+import { caseDetail as enCaseDetail5, caseContact as enCaseContact5 } from './articles/en/article-5'
+import { caseDetail as jaCaseDetail5, caseContact as jaCaseContact5 } from './articles/ja/article-5'
+
 
 // 文章详情映射
 const articlesMap = {
@@ -33,18 +43,24 @@ const articlesMap = {
     '1': zhCaseDetail1,
     '2': zhCaseDetail2,
     '3': zhCaseDetail3,
+    '4': zhCaseDetail4,
+    '5': zhCaseDetail5,
     // 可以在这里添加更多文章
   },
   en: {
     '1': enCaseDetail1,
     '2': enCaseDetail2,
     '3': enCaseDetail3,
+    '4': enCaseDetail4,
+    '5': enCaseDetail5,
     // 可以在这里添加更多文章
   },
   ja: {
     '1': jaCaseDetail1,
     '2': jaCaseDetail2,
     '3': jaCaseDetail3,
+    '4': jaCaseDetail4,
+    '5': jaCaseDetail5,
     // 可以在这里添加更多文章
   }
 }
@@ -55,16 +71,22 @@ const contactMap = {
     '1': zhCaseContact,
     '2': zhCaseContact2,
     '3': zhCaseContact3,
+    '4': zhCaseContact4,
+    '5': zhCaseContact5,
   },
   en: {
     '1': enCaseContact,
     '2': enCaseContact2,
     '3': enCaseContact3,
+    '4': enCaseContact4,
+    '5': enCaseContact5,
   },
   ja: {
     '1': jaCaseContact,
     '2': jaCaseContact, // article-2 没有导出 caseContact，使用默认
     '3': jaCaseContact3,
+    '4': jaCaseContact4,
+    '5': jaCaseContact5,
   }
 }
 
@@ -73,6 +95,7 @@ const caseByLocale = {
     caseList: zhCaseList,
     pillCaseList: zhPillCaseList,
     caseNameList: zhCaseNameList,
+    pillNameList: zhPillNameList,
     caseContact: zhCaseContact
   },
   en: {
@@ -80,6 +103,7 @@ const caseByLocale = {
     pillCaseList: enPillCaseList,
     caseDetail: enCaseDetail1, // 保持向后兼容
     caseNameList: enCaseNameList,
+    pillNameList: enPillNameList,
     caseContact: enCaseContact
   },
   ja: {
@@ -87,6 +111,7 @@ const caseByLocale = {
     pillCaseList: jaPillCaseList,
     caseDetail: jaCaseDetail1, // 保持向后兼容
     caseNameList: jaCaseNameList,
+    pillNameList: jaPillNameList,
     caseContact: jaCaseContact
   }
 }

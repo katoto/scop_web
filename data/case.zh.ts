@@ -26,8 +26,26 @@ export const pillCaseList = [
     title: '"我以为自己不行了，现在她说完全不一样" ——一个真实的男性健康故事',
     desc: '李先生，42岁，南京一家制造企业的部门主管。连年的高压生活让他的身体每况愈下，夫妻生活陷入困境。通过科学调理，他重拾了男人的自信与尊严。',
     type: 'cp101_pill',
-    subType: 'mensHealth',
+    subType: 'realStory',
     link: '/case/detail?id=3'
+  },
+  {
+    img: '/case/articles/21.png',
+    date: '2025-10-15',
+    title: '【才二十几岁，我却提前“透支”了】',
+    desc: '那晚，酒吧霓虹闪烁，DJ震耳，小雅穿着紧身低胸裙，曲线勾得心跳加速。她拽他到后巷角落，嗓音撩人：“今晚让我喊到没力气，硬汉！” 阿杰血冲脑门，硬得裤子要爆，搂着她小蛮腰，顶得她腿抖，热得冒汗的她贴上来，嗷嗷叫到嗓子劈。',
+    type: 'cp101_pill',
+    subType: 'realStory',
+    link: '/case/detail?id=4'
+  },
+  {
+    img: '/case/articles/25.png',
+    date: '2025-10-15',
+    title: '阿杰，26岁，男性，互联网公司程序员',
+    desc: '阿杰，26岁，互联网码农，朋友圈自封“夜店之王”。那晚，酒吧霓虹闪烁，DJ震耳，小雅穿着紧身低胸裙，曲线勾得心跳加速。',
+    type: 'cp101_pill',
+    subType: 'recoveryFeedback',
+    link: '/case/detail?id=5'
   }
 ]
 
@@ -41,4 +59,10 @@ export const caseNameList = [
   { label: '鼻咽癌', value: 'nasalCancer' },
   { label: '淋巴癌', value: 'lymphoma' },
   { label: '甲状腺癌', value: 'thyroidCancer' },
+]
+
+export const pillNameList = [
+  { label: '全部', value: 'all' },
+  { label: '患者真实故事', value: 'realStory' },
+  { label: '患者康复反馈', value: 'recoveryFeedback' }
 ]

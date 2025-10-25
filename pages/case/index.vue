@@ -81,7 +81,16 @@
     </div>
 
     <!-- Pill Content -->
-    <div class="case-contain pill-contain" v-else-if="activeMenuIdx === 1">
+    <div class="case-contain" v-else-if="activeMenuIdx === 1">
+      <div class="case-nav">
+        <ul class="mc_e1_list">
+          <li v-for="(item, idx) in pillNameList" :key="item.value" :class="['mc_e1_li', { active: idx === pillActiveIdx }]"
+            @click="pillActiveIdx = idx">
+            <span class="mc_e1_txt">{{ item.label }}</span>
+          </li>
+        </ul>
+      </div>
+
       <div class="case-list">
         <ul class="mc_e1_list" v-if="pillFilteredNews.length > 0">
           <li class="mc_e1_li case-card" v-for="news in pillFilteredNews" :key="news.id">
@@ -155,7 +164,7 @@ import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 
 const { locale } = useI18n()
-const { caseList, caseNameList, pillCaseList } = getCase(locale.value)
+const { caseList, caseNameList, pillCaseList, pillNameList } = getCase(locale.value)
 
 // 从 localStorage 读取保存的分类索引
 const getSavedMenuIdx = () => {
@@ -168,6 +177,7 @@ const getSavedMenuIdx = () => {
 
 const activeMenuIdx = ref(getSavedMenuIdx()) // 大分类菜单索引：0-mushroom, 1-pill, 2-liver
 const activeIdx = ref(0)
+const pillActiveIdx = ref(0) // Pill分类索引
 const currentPage = ref(1)
 const pillCurrentPage = ref(1)
 const pageSize = ref(9) // PC端显示3行，每行3个，共9个
@@ -177,11 +187,17 @@ watch(activeMenuIdx, (newValue) => {
   currentPage.value = 1
   pillCurrentPage.value = 1
   activeIdx.value = 0
+  pillActiveIdx.value = 0
   
   // 保存到 localStorage
   if (process.client) {
     localStorage.setItem('caseActiveMenuIdx', newValue.toString())
   }
+})
+
+// 监听 pillActiveIdx 变化，重置页码
+watch(pillActiveIdx, () => {
+  pillCurrentPage.value = 1
 })
 
 // Mushroom: 过滤后的新闻数据
@@ -202,16 +218,22 @@ const totalPages = computed(() => {
   return Math.ceil(allFilteredNews.value.length / pageSize.value)
 })
 
+// Pill: 过滤后的所有数据
+const allPillFilteredNews = computed(() => {
+  const subType = pillNameList[pillActiveIdx.value].value
+  return subType === 'all' ? pillCaseList : pillCaseList.filter(news => news.subType === subType)
+})
+
 // Pill: 分页后的数据
 const pillFilteredNews = computed(() => {
   const start = (pillCurrentPage.value - 1) * pageSize.value
   const end = start + pageSize.value
-  return pillCaseList.slice(start, end)
+  return allPillFilteredNews.value.slice(start, end)
 })
 
 // Pill: 总页数
 const pillTotalPages = computed(() => {
-  return Math.ceil(pillCaseList.length / pageSize.value)
+  return Math.ceil(allPillFilteredNews.value.length / pageSize.value)
 })
 
 // Mushroom: 切换页码

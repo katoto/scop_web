@@ -28,6 +28,15 @@ export const pillCaseList = [
     type: 'cp101_pill',
     subType: 'mensHealth',
     link: '/en/case/detail?id=3'
+  },
+  {
+    img: '/case/articles/21.png',
+    date: '2025-10-15',
+    title: 'Only in My Twenties, Yet I’ve Already “Burned Out”',
+    desc: 'A Jie, 26, an internet coder, self-proclaimed “King of the Nightclub” on social media. That night, neon lights flickered in the bar, the DJ pounded, and Xiao Ya, wearing a tight, low-cut dress, had curves that made hearts race.',
+    type: 'cp101_pill',
+    subType: 'mensHealth',
+    link: '/case/detail?id=4'
   }
 ]
 
@@ -42,4 +51,10 @@ export const caseNameList = [
   { label: 'Nasal Cancer', value: 'nasalCancer' },
   { label: 'Lymphoma', value: 'lymphoma' },
   { label: 'Thyroid Cancer', value: 'thyroidCancer' },
+]
+
+export const pillNameList = [
+  { label: 'All', value: 'all' },
+  { label: 'Patient Real Stories', value: 'realStory' },
+  { label: 'Patient Recovery Feedback', value: 'recoveryFeedback' }
 ]

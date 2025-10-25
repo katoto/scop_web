@@ -21,6 +21,12 @@ export const caseNameList = [
   { label: '甲状腺癌', value: 'thyroidCancer' },
 ]
 
+export const pillNameList = [
+  { label: 'すべて', value: 'all' },
+  { label: '患者の実話', value: 'realStory' },
+  { label: '患者の回復フィードバック', value: 'recoveryFeedback' }
+]
+
 export const pillCaseList = [
   {
     img: '/case/case-1.png',

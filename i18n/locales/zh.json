@@ -1190,6 +1190,11 @@
       "pill": "男性健康",
       "liver": "肝脏健康"
     },
+    "pillNav": {
+      "all": "全部",
+      "realStory": "患者真实故事",
+      "recoveryFeedback": "患者康复反馈"
+    },
     "empty": {
       "mushroom": {
         "title": "暂无数据",

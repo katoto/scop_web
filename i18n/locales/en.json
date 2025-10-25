@@ -1190,6 +1190,11 @@
       "pill": "Men's Health",
       "liver": "Liver Health"
     },
+    "pillNav": {
+      "all": "All",
+      "realStory": "Patient Real Stories",
+      "recoveryFeedback": "Patient Recovery Feedback"
+    },
     "empty": {
       "mushroom": {
         "title": "No data available",
