@@ -1,18 +1,26 @@
 export const caseDetail = {
-    title: '阿杰，26岁，男性，互联网公司程序员——勃起功能障碍（Erectile Dysfunction，ED）',
+    title: '阿浩（化名），29 岁，健身教练',
     content: [
         {
-            type: 'image',
-            src: '/case/articles/25.png'
+            type: 'paragraph',
+            text: `运动性低睾综合征（Exercise-induced Hypogonadism） `
         },
         {
             type: 'image',
-            src: '/case/articles/26.png'
+            src: '/case/articles/34.png'
         },
         {
-            type: 'ending',
-            text: '<b>CP-101金刚固本</b>丸科学调理，帮你硬回巅峰，健康无害！'
+            type: 'image',
+            src: '/case/articles/35.png'
         },
+        {
+            type: 'image',
+            src: '/case/articles/36.png'
+        },
+        {
+            type: 'image',
+            src: '/case/articles/37.png'
+        }
     ]
 }
 

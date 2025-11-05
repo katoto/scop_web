@@ -14,6 +14,7 @@
                     <template v-for="(item, index) in newsDetail.content" :key="index">
                         <p v-if="item.type === 'paragraph'" v-html="item.text"></p>
                         <h2 v-else-if="item.type === 'heading'" v-html="item.text"></h2>
+                        <h2 v-else-if="item.type === 'ending'" style="border: 0" v-html="item.text"></h2>
                         <span v-else-if="item.type === 'image-txt'" v-html="item.text"></span>
                         <img v-else-if="item.type === 'image'" :src="item.src" :alt="item.alt || ''">
                         <hr v-else-if="item.type === 'hr'" />
@@ -33,7 +34,7 @@
                         :placeholder="caseContact.email" autocomplete="email">
                     <button type="button" class="button page-newsletter__submit" @click="navigateToContact">{{
                         caseContact.submit
-                        }}</button>
+                    }}</button>
                 </div>
                 <div>
                     <h2 class="title">{{ caseContact.productInfo.title }}</h2>
@@ -70,7 +71,7 @@
                         required="required" :placeholder="caseContact.email" autocomplete="email">
                     <button type="button" class="button page-newsletter__submit" @click="navigateToContact">{{
                         caseContact.submit
-                        }}</button>
+                    }}</button>
                 </div>
                 <div class="mobile-product-info">
                     <h2 class="title">{{ caseContact.productInfo.title }}</h2>
@@ -155,9 +156,9 @@ onUnmounted(() => {
 }
 
 .case-detail {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 80px auto 40px;
-    padding: 10px 10px 40px 10px;
+    padding: 10px 20px 40px 20px;
 
     ul,
     li {
@@ -169,10 +170,9 @@ onUnmounted(() => {
 
 .case-container {
     display: flex;
-    gap: 10px;
+    gap: 40px;
     align-items: flex-start;
-    margin-top: 20px;
-
+    margin-top: 30px;
 }
 
 .case-content-sticky {
@@ -304,19 +304,23 @@ onUnmounted(() => {
     border-radius: 8px;
     flex: 1;
     min-width: 0;
+    max-width: 900px;
 }
 
 .article-header {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     text-align: left;
     margin: 0 30px;
+    padding-bottom: 25px;
+    border-bottom: 3px solid #0B1C30;
 
     .article-title {
-        font-size: 32px;
-        font-weight: bold;
-        color: #333;
+        font-size: 36px;
+        font-weight: 800;
+        color: #0B1C30;
         margin-bottom: 20px;
-        line-height: 1.4;
+        line-height: 1.5;
+        letter-spacing: -0.5px;
     }
 
     .article-meta {
@@ -335,52 +339,93 @@ onUnmounted(() => {
 
 .article-content {
     font-size: 16px;
-    line-height: 1.8;
+    line-height: 1.9;
     color: #333;
 
     img {
         display: block;
-        margin: 10px auto 4px;
         max-width: 80%;
-        margin: 0 auto 10px;
+        height: auto;
+        margin: 30px auto;
+        border-radius: 8px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     }
 
     span {
         font-size: 14px;
         text-align: center;
         display: block;
-        margin-bottom: 12px;
+        margin-bottom: 20px;
+        color: #666;
+        font-style: italic;
     }
 
     h2 {
-        font-size: 24px;
+        font-size: 26px;
+        line-height: 1.5;
         font-weight: bold;
-        margin: 40px 0 20px;
+        margin: 50px 0 25px;
         color: #222;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #e5e5e5;
+    }
+
+    h6 {
+        font-size: 18px;
+        font-weight: 600;
+        margin: 25px 0 15px;
+        color: #444;
     }
 
     p {
-        margin-bottom: 20px;
+        margin-bottom: 24px;
         text-align: justify;
+        line-height: 2;
+
+        // 处理段落中的br标签，给予适当间距
+        br {
+            display: block;
+            content: "";
+            margin-top: 8px;
+        }
     }
 
     b {
-        font-weight: bold;
-        color: #222;
+        font-weight: 700;
+        color: #d32f2f;
+        background: linear-gradient(transparent 60%, #fff3cd 60%);
+        padding: 2px 4px;
     }
 
+    // 处理段落中的div标签（用于列表容器）
+    div {
+        margin: 20px 0;
+        padding: 15px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        border-left: 4px solid #0B1C30;
+    }
 
     li {
-        margin: 8px 0;
-        padding-left: 20px;
+        margin: 12px 0;
+        padding-left: 28px;
         position: relative;
+        line-height: 1.8;
 
         &::before {
-            content: "•";
+            content: "✓";
             position: absolute;
             left: 0;
-            color: #666;
+            color: #0B1C30;
+            font-weight: bold;
+            font-size: 18px;
         }
+    }
+
+    hr {
+        border: none;
+        border-top: 1px solid #e5e5e5;
+        margin: 40px 0;
     }
 
 }
@@ -534,35 +579,79 @@ onUnmounted(() => {
 
 @media (max-width: 768px) {
     .case-detail {
-        padding: 20px 15px;
-
-        .article-header {
-            margin: 0 10px;
-        }
+        margin: 60px auto 20px;
+        padding: 15px 12px;
     }
 
     .case-container {
-        margin-top: 10px;
+        margin-top: 20px;
         flex-direction: column;
+        gap: 20px;
     }
 
     .content-section {
-        padding: 0 10px;
+        padding: 0 8px 20px 8px;
+        max-width: 100%;
     }
 
     .article-header {
+        margin: 0 8px 30px;
+        padding-bottom: 20px;
+
         .article-title {
-            font-size: 24px;
+            font-size: 26px;
+            line-height: 1.4;
         }
     }
 
     .article-content {
         font-size: 15px;
+        line-height: 1.8;
 
         h2 {
-            font-size: 20px;
-            margin-top: 20px;
-            margin-bottom: 10px;
+            font-size: 22px;
+            margin: 35px 0 20px;
+            padding-bottom: 8px;
+        }
+
+        h6 {
+            font-size: 17px;
+            margin: 20px 0 12px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            line-height: 1.9;
+
+            br {
+                margin-top: 6px;
+            }
+        }
+
+        img {
+            margin: 20px auto;
+            max-width: 100%;
+            border-radius: 6px;
+        }
+
+        div {
+            padding: 12px;
+            margin: 15px 0;
+            border-left-width: 3px;
+        }
+
+        li {
+            font-size: 15px;
+            margin: 10px 0;
+            padding-left: 24px;
+
+            &::before {
+                font-size: 16px;
+            }
+        }
+
+        b {
+            padding: 1px 3px;
         }
     }
 

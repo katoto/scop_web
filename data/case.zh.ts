@@ -21,13 +21,31 @@ export const caseList = [
 
 export const pillCaseList = [
   {
-    img: '/case/articles/13.png',
-    date: '2025-10-15',
-    title: '"我以为自己不行了，现在她说完全不一样" ——一个真实的男性健康故事',
-    desc: '李先生，42岁，南京一家制造企业的部门主管。连年的高压生活让他的身体每况愈下，夫妻生活陷入困境。通过科学调理，他重拾了男人的自信与尊严。',
+    img: '/case/articles/34.png',
+    date: '2025-11-05',
+    title: '聊天记录 - 阿浩（化名），29 岁，健身教练',
+    desc: '运动性低睾综合征（Exercise-induced Hypogonadism）',
+    type: 'cp101_pill',
+    subType: 'recoveryFeedback',
+    link: '/case/detail?id=7'
+  },
+  {
+    img: '/case/articles/28.png',
+    date: '2025-11-04',
+    title: '《越练越软，我才知道“硬度”不是这么练的》——一个健身教练的真实故事 ',
+    desc: '阿浩（化名），29 岁，是一名健身教练。从大学起他就热衷训练：早上晨跑，晚上举铁，一年到头几乎不休息。别人去旅行，他泡在健身房；朋友吃宵夜，他在称重碳水。',
     type: 'cp101_pill',
     subType: 'realStory',
-    link: '/case/detail?id=3'
+    link: '/case/detail?id=6'
+  },
+  {
+    img: '/case/articles/25.png',
+    date: '2025-10-15',
+    title: '阿杰，26岁，男性，互联网公司程序员——勃起功能障碍（Erectile Dysfunction，ED）',
+    desc: '患者康复反馈-聊天记录',
+    type: 'cp101_pill',
+    subType: 'recoveryFeedback',
+    link: '/case/detail?id=5'
   },
   {
     img: '/case/articles/21.png',
@@ -39,13 +57,13 @@ export const pillCaseList = [
     link: '/case/detail?id=4'
   },
   {
-    img: '/case/articles/25.png',
+    img: '/case/articles/13.png',
     date: '2025-10-15',
-    title: '阿杰，26岁，男性，互联网公司程序员',
-    desc: '阿杰，26岁，互联网码农，朋友圈自封“夜店之王”。那晚，酒吧霓虹闪烁，DJ震耳，小雅穿着紧身低胸裙，曲线勾得心跳加速。',
+    title: '"我以为自己不行了，现在她说完全不一样" ——一个真实的男性健康故事',
+    desc: '李先生，42岁，南京一家制造企业的部门主管。连年的高压生活让他的身体每况愈下，夫妻生活陷入困境。通过科学调理，他重拾了男人的自信与尊严。',
     type: 'cp101_pill',
-    subType: 'recoveryFeedback',
-    link: '/case/detail?id=5'
+    subType: 'realStory',
+    link: '/case/detail?id=3'
   }
 ]
 

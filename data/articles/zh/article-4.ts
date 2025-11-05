@@ -65,7 +65,7 @@ export const caseDetail = {
         },
 
         {
-            type: 'heading',
+            type: 'ending',
             text: '<b>CP-101金刚固本</b>丸科学调理，帮你硬回巅峰，健康无害！'
         },
     ]

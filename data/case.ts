@@ -35,7 +35,12 @@ import { caseDetail as jaCaseDetail4, caseContact as jaCaseContact4 } from './ar
 import { caseDetail as zhCaseDetail5, caseContact as zhCaseContact5 } from './articles/zh/article-5'
 import { caseDetail as enCaseDetail5, caseContact as enCaseContact5 } from './articles/en/article-5'
 import { caseDetail as jaCaseDetail5, caseContact as jaCaseContact5 } from './articles/ja/article-5'
-
+import { caseDetail as zhCaseDetail6, caseContact as zhCaseContact6 } from './articles/zh/article-6'
+import { caseDetail as enCaseDetail6, caseContact as enCaseContact6 } from './articles/en/article-6'
+import { caseDetail as jaCaseDetail6, caseContact as jaCaseContact6 } from './articles/ja/article-6'
+import { caseDetail as zhCaseDetail7, caseContact as zhCaseContact7 } from './articles/zh/article-7'
+import { caseDetail as enCaseDetail7, caseContact as enCaseContact7 } from './articles/en/article-7'
+import { caseDetail as jaCaseDetail7, caseContact as jaCaseContact7 } from './articles/ja/article-7'
 
 // 文章详情映射
 const articlesMap = {
@@ -45,6 +50,8 @@ const articlesMap = {
     '3': zhCaseDetail3,
     '4': zhCaseDetail4,
     '5': zhCaseDetail5,
+    '6': zhCaseDetail6,
+    '7': zhCaseDetail7,
     // 可以在这里添加更多文章
   },
   en: {
@@ -53,6 +60,8 @@ const articlesMap = {
     '3': enCaseDetail3,
     '4': enCaseDetail4,
     '5': enCaseDetail5,
+    '6': enCaseDetail6,
+    '7': enCaseDetail7,
     // 可以在这里添加更多文章
   },
   ja: {
@@ -61,6 +70,8 @@ const articlesMap = {
     '3': jaCaseDetail3,
     '4': jaCaseDetail4,
     '5': jaCaseDetail5,
+    '6': jaCaseDetail6,
+    '7': jaCaseDetail7,
     // 可以在这里添加更多文章
   }
 }
@@ -73,6 +84,8 @@ const contactMap = {
     '3': zhCaseContact3,
     '4': zhCaseContact4,
     '5': zhCaseContact5,
+    '6': zhCaseContact6,
+    '7': zhCaseContact7,
   },
   en: {
     '1': enCaseContact,
@@ -80,6 +93,8 @@ const contactMap = {
     '3': enCaseContact3,
     '4': enCaseContact4,
     '5': enCaseContact5,
+    '6': enCaseContact6,
+    '7': enCaseContact7,
   },
   ja: {
     '1': jaCaseContact,
@@ -87,6 +102,8 @@ const contactMap = {
     '3': jaCaseContact3,
     '4': jaCaseContact4,
     '5': jaCaseContact5,
+    '6': jaCaseContact6,
+    '7': jaCaseContact7,
   }
 }
 

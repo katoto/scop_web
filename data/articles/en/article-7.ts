@@ -1,18 +1,26 @@
 export const caseDetail = {
-    title: 'A Jie, 26 years old, male, programmer in an internet company - erectile dysfunction (ED)',
+    title: 'Ahao (pseudonym), 29 years old, fitness coach',
     content: [
         {
-            type: 'image',
-            src: '/case/articles/25.png'
+            type: 'paragraph',
+            text: `Exercise-induced Hypogonadism`
         },
         {
             type: 'image',
-            src: '/case/articles/26.png'
+            src: '/case/articles/34.png'
         },
         {
-            type: 'heading',
-            text: '<b>CP-101 Diamond Strengthening</b> Pills scientifically regulate, helping you get hard back to peak, healthy and harmless!'
+            type: 'image',
+            src: '/case/articles/35.png'
         },
+        {
+            type: 'image',
+            src: '/case/articles/36.png'
+        },
+        {
+            type: 'image',
+            src: '/case/articles/37.png'
+        }
     ]
 }
 

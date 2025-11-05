@@ -6,7 +6,7 @@ export const caseList = [
     desc: '62-year-old Ichiro Sato (pseudonym) is a key member of a local community choir, known for his powerful voice and regarded by friends as the "soul" of the group.',
     type: 'cp101_mushroom',
     subType: 'lymphoma',
-    link: '/case/detail?id=2'
+    link: '/en/case/detail?id=2'
   },
   {
     "img": "/case/case-0.png",
@@ -21,22 +21,49 @@ export const caseList = [
 
 export const pillCaseList = [
   {
-    img: '/case/case-1.png',
-    date: '2025-10-15',
-    title: '"I thought I was done, now she says it\'s completely different" — A True Men\'s Health Story',
-    desc: 'Mr. Li, 42, department manager at a manufacturing company in Nanjing. Years of high-pressure life took a toll on his health and marital relationship. Through scientific intervention, he regained his confidence and dignity as a man.',
+    img: '/case/articles/34.png',
+    date: '2025-11-05',
+    title: 'Chat Records - Ahao (pseudonym), 29 years old, fitness coach',
+    desc: 'Exercise-induced Hypogonadism',
     type: 'cp101_pill',
-    subType: 'mensHealth',
-    link: '/en/case/detail?id=3'
+    subType: 'recoveryFeedback',
+    link: '/en/case/detail?id=7'
+  },
+  {
+    img: '/case/articles/28.png',
+    date: '2025-11-04',
+    title: '"The Harder I Trained, The Softer I Became: Learning That \'Hardness\' Isn\'t Built in the Gym" — A Real Story from a Fitness Coach',
+    desc: 'Ahao (pseudonym), 29 years old, is a fitness coach. Since college, he\'s been passionate about training: morning runs, evening weightlifting, barely taking a break all year long. While others travel, he stays in the gym; when friends have late-night snacks, he\'s weighing his carbs.',
+    type: 'cp101_pill',
+    subType: 'realStory',
+    link: '/en/case/detail?id=6'
+  },
+  {
+    img: '/case/articles/25.png',
+    date: '2025-10-15',
+    title: 'Ajie, 26 years old, male, programmer at an internet company — Erectile Dysfunction (ED)',
+    desc: 'Patient recovery feedback - chat records',
+    type: 'cp101_pill',
+    subType: 'recoveryFeedback',
+    link: '/en/case/detail?id=5'
   },
   {
     img: '/case/articles/21.png',
     date: '2025-10-15',
-    title: 'Only in My Twenties, Yet I’ve Already “Burned Out”',
-    desc: 'A Jie, 26, an internet coder, self-proclaimed “King of the Nightclub” on social media. That night, neon lights flickered in the bar, the DJ pounded, and Xiao Ya, wearing a tight, low-cut dress, had curves that made hearts race.',
+    title: '["In my twenties, I\'ve already \'overdrawn\' myself"]',
+    desc: 'That evening, neon lights flickered in the bar, the DJ was deafening, Xiao Ya wore a tight, low-cut dress, her curves accelerating heartbeats. She dragged him to a corner in the back alley, her voice alluring: "Make me scream until I\'m powerless tonight, tough guy!" A Jie\'s blood rushed to his head, rock hard, his pants about to burst, holding her thin waist, thrusting until her legs trembled, she got hot and sweaty, pressed against him, screaming until her voice was hoarse.',
     type: 'cp101_pill',
-    subType: 'mensHealth',
-    link: '/case/detail?id=4'
+    subType: 'realStory',
+    link: '/en/case/detail?id=4'
+  },
+  {
+    img: '/case/articles/13.png',
+    date: '2025-10-15',
+    title: '"I thought I couldn\'t do it anymore, now she says it\'s completely different" — A Real Male Health Story',
+    desc: 'Mr. Li, 42 years old, department manager at a manufacturing company in Nanjing. Years of high-pressure life had deteriorated his health, and their intimate life was in trouble. Through scientific conditioning, he regained his confidence and dignity as a man.',
+    type: 'cp101_pill',
+    subType: 'realStory',
+    link: '/en/case/detail?id=3'
   }
 ]
 
