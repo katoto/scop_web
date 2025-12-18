@@ -42,6 +42,17 @@ import { caseDetail as zhCaseDetail7, caseContact as zhCaseContact7 } from './ar
 import { caseDetail as enCaseDetail7, caseContact as enCaseContact7 } from './articles/en/article-7'
 import { caseDetail as jaCaseDetail7, caseContact as jaCaseContact7 } from './articles/ja/article-7'
 
+import { caseDetail as zhCaseDetail8, caseContact as zhCaseContact8 } from './articles/zh/article-8'
+import { caseDetail as enCaseDetail8, caseContact as enCaseContact8 } from './articles/en/article-8'
+import { caseDetail as zhCaseDetail9, caseContact as zhCaseContact9 } from './articles/zh/article-9'
+import { caseDetail as enCaseDetail9, caseContact as enCaseContact9 } from './articles/en/article-9'
+
+import { caseDetail as zhCaseDetail10, caseContact as zhCaseContact10 } from './articles/zh/article-10'
+import { caseDetail as enCaseDetail10, caseContact as enCaseContact10 } from './articles/en/article-10'
+
+import { caseDetail as zhCaseDetail11, caseContact as zhCaseContact11 } from './articles/zh/article-11'
+import { caseDetail as enCaseDetail11, caseContact as enCaseContact11 } from './articles/en/article-11'
+
 // 文章详情映射
 const articlesMap = {
   zh: {
@@ -52,6 +63,10 @@ const articlesMap = {
     '5': zhCaseDetail5,
     '6': zhCaseDetail6,
     '7': zhCaseDetail7,
+    '8': zhCaseDetail8,
+    '9': zhCaseDetail9,
+    '10': zhCaseDetail10,
+    '11': zhCaseDetail11,
     // 可以在这里添加更多文章
   },
   en: {
@@ -62,6 +77,10 @@ const articlesMap = {
     '5': enCaseDetail5,
     '6': enCaseDetail6,
     '7': enCaseDetail7,
+    '8': enCaseDetail8,
+    '9': enCaseDetail9,
+    '10': enCaseDetail10,
+    '11': enCaseDetail11,
     // 可以在这里添加更多文章
   },
   ja: {
@@ -72,6 +91,11 @@ const articlesMap = {
     '5': jaCaseDetail5,
     '6': jaCaseDetail6,
     '7': jaCaseDetail7,
+    '8': jaCaseDetail7,
+    '9': jaCaseDetail7,
+    '10': jaCaseDetail7,
+    '11': jaCaseDetail7,
+    '12': jaCaseDetail7,
     // 可以在这里添加更多文章
   }
 }
@@ -86,6 +110,10 @@ const contactMap = {
     '5': zhCaseContact5,
     '6': zhCaseContact6,
     '7': zhCaseContact7,
+    '8': zhCaseContact8,
+    '9': zhCaseContact9,
+    '10': zhCaseContact10,
+    '11': zhCaseContact11,
   },
   en: {
     '1': enCaseContact,
@@ -95,6 +123,10 @@ const contactMap = {
     '5': enCaseContact5,
     '6': enCaseContact6,
     '7': enCaseContact7,
+    '8': enCaseContact8,
+    '9': enCaseContact9,
+    '10': enCaseContact10,
+    '11': enCaseContact11,
   },
   ja: {
     '1': jaCaseContact,
@@ -104,6 +136,11 @@ const contactMap = {
     '5': jaCaseContact5,
     '6': jaCaseContact6,
     '7': jaCaseContact7,
+    '8': jaCaseContact7,
+    '9': jaCaseContact7,
+    '10': jaCaseContact7,
+    '11': jaCaseContact7,
+    '12': jaCaseContact7,
   }
 }
 

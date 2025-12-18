@@ -21,6 +21,42 @@ export const caseList = [
 
 export const pillCaseList = [
   {
+    img: '/case/articles/article10/1.png',
+    date: '2025-12-18',
+    title: '聊天记录 - DJ阿杰，28岁，酒吧DJ',
+    desc: '混合性勃起功能障碍 (Mixed Erectile Dysfunction) + 性腺功能减退症 (Hypogonadism)',
+    type: 'cp101_pill',
+    subType: 'recoveryFeedback',
+    link: '/case/detail?id=11'
+  },
+  {
+    img: '/case/articles/article10/5.png',
+    date: '2025-12-16',
+    title: '《那几年我以为“频率高”就是强》——28岁夜店DJ阿杰的“封麦”实录',
+    desc: '我是阿杰，28岁，圈内还算有点名的驻场DJ。以前我以为年轻就是资本。凌晨4点下班，房卡收到手软。那时候真觉得自己是神，一晚三场是基本操作，跟兄弟吹牛逼：“老子20分钟起步，谁来都不虚。”',
+    type: 'cp101_pill',
+    subType: 'realStory',
+    link: '/case/detail?id=10'
+  },
+  {
+    img: '/case/articles/article8/8.png',
+    date: '2025-12-16',
+    title: '聊天记录 - 刘洋，36岁，企业销售',
+    desc: '运动性低睾综合征（Exercise-induced Hypogonadism）',
+    type: 'cp101_pill',
+    subType: 'recoveryFeedback',
+    link: '/case/detail?id=9'
+  },
+  {
+    img: '/case/articles/article8/1.png',
+    date: '2025-12-16',
+    title: '《一瓶酒一包烟，差点让我提前十年“报废”》——36岁销售刘洋的真实复盘',
+    desc: '我叫刘洋，36岁，一线销售经理。 两个月前，我以为自己只是“压力太大”，直到身体彻底拉响了警报。',
+    type: 'cp101_pill',
+    subType: 'realStory',
+    link: '/case/detail?id=8'
+  },
+  {
     img: '/case/articles/34.png',
     date: '2025-11-05',
     title: '聊天记录 - 阿浩（化名），29 岁，健身教练',

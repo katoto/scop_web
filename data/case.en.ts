@@ -21,6 +21,42 @@ export const caseList = [
 
 export const pillCaseList = [
   {
+    img: '/case/articles/article10/1.png',
+    date: '2025-12-18',
+    title: 'Chat Record - DJ AJie, 28 years old, Club DJ',
+    desc: 'Mixed Erectile Dysfunction + Hypogonadism',
+    type: 'cp101_pill',
+    subType: 'recoveryFeedback',
+    link: '/en/case/detail?id=11'
+  },
+  {
+    img: '/case/articles/article10/5.png',
+    date: '2025-12-16',
+    title: '"Those Years I Thought High Frequency Meant Strong" - The Real Story of 28-Year-Old Nightclub DJ A-Jie\'s "Microphone Shutdown"',
+    desc: 'I\'m AJie, 28 years old, relatively well-known in the circle as a resident DJ. In the past, I thought youth was capital. Getting off work at 4 AM, receiving room cards until my hands were full. At that time, I really felt like I was god, three sessions per night was basic operation, bragging to my brothers: "My starting time is 20 minutes, I\'m not afraid of anyone who comes."',
+    type: 'cp101_pill',
+    subType: 'realStory',
+    link: '/en/case/detail?id=10'
+  },
+  {
+    img: '/case/articles/article8/8.png',
+    date: '2025-12-16',
+    title: 'Chat Record - Liu Yang, 36 years old, Corporate Sales',
+    desc: 'Exercise-induced Hypogonadism',
+    type: 'cp101_pill',
+    subType: 'recoveryFeedback',
+    link: '/en/case/detail?id=9'
+  },
+  {
+    img: '/case/articles/article8/1.png',
+    date: '2025-12-16',
+    title: '"A Bottle of Wine and a Pack of Cigarettes Nearly Made Me \'Scrapped\' Ten Years Early" - The True Retrospective of 36-Year-Old Salesman Liu Yang',
+    desc: 'My name is Liu Yang, 36 years old, sales manager in a first-tier city. Two months ago, I thought I was just "under too much pressure," until my body completely sounded the alarm.',
+    type: 'cp101_pill',
+    subType: 'realStory',
+    link: '/en/case/detail?id=8'
+  },
+  {
     img: '/case/articles/34.png',
     date: '2025-11-05',
     title: 'Chat Records - Ahao (pseudonym), 29 years old, fitness coach',
