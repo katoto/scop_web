@@ -84,8 +84,8 @@
     <div class="case-contain" v-else-if="activeMenuIdx === 1">
       <div class="case-nav">
         <ul class="mc_e1_list">
-          <li v-for="(item, idx) in pillNameList" :key="item.value" :class="['mc_e1_li', { active: idx === pillActiveIdx }]"
-            @click="pillActiveIdx = idx">
+          <li v-for="(item, idx) in pillNameList" :key="item.value"
+            :class="['mc_e1_li', { active: idx === pillActiveIdx }]" @click="pillActiveIdx = idx">
             <span class="mc_e1_txt">{{ item.label }}</span>
           </li>
         </ul>
@@ -116,8 +116,8 @@
         </div>
 
         <div class="pagination" v-if="pillTotalPages > 1 && pillFilteredNews.length > 0">
-          <button class="pagination-btn" :class="{ disabled: pillCurrentPage === 1 }" @click="changePillPage(pillCurrentPage - 1)"
-            :disabled="pillCurrentPage === 1">
+          <button class="pagination-btn" :class="{ disabled: pillCurrentPage === 1 }"
+            @click="changePillPage(pillCurrentPage - 1)" :disabled="pillCurrentPage === 1">
             {{ t('case.before_next') }}
           </button>
 
@@ -135,13 +135,35 @@
         </div>
       </div>
 
- 
+
     </div>
 
     <!-- Liver Content -->
     <div class="case-contain" v-else-if="activeMenuIdx === 2">
+      <div class="case-nav">
+        <ul class="mc_e1_list">
+          <li v-for="(item, idx) in liverNameList" :key="item.value"
+            :class="['mc_e1_li', { active: idx === liverActiveIdx }]" @click="liverActiveIdx = idx">
+            <span class="mc_e1_txt">{{ item.label }}</span>
+          </li>
+        </ul>
+      </div>
       <div class="case-list">
-        <div class="empty-state">
+        <ul class="mc_e1_list" v-if="liverFilteredNews.length > 0">
+          <li class="mc_e1_li case-card" v-for="news in liverFilteredNews" :key="news.id">
+            <a :href="news.link" target="_blank" class="mc_e1_lisbox">
+              <div class="mc_e1_imgbox mc_list_imgbox">
+                <img :src="news.img" alt="" class="mc_list_img" />
+              </div>
+              <div class="mc_e1_txtbox">
+                <p class="mc_e1_txt case-card-title">{{ news.title }}</p>
+                <div class="case-card-desc">{{ news.desc }}</div>
+                <div class="case-card-more">{{ t('case.more') }}</div>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <div class="empty-state" v-else>
           <div class="empty-content">
             <div class="empty-icon">🫀</div>
             <p class="empty-text">{{ t('case.empty.liver.title') }}</p>
@@ -149,8 +171,26 @@
           </div>
         </div>
       </div>
-    </div>
 
+      <div class="pagination" v-if="liverTotalPages > 1 && liverFilteredNews.length > 0">
+        <button class="pagination-btn" :class="{ disabled: pillCurrentPage === 1 }"
+          @click="changeLiverPage(pillCurrentPage - 1)" :disabled="pillCurrentPage === 1">
+          {{ t('case.before_next') }}
+        </button>
+
+        <span class="pagination-numbers">
+          <button v-for="page in liverTotalPages" :key="page" class="pagination-number"
+            :class="{ active: page === pillCurrentPage }" @click="changeLiverPage(page)">
+            {{ page }}
+          </button>
+        </span>
+
+        <button class="pagination-btn" :class="{ disabled: liverCurrentPage === liverTotalPages }"
+          @click="changeLiverPage(liverCurrentPage + 1)" :disabled="liverCurrentPage === liverTotalPages">
+          {{ t('case.next') }}
+        </button>
+      </div>
+    </div>
 
   </div>
 
@@ -164,7 +204,10 @@ import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 
 const { locale } = useI18n()
-const { caseList, caseNameList, pillCaseList, pillNameList } = getCase(locale.value)
+const { caseList, caseNameList, pillCaseList, pillNameList, liverCaseList, liverNameList } = getCase(locale.value)
+
+console.log(liverCaseList)
+console.log(liverNameList)
 
 // 从 localStorage 读取保存的分类索引
 const getSavedMenuIdx = () => {
@@ -180,15 +223,18 @@ const activeIdx = ref(0)
 const pillActiveIdx = ref(0) // Pill分类索引
 const currentPage = ref(1)
 const pillCurrentPage = ref(1)
+const liverCurrentPage = ref(1)
 const pageSize = ref(9) // PC端显示3行，每行3个，共9个
+const liverActiveIdx = ref(0)
 
 // 监听 activeMenuIdx 变化，保存到 localStorage 并重置页码
 watch(activeMenuIdx, (newValue) => {
   currentPage.value = 1
   pillCurrentPage.value = 1
+  liverCurrentPage.value = 1
   activeIdx.value = 0
   pillActiveIdx.value = 0
-  
+  liverActiveIdx.value = 0
   // 保存到 localStorage
   if (process.client) {
     localStorage.setItem('caseActiveMenuIdx', newValue.toString())
@@ -198,6 +244,11 @@ watch(activeMenuIdx, (newValue) => {
 // 监听 pillActiveIdx 变化，重置页码
 watch(pillActiveIdx, () => {
   pillCurrentPage.value = 1
+})
+
+// 监听 liverActiveIdx 变化，重置页码
+watch(liverActiveIdx, () => {
+  liverCurrentPage.value = 1
 })
 
 // Mushroom: 过滤后的新闻数据
@@ -236,6 +287,27 @@ const pillTotalPages = computed(() => {
   return Math.ceil(allPillFilteredNews.value.length / pageSize.value)
 })
 
+// liver: 过滤后的所有数据
+const allLiverFilteredNews = computed(() => {
+  const subType = liverNameList[liverActiveIdx.value].value
+  return subType === 'all' ? liverCaseList : liverCaseList.filter(news => news.subType === subType)
+})
+
+// liver: 分页后的数据
+const liverFilteredNews = computed(() => {
+  const start = (liverCurrentPage.value - 1) * pageSize.value
+  const end = start + pageSize.value
+  if(allLiverFilteredNews.value && allLiverFilteredNews.value.length > 0) {
+    return allLiverFilteredNews.value.slice(start, end)
+  }
+  return []
+})
+
+// liver: 总页数
+const liverTotalPages = computed(() => {
+  return Math.ceil(allLiverFilteredNews.value.length / pageSize.value)
+})
+
 // Mushroom: 切换页码
 const changePage = (page) => {
   currentPage.value = page
@@ -259,6 +331,19 @@ const changePillPage = (page) => {
     }
   })
 }
+
+// liver: 切换页码
+const changeLiverPage = (page) => {
+  liverCurrentPage.value = page
+  // 滚动到liver-list顶部
+  nextTick(() => {
+    const liverListElement = document.querySelector('.liver-contain')
+    if (liverListElement) {
+      liverListElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  })
+}
+
 
 </script>
 

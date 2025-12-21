@@ -34,7 +34,7 @@
                         :placeholder="caseContact.email" autocomplete="email">
                     <button type="button" class="button page-newsletter__submit" @click="navigateToContact">{{
                         caseContact.submit
-                    }}</button>
+                        }}</button>
                 </div>
                 <div>
                     <h2 class="title">{{ caseContact.productInfo.title }}</h2>
@@ -71,7 +71,7 @@
                         required="required" :placeholder="caseContact.email" autocomplete="email">
                     <button type="button" class="button page-newsletter__submit" @click="navigateToContact">{{
                         caseContact.submit
-                    }}</button>
+                        }}</button>
                 </div>
                 <div class="mobile-product-info">
                     <h2 class="title">{{ caseContact.productInfo.title }}</h2>

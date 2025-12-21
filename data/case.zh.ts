@@ -1,3 +1,4 @@
+// 癌症相关
 export const caseList = [
   {
     img: '/case/case-1.png',
@@ -19,7 +20,26 @@ export const caseList = [
   }
 ]
 
+// 男性健康
 export const pillCaseList = [
+  {
+    img: '/case/articles/article12/19.png',
+    date: '2025-12-21',
+    title: '聊天记录 - 王明，32岁，市场经理，奶爸',
+    desc: '继发性低睾酮症（Secondary Hypogonadism）',
+    type: 'cp101_pill',
+    subType: 'recoveryFeedback',
+    link: '/case/detail?id=13'
+  },
+  {
+    img: '/case/articles/article12/1.jpeg',
+    date: '2025-12-21',
+    title: '《我成了合格的爸爸，却差点失去合格的丈夫》——32岁奶爸王明的“回春”实录',
+    desc: '王明，32岁，市场经理。 家里有个1岁不到的“起床铃”。别人下班刷剧，他下班刷尿布。 一晚上被踢醒5-7次，练就了闭着眼冲奶粉、30秒换尿布的神技。 朋友圈都在夸他“超级奶爸”，只有他自己知道，作为“丈夫”的那个功能，快被他亲手废了。',
+    type: 'cp101_pill',
+    subType: 'realStory',
+    link: '/case/detail?id=12'
+  },
   {
     img: '/case/articles/article10/1.png',
     date: '2025-12-18',
@@ -103,6 +123,20 @@ export const pillCaseList = [
   }
 ]
 
+// 肝脏健康
+export const liverCaseList = [
+  {
+    img: '/case/articles/article12/6.jpeg',
+    date: '2025-12-21',
+    title: '《从大三阳到小三阳：35天免疫系统重启实录》——42岁二胎爸爸丁裕的35天肝脏自救实录',
+    desc: '42岁二胎爸爸丁裕的35天肝脏自救实录',
+    type: 'cp101_liver',
+    subType: 'hepatitisB',
+    link: '/case/detail?id=14'
+  }
+]
+
+
 export const caseNameList = [
   { label: '全部', value: 'all' },
   { label: '乳腺癌', value: 'breastCancer' },
@@ -119,4 +153,12 @@ export const pillNameList = [
   { label: '全部', value: 'all' },
   { label: '患者真实故事', value: 'realStory' },
   { label: '患者康复反馈', value: 'recoveryFeedback' }
+]
+
+
+export const liverNameList = [
+  { label: '全部', value: 'all' },
+  { label: '乙肝', value: 'hepatitisB' },
+  { label: '脂肪肝', value: 'fattyLiver' },
+  { label: '肝硬化', value: 'liverCirrhosis' }
 ]

@@ -2,13 +2,17 @@ import {
   caseList as zhCaseList,
   caseNameList as zhCaseNameList,
   pillCaseList as zhPillCaseList,
-  pillNameList as zhPillNameList
+  pillNameList as zhPillNameList,
+  liverCaseList as zhLiverCaseList,
+  liverNameList as zhLiverNameList
 } from './case.zh'
 import {
   caseList as enCaseList,
   caseNameList as enCaseNameList,
   pillCaseList as enPillCaseList,
-  pillNameList as enPillNameList
+  pillNameList as enPillNameList,
+  liverCaseList as enLiverCaseList,
+  liverNameList as enLiverNameList
 } from './case.en'
 import {
   caseList as jaCaseList,
@@ -53,6 +57,19 @@ import { caseDetail as enCaseDetail10, caseContact as enCaseContact10 } from './
 import { caseDetail as zhCaseDetail11, caseContact as zhCaseContact11 } from './articles/zh/article-11'
 import { caseDetail as enCaseDetail11, caseContact as enCaseContact11 } from './articles/en/article-11'
 
+import { caseDetail as zhCaseDetail12, caseContact as zhCaseContact12 } from './articles/zh/article-12'
+import { caseDetail as enCaseDetail12, caseContact as enCaseContact12 } from './articles/en/article-12'
+
+import { caseDetail as zhCaseDetail13, caseContact as zhCaseContact13 } from './articles/zh/article-13'
+import { caseDetail as enCaseDetail13, caseContact as enCaseContact13 } from './articles/en/article-13'
+
+import { caseDetail as zhCaseDetail14, caseContact as zhCaseContact14 } from './articles/zh/article-14'
+import { caseDetail as enCaseDetail14, caseContact as enCaseContact14 } from './articles/en/article-14'
+
+import { caseDetail as zhCaseDetail15, caseContact as zhCaseContact15 } from './articles/zh/article-15'
+import { caseDetail as enCaseDetail15, caseContact as enCaseContact15 } from './articles/en/article-15'
+
+
 // 文章详情映射
 const articlesMap = {
   zh: {
@@ -67,6 +84,10 @@ const articlesMap = {
     '9': zhCaseDetail9,
     '10': zhCaseDetail10,
     '11': zhCaseDetail11,
+    '12': zhCaseDetail12,
+    '13': zhCaseDetail13,
+    '14': zhCaseDetail14,
+    '15': zhCaseDetail15,
     // 可以在这里添加更多文章
   },
   en: {
@@ -81,6 +102,10 @@ const articlesMap = {
     '9': enCaseDetail9,
     '10': enCaseDetail10,
     '11': enCaseDetail11,
+    '12': enCaseDetail12,
+    '13': enCaseDetail13,
+    '14': enCaseDetail14,
+    '15': enCaseDetail15,
     // 可以在这里添加更多文章
   },
   ja: {
@@ -114,6 +139,9 @@ const contactMap = {
     '9': zhCaseContact9,
     '10': zhCaseContact10,
     '11': zhCaseContact11,
+    '12': zhCaseContact12,
+    '13': zhCaseContact13,
+    '14': zhCaseContact14
   },
   en: {
     '1': enCaseContact,
@@ -127,6 +155,9 @@ const contactMap = {
     '9': enCaseContact9,
     '10': enCaseContact10,
     '11': enCaseContact11,
+    '12': enCaseContact12,
+    '13': enCaseContact13,
+    '14': enCaseContact14
   },
   ja: {
     '1': jaCaseContact,
@@ -150,6 +181,8 @@ const caseByLocale = {
     pillCaseList: zhPillCaseList,
     caseNameList: zhCaseNameList,
     pillNameList: zhPillNameList,
+    liverCaseList: zhLiverCaseList,
+    liverNameList: zhLiverNameList,
     caseContact: zhCaseContact
   },
   en: {
@@ -158,6 +191,8 @@ const caseByLocale = {
     caseDetail: enCaseDetail1, // 保持向后兼容
     caseNameList: enCaseNameList,
     pillNameList: enPillNameList,
+    liverCaseList: enLiverCaseList,
+    liverNameList: enLiverNameList,
     caseContact: enCaseContact
   },
   ja: {
@@ -206,5 +241,7 @@ export const getCaseContact = (locale: string, articleId?: string) => {
 // 为了向后兼容，导出中文新闻数据作为默认值
 export const caseList = zhCaseList
 export const caseNameList = zhCaseNameList
+export const liverCaseList = zhLiverCaseList
+export const liverNameList = zhLiverNameList
 export const caseDetail = zhCaseDetail1
 export const caseContact = zhCaseContact

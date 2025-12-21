@@ -21,6 +21,24 @@ export const caseList = [
 
 export const pillCaseList = [
   {
+    img: '/case/articles/article12/19.png',
+    date: '2025-12-21',
+    title: 'Chat Record - Wang Ming, 32 years old, Marketing Manager, Stay-at-Home Dad',
+    desc: 'Secondary Hypogonadism',
+    type: 'cp101_pill',
+    subType: 'recoveryFeedback',
+    link: '/en/case/detail?id=13'
+  },
+  {
+    img: '/case/articles/article12/1.jpeg',
+    date: '2025-12-21',
+    title: 'I Became a Qualified Dad, But Nearly Lost Being a Qualified Husband — The "Rebirth" Story of 32-Year-Old Stay-at-Home Dad Wang Ming',
+    desc: 'Wang Ming, 32 years old, marketing manager. He has a "wake-up alarm clock" under one year old at home. While others go home after work to watch shows, he goes home to change diapers. Waking up 5-7 times during the night, he developed skills like making formula milk with his eyes closed and changing diapers in 30 seconds. Everyone on social media praised him as a "Super Dad," but only he knew that the function of being a "husband" was almost ruined by himself.',
+    type: 'cp101_pill',
+    subType: 'realStory',
+    link: '/en/case/detail?id=12'
+  },
+  {
     img: '/case/articles/article10/1.png',
     date: '2025-12-18',
     title: 'Chat Record - DJ AJie, 28 years old, Club DJ',
@@ -103,6 +121,18 @@ export const pillCaseList = [
   }
 ]
 
+// 肝脏健康
+export const liverCaseList = [
+  {
+    img: '/case/articles/article12/6.jpeg',
+    date: '2025-12-21',
+    title: '《From Large to Small: 35-Day Immune System Reboot Record》——42-Year-Old Second-Child Father Ding Yu\'s 35-Day Liver Self-Healing Record',
+    desc: '42-year-old second-child father Ding Yu\'s 35-day liver self-healing record',
+    type: 'cp101_liver',
+    subType: 'hepatitisB',
+    link: '/en/case/detail?id=14'
+  }
+]
 
 export const caseNameList = [
   { label: 'All', value: 'all' },
@@ -120,4 +150,11 @@ export const pillNameList = [
   { label: 'All', value: 'all' },
   { label: 'Patient Real Stories', value: 'realStory' },
   { label: 'Patient Recovery Feedback', value: 'recoveryFeedback' }
+]
+
+export const liverNameList = [
+  { label: 'All', value: 'all' },
+  { label: 'Hepatitis B', value: 'hepatitisB' },
+  { label: 'Fatty Liver', value: 'fattyLiver' },
+  { label: 'Liver Cirrhosis', value: 'liverCirrhosis' }
 ]
