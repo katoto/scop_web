@@ -1,5 +1,14 @@
 export const caseList = [
   {
+    img: '/case/articles/article15/1.png',
+    date: '2025-12-23',
+    title: '["Immune Collapse" to "Doctor\'s Approval": My Battle with CP-101 Mushroom Extract and the Reversal Story"]',
+    desc: 'A real cancer record from Japan. At the darkest moment of treatment, this patient was被迫暂停 his immune support - CP-101 mushroom extract, which he had relied on. However, after experiencing a chemotherapy storm, a "stable condition" report and a doctor\'s "pardon" from the hospital allowed this magical force to return to his body. The subsequent "V-shaped reversal" of immunity, even the strict doctor was欣慰……',
+    type: 'cp101_mushroom',
+    subType: 'lymphoma',
+    link: '/en/case/detail?id=15'
+  },
+  {
     img: '/case/case-1.png',
     date: '2025-09-24',
     title: '"I Thought My Voice Was Gone Forever" — Life Reversal and Scientific Insights of a Japanese Malignant Lymphoma Patient After Persistent Immunointervention',
